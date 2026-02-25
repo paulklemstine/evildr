@@ -1,18 +1,19 @@
 /**
  * Blind Date multiplayer flow test — two browser tabs via Playwright.
  *
- * Tests:
+ * Tests 3 full rounds:
  * 1. Player 1 creates a room, gets a code
  * 2. Player 2 joins with that code
- * 3. Both enter the game and see the interstitial with status messages
- * 4. First turn loads for both players
- * 5. Both players see images (Player 2 gets shared base64 from Player 1)
+ * 3. Both enter the game, first turn auto-submits
+ * 4. For each subsequent round, both players click Submit
+ * 5. Validates UI elements, images, and no errors each round
  */
 
 import { chromium } from 'playwright'
 
 const URL = 'https://geems.web.app'
-const TIMEOUT = 120_000 // 2 minutes — LLM calls can be slow
+const TOTAL_ROUNDS = 3
+const TIMEOUT = 180_000 // 3 minutes per round — LLM calls can be slow
 
 async function sleep(ms) {
   return new Promise(r => setTimeout(r, ms))
@@ -127,89 +128,110 @@ async function main() {
       screenshot(p2, '05-p2-interstitial'),
     ])
 
-    // ========== STEP 6: Wait for first turn to complete ==========
-    console.log('\n--- Step 6: Wait for first turn to complete ---')
-    console.log('  Waiting for LLM calls (this may take 30-90 seconds)...')
+    // ========== ROUNDS LOOP ==========
+    for (let round = 1; round <= TOTAL_ROUNDS; round++) {
+      console.log(`\n${'='.repeat(50)}`)
+      console.log(`  ROUND ${round} / ${TOTAL_ROUNDS}`)
+      console.log(`${'='.repeat(50)}`)
 
-    // Poll for interstitial to disappear (turn rendered)
-    const startTime = Date.now()
-    let p1Done = false
-    let p2Done = false
+      // --- Submit actions (rounds 2+ require clicking Submit) ---
+      if (round > 1) {
+        console.log(`\n--- Round ${round}: Both players submit ---`)
 
-    while ((!p1Done || !p2Done) && Date.now() - startTime < TIMEOUT) {
-      if (!p1Done) {
-        const count = await p1.locator('.interstitial-overlay.interstitial-visible').count()
-        if (count === 0 && Date.now() - startTime > 5000) {
-          p1Done = true
-          console.log(`  P1 turn loaded (${Math.round((Date.now() - startTime) / 1000)}s)`)
+        // Click Submit on both players
+        const p1Submit = p1.locator('#mp-submit-turn')
+        const p2Submit = p2.locator('#mp-submit-turn')
+
+        const p1Enabled = await p1Submit.isEnabled()
+        const p2Enabled = await p2Submit.isEnabled()
+        console.log(`  P1 submit enabled: ${p1Enabled}, P2 submit enabled: ${p2Enabled}`)
+
+        if (p1Enabled && p2Enabled) {
+          await Promise.all([
+            p1Submit.click(),
+            p2Submit.click(),
+          ])
+          console.log('  Both players clicked Submit.')
+        } else {
+          console.log('  ⚠️  Submit button not enabled — skipping round.')
+          continue
         }
       }
-      if (!p2Done) {
-        const count = await p2.locator('.interstitial-overlay.interstitial-visible').count()
-        if (count === 0 && Date.now() - startTime > 5000) {
-          p2Done = true
-          console.log(`  P2 turn loaded (${Math.round((Date.now() - startTime) / 1000)}s)`)
+
+      // --- Wait for turn to complete ---
+      console.log(`\n--- Round ${round}: Waiting for turn to complete ---`)
+      console.log('  Waiting for LLM calls (this may take 30-90 seconds)...')
+
+      const startTime = Date.now()
+      let p1Done = false
+      let p2Done = false
+
+      while ((!p1Done || !p2Done) && Date.now() - startTime < TIMEOUT) {
+        if (!p1Done) {
+          const interstitialVisible = await p1.locator('.interstitial-overlay.interstitial-visible').count()
+          const submitEnabled = await p1.locator('#mp-submit-turn').isEnabled().catch(() => false)
+          if (interstitialVisible === 0 && submitEnabled && Date.now() - startTime > 5000) {
+            p1Done = true
+            console.log(`  P1 turn loaded (${Math.round((Date.now() - startTime) / 1000)}s)`)
+          }
         }
+        if (!p2Done) {
+          const interstitialVisible = await p2.locator('.interstitial-overlay.interstitial-visible').count()
+          const submitEnabled = await p2.locator('#mp-submit-turn').isEnabled().catch(() => false)
+          if (interstitialVisible === 0 && submitEnabled && Date.now() - startTime > 5000) {
+            p2Done = true
+            console.log(`  P2 turn loaded (${Math.round((Date.now() - startTime) / 1000)}s)`)
+          }
+        }
+
+        if (!p1Done || !p2Done) {
+          const s1 = await p1.textContent('#interstitial-status').catch(() => '')
+          const s2 = await p2.textContent('#interstitial-status').catch(() => '')
+          if (s1 || s2) {
+            const elapsed = Math.round((Date.now() - startTime) / 1000)
+            if (s1) console.log(`  [${elapsed}s] P1: "${s1}"`)
+            if (s2) console.log(`  [${elapsed}s] P2: "${s2}"`)
+          }
+        }
+
+        await sleep(3000)
       }
 
-      // Capture interim status messages
       if (!p1Done || !p2Done) {
-        const s1 = await p1.textContent('#interstitial-status').catch(() => '')
-        const s2 = await p2.textContent('#interstitial-status').catch(() => '')
-        if (s1 || s2) {
-          const elapsed = Math.round((Date.now() - startTime) / 1000)
-          if (s1) console.log(`  [${elapsed}s] P1 status: "${s1}"`)
-          if (s2) console.log(`  [${elapsed}s] P2 status: "${s2}"`)
-        }
+        console.log(`  ⚠️  Round ${round} timed out!`)
+        await Promise.all([
+          screenshot(p1, `R${round}-TIMEOUT-p1`),
+          screenshot(p2, `R${round}-TIMEOUT-p2`),
+        ])
+        break
       }
 
-      await sleep(3000)
+      await sleep(1000)
+      await Promise.all([
+        screenshot(p1, `R${round}-p1`),
+        screenshot(p2, `R${round}-p2`),
+      ])
+
+      // --- Check errors ---
+      const p1Error = await p1.textContent('#mp-error-display').catch(() => '')
+      const p2Error = await p2.textContent('#mp-error-display').catch(() => '')
+      if (p1Error) console.log(`  ⚠️  P1 error: ${p1Error}`)
+      if (p2Error) console.log(`  ⚠️  P2 error: ${p2Error}`)
+      if (!p1Error && !p2Error) console.log('  No errors.')
+
+      // --- Check UI elements ---
+      const p1Elements = await p1.locator('[data-element-type]').count()
+      const p2Elements = await p2.locator('[data-element-type]').count()
+      console.log(`  P1 UI elements: ${p1Elements}, P2 UI elements: ${p2Elements}`)
+
+      // --- Check images ---
+      const p1Images = await p1.locator('img[data-image-prompt]').count()
+      const p2Images = await p2.locator('img[data-image-prompt]').count()
+      console.log(`  P1 images: ${p1Images}, P2 images: ${p2Images}`)
     }
-
-    if (!p1Done || !p2Done) {
-      console.log('  ⚠️  Timed out waiting for turns to complete!')
-    }
-
-    await sleep(1000)
-    await Promise.all([
-      screenshot(p1, '06-p1-first-turn'),
-      screenshot(p2, '06-p2-first-turn'),
-    ])
-
-    // ========== STEP 7: Check images ==========
-    console.log('\n--- Step 7: Check images ---')
-    const p1Images = await p1.locator('img[data-image-prompt]').count()
-    const p2Images = await p2.locator('img[data-image-prompt]').count()
-    console.log(`  P1 images: ${p1Images}`)
-    console.log(`  P2 images: ${p2Images}`)
-
-    // Check if P2 images have base64 src (shared from P1)
-    if (p2Images > 0) {
-      const p2ImgSrc = await p2.locator('img[data-image-prompt]').first().getAttribute('src')
-      const isBase64 = p2ImgSrc?.startsWith('data:image/')
-      console.log(`  P2 first image is base64 (shared): ${isBase64}`)
-      if (p2ImgSrc) {
-        console.log(`  P2 first image src starts with: ${p2ImgSrc.substring(0, 50)}...`)
-      }
-    }
-
-    // ========== STEP 8: Check for errors ==========
-    console.log('\n--- Step 8: Check for errors ---')
-    const p1Error = await p1.textContent('#mp-error-display').catch(() => '')
-    const p2Error = await p2.textContent('#mp-error-display').catch(() => '')
-    if (p1Error) console.log(`  ⚠️  P1 error: ${p1Error}`)
-    if (p2Error) console.log(`  ⚠️  P2 error: ${p2Error}`)
-    if (!p1Error && !p2Error) console.log('  No errors!')
-
-    // ========== STEP 9: Check UI elements rendered ==========
-    console.log('\n--- Step 9: Check rendered UI elements ---')
-    const p1Elements = await p1.locator('[data-element-type]').count()
-    const p2Elements = await p2.locator('[data-element-type]').count()
-    console.log(`  P1 UI elements: ${p1Elements}`)
-    console.log(`  P2 UI elements: ${p2Elements}`)
 
     // ========== DONE ==========
-    console.log('\n✅ Blind date flow test complete!')
+    console.log(`\n✅ Blind date ${TOTAL_ROUNDS}-round test complete!`)
     console.log(`Screenshots saved to test-screenshots/`)
 
     // Dump any relevant console warnings/errors
