@@ -150,12 +150,25 @@ function parseLLMResponse(raw: string): UIElement[] {
   const firstBrace = text.indexOf('{')
   const lastBrace = text.lastIndexOf('}')
   if (firstBrace !== -1 && lastBrace > firstBrace) {
+    const objText = text.substring(firstBrace, lastBrace + 1)
+
+    // Try parsing as a single object
     try {
-      const objText = text.substring(firstBrace, lastBrace + 1)
       const parsed: unknown = JSON.parse(objText)
       return extractUIArray(parsed, objText)
     } catch {
-      // Object extraction failed
+      // Single object parse failed
+    }
+
+    // Try wrapping in array brackets (handles: {...}, {...}, {...})
+    try {
+      const arrayWrapped = `[${objText}]`
+      const parsed: unknown = JSON.parse(arrayWrapped)
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed as UIElement[]
+      }
+    } catch {
+      // Array wrapping failed
     }
   }
 
@@ -170,10 +183,25 @@ function extractUIArray(parsed: unknown, textForError: string): UIElement[] {
     return parsed as UIElement[]
   }
 
-  if (parsed && typeof parsed === 'object' && 'ui' in parsed) {
-    const wrapped = parsed as { ui: unknown }
-    if (Array.isArray(wrapped.ui)) {
-      return wrapped.ui as UIElement[]
+  if (parsed && typeof parsed === 'object') {
+    const obj = parsed as Record<string, unknown>
+
+    // Check common wrapper keys: { ui: [...] }, { elements: [...] }, { items: [...] }, { response: [...] }
+    for (const key of ['ui', 'elements', 'items', 'response', 'data', 'content', 'result']) {
+      if (key in obj && Array.isArray(obj[key])) {
+        return obj[key] as UIElement[]
+      }
+    }
+
+    // Single UIElement object — wrap in array
+    if ('type' in obj && typeof obj.type === 'string') {
+      return [obj as unknown as UIElement]
+    }
+
+    // Object whose only value is an array (e.g. { "turn_1": [...] })
+    const values = Object.values(obj)
+    if (values.length === 1 && Array.isArray(values[0])) {
+      return values[0] as UIElement[]
     }
   }
 
