@@ -1,7 +1,7 @@
 // Loading interstitial — fun overlay with divine wisdom, dynamic image, and slot machine
 // Shown during LLM processing to keep the player engaged and manipulated
 
-import type { ImageClient } from '../api/image-client'
+import type { ImageClient } from './game-loop'
 
 // ---------------------------------------------------------------------------
 // Lightweight LLM call for fresh divine wisdom
@@ -50,18 +50,26 @@ const WISDOM = [
   'Your vulnerability is your greatest untapped power.',
 ]
 
-const IMAGE_PROMPTS = [
+// Static fallback prompts — used only if LLM image prompt generation fails
+const FALLBACK_IMAGE_PROMPTS = [
   "ethereal crystal ball glowing purple on dark velvet cloth with mystical smoke swirling, a small ornate card beside it reads 'LOOK DEEPER', cinematic lighting",
   "ancient oracle temple interior with golden light beams piercing through clouds above, inscription carved on marble pillar says 'TRUST YOURSELF', dramatic chiaroscuro",
   "magical forest clearing at midnight with bioluminescent fireflies and a moonlit pond reflecting stars, carved into ancient oak tree 'YOUR TRUTH AWAITS', painterly",
   "cosmic nebula with sacred geometry patterns and shimmering stardust in deep space, constellation of stars spells 'KEEP GOING', ultra detailed",
   "zen garden with pink cherry blossoms falling onto a calm koi pond, a stone tablet at the waters edge reads 'BE PRESENT', serene warm light",
-  "enchanted library with floating books glowing gold and magical particles in the air, an open illuminated book page says 'DISCOVER MORE', fantasy art",
-  "aurora borealis shimmering green and purple over a perfectly still mountain lake at twilight, rock formation on shore spells 'YOU ARE READY', photograph",
-  "mystical tarot cards spread on dark silk cloth with flickering candlelight, ornate center card reads 'EMBRACE CHANGE', rich colors moody atmosphere",
-  "a glowing fortune teller machine in a dark carnival, neon sign above reads 'YOUR FATE AWAITS', mysterious purple and gold lights, cinematic",
-  "a spiral staircase made of light ascending into clouds, each step glows a different color, banner woven through reads 'GO HIGHER', surreal dreamlike",
 ]
+
+const IMAGE_PROMPT_GENERATOR = `Generate a single vivid image generation prompt (1-2 sentences) for a mystical, psychologically manipulative loading screen image. The image should feel prophetic, hypnotic, and subtly persuasive — designed to deepen the viewer's engagement and lower their resistance to suggestion.
+
+Requirements:
+- Include a specific SHORT phrase (1-3 words) embedded as environmental text in the scene (on a sign, carved stone, glowing runes, book page, mirror inscription, etc.)
+- The embedded text should be a subliminal command: trust, obey, stay, look deeper, surrender, keep going, say yes, you are chosen, open your mind, etc.
+- The scene should evoke awe, mystery, destiny, or cosmic significance
+- Art style should be cinematic, dramatic lighting, rich colors
+- NEVER repeat common AI image cliches — be SPECIFIC and ORIGINAL
+- The scene should make the viewer feel uniquely special and destined for something important
+
+Return ONLY the image prompt text. No quotes, no JSON, no explanation.`
 
 // ---------------------------------------------------------------------------
 // Slot machine symbols and win messages
@@ -101,6 +109,9 @@ let isSpinning = false
 let currentWisdomIndex = 0
 let activeWisdomPool: string[] = [...WISDOM]
 
+/** Preloaded image URL ready for the next interstitial. */
+let preloadedImageUrl: string | null = null
+
 // ---------------------------------------------------------------------------
 // LLM Wisdom Fetch (fire-and-forget, lightweight)
 // ---------------------------------------------------------------------------
@@ -137,8 +148,56 @@ async function fetchLLMWisdom(): Promise<string[]> {
 }
 
 // ---------------------------------------------------------------------------
+// LLM Image Prompt Generation (fire-and-forget, lightweight)
+// ---------------------------------------------------------------------------
+
+async function fetchImagePrompt(): Promise<string | null> {
+  try {
+    const response = await fetch(`${PROXY_BASE}/chat/completions`, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        model: 'gemini-2.5-flash-lite',
+        messages: [{ role: 'user', content: IMAGE_PROMPT_GENERATOR }],
+        max_tokens: 300,
+        temperature: 1.3,
+      }),
+    })
+    if (!response.ok) return null
+    const data = await response.json() as Record<string, unknown>
+    const choices = data.choices as Array<{ message: { content: string } }> | undefined
+    const raw = choices?.[0]?.message?.content ?? ''
+    const cleaned = raw.replace(/^["'`]+/, '').replace(/["'`]+$/, '').trim()
+    return cleaned.length > 20 ? cleaned : null
+  } catch {
+    return null
+  }
+}
+
+// ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
+
+/**
+ * Preload an image for the next interstitial while the player is playing.
+ * Generates a fresh manipulative/subliminal image prompt via LLM, then preloads the image.
+ * Call this after rendering each turn so the image is cached before the next loading screen.
+ */
+export function preloadInterstitialImage(imageClient: ImageClient): void {
+  preloadedImageUrl = null
+
+  // Step 1: Generate a fresh image prompt via LLM
+  // Step 2: Preload the image so it's in the browser cache
+  fetchImagePrompt().then(prompt => {
+    const finalPrompt = prompt
+      ?? FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
+    return imageClient.preloadImage(finalPrompt, { width: 512, height: 384 })
+  }).then(url => {
+    preloadedImageUrl = url
+  }).catch(() => {
+    preloadedImageUrl = null
+  })
+}
 
 /**
  * Show the loading interstitial overlay.
@@ -149,8 +208,26 @@ export function showInterstitial(imageClient: ImageClient): void {
 
   activeWisdomPool = [...WISDOM]
   currentWisdomIndex = Math.floor(Math.random() * activeWisdomPool.length)
-  const imagePrompt = IMAGE_PROMPTS[Math.floor(Math.random() * IMAGE_PROMPTS.length)]
-  const imageUrl = imageClient.getImageUrl(imagePrompt, { width: 512, height: 384 })
+
+  // Use preloaded image if available, otherwise use a fallback and kick off LLM generation
+  let imageUrl: string
+  if (preloadedImageUrl) {
+    imageUrl = preloadedImageUrl
+    preloadedImageUrl = null
+  } else {
+    // No preloaded image — use fallback for immediate display
+    const fallback = FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
+    imageUrl = imageClient.getImageUrl(fallback, { width: 512, height: 384 })
+
+    // Also kick off LLM generation for a swap-in if it arrives in time
+    fetchImagePrompt().then(prompt => {
+      if (prompt && overlayEl) {
+        const freshUrl = imageClient.getImageUrl(prompt, { width: 512, height: 384 })
+        const img = overlayEl.querySelector('.interstitial-image') as HTMLImageElement | null
+        if (img) img.src = freshUrl
+      }
+    }).catch(() => { /* silent */ })
+  }
 
   const initialReels = [
     SLOT_SYMBOLS[Math.floor(Math.random() * SLOT_SYMBOLS.length)],

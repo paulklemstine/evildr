@@ -13,6 +13,7 @@ import { cascadeReveal, pulseInteractive } from './anticipation'
 import { attachCelebrations } from './celebration'
 import { saveCliffhanger, extractCliffhanger } from './session-hooks'
 import { applyMoodFromUI } from './mood-colors'
+import { preloadInterstitialImage } from './loading-interstitial'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -34,7 +35,9 @@ export interface LLMClient {
 /** Minimal interface the game loop expects from the image client. */
 export interface ImageClient {
   /** Resolve an image prompt into a displayable URL. */
-  getImageUrl(prompt: string): string
+  getImageUrl(prompt: string, options?: Record<string, unknown>): string
+  /** Preload an image and return the URL (or placeholder on failure). */
+  preloadImage(prompt: string, options?: Record<string, unknown>): Promise<string>
 }
 
 /**
@@ -419,13 +422,16 @@ export class GameLoop {
     if (this.cleanupCelebrations) this.cleanupCelebrations()
     this.cleanupCelebrations = attachCelebrations(container)
 
-    // 10. Save cliffhanger for re-engagement
+    // 10. Preload next interstitial image while player plays this turn
+    preloadInterstitialImage(this.config.imageClient)
+
+    // 11. Save cliffhanger for re-engagement
     saveCliffhanger(extractCliffhanger(uiJsonArray))
 
-    // 11. Attach input tracker for behavioral signal capture
+    // 12. Attach input tracker for behavioral signal capture
     this.inputTracker.attach()
 
-    // 12. Save turn record to IndexedDB for profiling
+    // 13. Save turn record to IndexedDB for profiling
     const { userId, sessionId } = this.config
     if (userId && sessionId) {
       const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
@@ -447,10 +453,10 @@ export class GameLoop {
       maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
     }
 
-    // 13. Auto-save
+    // 14. Auto-save
     saveGameState(this.storageKey(), this.state)
 
-    // 14. Notify
+    // 15. Notify
     onStateChange(this.getState())
     onLoading(false)
   }
