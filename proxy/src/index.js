@@ -193,29 +193,10 @@ export default {
               });
             }
 
-            // Rate limited or server error — try next backend
-            if (result.status === 429 || result.status >= 500) {
-              console.log(`Backend "${backend.name}" returned ${result.status}, trying next...`);
-              lastResult = result;
-              continue;
-            }
-
-            // Client error (400, 404, etc.) — return as-is
+            // Any error — try next backend
+            console.log(`Backend "${backend.name}" returned ${result.status}, trying next...`);
             lastResult = result;
-            // For 404 (model not found), try next backend
-            if (result.status === 404) {
-              continue;
-            }
-
-            // Other client errors — return immediately
-            return new Response(result.data, {
-              status: result.status,
-              headers: {
-                "Content-Type": result.contentType || "application/json",
-                "X-LLM-Backend": backend.name,
-                ...CORS_HEADERS,
-              },
-            });
+            continue;
           } catch (err) {
             console.log(`Backend "${backend.name}" network error: ${err.message}, trying next...`);
             lastResult = { ok: false, status: 502, data: JSON.stringify({ error: `Network error: ${err.message}` }) };
