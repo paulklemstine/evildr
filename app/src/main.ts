@@ -10,13 +10,13 @@ import { showReEngagement } from './engine/session-hooks'
 import { showInterstitial, dismissInterstitial } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import { renderAdminPage } from './pages/admin'
-import { createLiveBridge } from './admin/live-bridge'
-import type { LiveBridge } from './admin/live-bridge'
+import { createPlayerBridge } from './admin/live-bridge'
+import type { PlayerBridge } from './admin/live-bridge'
 import './style.css'
 
 // --- Global State ---
 let gameLoop: GameLoop | null = null
-let liveBridge: LiveBridge | null = null
+let playerBridge: PlayerBridge | null = null
 let userId: string = ''
 
 // --- API Clients ---
@@ -263,10 +263,6 @@ function renderGamePage(modeId: string): void {
           <button id="submit-turn" class="geems-button" style="min-width: 200px;">
             Continue Session
           </button>
-          <div id="watch-code-display" style="display: none; margin-top: 0.75rem;">
-            <span class="text-xs" style="color: var(--text-muted);">Watch code: </span>
-            <span id="watch-code" style="color: var(--accent-primary); font-family: 'Source Code Pro', monospace; font-weight: 700; letter-spacing: 0.2em;"></span>
-          </div>
         </div>
       </div>
     </main>
@@ -292,9 +288,9 @@ function renderGamePage(modeId: string): void {
       gameLoop.reset()
       gameLoop = null
     }
-    if (liveBridge) {
-      liveBridge.destroy()
-      liveBridge = null
+    if (playerBridge) {
+      playerBridge.destroy()
+      playerBridge = null
     }
     resetTheme()
     window.location.hash = ''
@@ -357,9 +353,9 @@ function startGame(modeId: string, genre?: string): void {
           .replace(/\n/g, '<br>')
       }
 
-      // Broadcast to admin watchers via PeerJS
-      if (liveBridge) {
-        liveBridge.broadcast({ type: 'stateUpdate', state })
+      // Broadcast to admin lobby via PeerJS
+      if (playerBridge) {
+        playerBridge.broadcast({ type: 'stateUpdate', state })
       }
     },
     onError: (message) => {
@@ -386,19 +382,9 @@ function startGame(modeId: string, genre?: string): void {
   // Auto-start first turn
   gameLoop.submitTurn()
 
-  // Create PeerJS live bridge for admin watching (non-blocking)
-  if (liveBridge) { liveBridge.destroy(); liveBridge = null }
-  createLiveBridge().then(bridge => {
-    liveBridge = bridge
-    const codeEl = document.getElementById('watch-code')
-    const displayEl = document.getElementById('watch-code-display')
-    if (codeEl && displayEl) {
-      codeEl.textContent = bridge.watchCode
-      displayEl.style.display = 'block'
-    }
-  }).catch(() => {
-    // PeerJS unavailable — game works fine without it
-  })
+  // Connect to admin lobby via PeerJS (non-blocking, silent fail)
+  if (playerBridge) { playerBridge.destroy(); playerBridge = null }
+  playerBridge = createPlayerBridge({ mode: modeId, genre, userId, sessionId })
 }
 
 // --- Hash-based Routing ---
@@ -413,7 +399,7 @@ function handleRoute(): void {
     })
   } else if (hash === '#admin') {
     if (gameLoop) { gameLoop.reset(); gameLoop = null }
-    if (liveBridge) { liveBridge.destroy(); liveBridge = null }
+    if (playerBridge) { playerBridge.destroy(); playerBridge = null }
     resetTheme()
     const app = document.getElementById('app')!
     renderAdminPage(app, () => {
@@ -434,9 +420,9 @@ function handleRoute(): void {
       gameLoop.reset()
       gameLoop = null
     }
-    if (liveBridge) {
-      liveBridge.destroy()
-      liveBridge = null
+    if (playerBridge) {
+      playerBridge.destroy()
+      playerBridge = null
     }
     resetTheme()
     renderLobby()

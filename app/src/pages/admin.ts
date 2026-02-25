@@ -1,8 +1,13 @@
-// Admin page — live game watching via PeerJS + hidden data viewer
+// Admin page — lobby-based live spying on all active players
 
-import { connectToLiveBridge } from '../admin/live-bridge'
+import { createAdminLobby } from '../admin/live-bridge'
+import type { AdminLobby, PlayerInfo } from '../admin/live-bridge'
 import { renderUI } from '../engine/renderer'
 import type { GameState } from '../engine/game-loop'
+
+interface TrackedPlayer extends PlayerInfo {
+  lastState: GameState | null
+}
 
 export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   app.innerHTML = `
@@ -26,78 +31,27 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       </div>
     </header>
 
-    <main style="max-width: 1200px; margin: 0 auto; padding: 1.5rem;">
-      <!-- Connect Section -->
-      <div id="admin-connect" style="max-width: 480px; margin: 2rem auto;">
-        <div class="mode-card">
-          <h3 class="text-lg font-bold mb-2" style="color: var(--text-heading);">Watch Live Session</h3>
-          <p class="text-sm mb-4" style="color: var(--text-secondary);">
-            Enter the 4-character watch code shown on the player's game screen.
-          </p>
-          <div class="flex gap-2">
-            <input id="watch-code-input" type="text" maxlength="4"
-              placeholder="XXXX"
-              class="geems-textarea"
-              style="text-align: center; font-size: 1.5rem; letter-spacing: 0.3em; text-transform: uppercase; font-family: 'Source Code Pro', monospace; padding: 0.5rem; flex: 1;"
-            />
-            <button id="btn-connect" class="geems-button" style="min-width: 120px;">
-              Connect
-            </button>
-          </div>
-          <p id="connect-status" class="text-sm mt-2" style="display: none;"></p>
-        </div>
+    <main style="max-width: 1300px; margin: 0 auto; padding: 1.5rem;">
+      <!-- Status Bar -->
+      <div id="lobby-status" class="mode-card" style="margin-bottom: 1.5rem; text-align: center;">
+        <p class="text-sm" style="color: var(--text-muted);">Connecting to lobby...</p>
       </div>
 
-      <!-- Live View (hidden until connected) -->
-      <div id="admin-live" style="display: none;">
-        <div class="admin-grid">
-          <!-- Game View Column -->
-          <div>
-            <div class="mode-card" style="margin-bottom: 1rem;">
-              <div class="flex items-center justify-between">
-                <h3 class="text-lg font-bold" style="color: var(--text-heading);">Live Game View</h3>
-                <div class="flex items-center gap-2">
-                  <span class="admin-live-dot"></span>
-                  <span id="live-mode" class="badge badge-tier"></span>
-                  <span id="live-turn" class="badge badge-free">Turn 0</span>
-                </div>
-              </div>
-            </div>
-            <div id="live-game-container" class="mode-card">
-              <p class="admin-waiting">Waiting for game data...</p>
-            </div>
-          </div>
+      <!-- Dashboard -->
+      <div class="admin-dashboard">
+        <!-- Player List -->
+        <div id="player-list" class="admin-player-list">
+          <p class="admin-empty-msg">No active players</p>
+        </div>
 
-          <!-- Hidden Data Column -->
-          <div>
-            <div class="mode-card" style="margin-bottom: 1rem;">
-              <h3 class="text-lg font-bold" style="color: var(--text-heading);">Hidden Data</h3>
-              <p class="text-xs" style="color: var(--text-muted);">Data the player cannot see</p>
-            </div>
-
-            <div class="mode-card admin-data-card">
-              <h4 class="admin-data-label">Subject ID</h4>
-              <p id="hd-subject" class="text-sm" style="color: var(--text-secondary); font-family: 'Source Code Pro', monospace;">--</p>
-            </div>
-
-            <div class="mode-card admin-data-card">
-              <h4 class="admin-data-label">Analysis</h4>
-              <div id="hd-analysis" class="text-sm admin-data-scroll">--</div>
-            </div>
-
-            <div class="mode-card admin-data-card">
-              <h4 class="admin-data-label">Tweet</h4>
-              <p id="hd-tweet" class="text-sm" style="color: var(--text-secondary);">--</p>
-            </div>
-
-            <div class="mode-card admin-data-card">
-              <h4 class="admin-data-label">Notes</h4>
-              <div id="hd-notes" class="text-sm admin-data-scroll">--</div>
-            </div>
-
-            <button id="btn-disconnect" class="geems-button-outline" style="width: 100%; margin-top: 1rem; color: #dc2626; border-color: #dc2626;">
-              Disconnect
-            </button>
+        <!-- Selected Player View -->
+        <div id="player-view" class="admin-player-view">
+          <div class="admin-no-selection">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;">
+              <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+              <circle cx="12" cy="12" r="3"/>
+            </svg>
+            <p style="color: var(--text-muted); margin-top: 1rem;">Select a player to watch their live session</p>
           </div>
         </div>
       </div>
@@ -109,131 +63,241 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   `
 
   // --- State ---
-  let bridge: { destroy: () => void } | null = null
-
-  // --- Elements ---
-  const connectSection = document.getElementById('admin-connect')!
-  const liveSection = document.getElementById('admin-live')!
-  const codeInput = document.getElementById('watch-code-input') as HTMLInputElement
-  const connectBtn = document.getElementById('btn-connect') as HTMLButtonElement
-  const statusEl = document.getElementById('connect-status')!
+  let lobby: AdminLobby | null = null
+  const players = new Map<string, TrackedPlayer>()
+  let selectedPeerId: string | null = null
 
   // --- Navigation ---
   const goBack = () => {
-    if (bridge) { bridge.destroy(); bridge = null }
+    if (lobby) { lobby.destroy(); lobby = null }
     onBack()
   }
   document.getElementById('admin-back')?.addEventListener('click', goBack)
   document.getElementById('admin-nav-home')?.addEventListener('click', goBack)
 
-  // --- Disconnect ---
-  document.getElementById('btn-disconnect')?.addEventListener('click', () => {
-    if (bridge) { bridge.destroy(); bridge = null }
-    liveSection.style.display = 'none'
-    connectSection.style.display = 'block'
-    statusEl.style.display = 'none'
-    connectBtn.disabled = false
-    codeInput.value = ''
-  })
+  // --- Start lobby ---
+  initLobby()
 
-  // --- Connect ---
-  async function doConnect() {
-    const code = codeInput.value.trim().toUpperCase()
-    if (code.length !== 4) {
-      showStatus('Enter a 4-character code', '#dc2626')
+  async function initLobby() {
+    const statusEl = document.getElementById('lobby-status')!
+
+    try {
+      lobby = await createAdminLobby({
+        onPlayerJoined(info) {
+          players.set(info.peerId, { ...info, lastState: null })
+          renderPlayerList()
+          updateStatusBar()
+        },
+        onPlayerLeft(peerId) {
+          players.delete(peerId)
+          if (selectedPeerId === peerId) {
+            selectedPeerId = null
+            renderPlayerView()
+          }
+          renderPlayerList()
+          updateStatusBar()
+        },
+        onPlayerData(peerId, data) {
+          const record = data as Record<string, unknown>
+          if (record.type !== 'stateUpdate') return
+          const player = players.get(peerId)
+          if (!player) return
+          const state = record.state as GameState
+          player.lastState = state
+          player.turnNumber = state.turnNumber
+          // Update the player card turn badge
+          const badge = document.querySelector(`[data-player="${peerId}"] .player-turn-badge`)
+          if (badge) badge.textContent = `Turn ${state.turnNumber}`
+          // If this player is selected, update the live view
+          if (selectedPeerId === peerId) {
+            renderSelectedPlayerState(state)
+          }
+        },
+      })
+
+      statusEl.innerHTML = `
+        <div class="flex items-center justify-center gap-2">
+          <span class="admin-live-dot"></span>
+          <span class="text-sm font-medium" style="color: var(--text-heading);">Lobby Active</span>
+          <span class="text-sm" style="color: var(--text-muted);">&mdash;</span>
+          <span id="player-count" class="text-sm" style="color: var(--text-secondary);">0 players connected</span>
+        </div>
+      `
+    } catch (err) {
+      statusEl.innerHTML = `
+        <p class="text-sm" style="color: #dc2626;">
+          ${(err as Error).message}
+        </p>
+        <button id="retry-lobby" class="geems-button-outline" style="margin-top: 0.75rem; font-size: 0.8125rem;">
+          Retry
+        </button>
+      `
+      document.getElementById('retry-lobby')?.addEventListener('click', () => {
+        statusEl.innerHTML = '<p class="text-sm" style="color: var(--text-muted);">Reconnecting...</p>'
+        initLobby()
+      })
+    }
+  }
+
+  function updateStatusBar() {
+    const countEl = document.getElementById('player-count')
+    if (countEl) {
+      const n = players.size
+      countEl.textContent = `${n} player${n !== 1 ? 's' : ''} connected`
+    }
+  }
+
+  function renderPlayerList() {
+    const listEl = document.getElementById('player-list')!
+
+    if (players.size === 0) {
+      listEl.innerHTML = '<p class="admin-empty-msg">No active players</p>'
       return
     }
 
-    showStatus('Connecting...', 'var(--text-muted)')
-    connectBtn.disabled = true
+    let html = ''
+    for (const [peerId, player] of players) {
+      const isSelected = peerId === selectedPeerId
+      const timeAgo = formatTimeAgo(player.connectedAt)
+      html += `
+        <div class="admin-player-card ${isSelected ? 'selected' : ''}" data-player="${peerId}">
+          <div class="flex items-center justify-between">
+            <span class="text-sm font-bold" style="color: var(--text-heading);">
+              ${player.mode.toUpperCase()}${player.genre ? ` / ${player.genre}` : ''}
+            </span>
+            <span class="badge badge-free player-turn-badge">Turn ${player.turnNumber}</span>
+          </div>
+          <div class="text-xs" style="color: var(--text-muted); margin-top: 0.25rem;">
+            ${peerId.slice(-6)} &middot; ${timeAgo}
+          </div>
+        </div>
+      `
+    }
+    listEl.innerHTML = html
 
-    try {
-      bridge = await connectToLiveBridge(
-        code,
-        (data) => handleLiveData(data as Record<string, unknown>),
-        () => {
-          showStatus('Player disconnected', '#dc2626')
-          // Keep live view visible so admin can still see last state
-        },
-      )
+    // Click handlers
+    listEl.querySelectorAll('.admin-player-card').forEach(card => {
+      card.addEventListener('click', () => {
+        const pid = (card as HTMLElement).dataset.player!
+        selectedPeerId = pid
+        renderPlayerList()
+        renderPlayerView()
+      })
+    })
+  }
 
-      showStatus(`Connected to ${code}`, 'var(--accent-primary)')
-      connectSection.style.display = 'none'
-      liveSection.style.display = 'block'
-    } catch (err) {
-      showStatus(`Failed: ${(err as Error).message}`, '#dc2626')
-      connectBtn.disabled = false
+  function renderPlayerView() {
+    const viewEl = document.getElementById('player-view')!
+
+    if (!selectedPeerId || !players.has(selectedPeerId)) {
+      viewEl.innerHTML = `
+        <div class="admin-no-selection">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;">
+            <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+            <circle cx="12" cy="12" r="3"/>
+          </svg>
+          <p style="color: var(--text-muted); margin-top: 1rem;">Select a player to watch their live session</p>
+        </div>
+      `
+      return
+    }
+
+    const player = players.get(selectedPeerId)!
+
+    viewEl.innerHTML = `
+      <div class="admin-view-header mode-card" style="margin-bottom: 1rem;">
+        <div class="flex items-center justify-between">
+          <div>
+            <h3 class="text-lg font-bold" style="color: var(--text-heading);">
+              ${player.mode.toUpperCase()}${player.genre ? ` / ${player.genre}` : ''}
+            </h3>
+            <p class="text-xs" style="color: var(--text-muted);">
+              Peer: ${selectedPeerId.slice(-6)} &middot; User: ${player.userId.slice(0, 8)}...
+            </p>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="admin-live-dot"></span>
+            <span id="sv-turn" class="badge badge-free">Turn ${player.turnNumber}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="admin-grid">
+        <div>
+          <div id="sv-game-container" class="mode-card">
+            <p class="admin-waiting">Waiting for turn data...</p>
+          </div>
+        </div>
+        <div>
+          <div class="mode-card admin-data-card">
+            <h4 class="admin-data-label">Subject ID</h4>
+            <p id="sv-subject" class="text-sm" style="color: var(--text-secondary); font-family: 'Source Code Pro', monospace;">--</p>
+          </div>
+          <div class="mode-card admin-data-card">
+            <h4 class="admin-data-label">Analysis</h4>
+            <div id="sv-analysis" class="text-sm admin-data-scroll">--</div>
+          </div>
+          <div class="mode-card admin-data-card">
+            <h4 class="admin-data-label">Tweet</h4>
+            <p id="sv-tweet" class="text-sm" style="color: var(--text-secondary);">--</p>
+          </div>
+          <div class="mode-card admin-data-card">
+            <h4 class="admin-data-label">Notes</h4>
+            <div id="sv-notes" class="text-sm admin-data-scroll">--</div>
+          </div>
+        </div>
+      </div>
+    `
+
+    // Render existing state if available
+    if (player.lastState) {
+      renderSelectedPlayerState(player.lastState)
     }
   }
 
-  connectBtn.addEventListener('click', doConnect)
-  codeInput.addEventListener('keydown', (e) => { if (e.key === 'Enter') doConnect() })
-
-  // --- Auto-focus input ---
-  codeInput.focus()
-
-  // --- Handle incoming live data ---
-  function handleLiveData(data: Record<string, unknown>) {
-    if (data.type !== 'stateUpdate') return
-
-    const state = data.state as GameState
-
-    // Mode & turn badges
-    const modeEl = document.getElementById('live-mode')
-    if (modeEl) modeEl.textContent = state.mode?.toUpperCase() || '?'
-
-    const turnEl = document.getElementById('live-turn')
+  function renderSelectedPlayerState(state: GameState) {
+    // Turn badge
+    const turnEl = document.getElementById('sv-turn')
     if (turnEl) turnEl.textContent = `Turn ${state.turnNumber}`
 
-    // Render game UI read-only
+    // Game UI (read-only)
     if (state.currentUiJson) {
-      const container = document.getElementById('live-game-container')!
-      renderUI(container, state.currentUiJson)
-
-      // Disable all interactive elements
-      container.querySelectorAll<HTMLElement>('input, textarea, select, button').forEach(el => {
-        (el as HTMLInputElement).disabled = true
-        el.style.pointerEvents = 'none'
-        el.style.opacity = '0.7'
-      })
+      const container = document.getElementById('sv-game-container')
+      if (container) {
+        renderUI(container, state.currentUiJson)
+        container.querySelectorAll<HTMLElement>('input, textarea, select, button').forEach(el => {
+          (el as HTMLInputElement).disabled = true
+          el.style.pointerEvents = 'none'
+          el.style.opacity = '0.7'
+        })
+      }
     }
 
     // Hidden data
-    const subjectEl = document.getElementById('hd-subject')
-    if (subjectEl && state.currentSubjectId) {
-      subjectEl.textContent = state.currentSubjectId
-    }
+    const subjectEl = document.getElementById('sv-subject')
+    if (subjectEl && state.currentSubjectId) subjectEl.textContent = state.currentSubjectId
 
-    const analysisEl = document.getElementById('hd-analysis')
-    if (analysisEl && state.hiddenAnalysis) {
-      analysisEl.innerHTML = renderBasicMarkdown(state.hiddenAnalysis)
-    }
+    const analysisEl = document.getElementById('sv-analysis')
+    if (analysisEl && state.hiddenAnalysis) analysisEl.innerHTML = renderBasicMarkdown(state.hiddenAnalysis)
 
-    const tweetEl = document.getElementById('hd-tweet')
-    if (tweetEl && state.hiddenTweet) {
-      tweetEl.textContent = state.hiddenTweet
-    }
+    const tweetEl = document.getElementById('sv-tweet')
+    if (tweetEl && state.hiddenTweet) tweetEl.textContent = state.hiddenTweet
 
-    const notesEl = document.getElementById('hd-notes')
-    if (notesEl && state.currentNotes) {
-      notesEl.textContent = state.currentNotes
-    }
-  }
-
-  // --- Helpers ---
-  function showStatus(msg: string, color: string) {
-    statusEl.textContent = msg
-    statusEl.style.color = color
-    statusEl.style.display = 'block'
+    const notesEl = document.getElementById('sv-notes')
+    if (notesEl && state.currentNotes) notesEl.textContent = state.currentNotes
   }
 
   // Cleanup on hash change
   const cleanup = () => {
-    if (bridge) { bridge.destroy(); bridge = null }
+    if (lobby) { lobby.destroy(); lobby = null }
     window.removeEventListener('hashchange', cleanup)
   }
   window.addEventListener('hashchange', cleanup)
 }
+
+// ---------------------------------------------------------------------------
+// Helpers
+// ---------------------------------------------------------------------------
 
 function renderBasicMarkdown(raw: string): string {
   return raw
@@ -243,4 +307,13 @@ function renderBasicMarkdown(raw: string): string {
     .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
     .replace(/\*(.*?)\*/g, '<em>$1</em>')
     .replace(/\n/g, '<br>')
+}
+
+function formatTimeAgo(timestamp: number): string {
+  const seconds = Math.floor((Date.now() - timestamp) / 1000)
+  if (seconds < 60) return 'just now'
+  const minutes = Math.floor(seconds / 60)
+  if (minutes < 60) return `${minutes}m ago`
+  const hours = Math.floor(minutes / 60)
+  return `${hours}h ago`
 }
