@@ -6,7 +6,7 @@ import { createCYOAPromptBuilder } from './modes/cyoa/prompts'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
 import { showReEngagement } from './engine/session-hooks'
-import { showInterstitial, dismissInterstitial, preloadInterstitialImage } from './engine/loading-interstitial'
+import { showInterstitial, dismissInterstitial, preloadInterstitialImage, preloadInterstitialImageEarly } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import { renderAdminPage } from './pages/admin'
 import { createWatchablePlayer } from './admin/live-bridge'
@@ -14,14 +14,14 @@ import type { PlayerBridge } from './admin/live-bridge'
 import { collectInputState } from './engine/renderer'
 import './style.css'
 
-// --- Mode card image prompts ---
-const MODE_IMAGE_PROMPTS: Record<string, string> = {
-  drevil: 'A retro-futuristic mad scientist laboratory with neon green glowing tubes, colorful control panels, and a spinning chair facing wall of monitors, adult cartoon style, dramatic cinematic lighting, vibrant colors',
-  geems: 'An epic cinematic adventure scene with a hero silhouette standing at the edge of a glowing cliff overlooking a vast magical landscape with floating islands, vibrant adult animated movie style, dramatic golden hour lighting',
-  cyoa: 'A mystical crossroads in an enchanted forest with three branching paths lit by different colored magical lights, ancient stone markers, fireflies, painterly fantasy art style, dramatic atmosphere',
-  oracle: 'A mystical oracle chamber with swirling cosmic purple and gold energy, a crystal sphere floating above an ancient stone pedestal, celestial symbols and constellations reflected on dark marble walls, ethereal divine lighting',
-  skinwalker: 'A seemingly normal suburban kitchen at twilight but something is subtly wrong, the shadows fall in the wrong direction, a family photo on the wall has too many people in it, muted desaturated colors, uncanny horror atmosphere',
-  'fever-dream': 'A surreal dreamscape where a grand piano made of clouds floats above a neon pink ocean, melting clocks drip from impossible architecture, vibrant psychedelic colors, electric cyan sky, whimsical surrealist art style',
+// --- Mode card images (deterministic Pollinations URLs with fixed seed) ---
+const MODE_CARD_IMAGES: Record<string, string> = {
+  drevil: 'https://image.pollinations.ai/prompt/A%20retro-futuristic%20mad%20scientist%20laboratory%20with%20neon%20green%20glowing%20tubes%2C%20colorful%20control%20panels%2C%20and%20a%20spinning%20chair%20facing%20wall%20of%20monitors%2C%20adult%20cartoon%20style%2C%20dramatic%20cinematic%20lighting%2C%20vibrant%20colors?width=512&height=288&seed=42&nologo=true&model=flux',
+  geems: 'https://image.pollinations.ai/prompt/An%20epic%20cinematic%20adventure%20scene%20with%20a%20hero%20silhouette%20standing%20at%20the%20edge%20of%20a%20glowing%20cliff%20overlooking%20a%20vast%20magical%20landscape%20with%20floating%20islands%2C%20vibrant%20adult%20animated%20movie%20style%2C%20dramatic%20golden%20hour%20lighting?width=512&height=288&seed=42&nologo=true&model=flux',
+  cyoa: 'https://image.pollinations.ai/prompt/A%20mystical%20crossroads%20in%20an%20enchanted%20forest%20with%20three%20branching%20paths%20lit%20by%20different%20colored%20magical%20lights%2C%20ancient%20stone%20markers%2C%20fireflies%2C%20painterly%20fantasy%20art%20style%2C%20dramatic%20atmosphere?width=512&height=288&seed=42&nologo=true&model=flux',
+  oracle: 'https://image.pollinations.ai/prompt/A%20mystical%20oracle%20chamber%20with%20swirling%20cosmic%20purple%20and%20gold%20energy%2C%20a%20crystal%20sphere%20floating%20above%20an%20ancient%20stone%20pedestal%2C%20celestial%20symbols%20and%20constellations%20reflected%20on%20dark%20marble%20walls%2C%20ethereal%20divine%20lighting?width=512&height=288&seed=42&nologo=true&model=flux',
+  skinwalker: 'https://image.pollinations.ai/prompt/A%20seemingly%20normal%20suburban%20kitchen%20at%20twilight%20but%20something%20is%20subtly%20wrong%2C%20the%20shadows%20fall%20in%20the%20wrong%20direction%2C%20a%20family%20photo%20on%20the%20wall%20has%20too%20many%20people%20in%20it%2C%20muted%20desaturated%20colors%2C%20uncanny%20horror%20atmosphere?width=512&height=288&seed=42&nologo=true&model=flux',
+  'fever-dream': 'https://image.pollinations.ai/prompt/A%20surreal%20dreamscape%20where%20a%20grand%20piano%20made%20of%20clouds%20floats%20above%20a%20neon%20pink%20ocean%2C%20melting%20clocks%20drip%20from%20impossible%20architecture%2C%20vibrant%20psychedelic%20colors%2C%20electric%20cyan%20sky%2C%20whimsical%20surrealist%20art%20style?width=512&height=288&seed=42&nologo=true&model=flux',
 }
 
 // --- Global State ---
@@ -132,8 +132,7 @@ function renderLobby(): void {
       <!-- Mode Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="mode-grid">
         ${modes.map(mode => {
-          const imgPrompt = MODE_IMAGE_PROMPTS[mode.id] || ''
-          const imgUrl = imgPrompt ? imageClient.getImageUrl(imgPrompt, { width: 512, height: 288 }) : ''
+          const imgUrl = MODE_CARD_IMAGES[mode.id] || ''
           return `
           <div class="mode-card" data-mode="${mode.id}">
             ${imgUrl ? `
@@ -327,6 +326,9 @@ function renderGamePage(modeId: string): void {
   modal.addEventListener('click', (e) => {
     if (e.target === modal) modal.classList.remove('active')
   })
+
+  // Trigger LLM-enhanced interstitial preload while game page renders (before first turn)
+  preloadInterstitialImage(imageClient)
 }
 
 // --- Game Initialization ---
@@ -472,6 +474,9 @@ async function boot(): Promise<void> {
   initTheme()
   await showConsentIfNeeded()
   userId = getUserId()
+
+  // Start preloading an interstitial image ASAP with a fallback prompt (no LLM call)
+  preloadInterstitialImageEarly(imageClient)
 
   // Show re-engagement interstitial if returning after 30+ minutes
   const app = document.getElementById('app')!

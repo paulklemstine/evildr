@@ -179,6 +179,25 @@ async function fetchImagePrompt(): Promise<string | null> {
 // ---------------------------------------------------------------------------
 
 /**
+ * Preload an interstitial image as early as possible using ONLY a fallback prompt.
+ * No LLM call — picks a random fallback prompt for zero-latency preload on boot.
+ * Only preloads if no image is already cached (won't overwrite an existing preload).
+ */
+export function preloadInterstitialImageEarly(imageClient: ImageClient): void {
+  if (preloadedImageUrl !== null) return // Don't overwrite an already-preloaded image
+
+  const prompt = FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
+  imageClient.preloadImage(prompt, { width: 512, height: 384 }).then(url => {
+    // Only set if nothing else has preloaded in the meantime
+    if (preloadedImageUrl === null) {
+      preloadedImageUrl = url
+    }
+  }).catch(() => {
+    // Silent — fallback preload failure is non-critical
+  })
+}
+
+/**
  * Preload an image for the next interstitial while the player is playing.
  * Generates a fresh manipulative/subliminal image prompt via LLM, then preloads the image.
  * Call this after rendering each turn so the image is cached before the next loading screen.
