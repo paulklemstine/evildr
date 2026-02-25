@@ -11,7 +11,13 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       open: true,
       proxy: {
-        // LLM proxy: /api/llm/* → Google Gemini OpenAI-compatible endpoint
+        // Deep LLM proxy: /api/llm-deep/* → Cloudflare Worker (thinking models)
+        // Must be listed BEFORE /api/llm to match first
+        "/api/llm-deep": {
+          target: "https://drevil-proxy.drevil.workers.dev",
+          changeOrigin: true,
+        },
+        // Fast LLM proxy: /api/llm/* → Google Gemini OpenAI-compatible endpoint
         // Injects Authorization header server-side so the key never reaches the browser
         "/api/llm": {
           target: "https://generativelanguage.googleapis.com",

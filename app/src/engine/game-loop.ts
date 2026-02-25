@@ -392,7 +392,10 @@ export class GameLoop {
     this.state.currentUiJson = uiJsonArray
     this.state.turnNumber += 1
 
-    // 6. Render UI (immediate — no artificial delay)
+    // 6. Scroll to top of new turn
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+
+    // 7. Render UI (immediate — no artificial delay)
     try {
       const renderResult = renderUI(container, uiJsonArray)
       this.applyRenderResult(renderResult)
@@ -440,8 +443,8 @@ export class GameLoop {
       // Update session turn count
       updateSession(sessionId, { turnCount: this.state.turnNumber }).catch(() => {})
 
-      // Trigger analysis pipeline (fire-and-forget)
-      maybeRunAnalysis(llmClient, userId, sessionId, this.state.turnNumber)
+      // Trigger analysis pipeline on deep model (fire-and-forget, runs in background)
+      maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
     }
 
     // 13. Auto-save

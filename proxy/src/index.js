@@ -2,8 +2,9 @@
  * DrEvil API Proxy — Cloudflare Worker (Multi-Provider Failover)
  *
  * Routes:
- *   POST /api/llm/chat/completions → Tries multiple LLM backends with automatic failover
- *   GET  /api/image/{prompt}?...   → Pollinations (appends API key server-side)
+ *   POST /api/llm/chat/completions      → Fast backends (game turns)
+ *   POST /api/llm-deep/chat/completions  → Deep thinking backends (analysis)
+ *   GET  /api/image/{prompt}?...         → Pollinations (appends API key server-side)
  *
  * Secrets (set via `wrangler secret put`):
  *   LLM_API_KEY       — Google Gemini API key
@@ -21,47 +22,61 @@ const CORS_HEADERS = {
 };
 
 /**
- * Build the ordered list of LLM backends to try.
- * Backends without API keys are skipped automatically.
+ * Fast backends — optimized for low latency game turns.
+ * Gemini → Groq → SambaNova → fast OpenRouter models (no thinking models).
  */
-function getBackends(env) {
+function getBackendsFast(env) {
   const backends = [];
 
-  // 1. Google Gemini (primary)
+  // 1. Google Gemini (primary — ~1-3s with flash-lite)
   if (env.LLM_API_KEY) {
     backends.push({
       name: "gemini",
       target: env.LLM_TARGET || "https://generativelanguage.googleapis.com/v1beta/openai",
       key: env.LLM_API_KEY,
-      model: null, // use client's model
+      model: null, // use client's model (gemini-2.5-flash-lite)
     });
   }
 
-  // 2. OpenRouter — all strong free models (200 req/day each = massive pool)
+  // 2. Groq (fast inference hardware, ~2-5s, 10-30 RPM)
+  if (env.GROQ_KEY) {
+    backends.push({
+      name: "groq",
+      target: "https://api.groq.com/openai/v1",
+      key: env.GROQ_KEY,
+      model: "llama-3.3-70b-versatile",
+    });
+  }
+
+  // 3. SambaNova (fast inference, 20 RPM)
+  if (env.SAMBANOVA_KEY) {
+    backends.push({
+      name: "sambanova",
+      target: "https://api.sambanova.ai/v1",
+      key: env.SAMBANOVA_KEY,
+      model: "Meta-Llama-3.3-70B-Instruct",
+    });
+  }
+
+  // 4. OpenRouter — fast non-thinking models only (200 req/day each)
   if (env.OPENROUTER_KEY) {
-    const openRouterFreeModels = [
-      // Tier 1: Best quality, large context, strong JSON output
-      "meta-llama/llama-3.3-70b-instruct:free",        // 128K ctx, GPT-4 equivalent
-      "nousresearch/hermes-3-llama-3.1-405b:free",      // 131K ctx, largest free model
-      "qwen/qwen3-235b-a22b-thinking-2507",             // 131K ctx, strong reasoning
-      "qwen/qwen3-coder:free",                          // 262K ctx, excellent at structured output
-      "openai/gpt-oss-120b:free",                       // 131K ctx, large open model
-      "google/gemma-3-27b-it:free",                     // 131K ctx, Google quality
-      // Tier 2: Good quality, solid fallbacks
-      "mistralai/mistral-small-3.1-24b-instruct:free",  // 128K ctx, strong instruction following
-      "stepfun/step-3.5-flash:free",                    // 256K ctx, huge context
-      "nvidia/nemotron-3-nano-30b-a3b:free",            // 256K ctx, nvidia quality
-      "upstage/solar-pro-3:free",                       // 128K ctx
-      "arcee-ai/trinity-large-preview:free",            // 131K ctx
-      "z-ai/glm-4.5-air:free",                         // 131K ctx
-      "openai/gpt-oss-20b:free",                        // 131K ctx
-      "qwen/qwen3-next-80b-a3b-instruct:free",         // 262K ctx
-      // Tier 3: Smaller but functional
+    const fastModels = [
+      "meta-llama/llama-3.3-70b-instruct:free",              // 128K ctx, fast
+      "google/gemma-3-27b-it:free",                           // 131K ctx, Google quality
+      "mistralai/mistral-small-3.1-24b-instruct:free",        // 128K ctx, strong instruction following
+      "qwen/qwen3-coder:free",                                // 262K ctx, good at structured output
+      "stepfun/step-3.5-flash:free",                          // 256K ctx, fast
+      "nvidia/nemotron-3-nano-30b-a3b:free",                  // 256K ctx
+      "upstage/solar-pro-3:free",                             // 128K ctx
+      "arcee-ai/trinity-large-preview:free",                  // 131K ctx
+      "z-ai/glm-4.5-air:free",                               // 131K ctx
+      "openai/gpt-oss-20b:free",                              // 131K ctx
+      "qwen/qwen3-next-80b-a3b-instruct:free",               // 262K ctx
+      "google/gemma-3-12b-it:free",                           // 32K ctx
+      "nvidia/nemotron-nano-12b-v2-vl:free",                  // 128K ctx
       "cognitivecomputations/dolphin-mistral-24b-venice-edition:free", // 32K ctx, uncensored
-      "google/gemma-3-12b-it:free",                     // 32K ctx
-      "nvidia/nemotron-nano-12b-v2-vl:free",            // 128K ctx
     ];
-    for (const model of openRouterFreeModels) {
+    for (const model of fastModels) {
       backends.push({
         name: `openrouter:${model.split("/")[1].split(":")[0]}`,
         target: "https://openrouter.ai/api/v1",
@@ -71,7 +86,7 @@ function getBackends(env) {
     }
   }
 
-  // 3. OpenCode Zen — free models (no credit card needed)
+  // 5. OpenCode Zen — free models (no credit card needed)
   if (env.OPENCODE_KEY) {
     const openCodeFreeModels = [
       "kimi-k2.5-free",              // Moonshot AI, strong reasoning
@@ -88,23 +103,50 @@ function getBackends(env) {
     }
   }
 
-  // 4. Groq (fast inference, 10-30 RPM)
-  if (env.GROQ_KEY) {
+  return backends;
+}
+
+/**
+ * Deep backends — optimized for quality analysis (background tasks).
+ * Large thinking models first, then fallback to Gemini.
+ */
+function getBackendsDeep(env) {
+  const backends = [];
+
+  // 1. OpenRouter — large thinking/reasoning models (slow but thorough)
+  if (env.OPENROUTER_KEY) {
+    const deepModels = [
+      "qwen/qwen3-235b-a22b-thinking-2507",             // 131K ctx, deep reasoning
+      "nousresearch/hermes-3-llama-3.1-405b:free",       // 131K ctx, largest free model
+      "openai/gpt-oss-120b:free",                        // 131K ctx, large open model
+    ];
+    for (const model of deepModels) {
+      backends.push({
+        name: `openrouter:${model.split("/")[1].split(":")[0]}`,
+        target: "https://openrouter.ai/api/v1",
+        key: env.OPENROUTER_KEY,
+        model,
+      });
+    }
+  }
+
+  // 2. OpenCode Zen — strong reasoning models
+  if (env.OPENCODE_KEY) {
     backends.push({
-      name: "groq",
-      target: "https://api.groq.com/openai/v1",
-      key: env.GROQ_KEY,
-      model: "llama-3.3-70b-versatile",
+      name: "opencode:kimi-k2.5",
+      target: "https://opencode.ai/zen/v1",
+      key: env.OPENCODE_KEY,
+      model: "kimi-k2.5-free",
     });
   }
 
-  // 4. SambaNova (20 RPM, 200K tokens/day)
-  if (env.SAMBANOVA_KEY) {
+  // 3. Fallback to Gemini
+  if (env.LLM_API_KEY) {
     backends.push({
-      name: "sambanova",
-      target: "https://api.sambanova.ai/v1",
-      key: env.SAMBANOVA_KEY,
-      model: "Meta-Llama-3.3-70B-Instruct",
+      name: "gemini",
+      target: env.LLM_TARGET || "https://generativelanguage.googleapis.com/v1beta/openai",
+      key: env.LLM_API_KEY,
+      model: null,
     });
   }
 
@@ -136,6 +178,47 @@ async function tryBackend(backend, bodyObj) {
   return { ok: response.ok, status: response.status, data, contentType: response.headers.get("Content-Type") };
 }
 
+/**
+ * Route an LLM request through a list of backends with failover.
+ */
+async function routeLLM(backends, bodyObj) {
+  let lastResult = null;
+
+  for (const backend of backends) {
+    try {
+      const result = await tryBackend(backend, bodyObj);
+
+      if (result.ok) {
+        return new Response(result.data, {
+          status: 200,
+          headers: {
+            "Content-Type": result.contentType || "application/json",
+            "X-LLM-Backend": backend.name,
+            ...CORS_HEADERS,
+          },
+        });
+      }
+
+      console.log(`Backend "${backend.name}" returned ${result.status}, trying next...`);
+      lastResult = result;
+      continue;
+    } catch (err) {
+      console.log(`Backend "${backend.name}" network error: ${err.message}, trying next...`);
+      lastResult = { ok: false, status: 502, data: JSON.stringify({ error: `Network error: ${err.message}` }) };
+      continue;
+    }
+  }
+
+  return new Response(lastResult?.data || JSON.stringify({ error: "All LLM backends failed" }), {
+    status: lastResult?.status || 502,
+    headers: {
+      "Content-Type": "application/json",
+      "X-LLM-Backend": "none",
+      ...CORS_HEADERS,
+    },
+  });
+}
+
 export default {
   async fetch(request, env) {
     // Handle CORS preflight
@@ -147,7 +230,38 @@ export default {
     const path = url.pathname;
 
     try {
-      // --- LLM Proxy (Multi-Provider Failover) ---
+      // --- Deep LLM Proxy (thinking models for background analysis) ---
+      if (path.startsWith("/api/llm-deep")) {
+        if (request.method !== "POST") {
+          return new Response(JSON.stringify({ error: "Method not allowed" }), {
+            status: 405,
+            headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+          });
+        }
+
+        const bodyText = await request.text();
+        let bodyObj;
+        try {
+          bodyObj = JSON.parse(bodyText);
+        } catch {
+          return new Response(JSON.stringify({ error: "Invalid JSON body" }), {
+            status: 400,
+            headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+          });
+        }
+
+        const backends = getBackendsDeep(env);
+        if (backends.length === 0) {
+          return new Response(JSON.stringify({ error: "No deep LLM backends configured" }), {
+            status: 503,
+            headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+          });
+        }
+
+        return routeLLM(backends, bodyObj);
+      }
+
+      // --- Fast LLM Proxy (game turns — low latency) ---
       if (path.startsWith("/api/llm")) {
         if (request.method !== "POST") {
           return new Response(JSON.stringify({ error: "Method not allowed" }), {
@@ -167,7 +281,7 @@ export default {
           });
         }
 
-        const backends = getBackends(env);
+        const backends = getBackendsFast(env);
         if (backends.length === 0) {
           return new Response(JSON.stringify({ error: "No LLM backends configured" }), {
             status: 503,
@@ -175,44 +289,7 @@ export default {
           });
         }
 
-        let lastResult = null;
-
-        for (const backend of backends) {
-          try {
-            const result = await tryBackend(backend, bodyObj);
-
-            if (result.ok) {
-              // Success — return the response
-              return new Response(result.data, {
-                status: 200,
-                headers: {
-                  "Content-Type": result.contentType || "application/json",
-                  "X-LLM-Backend": backend.name,
-                  ...CORS_HEADERS,
-                },
-              });
-            }
-
-            // Any error — try next backend
-            console.log(`Backend "${backend.name}" returned ${result.status}, trying next...`);
-            lastResult = result;
-            continue;
-          } catch (err) {
-            console.log(`Backend "${backend.name}" network error: ${err.message}, trying next...`);
-            lastResult = { ok: false, status: 502, data: JSON.stringify({ error: `Network error: ${err.message}` }) };
-            continue;
-          }
-        }
-
-        // All backends exhausted — return last error
-        return new Response(lastResult?.data || JSON.stringify({ error: "All LLM backends failed" }), {
-          status: lastResult?.status || 502,
-          headers: {
-            "Content-Type": "application/json",
-            "X-LLM-Backend": "none",
-            ...CORS_HEADERS,
-          },
-        });
+        return routeLLM(backends, bodyObj);
       }
 
       // --- Image Proxy ---
@@ -243,11 +320,13 @@ export default {
 
       // --- Health check ---
       if (path === "/" || path === "/health") {
-        const backends = getBackends(env);
+        const fast = getBackendsFast(env);
+        const deep = getBackendsDeep(env);
         return new Response(JSON.stringify({
           status: "ok",
           service: "drevil-proxy",
-          backends: backends.map(b => b.name),
+          fast: fast.map(b => b.name),
+          deep: deep.map(b => b.name),
         }), {
           headers: { "Content-Type": "application/json", ...CORS_HEADERS },
         });
