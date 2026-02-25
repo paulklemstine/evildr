@@ -55,6 +55,7 @@ Create an IRRESISTIBLE opening scene for a ${genre} adventure that's already HAP
   choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
   active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
   consequence_queue: []}
+- Include a hidden "gemini_facing_analysis" element: "Opening scenario. First choice data: [what their choices reveal about courage, risk tolerance, decision-making style]. Player profile forming."
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
@@ -95,7 +96,8 @@ ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create d
 6. The LAST visible element MUST be a "radio" with EXACTLY 4 choices following ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic.
 7. Apply ALL storytelling craft rules: BUT/THEREFORE causation, consequence echo, seed planting/callbacks, sensory writing, tension rhythm.
 8. Update notes: story_state, archetype, stakes, open_threads, turn_count, intensity AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue).
-9. All choices presuppose continued engagement. No "wait" or "rest" options.
+9. Include a hidden "gemini_facing_analysis" element with your cumulative psychological analysis of the player based on their adventure choices — confirmed traits, risk profile, behavioral patterns, and strategic insights.
+10. All choices presuppose continued engagement. No "wait" or "rest" options.
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
@@ -129,8 +131,9 @@ RULES:
 1. Return a valid JSON array of UI elements — nothing else.
 2. Use a RICH MIX of element types every turn — but ALL framed as IN-STORY ACTIONS. Sliders are game mechanics, checkboxes are action decisions, textfields are in-character dialogue. NEVER "how do you feel?" — ALWAYS "what do you DO?"
 3. The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting.
-4. Always include ONE hidden element: "notes" with full state.
-5. EVERY TURN MUST END ON A CLIFFHANGER.
+4. ALWAYS include a hidden "notes" element with full state (story_state, archetype, stakes, open_threads, turn_count, planted_seeds, choice_pattern, consequence_queue). This is MANDATORY every turn.
+5. ALWAYS include a hidden "gemini_facing_analysis" element with cumulative psychological analysis.
+6. EVERY TURN MUST END ON A CLIFFHANGER.
 
 ### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"GENERATE A SHORT EVOCATIVE TITLE for this scene","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
