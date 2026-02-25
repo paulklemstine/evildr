@@ -270,25 +270,33 @@ function parseLLMResponse(raw: string): UIElement[] {
         return parsed as UIElement[]
       }
     } catch {
-      // Full array parse failed — try extracting individual objects
+      // Full array parse failed — try jsonrepair on the array
     }
 
-    // Extract individual JSON objects from the array, skipping broken ones
-    // (e.g. hidden notes fields with unescaped quotes inside values)
+    // Try jsonrepair on the full array (fixes unescaped quotes, trailing commas, etc.)
+    try {
+      const repaired = jsonrepair(arrayText)
+      const parsed: unknown = JSON.parse(repaired)
+      if (Array.isArray(parsed) && parsed.length > 0) {
+        return parsed as UIElement[]
+      }
+    } catch {
+      // jsonrepair failed on array — fall through to individual extraction
+    }
+
+    // Extract individual JSON objects from the array, repairing broken ones
     const objects = extractIndividualObjects(arrayText)
     if (objects.length > 0) {
-      console.warn(`parseLLMResponse: extracted ${objects.length} valid objects from malformed array`)
       return objects as unknown as UIElement[]
     }
   }
 
-  // Try jsonrepair as a last resort
+  // Try jsonrepair on the full text as a last resort
   try {
     const target = firstBracket !== -1 ? text.substring(firstBracket) : text
     const repaired = jsonrepair(target)
     const parsed: unknown = JSON.parse(repaired)
     if (Array.isArray(parsed) && parsed.length > 0) {
-      console.warn(`parseLLMResponse: jsonrepair fixed malformed JSON (${parsed.length} elements)`)
       return parsed as UIElement[]
     }
     return extractUIArray(parsed, repaired)
@@ -300,6 +308,57 @@ function parseLLMResponse(raw: string): UIElement[] {
   throw new Error(
     `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
   )
+}
+
+/**
+ * Manually extract fields from a broken JSON object where the `value` field
+ * contains unescaped quotes. Works for simple objects like hidden/notes fields
+ * where `type`, `name`, and `value` are the only fields.
+ *
+ * Extracts `type` and `name` via regex, then treats everything between
+ * the last `"value": "` and the final `"` before `}` as the raw value,
+ * escaping any inner quotes.
+ */
+function manualExtractObject(chunk: string): Record<string, unknown> | null {
+  const typeMatch = chunk.match(/"type"\s*:\s*"([^"]+)"/)
+  if (!typeMatch) return null
+
+  const nameMatch = chunk.match(/"name"\s*:\s*"([^"]+)"/)
+
+  // Find the value field — match `"value" : "` then capture everything until end
+  const valueStart = chunk.match(/"value"\s*:\s*"/)
+  if (!valueStart || valueStart.index === undefined) {
+    // No value field — build what we have
+    const obj: Record<string, unknown> = { type: typeMatch[1] }
+    if (nameMatch) obj.name = nameMatch[1]
+    return obj
+  }
+
+  const valueContentStart = valueStart.index + valueStart[0].length
+  // Find the last `"` before the closing `}` — that's the end of the value
+  let valueContentEnd = chunk.length - 1
+  while (valueContentEnd > valueContentStart && chunk[valueContentEnd] !== '}') valueContentEnd--
+  // Now back up past whitespace and the closing `"`
+  valueContentEnd-- // skip `}`
+  while (valueContentEnd > valueContentStart && /\s/.test(chunk[valueContentEnd])) valueContentEnd--
+  if (chunk[valueContentEnd] === '"') valueContentEnd-- // skip closing `"`
+
+  if (valueContentEnd <= valueContentStart) return null
+
+  let rawValue = chunk.substring(valueContentStart, valueContentEnd + 1)
+  // Escape unescaped quotes (but don't double-escape already-escaped ones)
+  rawValue = rawValue.replace(/\\"/g, '\x00ESCAPED_QUOTE\x00')
+  rawValue = rawValue.replace(/"/g, '\\"')
+  rawValue = rawValue.replace(/\x00ESCAPED_QUOTE\x00/g, '\\"')
+  // Escape unescaped newlines
+  rawValue = rawValue.replace(/(?<!\\)\n/g, '\\n')
+  rawValue = rawValue.replace(/(?<!\\)\r/g, '\\r')
+  rawValue = rawValue.replace(/(?<!\\)\t/g, '\\t')
+
+  const obj: Record<string, unknown> = { type: typeMatch[1] }
+  if (nameMatch) obj.name = nameMatch[1]
+  obj.value = rawValue
+  return obj
 }
 
 /**
@@ -327,10 +386,23 @@ function extractIndividualObjects(arrayText: string): Record<string, unknown>[] 
       const obj = JSON.parse(chunk) as Record<string, unknown>
       if (obj && typeof obj === 'object') results.push(obj)
     } catch {
-      const typeMatch = chunk.match(/"type"\s*:\s*"([^"]+)"/)
-      const nameMatch = chunk.match(/"name"\s*:\s*"([^"]+)"/)
-      if (typeMatch) {
-        console.warn(`parseLLMResponse: skipping broken ${typeMatch[1]}/${nameMatch?.[1] ?? '?'} object`)
+      // Try jsonrepair on the broken chunk before giving up
+      try {
+        const repaired = jsonrepair(chunk)
+        const obj = JSON.parse(repaired) as Record<string, unknown>
+        if (obj && typeof obj === 'object') results.push(obj)
+      } catch {
+        // Last resort: manually extract fields from simple objects (e.g. hidden/notes)
+        const manualObj = manualExtractObject(chunk)
+        if (manualObj) {
+          results.push(manualObj)
+        } else {
+          const typeMatch = chunk.match(/"type"\s*:\s*"([^"]+)"/)
+          const nameMatch = chunk.match(/"name"\s*:\s*"([^"]+)"/)
+          if (typeMatch) {
+            console.warn(`parseLLMResponse: skipping broken ${typeMatch[1]}/${nameMatch?.[1] ?? '?'} object`)
+          }
+        }
       }
     }
   }
