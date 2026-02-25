@@ -12,6 +12,7 @@ export interface LLMResponse {
   content: string
   model: string
   tokensUsed: number
+  finishReason: string
 }
 
 interface ChatCompletionMessage {
@@ -64,8 +65,8 @@ const RETRY_DELAY_MS = 2000
 const RATE_LIMIT_DELAY_MS = 3000
 // Multiplier applied to max_tokens when response content is empty (reasoning budget consumed)
 const EMPTY_CONTENT_TOKEN_MULTIPLIER = 1.5
-// Per-request fetch timeout (proxy may retry multiple backends, cap total wait)
-const FETCH_TIMEOUT_MS = 60_000
+// Per-request fetch timeout (orchestrator calls can take 60-90s with mistral)
+const FETCH_TIMEOUT_MS = 120_000
 
 /**
  * Strips markdown code fences from a string.
@@ -139,6 +140,23 @@ export class LLMClient {
           }
 
           lastError = new Error(`Empty content from model "${model}"`)
+          await sleep(RETRY_DELAY_MS)
+          continue
+        }
+
+        // Check for truncated output (finish_reason: "length" means max_tokens was hit)
+        if (result.finishReason === 'length') {
+          console.warn(
+            `LLMClient: truncated response from model "${model}" (attempt ${attempt + 1}/${maxAttempts}, ` +
+            `${result.tokensUsed} tokens, max_tokens=${currentMaxTokens}). Retrying with more tokens.`
+          )
+
+          if (currentMaxTokens < this.config.maxTokens * EMPTY_CONTENT_TOKEN_MULTIPLIER) {
+            currentMaxTokens = Math.ceil(this.config.maxTokens * EMPTY_CONTENT_TOKEN_MULTIPLIER)
+            console.info(`LLMClient: retrying with increased max_tokens=${currentMaxTokens}`)
+          }
+
+          lastError = new Error(`Truncated response from model "${model}"`)
           await sleep(RETRY_DELAY_MS)
           continue
         }
@@ -259,6 +277,7 @@ export class LLMClient {
 
     const rawContent = data.choices[0].message.content ?? ''
     const content = stripCodeFences(rawContent)
+    const finishReason = data.choices[0].finish_reason ?? 'unknown'
 
     const tokensUsed =
       data.usage?.total_tokens ??
@@ -269,6 +288,7 @@ export class LLMClient {
       content,
       model: data.model ?? model,
       tokensUsed,
+      finishReason,
     }
   }
 }

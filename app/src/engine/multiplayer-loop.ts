@@ -24,6 +24,7 @@ import { attachCelebrations } from './celebration.ts'
 import { applyMoodFromUI } from './mood-colors.ts'
 import type { FlaggedPromptBuilder } from '../modes/flagged/prompts.ts'
 import { ORCHESTRATOR_DELIMITER } from '../modes/flagged/prompts.ts'
+import { jsonrepair } from 'jsonrepair'
 
 // ---------------------------------------------------------------------------
 // Inline localStorage helpers (avoids importing auto-save.ts which is typed
@@ -155,6 +156,85 @@ const ORCHESTRATOR_TIMEOUT_MS = 180000    // 3 minutes for orchestrator from hos
 // ---------------------------------------------------------------------------
 
 /**
+ * Fix unquoted string values in malformed JSON from LLMs.
+ * Handles: "key": bare text value ", → "key": "bare text value",
+ */
+function fixUnquotedJsonValues(text: string): string {
+  const result: string[] = []
+  let i = 0
+
+  while (i < text.length) {
+    if (text[i] === '"') {
+      // Read quoted string
+      let j = i + 1
+      while (j < text.length) {
+        if (text[j] === '\\') { j += 2; continue }
+        if (text[j] === '"') { j++; break }
+        j++
+      }
+      result.push(text.substring(i, j))
+      i = j
+
+      // Skip whitespace
+      let ws = ''
+      while (i < text.length && /\s/.test(text[i])) { ws += text[i]; i++ }
+
+      // Check if followed by colon (making it a key)
+      if (i < text.length && text[i] === ':') {
+        result.push(ws, ':')
+        i++
+
+        // Skip whitespace after colon
+        let ws2 = ''
+        while (i < text.length && /\s/.test(text[i])) { ws2 += text[i]; i++ }
+        result.push(ws2)
+
+        // If next char is NOT a valid JSON value start, it's an unquoted string
+        if (i < text.length &&
+            text[i] !== '"' && text[i] !== '{' && text[i] !== '[' && text[i] !== '-' &&
+            !/[0-9]/.test(text[i]) &&
+            !text.substring(i).startsWith('true') &&
+            !text.substring(i).startsWith('false') &&
+            !text.substring(i).startsWith('null')) {
+          // Scan for the end: a closing " before , or } or ]
+          let searchPos = i
+          let valueEnd = -1
+          while (searchPos < text.length) {
+            if (text[searchPos] === '"') {
+              let afterQuote = searchPos + 1
+              while (afterQuote < text.length && /\s/.test(text[afterQuote])) afterQuote++
+              if (afterQuote < text.length && /[,}\]]/.test(text[afterQuote])) {
+                valueEnd = searchPos + 1
+                break
+              }
+            }
+            searchPos++
+          }
+          if (valueEnd > i) {
+            let rawValue = text.substring(i, valueEnd)
+            if (rawValue.endsWith('"')) rawValue = rawValue.slice(0, -1)
+            rawValue = rawValue.trim()
+            const escaped = rawValue.replace(/\\/g, '\\\\').replace(/"/g, '\\"')
+            result.push('"' + escaped + '"')
+            i = valueEnd
+          } else {
+            result.push(text[i])
+            i++
+          }
+        }
+      } else {
+        result.push(ws)
+      }
+    } else {
+      result.push(text[i])
+      i++
+    }
+  }
+
+  return result.join('')
+}
+
+/**
  * Parse a raw LLM response string into a UIElement[].
  * Mirrors the parser from game-loop.ts for consistency.
  */
@@ -172,49 +252,90 @@ function parseLLMResponse(raw: string): UIElement[] {
     const parsed: unknown = JSON.parse(text)
     return extractUIArray(parsed, text)
   } catch {
-    // Direct parse failed
+    // Direct parse failed — try repair strategies
   }
+
+  // Fix unquoted string values (common LLM JSON error: "key": bare text instead of "key": "bare text")
+  text = fixUnquotedJsonValues(text)
 
   // Find embedded JSON array
   const firstBracket = text.indexOf('[')
   const lastBracket = text.lastIndexOf(']')
   if (firstBracket !== -1 && lastBracket > firstBracket) {
+    const arrayText = text.substring(firstBracket, lastBracket + 1)
     try {
-      const arrayText = text.substring(firstBracket, lastBracket + 1)
       const parsed: unknown = JSON.parse(arrayText)
       if (Array.isArray(parsed)) {
+        console.warn(`parseLLMResponse: fixed malformed JSON (${(parsed as unknown[]).length} elements)`)
         return parsed as UIElement[]
       }
     } catch {
-      // Array extraction failed
+      // Full array parse failed — try extracting individual objects
+    }
+
+    // Extract individual JSON objects from the array, skipping broken ones
+    // (e.g. hidden notes fields with unescaped quotes inside values)
+    const objects = extractIndividualObjects(arrayText)
+    if (objects.length > 0) {
+      console.warn(`parseLLMResponse: extracted ${objects.length} valid objects from malformed array`)
+      return objects as unknown as UIElement[]
     }
   }
 
-  // Find embedded JSON object
-  const firstBrace = text.indexOf('{')
-  const lastBrace = text.lastIndexOf('}')
-  if (firstBrace !== -1 && lastBrace > firstBrace) {
-    const objText = text.substring(firstBrace, lastBrace + 1)
-    try {
-      const parsed: unknown = JSON.parse(objText)
-      return extractUIArray(parsed, objText)
-    } catch {
-      // Single object parse failed
+  // Try jsonrepair as a last resort
+  try {
+    const target = firstBracket !== -1 ? text.substring(firstBracket) : text
+    const repaired = jsonrepair(target)
+    const parsed: unknown = JSON.parse(repaired)
+    if (Array.isArray(parsed) && parsed.length > 0) {
+      console.warn(`parseLLMResponse: jsonrepair fixed malformed JSON (${parsed.length} elements)`)
+      return parsed as UIElement[]
     }
-    try {
-      const arrayWrapped = `[${objText}]`
-      const parsed: unknown = JSON.parse(arrayWrapped)
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed as UIElement[]
-      }
-    } catch {
-      // Array wrapping failed
-    }
+    return extractUIArray(parsed, repaired)
+  } catch {
+    // jsonrepair failed
   }
 
+  console.error(`parseLLMResponse failed. Length: ${text.length}, last 200 chars: ...${text.substring(text.length - 200)}`)
   throw new Error(
     `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
   )
+}
+
+/**
+ * Extract individual JSON objects from a malformed JSON array string.
+ * Uses brace-depth tracking to find object boundaries, then tries to parse
+ * each individually. Skips unparseable objects (e.g. hidden fields with
+ * unescaped quotes). Returns all successfully parsed objects.
+ */
+function extractIndividualObjects(arrayText: string): Record<string, unknown>[] {
+  const results: Record<string, unknown>[] = []
+
+  let inner = arrayText.trim()
+  if (inner.startsWith('[')) inner = inner.substring(1)
+  if (inner.endsWith(']')) inner = inner.substring(0, inner.length - 1)
+
+  // Split at },{  boundaries (lookahead preserves the { on the next chunk)
+  const chunks = inner.split(/\}\s*,\s*(?=\{)/)
+
+  for (const raw of chunks) {
+    let chunk = raw.trim()
+    if (!chunk.startsWith('{')) chunk = '{' + chunk
+    if (!chunk.endsWith('}')) chunk = chunk + '}'
+
+    try {
+      const obj = JSON.parse(chunk) as Record<string, unknown>
+      if (obj && typeof obj === 'object') results.push(obj)
+    } catch {
+      const typeMatch = chunk.match(/"type"\s*:\s*"([^"]+)"/)
+      const nameMatch = chunk.match(/"name"\s*:\s*"([^"]+)"/)
+      if (typeMatch) {
+        console.warn(`parseLLMResponse: skipping broken ${typeMatch[1]}/${nameMatch?.[1] ?? '?'} object`)
+      }
+    }
+  }
+
+  return results
 }
 
 function extractUIArray(parsed: unknown, textForError: string): UIElement[] {

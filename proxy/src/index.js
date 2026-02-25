@@ -21,7 +21,8 @@ const CORS_HEADERS = {
 };
 
 // Maximum time to wait for a Pollinations LLM response
-const LLM_TIMEOUT_MS = 45000;
+// Orchestrator calls with mistral can take 30-60s for complex multi-section output
+const LLM_TIMEOUT_MS = 120000;
 
 /**
  * Proxy an LLM chat completion request to Pollinations.

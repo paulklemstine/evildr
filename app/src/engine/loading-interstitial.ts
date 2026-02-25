@@ -134,7 +134,7 @@ async function fetchLLMWisdom(): Promise<string[]> {
         model: 'nova-fast',
         messages: [{ role: 'user', content: WISDOM_PROMPT }],
         max_tokens: 800,
-        temperature: 1.2,
+        temperature: 1.0,
       }),
     })
     if (!response.ok) return []
@@ -169,7 +169,7 @@ async function fetchImagePrompt(): Promise<string | null> {
         model: 'nova-fast',
         messages: [{ role: 'user', content: IMAGE_PROMPT_GENERATOR }],
         max_tokens: 300,
-        temperature: 1.3,
+        temperature: 1.0,
       }),
     })
     if (!response.ok) return null
