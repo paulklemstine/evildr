@@ -10,8 +10,11 @@ const ANALYSIS_INTERVAL = 5 // Analyze every N turns
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
 const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis calls
 
-// Pollinations.ai — free LLM API for background analysis
-const DEEP_PROXY = 'https://gen.pollinations.ai/v1'
+// Background analysis uses the deep route — thinking models for thorough profiling.
+// In dev: Vite proxy → Cloudflare Worker. In prod: Cloudflare Worker directly.
+const DEEP_PROXY = import.meta.env.DEV
+  ? '/api/llm-deep'
+  : 'https://drevil-proxy.drevil.workers.dev/api/llm-deep'
 
 let lastAnalysisTime = 0
 let pendingAnalysis: ReturnType<typeof setTimeout> | null = null

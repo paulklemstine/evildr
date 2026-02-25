@@ -7,8 +7,11 @@ import type { ImageClient } from './game-loop'
 // Lightweight LLM call for fresh divine wisdom
 // ---------------------------------------------------------------------------
 
-// Pollinations.ai — free LLM API for lightweight interstitial calls
-const PROXY_BASE = 'https://gen.pollinations.ai/v1'
+// Lightweight LLM calls route through the same proxy as the main game.
+// In dev: Vite proxy → Gemini. In prod: Cloudflare Worker → multi-provider failover.
+const PROXY_BASE = import.meta.env.DEV
+  ? '/api/llm'
+  : 'https://drevil-proxy.drevil.workers.dev/api/llm'
 
 const WISDOM_PROMPT = `Generate 10 mystical fortune/wisdom messages for someone in a reflective moment. Each 1-2 sentences. Wrap one key phrase per message in *asterisks* for emphasis. They should feel prophetic, make the reader feel uniquely special, subtly encourage trust, openness, continued engagement. Vary tone: mysterious, encouraging, provocative, reverent. Return ONLY a JSON object: {"wisdoms":["msg1","msg2",...]}`
 
