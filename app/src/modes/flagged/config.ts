@@ -1,5 +1,5 @@
 // Flagged mode configuration — AI-orchestrated blind dating simulation
-// Two players meet on a blind date. The AI matchmaker (Dr. Gemini) secretly
+// Two players meet on a blind date. The AI matchmaker (Dr. Evil) secretly
 // profiles them both, generating green flags and red flags visible only to
 // the other player.
 
