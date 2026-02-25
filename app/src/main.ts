@@ -39,6 +39,7 @@ let userId: string = ''
 let multiplayerLoop: MultiplayerGameLoop | null = null
 let roomHandle: RoomHandle | null = null
 let guestHandle: GuestHandle | null = null
+let pendingPartnerMessages: unknown[] = [] // buffer messages arriving before loop is created
 
 // --- API Clients ---
 // No API keys in client code — auth is injected server-side by the proxy
@@ -601,14 +602,26 @@ function showMultiplayerLobby(): void {
           }, 800)
         },
         onPartnerLeft: () => {
+          // Update lobby UI if still visible
           const waitingEl = document.getElementById('create-room-waiting')
           if (waitingEl) {
             waitingEl.textContent = 'Your date disconnected.'
             waitingEl.style.color = '#e11d48'
           }
+          // Also update in-game UI if the game is running
+          const errorEl = document.getElementById('mp-error-display')
+          if (errorEl) {
+            errorEl.textContent = 'Your date has disconnected.'
+            errorEl.style.display = 'block'
+          }
         },
         onPartnerData: (data: unknown) => {
-          if (multiplayerLoop) multiplayerLoop.handlePartnerData(data)
+          if (multiplayerLoop) {
+            multiplayerLoop.handlePartnerData(data)
+          } else {
+            // Buffer messages that arrive before the loop is created
+            pendingPartnerMessages.push(data)
+          }
         },
       })
 
@@ -675,7 +688,12 @@ function showMultiplayerLobby(): void {
           }
         },
         onData: (data: unknown) => {
-          if (multiplayerLoop) multiplayerLoop.handlePartnerData(data)
+          if (multiplayerLoop) {
+            multiplayerLoop.handlePartnerData(data)
+          } else {
+            // Buffer messages that arrive before the loop is created
+            pendingPartnerMessages.push(data)
+          }
         },
       })
 
@@ -900,6 +918,14 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
     if (multiplayerLoop) multiplayerLoop.submitMyActions()
   })
 
+  // Replay any messages that arrived before the loop was created
+  if (pendingPartnerMessages.length > 0) {
+    const buffered = pendingPartnerMessages.splice(0)
+    for (const msg of buffered) {
+      multiplayerLoop.handlePartnerData(msg)
+    }
+  }
+
   // Auto-start first turn
   multiplayerLoop.startFirstTurn()
 }
@@ -908,6 +934,7 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
 
 /** Tear down any active multiplayer state. */
 function cleanupMultiplayer(): void {
+  pendingPartnerMessages = []
   if (multiplayerLoop) { multiplayerLoop.reset(); multiplayerLoop = null }
   if (roomHandle) { roomHandle.destroy(); roomHandle = null }
   if (guestHandle) { guestHandle.destroy(); guestHandle = null }
