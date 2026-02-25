@@ -6,8 +6,9 @@ import type { UIElement, RenderResult } from './renderer.ts'
 import { renderUI, collectInputState } from './renderer.ts'
 import { saveGameState, loadGameState as loadSavedState } from './auto-save.ts'
 import { InputTracker } from '../profiling/input-tracker'
-import { saveTurn, saveSession, updateSession, getAnalysesBySession } from '../profiling/db'
+import { saveTurn, saveSession, updateSession, getAnalysesBySession, getTurnsBySession } from '../profiling/db'
 import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
+import { uploadReport } from '../api/report-uploader'
 import { applyTypewriter } from './typewriter'
 import { cascadeReveal, pulseInteractive } from './anticipation'
 import { attachCelebrations } from './celebration'
@@ -449,6 +450,9 @@ export class GameLoop {
       // Update session turn count
       updateSession(sessionId, { turnCount: this.state.turnNumber }).catch(() => {})
 
+      // Upload report to server every turn (fire-and-forget)
+      this.uploadCurrentReport(userId, sessionId).catch(() => {})
+
       // Trigger analysis pipeline on deep model (fire-and-forget, runs in background)
       maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
     }
@@ -459,6 +463,24 @@ export class GameLoop {
     // 15. Notify
     onStateChange(this.getState())
     onLoading(false)
+  }
+
+  /**
+   * Upload the current session report to the server for admin browsing.
+   */
+  private async uploadCurrentReport(userId: string, sessionId: string): Promise<void> {
+    const turns = await getTurnsBySession(sessionId)
+    const analyses = await getAnalysesBySession(sessionId)
+    await uploadReport({
+      sessionId,
+      userId,
+      mode: this.state.mode,
+      genre: this.config.genre,
+      startedAt: turns.length > 0 ? turns[0].timestamp : Date.now(),
+      turnCount: turns.length,
+      turns,
+      analyses,
+    })
   }
 
   /**
