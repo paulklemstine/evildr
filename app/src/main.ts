@@ -599,7 +599,7 @@ function showMultiplayerLobby(): void {
             startMultiplayerGame(true, (data: unknown) => {
               if (roomHandle) roomHandle.send(data)
             })
-          }, 800)
+          }, 300)
         },
         onPartnerLeft: () => {
           // Update lobby UI if still visible
@@ -675,7 +675,7 @@ function showMultiplayerLobby(): void {
             startMultiplayerGame(false, (data: unknown) => {
               if (guestHandle) guestHandle.send(data)
             })
-          }, 800)
+          }, 300)
         },
         onDisconnected: () => {
           if (multiplayerLoop) {

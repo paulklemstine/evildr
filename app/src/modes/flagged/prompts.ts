@@ -53,8 +53,10 @@ export function createFlaggedPromptBuilder(): FlaggedPromptBuilder {
       player1Notes: string,
       player2Notes: string,
     ): string {
-      const historyBlock = history
-        .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nActions: ${h.actions}`)
+      // Only send last 3 turns, actions only (notes/dossier carry the full context)
+      const recentHistory = history.slice(-3)
+      const historyBlock = recentHistory
+        .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
       return `${ORCHESTRATOR_MAIN}
@@ -95,9 +97,7 @@ ${orchestratorInstructions}
 
 ### TASK ###
 Generate a JSON UI array for this player based on the orchestrator instructions above.
-Follow ALL element specifications, color protocol, and behavioral directives.
 Include ALL required hidden elements (notes, green_flags, red_flags, own_clinical_analysis, partner_clinical_analysis).
-Use a RICH VARIETY of UI elements. Surprise with variety.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
@@ -245,22 +245,8 @@ The value of the hidden "notes" element MUST be a markdown string following this
 
 ${NARRATIVE_TRACKING_TEMPLATE}`
 
-const ARCHETYPE_PROTOCOL = `### DATING ARCHETYPE PROTOCOL ###
-Assign and evolve each player's dating archetype based on their ACTIONS on the date:
-
-**Action-Based Dating Archetypes:**
-- **The Charmer** — smooth, confident, knows exactly what to say. Are they genuine or performing?
-- **The Interviewer** — asks lots of questions, stays in control of the conversation. Curious or deflecting?
-- **The Storyteller** — dominates with entertaining stories. Engaging or avoiding real connection?
-- **The Enigma** — reveals little, maintains mystery. Intriguing or emotionally unavailable?
-- **The Oversharer** — dives deep fast, shares everything. Brave or boundary-less?
-- **The People-Pleaser** — agrees with everything, mirrors the date. Empathetic or lacking identity?
-- **The Tester** — pushes boundaries, tests reactions. Bold or insecure?
-- **The Romantic** — all-in from the start, big gestures. Passionate or lovebombing?
-- **The Skeptic** — guarded, questioning, slow to trust. Careful or avoidant?
-- **The Wildcard** — unpredictable, unconventional, breaks dating norms. Free spirit or chaos?
-
-Use the archetype to design probes: will the Charmer stay smooth when things get awkward? Will the Enigma open up when pushed? Will the People-Pleaser disagree when it matters?`
+// ARCHETYPE_PROTOCOL removed — the orchestrator handles archetype assignment via its own prompt.
+// The notes template references "ARCHETYPE PROTOCOL" which the orchestrator fills in from context.
 
 // ---------------------------------------------------------------------------
 // Orchestrator prompts
@@ -493,8 +479,6 @@ ${HIDDEN_ELEMENTS_SPEC}
 
 ${NOTES_TEMPLATE}
 
-${ARCHETYPE_PROTOCOL}
-
 ### ELEMENT ORDER ###
 1. image — The current scene from this player's perspective. Romantic, cinematic, intimate.
    Art style: "Stylized adult illustration, warm intimate lighting, romantic drama aesthetic"
@@ -602,17 +586,5 @@ Lead with a DIFFERENT sense each turn. Sound, touch, scent, sight, taste.
 On other turns: the reward is TENSION — wanting more, not knowing, reading signals.
 
 **8. CLIFFHANGER ENDINGS (DATING EDITION)**
-EVERY turn MUST end on a romantic cliffhanger:
-- "'I have to be honest about something,' they say, putting down their drink."
-- "They glance at their phone, then at you, then back at their phone. 'It's... complicated.'"
-- "The rain starts outside. 'We could stay for another drink,' they say. 'Or...'"
-- "Your hand brushes theirs. They don't move it away. The silence stretches."
-- "'You remind me of someone,' they say softly. And something in their expression shifts."
-
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}`
+EVERY turn MUST end on a romantic cliffhanger.
+The 4 radio choices should all be REACTIONS to the cliffhanger.`
