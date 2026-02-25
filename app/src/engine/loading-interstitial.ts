@@ -111,6 +111,12 @@ let activeWisdomPool: string[] = [...WISDOM]
 /** Preloaded image URL ready for the next interstitial. */
 let preloadedImageUrl: string | null = null
 
+/**
+ * Whether the preloaded image has actually finished loading into the browser cache.
+ * When false, the URL is set but the image may still be in-flight.
+ */
+let preloadedImageLoaded = false
+
 // ---------------------------------------------------------------------------
 // LLM Wisdom Fetch (fire-and-forget, lightweight)
 // ---------------------------------------------------------------------------
@@ -180,20 +186,22 @@ async function fetchImagePrompt(): Promise<string | null> {
 /**
  * Preload an interstitial image as early as possible using ONLY a fallback prompt.
  * No LLM call — picks a random fallback prompt for zero-latency preload on boot.
- * Only preloads if no image is already cached (won't overwrite an existing preload).
+ * Stores the URL *immediately* so it's available even before the image finishes loading.
+ * The browser will deduplicate the request when the interstitial's <img> uses the same URL.
  */
 export function preloadInterstitialImageEarly(imageClient: ImageClient): void {
   if (preloadedImageUrl !== null) return // Don't overwrite an already-preloaded image
 
   const prompt = FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
-  imageClient.preloadImage(prompt, { width: 512, height: 384 }).then(url => {
-    // Only set if nothing else has preloaded in the meantime
-    if (preloadedImageUrl === null) {
-      preloadedImageUrl = url
-    }
-  }).catch(() => {
-    // Silent — fallback preload failure is non-critical
-  })
+  // Store URL immediately — always available for showInterstitial even if image is still loading
+  const url = imageClient.getImageUrl(prompt, { width: 512, height: 384 })
+  preloadedImageUrl = url
+  preloadedImageLoaded = false
+
+  // Warm browser cache with the same URL (fire-and-forget)
+  const img = new Image()
+  img.onload = () => { preloadedImageLoaded = true }
+  img.src = url
 }
 
 /**
@@ -207,13 +215,26 @@ export function preloadInterstitialImage(imageClient: ImageClient): void {
   // the user clicks Play before the LLM-enhanced one finishes.
 
   // Step 1: Generate a fresh image prompt via LLM
-  // Step 2: Preload the image so it's in the browser cache
+  // Step 2: Store URL eagerly, then warm the browser cache
   fetchImagePrompt().then(prompt => {
     const finalPrompt = prompt
       ?? FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
-    return imageClient.preloadImage(finalPrompt, { width: 512, height: 384 })
-  }).then(url => {
-    preloadedImageUrl = url
+    const url = imageClient.getImageUrl(finalPrompt, { width: 512, height: 384 })
+
+    // Only overwrite the early URL if we don't already have a fully-loaded one,
+    // OR once this new image finishes loading (always upgrade to fresh LLM image)
+    if (!preloadedImageLoaded) {
+      preloadedImageUrl = url
+      preloadedImageLoaded = false
+    }
+
+    // Warm browser cache — upgrade to this URL once loaded
+    const img = new Image()
+    img.onload = () => {
+      preloadedImageUrl = url
+      preloadedImageLoaded = true
+    }
+    img.src = url
   }).catch(() => {
     // Keep whatever was already preloaded rather than clearing it
   })
@@ -229,24 +250,18 @@ export function showInterstitial(imageClient: ImageClient): void {
   activeWisdomPool = [...WISDOM]
   currentWisdomIndex = Math.floor(Math.random() * activeWisdomPool.length)
 
-  // Use preloaded image if available, otherwise use a fallback and kick off LLM generation
+  // Use preloaded URL (always available since boot sets it eagerly).
+  // The image may already be in the browser cache, or still in-flight —
+  // either way the browser deduplicates the request.
   let imageUrl: string
   if (preloadedImageUrl) {
     imageUrl = preloadedImageUrl
     preloadedImageUrl = null
+    preloadedImageLoaded = false
   } else {
-    // No preloaded image — use fallback for immediate display
+    // Safety fallback — should rarely hit since boot stores URL eagerly
     const fallback = FALLBACK_IMAGE_PROMPTS[Math.floor(Math.random() * FALLBACK_IMAGE_PROMPTS.length)]
     imageUrl = imageClient.getImageUrl(fallback, { width: 512, height: 384 })
-
-    // Also kick off LLM generation for a swap-in if it arrives in time
-    fetchImagePrompt().then(prompt => {
-      if (prompt && overlayEl) {
-        const freshUrl = imageClient.getImageUrl(prompt, { width: 512, height: 384 })
-        const img = overlayEl.querySelector('.interstitial-image') as HTMLImageElement | null
-        if (img) img.src = freshUrl
-      }
-    }).catch(() => { /* silent */ })
   }
 
   const initialReels = [
