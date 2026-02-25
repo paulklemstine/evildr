@@ -111,6 +111,8 @@ export type PeerMessage =
   | { type: 'actions'; turnNumber: number; actions: string }
   | { type: 'orchestrator'; turnNumber: number; section: string }
   | { type: 'ready'; turnNumber: number }
+  | { type: 'partner-submitted'; turnNumber: number }
+  | { type: 'images'; turnNumber: number; images: Array<{ name: string; base64: string }> }
   | { type: 'ping' }
   | { type: 'pong' }
 
@@ -134,6 +136,8 @@ export interface MultiplayerGameLoopConfig {
   onError: (message: string) => void
   /** Called when loading state changes (start/end of LLM calls). */
   onLoading: (loading: boolean) => void
+  /** Called with status messages during waiting periods (e.g. "Waiting for your date..."). */
+  onWaitingStatus?: (message: string) => void
   /** Called when analysis data is extracted from the turn's UI. */
   onAnalysis: (analysis: AnalysisData) => void
 }
@@ -425,10 +429,95 @@ export class MultiplayerGameLoop {
       })
   }
 
+  // ---- Image sharing (Player 1 → Player 2 via base64 over PeerJS) ----
+
+  /**
+   * After Player 1's images load from Pollinations, capture them as base64
+   * and send to Player 2 so both players see the same images.
+   */
+  private captureAndShareImages(): void {
+    const images = this.config.container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]')
+    if (images.length === 0) return
+
+    const turnNumber = this.state.turnNumber
+    const pendingImages = Array.from(images)
+    const imageData: Array<{ name: string; base64: string }> = []
+    let resolved = 0
+
+    const checkDone = () => {
+      resolved++
+      if (resolved === pendingImages.length && imageData.length > 0) {
+        this.config.sendToPartner({
+          type: 'images',
+          turnNumber,
+          images: imageData,
+        } as PeerMessage)
+      }
+    }
+
+    for (const img of pendingImages) {
+      const name = img.dataset.imagePrompt || img.dataset.elementName || `img-${resolved}`
+
+      const capture = () => {
+        try {
+          const canvas = document.createElement('canvas')
+          canvas.width = img.naturalWidth
+          canvas.height = img.naturalHeight
+          const ctx = canvas.getContext('2d')
+          if (ctx) {
+            ctx.drawImage(img, 0, 0)
+            imageData.push({ name, base64: canvas.toDataURL('image/jpeg', 0.7) })
+          }
+        } catch {
+          // Canvas tainted or other error — skip this image
+        }
+        checkDone()
+      }
+
+      if (img.complete && img.naturalWidth > 0) {
+        capture()
+      } else {
+        const prevOnload = img.onload
+        img.onload = (e) => {
+          if (typeof prevOnload === 'function') prevOnload.call(img, e)
+          capture()
+        }
+        img.onerror = () => checkDone() // Skip failed images
+
+        // Timeout: don't wait forever for slow images
+        setTimeout(() => {
+          if (!img.complete) checkDone()
+        }, 20000)
+      }
+    }
+  }
+
+  /**
+   * Apply base64 images received from Player 1 to Player 2's DOM.
+   * Images are matched by position (index).
+   */
+  private applySharedImages(images: Array<{ name: string; base64: string }>): void {
+    const imgElements = this.config.container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]')
+
+    images.forEach((data, i) => {
+      const img = imgElements[i]
+      if (!img) return
+
+      img.src = data.base64
+      img.style.opacity = '1'
+
+      // Hide the shimmer placeholder if present
+      const shimmer = img.previousElementSibling as HTMLElement | null
+      if (shimmer?.classList.contains('image-shimmer')) {
+        shimmer.style.display = 'none'
+      }
+    })
+  }
+
   // ---- Turn rendering ----
 
   private renderTurn(uiJsonArray: UIElement[]): void {
-    const { container, onStateChange, onAnalysis } = this.config
+    const { container, onStateChange, onAnalysis, isPlayer1 } = this.config
 
     // Update state
     this.state.currentUiJson = uiJsonArray
@@ -453,8 +542,13 @@ export class MultiplayerGameLoop {
     // Apply mood coloring
     applyMoodFromUI(uiJsonArray)
 
-    // Resolve images
-    this.resolveImages()
+    // Resolve images — Player 1 loads from Pollinations and shares via PeerJS.
+    // Player 2 skips Pollinations and waits for Player 1's shared base64 images.
+    if (isPlayer1) {
+      this.resolveImages()
+      this.captureAndShareImages()
+    }
+    // Player 2: images stay as shimmers until 'images' message arrives from Player 1
 
     // Apply dopamine effects
     cascadeReveal(container)
@@ -484,10 +578,10 @@ export class MultiplayerGameLoop {
    */
   private async processTurn(): Promise<void> {
     const {
-      llmClient, promptBuilder, onError, onLoading, isPlayer1,
+      llmClient, promptBuilder, onError, onLoading, onWaitingStatus, isPlayer1,
     } = this.config
 
-    onLoading(true)
+    // onLoading(true) was already called from submitMyActions() — no need to call again
     this.turnInProgress = true
 
     try {
@@ -495,6 +589,8 @@ export class MultiplayerGameLoop {
 
       if (isPlayer1) {
         // Player 1: call orchestrator, then generate own UI
+        onWaitingStatus?.('The matchmaker is crafting your date...')
+
         const orchestratorPrompt = this.state.turnNumber === 0 && !this.state.currentUiJson
           ? promptBuilder.buildFirstTurnOrchestratorPrompt()
           : promptBuilder.buildOrchestratorPrompt(
@@ -554,6 +650,7 @@ export class MultiplayerGameLoop {
       }
 
       // Generate this player's UI from the orchestrator section
+      onWaitingStatus?.('Preparing your next moment...')
       const uiPrompt = promptBuilder.buildPlayerUIPrompt(mySection)
       let uiJsonArray: UIElement[]
       try {
@@ -662,11 +759,14 @@ export class MultiplayerGameLoop {
   submitMyActions(): void {
     if (this.turnInProgress) return
 
-    const { container, sendToPartner } = this.config
+    const { container, sendToPartner, onLoading, onWaitingStatus } = this.config
 
     // Collect input state
     const actionsJson = collectInputState(container, this.state.turnNumber + 1)
     this.myActionsThisTurn = actionsJson
+
+    // Show loading interstitial immediately so the player isn't staring at dead UI
+    onLoading(true)
 
     // Send actions to partner
     const message: PeerMessage = {
@@ -676,13 +776,26 @@ export class MultiplayerGameLoop {
     }
     sendToPartner(message)
 
-    // Start waiting
+    // Notify partner that we've submitted
+    sendToPartner({
+      type: 'partner-submitted',
+      turnNumber: this.state.turnNumber + 1,
+    } as PeerMessage)
+
+    // Start waiting with appropriate status message
     if (this.config.isPlayer1) {
       this.waitingForPartnerActions = true
       this.startPartnerActionTimeout()
+      // If partner already submitted, we'll proceed immediately via checkAndProcessTurn
+      if (this.partnerActionsThisTurn !== null) {
+        onWaitingStatus?.('Both dates ready! The matchmaker is working...')
+      } else {
+        onWaitingStatus?.('Waiting for your date to respond...')
+      }
     } else {
       this.waitingForOrchestratorSection = true
       this.startOrchestratorTimeout()
+      onWaitingStatus?.('Waiting for your date and the matchmaker...')
     }
 
     // Check if we can already proceed
@@ -697,6 +810,10 @@ export class MultiplayerGameLoop {
   receivePartnerActions(actions: string): void {
     this.partnerActionsThisTurn = actions
     this.waitingForPartnerActions = false
+    // Update status — both actions are in, orchestrator is next
+    if (this.myActionsThisTurn !== null) {
+      this.config.onWaitingStatus?.('Both dates ready! The matchmaker is working...')
+    }
     this.checkAndProcessTurn()
   }
 
@@ -707,6 +824,7 @@ export class MultiplayerGameLoop {
   receiveOrchestratorOutput(section: string): void {
     this.orchestratorSectionThisTurn = section
     this.waitingForOrchestratorSection = false
+    this.config.onWaitingStatus?.('The matchmaker has spoken! Preparing your scene...')
     this.checkAndProcessTurn()
   }
 
@@ -729,6 +847,22 @@ export class MultiplayerGameLoop {
 
       case 'ready':
         // Partner is ready for next turn (informational)
+        break
+
+      case 'partner-submitted':
+        // Partner has submitted their turn — update status if we're waiting
+        if (this.myActionsThisTurn !== null) {
+          // We already submitted too — both are in
+          this.config.onWaitingStatus?.('Your date has responded!')
+        } else {
+          // Partner submitted before us — update partner status indicator
+          this.config.onWaitingStatus?.('Your date is waiting for you...')
+        }
+        break
+
+      case 'images':
+        // Player 1 is sharing their rendered images — apply to our DOM
+        this.applySharedImages(msg.images)
         break
 
       case 'ping':

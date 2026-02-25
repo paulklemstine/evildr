@@ -299,6 +299,8 @@ export function showInterstitial(imageClient: ImageClient): void {
       <div class="interstitial-progress">
         <div class="interstitial-progress-bar" id="interstitial-progress-bar"></div>
       </div>
+
+      <p class="interstitial-status" id="interstitial-status"></p>
     </div>
   `
 
@@ -392,6 +394,22 @@ export function dismissInterstitial(): Promise<void> {
       }, 400)
     }, 350)
   })
+}
+
+/**
+ * Update the status message displayed on the interstitial overlay.
+ * Use to communicate what the player is waiting for (partner, matchmaker, etc.).
+ */
+export function updateInterstitialStatus(message: string): void {
+  if (!overlayEl) return
+  const el = overlayEl.querySelector('#interstitial-status') as HTMLElement | null
+  if (el) {
+    el.style.opacity = '0'
+    setTimeout(() => {
+      el.textContent = message
+      el.style.opacity = '1'
+    }, 200)
+  }
 }
 
 // ---------------------------------------------------------------------------

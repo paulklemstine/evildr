@@ -11,7 +11,7 @@ import type { RoomHandle, GuestHandle } from './multiplayer/room-code'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
 import { showReEngagement } from './engine/session-hooks'
-import { showInterstitial, dismissInterstitial, preloadInterstitialImage, preloadInterstitialImageEarly } from './engine/loading-interstitial'
+import { showInterstitial, dismissInterstitial, preloadInterstitialImage, preloadInterstitialImageEarly, updateInterstitialStatus } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import { renderAdminPage } from './pages/admin'
 import { createWatchablePlayer } from './admin/live-bridge'
@@ -850,6 +850,20 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
       } else {
         submitBtn.textContent = 'Submit'
         dismissInterstitial()
+      }
+    },
+    onWaitingStatus: (message: string) => {
+      // Update the interstitial overlay status text if it's showing
+      updateInterstitialStatus(message)
+      // Also update the partner status bar for "partner waiting" notifications
+      const statusText = document.getElementById('partner-status-text')
+      if (message === 'Your date is waiting for you...') {
+        if (statusText) {
+          statusText.textContent = 'Waiting for you'
+          statusText.style.color = '#f59e0b'
+        }
+        const dot = document.getElementById('partner-status-dot')
+        if (dot) dot.style.background = '#f59e0b'
       }
     },
     onAnalysis: (analysis: AnalysisData) => {
