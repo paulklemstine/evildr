@@ -5,3 +5,7 @@ compatibility_date = "2025-01-01"
 [vars]
 LLM_TARGET = "https://generativelanguage.googleapis.com/v1beta/openai"
 IMAGE_TARGET = "https://gen.pollinations.ai"
+
+[[kv_namespaces]]
+binding = "REPORTS"
+id = "6da7cca754c24b159cea1d85ee68477e"

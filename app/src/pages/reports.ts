@@ -3,6 +3,7 @@
 
 import { getSessionsByUser, getAnalysesBySession, getAnalysesByUser, getTurnsBySession, deleteSession, deleteAllUserData } from '../profiling/db'
 import { buildCombinedAnalysisPrompt, buildAnalysisPrompt } from '../profiling/analysis-prompts'
+import { uploadReport } from '../api/report-uploader'
 import type { LLMClient } from '../engine/game-loop'
 
 /** State kept across re-renders within the same reports page visit. */
@@ -363,6 +364,23 @@ async function loadReports(): Promise<void> {
             turnRange: `${turns[0].turnNumber}-${turns[turns.length - 1].turnNumber}`,
             analysisText: response.content,
           })
+
+          // Upload report to server for admin browsing
+          const sessions = await getSessionsByUser(currentUserId)
+          const session = sessions.find(s => s.sessionId === sessionId)
+          if (session) {
+            const allAnalyses = await getAnalysesBySession(sessionId)
+            uploadReport({
+              sessionId,
+              userId: currentUserId,
+              mode: session.mode,
+              genre: session.genre,
+              startedAt: session.startedAt,
+              turnCount: turns.length,
+              turns,
+              analyses: allAnalyses,
+            }).catch(() => {})
+          }
 
           await loadReports()
         } catch (err) {

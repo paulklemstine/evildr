@@ -219,6 +219,114 @@ async function routeLLM(backends, bodyObj) {
   });
 }
 
+/**
+ * Handle report CRUD via Cloudflare KV.
+ *
+ * Routes:
+ *   POST   /api/reports              — Upload/update a session report
+ *   GET    /api/reports              — List all reports (metadata only)
+ *   GET    /api/reports/:sessionId   — Get full report for a session
+ *   DELETE /api/reports/:sessionId   — Delete a report
+ */
+async function handleReports(request, env, path) {
+  const KV = env.REPORTS;
+  if (!KV) {
+    return new Response(JSON.stringify({ error: "Reports storage not configured" }), {
+      status: 503,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // POST /api/reports — upload a report
+  if (request.method === "POST" && path === "/api/reports") {
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+
+    const { sessionId, userId, mode, genre, startedAt, turnCount, turns, analyses } = body;
+    if (!sessionId || !userId) {
+      return new Response(JSON.stringify({ error: "sessionId and userId required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+
+    const now = Date.now();
+    const metadata = {
+      userId,
+      mode: mode || "unknown",
+      genre: genre || null,
+      startedAt: startedAt || now,
+      turnCount: turnCount || 0,
+      hasAnalysis: Array.isArray(analyses) && analyses.length > 0,
+      uploadedAt: now,
+    };
+
+    // Store full report with metadata for listing
+    await KV.put(`report:${sessionId}`, JSON.stringify(body), { metadata });
+
+    return new Response(JSON.stringify({ ok: true, sessionId }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // GET /api/reports — list all reports (metadata only)
+  if (request.method === "GET" && path === "/api/reports") {
+    const list = await KV.list({ prefix: "report:" });
+    const reports = list.keys.map(k => ({
+      sessionId: k.name.replace("report:", ""),
+      ...k.metadata,
+    }));
+    // Sort by uploadedAt descending
+    reports.sort((a, b) => (b.uploadedAt || 0) - (a.uploadedAt || 0));
+
+    return new Response(JSON.stringify({ reports }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // GET /api/reports/:sessionId — get full report
+  const getMatch = path.match(/^\/api\/reports\/([^/]+)$/);
+  if (request.method === "GET" && getMatch) {
+    const sessionId = decodeURIComponent(getMatch[1]);
+    const data = await KV.get(`report:${sessionId}`);
+    if (!data) {
+      return new Response(JSON.stringify({ error: "Report not found" }), {
+        status: 404,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+    return new Response(data, {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // DELETE /api/reports/:sessionId
+  const delMatch = path.match(/^\/api\/reports\/([^/]+)$/);
+  if (request.method === "DELETE" && delMatch) {
+    const sessionId = decodeURIComponent(delMatch[1]);
+    await KV.delete(`report:${sessionId}`);
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  return new Response(JSON.stringify({ error: "Not found" }), {
+    status: 404,
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
 export default {
   async fetch(request, env) {
     // Handle CORS preflight
@@ -316,6 +424,11 @@ export default {
             ...CORS_HEADERS,
           },
         });
+      }
+
+      // --- Reports API (Cloudflare KV) ---
+      if (path.startsWith("/api/reports")) {
+        return handleReports(request, env, path);
       }
 
       // --- Health check ---

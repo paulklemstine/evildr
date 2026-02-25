@@ -2,8 +2,9 @@
 // Uses the deep/thinking model route (Qwen3-235B) for thorough clinical analysis
 // Runs completely independently of game turns — no contention for the fast model
 
-import { getTurnsBySession, getAnalysesBySession, saveAnalysis } from './db'
+import { getTurnsBySession, getAnalysesBySession, saveAnalysis, getSessionsByUser } from './db'
 import { buildAnalysisPrompt } from './analysis-prompts'
+import { uploadReport } from '../api/report-uploader'
 
 const ANALYSIS_INTERVAL = 5 // Analyze every N turns
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
@@ -83,6 +84,9 @@ async function runAnalysis(
     analysisText: content,
   })
   console.info(`Analysis saved for turns ${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`)
+
+  // Upload full report to server for admin browsing (fire-and-forget)
+  uploadSessionReport(userId, sessionId).catch(() => {})
 }
 
 /**
@@ -115,4 +119,28 @@ async function callDeepModel(prompt: string): Promise<string> {
 
   // Strip code fences if present
   return raw.replace(/^```(?:\w+)?\s*\n?/, '').replace(/\n?\s*```$/, '').trim()
+}
+
+/**
+ * Gather all session data from IndexedDB and upload to server.
+ * Called after analysis is saved so the admin can browse reports.
+ */
+async function uploadSessionReport(userId: string, sessionId: string): Promise<void> {
+  const sessions = await getSessionsByUser(userId)
+  const session = sessions.find(s => s.sessionId === sessionId)
+  if (!session) return
+
+  const turns = await getTurnsBySession(sessionId)
+  const analyses = await getAnalysesBySession(sessionId)
+
+  await uploadReport({
+    sessionId,
+    userId,
+    mode: session.mode,
+    genre: session.genre,
+    startedAt: session.startedAt,
+    turnCount: turns.length,
+    turns,
+    analyses,
+  })
 }

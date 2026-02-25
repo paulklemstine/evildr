@@ -11,6 +11,12 @@ export default defineConfig(({ mode }) => {
       port: 3000,
       open: true,
       proxy: {
+        // Reports API: /api/reports/* → Cloudflare Worker (KV storage)
+        // Must be listed BEFORE /api/llm to match first
+        "/api/reports": {
+          target: "https://drevil-proxy.drevil.workers.dev",
+          changeOrigin: true,
+        },
         // Deep LLM proxy: /api/llm-deep/* → Cloudflare Worker (thinking models)
         // Must be listed BEFORE /api/llm to match first
         "/api/llm-deep": {
