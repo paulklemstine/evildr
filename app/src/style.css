@@ -1598,11 +1598,109 @@ h1, h2, h3 {
   color: var(--text-muted);
 }
 
-.interstitial-subtext {
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  margin: 0.75rem 0 0;
-  opacity: 0.6;
+/* ============================================================
+   Progress Bar — fills asymptotically during LLM wait
+   ============================================================ */
+
+.interstitial-progress {
+  width: calc(100% + 3rem);
+  margin: 0.75rem -1.5rem -1.5rem;
+  height: 5px;
+  background: var(--bg-tertiary);
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  overflow: hidden;
+}
+
+.interstitial-progress-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary), var(--accent-primary));
+  background-size: 200% 100%;
+  border-radius: 0 0 var(--radius-xl) var(--radius-xl);
+  width: 0%;
+  animation:
+    interstitial-progress-fill 50s cubic-bezier(0.08, 0.82, 0.17, 1) forwards,
+    interstitial-progress-shimmer 2s ease-in-out infinite;
+}
+
+.interstitial-progress-bar.progress-complete {
+  animation: none !important;
+  width: 100% !important;
+  background: linear-gradient(90deg, #059669, #10b981);
+  transition: width 0.4s ease, background 0.3s ease;
+}
+
+@keyframes interstitial-progress-fill {
+  0% { width: 0%; }
+  100% { width: 90%; }
+}
+
+@keyframes interstitial-progress-shimmer {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ============================================================
+   Slot Win Celebrations — Confetti, Flash, Glow
+   ============================================================ */
+
+@keyframes slot-confetti-burst {
+  0% {
+    transform: translate(0, 0) rotate(0deg) scale(1);
+    opacity: 1;
+  }
+  70% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: translate(var(--confetti-dx), var(--confetti-dy)) rotate(var(--confetti-rot)) scale(0);
+    opacity: 0;
+  }
+}
+
+.slot-win-flash-gold {
+  animation: slot-gold-flash 0.9s ease !important;
+}
+
+@keyframes slot-gold-flash {
+  0% { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); }
+  15% { box-shadow: 0 0 80px rgba(251, 191, 36, 0.7), 0 0 160px rgba(251, 191, 36, 0.3), inset 0 0 30px rgba(251, 191, 36, 0.1); }
+  40% { box-shadow: 0 0 50px rgba(251, 191, 36, 0.4), 0 0 100px rgba(251, 191, 36, 0.15); }
+  100% { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); }
+}
+
+.slot-win-flash-teal {
+  animation: slot-teal-flash 0.6s ease !important;
+}
+
+@keyframes slot-teal-flash {
+  0% { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); }
+  20% { box-shadow: 0 0 50px rgba(13, 148, 136, 0.5), 0 0 100px rgba(13, 148, 136, 0.2); }
+  100% { box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3); }
+}
+
+.slot-reel-win-glow {
+  border-color: #fbbf24 !important;
+  box-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.2) !important;
+  animation: slot-reel-glow-pulse 0.5s ease 3 !important;
+}
+
+@keyframes slot-reel-glow-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.5), 0 0 40px rgba(251, 191, 36, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 35px rgba(251, 191, 36, 0.8), 0 0 70px rgba(251, 191, 36, 0.35);
+  }
+}
+
+.slot-result-celebrate {
+  animation: slot-result-pop 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+
+@keyframes slot-result-pop {
+  0% { transform: scale(0.5); opacity: 0; }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); opacity: 1; }
 }
 
 /* ============================================================
