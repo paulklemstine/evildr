@@ -201,6 +201,66 @@ export async function getAnalysesBySession(sessionId: string): Promise<AnalysisR
   })
 }
 
+/** Delete a session and all its associated turns and analyses. */
+export async function deleteSession(sessionId: string): Promise<void> {
+  const db = await openDB()
+
+  // Delete turns for this session
+  const turns = await getTurnsBySession(sessionId)
+  if (turns.length > 0) {
+    await new Promise<void>((resolve, reject) => {
+      const tx = db.transaction('turns', 'readwrite')
+      const store = tx.objectStore('turns')
+      for (const turn of turns) {
+        if (turn.id !== undefined) store.delete(turn.id)
+      }
+      tx.oncomplete = () => resolve()
+      tx.onerror = () => reject(tx.error)
+    })
+  }
+
+  // Delete analyses for this session
+  const analyses = await getAnalysesBySession(sessionId)
+  if (analyses.length > 0) {
+    await new Promise<void>((resolve, reject) => {
+      const tx = db.transaction('analyses', 'readwrite')
+      const store = tx.objectStore('analyses')
+      for (const analysis of analyses) {
+        if (analysis.id !== undefined) store.delete(analysis.id)
+      }
+      tx.oncomplete = () => resolve()
+      tx.onerror = () => reject(tx.error)
+    })
+  }
+
+  // Delete the session record itself
+  // Delete the session record by looking it up via the sessionId index
+  await new Promise<void>((resolve, reject) => {
+    const tx = db.transaction('sessions', 'readwrite')
+    const store = tx.objectStore('sessions')
+    const index = store.index('by_session_id')
+    const getReq = index.get(sessionId)
+    getReq.onsuccess = () => {
+      if (getReq.result?.id !== undefined) {
+        const delReq = store.delete(getReq.result.id)
+        delReq.onsuccess = () => resolve()
+        delReq.onerror = () => reject(delReq.error)
+      } else {
+        resolve()
+      }
+    }
+    getReq.onerror = () => reject(getReq.error)
+  })
+}
+
+/** Delete ALL data for a user (sessions, turns, analyses). */
+export async function deleteAllUserData(userId: string): Promise<void> {
+  const sessions = await getSessionsByUser(userId)
+  for (const session of sessions) {
+    await deleteSession(session.sessionId)
+  }
+}
+
 export async function getAnalysesByUser(userId: string): Promise<AnalysisRecord[]> {
   const db = await openDB()
   return new Promise((resolve, reject) => {

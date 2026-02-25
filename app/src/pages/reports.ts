@@ -1,8 +1,13 @@
 // Reports page — displays individual session reports and combined cross-session profile
+// Supports: delete individual sessions, reset all data, regenerate analysis after changes
 
-import { getSessionsByUser, getAnalysesBySession, getAnalysesByUser, getTurnsBySession } from '../profiling/db'
-import { buildCombinedAnalysisPrompt } from '../profiling/analysis-prompts'
+import { getSessionsByUser, getAnalysesBySession, getAnalysesByUser, getTurnsBySession, deleteSession, deleteAllUserData } from '../profiling/db'
+import { buildCombinedAnalysisPrompt, buildAnalysisPrompt } from '../profiling/analysis-prompts'
 import type { LLMClient } from '../engine/game-loop'
+
+/** State kept across re-renders within the same reports page visit. */
+let currentUserId = ''
+let currentLlmClient: LLMClient | null = null
 
 /**
  * Renders the reports page into the given container.
@@ -13,6 +18,9 @@ export async function renderReportsPage(
   llmClient: LLMClient,
   onBack: () => void,
 ): Promise<void> {
+  currentUserId = userId
+  currentLlmClient = llmClient
+
   app.innerHTML = `
     <header class="site-header">
       <div class="site-header-inner">
@@ -62,21 +70,118 @@ export async function renderReportsPage(
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <p style="margin-top: 0.25rem;">For research and entertainment purposes only.</p>
     </footer>
+
+    <!-- Reset confirmation modal -->
+    <div id="resetModal" class="modal">
+      <div class="modal-content" style="max-width: 420px;">
+        <h2 class="text-lg font-semibold mb-3" style="color: #dc2626;">Reset All Data</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.6;">
+          This will permanently delete <strong>all sessions, turns, and analyses</strong>. This action cannot be undone.
+        </p>
+        <p style="color: var(--text-muted); margin-bottom: 1.5rem; font-size: 0.875rem;">
+          Type <strong>RESET</strong> to confirm:
+        </p>
+        <input type="text" id="resetConfirmInput" class="geems-input" placeholder="Type RESET" style="margin-bottom: 1rem;">
+        <div class="flex gap-2">
+          <button id="resetConfirmBtn" class="geems-button" style="background: #dc2626; flex: 1;" disabled>Delete Everything</button>
+          <button id="resetCancelBtn" class="geems-button-outline" style="flex: 1;">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Delete session confirmation modal -->
+    <div id="deleteSessionModal" class="modal">
+      <div class="modal-content" style="max-width: 420px;">
+        <h2 class="text-lg font-semibold mb-3" style="color: #dc2626;">Delete Session</h2>
+        <p style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.6;">
+          This will permanently delete this session and all its associated data (turns and analyses). Continue?
+        </p>
+        <div class="flex gap-2">
+          <button id="deleteSessionConfirmBtn" class="geems-button" style="background: #dc2626; flex: 1;">Delete Session</button>
+          <button id="deleteSessionCancelBtn" class="geems-button-outline" style="flex: 1;">Cancel</button>
+        </div>
+      </div>
+    </div>
   `
 
   // Event listeners
   document.getElementById('reports-back')?.addEventListener('click', onBack)
   document.getElementById('reports-nav-home')?.addEventListener('click', onBack)
 
+  // Reset modal
+  setupResetModal()
+
   // Load data
-  await loadReports(userId, llmClient)
+  await loadReports()
 }
 
-async function loadReports(userId: string, llmClient: LLMClient): Promise<void> {
+function setupResetModal(): void {
+  const modal = document.getElementById('resetModal')!
+  const input = document.getElementById('resetConfirmInput') as HTMLInputElement
+  const confirmBtn = document.getElementById('resetConfirmBtn') as HTMLButtonElement
+  const cancelBtn = document.getElementById('resetCancelBtn')!
+
+  input.addEventListener('input', () => {
+    confirmBtn.disabled = input.value.trim() !== 'RESET'
+  })
+
+  confirmBtn.addEventListener('click', async () => {
+    confirmBtn.disabled = true
+    confirmBtn.textContent = 'Deleting...'
+    try {
+      await deleteAllUserData(currentUserId)
+      modal.classList.remove('active')
+      input.value = ''
+      await loadReports()
+    } catch (err) {
+      confirmBtn.textContent = 'Error — try again'
+      confirmBtn.disabled = false
+    }
+  })
+
+  cancelBtn.addEventListener('click', () => {
+    modal.classList.remove('active')
+    input.value = ''
+    confirmBtn.disabled = true
+  })
+
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) {
+      modal.classList.remove('active')
+      input.value = ''
+      confirmBtn.disabled = true
+    }
+  })
+}
+
+function showDeleteSessionModal(_sessionId: string): Promise<boolean> {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('deleteSessionModal')!
+    const confirmBtn = document.getElementById('deleteSessionConfirmBtn')!
+    const cancelBtn = document.getElementById('deleteSessionCancelBtn')!
+
+    modal.classList.add('active')
+
+    const cleanup = () => {
+      modal.classList.remove('active')
+      confirmBtn.replaceWith(confirmBtn.cloneNode(true))
+      cancelBtn.replaceWith(cancelBtn.cloneNode(true))
+    }
+
+    confirmBtn.addEventListener('click', () => { cleanup(); resolve(true) }, { once: true })
+    cancelBtn.addEventListener('click', () => { cleanup(); resolve(false) }, { once: true })
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) { cleanup(); resolve(false) }
+    }, { once: true })
+  })
+}
+
+async function loadReports(): Promise<void> {
   const contentEl = document.getElementById('reports-content')!
+  const llmClient = currentLlmClient!
 
   try {
-    const sessions = await getSessionsByUser(userId)
+    const sessions = await getSessionsByUser(currentUserId)
 
     if (sessions.length === 0) {
       contentEl.innerHTML = `
@@ -100,7 +205,7 @@ async function loadReports(userId: string, llmClient: LLMClient): Promise<void> 
     let html = ''
 
     // Combined report button (if multiple sessions have analyses)
-    const allAnalyses = await getAnalysesByUser(userId)
+    const allAnalyses = await getAnalysesByUser(currentUserId)
     if (allAnalyses.length > 1) {
       html += `
         <div class="report-card report-card-combined">
@@ -132,31 +237,66 @@ async function loadReports(userId: string, llmClient: LLMClient): Promise<void> 
         <div class="report-card" data-session-id="${session.sessionId}">
           <div class="report-card-header">
             <h3 class="report-card-title">${session.mode.toUpperCase()} Session</h3>
-            <div class="flex gap-1.5">
+            <div class="flex gap-1.5 items-center">
               <span class="badge badge-players">${turns.length} turns</span>
               ${session.genre ? `<span class="badge badge-free">${session.genre}</span>` : ''}
               ${hasAnalysis ? '<span class="badge badge-tier">Analyzed</span>' : '<span class="badge badge-rated">Pending</span>'}
             </div>
           </div>
           <p class="report-card-date">${date}</p>
-          ${hasAnalysis ? `
-            <button class="geems-button-outline report-toggle" data-session-id="${session.sessionId}" style="margin-top: 0.75rem;">
-              View Report
+          <div class="flex gap-2" style="margin-top: 0.75rem;">
+            ${hasAnalysis ? `
+              <button class="geems-button-outline report-toggle" data-session-id="${session.sessionId}">
+                View Report
+              </button>
+            ` : ''}
+            ${turns.length >= 3 ? `
+              <button class="geems-button-outline report-regenerate" data-session-id="${session.sessionId}" style="font-size: 0.8125rem;">
+                ${hasAnalysis ? 'Regenerate' : 'Generate'} Analysis
+              </button>
+            ` : ''}
+            <button class="report-delete-btn" data-session-id="${session.sessionId}" title="Delete this session">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <polyline points="3 6 5 6 21 6"/>
+                <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+                <line x1="10" y1="11" x2="10" y2="17"/>
+                <line x1="14" y1="11" x2="14" y2="17"/>
+              </svg>
             </button>
+          </div>
+          ${hasAnalysis ? `
             <div class="report-body" id="report-${session.sessionId}" style="display: none;">
               <div class="report-analysis">${renderMarkdown(latestAnalysis!.analysisText)}</div>
               <p class="report-meta">Analyzed: ${new Date(latestAnalysis!.analyzedAt).toLocaleString()} | Turns: ${latestAnalysis!.turnRange}</p>
             </div>
           ` : `
             <p class="report-card-desc" style="margin-top: 0.75rem; font-style: italic;">
-              Analysis pending. Complete more turns to generate a report.
+              ${turns.length < 3 ? 'Need at least 3 turns to generate analysis.' : 'Analysis available — click Generate.'}
             </p>
           `}
         </div>
       `
     }
 
+    // Reset All button
+    html += `
+      <div style="margin-top: 3rem; padding-top: 2rem; border-top: 1px solid var(--border-color); text-align: center;">
+        <button id="resetAllBtn" class="geems-button-outline" style="color: #dc2626; border-color: #dc2626;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display: inline; vertical-align: -2px; margin-right: 4px;">
+            <polyline points="3 6 5 6 21 6"/>
+            <path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"/>
+          </svg>
+          Reset All Data
+        </button>
+        <p style="color: var(--text-muted); font-size: 0.75rem; margin-top: 0.5rem;">
+          Permanently delete all sessions, turns, and analyses.
+        </p>
+      </div>
+    `
+
     contentEl.innerHTML = html
+
+    // --- Event listeners ---
 
     // Toggle individual reports
     contentEl.querySelectorAll('.report-toggle').forEach(btn => {
@@ -166,6 +306,53 @@ async function loadReports(userId: string, llmClient: LLMClient): Promise<void> 
         const isHidden = body.style.display === 'none'
         body.style.display = isHidden ? 'block' : 'none'
         ;(e.currentTarget as HTMLButtonElement).textContent = isHidden ? 'Hide Report' : 'View Report'
+      })
+    })
+
+    // Delete individual sessions
+    contentEl.querySelectorAll('.report-delete-btn').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const sessionId = (e.currentTarget as HTMLElement).dataset.sessionId!
+        const confirmed = await showDeleteSessionModal(sessionId)
+        if (confirmed) {
+          await deleteSession(sessionId)
+          await loadReports()
+        }
+      })
+    })
+
+    // Regenerate analysis for individual sessions
+    contentEl.querySelectorAll('.report-regenerate').forEach(btn => {
+      btn.addEventListener('click', async (e) => {
+        const button = e.currentTarget as HTMLButtonElement
+        const sessionId = button.dataset.sessionId!
+        button.disabled = true
+        button.textContent = 'Analyzing...'
+
+        try {
+          const turns = await getTurnsBySession(sessionId)
+          const priorAnalyses = await getAnalysesBySession(sessionId)
+          const lastAnalysis = priorAnalyses.length > 0
+            ? priorAnalyses[priorAnalyses.length - 1].analysisText
+            : undefined
+
+          const prompt = buildAnalysisPrompt(turns, lastAnalysis)
+          const response = await llmClient.generateTurn(prompt)
+
+          const { saveAnalysis } = await import('../profiling/db')
+          await saveAnalysis({
+            userId: currentUserId,
+            sessionId,
+            analyzedAt: Date.now(),
+            turnRange: `${turns[0].turnNumber}-${turns[turns.length - 1].turnNumber}`,
+            analysisText: response.content,
+          })
+
+          await loadReports()
+        } catch (err) {
+          button.textContent = 'Error — retry'
+          button.disabled = false
+        }
       })
     })
 
@@ -181,7 +368,8 @@ async function loadReports(userId: string, llmClient: LLMClient): Promise<void> 
         outputEl.innerHTML = '<div class="reports-loading"><span>Generating combined analysis...</span></div>'
 
         try {
-          const allTexts = allAnalyses.map(a => a.analysisText)
+          const freshAnalyses = await getAnalysesByUser(currentUserId)
+          const allTexts = freshAnalyses.map(a => a.analysisText)
           const prompt = buildCombinedAnalysisPrompt(allTexts)
           const response = await llmClient.generateTurn(prompt)
           outputEl.innerHTML = `<div class="report-analysis">${renderMarkdown(response.content)}</div>`
@@ -193,6 +381,14 @@ async function loadReports(userId: string, llmClient: LLMClient): Promise<void> 
         btn.textContent = 'Regenerate Combined Report'
       })
     }
+
+    // Reset all button
+    document.getElementById('resetAllBtn')?.addEventListener('click', () => {
+      const modal = document.getElementById('resetModal')!
+      modal.classList.add('active')
+      const input = document.getElementById('resetConfirmInput') as HTMLInputElement
+      input.focus()
+    })
   } catch (err) {
     contentEl.innerHTML = `<p style="color: #dc2626;">Error loading reports: ${err instanceof Error ? err.message : String(err)}</p>`
   }
