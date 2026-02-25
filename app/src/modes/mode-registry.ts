@@ -50,8 +50,9 @@ import { skinwalkerConfig } from './skinwalker/config.ts'
 import { createSkinwalkerPromptBuilder } from './skinwalker/prompts.ts'
 import { feverDreamConfig } from './fever-dream/config.ts'
 import { createFeverDreamPromptBuilder } from './fever-dream/prompts.ts'
-// Flagged (multiplayer) — config registered but requires multiplayer-loop to play
-// import { flaggedConfig } from './flagged/config.ts'
+// Flagged (multiplayer) — config registered with no-op prompt builder.
+// The actual FlaggedPromptBuilder (different interface) is used by MultiplayerGameLoop directly.
+import { flaggedConfig } from './flagged/config.ts'
 
 // Build the full registry with default prompt builders attached
 const registry: GameMode[] = [
@@ -78,6 +79,12 @@ const registry: GameMode[] = [
   {
     ...feverDreamConfig,
     promptBuilder: createFeverDreamPromptBuilder(),
+  },
+  {
+    ...flaggedConfig,
+    // No-op stub: FlaggedPromptBuilder has a different interface (orchestrator-aware).
+    // The real prompt builder is consumed by MultiplayerGameLoop, not the registry.
+    promptBuilder: { buildFirstTurnPrompt: () => '', buildTurnPrompt: () => '' },
   },
 ]
 
