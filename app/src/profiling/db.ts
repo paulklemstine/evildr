@@ -31,6 +31,18 @@ export interface BehavioralSignals {
   radioChoiceIndex: number
   /** How many checkboxes were checked vs total */
   checkboxRatio: string
+  /** Number of dropdown selection changes */
+  dropdownChanges?: number
+  /** Star rating value selected */
+  ratingValue?: number
+  /** Number of toggle flip-flops */
+  toggleFlips?: number
+  /** Selected emoji reaction */
+  emojiSelection?: string
+  /** Selected color from color pick */
+  colorSelection?: string
+  /** Number input final value */
+  numberInputValue?: number
 }
 
 export interface SessionRecord {

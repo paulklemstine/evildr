@@ -47,7 +47,7 @@ export function cascadeReveal(container: HTMLElement): void {
     setTimeout(() => {
       child.style.opacity = '1'
       child.style.transform = 'translateY(0)'
-    }, i * 120 + 50)
+    }, i * 70 + 30)
   })
 }
 
@@ -57,7 +57,7 @@ export function cascadeReveal(container: HTMLElement): void {
  */
 export function pulseInteractive(container: HTMLElement): void {
   const interactives = container.querySelectorAll<HTMLElement>(
-    '.geems-radio-option, .geems-checkbox-option, .geems-slider, .geems-textarea'
+    '.geems-radio-option, .geems-checkbox-option, .geems-slider, .geems-textarea, .geems-dropdown, .geems-rating, .geems-toggle-container, .geems-button-group, .geems-number-group, .geems-emoji-row, .geems-color-grid'
   )
 
   interactives.forEach((el, i) => {

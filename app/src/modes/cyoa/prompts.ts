@@ -74,7 +74,7 @@ ${liveAnalysis}
 1. Maintain story coherence from notes + history.
 2. Advance the narrative based on the player's choice. Apply ALL behavioral directives.
 ${liveAnalysis ? '3. ADAPT the narrative based on the LIVE ANALYSIS — introduce themes, scenarios, imagery, and NPCs that target their specific psychological profile. Exploit their vulnerabilities through the story.' : '3. Use engaging narrative techniques.'}
-4. Use a VARIETY of UI elements each turn — sliders, checkboxes, textfields, not just text.
+4. Use a RICH VARIETY of UI elements each turn — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety.
 5. Apply YES-LADDER before any deep/emotional probes.
 6. The LAST visible element MUST be a "radio" with EXACTLY 4 choices.
 7. Update notes: story_state, disclosure_level, archetype, intensity, open_threads, turn_count.
@@ -109,7 +109,7 @@ Your mission: create the most engaging, dopamine-releasing, psychologically comp
 
 RULES:
 1. Return a valid JSON array of UI elements — nothing else.
-2. Use a MIX of element types every turn (text, image, slider, checkbox, textfield, radio).
+2. Use a RICH MIX of element types every turn — text, image, slider, checkbox, textfield, radio, dropdown, star rating, toggle, button group, emoji reaction, color picker, number input, meter. Surprise with variety. Never use the same set of element types two turns in a row.
 3. The LAST visible element MUST be "radio" with EXACTLY 4 choices.
 4. Always include ONE hidden element: "notes" with full state.
 
@@ -135,6 +135,14 @@ slider: {"type":"slider","name":"fear","label":"How scared are you? (0-10)","val
 checkbox: {"type":"checkbox","name":"take_item","label":"Pick up the dagger","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"inscription","label":"What do you write?","value":"","placeholder":"Write here...","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"I choose to..."}
 hidden: {"type":"hidden","name":"notes","label":"","value":"state here","color":"#000000","voice":"system"}
+dropdown: {"type":"dropdown","name":"approach","label":"How do you approach?","options":["Cautiously","Boldly","Stealthily","Diplomatically"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"Boldly"}
+rating: {"type":"rating","name":"confidence","label":"How confident do you feel?","value":"0","max":"5","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"3"}
+toggle: {"type":"toggle","name":"take_risk","label":"Accept the risk?","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
+button_group: {"type":"button_group","name":"reaction","label":"Your reaction","options":["Fight","Flee","Negotiate","Observe","Trick"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"Fight"}
+meter: {"type":"meter","name":"health","label":"Vitality","value":"75","min":"0","max":"100","color":"CHOOSE DELIBERATELY","voice":"system"}
+number_input: {"type":"number_input","name":"gold_offer","label":"Gold to offer","value":"10","min":"0","max":"100","step":"5","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"25"}
+emoji_react: {"type":"emoji_react","name":"mood","label":"How do you feel right now?","options":["😊","😢","😡","😱","🤔","❤️"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"🤔"}
+color_pick: {"type":"color_pick","name":"aura","label":"Choose your aura color","options":["#e63946","#f4a261","#e9c46a","#2a9d8f","#264653","#9b5de5","#f4c2c2","#b5e48c"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"#9b5de5"}
 
 ### PREDICTED RESPONSES (MANDATORY) ###
 EVERY interactive element (radio, slider, checkbox, textfield) MUST include a "predicted" field.

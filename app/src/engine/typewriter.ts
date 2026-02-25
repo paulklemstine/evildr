@@ -1,8 +1,8 @@
 // Typewriter effect — reveals text character-by-character for dopamine anticipation
 
-const BASE_CHAR_DELAY = 18  // ms per character
-const PUNCTUATION_PAUSE = 120 // extra ms after . ! ? ...
-const COMMA_PAUSE = 60 // extra ms after ,
+const BASE_CHAR_DELAY = 8  // ms per character (snappy)
+const PUNCTUATION_PAUSE = 60 // extra ms after . ! ? ...
+const COMMA_PAUSE = 30 // extra ms after ,
 
 /**
  * Applies typewriter animation to all .geems-text elements in the container.

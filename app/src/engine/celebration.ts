@@ -70,6 +70,58 @@ export function attachCelebrations(container: HTMLElement): () => void {
     handlers.push({ el, handler: handler as EventListener })
   })
 
+  // Rating stars
+  container.querySelectorAll('.geems-rating-star').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
+  // Toggle switches
+  container.querySelectorAll('.geems-toggle-wrapper').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
+  // Button group buttons
+  container.querySelectorAll('.geems-group-btn').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
+  // Emoji reaction buttons
+  container.querySelectorAll('.geems-emoji-btn').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
+  // Color swatches
+  container.querySelectorAll('.geems-color-swatch').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
+  // Dropdown
+  container.querySelectorAll<HTMLSelectElement>('.geems-dropdown').forEach(el => {
+    const handler = () => {
+      const rect = el.getBoundingClientRect()
+      celebrate({ clientX: rect.left + rect.width / 2, clientY: rect.top })
+    }
+    el.addEventListener('change', handler)
+    handlers.push({ el, handler: handler as EventListener })
+  })
+
+  // Number input +/- buttons
+  container.querySelectorAll('.geems-number-btn').forEach(el => {
+    const handler = (e: Event) => celebrate(e as MouseEvent)
+    el.addEventListener('click', handler)
+    handlers.push({ el, handler })
+  })
+
   return () => {
     handlers.forEach(({ el, handler }) => {
       el.removeEventListener('click', handler)

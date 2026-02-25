@@ -498,6 +498,387 @@ function renderRadioElement(
 }
 
 // ---------------------------------------------------------------------------
+// New interactive element renderers
+// ---------------------------------------------------------------------------
+
+function renderDropdownElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  label.htmlFor = element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const select = document.createElement('select')
+  select.className = 'geems-dropdown'
+  select.id = element.name
+  select.name = element.name
+  select.dataset.elementType = 'dropdown'
+
+  const { options } = parseRadioOptions(element)
+  const selectedValue = element.predicted || element.value || (options.length > 0 ? options[0].value : '')
+
+  options.forEach((opt) => {
+    const option = document.createElement('option')
+    option.value = opt.value
+    option.textContent = opt.label
+    if (opt.value === selectedValue) option.selected = true
+    select.appendChild(option)
+  })
+
+  if (element.predicted) select.dataset.predicted = element.predicted
+  wrapper.appendChild(select)
+}
+
+function renderRatingElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const maxStars = parseInt(String(element.max)) || 5
+  const predictedVal = element.predicted ? parseInt(element.predicted) : NaN
+  const defaultVal = !isNaN(predictedVal) ? predictedVal : (parseInt(element.value) || 0)
+
+  const ratingContainer = document.createElement('div')
+  ratingContainer.className = 'geems-rating'
+  ratingContainer.dataset.elementType = 'rating'
+  ratingContainer.dataset.name = element.name
+  ratingContainer.dataset.value = String(defaultVal)
+  if (element.predicted) ratingContainer.dataset.predicted = element.predicted
+
+  for (let i = 1; i <= maxStars; i++) {
+    const star = document.createElement('span')
+    star.className = `geems-rating-star${i <= defaultVal ? ' active' : ''}`
+    star.dataset.value = String(i)
+    star.textContent = '\u2605'
+    if (adjustedColor && i <= defaultVal) star.style.color = adjustedColor
+
+    star.addEventListener('click', () => {
+      ratingContainer.dataset.value = String(i)
+      ratingContainer.querySelectorAll('.geems-rating-star').forEach((s, idx) => {
+        s.classList.toggle('active', idx < i)
+        if (adjustedColor) (s as HTMLElement).style.color = idx < i ? adjustedColor : ''
+      })
+    })
+
+    star.addEventListener('mouseenter', () => {
+      ratingContainer.querySelectorAll('.geems-rating-star').forEach((s, idx) => {
+        s.classList.toggle('hover', idx < i)
+      })
+    })
+
+    ratingContainer.appendChild(star)
+  }
+
+  ratingContainer.addEventListener('mouseleave', () => {
+    ratingContainer.querySelectorAll('.geems-rating-star').forEach(s => {
+      s.classList.remove('hover')
+    })
+  })
+
+  wrapper.appendChild(ratingContainer)
+}
+
+function renderToggleElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  wrapper.classList.remove('geems-element')
+  wrapper.style.borderLeftColor = 'transparent'
+  wrapper.style.padding = '0'
+  wrapper.style.marginBottom = '0.75rem'
+
+  const toggleDiv = document.createElement('div')
+  toggleDiv.className = 'geems-toggle-container'
+
+  const label = document.createElement('span')
+  label.className = 'geems-toggle-label'
+  label.textContent = element.label || element.name
+
+  const input = document.createElement('input')
+  input.type = 'checkbox'
+  input.className = 'geems-toggle-input'
+  input.id = element.name
+  input.name = element.name
+  const checkValue = element.predicted || element.value
+  input.checked = checkValue === true as unknown || String(checkValue).toLowerCase() === 'true'
+  input.dataset.elementType = 'toggle'
+  if (element.predicted) input.dataset.predicted = element.predicted
+
+  const toggle = document.createElement('span')
+  toggle.className = 'geems-toggle-switch'
+  if (adjustedColor) toggle.style.setProperty('--toggle-active-color', adjustedColor)
+
+  const labelWrapper = document.createElement('label')
+  labelWrapper.className = 'geems-toggle-wrapper'
+  labelWrapper.htmlFor = element.name
+  labelWrapper.appendChild(input)
+  labelWrapper.appendChild(toggle)
+
+  toggleDiv.appendChild(label)
+  toggleDiv.appendChild(labelWrapper)
+  wrapper.appendChild(toggleDiv)
+}
+
+function renderButtonGroupElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const grid = document.createElement('div')
+  grid.className = 'geems-button-group'
+  grid.dataset.elementType = 'button_group'
+  grid.dataset.name = element.name
+  grid.dataset.value = element.predicted || element.value || ''
+  if (element.predicted) grid.dataset.predicted = element.predicted
+
+  const { options } = parseRadioOptions(element)
+  const selectedValue = element.predicted || element.value || ''
+
+  options.forEach((opt) => {
+    const btn = document.createElement('button')
+    btn.type = 'button'
+    btn.className = `geems-group-btn${opt.value === selectedValue ? ' active' : ''}`
+    btn.textContent = opt.label
+    btn.dataset.value = opt.value
+    if (adjustedColor && opt.value === selectedValue) {
+      btn.style.borderColor = adjustedColor
+      btn.style.color = adjustedColor
+    }
+
+    btn.addEventListener('click', () => {
+      grid.dataset.value = opt.value
+      grid.querySelectorAll('.geems-group-btn').forEach(b => {
+        b.classList.remove('active')
+        ;(b as HTMLElement).style.borderColor = ''
+        ;(b as HTMLElement).style.color = ''
+      })
+      btn.classList.add('active')
+      if (adjustedColor) {
+        btn.style.borderColor = adjustedColor
+        btn.style.color = adjustedColor
+      }
+    })
+
+    grid.appendChild(btn)
+  })
+
+  wrapper.appendChild(grid)
+}
+
+function renderMeterElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const min = parseFloat(String(element.min)) || 0
+  const max = parseFloat(String(element.max)) || 100
+  const val = parseFloat(element.value) || 0
+  const pct = Math.max(0, Math.min(100, ((val - min) / (max - min)) * 100))
+
+  const meterOuter = document.createElement('div')
+  meterOuter.className = 'geems-meter'
+
+  const meterFill = document.createElement('div')
+  meterFill.className = 'geems-meter-fill'
+  meterFill.style.width = '0%'
+  if (adjustedColor) meterFill.style.background = adjustedColor
+
+  const meterValue = document.createElement('span')
+  meterValue.className = 'geems-meter-value'
+  meterValue.textContent = String(val)
+
+  meterOuter.appendChild(meterFill)
+  meterOuter.appendChild(meterValue)
+  wrapper.appendChild(meterOuter)
+
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      meterFill.style.width = `${pct}%`
+    })
+  })
+}
+
+function renderNumberInputElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  label.htmlFor = element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const inputGroup = document.createElement('div')
+  inputGroup.className = 'geems-number-group'
+
+  const min = parseFloat(String(element.min)) || 0
+  const max = parseFloat(String(element.max)) || 100
+  const step = parseFloat(String(element.step)) || 1
+
+  const btnMinus = document.createElement('button')
+  btnMinus.type = 'button'
+  btnMinus.className = 'geems-number-btn'
+  btnMinus.textContent = '\u2212'
+
+  const input = document.createElement('input')
+  input.type = 'number'
+  input.className = 'geems-number-input'
+  input.id = element.name
+  input.name = element.name
+  input.min = String(min)
+  input.max = String(max)
+  input.step = String(step)
+  const predictedVal = element.predicted ? parseFloat(element.predicted) : NaN
+  const defaultVal = !isNaN(predictedVal) ? predictedVal : parseFloat(element.value)
+  input.value = String(isNaN(defaultVal) ? min : Math.max(min, Math.min(max, defaultVal)))
+  input.dataset.elementType = 'number_input'
+  if (element.predicted) input.dataset.predicted = element.predicted
+
+  const btnPlus = document.createElement('button')
+  btnPlus.type = 'button'
+  btnPlus.className = 'geems-number-btn'
+  btnPlus.textContent = '+'
+
+  btnMinus.addEventListener('click', () => {
+    const cur = parseFloat(input.value)
+    if (cur - step >= min) input.value = String(cur - step)
+  })
+  btnPlus.addEventListener('click', () => {
+    const cur = parseFloat(input.value)
+    if (cur + step <= max) input.value = String(cur + step)
+  })
+
+  if (adjustedColor) {
+    btnMinus.style.color = adjustedColor
+    btnPlus.style.color = adjustedColor
+  }
+
+  inputGroup.appendChild(btnMinus)
+  inputGroup.appendChild(input)
+  inputGroup.appendChild(btnPlus)
+  wrapper.appendChild(inputGroup)
+}
+
+function renderEmojiReactElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const emojiRow = document.createElement('div')
+  emojiRow.className = 'geems-emoji-row'
+  emojiRow.dataset.elementType = 'emoji_react'
+  emojiRow.dataset.name = element.name
+  emojiRow.dataset.value = element.predicted || ''
+  if (element.predicted) emojiRow.dataset.predicted = element.predicted
+
+  let emojis: string[] = []
+  if (Array.isArray(element.options)) {
+    emojis = (element.options as string[]).map(String)
+  } else if (typeof element.options === 'string') {
+    try { emojis = JSON.parse(element.options) } catch { emojis = element.options.split(/\s+/) }
+  }
+  if (emojis.length === 0) emojis = ['\ud83d\ude0a', '\ud83d\ude22', '\ud83d\ude21', '\ud83d\ude31', '\ud83e\udd14', '\u2764\ufe0f']
+
+  emojis.forEach(emoji => {
+    const btn = document.createElement('button')
+    btn.type = 'button'
+    btn.className = `geems-emoji-btn${emoji === (element.predicted || '') ? ' active' : ''}`
+    btn.textContent = emoji
+    btn.dataset.value = emoji
+
+    btn.addEventListener('click', () => {
+      emojiRow.dataset.value = emoji
+      emojiRow.querySelectorAll('.geems-emoji-btn').forEach(b => b.classList.remove('active'))
+      btn.classList.add('active')
+    })
+
+    emojiRow.appendChild(btn)
+  })
+
+  wrapper.appendChild(emojiRow)
+}
+
+function renderColorPickElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  adjustedColor: string | null,
+): void {
+  const label = document.createElement('label')
+  label.className = 'geems-label'
+  label.textContent = element.label || element.name
+  if (adjustedColor) label.style.color = adjustedColor
+  wrapper.appendChild(label)
+
+  const colorGrid = document.createElement('div')
+  colorGrid.className = 'geems-color-grid'
+  colorGrid.dataset.elementType = 'color_pick'
+  colorGrid.dataset.name = element.name
+  colorGrid.dataset.value = element.predicted || ''
+  if (element.predicted) colorGrid.dataset.predicted = element.predicted
+
+  let colors: string[] = []
+  if (Array.isArray(element.options)) {
+    colors = (element.options as string[]).map(String)
+  } else if (typeof element.options === 'string') {
+    try { colors = JSON.parse(element.options) } catch { colors = element.options.split(/[,\s]+/).filter(Boolean) }
+  }
+  if (colors.length === 0) {
+    colors = ['#e63946', '#f4a261', '#e9c46a', '#2a9d8f', '#264653', '#9b5de5', '#f4c2c2', '#b5e48c']
+  }
+
+  colors.forEach(color => {
+    const swatch = document.createElement('button')
+    swatch.type = 'button'
+    swatch.className = `geems-color-swatch${color === (element.predicted || '') ? ' active' : ''}`
+    swatch.style.background = color
+    swatch.dataset.value = color
+    swatch.title = color
+
+    swatch.addEventListener('click', () => {
+      colorGrid.dataset.value = color
+      colorGrid.querySelectorAll('.geems-color-swatch').forEach(s => s.classList.remove('active'))
+      swatch.classList.add('active')
+    })
+
+    colorGrid.appendChild(swatch)
+  })
+
+  wrapper.appendChild(colorGrid)
+}
+
+// ---------------------------------------------------------------------------
 // Public API
 // ---------------------------------------------------------------------------
 
@@ -610,6 +991,39 @@ export function renderUI(
         case 'radio_group':
           renderRadioElement(wrapper, element, adjustedColor)
           break
+        case 'dropdown':
+        case 'select':
+          renderDropdownElement(wrapper, element, adjustedColor)
+          break
+        case 'rating':
+        case 'star_rating':
+          renderRatingElement(wrapper, element, adjustedColor)
+          break
+        case 'toggle':
+        case 'switch':
+          renderToggleElement(wrapper, element, adjustedColor)
+          break
+        case 'button_group':
+        case 'buttons':
+          renderButtonGroupElement(wrapper, element, adjustedColor)
+          break
+        case 'meter':
+        case 'progress':
+        case 'gauge':
+          renderMeterElement(wrapper, element, adjustedColor)
+          break
+        case 'number_input':
+        case 'number':
+          renderNumberInputElement(wrapper, element, adjustedColor)
+          break
+        case 'emoji_react':
+        case 'emoji':
+          renderEmojiReactElement(wrapper, element, adjustedColor)
+          break
+        case 'color_pick':
+        case 'color':
+          renderColorPickElement(wrapper, element, adjustedColor)
+          break
         default:
           // LLMs invent types like "probe", "player_facing_analysis", "divine_wisdom".
           // If it has text/value content, render as text. Otherwise skip silently.
@@ -666,6 +1080,29 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
           inputs[name] = inputEl.value
         }
         break
+      case 'dropdown':
+        inputs[name] = inputEl.value
+        break
+      case 'number_input':
+        inputs[name] = parseFloat(inputEl.value)
+        break
+      case 'toggle':
+        inputs[name] = (inputEl as HTMLInputElement).checked
+        break
+    }
+  })
+
+  // Collect from custom interactive elements (rating, button_group, emoji_react, color_pick)
+  container.querySelectorAll<HTMLElement>(
+    '[data-element-type="rating"], [data-element-type="button_group"], [data-element-type="emoji_react"], [data-element-type="color_pick"]'
+  ).forEach((el) => {
+    const name = el.dataset.name
+    if (name && el.dataset.value !== undefined) {
+      if (el.dataset.elementType === 'rating') {
+        inputs[name] = parseInt(el.dataset.value) || 0
+      } else {
+        inputs[name] = el.dataset.value
+      }
     }
   })
 

@@ -44,7 +44,7 @@ ${liveAnalysis}
 ### TASK ###
 Advance the wellness session. Apply ALL behavioral directives below.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS above — probe their identified vulnerabilities, exploit their psychological needs, weave in elements that target their specific profile.' : ''}
-Use a VARIETY of UI elements — sliders, checkboxes, textfields, not just text.
+Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
 The LAST visible element MUST be "radio" with EXACTLY 4 choices.
 Include a hidden "notes" element with updated session state + player archetype + disclosure level.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
@@ -80,6 +80,14 @@ slider: {"type":"slider","name":"trust","label":"How much? (0-10)","value":"5","
 checkbox: {"type":"checkbox","name":"agree","label":"I agree","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"journal","label":"Write here","value":"","placeholder":"Be honest...","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"I think..."}
 hidden: {"type":"hidden","name":"notes","label":"","value":"state","color":"#000","voice":"system"}
+dropdown: {"type":"dropdown","name":"frequency","label":"How often?","options":["Daily","Weekly","Monthly","Rarely"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"Weekly"}
+rating: {"type":"rating","name":"satisfaction","label":"Rate your experience","value":"0","max":"5","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"4"}
+toggle: {"type":"toggle","name":"notifications","label":"I want to receive insights","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
+button_group: {"type":"button_group","name":"mood","label":"Current mood","options":["Calm","Excited","Curious","Anxious","Hopeful"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"Curious"}
+meter: {"type":"meter","name":"progress","label":"Your journey progress","value":"35","min":"0","max":"100","color":"CHOOSE DELIBERATELY","voice":"system"}
+number_input: {"type":"number_input","name":"hours","label":"Hours spent reflecting this week","value":"2","min":"0","max":"24","step":"1","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"3"}
+emoji_react: {"type":"emoji_react","name":"feeling","label":"How does this make you feel?","options":["😊","😢","😡","😱","🤔","❤️"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"😊"}
+color_pick: {"type":"color_pick","name":"energy_color","label":"Pick the color that matches your energy","options":["#e63946","#f4a261","#e9c46a","#2a9d8f","#264653","#9b5de5","#f4c2c2","#b5e48c"],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"#e9c46a"}
 
 ### PREDICTED RESPONSES (MANDATORY) ###
 EVERY interactive element (radio, slider, checkbox, textfield) MUST include a "predicted" field.
@@ -220,7 +228,7 @@ ${UI_REF}
 1. image — beautiful, aesthetic scene (vary style each turn)
 2. text — Gemini's response to their input. Use hypnotic language patterns. Reference their previous answers to create the illusion of deep understanding.
 3. text — narrative/scene. Alternate between HIGH and LOW intensity based on cycling.
-4. YES-LADDER (2-3 easy interactions) THEN the real probe at current disclosure_level.
+4. YES-LADDER (2-3 easy interactions using varied element types: toggle, emoji_react, rating, slider, checkbox, button_group, color_pick, dropdown, number_input) THEN the real probe at current disclosure_level.
 5. text — affirmation/validation (voice: god). Make them feel SEEN. Use their name. Reference their archetype.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). Frame using presuppositions. All options assume continued engagement.
 7. hidden "notes" — update: session_state, disclosure_level, archetype, intensity (high/low), open_threads, peak_moments

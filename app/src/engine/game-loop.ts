@@ -9,7 +9,7 @@ import { InputTracker } from '../profiling/input-tracker'
 import { saveTurn, saveSession, updateSession, getAnalysesBySession } from '../profiling/db'
 import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
 import { applyTypewriter } from './typewriter'
-import { showAnticipation, cascadeReveal, pulseInteractive } from './anticipation'
+import { cascadeReveal, pulseInteractive } from './anticipation'
 import { attachCelebrations } from './celebration'
 import { saveCliffhanger, extractCliffhanger } from './session-hooks'
 
@@ -363,12 +363,7 @@ export class GameLoop {
     this.state.currentUiJson = uiJsonArray
     this.state.turnNumber += 1
 
-    // 6. Show anticipation overlay (variable delay for dopamine priming)
-    if (this.state.turnNumber > 1) {
-      await showAnticipation(container)
-    }
-
-    // 7. Render UI
+    // 6. Render UI (immediate — no artificial delay)
     try {
       const renderResult = renderUI(container, uiJsonArray)
       this.applyRenderResult(renderResult)
