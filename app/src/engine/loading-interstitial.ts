@@ -115,7 +115,6 @@ async function fetchLLMWisdom(): Promise<string[]> {
         messages: [{ role: 'user', content: WISDOM_PROMPT }],
         max_tokens: 800,
         temperature: 1.2,
-        response_format: { type: 'json_object' },
       }),
     })
     if (!response.ok) return []

@@ -55,8 +55,8 @@ const PROXY_BASE = import.meta.env.DEV
   ? '/api/llm'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
 const DEFAULT_BASE_URL = PROXY_BASE
-const DEFAULT_MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-3-flash-preview']
-const DEFAULT_MAX_TOKENS = 10000  // gemini-2.5-flash is a thinking model, needs headroom for reasoning tokens
+const DEFAULT_MODELS = ['gemini-2.5-flash-lite', 'gemini-2.5-flash', 'gemini-2.0-flash']
+const DEFAULT_MAX_TOKENS = 4000  // flash-lite is non-thinking, needs less headroom
 const DEFAULT_TEMPERATURE = 1.0
 
 // Delay between retries
@@ -192,12 +192,14 @@ export class LLMClient {
       { role: 'user', content: prompt },
     ]
 
+    // NOTE: Do NOT send response_format — it breaks the Gemini backend,
+    // causing fallthrough to slow OpenRouter models (50s+ vs 1.2s).
+    // JSON output is enforced via the prompt instructions instead.
     const body = JSON.stringify({
       model,
       messages,
       max_tokens: maxTokens,
       temperature: this.config.temperature,
-      response_format: { type: 'json_object' },
     })
 
     let response: Response
