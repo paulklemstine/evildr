@@ -60,12 +60,7 @@ function isValidHexColor(hex: unknown): hex is string {
  * Detect if the current page theme has a light background.
  */
 function isCurrentThemeLight(): boolean {
-  const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-primary').trim()
-  if (!bg || !bg.startsWith('#') || bg.length < 7) return true // default to light
-  const r = parseInt(bg.slice(1, 3), 16)
-  const g = parseInt(bg.slice(3, 5), 16)
-  const b = parseInt(bg.slice(5, 7), 16)
-  return (r * 299 + g * 587 + b * 114) / 1000 > 128
+  return !document.body.classList.contains('dark-mode')
 }
 
 /**

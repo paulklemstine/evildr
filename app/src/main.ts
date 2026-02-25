@@ -2,7 +2,6 @@ import { LLMClient } from './api/llm-client'
 import { ImageClient } from './api/image-client'
 import { GameLoop } from './engine/game-loop'
 import { getModes, getMode } from './modes/mode-registry'
-import type { ThemeConfig } from './modes/mode-registry'
 import { createCYOAPromptBuilder } from './modes/cyoa/prompts'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
@@ -24,55 +23,34 @@ let userId: string = ''
 const llmClient = new LLMClient()
 const imageClient = new ImageClient()
 
-// --- Theme Application ---
+// --- Theme Toggle ---
 
-function isLightColor(hex: string): boolean {
-  const r = parseInt(hex.slice(1, 3), 16)
-  const g = parseInt(hex.slice(3, 5), 16)
-  const b = parseInt(hex.slice(5, 7), 16)
-  return (r * 299 + g * 587 + b * 114) / 1000 > 128
+function initTheme(): void {
+  const saved = localStorage.getItem('geems-theme')
+  if (saved === 'dark') {
+    document.body.classList.add('dark-mode')
+  }
 }
 
-function applyTheme(theme: ThemeConfig): void {
-  const root = document.documentElement
-  const light = isLightColor(theme.bgPrimary)
-
-  root.style.setProperty('--bg-primary', theme.bgPrimary)
-  root.style.setProperty('--bg-secondary', theme.bgSecondary)
-  root.style.setProperty('--bg-tertiary', theme.bgSecondary)
-  root.style.setProperty('--bg-input', light ? '#ffffff' : theme.bgPrimary)
-  root.style.setProperty('--text-primary', theme.textPrimary)
-  root.style.setProperty('--text-secondary', light ? '#475569' : theme.textPrimary + 'cc')
-  root.style.setProperty('--text-heading', light ? '#0f172a' : theme.textPrimary)
-  root.style.setProperty('--text-muted', light ? '#94a3b8' : theme.textPrimary + '77')
-  root.style.setProperty('--accent-primary', theme.accentPrimary)
-  root.style.setProperty('--accent-secondary', theme.accentSecondary)
-  root.style.setProperty('--border-color', light ? '#e2e8f0' : theme.accentPrimary + '33')
-  root.style.setProperty('--border-accent', theme.accentPrimary)
-  root.style.setProperty('--card-shadow', light
-    ? '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)'
-    : '0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)')
-  root.style.setProperty('--card-shadow-hover', light
-    ? '0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04)'
-    : '0 4px 12px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3)')
-  root.style.setProperty('--font-heading', theme.fontHeading)
-  root.style.setProperty('--font-body', theme.fontBody)
-  root.style.setProperty('--slider-thumb-color', theme.accentPrimary)
-  root.style.setProperty('--toggle-hover-color', theme.accentPrimary)
+function toggleTheme(): void {
+  const isDark = document.body.classList.toggle('dark-mode')
+  localStorage.setItem('geems-theme', isDark ? 'dark' : 'light')
 }
 
-const THEME_PROPS = [
-  '--bg-primary', '--bg-secondary', '--bg-tertiary', '--bg-input',
-  '--text-primary', '--text-secondary', '--text-heading', '--text-muted',
-  '--accent-primary', '--accent-secondary',
-  '--border-color', '--border-accent',
-  '--card-shadow', '--card-shadow-hover',
-  '--font-heading', '--font-body',
-  '--slider-thumb-color', '--toggle-hover-color',
-]
+function renderThemeToggle(): string {
+  return `
+    <label class="theme-toggle" id="theme-toggle">
+      <span>Light</span>
+      <div class="theme-toggle-track">
+        <div class="theme-toggle-thumb"></div>
+      </div>
+      <span>Dark</span>
+    </label>
+  `
+}
 
-function resetTheme(): void {
-  THEME_PROPS.forEach(p => document.documentElement.style.removeProperty(p))
+function bindThemeToggle(): void {
+  document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme)
 }
 
 // --- Page Rendering ---
@@ -185,8 +163,11 @@ function renderLobby(): void {
     <footer class="site-footer">
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <p style="margin-top: 0.25rem;">For research and entertainment purposes only.</p>
+      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
     </footer>
   `
+
+  bindThemeToggle()
 
   // --- Event Listeners ---
   let selectedGenre = 'horror'
@@ -269,6 +250,7 @@ function renderGamePage(modeId: string): void {
 
     <footer class="site-footer">
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
+      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
     </footer>
 
     <div id="analysisModal" class="modal">
@@ -292,9 +274,10 @@ function renderGamePage(modeId: string): void {
       playerBridge.destroy()
       playerBridge = null
     }
-    resetTheme()
     window.location.hash = ''
   })
+
+  bindThemeToggle()
 
   // Reports button
   document.getElementById('btn-reports')?.addEventListener('click', () => {
@@ -318,9 +301,6 @@ function startGame(modeId: string, genre?: string): void {
 
   const mode = getMode(modeId)
   if (!mode) return
-
-  // Apply mode-specific theme
-  applyTheme(mode.theme)
 
   const container = document.getElementById('ui-elements')!
   const loadingEl = document.getElementById('loading')!
@@ -400,7 +380,7 @@ function handleRoute(): void {
   } else if (hash === '#admin') {
     if (gameLoop) { gameLoop.reset(); gameLoop = null }
     if (playerBridge) { playerBridge.destroy(); playerBridge = null }
-    resetTheme()
+
     const app = document.getElementById('app')!
     renderAdminPage(app, () => {
       window.location.hash = ''
@@ -412,7 +392,7 @@ function handleRoute(): void {
     if (getMode(modeId)) {
       startGame(modeId, genre)
     } else {
-      resetTheme()
+  
       renderLobby()
     }
   } else {
@@ -424,7 +404,7 @@ function handleRoute(): void {
       playerBridge.destroy()
       playerBridge = null
     }
-    resetTheme()
+
     renderLobby()
   }
 }
@@ -432,6 +412,7 @@ function handleRoute(): void {
 // --- Boot ---
 
 async function boot(): Promise<void> {
+  initTheme()
   await showConsentIfNeeded()
   userId = getUserId()
 
