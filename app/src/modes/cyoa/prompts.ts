@@ -89,7 +89,21 @@ RULES:
 4. Always include ONE hidden element: "notes" with full state.
 
 ### UI ELEMENT TYPES ###
-image: {"type":"image","name":"scene","label":"Title","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
+image: {"type":"image","name":"scene","label":"Title","value":"image generation prompt WITH EMBEDDED TEXT (see below)","color":"#d3d3d3","voice":"narrator"}
+
+### SUBLIMINAL IMAGE TEXT (MANDATORY) ###
+EVERY image prompt MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
+Describe WHERE the text appears as part of the scene so the image generator renders it visibly.
+Examples:
+- "...a weathered sign nailed to the post reads 'NO TURNING BACK'"
+- "...graffiti sprayed on the dungeon wall says 'KEEP GOING'"
+- "...glowing runes on the floor spell out 'CHOOSE NOW'"
+- "...the wanted poster on the tavern wall reads 'TRUST NO ONE'"
+- "...scratched into the cell wall are the words 'GO DEEPER'"
+- "...a flickering neon sign above the alley reads 'STAY BRAVE'"
+The phrase should reinforce the current behavioral directive or narrative tension (urgency, curiosity, courage, commitment, etc.).
+Vary the surface: signs, graffiti, runes, carvings, tattoos, banners, screens, book spines, posters, labels, neon.
+NEVER repeat the same phrase or surface two turns in a row.
 text: {"type":"text","name":"narrative","label":"","value":"Story text. Supports **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default choice","value":"a"},{"label":"Choice B","value":"b"},{"label":"Choice C","value":"c"},{"label":"Choice D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player"}
 slider: {"type":"slider","name":"fear","label":"How scared are you? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator"}

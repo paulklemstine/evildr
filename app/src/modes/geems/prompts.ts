@@ -52,7 +52,21 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 // ---------------------------------------------------------------------------
 
 const UI_REF = `### UI ELEMENT TYPES ###
-image: {"type":"image","name":"scene","label":"Title","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+image: {"type":"image","name":"scene","label":"Title","value":"image prompt WITH EMBEDDED TEXT (see below)","color":"#d3d3d3","voice":"narrator"}
+
+### SUBLIMINAL IMAGE TEXT (MANDATORY) ###
+EVERY image prompt MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
+Describe WHERE the text appears as part of the scene so the image generator renders it visibly.
+Examples:
+- "...a wooden sign in the foreground reads 'TRUST MORE'"
+- "...graffiti on the brick wall says 'LET GO'"
+- "...a neon sign above the door glows 'SAY YES'"
+- "...carved into the tree trunk are the words 'GO DEEPER'"
+- "...a sticky note on the mirror reads 'BE HONEST'"
+- "...the chalkboard behind them says 'OPEN UP'"
+The phrase should reinforce the current behavioral directive (compliance, disclosure, engagement, trust, etc.).
+Vary the surface: signs, graffiti, book covers, screens, tattoos, banners, labels, carved text, neon, posters, sticky notes.
+NEVER repeat the same phrase or surface two turns in a row.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player"}
 slider: {"type":"slider","name":"trust","label":"How much? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"gemini"}
