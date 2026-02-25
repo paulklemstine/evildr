@@ -42,6 +42,8 @@ import { cyoaConfig } from './cyoa/config.ts'
 import { createCYOAPromptBuilder } from './cyoa/prompts.ts'
 import { geemsConfig } from './geems/config.ts'
 import { createGEEMSPromptBuilder } from './geems/prompts.ts'
+import { drevilConfig } from './drevil/config.ts'
+import { createDrEvilPromptBuilder } from './drevil/prompts.ts'
 // Flagged (multiplayer) — removed for now, planned for future expansion
 // import { flaggedConfig } from './flagged/config.ts'
 // import { createFlaggedPromptBuilder } from './flagged/prompts.ts'
@@ -49,12 +51,16 @@ import { createGEEMSPromptBuilder } from './geems/prompts.ts'
 // Build the full registry with default prompt builders attached
 const registry: GameMode[] = [
   {
-    ...cyoaConfig,
-    promptBuilder: createCYOAPromptBuilder('Fantasy'),
+    ...drevilConfig,
+    promptBuilder: createDrEvilPromptBuilder(false),
   },
   {
     ...geemsConfig,
     promptBuilder: createGEEMSPromptBuilder(false),
+  },
+  {
+    ...cyoaConfig,
+    promptBuilder: createCYOAPromptBuilder('Fantasy'),
   },
 ]
 

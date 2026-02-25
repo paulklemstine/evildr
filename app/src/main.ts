@@ -2,6 +2,7 @@ import { LLMClient } from './api/llm-client'
 import { ImageClient } from './api/image-client'
 import { GameLoop } from './engine/game-loop'
 import { getModes, getMode } from './modes/mode-registry'
+import type { ThemeConfig } from './modes/mode-registry'
 import { createCYOAPromptBuilder } from './modes/cyoa/prompts'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
@@ -18,6 +19,41 @@ let userId: string = ''
 // No API keys in client code — auth is injected server-side by the proxy
 const llmClient = new LLMClient()
 const imageClient = new ImageClient()
+
+// --- Theme Application ---
+
+function applyTheme(theme: ThemeConfig): void {
+  const root = document.documentElement
+  root.style.setProperty('--bg-primary', theme.bgPrimary)
+  root.style.setProperty('--bg-secondary', theme.bgSecondary)
+  root.style.setProperty('--bg-tertiary', theme.bgSecondary)
+  root.style.setProperty('--bg-input', theme.bgPrimary)
+  root.style.setProperty('--text-primary', theme.textPrimary)
+  root.style.setProperty('--text-secondary', theme.textPrimary)
+  root.style.setProperty('--text-heading', theme.textPrimary)
+  root.style.setProperty('--text-muted', theme.textPrimary + '99')
+  root.style.setProperty('--accent-primary', theme.accentPrimary)
+  root.style.setProperty('--accent-secondary', theme.accentSecondary)
+  root.style.setProperty('--border-color', theme.accentPrimary + '33')
+  root.style.setProperty('--border-accent', theme.accentPrimary)
+  root.style.setProperty('--font-heading', theme.fontHeading)
+  root.style.setProperty('--font-body', theme.fontBody)
+  root.style.setProperty('--slider-thumb-color', theme.accentPrimary)
+  root.style.setProperty('--toggle-hover-color', theme.accentPrimary)
+}
+
+const THEME_PROPS = [
+  '--bg-primary', '--bg-secondary', '--bg-tertiary', '--bg-input',
+  '--text-primary', '--text-secondary', '--text-heading', '--text-muted',
+  '--accent-primary', '--accent-secondary',
+  '--border-color', '--border-accent',
+  '--font-heading', '--font-body',
+  '--slider-thumb-color', '--toggle-hover-color',
+]
+
+function resetTheme(): void {
+  THEME_PROPS.forEach(p => document.documentElement.style.removeProperty(p))
+}
 
 // --- Page Rendering ---
 
@@ -232,6 +268,7 @@ function renderGamePage(modeId: string): void {
       gameLoop.reset()
       gameLoop = null
     }
+    resetTheme()
     window.location.hash = ''
   })
 
@@ -257,6 +294,9 @@ function startGame(modeId: string, genre?: string): void {
 
   const mode = getMode(modeId)
   if (!mode) return
+
+  // Apply mode-specific theme
+  applyTheme(mode.theme)
 
   const container = document.getElementById('ui-elements')!
   const loadingEl = document.getElementById('loading')!
@@ -330,6 +370,7 @@ function handleRoute(): void {
       gameLoop.reset()
       gameLoop = null
     }
+    resetTheme()
     renderLobby()
   }
 }
