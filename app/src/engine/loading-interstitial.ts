@@ -203,7 +203,9 @@ export function preloadInterstitialImageEarly(imageClient: ImageClient): void {
  * Call this after rendering each turn so the image is cached before the next loading screen.
  */
 export function preloadInterstitialImage(imageClient: ImageClient): void {
-  preloadedImageUrl = null
+  // Don't wipe the existing preloaded image — keep it as fallback until
+  // the new one is ready.  This way an early-preloaded image survives if
+  // the user clicks Play before the LLM-enhanced one finishes.
 
   // Step 1: Generate a fresh image prompt via LLM
   // Step 2: Preload the image so it's in the browser cache
@@ -214,7 +216,7 @@ export function preloadInterstitialImage(imageClient: ImageClient): void {
   }).then(url => {
     preloadedImageUrl = url
   }).catch(() => {
-    preloadedImageUrl = null
+    // Keep whatever was already preloaded rather than clearing it
   })
 }
 
