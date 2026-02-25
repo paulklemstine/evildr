@@ -46,7 +46,8 @@ interface ParsedRadioOption {
 // Constants
 // ---------------------------------------------------------------------------
 
-const MIN_CONTRAST_LIGHTNESS = 0.55
+const MIN_CONTRAST_LIGHTNESS_DARK_BG = 0.55  // min lightness for text on dark backgrounds
+const MAX_CONTRAST_LIGHTNESS_LIGHT_BG = 0.45 // max lightness for text on light backgrounds
 
 // ---------------------------------------------------------------------------
 // Color utilities
@@ -57,11 +58,26 @@ function isValidHexColor(hex: unknown): hex is string {
 }
 
 /**
- * Adjusts a hex color so it has enough contrast against a dark background.
- * Colors that are too light (high luminance) are darkened.
+ * Detect if the current page theme has a light background.
+ */
+function isCurrentThemeLight(): boolean {
+  const bg = getComputedStyle(document.documentElement).getPropertyValue('--bg-primary').trim()
+  if (!bg || !bg.startsWith('#') || bg.length < 7) return true // default to light
+  const r = parseInt(bg.slice(1, 3), 16)
+  const g = parseInt(bg.slice(3, 5), 16)
+  const b = parseInt(bg.slice(5, 7), 16)
+  return (r * 299 + g * 587 + b * 114) / 1000 > 128
+}
+
+/**
+ * Adjusts a hex color so it has enough contrast against the current background.
+ * On dark backgrounds: ensures minimum lightness (brightens dark colors).
+ * On light backgrounds: ensures maximum lightness (darkens light colors).
  */
 export function adjustColorForContrast(hex: string): string {
   if (!isValidHexColor(hex)) return hex
+
+  const light = isCurrentThemeLight()
 
   let r = parseInt(hex.substring(1, 3), 16) / 255
   let g = parseInt(hex.substring(3, 5), 16) / 255
@@ -90,39 +106,54 @@ export function adjustColorForContrast(hex: string): string {
     h /= 6
   }
 
-  if (l > MIN_CONTRAST_LIGHTNESS) {
-    const adjustedL = MIN_CONTRAST_LIGHTNESS * 0.9
+  // On light bg, we want colors DARK enough. On dark bg, colors LIGHT enough.
+  const adjustNeeded = light
+    ? l > MAX_CONTRAST_LIGHTNESS_LIGHT_BG
+    : l < MIN_CONTRAST_LIGHTNESS_DARK_BG
 
-    const hue2rgb = (p: number, q: number, t: number): number => {
-      let tt = t
-      if (tt < 0) tt += 1
-      if (tt > 1) tt -= 1
-      if (tt < 1 / 6) return p + (q - p) * 6 * tt
-      if (tt < 1 / 2) return q
-      if (tt < 2 / 3) return p + (q - p) * (2 / 3 - tt) * 6
-      return p
+  if (!adjustNeeded) {
+    // For dark bg, also cap extremely light colors (like the original logic)
+    if (!light && l > 0.85) {
+      return hslToHex(h, s, 0.75)
     }
-
-    let r1: number, g1: number, b1: number
-    if (s === 0) {
-      r1 = g1 = b1 = adjustedL
-    } else {
-      const q = adjustedL < 0.5 ? adjustedL * (1 + s) : adjustedL + s - adjustedL * s
-      const p = 2 * adjustedL - q
-      r1 = hue2rgb(p, q, h + 1 / 3)
-      g1 = hue2rgb(p, q, h)
-      b1 = hue2rgb(p, q, h - 1 / 3)
-    }
-
-    const toHex = (x: number): string => {
-      const hexVal = Math.round(x * 255).toString(16)
-      return hexVal.length === 1 ? '0' + hexVal : hexVal
-    }
-
-    return `#${toHex(r1)}${toHex(g1)}${toHex(b1)}`
+    return hex
   }
 
-  return hex
+  const targetL = light
+    ? MAX_CONTRAST_LIGHTNESS_LIGHT_BG * 0.9  // darken for light bg
+    : MIN_CONTRAST_LIGHTNESS_DARK_BG          // brighten for dark bg
+
+  return hslToHex(h, s, targetL)
+}
+
+function hslToHex(h: number, s: number, l: number): string {
+  const hue2rgb = (p: number, q: number, t: number): number => {
+    let tt = t
+    if (tt < 0) tt += 1
+    if (tt > 1) tt -= 1
+    if (tt < 1 / 6) return p + (q - p) * 6 * tt
+    if (tt < 1 / 2) return q
+    if (tt < 2 / 3) return p + (q - p) * (2 / 3 - tt) * 6
+    return p
+  }
+
+  let r1: number, g1: number, b1: number
+  if (s === 0) {
+    r1 = g1 = b1 = l
+  } else {
+    const q = l < 0.5 ? l * (1 + s) : l + s - l * s
+    const p = 2 * l - q
+    r1 = hue2rgb(p, q, h + 1 / 3)
+    g1 = hue2rgb(p, q, h)
+    b1 = hue2rgb(p, q, h - 1 / 3)
+  }
+
+  const toHex = (x: number): string => {
+    const hexVal = Math.round(x * 255).toString(16)
+    return hexVal.length === 1 ? '0' + hexVal : hexVal
+  }
+
+  return `#${toHex(r1)}${toHex(g1)}${toHex(b1)}`
 }
 
 // ---------------------------------------------------------------------------
