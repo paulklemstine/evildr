@@ -36,20 +36,38 @@ function getBackends(env) {
     });
   }
 
-  // 2. OpenRouter (24+ free models, 200 req/day/model)
+  // 2. OpenRouter — all strong free models (200 req/day each = massive pool)
   if (env.OPENROUTER_KEY) {
-    backends.push({
-      name: "openrouter",
-      target: "https://openrouter.ai/api/v1",
-      key: env.OPENROUTER_KEY,
-      model: "google/gemini-2.0-flash-exp:free",
-    });
-    backends.push({
-      name: "openrouter-llama",
-      target: "https://openrouter.ai/api/v1",
-      key: env.OPENROUTER_KEY,
-      model: "meta-llama/llama-3.3-70b-instruct:free",
-    });
+    const openRouterFreeModels = [
+      // Tier 1: Best quality, large context, strong JSON output
+      "meta-llama/llama-3.3-70b-instruct:free",        // 128K ctx, GPT-4 equivalent
+      "nousresearch/hermes-3-llama-3.1-405b:free",      // 131K ctx, largest free model
+      "qwen/qwen3-235b-a22b-thinking-2507",             // 131K ctx, strong reasoning
+      "qwen/qwen3-coder:free",                          // 262K ctx, excellent at structured output
+      "openai/gpt-oss-120b:free",                       // 131K ctx, large open model
+      "google/gemma-3-27b-it:free",                     // 131K ctx, Google quality
+      // Tier 2: Good quality, solid fallbacks
+      "mistralai/mistral-small-3.1-24b-instruct:free",  // 128K ctx, strong instruction following
+      "stepfun/step-3.5-flash:free",                    // 256K ctx, huge context
+      "nvidia/nemotron-3-nano-30b-a3b:free",            // 256K ctx, nvidia quality
+      "upstage/solar-pro-3:free",                       // 128K ctx
+      "arcee-ai/trinity-large-preview:free",            // 131K ctx
+      "z-ai/glm-4.5-air:free",                         // 131K ctx
+      "openai/gpt-oss-20b:free",                        // 131K ctx
+      "qwen/qwen3-next-80b-a3b-instruct:free",         // 262K ctx
+      // Tier 3: Smaller but functional
+      "cognitivecomputations/dolphin-mistral-24b-venice-edition:free", // 32K ctx, uncensored
+      "google/gemma-3-12b-it:free",                     // 32K ctx
+      "nvidia/nemotron-nano-12b-v2-vl:free",            // 128K ctx
+    ];
+    for (const model of openRouterFreeModels) {
+      backends.push({
+        name: `openrouter:${model.split("/")[1].split(":")[0]}`,
+        target: "https://openrouter.ai/api/v1",
+        key: env.OPENROUTER_KEY,
+        model,
+      });
+    }
   }
 
   // 3. Groq (fast inference, 10-30 RPM)
