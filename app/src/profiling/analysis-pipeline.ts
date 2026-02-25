@@ -1,5 +1,5 @@
 // Analysis pipeline — runs background LLM analysis on accumulated turn data
-// Uses Mistral Small 3.2 24B via Pollinations for background clinical analysis
+// Uses Mistral Small 3.2 24B via Pollinations ($0.10/$0.30 per M tokens)
 // Runs completely independently of game turns — no contention for the fast model
 
 import { getTurnsBySession, getAnalysesBySession, saveAnalysis, getSessionsByUser } from './db'
@@ -10,8 +10,9 @@ const ANALYSIS_INTERVAL = 5 // Analyze every N turns
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
 const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis calls
 
-// Background analysis uses the deep route — thinking models for thorough profiling.
-// In dev: Vite proxy → Cloudflare Worker. In prod: Cloudflare Worker directly.
+// Background analysis routes through the same Pollinations proxy.
+// In dev: Vite proxy → Cloudflare Worker → Pollinations.
+// In prod: Cloudflare Worker → Pollinations.
 const DEEP_PROXY = import.meta.env.DEV
   ? '/api/llm-deep'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm-deep'

@@ -49,21 +49,23 @@ interface ChatCompletionErrorResponse {
   }
 }
 
-// In dev, Vite proxies /api/llm → Gemini (appends API key server-side).
-// In prod, Cloudflare Worker proxy routes through multi-provider failover.
+// In dev, Vite proxies /api/llm → Cloudflare Worker → Pollinations.
+// In prod, client calls Cloudflare Worker directly → Pollinations.
 const DEFAULT_BASE_URL = import.meta.env.DEV
   ? '/api/llm'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
-const DEFAULT_MODELS = ['mistral']  // Mistral Small 3.2 24B
+const DEFAULT_MODELS = ['mistral']  // Mistral Small 3.2 24B ($0.10/$0.30 per M tokens)
 const DEFAULT_MAX_TOKENS = 8000  // enough for orchestrator (2-player) + UI generation
 const DEFAULT_TEMPERATURE = 1.0
 
 // Delay between retries
 const RETRY_DELAY_MS = 2000
-// Extra delay for rate limit (429) — Pollinations anonymous tier is 1 req/15s
-const RATE_LIMIT_DELAY_MS = 16000
+// Extra delay for rate limit (429) — should not happen with paid Pollinations key
+const RATE_LIMIT_DELAY_MS = 3000
 // Multiplier applied to max_tokens when response content is empty (reasoning budget consumed)
 const EMPTY_CONTENT_TOKEN_MULTIPLIER = 1.5
+// Per-request fetch timeout (proxy may retry multiple backends, cap total wait)
+const FETCH_TIMEOUT_MS = 60_000
 
 /**
  * Strips markdown code fences from a string.
@@ -202,6 +204,9 @@ export class LLMClient {
 
     let response: Response
 
+    const controller = new AbortController()
+    const timeoutId = setTimeout(() => controller.abort(), FETCH_TIMEOUT_MS)
+
     try {
       response = await fetch(url, {
         method: 'POST',
@@ -209,11 +214,16 @@ export class LLMClient {
           'Content-Type': 'application/json',
         },
         body,
+        signal: controller.signal,
       })
     } catch (networkErr) {
-      throw new Error(
-        `Network error calling ${model}: ${networkErr instanceof Error ? networkErr.message : String(networkErr)}`
-      )
+      clearTimeout(timeoutId)
+      const msg = networkErr instanceof DOMException && networkErr.name === 'AbortError'
+        ? `Request timeout (${FETCH_TIMEOUT_MS / 1000}s) calling ${model}`
+        : `Network error calling ${model}: ${networkErr instanceof Error ? networkErr.message : String(networkErr)}`
+      throw new Error(msg)
+    } finally {
+      clearTimeout(timeoutId)
     }
 
     if (!response.ok) {

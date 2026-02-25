@@ -8,7 +8,8 @@ import type { ImageClient } from './game-loop'
 // ---------------------------------------------------------------------------
 
 // Lightweight LLM calls route through the same proxy as the main game.
-// In dev: Vite proxy → Gemini. In prod: Cloudflare Worker → multi-provider failover.
+// In dev: Vite proxy → Cloudflare Worker → Pollinations.
+// In prod: Cloudflare Worker → Pollinations.
 const PROXY_BASE = import.meta.env.DEV
   ? '/api/llm'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
@@ -130,7 +131,7 @@ async function fetchLLMWisdom(): Promise<string[]> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'mistral',
+        model: 'nova-fast',
         messages: [{ role: 'user', content: WISDOM_PROMPT }],
         max_tokens: 800,
         temperature: 1.2,
@@ -165,7 +166,7 @@ async function fetchImagePrompt(): Promise<string | null> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'mistral',
+        model: 'nova-fast',
         messages: [{ role: 'user', content: IMAGE_PROMPT_GENERATOR }],
         max_tokens: 300,
         temperature: 1.3,
@@ -353,7 +354,7 @@ export function showInterstitial(imageClient: ImageClient): void {
       activeWisdomPool = wisdoms
       currentWisdomIndex = 0
       // Immediately fade to first LLM wisdom
-      const wisdomText = overlayEl.querySelector('.interstitial-wisdom-text')
+      const wisdomText = overlayEl?.querySelector('.interstitial-wisdom-text')
       if (wisdomText) {
         wisdomText.classList.add('interstitial-wisdom-fade')
         setTimeout(() => {

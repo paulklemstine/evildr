@@ -2,9 +2,7 @@ name = "drevil-proxy"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
 
-[vars]
-LLM_TARGET = "https://generativelanguage.googleapis.com/v1beta/openai"
-IMAGE_TARGET = "https://gen.pollinations.ai"
+# POLLINATIONS_KEY secret must be set via: wrangler secret put POLLINATIONS_KEY
 
 [[kv_namespaces]]
 binding = "REPORTS"

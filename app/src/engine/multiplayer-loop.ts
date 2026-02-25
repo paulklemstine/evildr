@@ -355,6 +355,7 @@ export class MultiplayerGameLoop {
   private orchestratorTimeout: ReturnType<typeof setTimeout> | null = null
   private cleanupCelebrations: (() => void) | null = null
   private turnInProgress = false
+  private imageShareTimeout: ReturnType<typeof setTimeout> | null = null
 
   constructor(config: MultiplayerGameLoopConfig) {
     this.config = config
@@ -497,6 +498,12 @@ export class MultiplayerGameLoop {
    * Images are matched by position (index).
    */
   private applySharedImages(images: Array<{ name: string; base64: string }>): void {
+    // Cancel fallback timer — we received shared images from Player 1
+    if (this.imageShareTimeout) {
+      clearTimeout(this.imageShareTimeout)
+      this.imageShareTimeout = null
+    }
+
     const imgElements = this.config.container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]')
 
     images.forEach((data, i) => {
@@ -543,12 +550,22 @@ export class MultiplayerGameLoop {
     applyMoodFromUI(uiJsonArray)
 
     // Resolve images — Player 1 loads from Pollinations and shares via PeerJS.
-    // Player 2 skips Pollinations and waits for Player 1's shared base64 images.
+    // Player 2 waits briefly for shared images, then falls back to Pollinations.
     if (isPlayer1) {
       this.resolveImages()
       this.captureAndShareImages()
+    } else {
+      // Player 2: wait up to 15s for shared images from Player 1, then fall back
+      this.imageShareTimeout = setTimeout(() => {
+        const pending = this.config.container.querySelectorAll<HTMLImageElement>(
+          'img[data-image-prompt]:not([src^="data:image/jpeg"])'
+        )
+        if (pending.length > 0) {
+          console.info('[P2] Image share timeout — loading from Pollinations directly')
+          this.resolveImages()
+        }
+      }, 15000)
     }
-    // Player 2: images stay as shimmers until 'images' message arrives from Player 1
 
     // Apply dopamine effects
     cascadeReveal(container)
