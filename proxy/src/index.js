@@ -8,6 +8,7 @@
  * Secrets (set via `wrangler secret put`):
  *   LLM_API_KEY       — Google Gemini API key
  *   OPENROUTER_KEY    — OpenRouter API key (free tier: 200 req/day/model)
+ *   OPENCODE_KEY      — OpenCode Zen API key (free models: kimi, minimax, trinity)
  *   GROQ_KEY          — Groq API key (free tier: 10-30 RPM)
  *   SAMBANOVA_KEY     — SambaNova API key (free tier: 20 RPM)
  *   IMAGE_API_KEY     — Pollinations API key
@@ -70,7 +71,24 @@ function getBackends(env) {
     }
   }
 
-  // 3. Groq (fast inference, 10-30 RPM)
+  // 3. OpenCode Zen — free models (no credit card needed)
+  if (env.OPENCODE_KEY) {
+    const openCodeFreeModels = [
+      "kimi-k2.5-free",              // Moonshot AI, strong reasoning
+      "minimax-m2.5-free",           // Minimax, good quality
+      "trinity-large-preview-free",  // Arcee AI
+    ];
+    for (const model of openCodeFreeModels) {
+      backends.push({
+        name: `opencode:${model.replace("-free", "")}`,
+        target: "https://opencode.ai/zen/v1",
+        key: env.OPENCODE_KEY,
+        model,
+      });
+    }
+  }
+
+  // 4. Groq (fast inference, 10-30 RPM)
   if (env.GROQ_KEY) {
     backends.push({
       name: "groq",
