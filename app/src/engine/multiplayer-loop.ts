@@ -783,19 +783,27 @@ export class MultiplayerGameLoop {
     } as PeerMessage)
 
     // Start waiting with appropriate status message
+    const isFirstTurn = this.state.turnNumber === 0 && !this.state.currentUiJson
+
     if (this.config.isPlayer1) {
       this.waitingForPartnerActions = true
       this.startPartnerActionTimeout()
       // If partner already submitted, we'll proceed immediately via checkAndProcessTurn
       if (this.partnerActionsThisTurn !== null) {
-        onWaitingStatus?.('Both dates ready! The matchmaker is working...')
+        onWaitingStatus?.(isFirstTurn
+          ? 'The matchmaker is setting the scene...'
+          : 'Both dates ready! The matchmaker is working...')
       } else {
-        onWaitingStatus?.('Waiting for your date to respond...')
+        onWaitingStatus?.(isFirstTurn
+          ? 'Connecting with your date...'
+          : 'Waiting for your date to respond...')
       }
     } else {
       this.waitingForOrchestratorSection = true
       this.startOrchestratorTimeout()
-      onWaitingStatus?.('Waiting for your date and the matchmaker...')
+      onWaitingStatus?.(isFirstTurn
+        ? 'The matchmaker is setting the scene...'
+        : 'Waiting for the matchmaker...')
     }
 
     // Check if we can already proceed
@@ -850,12 +858,12 @@ export class MultiplayerGameLoop {
         break
 
       case 'partner-submitted':
-        // Partner has submitted their turn — update status if we're waiting
+        // Partner has submitted their turn
         if (this.myActionsThisTurn !== null) {
-          // We already submitted too — both are in
-          this.config.onWaitingStatus?.('Your date has responded!')
+          // Both have submitted — matchmaker will process next
+          this.config.onWaitingStatus?.('Both dates ready! The matchmaker is working...')
         } else {
-          // Partner submitted before us — update partner status indicator
+          // Partner submitted before us — nudge the player
           this.config.onWaitingStatus?.('Your date is waiting for you...')
         }
         break
