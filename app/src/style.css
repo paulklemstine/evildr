@@ -107,7 +107,8 @@ h1, h2, h3 {
   border-left: 4px solid transparent;
   border: 1px solid var(--border-color);
   position: relative;
-  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s ease;
+  text-align: center;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.2s ease, background-color 0.2s ease;
 }
 
 .geems-element:hover {
@@ -121,6 +122,7 @@ h1, h2, h3 {
   color: var(--accent-primary);
   font-size: 0.875rem;
   letter-spacing: 0.01em;
+  text-align: center;
   transition: color 0.2s ease;
 }
 
@@ -129,6 +131,7 @@ h1, h2, h3 {
   line-height: 1.75;
   word-wrap: break-word;
   font-size: 0.9375rem;
+  text-align: justify;
 }
 
 .geems-text strong {
@@ -1130,6 +1133,7 @@ h1, h2, h3 {
 
 .geems-rating {
   display: flex;
+  justify-content: center;
   gap: 0.25rem;
   padding: 0.5rem 0;
 }
@@ -1230,6 +1234,7 @@ h1, h2, h3 {
 .geems-button-group {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.25rem 0;
 }
@@ -1352,6 +1357,7 @@ h1, h2, h3 {
 .geems-emoji-row {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem 0;
 }
@@ -1388,6 +1394,7 @@ h1, h2, h3 {
 .geems-color-grid {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
   padding: 0.5rem 0;
 }

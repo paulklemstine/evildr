@@ -122,6 +122,16 @@ export function adjustColorForContrast(hex: string): string {
   return hslToHex(h, s, targetL)
 }
 
+/**
+ * Convert a hex color to rgba with the given alpha.
+ */
+function hexToRgba(hex: string, alpha: number): string {
+  const r = parseInt(hex.substring(1, 3), 16)
+  const g = parseInt(hex.substring(3, 5), 16)
+  const b = parseInt(hex.substring(5, 7), 16)
+  return `rgba(${r}, ${g}, ${b}, ${alpha})`
+}
+
 function hslToHex(h: number, s: number, l: number): string {
   const hue2rgb = (p: number, q: number, t: number): number => {
     let tt = t
@@ -317,6 +327,10 @@ function renderCheckboxElement(
 
   const optionDiv = document.createElement('div')
   optionDiv.className = 'geems-checkbox-option'
+  if (adjustedColor) {
+    optionDiv.style.borderColor = hexToRgba(adjustedColor, 0.25)
+    optionDiv.style.backgroundColor = hexToRgba(adjustedColor, isCurrentThemeLight() ? 0.05 : 0.08)
+  }
 
   const input = document.createElement('input')
   input.type = 'checkbox'
@@ -499,6 +513,10 @@ function renderRadioElement(
     options.forEach((option, idx) => {
       const optionDiv = document.createElement('div')
       optionDiv.className = 'geems-radio-option'
+      if (adjustedColor) {
+        optionDiv.style.borderColor = hexToRgba(adjustedColor, 0.25)
+        optionDiv.style.backgroundColor = hexToRgba(adjustedColor, isCurrentThemeLight() ? 0.05 : 0.08)
+      }
 
       const input = document.createElement('input')
       input.type = 'radio'
@@ -634,6 +652,10 @@ function renderToggleElement(
 
   const toggleDiv = document.createElement('div')
   toggleDiv.className = 'geems-toggle-container'
+  if (adjustedColor) {
+    toggleDiv.style.borderColor = hexToRgba(adjustedColor, 0.25)
+    toggleDiv.style.backgroundColor = hexToRgba(adjustedColor, isCurrentThemeLight() ? 0.05 : 0.08)
+  }
 
   const label = document.createElement('span')
   label.className = 'geems-toggle-label'
@@ -995,6 +1017,8 @@ export function renderUI(
     if (element.color && isValidHexColor(element.color)) {
       adjustedColor = adjustColorForContrast(element.color)
       wrapper.style.borderLeftColor = adjustedColor
+      wrapper.style.borderColor = hexToRgba(adjustedColor, 0.25)
+      wrapper.style.backgroundColor = hexToRgba(adjustedColor, isCurrentThemeLight() ? 0.05 : 0.08)
     } else {
       wrapper.style.borderLeftColor = 'transparent'
     }
