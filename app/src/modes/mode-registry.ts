@@ -44,9 +44,14 @@ import { geemsConfig } from './geems/config.ts'
 import { createGEEMSPromptBuilder } from './geems/prompts.ts'
 import { drevilConfig } from './drevil/config.ts'
 import { createDrEvilPromptBuilder } from './drevil/prompts.ts'
-// Flagged (multiplayer) — removed for now, planned for future expansion
+import { oracleConfig } from './oracle/config.ts'
+import { createOraclePromptBuilder } from './oracle/prompts.ts'
+import { skinwalkerConfig } from './skinwalker/config.ts'
+import { createSkinwalkerPromptBuilder } from './skinwalker/prompts.ts'
+import { feverDreamConfig } from './fever-dream/config.ts'
+import { createFeverDreamPromptBuilder } from './fever-dream/prompts.ts'
+// Flagged (multiplayer) — config registered but requires multiplayer-loop to play
 // import { flaggedConfig } from './flagged/config.ts'
-// import { createFlaggedPromptBuilder } from './flagged/prompts.ts'
 
 // Build the full registry with default prompt builders attached
 const registry: GameMode[] = [
@@ -61,6 +66,18 @@ const registry: GameMode[] = [
   {
     ...cyoaConfig,
     promptBuilder: createCYOAPromptBuilder('Fantasy'),
+  },
+  {
+    ...oracleConfig,
+    promptBuilder: createOraclePromptBuilder(),
+  },
+  {
+    ...skinwalkerConfig,
+    promptBuilder: createSkinwalkerPromptBuilder(),
+  },
+  {
+    ...feverDreamConfig,
+    promptBuilder: createFeverDreamPromptBuilder(),
   },
 ]
 

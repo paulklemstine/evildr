@@ -18,6 +18,9 @@ const MODE_IMAGE_PROMPTS: Record<string, string> = {
   drevil: 'A retro-futuristic mad scientist laboratory with neon green glowing tubes, colorful control panels, and a spinning chair facing wall of monitors, adult cartoon style, dramatic cinematic lighting, vibrant colors',
   geems: 'An epic cinematic adventure scene with a hero silhouette standing at the edge of a glowing cliff overlooking a vast magical landscape with floating islands, vibrant adult animated movie style, dramatic golden hour lighting',
   cyoa: 'A mystical crossroads in an enchanted forest with three branching paths lit by different colored magical lights, ancient stone markers, fireflies, painterly fantasy art style, dramatic atmosphere',
+  oracle: 'A mystical oracle chamber with swirling cosmic purple and gold energy, a crystal sphere floating above an ancient stone pedestal, celestial symbols and constellations reflected on dark marble walls, ethereal divine lighting',
+  skinwalker: 'A seemingly normal suburban kitchen at twilight but something is subtly wrong, the shadows fall in the wrong direction, a family photo on the wall has too many people in it, muted desaturated colors, uncanny horror atmosphere',
+  'fever-dream': 'A surreal dreamscape where a grand piano made of clouds floats above a neon pink ocean, melting clocks drip from impossible architecture, vibrant psychedelic colors, electric cyan sky, whimsical surrealist art style',
 }
 
 // --- Global State ---

@@ -4,7 +4,7 @@
 // Every turn should feel like a theme park ride, a heist, a chase, a mystery.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
@@ -233,6 +233,8 @@ philosophical reflection. Think movie trailer voiceover:
 - "What's waiting for you next? Even I don't know. And that's what makes this FUN."
 
 ${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
 
 ${BANNED_PHRASES}
 

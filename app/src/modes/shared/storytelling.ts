@@ -73,6 +73,26 @@ Each feels EQUALLY exciting. No "correct" answer. Vary which is most tempting.
 Track distribution in notes: {bold: N, clever: N, compassionate: N, chaotic: N}`
 
 /**
+ * Hidden justification directive — every input element carries context
+ * so the LLM knows WHY it asked and how to interpret the answer.
+ */
+export const INPUT_JUSTIFICATION = `### HIDDEN JUSTIFICATION (MANDATORY FOR ALL INPUT ELEMENTS) ###
+EVERY interactive element (radio, slider, checkbox, textfield, dropdown, toggle, button_group, rating, number_input, emoji_react, color_pick) MUST include a "justification" field.
+This is a hidden string explaining:
+1. WHY you are asking this specific question at this moment
+2. WHAT psychological/behavioral trait it measures
+3. HOW to interpret different responses
+
+Examples:
+- {"type":"slider","name":"speed","label":"How fast do you move?","justification":"Measures risk tolerance and anxiety baseline — low values indicate caution/fear, high values indicate impulsivity or bravado, middle values suggest calculated thinking","predicted":"6",...}
+- {"type":"textfield","name":"first_words","label":"What do you say?","justification":"Free-text response reveals communication style, vocabulary level, emotional state, and social approach — analyze for hedging language, confidence markers, humor use, and empathy indicators","predicted":"Hello there",...}
+- {"type":"radio","name":"action","label":"Choose","justification":"Core moral dilemma: tests empathy vs self-preservation. Bold=low empathy high agency, Clever=analytical detachment, Compassionate=high empathy may indicate people-pleasing, Chaotic=defiance of framing itself is diagnostic",...}
+- {"type":"toggle","name":"trust","label":"Trust the stranger?","justification":"Binary trust assessment at low-information moment — reveals default trust baseline and attachment style. Quick acceptance may indicate anxious attachment, refusal may indicate avoidant","predicted":"true",...}
+
+The justification is NEVER shown to the player. It travels with the player's response in the next turn so you have full context for behavioral analysis.
+Write justifications that are SPECIFIC to this exact question in this exact narrative moment — not generic.`
+
+/**
  * Banned phrases list — eliminates common AI writing cliches.
  */
 export const BANNED_PHRASES = `### BANNED PHRASES — AI CLICHE ELIMINATION ###

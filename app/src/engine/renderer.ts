@@ -22,6 +22,8 @@ export interface UIElement {
   placeholder?: string
   /** LLM's predicted response for this element — used as autofill default */
   predicted?: string
+  /** Hidden justification: why this question is asked + what trait it measures */
+  justification?: string
 }
 
 export interface RenderResult {
@@ -299,6 +301,7 @@ function renderTextFieldElement(
     input.dataset.predicted = element.predicted
     input.classList.add('geems-predicted')
   }
+  if (element.justification) input.dataset.justification = element.justification
   wrapper.appendChild(input)
 }
 
@@ -324,6 +327,7 @@ function renderCheckboxElement(
   input.checked = checkValue === true as unknown || String(checkValue).toLowerCase() === 'true'
   input.dataset.elementType = 'checkbox'
   if (element.predicted) input.dataset.predicted = element.predicted
+  if (element.justification) input.dataset.justification = element.justification
   if (adjustedColor) input.style.accentColor = adjustedColor
 
   const label = document.createElement('label')
@@ -371,6 +375,7 @@ function renderSliderElement(
   )
   input.dataset.elementType = 'slider'
   if (element.predicted) input.dataset.predicted = element.predicted
+  if (element.justification) input.dataset.justification = element.justification
 
   if (adjustedColor) {
     input.style.accentColor = adjustedColor
@@ -503,6 +508,7 @@ function renderRadioElement(
       input.value = option.value
       input.checked = option.value === selectedValue
       input.dataset.elementType = 'radio'
+      if (idx === 0 && element.justification) input.dataset.justification = element.justification
       if (adjustedColor) input.style.accentColor = adjustedColor
 
       const optionLabel = document.createElement('label')
@@ -556,6 +562,7 @@ function renderDropdownElement(
   })
 
   if (element.predicted) select.dataset.predicted = element.predicted
+  if (element.justification) select.dataset.justification = element.justification
   wrapper.appendChild(select)
 }
 
@@ -580,6 +587,7 @@ function renderRatingElement(
   ratingContainer.dataset.name = element.name
   ratingContainer.dataset.value = String(defaultVal)
   if (element.predicted) ratingContainer.dataset.predicted = element.predicted
+  if (element.justification) ratingContainer.dataset.justification = element.justification
 
   for (let i = 1; i <= maxStars; i++) {
     const star = document.createElement('span')
@@ -640,6 +648,7 @@ function renderToggleElement(
   input.checked = checkValue === true as unknown || String(checkValue).toLowerCase() === 'true'
   input.dataset.elementType = 'toggle'
   if (element.predicted) input.dataset.predicted = element.predicted
+  if (element.justification) input.dataset.justification = element.justification
 
   const toggle = document.createElement('span')
   toggle.className = 'geems-toggle-switch'
@@ -673,6 +682,7 @@ function renderButtonGroupElement(
   grid.dataset.name = element.name
   grid.dataset.value = element.predicted || element.value || ''
   if (element.predicted) grid.dataset.predicted = element.predicted
+  if (element.justification) grid.dataset.justification = element.justification
 
   const { options } = parseRadioOptions(element)
   const selectedValue = element.predicted || element.value || ''
@@ -784,6 +794,7 @@ function renderNumberInputElement(
   input.value = String(isNaN(defaultVal) ? min : Math.max(min, Math.min(max, defaultVal)))
   input.dataset.elementType = 'number_input'
   if (element.predicted) input.dataset.predicted = element.predicted
+  if (element.justification) input.dataset.justification = element.justification
 
   const btnPlus = document.createElement('button')
   btnPlus.type = 'button'
@@ -827,6 +838,7 @@ function renderEmojiReactElement(
   emojiRow.dataset.name = element.name
   emojiRow.dataset.value = element.predicted || ''
   if (element.predicted) emojiRow.dataset.predicted = element.predicted
+  if (element.justification) emojiRow.dataset.justification = element.justification
 
   let emojis: string[] = []
   if (Array.isArray(element.options)) {
@@ -872,6 +884,7 @@ function renderColorPickElement(
   colorGrid.dataset.name = element.name
   colorGrid.dataset.value = element.predicted || ''
   if (element.predicted) colorGrid.dataset.predicted = element.predicted
+  if (element.justification) colorGrid.dataset.justification = element.justification
 
   let colors: string[] = []
   if (Array.isArray(element.options)) {
@@ -1109,6 +1122,11 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
         inputs[name] = (inputEl as HTMLInputElement).checked
         break
     }
+
+    // Capture justification alongside the value (hidden context for LLM)
+    if (inputEl.dataset.justification && !inputs[`${name}__justification`]) {
+      inputs[`${name}__justification`] = inputEl.dataset.justification
+    }
   })
 
   // Collect from custom interactive elements (rating, button_group, emoji_react, color_pick)
@@ -1121,6 +1139,10 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
         inputs[name] = parseInt(el.dataset.value) || 0
       } else {
         inputs[name] = el.dataset.value
+      }
+      // Capture justification for custom elements too
+      if (el.dataset.justification) {
+        inputs[`${name}__justification`] = el.dataset.justification
       }
     }
   })

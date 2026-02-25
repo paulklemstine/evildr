@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -224,6 +224,8 @@ Apply ALL of these every turn:
 **10. SOCIAL PROOF:** "No one has ever survived this room." "This is the path only legends take." "What you just did? That was impossible." Make the player feel SPECIAL and POWERFUL.
 
 ${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
 
 ${BANNED_PHRASES}
 

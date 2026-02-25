@@ -7,7 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -308,6 +308,8 @@ Always leave mysteries:
 - "There's a door you haven't found yet. Dr. Gemini smiles every time you walk past it."
 
 ${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
 
 ${BANNED_PHRASES}
 
