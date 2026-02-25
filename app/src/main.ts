@@ -6,7 +6,7 @@ import { createCYOAPromptBuilder } from './modes/cyoa/prompts'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
 import { showReEngagement } from './engine/session-hooks'
-import { showInterstitial, dismissInterstitial } from './engine/loading-interstitial'
+import { showInterstitial, dismissInterstitial, preloadInterstitialImage } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import { renderAdminPage } from './pages/admin'
 import { createPlayerBridge } from './admin/live-bridge'
@@ -168,6 +168,9 @@ function renderLobby(): void {
   `
 
   bindThemeToggle()
+
+  // Preload interstitial image while player browses the lobby
+  preloadInterstitialImage(imageClient)
 
   // --- Event Listeners ---
   let selectedGenre = 'horror'
