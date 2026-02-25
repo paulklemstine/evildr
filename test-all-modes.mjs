@@ -59,17 +59,35 @@ async function getElementTypes(page) {
  */
 async function getHiddenFields(page, modeId) {
   return page.evaluate((mode) => {
+    // Try the exact key first, then scan for any matching key
     const key = `drevil-${mode}-state`
-    const raw = localStorage.getItem(key)
-    if (!raw) return {}
+    let raw = localStorage.getItem(key)
+
+    // If not found, scan all localStorage keys for a match
+    if (!raw) {
+      for (let i = 0; i < localStorage.length; i++) {
+        const k = localStorage.key(i)
+        if (k && k.includes(mode) && k.includes('state')) {
+          raw = localStorage.getItem(k)
+          break
+        }
+      }
+    }
+
+    if (!raw) {
+      const allKeys = []
+      for (let i = 0; i < localStorage.length; i++) allKeys.push(localStorage.key(i))
+      return { _debug_keys: allKeys.join(', ') || '(empty localStorage)' }
+    }
     try {
       const state = JSON.parse(raw)
+      const stringify = (v) => typeof v === 'string' ? v : JSON.stringify(v || '')
       return {
-        notes: (state.currentNotes || '').substring(0, 500),
-        gemini_facing_analysis: (state.hiddenAnalysis || '').substring(0, 500),
+        notes: stringify(state.currentNotes).substring(0, 500),
+        gemini_facing_analysis: stringify(state.hiddenAnalysis).substring(0, 500),
         subjectId: state.currentSubjectId || '',
       }
-    } catch { return {} }
+    } catch (e) { return { _debug_error: 'parse failed: ' + (e.message || String(e)).substring(0, 200), _debug_raw: raw.substring(0, 200) } }
   }, modeId)
 }
 
@@ -227,6 +245,9 @@ async function testMode(modeId, totalTurns, browser) {
       console.log(`  Images: ${report.imageCount}`)
       console.log(`  Narratives: ${report.narrativeCount} (avg ${report.narrativeAvgLength} chars)`)
       console.log(`  Notes: ${report.hasNotes ? `✓ (${report.notesLength} chars)` : '✗ MISSING'}`)
+      if (!report.hasNotes && hiddenFields._debug_keys) console.log(`  DEBUG localStorage keys: ${hiddenFields._debug_keys}`)
+      if (hiddenFields._debug_error) console.log(`  DEBUG: ${hiddenFields._debug_error}`)
+      if (hiddenFields._debug_raw) console.log(`  DEBUG raw: ${hiddenFields._debug_raw}`)
       console.log(`  Analysis: ${report.hasAnalysis ? `✓ (${report.analysisLength} chars)` : '(none)'}`)
       if (report.hasSubjectId) console.log(`  SubjectId: ✓`)
       if (report.issues.length > 0) console.log(`  ⚠️  Issues: ${report.issues.join(', ')}`)
