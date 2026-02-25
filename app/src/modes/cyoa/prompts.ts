@@ -32,6 +32,14 @@ export function createCYOAPromptBuilder(genre: string): PromptBuilder {
     buildFirstTurnPrompt(): string {
       return `${system}
 
+${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}
+
 ### FIRST TURN ###
 No player input yet. THROW THEM INTO THE ACTION. No slow buildup. No "you wake up in a tavern."
 The story starts IN MEDIA RES — mid-chase, mid-heist, mid-explosion, mid-discovery.
@@ -57,8 +65,9 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
       notes: string,
       liveAnalysis?: string,
     ): string {
-      const historyBlock = history
-        .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer chose: ${h.actions}`)
+      const recentHistory = history.slice(-3)
+      const historyBlock = recentHistory
+        .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
       return `${system}
@@ -221,13 +230,7 @@ Apply ALL of these every turn:
 
 **10. SOCIAL PROOF:** "No one has ever survived this room." "This is the path only legends take." "What you just did? That was impossible." Make the player feel SPECIAL and POWERFUL.
 
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}`
+Every interactive element MUST include a "justification" field explaining WHY you're asking, WHAT trait it measures, and HOW to interpret responses.`
 }
 
 function getGenreConventions(genre: string): string {

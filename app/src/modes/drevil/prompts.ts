@@ -23,8 +23,9 @@ export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
     ): string {
-      const historyBlock = history
-        .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer: ${h.actions}`)
+      const recentHistory = history.slice(-3)
+      const historyBlock = recentHistory
+        .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
       let prompt = DREVIL_MAIN
@@ -307,13 +308,7 @@ Always leave mysteries:
 - "That sound you keep hearing? We'll get to that. Eventually."
 - "There's a door you haven't found yet. Dr. Evil smiles every time you walk past it."
 
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}`
+Every interactive element MUST include a "justification" field explaining WHY you're asking, WHAT trait it measures, and HOW to interpret responses.`
 
 const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this subject. USE IT to design EXPERIMENTS:
 
@@ -383,6 +378,14 @@ Element order:
 ${COLOR_PROTOCOL}
 
 ${BEHAVIORAL_DIRECTIVES}
+
+${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

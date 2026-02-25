@@ -357,7 +357,15 @@ ${ORCHESTRATOR_DELIMITER}
 ${ORCHESTRATOR_DELIMITER}
 [Player B instructions here]
 
-Do NOT wrap in JSON. Do NOT add markdown fences. Do NOT start with the delimiter. Plain text with the delimiter BETWEEN sections.`
+Do NOT wrap in JSON. Do NOT add markdown fences. Do NOT start with the delimiter. Plain text with the delimiter BETWEEN sections.
+
+${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}`
 
 const ORCHESTRATOR_MAIN = `You are the MATCHMAKER — an all-seeing AI orchestrating a blind date between two strangers.
 You see BOTH players. They can only see their own perspective. You are Dr. Evil in matchmaker mode.
@@ -447,14 +455,6 @@ Each player's section should include:
 5. RED FLAGS: Updated list of red flags about their date partner
 6. DOSSIER UPDATE: Updated psychological profile for this player
 7. CHEMISTRY ASSESSMENT: Current chemistry level, tension level, compatibility forecast
-
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}
 
 ### OUTPUT ###
 Return ONLY the three sections separated by ${ORCHESTRATOR_DELIMITER}

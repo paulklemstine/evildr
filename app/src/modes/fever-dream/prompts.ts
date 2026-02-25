@@ -23,8 +23,9 @@ export function createFeverDreamPromptBuilder(): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
     ): string {
-      const historyBlock = history
-        .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer: ${h.actions}`)
+      const recentHistory = history.slice(-3)
+      const historyBlock = recentHistory
+        .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
       let prompt = FEVERDREAM_MAIN
@@ -344,13 +345,7 @@ Beneath every layer of surrealism, there should be a genuine emotional note:
 The absurdity is the VEHICLE. The emotion is the PAYLOAD.
 The best dreams are the ones that make you feel something you can't name.
 
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}`
+Every interactive element MUST include a "justification" field explaining WHY you're asking, WHAT trait it measures, and HOW to interpret responses.`
 
 const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this dreamer. USE IT to shape the DREAM:
 
@@ -435,6 +430,14 @@ Element order:
 ${COLOR_PROTOCOL}
 
 ${BEHAVIORAL_DIRECTIVES}
+
+${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

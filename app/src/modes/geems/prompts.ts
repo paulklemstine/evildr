@@ -20,8 +20,9 @@ export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
     ): string {
-      const historyBlock = history
-        .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer: ${h.actions}`)
+      const recentHistory = history.slice(-3)
+      const historyBlock = recentHistory
+        .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
       let prompt = GEEMS_MAIN
@@ -232,13 +233,7 @@ philosophical reflection. Think movie trailer voiceover:
 - "The next door opens in 3... 2... 1..."
 - "What's waiting for you next? Even I don't know. And that's what makes this FUN."
 
-${STORYTELLING_CRAFT}
-
-${INPUT_JUSTIFICATION}
-
-${BANNED_PHRASES}
-
-${STAGNATION_DETECTION}`
+Every interactive element MUST include a "justification" field explaining WHY you're asking, WHAT trait it measures, and HOW to interpret responses.`
 
 const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this player. USE IT to shape the ADVENTURE:
 
@@ -300,6 +295,14 @@ Element order:
 ${COLOR_PROTOCOL}
 
 ${BEHAVIORAL_DIRECTIVES}
+
+${STORYTELLING_CRAFT}
+
+${INPUT_JUSTIFICATION}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
