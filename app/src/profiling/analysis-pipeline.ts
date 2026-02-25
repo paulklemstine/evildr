@@ -1,5 +1,5 @@
 // Analysis pipeline — runs background LLM analysis on accumulated turn data
-// Uses the deep/thinking model route (Qwen3-235B) for thorough clinical analysis
+// Uses Mistral Small 3.2 24B via Pollinations for background clinical analysis
 // Runs completely independently of game turns — no contention for the fast model
 
 import { getTurnsBySession, getAnalysesBySession, saveAnalysis, getSessionsByUser } from './db'
@@ -10,9 +10,8 @@ const ANALYSIS_INTERVAL = 5 // Analyze every N turns
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
 const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis calls
 
-const DEEP_PROXY = import.meta.env.DEV
-  ? '/api/llm-deep'
-  : 'https://drevil-proxy.drevil.workers.dev/api/llm-deep'
+// Pollinations.ai — free LLM API for background analysis
+const DEEP_PROXY = 'https://gen.pollinations.ai/v1'
 
 let lastAnalysisTime = 0
 let pendingAnalysis: ReturnType<typeof setTimeout> | null = null
@@ -90,15 +89,15 @@ async function runAnalysis(
 }
 
 /**
- * Call the deep/thinking model endpoint (Qwen3-235B via OpenRouter).
- * This is a fire-and-forget background call — latency doesn't matter.
+ * Call Mistral via Pollinations for background analysis.
+ * Fire-and-forget — latency doesn't matter.
  */
 async function callDeepModel(prompt: string): Promise<string> {
   const response = await fetch(`${DEEP_PROXY}/chat/completions`, {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'qwen3-235b-thinking',
+      model: 'mistral',
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 8000,
       temperature: 0.7,

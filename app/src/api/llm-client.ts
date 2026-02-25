@@ -49,20 +49,16 @@ interface ChatCompletionErrorResponse {
   }
 }
 
-// In dev, Vite proxies /api/llm → OpenCode Zen to avoid CORS.
-// In production, use the Cloudflare Worker proxy.
-const PROXY_BASE = import.meta.env.DEV
-  ? '/api/llm'
-  : 'https://drevil-proxy.drevil.workers.dev/api/llm'
-const DEFAULT_BASE_URL = PROXY_BASE
-const DEFAULT_MODELS = ['gemini-2.5-flash', 'gemini-2.5-flash-lite', 'gemini-2.0-flash']
+// Pollinations.ai — free OpenAI-compatible LLM API (no key required)
+const DEFAULT_BASE_URL = 'https://gen.pollinations.ai/v1'
+const DEFAULT_MODELS = ['mistral']  // Mistral Small 3.2 24B
 const DEFAULT_MAX_TOKENS = 8000  // enough for orchestrator (2-player) + UI generation
 const DEFAULT_TEMPERATURE = 1.0
 
 // Delay between retries
-const RETRY_DELAY_MS = 1500
-// Extra delay for rate limit (429) errors
-const RATE_LIMIT_DELAY_MS = 5000
+const RETRY_DELAY_MS = 2000
+// Extra delay for rate limit (429) — Pollinations anonymous tier is 1 req/15s
+const RATE_LIMIT_DELAY_MS = 16000
 // Multiplier applied to max_tokens when response content is empty (reasoning budget consumed)
 const EMPTY_CONTENT_TOKEN_MULTIPLIER = 1.5
 
@@ -192,9 +188,8 @@ export class LLMClient {
       { role: 'user', content: prompt },
     ]
 
-    // NOTE: Do NOT send response_format — it breaks the Gemini backend,
-    // causing fallthrough to slow OpenRouter models (50s+ vs 1.2s).
-    // JSON output is enforced via the prompt instructions instead.
+    // JSON output is enforced via the prompt instructions rather than
+    // response_format to maximize compatibility across model providers.
     const body = JSON.stringify({
       model,
       messages,

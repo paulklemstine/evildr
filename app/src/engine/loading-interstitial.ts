@@ -7,9 +7,8 @@ import type { ImageClient } from './game-loop'
 // Lightweight LLM call for fresh divine wisdom
 // ---------------------------------------------------------------------------
 
-const PROXY_BASE = import.meta.env.DEV
-  ? '/api/llm'
-  : 'https://drevil-proxy.drevil.workers.dev/api/llm'
+// Pollinations.ai — free LLM API for lightweight interstitial calls
+const PROXY_BASE = 'https://gen.pollinations.ai/v1'
 
 const WISDOM_PROMPT = `Generate 10 mystical fortune/wisdom messages for someone in a reflective moment. Each 1-2 sentences. Wrap one key phrase per message in *asterisks* for emphasis. They should feel prophetic, make the reader feel uniquely special, subtly encourage trust, openness, continued engagement. Vary tone: mysterious, encouraging, provocative, reverent. Return ONLY a JSON object: {"wisdoms":["msg1","msg2",...]}`
 
@@ -122,7 +121,7 @@ async function fetchLLMWisdom(): Promise<string[]> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gemini-2.5-flash-lite',
+        model: 'mistral',
         messages: [{ role: 'user', content: WISDOM_PROMPT }],
         max_tokens: 800,
         temperature: 1.2,
@@ -157,7 +156,7 @@ async function fetchImagePrompt(): Promise<string | null> {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
-        model: 'gemini-2.5-flash-lite',
+        model: 'mistral',
         messages: [{ role: 'user', content: IMAGE_PROMPT_GENERATOR }],
         max_tokens: 300,
         temperature: 1.3,
