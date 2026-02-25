@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.env
+.env.local
+.firebase/
+.wrangler/
+old/
+*.Zone.Identifier
+*.Zone.Identifier:Zone.Identifier
