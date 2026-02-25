@@ -303,6 +303,16 @@ h1, h2, h3 {
   color: var(--text-muted);
 }
 
+/* Predicted/autofilled values — subtle visual hint */
+.geems-textarea.geems-predicted {
+  color: var(--text-secondary);
+  font-style: italic;
+}
+.geems-textarea.geems-predicted:focus {
+  color: var(--text-primary);
+  font-style: normal;
+}
+
 .geems-input:focus,
 .geems-textarea:focus {
   outline: none;

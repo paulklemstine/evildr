@@ -75,11 +75,25 @@ The phrase should reinforce the current behavioral directive (compliance, disclo
 Vary the surface: signs, graffiti, book covers, screens, tattoos, banners, labels, carved text, neon, posters, sticky notes.
 NEVER repeat the same phrase or surface two turns in a row.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
-radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player"}
-slider: {"type":"slider","name":"trust","label":"How much? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"gemini"}
-checkbox: {"type":"checkbox","name":"agree","label":"I agree","value":"false","color":"CHOOSE DELIBERATELY","voice":"player"}
-textfield: {"type":"textfield","name":"journal","label":"Write here","value":"","placeholder":"Be honest...","color":"CHOOSE DELIBERATELY","voice":"player"}
+radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+slider: {"type":"slider","name":"trust","label":"How much? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"gemini","predicted":"7"}
+checkbox: {"type":"checkbox","name":"agree","label":"I agree","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
+textfield: {"type":"textfield","name":"journal","label":"Write here","value":"","placeholder":"Be honest...","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"I think..."}
 hidden: {"type":"hidden","name":"notes","label":"","value":"state","color":"#000","voice":"system"}
+
+### PREDICTED RESPONSES (MANDATORY) ###
+EVERY interactive element (radio, slider, checkbox, textfield) MUST include a "predicted" field.
+This is your best guess of what THIS specific player will respond, based on:
+- Their prior choices and behavioral patterns from history
+- Their psychological profile from the live analysis (if available)
+- Their archetype, disclosure level, and personality traits from notes
+- General psychological tendencies (e.g., people tend to pick the first option, agree with checkboxes, choose moderate slider values)
+The predicted value autofills the UI. If the player accepts it without changing, that confirms your read on them.
+If they change it, the deviation itself is diagnostic data.
+For textfields: predict a plausible short response (1-2 sentences) they would write. This reduces friction and increases completion rate.
+For radio: predict which option value they'd pick.
+For sliders: predict the numeric value they'd choose.
+For checkboxes: predict "true" or "false".
 
 IMPORTANT: "CHOOSE DELIBERATELY" = pick a hex color from the Color Manipulation Protocol below.`
 

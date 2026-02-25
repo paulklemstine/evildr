@@ -20,6 +20,8 @@ export interface UIElement {
   options?: RadioOption[] | string[] | string
   text?: string
   placeholder?: string
+  /** LLM's predicted response for this element — used as autofill default */
+  predicted?: string
 }
 
 export interface RenderResult {
@@ -264,9 +266,14 @@ function renderTextFieldElement(
   input.id = element.name
   input.name = element.name
   input.rows = 4
-  input.value = element.value || ''
+  // Autofill with LLM's predicted response
+  input.value = element.predicted || element.value || ''
   input.placeholder = element.placeholder || 'Type response...'
   input.dataset.elementType = 'textfield'
+  if (element.predicted) {
+    input.dataset.predicted = element.predicted
+    input.classList.add('geems-predicted')
+  }
   wrapper.appendChild(input)
 }
 
@@ -287,8 +294,11 @@ function renderCheckboxElement(
   input.type = 'checkbox'
   input.id = element.name
   input.name = element.name
-  input.checked = element.value === true as unknown || String(element.value).toLowerCase() === 'true'
+  // Use predicted value if available
+  const checkValue = element.predicted || element.value
+  input.checked = checkValue === true as unknown || String(checkValue).toLowerCase() === 'true'
   input.dataset.elementType = 'checkbox'
+  if (element.predicted) input.dataset.predicted = element.predicted
   if (adjustedColor) input.style.accentColor = adjustedColor
 
   const label = document.createElement('label')
@@ -328,11 +338,14 @@ function renderSliderElement(
   input.max = String(max)
   input.step = String(element.step || 1)
 
-  const defaultValue = parseFloat(element.value)
+  // Use predicted value if available, otherwise fall back to element value
+  const predictedValue = element.predicted ? parseFloat(element.predicted) : NaN
+  const defaultValue = !isNaN(predictedValue) ? predictedValue : parseFloat(element.value)
   input.value = String(
     isNaN(defaultValue) ? (min + max) / 2 : Math.max(min, Math.min(max, defaultValue)),
   )
   input.dataset.elementType = 'slider'
+  if (element.predicted) input.dataset.predicted = element.predicted
 
   if (adjustedColor) {
     input.style.accentColor = adjustedColor
@@ -449,6 +462,8 @@ function renderRadioElement(
   wrapper.appendChild(label)
 
   const { options, defaultValue } = parseRadioOptions(element)
+  // Override default with predicted value if available
+  const selectedValue = element.predicted || defaultValue
 
   if (options.length > 0) {
     options.forEach((option, idx) => {
@@ -461,7 +476,7 @@ function renderRadioElement(
       input.id = inputId
       input.name = element.name
       input.value = option.value
-      input.checked = option.value === defaultValue
+      input.checked = option.value === selectedValue
       input.dataset.elementType = 'radio'
       if (adjustedColor) input.style.accentColor = adjustedColor
 
@@ -637,7 +652,8 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
     const type = inputEl.dataset.elementType
     switch (type) {
       case 'textfield':
-        inputs[name] = inputEl.value
+        // If left blank, use the predicted value as the player's response
+        inputs[name] = inputEl.value.trim() || inputEl.dataset.predicted || ''
         break
       case 'checkbox':
         inputs[name] = (inputEl as HTMLInputElement).checked
