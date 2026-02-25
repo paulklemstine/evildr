@@ -6,6 +6,7 @@ import { createCYOAPromptBuilder } from './modes/cyoa/prompts'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
 import { showReEngagement } from './engine/session-hooks'
+import { showInterstitial, dismissInterstitial } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import './style.css'
 
@@ -198,13 +199,7 @@ function renderGamePage(modeId: string): void {
           </div>
         </div>
 
-        <div id="loading" class="loading-indicator" style="display: none;">
-          <svg class="animate-spin" style="color: var(--accent-primary);" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" width="20" height="20">
-            <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-            <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-          </svg>
-          <span>Processing your session...</span>
-        </div>
+        <div id="loading" style="display: none;"></div>
 
         <div id="error-display" class="error-message" style="display: none;"></div>
 
@@ -301,8 +296,13 @@ function startGame(modeId: string, genre?: string): void {
       setTimeout(() => { errorEl.style.display = 'none' }, 8000)
     },
     onLoading: (loading) => {
-      loadingEl.style.display = loading ? 'flex' : 'none'
+      loadingEl.style.display = loading ? 'block' : 'none'
       submitBtn.disabled = loading
+      if (loading) {
+        showInterstitial(imageClient)
+      } else {
+        dismissInterstitial()
+      }
     },
   })
 

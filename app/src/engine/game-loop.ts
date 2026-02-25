@@ -12,6 +12,7 @@ import { applyTypewriter } from './typewriter'
 import { cascadeReveal, pulseInteractive } from './anticipation'
 import { attachCelebrations } from './celebration'
 import { saveCliffhanger, extractCliffhanger } from './session-hooks'
+import { applyMoodFromUI } from './mood-colors'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -373,6 +374,9 @@ export class GameLoop {
       onLoading(false)
       return
     }
+
+    // 7. Apply dynamic mood coloring from this turn's elements
+    applyMoodFromUI(uiJsonArray)
 
     // 8. Resolve image URLs
     this.resolveImages()

@@ -1383,6 +1383,301 @@ h1, h2, h3 {
 }
 
 /* ============================================================
+   Loading Interstitial — Divine Wisdom + Slot Machine
+   ============================================================ */
+
+.interstitial-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 4000;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+
+.interstitial-overlay.interstitial-visible {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.interstitial-overlay.interstitial-dismissing {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.interstitial-card {
+  background: var(--bg-primary);
+  border-radius: var(--radius-xl);
+  padding: 1.5rem;
+  max-width: 420px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+  transform: translateY(20px) scale(0.97);
+  transition: transform 0.4s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.interstitial-visible .interstitial-card {
+  transform: translateY(0) scale(1);
+}
+
+.interstitial-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1rem;
+  background: var(--bg-tertiary);
+}
+
+.interstitial-image-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(110deg, var(--bg-tertiary) 30%, var(--bg-secondary) 50%, var(--bg-tertiary) 70%);
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.interstitial-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.interstitial-wisdom {
+  padding: 0.75rem 0.5rem;
+  min-height: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.interstitial-wisdom-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--text-secondary);
+  font-style: italic;
+  transition: opacity 0.3s ease;
+  margin: 0;
+}
+
+.interstitial-wisdom-text em {
+  color: var(--accent-primary);
+  font-weight: 600;
+}
+
+.interstitial-wisdom-fade {
+  opacity: 0;
+}
+
+.interstitial-divider {
+  height: 1px;
+  background: var(--border-color);
+  margin: 0.5rem 0;
+}
+
+.interstitial-slots {
+  padding: 0.75rem 0 0.5rem;
+}
+
+.interstitial-slots-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  margin: 0 0 0.75rem;
+}
+
+.slot-reels {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.slot-reel {
+  width: 64px;
+  height: 64px;
+  background: var(--bg-tertiary);
+  border: 2px solid var(--border-color);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  transition: transform 0.2s ease, border-color 0.2s ease;
+  user-select: none;
+}
+
+.slot-reel-spinning {
+  animation: slot-shake 0.1s linear infinite;
+  border-color: var(--accent-primary);
+}
+
+.slot-reel-landed {
+  animation: slot-bounce 0.3s ease;
+  border-color: var(--accent-primary);
+}
+
+@keyframes slot-shake {
+  0%, 100% { transform: translateY(0); }
+  25% { transform: translateY(-2px); }
+  75% { transform: translateY(2px); }
+}
+
+@keyframes slot-bounce {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.15); }
+  100% { transform: scale(1); }
+}
+
+.slot-spin-btn {
+  padding: 0.5rem 1.5rem;
+  background: var(--accent-primary);
+  color: white;
+  border: none;
+  border-radius: var(--radius-md);
+  font-weight: 600;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.1s;
+  letter-spacing: 0.02em;
+}
+
+.slot-spin-btn:hover:not(:disabled) {
+  background: var(--accent-secondary);
+  transform: translateY(-1px);
+}
+
+.slot-spin-btn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.slot-spin-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.slot-result {
+  font-size: 0.8125rem;
+  min-height: 1.5rem;
+  margin-top: 0.5rem;
+  color: var(--text-muted);
+  font-style: italic;
+  transition: color 0.3s ease;
+}
+
+.slot-result-win {
+  color: #d97706;
+  font-weight: 700;
+  font-style: normal;
+  animation: slot-bounce 0.4s ease;
+}
+
+.slot-result-double {
+  color: var(--accent-primary);
+  font-weight: 600;
+  font-style: normal;
+}
+
+.slot-result-miss {
+  color: var(--text-muted);
+}
+
+.interstitial-subtext {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin: 0.75rem 0 0;
+  opacity: 0.6;
+}
+
+/* ============================================================
+   Dynamic Color Theming — Mood-driven interface manipulation
+   ============================================================ */
+
+body {
+  transition: background-color 0.8s ease, color 0.3s ease;
+}
+
+body.mood-trust {
+  --accent-primary: #0d9488;
+  --accent-secondary: #0891b2;
+  --border-accent: #0d9488;
+  --slider-thumb-color: #0d9488;
+  --toggle-hover-color: #0d9488;
+}
+
+body.mood-reward {
+  --accent-primary: #d97706;
+  --accent-secondary: #ea580c;
+  --border-accent: #d97706;
+  --slider-thumb-color: #d97706;
+  --toggle-hover-color: #d97706;
+}
+
+body.mood-vulnerability {
+  --accent-primary: #db2777;
+  --accent-secondary: #e11d48;
+  --border-accent: #db2777;
+  --slider-thumb-color: #db2777;
+  --toggle-hover-color: #db2777;
+}
+
+body.mood-urgency {
+  --accent-primary: #dc2626;
+  --accent-secondary: #ea580c;
+  --border-accent: #dc2626;
+  --slider-thumb-color: #dc2626;
+  --toggle-hover-color: #dc2626;
+}
+
+body.mood-mystery {
+  --accent-primary: #7c3aed;
+  --accent-secondary: #6366f1;
+  --border-accent: #7c3aed;
+  --slider-thumb-color: #7c3aed;
+  --toggle-hover-color: #7c3aed;
+}
+
+body.mood-safety {
+  --accent-primary: #059669;
+  --accent-secondary: #10b981;
+  --border-accent: #059669;
+  --slider-thumb-color: #059669;
+  --toggle-hover-color: #059669;
+}
+
+body.mood-excitement {
+  --accent-primary: #ea580c;
+  --accent-secondary: #f59e0b;
+  --border-accent: #ea580c;
+  --slider-thumb-color: #ea580c;
+  --toggle-hover-color: #ea580c;
+}
+
+body.mood-gravity {
+  --accent-primary: #1e3a5f;
+  --accent-secondary: #334155;
+  --border-accent: #1e3a5f;
+  --slider-thumb-color: #1e3a5f;
+  --toggle-hover-color: #1e3a5f;
+}
+
+/* ============================================================
    Utility
    ============================================================ */
 
