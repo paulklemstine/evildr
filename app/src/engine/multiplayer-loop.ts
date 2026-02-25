@@ -240,16 +240,45 @@ function extractUIArray(parsed: unknown, textForError: string): UIElement[] {
 /**
  * Split the orchestrator output into its 3 sections.
  * Returns [preamble, playerAInstructions, playerBInstructions].
+ *
+ * Handles edge cases where the model puts the delimiter at the start,
+ * produces empty sections, or uses 4+ sections.
  */
 function splitOrchestratorOutput(raw: string): [string, string, string] {
-  const parts = raw.split(ORCHESTRATOR_DELIMITER).map(s => s.trim())
-  if (parts.length < 3) {
-    throw new Error(
-      `Orchestrator output has ${parts.length} section(s), expected 3 (split by "${ORCHESTRATOR_DELIMITER}"). ` +
-      `First 300 chars: ${raw.substring(0, 300)}...`
-    )
+  // Split and drop empty parts (handles leading/trailing delimiters)
+  const parts = raw.split(ORCHESTRATOR_DELIMITER)
+    .map(s => s.trim())
+    .filter(s => s.length > 0)
+
+  if (parts.length >= 3) {
+    return [parts[0], parts[1], parts[2]]
   }
-  return [parts[0], parts[1], parts[2]]
+
+  if (parts.length === 2) {
+    // Only 2 non-empty sections — use the first as preamble+A, second as B
+    // Try to find a natural split in the first part (e.g. "Section [2]" or "Player A")
+    const sectionMarkers = [
+      /\n\s*(?:Section\s*\[?\s*2\s*\]?|Player\s+A\s+Instructions?|FOR\s+PLAYER\s+A)\s*[:\-—]?\s*\n/i,
+      /\n\s*(?:\*\*Section\s*\[?\s*2\s*\]?\*\*|##?\s*Player\s+A)\s*[:\-—]?\s*\n/i,
+    ]
+    for (const marker of sectionMarkers) {
+      const match = parts[0].match(marker)
+      if (match && match.index !== undefined) {
+        const preamble = parts[0].substring(0, match.index).trim()
+        const sectionA = parts[0].substring(match.index + match[0].length).trim()
+        if (preamble && sectionA) {
+          return [preamble, sectionA, parts[1]]
+        }
+      }
+    }
+    // Fallback: treat first part as preamble + section A combined
+    return [parts[0], parts[0], parts[1]]
+  }
+
+  throw new Error(
+    `Orchestrator output has ${parts.length} non-empty section(s), expected 3 (split by "${ORCHESTRATOR_DELIMITER}"). ` +
+    `First 300 chars: ${raw.substring(0, 300)}...`
+  )
 }
 
 /**

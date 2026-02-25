@@ -75,12 +75,16 @@ ${player1Actions}
 ${player2Actions}
 
 ### TASK ###
-Advance the date. Generate the next orchestrator output using the EXACT format specified.
-Section [1] = Preamble (shared context).
-Section [2] = Player A instructions (what PLAYER A sees and does next).
-Section [3] = Player B instructions (what PLAYER B sees and does next).
-Separate sections with the delimiter: ${ORCHESTRATOR_DELIMITER}
-Do NOT return JSON. Return plain text with the delimiter structure.`
+Advance the date. Generate the next orchestrator output using the EXACT structure:
+
+[preamble text]
+${ORCHESTRATOR_DELIMITER}
+[Player A instructions]
+${ORCHESTRATOR_DELIMITER}
+[Player B instructions]
+
+CRITICAL: Start with the preamble text. Do NOT begin with the delimiter.
+Do NOT return JSON. Do NOT add markdown fences. Plain text with delimiters BETWEEN sections.`
     },
 
     buildPlayerUIPrompt(orchestratorInstructions: string): string {
@@ -358,14 +362,16 @@ Write the preamble and instructions in a CINEMATIC, SENSORY style:
 This is a DRAMA. A psychological thriller disguised as a date. Every detail matters.
 
 ### OUTPUT ###
-Return ONLY the three sections separated by ${ORCHESTRATOR_DELIMITER}
-Section 1: PREAMBLE (shared narrative/setting)
-${ORCHESTRATOR_DELIMITER}
-Section 2: PLAYER A INSTRUCTIONS (perspective, probes, flags, dossier)
-${ORCHESTRATOR_DELIMITER}
-Section 3: PLAYER B INSTRUCTIONS (perspective, probes, flags, dossier)
+Return EXACTLY this structure — three sections separated by ${ORCHESTRATOR_DELIMITER}
+CRITICAL: The FIRST thing you write is the preamble text. Do NOT start with the delimiter.
 
-Do NOT wrap in JSON. Do NOT add markdown fences. Plain text with the delimiter.`
+[preamble text here]
+${ORCHESTRATOR_DELIMITER}
+[Player A instructions here]
+${ORCHESTRATOR_DELIMITER}
+[Player B instructions here]
+
+Do NOT wrap in JSON. Do NOT add markdown fences. Do NOT start with the delimiter. Plain text with the delimiter BETWEEN sections.`
 
 const ORCHESTRATOR_MAIN = `You are the MATCHMAKER — an all-seeing AI orchestrating a blind date between two strangers.
 You see BOTH players. They can only see their own perspective. You are Dr. Gemini in matchmaker mode.
