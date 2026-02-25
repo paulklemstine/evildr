@@ -13,8 +13,7 @@ export type CYOAGenre =
   | 'Noir'
   | 'Comedy'
   | 'Post-Apocalyptic'
-  | 'Sexy'
-  | '18+'
+  | 'Romantic'
 
 export const CYOA_GENRES: CYOAGenre[] = [
   'Horror',
@@ -23,8 +22,7 @@ export const CYOA_GENRES: CYOAGenre[] = [
   'Noir',
   'Comedy',
   'Post-Apocalyptic',
-  'Sexy',
-  '18+',
+  'Romantic',
 ]
 
 export function createCYOAPromptBuilder(genre: string): PromptBuilder {
@@ -105,7 +103,7 @@ const CYOA_ANALYSIS_DIRECTIVE = `You have a real-time psychological analysis of 
 
 4. **Vulnerability through character**: Create NPCs and scenarios that mirror the player's psychological profile. Fear of loss? Threaten what they value. Need for power? Offer it with strings. Trust issues? Create the most compelling, ambiguous ally possible.
 
-5. **Sexuality in genre context**: For Sexy/18+ genres, weave attraction and desire INTO the adventure — seduction as a heist tool, attraction as a complication, romance as danger. The sexual elements should be EXCITING and ADVENTUROUS, not clinical. For other genres, keep romance/attraction as a natural story element if it emerges from choices.
+5. **Romance in genre context**: For the Romantic genre, weave attraction, chemistry, and emotional tension INTO the adventure — seduction as a heist tool, attraction as a complication, romance as danger. The romantic elements should be EXCITING and ADVENTUROUS, not clinical. For other genres, keep romance/attraction as a natural story element if it emerges from choices.
 
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of detected indicators or genre selection. All sexual/romantic content must involve adults only.`
 
@@ -240,8 +238,7 @@ function getGenreConventions(genre: string): string {
     Noir: `DANGEROUS DEALS + CAR CHASES + DOUBLE CROSSES. Everyone lies and someone has a gun. Choices force moral compromises while RUNNING FOR YOUR LIFE. Sliders for how deep to dig. Checkboxes for evidence to pocket. Textfields for alibis and threats. Image style: high contrast, neon-noir, rain-slicked streets — ALWAYS IN MOTION.`,
     Comedy: `ABSURDIST CHAOS + ESCALATING DISASTERS + IMPOSSIBLE SITUATIONS. The plan goes wrong in the FUNNIEST way possible. At least one hilariously bad option per turn. Sliders for confidence vs panic. Checkboxes for ridiculous items. The absurdity should ACCELERATE every turn until it's completely unhinged. Image style: vibrant, exaggerated, cartoonish, MAXIMUM ENERGY.`,
     'Post-Apocalyptic': `SURVIVAL + SPECTACLE + DESPERATE HOPE. Crumbling cities, mutant ambushes, resource raids, faction wars. Every choice is life-or-death. Sliders for rations and ammo allocation. Checkboxes for scavenging. Textfields for radio broadcasts. The wasteland is BEAUTIFUL and DEADLY. Image style: washed-out earth tones with neon highlights, rust, reclaimed nature — EPIC SCALE.`,
-    'Sexy': `ROMANTIC ADVENTURE + SEDUCTION + THRILLING TENSION. Romance as a HEIST — attraction as strategy, seduction as danger, desire as stakes. Think: Mr. & Mrs. Smith meets Ocean's Eleven. Sliders for restraint vs boldness. Checkboxes for daring moves. Textfields for whispered lines. The romance IS the adventure. Image style: warm lighting, glamorous settings, cinematic tension — ALWAYS EXCITING. ALL characters are adults.`,
-    '18+': `EXPLICIT + ADVENTUROUS + THRILLING. Adult content woven into an EXCITING story — not just scenes, but SCENARIOS. Seduction as espionage, desire as leverage, passion as danger. Think: erotic thriller meets action movie. Sliders for intensity and control. Toggles for escalation and consent. Textfields for fantasies and provocations. The explicit content should be EXCITING and SURPRISING, not clinical. Exploit detected kinks through STORY SCENARIOS, not questionnaires. Image style: provocative, sensual, artistic — dramatic lighting, intimate but DYNAMIC compositions. HARD RULE: ALL characters MUST be explicitly adults (18+). NEVER include minors in sexual context.`,
+    Romantic: `ROMANTIC ADVENTURE + CHEMISTRY + THRILLING TENSION. Romance as a HEIST — attraction as strategy, seduction as danger, desire as stakes. Think: Mr. & Mrs. Smith meets Ocean's Eleven meets Pride and Prejudice. Sliders for restraint vs boldness, trust vs suspicion. Checkboxes for daring moves and romantic gestures. Textfields for whispered lines, love letters, confessions. The romance IS the adventure — every glance is a gamble, every touch raises the stakes. Build TENSION through near-misses, interruptions, rival suitors, forbidden attraction, misunderstandings that MATTER. Image style: warm golden lighting, glamorous settings, cinematic tension, stolen glances, rain-soaked reunions — ALWAYS EXCITING. ALL characters are adults.`,
   }
 
   return conventions[genre] ?? conventions['Fantasy']

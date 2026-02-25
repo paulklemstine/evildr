@@ -175,7 +175,7 @@ function renderLobby(): void {
             </p>
             ${mode.id === 'cyoa' ? `
               <div class="flex flex-wrap gap-1.5 mb-4" id="genre-picker-${mode.id}">
-                ${['Horror', 'Sci-Fi', 'Fantasy', 'Noir', 'Comedy', 'Post-Apocalyptic', 'Sexy', '18+'].map(g => `
+                ${['Horror', 'Sci-Fi', 'Fantasy', 'Noir', 'Comedy', 'Post-Apocalyptic', 'Romantic'].map(g => `
                   <button class="genre-btn" data-genre="${g.toLowerCase()}">${g}</button>
                 `).join('')}
               </div>
