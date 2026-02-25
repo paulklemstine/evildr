@@ -22,20 +22,35 @@ const imageClient = new ImageClient()
 
 // --- Theme Application ---
 
+function isLightColor(hex: string): boolean {
+  const r = parseInt(hex.slice(1, 3), 16)
+  const g = parseInt(hex.slice(3, 5), 16)
+  const b = parseInt(hex.slice(5, 7), 16)
+  return (r * 299 + g * 587 + b * 114) / 1000 > 128
+}
+
 function applyTheme(theme: ThemeConfig): void {
   const root = document.documentElement
+  const light = isLightColor(theme.bgPrimary)
+
   root.style.setProperty('--bg-primary', theme.bgPrimary)
   root.style.setProperty('--bg-secondary', theme.bgSecondary)
   root.style.setProperty('--bg-tertiary', theme.bgSecondary)
-  root.style.setProperty('--bg-input', theme.bgPrimary)
+  root.style.setProperty('--bg-input', light ? '#ffffff' : theme.bgPrimary)
   root.style.setProperty('--text-primary', theme.textPrimary)
-  root.style.setProperty('--text-secondary', theme.textPrimary)
-  root.style.setProperty('--text-heading', theme.textPrimary)
-  root.style.setProperty('--text-muted', theme.textPrimary + '99')
+  root.style.setProperty('--text-secondary', light ? '#475569' : theme.textPrimary + 'cc')
+  root.style.setProperty('--text-heading', light ? '#0f172a' : theme.textPrimary)
+  root.style.setProperty('--text-muted', light ? '#94a3b8' : theme.textPrimary + '77')
   root.style.setProperty('--accent-primary', theme.accentPrimary)
   root.style.setProperty('--accent-secondary', theme.accentSecondary)
-  root.style.setProperty('--border-color', theme.accentPrimary + '33')
+  root.style.setProperty('--border-color', light ? '#e2e8f0' : theme.accentPrimary + '33')
   root.style.setProperty('--border-accent', theme.accentPrimary)
+  root.style.setProperty('--card-shadow', light
+    ? '0 1px 3px rgba(0,0,0,0.06), 0 1px 2px rgba(0,0,0,0.04)'
+    : '0 1px 3px rgba(0,0,0,0.3), 0 1px 2px rgba(0,0,0,0.2)')
+  root.style.setProperty('--card-shadow-hover', light
+    ? '0 4px 12px rgba(0,0,0,0.08), 0 2px 6px rgba(0,0,0,0.04)'
+    : '0 4px 12px rgba(0,0,0,0.4), 0 2px 6px rgba(0,0,0,0.3)')
   root.style.setProperty('--font-heading', theme.fontHeading)
   root.style.setProperty('--font-body', theme.fontBody)
   root.style.setProperty('--slider-thumb-color', theme.accentPrimary)
@@ -47,6 +62,7 @@ const THEME_PROPS = [
   '--text-primary', '--text-secondary', '--text-heading', '--text-muted',
   '--accent-primary', '--accent-secondary',
   '--border-color', '--border-accent',
+  '--card-shadow', '--card-shadow-hover',
   '--font-heading', '--font-body',
   '--slider-thumb-color', '--toggle-hover-color',
 ]

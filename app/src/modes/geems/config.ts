@@ -2,13 +2,13 @@
 
 import type { GameModeConfig, ThemeConfig } from '../mode-registry.ts'
 
-// The "False Security" palette — warm teal and amber that feels safe but isn't
+// Light wellness palette — clean, bright, trustworthy, inviting
 const geemsTheme: ThemeConfig = {
-  bgPrimary: '#0f1a1c',       // deep teal-black
-  bgSecondary: '#1a2e30',     // muted dark teal
-  textPrimary: '#fef3c7',     // warm cream
-  accentPrimary: '#14b8a6',   // teal (gemini voice)
-  accentSecondary: '#f59e0b', // amber (warmth)
+  bgPrimary: '#ffffff',        // clean white
+  bgSecondary: '#f0fdfa',      // whisper of teal
+  textPrimary: '#1e293b',      // dark slate
+  accentPrimary: '#0d9488',    // teal (gemini voice)
+  accentSecondary: '#f59e0b',  // amber (warmth/reward)
   fontHeading: '"Quicksand", sans-serif',
   fontBody: '"Inter", sans-serif',
 }
