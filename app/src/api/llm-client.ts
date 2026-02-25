@@ -55,7 +55,7 @@ interface ChatCompletionErrorResponse {
 const DEFAULT_BASE_URL = import.meta.env.DEV
   ? '/api/llm'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
-const DEFAULT_MODELS = ['mistral']  // Mistral Small 3.2 24B ($0.10/$0.30 per M tokens)
+const DEFAULT_MODELS = ['gemini-fast', 'mistral']  // fast-first failover chain
 const DEFAULT_MAX_TOKENS = 8000  // enough for orchestrator (2-player) + UI generation
 const DEFAULT_TEMPERATURE = 1.0
 
