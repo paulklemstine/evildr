@@ -189,7 +189,7 @@ function renderLobby(): void {
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <p style="margin-top: 0.25rem;">For research and entertainment purposes only.</p>
       <a href="https://pollinations.ai" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.5rem;">
         <img src="https://img.shields.io/badge/Built%20with-Pollinations-8a2be2?style=for-the-badge&logo=data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20124%20124%22%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%2262%22%20r%3D%2262%22%20fill%3D%22%23ffffff%22/%3E%3C/svg%3E&logoColor=white&labelColor=6a0dad" alt="Built with Pollinations" height="28" />
@@ -298,7 +298,7 @@ function renderGamePage(modeId: string): void {
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
     </footer>
 
@@ -512,6 +512,8 @@ function showMultiplayerLobby(): void {
                 spellcheck="false"
                 style="
                   flex: 1;
+                  min-width: 0;
+                  box-sizing: border-box;
                   font-family: 'Courier New', Courier, monospace;
                   font-size: 1.5rem;
                   font-weight: bold;
@@ -527,7 +529,7 @@ function showMultiplayerLobby(): void {
                   transition: border-color 0.15s;
                 "
               />
-              <button id="btn-join-room" class="geems-button" style="white-space: nowrap;">
+              <button id="btn-join-room" class="geems-button" style="white-space: nowrap; flex-shrink: 0;">
                 Join
               </button>
             </div>
@@ -543,7 +545,7 @@ function showMultiplayerLobby(): void {
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
     </footer>
   `
@@ -791,7 +793,7 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
       <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
     </footer>
   `

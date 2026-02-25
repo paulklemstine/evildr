@@ -97,7 +97,7 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
     </footer>
   `
 
