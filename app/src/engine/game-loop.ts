@@ -69,7 +69,7 @@ export interface GameState {
   mode: string
   /** The most recent gemini_facing_analysis content, for display in modals. */
   hiddenAnalysis: string
-  /** The most recent tweet content from the LLM response. */
+  /** @deprecated kept for serialisation compat — no longer populated */
   hiddenTweet: string
 }
 
@@ -331,7 +331,7 @@ export class GameLoop {
     if (result.notes) this.state.currentNotes = result.notes
     if (result.subjectId) this.state.currentSubjectId = result.subjectId
     if (result.analysis) this.state.hiddenAnalysis = result.analysis
-    if (result.tweet) this.state.hiddenTweet = result.tweet
+    // tweet field removed — no longer used
   }
 
   // ---- Public API ----

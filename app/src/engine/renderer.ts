@@ -28,7 +28,6 @@ export interface RenderResult {
   notes: string
   subjectId: string
   analysis: string
-  tweet: string
 }
 
 interface RadioOption {
@@ -917,7 +916,7 @@ function renderColorPickElement(
  * Renders a JSON UI array from the LLM into the given container.
  *
  * Clears the container first, then creates DOM elements for each UIElement.
- * Hidden fields (notes, subjectId, gemini_facing_analysis, tweet) are not
+ * Hidden fields (notes, subjectId, gemini_facing_analysis) are not
  * rendered but returned in the RenderResult.
  */
 export function renderUI(
@@ -928,7 +927,6 @@ export function renderUI(
     notes: '',
     subjectId: '',
     analysis: '',
-    tweet: '',
   }
 
   container.innerHTML = ''
@@ -960,11 +958,6 @@ export function renderUI(
     // gemini_facing_analysis — always hidden
     if (elType === 'gemini_facing_analysis' || elName.includes('gemini_facing_analysis')) {
       result.analysis = element.text || element.value || ''
-      continue
-    }
-    // tweet — always hidden
-    if (elType === 'tweet' || elName.includes('tweet')) {
-      result.tweet = element.text || element.value || ''
       continue
     }
     // notes — always hidden (unless it's an editable textfield)

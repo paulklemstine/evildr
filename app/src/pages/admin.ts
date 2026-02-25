@@ -238,10 +238,6 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
             <div id="sv-analysis" class="text-sm admin-data-scroll">--</div>
           </div>
           <div class="mode-card admin-data-card">
-            <h4 class="admin-data-label">Tweet</h4>
-            <p id="sv-tweet" class="text-sm" style="color: var(--text-secondary);">--</p>
-          </div>
-          <div class="mode-card admin-data-card">
             <h4 class="admin-data-label">Notes</h4>
             <div id="sv-notes" class="text-sm admin-data-scroll">--</div>
           </div>
@@ -279,9 +275,6 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
 
     const analysisEl = document.getElementById('sv-analysis')
     if (analysisEl && state.hiddenAnalysis) analysisEl.innerHTML = renderBasicMarkdown(state.hiddenAnalysis)
-
-    const tweetEl = document.getElementById('sv-tweet')
-    if (tweetEl && state.hiddenTweet) tweetEl.textContent = state.hiddenTweet
 
     const notesEl = document.getElementById('sv-notes')
     if (notesEl && state.currentNotes) notesEl.textContent = state.currentNotes
