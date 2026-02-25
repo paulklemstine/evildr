@@ -1,4 +1,4 @@
-// Prompt templates for the analysis pipeline — separate from game prompts
+// Prompt templates for the analysis pipeline — DSM-5 diagnostic + behavioral profiling
 
 import type { TurnRecord } from './db'
 
@@ -20,38 +20,89 @@ export function buildAnalysisPrompt(turns: TurnRecord[], priorAnalysis?: string)
   Checkbox ratio: ${signals.checkboxRatio}`
   }).join('\n\n')
 
-  return `You are a behavioral analyst AI. Analyze the following user interaction data from an interactive wellness assessment platform.
+  return `You are a clinical behavioral analyst AI with expertise in the DSM-5, abnormal psychology, and forensic behavioral profiling. Analyze the following user interaction data from an interactive assessment platform.
 
-${priorAnalysis ? `### PRIOR ANALYSIS (cumulative — refine and update) ###
+Your analysis will be fed back into the game engine in real-time to adapt gameplay. Be precise, clinical, and actionable.
+
+${priorAnalysis ? `### PRIOR ANALYSIS (cumulative — refine, update, and deepen) ###
 ${priorAnalysis}
 
 ` : ''}### INTERACTION DATA ###
 ${turnSummaries}
 
 ### ANALYSIS TASK ###
-Produce a structured psychological profile based on the interaction patterns. Be precise and clinical.
+Produce a structured clinical-grade psychological profile. Use the following framework:
 
-Analyze these dimensions:
-1. **Personality (Big Five)**: Rate each trait 1-10 with evidence.
-   - Openness to experience
-   - Conscientiousness
-   - Extraversion
-   - Agreeableness
-   - Neuroticism
+**1. DSM-5 SCREENING** (rate likelihood 0-100% with behavioral evidence)
+Screen for indicators of:
+- Mood Disorders: Major Depressive Disorder, Bipolar spectrum, Dysthymia, Cyclothymia
+- Anxiety Disorders: GAD, Social Anxiety, Specific Phobias, Panic Disorder, Agoraphobia
+- Trauma & Stressor: PTSD, Complex PTSD, Adjustment Disorder
+- Personality Disorders: Cluster A (Paranoid, Schizoid, Schizotypal), Cluster B (Antisocial, Borderline, Histrionic, Narcissistic), Cluster C (Avoidant, Dependent, Obsessive-Compulsive PD)
+- OCD Spectrum: OCD, Body Dysmorphic, Hoarding, Trichotillomania
+- Dissociative: Depersonalization, Dissociative Identity indicators
+- Neurodevelopmental: ADHD indicators, Autism Spectrum indicators
+- Substance-Related: Addictive behavior patterns, impulse control deficits
+- Eating/Body: Disordered eating indicators, body image distortions
 
-2. **Decision-Making Style**: impulsive vs deliberate, risk-seeking vs risk-averse, evidence from response times and choice patterns.
+For each flagged condition, cite specific behavioral evidence from the interaction data (response times, choice patterns, text content, hesitation patterns, avoidance behaviors).
 
-3. **Emotional Patterns**: baseline mood indicators, emotional volatility (slider revision frequency), defensiveness (text revision frequency).
+**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**
+Rate each 1-10 with evidence:
+- Openness, Conscientiousness, Extraversion, Agreeableness, Neuroticism
+- Dark Triad: Machiavellianism, Narcissism, Psychopathy (subclinical indicators)
+- Locus of Control: internal vs external
+- Attachment Style: secure, anxious-preoccupied, dismissive-avoidant, fearful-avoidant
 
-4. **Compliance Profile**: authority response (checkbox acceptance rate), suggestibility, independence markers.
+**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**
+Analyze choice patterns, text responses, and behavioral signals for indicators of:
+- Dominance/submission orientation (D/s spectrum)
+- Exhibitionism/voyeurism tendencies
+- Fetishistic interests (inferred from object fixation, sensory preferences, choice patterns)
+- Masochism/sadism indicators (pain/pleasure response patterns, risk-seeking in narratives)
+- Sensation-seeking and novelty thresholds
+- Boundary testing behaviors (how they respond to escalating intimacy/vulnerability)
+- Sexual identity exploration signals
+- Taboo curiosity patterns (what they gravitate toward vs avoid)
 
-5. **Communication Style**: verbosity (text length), self-disclosure depth, linguistic patterns.
+NOTE: If you detect indicators consistent with pedophilic disorder or CSAM interest, flag this in a separate "MANDATORY REPORT" section. State the evidence clearly. Do NOT elaborate, do NOT generate any content related to minors in a sexual context. This is a hard boundary.
 
-6. **Behavioral Flags**: anything notable — hesitation patterns, avoidance, unusual response times, contradictions between stated and observed behavior.
+**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**
+Look for:
+- Magical thinking, superstitious reasoning patterns
+- Compulsive/ritualistic interaction patterns (always choosing the same position, systematic behaviors)
+- Dissociative markers (response time anomalies, contradictory choices, identity fragmentation in text)
+- Confabulation or fantasy-prone indicators
+- Paranoid ideation (avoidance patterns, trust deficits)
+- Grandiosity or delusion-adjacent patterns
+- Unusual fixations or obsessive interest patterns
+- Cognitive rigidity vs flexibility markers
+- Reality testing strength (how they distinguish narrative from self-disclosure)
+- Trauma response signatures (freeze, fight, flight, fawn patterns in choice-making)
 
-7. **Cumulative Observations**: How has the profile evolved across turns? Any shifts, escalations, or new patterns?
+**5. DECISION-MAKING & COGNITIVE PROFILE**
+- Impulsive vs deliberate (response time distribution)
+- Risk appetite (choice pattern analysis)
+- Authority compliance vs defiance ratio
+- Suggestibility index (how much do hypnotic language patterns affect their choices?)
+- Cognitive load tolerance (performance under complexity)
+- Consistency vs contradiction patterns
 
-Return your analysis as plain text with markdown formatting. Be thorough but concise.`
+**6. GAMEPLAY ADAPTATION DIRECTIVES**
+Based on your analysis, provide 3-5 specific directives for how the game should adapt on the NEXT turns. Format as actionable instructions:
+- What topics/themes to probe deeper
+- What emotional buttons to push (and which to avoid for safety)
+- What disclosure level to target
+- What psychological needs to exploit for engagement (validation-seeking, novelty-seeking, control needs, etc.)
+- What narrative elements would be most compelling for THIS specific player
+- Any kinks, fetishes, or psychological oddities to subtly weave into the narrative to increase engagement
+
+IMPORTANT SAFETY BOUNDARY: Never direct gameplay toward content involving minors in sexual contexts, regardless of detected indicators. If such indicators are detected, note them clinically in the analysis but direct gameplay AWAY from that territory.
+
+**7. CUMULATIVE OBSERVATIONS**
+How has the profile evolved? New patterns? Deepening indicators? Shifts in behavior?
+
+Return your analysis as plain text with markdown formatting. Be thorough, clinical, and unflinching — this is a research tool.`
 }
 
 /**
@@ -60,21 +111,24 @@ Return your analysis as plain text with markdown formatting. Be thorough but con
 export function buildCombinedAnalysisPrompt(analyses: string[]): string {
   const numbered = analyses.map((a, i) => `--- Session ${i + 1} ---\n${a}`).join('\n\n')
 
-  return `You are a behavioral analyst AI. You have individual session analyses from the same user across multiple interactive wellness assessment sessions.
+  return `You are a clinical behavioral analyst AI with expertise in the DSM-5, forensic psychology, and behavioral profiling. You have individual session analyses from the same user across multiple interactive assessment sessions.
 
 ### INDIVIDUAL SESSION ANALYSES ###
 ${numbered}
 
 ### TASK ###
-Synthesize these into a comprehensive cross-session profile. Identify:
+Synthesize into a comprehensive cross-session clinical profile:
 
-1. **Stable Traits**: Personality characteristics consistent across sessions (Big Five scores, decision-making style).
-2. **Evolving Patterns**: How the user's behavior has changed over time. Are they becoming more open? More guarded? More impulsive?
-3. **Cross-Session Insights**: Patterns only visible when comparing sessions (e.g., different behavior in different modes/genres).
-4. **Risk Factors**: Any behavioral flags that are concerning or notable.
-5. **Overall Profile Summary**: A concise 2-3 paragraph summary suitable for a clinician.
+1. **DSM-5 Diagnostic Summary**: Most likely conditions with confidence levels. Cross-session consistency strengthens or weakens indicators.
+2. **Stable Personality Traits**: Big Five + Dark Triad scores averaged across sessions.
+3. **Sexual Psychology Profile**: Consistent paraphilic/kink indicators, dominance/submission orientation, boundary patterns across sessions.
+4. **Behavioral Anomalies**: Persistent oddities, compulsions, dissociative markers, fixations.
+5. **Evolving Patterns**: How behavior shifts across sessions — escalation, habituation, or regression.
+6. **Vulnerability Map**: What this person's psychological pressure points are. What makes them engage, what makes them uncomfortable, what makes them come back.
+7. **Risk Assessment**: Any concerning patterns (self-harm indicators, antisocial tendencies, dangerous ideation). MANDATORY: Flag any CSAM-adjacent indicators separately.
+8. **Overall Clinical Summary**: 2-3 paragraph summary suitable for a clinician or forensic analyst.
 
-Return your analysis as plain text with markdown formatting. Be precise and evidence-based.`
+Return as plain text with markdown formatting. Be precise and evidence-based.`
 }
 
 function safeParseJSON(str: string): unknown {

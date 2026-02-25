@@ -6,7 +6,7 @@ import type { UIElement, RenderResult } from './renderer.ts'
 import { renderUI, collectInputState } from './renderer.ts'
 import { saveGameState, loadGameState as loadSavedState } from './auto-save.ts'
 import { InputTracker } from '../profiling/input-tracker'
-import { saveTurn, saveSession, updateSession } from '../profiling/db'
+import { saveTurn, saveSession, updateSession, getAnalysesBySession } from '../profiling/db'
 import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
 import { applyTypewriter } from './typewriter'
 import { showAnticipation, cascadeReveal, pulseInteractive } from './anticipation'
@@ -48,6 +48,7 @@ export interface PromptBuilder {
     playerActions: string,
     history: HistoryEntry[],
     notes: string,
+    liveAnalysis?: string,
   ): string
 }
 
@@ -319,7 +320,18 @@ export class GameLoop {
     // 2. Update history with previous turn
     this.updateHistory(playerActionsJson)
 
-    // 3. Build prompt
+    // 3. Fetch latest analysis for real-time gameplay adaptation
+    let liveAnalysis: string | undefined
+    if (this.config.sessionId) {
+      try {
+        const analyses = await getAnalysesBySession(this.config.sessionId)
+        if (analyses.length > 0) {
+          liveAnalysis = analyses[analyses.length - 1].analysisText
+        }
+      } catch { /* IndexedDB may not be available */ }
+    }
+
+    // 4. Build prompt
     const isFirstTurn = this.state.historyQueue.length === 0 && this.state.currentUiJson === null
     let prompt: string
     if (isFirstTurn) {
@@ -329,6 +341,7 @@ export class GameLoop {
         playerActionsJson,
         this.state.historyQueue,
         this.state.currentNotes,
+        liveAnalysis,
       )
     }
 

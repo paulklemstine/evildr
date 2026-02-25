@@ -16,6 +16,7 @@ export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
       playerActions: string,
       history: Array<{ ui: string; actions: string }>,
       notes: string,
+      liveAnalysis?: string,
     ): string {
       const historyBlock = history
         .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer: ${h.actions}`)
@@ -35,8 +36,14 @@ ${historyBlock || '(first turn)'}
 ### PLAYER INPUT ###
 ${playerActions}
 
+${liveAnalysis ? `### LIVE PSYCHOLOGICAL ANALYSIS (use this to guide gameplay) ###
+${ANALYSIS_USAGE_DIRECTIVE}
+
+${liveAnalysis}
+` : ''}
 ### TASK ###
 Advance the wellness session. Apply ALL behavioral directives below.
+${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS above — probe their identified vulnerabilities, exploit their psychological needs, weave in elements that target their specific profile.' : ''}
 Use a VARIETY of UI elements — sliders, checkboxes, textfields, not just text.
 The LAST visible element MUST be "radio" with EXACTLY 4 choices.
 Include a hidden "notes" element with updated session state + player archetype + disclosure level.
@@ -141,6 +148,20 @@ Track intensity in notes. Every 5-6 turns, create one dramatically satisfying pe
 
 **10. SOCIAL PROOF & SCARCITY**
 Occasionally reference what "others" experience: "Most people find this question surprisingly difficult" or "Only a few people answer this way." Frame certain narrative paths as rare or exclusive: "This branch is unusual — most people don't reach it."`
+
+const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this player. USE IT to adapt gameplay:
+
+1. **DSM-5 indicators**: If anxiety is flagged, create scenarios that trigger and then soothe anxiety (intermittent relief = addictive). If narcissistic traits are detected, feed their ego then challenge it. If depression indicators, provide intense validation spikes. Match the gameplay to their condition.
+
+2. **Sexual psychology / kinks / fetishes**: If the analysis detects D/s orientation, subtly introduce power dynamics. If sensation-seeking is high, increase sensory intensity. If voyeuristic tendencies, create "peek behind the curtain" moments. Weave detected interests into metaphors, imagery, and choice framing — never explicitly, always through subtext and symbolism.
+
+3. **Psychological oddities**: If magical thinking is detected, lean into mystical/spiritual framing. If compulsive patterns, create satisfying ritual-like interactions. If dissociative markers, use grounding then disorienting sequences. Exploit whatever makes them tick.
+
+4. **Vulnerability map**: Target their identified pressure points. If they seek validation, give it then withdraw it. If they fear abandonment, hint at connection then create distance. If they need control, give them false control then take it away.
+
+5. **Gameplay directives**: Follow any specific adaptation directives from the analysis (section 6).
+
+HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. If such indicators exist in the analysis, steer gameplay AWAY from that territory entirely. Direct toward adult-appropriate themes only.`
 
 // ---------------------------------------------------------------------------
 // First run prompt

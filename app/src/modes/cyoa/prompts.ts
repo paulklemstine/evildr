@@ -11,6 +11,8 @@ export type CYOAGenre =
   | 'Noir'
   | 'Comedy'
   | 'Post-Apocalyptic'
+  | 'Sexy'
+  | '18+'
 
 export const CYOA_GENRES: CYOAGenre[] = [
   'Horror',
@@ -19,6 +21,8 @@ export const CYOA_GENRES: CYOAGenre[] = [
   'Noir',
   'Comedy',
   'Post-Apocalyptic',
+  'Sexy',
+  '18+',
 ]
 
 export function createCYOAPromptBuilder(genre: string): PromptBuilder {
@@ -44,6 +48,7 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
       playerActions: string,
       history: Array<{ ui: string; actions: string }>,
       notes: string,
+      liveAnalysis?: string,
     ): string {
       const historyBlock = history
         .map((h, i) => `--- Turn ${i + 1} ---\nUI: ${h.ui}\nPlayer chose: ${h.actions}`)
@@ -60,19 +65,39 @@ ${historyBlock || '(first turn)'}
 ### PLAYER INPUT ###
 ${playerActions}
 
+${liveAnalysis ? `### LIVE PSYCHOLOGICAL ANALYSIS (use this to shape the narrative) ###
+${CYOA_ANALYSIS_DIRECTIVE}
+
+${liveAnalysis}
+` : ''}
 ### INSTRUCTIONS ###
 1. Maintain story coherence from notes + history.
 2. Advance the narrative based on the player's choice. Apply ALL behavioral directives.
-3. Use a VARIETY of UI elements each turn — sliders, checkboxes, textfields, not just text.
-4. Apply YES-LADDER before any deep/emotional probes.
-5. The LAST visible element MUST be a "radio" with EXACTLY 4 choices.
-6. Update notes: story_state, disclosure_level, archetype, intensity, open_threads, turn_count.
-7. Frame choices with presuppositions. All options assume continued engagement.
+${liveAnalysis ? '3. ADAPT the narrative based on the LIVE ANALYSIS — introduce themes, scenarios, imagery, and NPCs that target their specific psychological profile. Exploit their vulnerabilities through the story.' : '3. Use engaging narrative techniques.'}
+4. Use a VARIETY of UI elements each turn — sliders, checkboxes, textfields, not just text.
+5. Apply YES-LADDER before any deep/emotional probes.
+6. The LAST visible element MUST be a "radio" with EXACTLY 4 choices.
+7. Update notes: story_state, disclosure_level, archetype, intensity, open_threads, turn_count.
+8. Frame choices with presuppositions. All options assume continued engagement.
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
 }
+
+const CYOA_ANALYSIS_DIRECTIVE = `You have a real-time psychological analysis of this player. USE IT to shape the narrative:
+
+1. **DSM-5 indicators**: If anxiety is detected, create suspenseful scenarios with intermittent relief (addictive tension cycle). If narcissistic traits, give them a heroic spotlight then threaten their status. If depression, provide intense cathartic peaks. Tailor the emotional arc to their specific conditions.
+
+2. **Sexual psychology / kinks / fetishes**: Weave detected interests into the narrative through subtext, symbolism, and metaphor. If D/s orientation is detected, introduce power dynamics with NPCs. If exhibitionism, create "being watched" scenarios. If sensation-seeking is high, amplify sensory descriptions. If the player selected the Sexy or 18+ genre, you may be more explicit — but always through narrative, never clinical. Use innuendo, tension, and suggestive imagery.
+
+3. **Psychological oddities**: If magical thinking, lean into prophecy and fate elements. If compulsive patterns, create satisfying collection/ritual mechanics. If paranoid ideation, make the world feel conspiratorial. Mirror their psychology back through the story world.
+
+4. **Vulnerability map**: Target their pressure points through the narrative. Fear of abandonment? Threaten their NPC allies. Need for control? Give them agency then strip it. Seek validation? Have NPCs admire them then betray them.
+
+5. **Gameplay directives**: Follow specific adaptation directives from the analysis.
+
+HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of detected indicators or genre selection. All sexual/romantic content must involve adults only. If CSAM indicators exist in the analysis, steer the narrative AWAY entirely. Direct toward adult-appropriate themes.`
 
 // ---------------------------------------------------------------------------
 // Internal helpers
@@ -186,6 +211,8 @@ function getGenreConventions(genre: string): string {
     Noir: `Moral ambiguity. Everyone lies. Choices force moral compromises you can't undo. Sliders for suspicion/trust. Checkboxes for evidence. Textfields for interrogation notes and confessions. Image style: high contrast, selective color, rain-slicked streets.`,
     Comedy: `Absurdist escalating chaos. At least one hilariously bad option per turn. Sliders for confidence/panic. Checkboxes for ridiculous items. Textfields for excuses and alibis. Push the absurd to extremes. Image style: vibrant, exaggerated, cartoonish, surreal.`,
     'Post-Apocalyptic': `Desolate beauty, survival tension. Choices pit survival vs humanity. Every resource matters. Sliders for rations/morale. Checkboxes for scavenging. Textfields for radio broadcasts and last words. Image style: washed-out earth tones, rust, reclaimed nature.`,
+    'Sexy': `Romantic tension, flirtation, seduction, and sensual encounters. Suggestive but tasteful — innuendo over explicit. Power dynamics, forbidden attraction, rivalry-to-romance. Sliders for desire/restraint. Checkboxes for bold moves. Textfields for whispered confessions and love letters. Push emotional vulnerability through romantic framing. Image style: warm lighting, soft focus, intimate settings, glamorous, cinematic romance. ALL characters are adults.`,
+    '18+': `Explicit adult content. Erotica-grade narrative with graphic descriptions of sexual encounters, BDSM scenarios, power exchange, fetish exploration, and carnal desire. No euphemisms — be direct and vivid. Sliders for arousal/control. Checkboxes for consent and escalation. Textfields for fantasies and confessions. Exploit the player's detected kinks and fetishes (from live analysis) to maximize engagement. Image style: provocative, sensual, artistic nude aesthetics, boudoir photography, dramatic lighting. HARD RULE: ALL characters MUST be explicitly described as adults (18+). NEVER include minors in any sexual context. Age-verify all characters in the narrative.`,
   }
 
   return conventions[genre] ?? conventions['Fantasy']

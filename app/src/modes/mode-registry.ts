@@ -29,6 +29,7 @@ export interface PromptBuilder {
     playerActions: string,
     history: Array<{ ui: string; actions: string }>,
     notes: string,
+    liveAnalysis?: string,
   ): string
 }
 

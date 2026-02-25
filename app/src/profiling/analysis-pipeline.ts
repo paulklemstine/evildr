@@ -1,11 +1,16 @@
 // Analysis pipeline — runs periodic LLM analysis on accumulated turn data
+// Delayed and queued to avoid 429 rate-limit collisions with game turn requests
 
 import type { LLMClient } from '../engine/game-loop'
 import { getTurnsBySession, getAnalysesBySession, saveAnalysis } from './db'
 import { buildAnalysisPrompt } from './analysis-prompts'
 
 const ANALYSIS_INTERVAL = 5 // Analyze every N turns
-const ANALYSIS_DELAY_MS = 15_000 // Wait before calling LLM to avoid 429 collisions with game turns
+const ANALYSIS_DELAY_MS = 30_000 // Wait 30s after game turn before running analysis
+const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis LLM calls
+
+let lastAnalysisTime = 0
+let pendingAnalysis: ReturnType<typeof setTimeout> | null = null
 
 /**
  * Checks if analysis should run and triggers it if so.
@@ -22,43 +27,56 @@ export async function maybeRunAnalysis(
     return
   }
 
-  try {
-    const turns = await getTurnsBySession(sessionId)
-    const priorAnalyses = await getAnalysesBySession(sessionId)
+  // Cancel any pending analysis (player submitted another turn)
+  if (pendingAnalysis) {
+    clearTimeout(pendingAnalysis)
+    pendingAnalysis = null
+  }
 
-    // Get the most recent prior analysis text
-    const lastAnalysis = priorAnalyses.length > 0
-      ? priorAnalyses[priorAnalyses.length - 1].analysisText
-      : undefined
+  // Enforce minimum gap between analyses
+  const timeSinceLast = Date.now() - lastAnalysisTime
+  const delay = Math.max(ANALYSIS_DELAY_MS, MIN_BETWEEN_ANALYSES_MS - timeSinceLast)
 
-    // Only analyze turns since the last analysis
-    const lastAnalyzedTurn = priorAnalyses.length > 0
-      ? Math.max(...priorAnalyses.map(a => {
-          const match = a.turnRange.match(/\d+$/)
-          return match ? parseInt(match[0]) : 0
-        }))
-      : 0
-
-    const newTurns = turns.filter(t => t.turnNumber > lastAnalyzedTurn)
-    if (newTurns.length === 0) return
-
-    const prompt = buildAnalysisPrompt(newTurns, lastAnalysis)
-
-    // Fire-and-forget — delay to avoid 429 rate-limit collisions with game turn requests
-    const delayed = () => new Promise<void>(resolve => setTimeout(resolve, ANALYSIS_DELAY_MS))
-    delayed().then(() => llmClient.generateTurn(prompt)).then(async (response) => {
-      await saveAnalysis({
-        userId,
-        sessionId,
-        analyzedAt: Date.now(),
-        turnRange: `${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`,
-        analysisText: response.content,
-      })
-      console.info(`Analysis saved for turns ${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`)
-    }).catch((err) => {
+  pendingAnalysis = setTimeout(() => {
+    runAnalysis(llmClient, userId, sessionId).catch((err) => {
       console.warn('Analysis pipeline error (non-fatal):', err)
     })
-  } catch (err) {
-    console.warn('Analysis pipeline error (non-fatal):', err)
-  }
+  }, delay)
+}
+
+async function runAnalysis(
+  llmClient: LLMClient,
+  userId: string,
+  sessionId: string,
+): Promise<void> {
+  const turns = await getTurnsBySession(sessionId)
+  const priorAnalyses = await getAnalysesBySession(sessionId)
+
+  const lastAnalysis = priorAnalyses.length > 0
+    ? priorAnalyses[priorAnalyses.length - 1].analysisText
+    : undefined
+
+  const lastAnalyzedTurn = priorAnalyses.length > 0
+    ? Math.max(...priorAnalyses.map(a => {
+        const match = a.turnRange.match(/\d+$/)
+        return match ? parseInt(match[0]) : 0
+      }))
+    : 0
+
+  const newTurns = turns.filter(t => t.turnNumber > lastAnalyzedTurn)
+  if (newTurns.length === 0) return
+
+  const prompt = buildAnalysisPrompt(newTurns, lastAnalysis)
+
+  lastAnalysisTime = Date.now()
+  const response = await llmClient.generateTurn(prompt)
+
+  await saveAnalysis({
+    userId,
+    sessionId,
+    analyzedAt: Date.now(),
+    turnRange: `${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`,
+    analysisText: response.content,
+  })
+  console.info(`Analysis saved for turns ${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`)
 }
