@@ -56,7 +56,7 @@ const PROXY_BASE = import.meta.env.DEV
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
 const DEFAULT_BASE_URL = PROXY_BASE
 const DEFAULT_MODELS = ['gemini-2.5-flash-lite', 'gemini-2.5-flash', 'gemini-2.0-flash']
-const DEFAULT_MAX_TOKENS = 4000  // flash-lite is non-thinking, needs less headroom
+const DEFAULT_MAX_TOKENS = 8000  // enough for orchestrator (2-player) + UI generation
 const DEFAULT_TEMPERATURE = 1.0
 
 // Delay between retries
