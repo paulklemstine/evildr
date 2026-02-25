@@ -597,11 +597,17 @@ export class GameLoop {
     try {
       const response = await llmClient.generateTurn(prompt)
       uiJsonArray = parseLLMResponse(response.content)
-    } catch (err) {
-      const message = err instanceof Error ? err.message : String(err)
-      onError(`LLM error: ${message}`)
-      onLoading(false)
-      return
+    } catch (firstErr) {
+      // Retry LLM call once if JSON parsing failed
+      try {
+        const retryResponse = await llmClient.generateTurn(prompt)
+        uiJsonArray = parseLLMResponse(retryResponse.content)
+      } catch (retryErr) {
+        const message = retryErr instanceof Error ? retryErr.message : String(retryErr)
+        onError(`LLM error: ${message}`)
+        onLoading(false)
+        return
+      }
     }
 
     // 5. Update state

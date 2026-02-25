@@ -815,12 +815,19 @@ export class MultiplayerGameLoop {
         try {
           const orchResponse = await llmClient.generateTurn(orchestratorPrompt)
           orchestratorRaw = orchResponse.content
-        } catch (err) {
-          const msg = err instanceof Error ? err.message : String(err)
-          onError(`Orchestrator LLM error: ${msg}`)
-          onLoading(false)
-          this.turnInProgress = false
-          return
+        } catch (firstErr) {
+          // Retry orchestrator LLM call once
+          try {
+            onWaitingStatus?.('Retrying...')
+            const retryResponse = await llmClient.generateTurn(orchestratorPrompt)
+            orchestratorRaw = retryResponse.content
+          } catch (retryErr) {
+            const msg = retryErr instanceof Error ? retryErr.message : String(retryErr)
+            onError(`Orchestrator LLM error: ${msg}`)
+            onLoading(false)
+            this.turnInProgress = false
+            return
+          }
         }
 
         // Split orchestrator output
@@ -829,12 +836,19 @@ export class MultiplayerGameLoop {
         let playerBSection: string
         try {
           [preamble, playerASection, playerBSection] = splitOrchestratorOutput(orchestratorRaw)
-        } catch (err) {
-          const msg = err instanceof Error ? err.message : String(err)
-          onError(`Orchestrator parse error: ${msg}`)
-          onLoading(false)
-          this.turnInProgress = false
-          return
+        } catch (firstErr) {
+          // Retry if orchestrator output format was bad
+          try {
+            onWaitingStatus?.('Retrying...')
+            const retryResponse = await llmClient.generateTurn(orchestratorPrompt)
+            ;[preamble, playerASection, playerBSection] = splitOrchestratorOutput(retryResponse.content)
+          } catch (retryErr) {
+            const msg = retryErr instanceof Error ? retryErr.message : String(retryErr)
+            onError(`Orchestrator parse error: ${msg}`)
+            onLoading(false)
+            this.turnInProgress = false
+            return
+          }
         }
 
         // Send Player B's section to partner
@@ -866,12 +880,19 @@ export class MultiplayerGameLoop {
       try {
         const uiResponse = await llmClient.generateTurn(uiPrompt)
         uiJsonArray = parseLLMResponse(uiResponse.content)
-      } catch (err) {
-        const msg = err instanceof Error ? err.message : String(err)
-        onError(`UI generation LLM error: ${msg}`)
-        onLoading(false)
-        this.turnInProgress = false
-        return
+      } catch (firstErr) {
+        // Retry LLM call once if JSON parsing failed
+        try {
+          onWaitingStatus?.('Retrying...')
+          const retryResponse = await llmClient.generateTurn(uiPrompt)
+          uiJsonArray = parseLLMResponse(retryResponse.content)
+        } catch (retryErr) {
+          const msg = retryErr instanceof Error ? retryErr.message : String(retryErr)
+          onError(`UI generation LLM error: ${msg}`)
+          onLoading(false)
+          this.turnInProgress = false
+          return
+        }
       }
 
       // Update history with this turn's actions
