@@ -542,6 +542,37 @@ h1, h2, h3 {
   transform: translateY(-2px);
 }
 
+.mode-card-image-wrap {
+  position: relative;
+  width: calc(100% + 3rem);
+  margin: -1.5rem -1.5rem 1rem -1.5rem;
+  border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-secondary);
+}
+
+.mode-card-image-shimmer {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    var(--bg-secondary) 0%,
+    var(--bg-primary) 50%,
+    var(--bg-secondary) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+}
+
+.mode-card-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+
 .badge {
   display: inline-block;
   padding: 0.125rem 0.5rem;

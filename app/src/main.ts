@@ -13,6 +13,13 @@ import { createPlayerBridge } from './admin/live-bridge'
 import type { PlayerBridge } from './admin/live-bridge'
 import './style.css'
 
+// --- Mode card image prompts ---
+const MODE_IMAGE_PROMPTS: Record<string, string> = {
+  drevil: 'A retro-futuristic mad scientist laboratory with neon green glowing tubes, colorful control panels, and a spinning chair facing wall of monitors, adult cartoon style, dramatic cinematic lighting, vibrant colors',
+  geems: 'An epic cinematic adventure scene with a hero silhouette standing at the edge of a glowing cliff overlooking a vast magical landscape with floating islands, vibrant adult animated movie style, dramatic golden hour lighting',
+  cyoa: 'A mystical crossroads in an enchanted forest with three branching paths lit by different colored magical lights, ancient stone markers, fireflies, painterly fantasy art style, dramatic atmosphere',
+}
+
 // --- Global State ---
 let gameLoop: GameLoop | null = null
 let playerBridge: PlayerBridge | null = null
@@ -61,10 +68,8 @@ function renderHeader(activePage: string): string {
       <div class="site-header-inner">
         <div class="flex items-center gap-3 cursor-pointer" id="nav-home">
           <div class="flex items-center justify-center rounded-lg"
-               style="width: 36px; height: 36px; background: var(--accent-primary);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
+               style="width: 36px; height: 36px; background: var(--accent-primary); font-size: 22px; line-height: 1;">
+            &#x1F9E0;
           </div>
           <div>
             <h1 class="text-lg font-bold" style="color: var(--text-heading); letter-spacing: -0.02em;">
@@ -122,8 +127,17 @@ function renderLobby(): void {
 
       <!-- Mode Grid -->
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6" id="mode-grid">
-        ${modes.map(mode => `
+        ${modes.map(mode => {
+          const imgPrompt = MODE_IMAGE_PROMPTS[mode.id] || ''
+          const imgUrl = imgPrompt ? imageClient.getImageUrl(imgPrompt, { width: 512, height: 288 }) : ''
+          return `
           <div class="mode-card" data-mode="${mode.id}">
+            ${imgUrl ? `
+              <div class="mode-card-image-wrap">
+                <div class="mode-card-image-shimmer"></div>
+                <img class="mode-card-image" src="${imgUrl}" alt="${mode.name}" />
+              </div>
+            ` : ''}
             <div class="flex items-center justify-between mb-3">
               <h3 class="text-lg font-bold" style="color: var(--text-heading);">
                 ${mode.name}
@@ -156,7 +170,7 @@ function renderLobby(): void {
               ${mode.minPlayers > 1 ? 'Find Match' : 'Begin Session'}
             </button>
           </div>
-        `).join('')}
+        `}).join('')}
       </div>
     </main>
 
@@ -171,6 +185,19 @@ function renderLobby(): void {
   `
 
   bindThemeToggle()
+
+  // Handle mode card image loading — fade in on load, remove shimmer
+  document.querySelectorAll<HTMLImageElement>('.mode-card-image').forEach(img => {
+    img.onload = () => {
+      const shimmer = img.previousElementSibling as HTMLElement | null
+      if (shimmer?.classList.contains('mode-card-image-shimmer')) shimmer.style.display = 'none'
+      img.style.opacity = '1'
+    }
+    img.onerror = () => {
+      const wrap = img.closest('.mode-card-image-wrap') as HTMLElement | null
+      if (wrap) wrap.style.display = 'none'
+    }
+  })
 
   // Preload interstitial image while player browses the lobby
   preloadInterstitialImage(imageClient)
@@ -228,10 +255,8 @@ function renderGamePage(modeId: string): void {
       <div id="game-container">
         <div id="ui-elements">
           <div class="text-center" style="padding: 3rem 1rem; color: var(--text-muted);">
-            <div style="width: 48px; height: 48px; margin: 0 auto 1rem; border-radius: 50%; background: rgba(13, 148, 136, 0.08); display: flex; align-items: center; justify-content: center;">
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="var(--accent-primary)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-              </svg>
+            <div style="width: 48px; height: 48px; margin: 0 auto 1rem; border-radius: 50%; background: rgba(13, 148, 136, 0.08); display: flex; align-items: center; justify-content: center; font-size: 28px;">
+              &#x1F9E0;
             </div>
             <p class="text-base font-medium" style="color: var(--text-secondary); margin-bottom: 0.25rem;">
               Starting ${mode.name}
@@ -339,9 +364,10 @@ function startGame(modeId: string, genre?: string): void {
           .replace(/\n/g, '<br>')
       }
 
-      // Broadcast to admin lobby via PeerJS
+      // Broadcast to admin lobby via PeerJS (include base64 images)
       if (playerBridge) {
-        playerBridge.broadcast({ type: 'stateUpdate', state })
+        const images = gameLoop?.getCapturedImages() ?? {}
+        playerBridge.broadcast({ type: 'stateUpdate', state, images })
       }
     },
     onError: (message) => {

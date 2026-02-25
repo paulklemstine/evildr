@@ -27,10 +27,8 @@ export async function renderReportsPage(
       <div class="site-header-inner">
         <div class="flex items-center gap-3 cursor-pointer" id="reports-nav-home">
           <div class="flex items-center justify-center rounded-lg"
-               style="width: 36px; height: 36px; background: var(--accent-primary);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
+               style="width: 36px; height: 36px; background: var(--accent-primary); font-size: 22px; line-height: 1;">
+            &#x1F9E0;
           </div>
           <div>
             <h1 class="text-lg font-bold" style="color: var(--text-heading); letter-spacing: -0.02em;">

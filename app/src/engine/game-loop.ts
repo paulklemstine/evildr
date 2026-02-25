@@ -227,6 +227,8 @@ export class GameLoop {
   private state: GameState
   private inputTracker: InputTracker
   private cleanupCelebrations: (() => void) | null = null
+  /** Base64 captures of resolved images, keyed by image prompt. */
+  private capturedImages: Record<string, string> = {}
 
   constructor(config: GameLoopConfig) {
     this.config = config
@@ -323,7 +325,26 @@ export class GameLoop {
       .forEach((img) => {
         const prompt = img.dataset.imagePrompt
         if (prompt) {
+          img.crossOrigin = 'anonymous'
           img.src = this.config.imageClient.getImageUrl(prompt)
+
+          // Capture as base64 for admin live preview via PeerJS
+          img.addEventListener('load', () => {
+            try {
+              const canvas = document.createElement('canvas')
+              const maxW = 512
+              const scale = Math.min(1, maxW / img.naturalWidth)
+              canvas.width = img.naturalWidth * scale
+              canvas.height = img.naturalHeight * scale
+              const ctx = canvas.getContext('2d')!
+              ctx.drawImage(img, 0, 0, canvas.width, canvas.height)
+              this.capturedImages[prompt] = canvas.toDataURL('image/jpeg', 0.65)
+              // Re-broadcast state with newly captured image
+              this.config.onStateChange(this.getState())
+            } catch {
+              // CORS or canvas error — silently skip
+            }
+          }, { once: true })
         }
       })
   }
@@ -339,6 +360,14 @@ export class GameLoop {
   }
 
   // ---- Public API ----
+
+  /**
+   * Return the base64-encoded captures of resolved images (prompt → data URL).
+   * Used by the admin live preview to show exact player images via PeerJS.
+   */
+  getCapturedImages(): Record<string, string> {
+    return { ...this.capturedImages }
+  }
 
   /**
    * Submit a turn: collect inputs, call the LLM, render the response, auto-save.

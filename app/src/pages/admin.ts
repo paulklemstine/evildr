@@ -11,6 +11,8 @@ import type { ReportMeta, ReportPayload } from '../api/report-uploader'
 
 interface TrackedPlayer extends PlayerInfo {
   lastState: GameState | null
+  /** Base64-encoded images from the player, keyed by image prompt. */
+  capturedImages: Record<string, string>
 }
 
 export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
@@ -19,10 +21,8 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       <div class="site-header-inner">
         <div class="flex items-center gap-3 cursor-pointer" id="admin-nav-home">
           <div class="flex items-center justify-center rounded-lg"
-               style="width: 36px; height: 36px; background: var(--accent-primary);">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
-            </svg>
+               style="width: 36px; height: 36px; background: var(--accent-primary); font-size: 22px; line-height: 1;">
+            &#x1F9E0;
           </div>
           <div>
             <h1 class="text-lg font-bold" style="color: var(--text-heading); letter-spacing: -0.02em;">
@@ -141,7 +141,7 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
     try {
       lobby = await createAdminLobby({
         onPlayerJoined(info) {
-          players.set(info.peerId, { ...info, lastState: null })
+          players.set(info.peerId, { ...info, lastState: null, capturedImages: {} })
           renderPlayerList()
           updateStatusBar()
         },
@@ -162,10 +162,14 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
           const state = record.state as GameState
           player.lastState = state
           player.turnNumber = state.turnNumber
+          // Merge captured base64 images from the player
+          if (record.images && typeof record.images === 'object') {
+            Object.assign(player.capturedImages, record.images as Record<string, string>)
+          }
           const badge = document.querySelector(`[data-player="${peerId}"] .player-turn-badge`)
           if (badge) badge.textContent = `Turn ${state.turnNumber}`
           if (selectedPeerId === peerId) {
-            renderSelectedPlayerState(state)
+            renderSelectedPlayerState(state, player.capturedImages)
           }
         },
       })
@@ -300,11 +304,11 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
     `
 
     if (player.lastState) {
-      renderSelectedPlayerState(player.lastState)
+      renderSelectedPlayerState(player.lastState, player.capturedImages)
     }
   }
 
-  function renderSelectedPlayerState(state: GameState) {
+  function renderSelectedPlayerState(state: GameState, capturedImages?: Record<string, string>) {
     const turnEl = document.getElementById('sv-turn')
     if (turnEl) turnEl.textContent = `Turn ${state.turnNumber}`
 
@@ -312,6 +316,23 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       const container = document.getElementById('sv-game-container')
       if (container) {
         renderUI(container, state.currentUiJson)
+
+        // Apply base64 images sent by the player over PeerJS
+        if (capturedImages) {
+          container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]').forEach(img => {
+            const prompt = img.dataset.imagePrompt
+            if (prompt && capturedImages[prompt]) {
+              // Remove shimmer placeholder
+              const placeholder = img.previousElementSibling
+              if (placeholder?.classList.contains('geems-image-placeholder')) {
+                placeholder.remove()
+              }
+              img.src = capturedImages[prompt]
+              img.style.display = 'block'
+            }
+          })
+        }
+
         container.querySelectorAll<HTMLElement>('input, textarea, select, button').forEach(el => {
           (el as HTMLInputElement).disabled = true
           el.style.pointerEvents = 'none'

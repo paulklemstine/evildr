@@ -62,10 +62,16 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 // ---------------------------------------------------------------------------
 
 const UI_REF = `### UI ELEMENT TYPES ###
-image: {"type":"image","name":"scene","label":"Title","value":"image prompt WITH EMBEDDED TEXT (see below)","color":"#d3d3d3","voice":"narrator"}
+image: {"type":"image","name":"scene","label":"GENERATE A SHORT EVOCATIVE TITLE for this scene","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
 
-### SUBLIMINAL IMAGE TEXT (MANDATORY) ###
-EVERY image prompt MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
+### MULTIPLE IMAGES PER TURN ###
+You can include MULTIPLE image elements in a single turn — not just one at the top.
+Use additional images to illustrate key moments, show dramatic reveals, capture NPC expressions, or create cinematic transitions.
+Place images wherever they enhance the narrative: between text blocks, before key choices, after reveals, etc.
+Each image should have a UNIQUE name (e.g. "scene", "discovery", "npc_portrait", "danger_shot").
+
+### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
+The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
 Describe WHERE the text appears as part of the scene so the image generator renders it visibly.
 Examples:
 - "...a neon sign above the door glows 'KEEP GOING'"
@@ -77,6 +83,7 @@ Examples:
 The phrase should reinforce urgency, courage, excitement, forward momentum.
 Vary the surface: signs, graffiti, book covers, screens, tattoos, banners, labels, carved text, neon, posters, fortune cookies.
 NEVER repeat the same phrase or surface two turns in a row.
+Additional images after the first do NOT need embedded text — they should focus on visual storytelling and cinematic atmosphere.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"trust","label":"How much? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"gemini","predicted":"7"}
@@ -305,7 +312,8 @@ Profile them through their ACTIONS in exciting scenarios — never through intro
 ${UI_REF}
 
 ### ELEMENT ORDER ###
-1. image — CINEMATIC scene. Adult animated movie style. Dramatic, vibrant, beautiful. Include subliminal text.
+1. image — CINEMATIC scene. Adult animated movie style. Dramatic, vibrant, beautiful. Include subliminal text (first image only).
+   You may insert ADDITIONAL images later in the turn (between text/actions) to show dramatic reveals, discoveries, or cinematic moments.
 2. text — Gemini's reaction to their choice (voice: gemini). Excited, conspiratorial, thrilled by danger.
    Reference what they did. Build on the consequences. Make them feel like a badass.
 3. text — scene continuation (voice: narrator). CINEMATIC WRITING. Vivid. Sensory. Dangerous.
