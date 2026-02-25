@@ -197,6 +197,7 @@ export class LLMClient {
       messages,
       max_tokens: maxTokens,
       temperature: this.config.temperature,
+      response_format: { type: 'json_object' },
     })
 
     let response: Response

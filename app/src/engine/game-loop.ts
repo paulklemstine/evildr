@@ -110,6 +110,7 @@ const MAX_HISTORY_SIZE = 20
  *  - Markdown code fences (` ```json ... ``` `)
  *  - Wrapped objects (`{ "ui": [...] }`)
  *  - Bare arrays (`[...]`)
+ *  - Mixed content: markdown/text before or after the JSON
  */
 function parseLLMResponse(raw: string): UIElement[] {
   let text = raw.trim()
@@ -120,13 +121,53 @@ function parseLLMResponse(raw: string): UIElement[] {
     text = fenceMatch[1].trim()
   }
 
-  const parsed: unknown = JSON.parse(text)
+  // Try direct parse first
+  try {
+    const parsed: unknown = JSON.parse(text)
+    return extractUIArray(parsed, text)
+  } catch {
+    // Direct parse failed — try to extract JSON from mixed content
+  }
 
+  // Find the first '[' and last ']' to extract an embedded JSON array
+  const firstBracket = text.indexOf('[')
+  const lastBracket = text.lastIndexOf(']')
+  if (firstBracket !== -1 && lastBracket > firstBracket) {
+    try {
+      const arrayText = text.substring(firstBracket, lastBracket + 1)
+      const parsed: unknown = JSON.parse(arrayText)
+      if (Array.isArray(parsed)) {
+        return parsed as UIElement[]
+      }
+    } catch {
+      // Array extraction failed
+    }
+  }
+
+  // Find the first '{' and last '}' to extract an embedded JSON object
+  const firstBrace = text.indexOf('{')
+  const lastBrace = text.lastIndexOf('}')
+  if (firstBrace !== -1 && lastBrace > firstBrace) {
+    try {
+      const objText = text.substring(firstBrace, lastBrace + 1)
+      const parsed: unknown = JSON.parse(objText)
+      return extractUIArray(parsed, objText)
+    } catch {
+      // Object extraction failed
+    }
+  }
+
+  throw new Error(
+    `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
+  )
+}
+
+/** Extract a UIElement[] from a parsed JSON value. */
+function extractUIArray(parsed: unknown, textForError: string): UIElement[] {
   if (Array.isArray(parsed)) {
     return parsed as UIElement[]
   }
 
-  // Handle wrapped object with a `ui` key
   if (parsed && typeof parsed === 'object' && 'ui' in parsed) {
     const wrapped = parsed as { ui: unknown }
     if (Array.isArray(wrapped.ui)) {
@@ -135,7 +176,7 @@ function parseLLMResponse(raw: string): UIElement[] {
   }
 
   throw new Error(
-    `LLM response is not a valid UI array. Snippet: ${text.substring(0, 200)}...`,
+    `LLM response is not a valid UI array. Snippet: ${textForError.substring(0, 200)}...`,
   )
 }
 
