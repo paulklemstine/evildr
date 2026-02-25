@@ -233,6 +233,13 @@ async function loadReports(): Promise<void> {
       const hasAnalysis = analyses.length > 0
       const latestAnalysis = hasAnalysis ? analyses[analyses.length - 1] : null
 
+      const hasSavedState = (() => {
+        try { return !!localStorage.getItem(`drevil-${session.mode}-state`) } catch { return false }
+      })()
+      const playHash = session.genre
+        ? `#play/${session.mode}/${session.genre}`
+        : `#play/${session.mode}`
+
       html += `
         <div class="report-card" data-session-id="${session.sessionId}">
           <div class="report-card-header">
@@ -244,7 +251,16 @@ async function loadReports(): Promise<void> {
             </div>
           </div>
           <p class="report-card-date">${date}</p>
-          <div class="flex gap-2" style="margin-top: 0.75rem;">
+          <div class="flex gap-2 flex-wrap" style="margin-top: 0.75rem;">
+            ${hasSavedState ? `
+              <a href="${playHash}" class="geems-button report-continue" style="font-size: 0.8125rem; text-decoration: none;">
+                Continue Session
+              </a>
+            ` : `
+              <a href="${playHash}" class="geems-button-outline report-continue" style="font-size: 0.8125rem; text-decoration: none;">
+                New Session
+              </a>
+            `}
             ${hasAnalysis ? `
               <button class="geems-button-outline report-toggle" data-session-id="${session.sessionId}">
                 View Report

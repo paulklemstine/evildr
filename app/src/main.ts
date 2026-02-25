@@ -381,6 +381,16 @@ function handleRoute(): void {
     renderReportsPage(app, userId, llmClient, () => {
       window.location.hash = ''
     })
+  } else if (hash.startsWith('#play/')) {
+    const parts = hash.replace('#play/', '').split('/')
+    const modeId = parts[0]
+    const genre = parts[1] || undefined
+    if (getMode(modeId)) {
+      startGame(modeId, genre)
+    } else {
+      resetTheme()
+      renderLobby()
+    }
   } else {
     if (gameLoop) {
       gameLoop.reset()
