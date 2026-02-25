@@ -97,7 +97,7 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
     </footer>
   `
 
@@ -263,7 +263,8 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   }
 
   function renderPlayerList() {
-    const listEl = document.getElementById('player-list')!
+    const listEl = document.getElementById('player-list')
+    if (!listEl) return  // DOM no longer present (navigated away)
 
     if (watchedSessions.size === 0) {
       listEl.innerHTML = '<p class="admin-empty-msg">No active sessions found</p>'
@@ -312,7 +313,8 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   }
 
   function renderPlayerView() {
-    const viewEl = document.getElementById('player-view')!
+    const viewEl = document.getElementById('player-view')
+    if (!viewEl) return  // DOM no longer present
 
     if (!selectedSessionId || !watchedSessions.has(selectedSessionId)) {
       viewEl.innerHTML = `

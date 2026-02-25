@@ -66,7 +66,7 @@ export async function renderReportsPage(
     </main>
 
     <footer class="site-footer">
-      <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
+      <p>&copy; ${new Date().getFullYear()} raver1975. All rights reserved.</p>
       <p style="margin-top: 0.25rem;">For research and entertainment purposes only.</p>
     </footer>
 
