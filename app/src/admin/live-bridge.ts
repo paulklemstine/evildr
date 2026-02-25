@@ -1,9 +1,15 @@
-// Live bridge — PeerJS lobby for admin to spy on all active players
-// Players auto-connect to a well-known lobby peer. Admin claims it.
+// Live bridge — PeerJS watch channels for real-time session spying
+//
+// Architecture (v2 — multi-admin):
+//   Player creates a well-known peer: geems-watch-{sessionId}
+//   Player accepts incoming connections from ANY watcher (admin or user)
+//   Player broadcasts state updates + live input changes to ALL connected watchers
+//   Multiple admins (or future paying users) can watch the same player simultaneously
+//   Discovery: watchers find active sessions via the reports API (Cloudflare KV)
 
 declare const Peer: any
 
-const LOBBY_ID = 'geems-lobby'
+const WATCH_PREFIX = 'geems-watch-'
 const RETRY_INTERVAL = 8000
 
 // ---------------------------------------------------------------------------
@@ -17,182 +23,164 @@ export interface PlayerMeta {
   sessionId: string
 }
 
-export interface PlayerInfo extends PlayerMeta {
-  peerId: string
-  turnNumber: number
-  connectedAt: number
-}
-
 export interface PlayerBridge {
   broadcast(data: unknown): void
   destroy(): void
 }
 
-export interface AdminLobby {
+export interface WatchConnection {
   destroy(): void
 }
 
 // ---------------------------------------------------------------------------
-// Player side — connect to lobby and broadcast state updates
+// Player side — create a watchable channel that any admin can connect to
 // ---------------------------------------------------------------------------
 
-export function createPlayerBridge(meta: PlayerMeta): PlayerBridge {
+export function createWatchablePlayer(meta: PlayerMeta): PlayerBridge {
   if (typeof Peer === 'undefined') {
     return { broadcast() {}, destroy() {} }
   }
 
+  const watchId = `${WATCH_PREFIX}${meta.sessionId}`
   let peer: any = null
-  let conn: any = null
+  const watchers = new Map<string, any>()
   let destroyed = false
   let retryTimer: ReturnType<typeof setTimeout> | null = null
-  let latestBroadcast: unknown = null
+  let latestState: unknown = null
+  let latestInputs: unknown = null
 
-  function connect() {
+  function init() {
     if (destroyed) return
     try { if (peer && !peer.destroyed) peer.destroy() } catch {}
 
-    peer = new Peer(undefined, { debug: 0 })
+    peer = new Peer(watchId, { debug: 0 })
 
     peer.on('open', () => {
-      if (destroyed) return
-      try {
-        conn = peer.connect(LOBBY_ID, { reliable: true })
-      } catch {
-        scheduleRetry()
-        return
-      }
-
-      conn.on('open', () => {
-        if (destroyed) { try { conn.close() } catch {} return }
-        // Announce presence
-        try { conn.send({ type: 'announce', ...meta, peerId: peer.id }) } catch {}
-        // Resend latest state so admin gets current view immediately
-        if (latestBroadcast) {
-          try { conn.send(latestBroadcast) } catch {}
-        }
-      })
-
-      conn.on('close', () => { conn = null; scheduleRetry() })
-      conn.on('error', () => { conn = null; scheduleRetry() })
+      // Ready to accept watchers
     })
 
-    peer.on('error', () => { scheduleRetry() })
+    peer.on('connection', (conn: any) => {
+      conn.on('open', () => {
+        if (destroyed) { try { conn.close() } catch {}; return }
+        watchers.set(conn.peer, conn)
+        // Send current state + inputs to new watcher immediately
+        if (latestState) { try { conn.send(latestState) } catch {} }
+        if (latestInputs) { try { conn.send(latestInputs) } catch {} }
+      })
+
+      conn.on('close', () => watchers.delete(conn.peer))
+      conn.on('error', () => watchers.delete(conn.peer))
+    })
+
+    peer.on('error', (err: any) => {
+      // If the ID is taken (unlikely — sessionId is unique), retry with delay
+      if (err.type === 'unavailable-id') {
+        scheduleRetry()
+      }
+    })
+
+    peer.on('disconnected', () => {
+      if (!destroyed) scheduleRetry()
+    })
   }
 
   function scheduleRetry() {
     if (destroyed || retryTimer) return
-    retryTimer = setTimeout(() => { retryTimer = null; connect() }, RETRY_INTERVAL)
+    retryTimer = setTimeout(() => { retryTimer = null; init() }, RETRY_INTERVAL)
   }
 
-  connect()
+  function broadcastToAll(data: unknown) {
+    for (const [id, conn] of watchers) {
+      if (conn.open) {
+        try { conn.send(data) } catch { watchers.delete(id) }
+      }
+    }
+  }
+
+  init()
 
   return {
     broadcast(data: unknown) {
-      latestBroadcast = data
-      if (conn?.open) {
-        try { conn.send(data) } catch {}
+      const record = data as Record<string, unknown> | null
+      if (record?.type === 'inputUpdate') {
+        latestInputs = data
+      } else {
+        latestState = data
       }
+      broadcastToAll(data)
     },
     destroy() {
       destroyed = true
       if (retryTimer) { clearTimeout(retryTimer); retryTimer = null }
-      try { conn?.close() } catch {}
+      watchers.forEach(c => { try { c.close() } catch {} })
+      watchers.clear()
       try { peer?.destroy() } catch {}
-      conn = null
       peer = null
     },
   }
 }
 
 // ---------------------------------------------------------------------------
-// Admin side — claim lobby, receive all player connections automatically
+// Watcher side — connect to a specific player's watch channel
 // ---------------------------------------------------------------------------
 
-export function createAdminLobby(callbacks: {
-  onPlayerJoined: (info: PlayerInfo) => void
-  onPlayerLeft: (peerId: string) => void
-  onPlayerData: (peerId: string, data: unknown) => void
-}): Promise<AdminLobby> {
-  return new Promise((resolve, reject) => {
-    if (typeof Peer === 'undefined') {
-      reject(new Error('PeerJS not loaded'))
+export function connectToPlayerWatch(
+  sessionId: string,
+  callbacks: {
+    onData: (data: unknown) => void
+    onDisconnect: () => void
+  },
+): WatchConnection {
+  const targetId = `${WATCH_PREFIX}${sessionId}`
+  let peer: any = null
+  let conn: any = null
+  let destroyed = false
+
+  if (typeof Peer === 'undefined') {
+    return { destroy() {} }
+  }
+
+  peer = new Peer(undefined, { debug: 0 })
+
+  peer.on('open', () => {
+    if (destroyed) return
+    try {
+      conn = peer.connect(targetId, { reliable: true })
+    } catch {
+      if (!destroyed) callbacks.onDisconnect()
       return
     }
 
-    const peer = new Peer(LOBBY_ID, { debug: 0 })
-    const connections = new Map<string, any>()
-    let destroyed = false
-    let resolved = false
-
-    const timeout = setTimeout(() => {
-      if (!resolved) {
-        resolved = true
-        reject(new Error('Lobby creation timeout'))
-        try { peer.destroy() } catch {}
-      }
-    }, 10000)
-
-    peer.on('open', () => {
-      if (resolved) return
-      resolved = true
-      clearTimeout(timeout)
-
-      resolve({
-        destroy() {
-          destroyed = true
-          connections.forEach(c => { try { c.close() } catch {} })
-          connections.clear()
-          try { peer.destroy() } catch {}
-        },
-      })
+    conn.on('open', () => {
+      if (destroyed) { try { conn.close() } catch {}; return }
     })
 
-    peer.on('connection', (incomingConn: any) => {
-      const remotePeerId: string = incomingConn.peer
-
-      incomingConn.on('open', () => {
-        if (destroyed) { try { incomingConn.close() } catch {}; return }
-        connections.set(remotePeerId, incomingConn)
-      })
-
-      incomingConn.on('data', (data: any) => {
-        if (!data || typeof data !== 'object') return
-        if (data.type === 'announce') {
-          callbacks.onPlayerJoined({
-            peerId: remotePeerId,
-            mode: data.mode || '?',
-            genre: data.genre,
-            userId: data.userId || '?',
-            sessionId: data.sessionId || '?',
-            turnNumber: 0,
-            connectedAt: Date.now(),
-          })
-        } else {
-          callbacks.onPlayerData(remotePeerId, data)
-        }
-      })
-
-      incomingConn.on('close', () => {
-        connections.delete(remotePeerId)
-        callbacks.onPlayerLeft(remotePeerId)
-      })
-
-      incomingConn.on('error', () => {
-        connections.delete(remotePeerId)
-        callbacks.onPlayerLeft(remotePeerId)
-      })
+    conn.on('data', (data: any) => {
+      if (!destroyed) callbacks.onData(data)
     })
 
-    peer.on('error', (err: any) => {
-      if (!resolved) {
-        resolved = true
-        clearTimeout(timeout)
-        if (err.type === 'unavailable-id') {
-          reject(new Error('Lobby already claimed — another admin is active'))
-        } else {
-          reject(err)
-        }
-      }
+    conn.on('close', () => {
+      conn = null
+      if (!destroyed) callbacks.onDisconnect()
+    })
+
+    conn.on('error', () => {
+      conn = null
+      if (!destroyed) callbacks.onDisconnect()
     })
   })
+
+  peer.on('error', () => {
+    if (!destroyed) callbacks.onDisconnect()
+  })
+
+  return {
+    destroy() {
+      destroyed = true
+      try { conn?.close() } catch {}
+      try { peer?.destroy() } catch {}
+      conn = null
+      peer = null
+    },
+  }
 }

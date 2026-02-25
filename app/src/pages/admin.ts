@@ -1,18 +1,26 @@
-// Admin page — live spying + reports browser
-// Tab 1: Live session monitor via PeerJS lobby
-// Tab 2: Browse all uploaded player reports from Cloudflare KV
+// Admin page — multi-admin live session spying + reports browser
+//
+// Architecture:
+//   Discovery: polls reports API for recently active sessions
+//   Live watch: connects to individual player watch channels via PeerJS
+//   Multiple admins can watch the same player simultaneously
+//   Real-time: receives both state updates AND live input changes
 
-import { createAdminLobby } from '../admin/live-bridge'
-import type { AdminLobby, PlayerInfo } from '../admin/live-bridge'
+import { connectToPlayerWatch } from '../admin/live-bridge'
+import type { WatchConnection } from '../admin/live-bridge'
 import { renderUI } from '../engine/renderer'
 import type { GameState } from '../engine/game-loop'
 import { listReports, getReport } from '../api/report-uploader'
 import type { ReportMeta, ReportPayload } from '../api/report-uploader'
 
-interface TrackedPlayer extends PlayerInfo {
+interface WatchedSession {
+  sessionId: string
+  meta: ReportMeta
+  connection: WatchConnection | null
   lastState: GameState | null
-  /** Base64-encoded images from the player, keyed by image prompt. */
+  lastInputs: Record<string, unknown> | null
   capturedImages: Record<string, string>
+  connected: boolean
 }
 
 export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
@@ -49,11 +57,11 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       <!-- Live Tab -->
       <div id="tab-live">
         <div id="lobby-status" class="mode-card" style="margin-bottom: 1.5rem; text-align: center;">
-          <p class="text-sm" style="color: var(--text-muted);">Connecting to lobby...</p>
+          <p class="text-sm" style="color: var(--text-muted);">Loading active sessions...</p>
         </div>
         <div class="admin-dashboard">
           <div id="player-list" class="admin-player-list">
-            <p class="admin-empty-msg">No active players</p>
+            <p class="admin-empty-msg">No active sessions</p>
           </div>
           <div id="player-view" class="admin-player-view">
             <div class="admin-no-selection">
@@ -61,7 +69,7 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
                 <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
                 <circle cx="12" cy="12" r="3"/>
               </svg>
-              <p style="color: var(--text-muted); margin-top: 1rem;">Select a player to watch their live session</p>
+              <p style="color: var(--text-muted); margin-top: 1rem;">Select a session to watch live</p>
             </div>
           </div>
         </div>
@@ -94,11 +102,11 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   `
 
   // --- State ---
-  let lobby: AdminLobby | null = null
-  const players = new Map<string, TrackedPlayer>()
-  let selectedPeerId: string | null = null
+  const watchedSessions = new Map<string, WatchedSession>()
+  let selectedSessionId: string | null = null
   let reportsMeta: ReportMeta[] = []
   let selectedReportId: string | null = null
+  let pollTimer: ReturnType<typeof setInterval> | null = null
 
   // --- Tab switching ---
   document.querySelectorAll('.admin-tab').forEach(tab => {
@@ -122,112 +130,166 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
 
   // --- Navigation ---
   const goBack = () => {
-    if (lobby) { lobby.destroy(); lobby = null }
+    cleanup()
     onBack()
   }
   document.getElementById('admin-back')?.addEventListener('click', goBack)
   document.getElementById('admin-nav-home')?.addEventListener('click', goBack)
 
-  // --- Start lobby ---
-  initLobby()
+  // --- Start discovery ---
+  loadActiveSessions()
+  pollTimer = setInterval(loadActiveSessions, 10000) // Poll every 10s
 
   // =========================================================================
-  // LIVE TAB
+  // LIVE TAB — Discovery via reports API + PeerJS watch connections
   // =========================================================================
 
-  async function initLobby() {
-    const statusEl = document.getElementById('lobby-status')!
-
+  async function loadActiveSessions() {
+    const statusEl = document.getElementById('lobby-status')
     try {
-      lobby = await createAdminLobby({
-        onPlayerJoined(info) {
-          players.set(info.peerId, { ...info, lastState: null, capturedImages: {} })
-          renderPlayerList()
-          updateStatusBar()
-        },
-        onPlayerLeft(peerId) {
-          players.delete(peerId)
-          if (selectedPeerId === peerId) {
-            selectedPeerId = null
-            renderPlayerView()
-          }
-          renderPlayerList()
-          updateStatusBar()
-        },
-        onPlayerData(peerId, data) {
-          const record = data as Record<string, unknown>
-          if (record.type !== 'stateUpdate') return
-          const player = players.get(peerId)
-          if (!player) return
-          const state = record.state as GameState
-          player.lastState = state
-          player.turnNumber = state.turnNumber
-          // Merge captured base64 images from the player
-          if (record.images && typeof record.images === 'object') {
-            Object.assign(player.capturedImages, record.images as Record<string, string>)
-          }
-          const badge = document.querySelector(`[data-player="${peerId}"] .player-turn-badge`)
-          if (badge) badge.textContent = `Turn ${state.turnNumber}`
-          if (selectedPeerId === peerId) {
-            renderSelectedPlayerState(state, player.capturedImages)
-          }
-        },
-      })
+      const allReports = await listReports()
 
-      statusEl.innerHTML = `
-        <div class="flex items-center justify-center gap-2">
-          <span class="admin-live-dot"></span>
-          <span class="text-sm font-medium" style="color: var(--text-heading);">Lobby Active</span>
-          <span class="text-sm" style="color: var(--text-muted);">&mdash;</span>
-          <span id="player-count" class="text-sm" style="color: var(--text-secondary);">0 players connected</span>
-        </div>
-      `
+      // Show sessions updated in the last 10 minutes as potentially live
+      const cutoff = Date.now() - 10 * 60 * 1000
+      const recent = allReports
+        .filter(r => r.uploadedAt > cutoff)
+        .sort((a, b) => b.uploadedAt - a.uploadedAt)
+
+      // Merge into watched sessions map (keep existing connections)
+      const currentIds = new Set(recent.map(r => r.sessionId))
+      for (const [id, session] of watchedSessions) {
+        if (!currentIds.has(id) && !session.connected) {
+          // Session fell off — remove if not actively watched
+          session.connection?.destroy()
+          watchedSessions.delete(id)
+        }
+      }
+      for (const report of recent) {
+        if (!watchedSessions.has(report.sessionId)) {
+          watchedSessions.set(report.sessionId, {
+            sessionId: report.sessionId,
+            meta: report,
+            connection: null,
+            lastState: null,
+            lastInputs: null,
+            capturedImages: {},
+            connected: false,
+          })
+        } else {
+          // Update metadata
+          watchedSessions.get(report.sessionId)!.meta = report
+        }
+      }
+
+      if (statusEl) {
+        const n = watchedSessions.size
+        const watchingN = [...watchedSessions.values()].filter(s => s.connected).length
+        statusEl.innerHTML = `
+          <div class="flex items-center justify-center gap-2">
+            <span class="admin-live-dot"></span>
+            <span class="text-sm font-medium" style="color: var(--text-heading);">Discovery Active</span>
+            <span class="text-sm" style="color: var(--text-muted);">&mdash;</span>
+            <span id="player-count" class="text-sm" style="color: var(--text-secondary);">
+              ${n} session${n !== 1 ? 's' : ''} found${watchingN > 0 ? `, watching ${watchingN}` : ''}
+            </span>
+          </div>
+        `
+      }
+
+      renderPlayerList()
     } catch (err) {
-      statusEl.innerHTML = `
-        <p class="text-sm" style="color: #dc2626;">
-          ${(err as Error).message}
-        </p>
-        <button id="retry-lobby" class="geems-button-outline" style="margin-top: 0.75rem; font-size: 0.8125rem;">
-          Retry
-        </button>
-      `
-      document.getElementById('retry-lobby')?.addEventListener('click', () => {
-        statusEl.innerHTML = '<p class="text-sm" style="color: var(--text-muted);">Reconnecting...</p>'
-        initLobby()
-      })
+      if (statusEl) {
+        statusEl.innerHTML = `
+          <p class="text-sm" style="color: #dc2626;">
+            Discovery error: ${(err as Error).message}
+          </p>
+          <button id="retry-discovery" class="geems-button-outline" style="margin-top: 0.75rem; font-size: 0.8125rem;">
+            Retry
+          </button>
+        `
+        document.getElementById('retry-discovery')?.addEventListener('click', loadActiveSessions)
+      }
     }
   }
 
-  function updateStatusBar() {
-    const countEl = document.getElementById('player-count')
-    if (countEl) {
-      const n = players.size
-      countEl.textContent = `${n} player${n !== 1 ? 's' : ''} connected`
-    }
+  function watchSession(sessionId: string) {
+    const session = watchedSessions.get(sessionId)
+    if (!session || session.connected) return
+
+    session.connection = connectToPlayerWatch(sessionId, {
+      onData(data) {
+        const record = data as Record<string, unknown>
+        if (record.type === 'stateUpdate') {
+          session.lastState = record.state as GameState
+          // Merge captured base64 images
+          if (record.images && typeof record.images === 'object') {
+            Object.assign(session.capturedImages, record.images as Record<string, string>)
+          }
+          if (selectedSessionId === sessionId) {
+            renderSelectedPlayerState(session)
+          }
+          // Update turn badge in list
+          const badge = document.querySelector(`[data-session="${sessionId}"] .player-turn-badge`)
+          if (badge) badge.textContent = `Turn ${(record.state as GameState).turnNumber}`
+        } else if (record.type === 'inputUpdate') {
+          try {
+            session.lastInputs = typeof record.inputs === 'string'
+              ? JSON.parse(record.inputs as string)
+              : record.inputs as Record<string, unknown>
+          } catch {
+            session.lastInputs = null
+          }
+          if (selectedSessionId === sessionId) {
+            applyLiveInputs(session)
+          }
+        }
+      },
+      onDisconnect() {
+        session.connected = false
+        session.connection = null
+        renderPlayerList()
+        if (selectedSessionId === sessionId) {
+          const statusBadge = document.getElementById('sv-conn-status')
+          if (statusBadge) {
+            statusBadge.textContent = 'Disconnected'
+            statusBadge.style.color = '#dc2626'
+          }
+        }
+      },
+    })
+
+    session.connected = true
+    renderPlayerList()
   }
 
   function renderPlayerList() {
     const listEl = document.getElementById('player-list')!
 
-    if (players.size === 0) {
-      listEl.innerHTML = '<p class="admin-empty-msg">No active players</p>'
+    if (watchedSessions.size === 0) {
+      listEl.innerHTML = '<p class="admin-empty-msg">No active sessions found</p>'
       return
     }
 
     let html = ''
-    for (const [peerId, player] of players) {
-      const isSelected = peerId === selectedPeerId
-      const timeAgo = formatTimeAgo(player.connectedAt)
+    for (const [sessionId, session] of watchedSessions) {
+      const isSelected = sessionId === selectedSessionId
+      const r = session.meta
+      const timeAgo = formatTimeAgo(r.uploadedAt)
       html += `
-        <div class="admin-player-card ${isSelected ? 'selected' : ''}" data-player="${peerId}">
+        <div class="admin-player-card ${isSelected ? 'selected' : ''}" data-session="${sessionId}">
           <div class="flex items-center justify-between">
             <span class="text-sm font-bold" style="color: var(--text-heading);">
-              ${player.mode.toUpperCase()}${player.genre ? ` / ${player.genre}` : ''}
+              ${r.mode.toUpperCase()}${r.genre ? ` / ${r.genre}` : ''}
             </span>
-            <span class="badge badge-free player-turn-badge">Turn ${player.turnNumber}</span>
+            <div class="flex gap-1">
+              <span class="badge badge-free player-turn-badge">Turn ${r.turnCount}</span>
+              ${session.connected
+                ? '<span class="badge badge-tier" style="background: #059669; color: #fff;">Watching</span>'
+                : ''}
+            </div>
           </div>
           <div class="text-xs" style="color: var(--text-muted); margin-top: 0.25rem;">
-            ${peerId.slice(-6)} &middot; ${timeAgo}
+            ${(r.userId || '').slice(0, 8)}... &middot; ${timeAgo}
           </div>
         </div>
       `
@@ -236,8 +298,13 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
 
     listEl.querySelectorAll('.admin-player-card').forEach(card => {
       card.addEventListener('click', () => {
-        const pid = (card as HTMLElement).dataset.player!
-        selectedPeerId = pid
+        const sid = (card as HTMLElement).dataset.session!
+        selectedSessionId = sid
+        // Auto-connect if not watching yet
+        const session = watchedSessions.get(sid)
+        if (session && !session.connected) {
+          watchSession(sid)
+        }
         renderPlayerList()
         renderPlayerView()
       })
@@ -247,35 +314,38 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
   function renderPlayerView() {
     const viewEl = document.getElementById('player-view')!
 
-    if (!selectedPeerId || !players.has(selectedPeerId)) {
+    if (!selectedSessionId || !watchedSessions.has(selectedSessionId)) {
       viewEl.innerHTML = `
         <div class="admin-no-selection">
           <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--text-muted)" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="opacity: 0.4;">
             <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
             <circle cx="12" cy="12" r="3"/>
           </svg>
-          <p style="color: var(--text-muted); margin-top: 1rem;">Select a player to watch their live session</p>
+          <p style="color: var(--text-muted); margin-top: 1rem;">Select a session to watch live</p>
         </div>
       `
       return
     }
 
-    const player = players.get(selectedPeerId)!
+    const session = watchedSessions.get(selectedSessionId)!
+    const r = session.meta
 
     viewEl.innerHTML = `
       <div class="admin-view-header mode-card" style="margin-bottom: 1rem;">
         <div class="flex items-center justify-between">
           <div>
             <h3 class="text-lg font-bold" style="color: var(--text-heading);">
-              ${player.mode.toUpperCase()}${player.genre ? ` / ${player.genre}` : ''}
+              ${r.mode.toUpperCase()}${r.genre ? ` / ${r.genre}` : ''}
             </h3>
             <p class="text-xs" style="color: var(--text-muted);">
-              Peer: ${selectedPeerId.slice(-6)} &middot; User: ${player.userId.slice(0, 8)}...
+              User: ${(r.userId || '').slice(0, 8)}... &middot; Session: ${selectedSessionId.slice(0, 8)}...
             </p>
           </div>
           <div class="flex items-center gap-2">
-            <span class="admin-live-dot"></span>
-            <span id="sv-turn" class="badge badge-free">Turn ${player.turnNumber}</span>
+            <span id="sv-conn-status" class="text-xs font-medium" style="color: ${session.connected ? '#059669' : '#dc2626'};">
+              ${session.connected ? 'Connected' : 'Connecting...'}
+            </span>
+            <span id="sv-turn" class="badge badge-free">Turn ${session.lastState?.turnNumber || r.turnCount}</span>
           </div>
         </div>
       </div>
@@ -284,6 +354,10 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
         <div>
           <div id="sv-game-container" class="mode-card">
             <p class="admin-waiting">Waiting for turn data...</p>
+          </div>
+          <div id="sv-live-inputs" class="mode-card" style="margin-top: 1rem; display: none;">
+            <h4 class="admin-data-label">Live Inputs</h4>
+            <div id="sv-inputs-content" class="text-sm" style="color: var(--text-secondary); font-family: 'Source Code Pro', monospace; word-break: break-all;"></div>
           </div>
         </div>
         <div>
@@ -303,12 +377,18 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       </div>
     `
 
-    if (player.lastState) {
-      renderSelectedPlayerState(player.lastState, player.capturedImages)
+    if (session.lastState) {
+      renderSelectedPlayerState(session)
+    }
+    if (session.lastInputs) {
+      applyLiveInputs(session)
     }
   }
 
-  function renderSelectedPlayerState(state: GameState, capturedImages?: Record<string, string>) {
+  function renderSelectedPlayerState(session: WatchedSession) {
+    const state = session.lastState
+    if (!state) return
+
     const turnEl = document.getElementById('sv-turn')
     if (turnEl) turnEl.textContent = `Turn ${state.turnNumber}`
 
@@ -317,22 +397,22 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
       if (container) {
         renderUI(container, state.currentUiJson)
 
-        // Apply base64 images sent by the player over PeerJS
-        if (capturedImages) {
+        // Apply base64 images sent by the player
+        if (session.capturedImages) {
           container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]').forEach(img => {
             const prompt = img.dataset.imagePrompt
-            if (prompt && capturedImages[prompt]) {
-              // Remove shimmer placeholder
+            if (prompt && session.capturedImages[prompt]) {
               const placeholder = img.previousElementSibling
               if (placeholder?.classList.contains('geems-image-placeholder')) {
                 placeholder.remove()
               }
-              img.src = capturedImages[prompt]
+              img.src = session.capturedImages[prompt]
               img.style.display = 'block'
             }
           })
         }
 
+        // Disable all inputs (view-only)
         container.querySelectorAll<HTMLElement>('input, textarea, select, button').forEach(el => {
           (el as HTMLInputElement).disabled = true
           el.style.pointerEvents = 'none'
@@ -349,6 +429,83 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
 
     const notesEl = document.getElementById('sv-notes')
     if (notesEl && state.currentNotes) notesEl.textContent = state.currentNotes
+  }
+
+  function applyLiveInputs(session: WatchedSession) {
+    const inputs = session.lastInputs
+    if (!inputs) return
+
+    const container = document.getElementById('sv-game-container')
+    if (!container) return
+
+    // Apply live values to the rendered UI elements
+    for (const [key, value] of Object.entries(inputs)) {
+      if (key === 'turn' || key.endsWith('__justification')) continue
+
+      // Standard inputs (text, slider, number, dropdown)
+      const el = container.querySelector<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>(
+        `[name="${key}"]`
+      )
+      if (el) {
+        if (el.type === 'radio') {
+          // For radio: find the matching option and check it
+          container.querySelectorAll<HTMLInputElement>(`[name="${key}"]`).forEach(radio => {
+            radio.checked = radio.value === String(value)
+            if (radio.checked) {
+              radio.closest('.geems-radio-option')?.classList.add('admin-live-highlight')
+            } else {
+              radio.closest('.geems-radio-option')?.classList.remove('admin-live-highlight')
+            }
+          })
+        } else if (el.type === 'checkbox') {
+          (el as HTMLInputElement).checked = Boolean(value)
+        } else {
+          el.value = String(value)
+        }
+        continue
+      }
+
+      // Custom elements (rating, button_group, emoji_react, color_pick)
+      const custom = container.querySelector<HTMLElement>(`[data-name="${key}"]`)
+      if (custom) {
+        custom.dataset.value = String(value)
+        // Highlight selected option visually
+        if (custom.dataset.elementType === 'button_group') {
+          custom.querySelectorAll('.geems-group-btn').forEach(btn => {
+            btn.classList.toggle('active', (btn as HTMLElement).dataset.value === String(value))
+          })
+        } else if (custom.dataset.elementType === 'emoji_react') {
+          custom.querySelectorAll('.geems-emoji-btn').forEach(btn => {
+            btn.classList.toggle('active', (btn as HTMLElement).dataset.value === String(value))
+          })
+        } else if (custom.dataset.elementType === 'color_pick') {
+          custom.querySelectorAll('.geems-color-swatch').forEach(sw => {
+            sw.classList.toggle('active', (sw as HTMLElement).dataset.value === String(value))
+          })
+        } else if (custom.dataset.elementType === 'rating') {
+          const rating = parseInt(String(value)) || 0
+          custom.querySelectorAll('.geems-rating-star').forEach((star, idx) => {
+            star.classList.toggle('active', idx < rating)
+          })
+        }
+      }
+    }
+
+    // Show live inputs summary panel
+    const livePanel = document.getElementById('sv-live-inputs')
+    const liveContent = document.getElementById('sv-inputs-content')
+    if (livePanel && liveContent) {
+      const parts: string[] = []
+      for (const [key, val] of Object.entries(inputs)) {
+        if (key === 'turn' || key.endsWith('__justification')) continue
+        const v = typeof val === 'string' ? val : JSON.stringify(val)
+        parts.push(`<strong>${escapeHtml(key)}</strong>: ${escapeHtml(v.length > 80 ? v.slice(0, 80) + '...' : v)}`)
+      }
+      if (parts.length > 0) {
+        livePanel.style.display = 'block'
+        liveContent.innerHTML = parts.join('<br>')
+      }
+    }
   }
 
   // =========================================================================
@@ -517,12 +674,21 @@ export function renderAdminPage(app: HTMLElement, onBack: () => void): void {
     viewEl.innerHTML = html
   }
 
-  // Cleanup on hash change
-  const cleanup = () => {
-    if (lobby) { lobby.destroy(); lobby = null }
-    window.removeEventListener('hashchange', cleanup)
+  // =========================================================================
+  // Cleanup
+  // =========================================================================
+
+  function cleanup() {
+    if (pollTimer) { clearInterval(pollTimer); pollTimer = null }
+    for (const session of watchedSessions.values()) {
+      session.connection?.destroy()
+    }
+    watchedSessions.clear()
+    window.removeEventListener('hashchange', onHashChange)
   }
-  window.addEventListener('hashchange', cleanup)
+
+  const onHashChange = () => cleanup()
+  window.addEventListener('hashchange', onHashChange)
 }
 
 // ---------------------------------------------------------------------------
@@ -551,7 +717,7 @@ function summarizeInputs(json: string): string {
     const parsed = JSON.parse(json) as Record<string, unknown>
     const parts: string[] = []
     for (const [key, val] of Object.entries(parsed)) {
-      if (key === 'turnNumber') continue
+      if (key === 'turnNumber' || key.endsWith('__justification')) continue
       const v = typeof val === 'string' ? val : JSON.stringify(val)
       parts.push(`${key}: ${v.length > 60 ? v.slice(0, 60) + '...' : v}`)
     }

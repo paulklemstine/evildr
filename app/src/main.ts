@@ -9,8 +9,9 @@ import { showReEngagement } from './engine/session-hooks'
 import { showInterstitial, dismissInterstitial, preloadInterstitialImage } from './engine/loading-interstitial'
 import { renderReportsPage } from './pages/reports'
 import { renderAdminPage } from './pages/admin'
-import { createPlayerBridge } from './admin/live-bridge'
+import { createWatchablePlayer } from './admin/live-bridge'
 import type { PlayerBridge } from './admin/live-bridge'
+import { collectInputState } from './engine/renderer'
 import './style.css'
 
 // --- Mode card image prompts ---
@@ -397,9 +398,30 @@ function startGame(modeId: string, genre?: string): void {
   // Auto-start first turn
   gameLoop.submitTurn()
 
-  // Connect to admin lobby via PeerJS (non-blocking, silent fail)
+  // Create watchable channel so any admin/watcher can spy via PeerJS
   if (playerBridge) { playerBridge.destroy(); playerBridge = null }
-  playerBridge = createPlayerBridge({ mode: modeId, genre, userId, sessionId })
+  playerBridge = createWatchablePlayer({ mode: modeId, genre, userId, sessionId })
+
+  // Real-time input broadcasting — send player's answers as they interact
+  let inputDebounce: ReturnType<typeof setTimeout> | null = null
+  container.addEventListener('input', () => {
+    if (!playerBridge || !gameLoop) return
+    if (inputDebounce) clearTimeout(inputDebounce)
+    inputDebounce = setTimeout(() => {
+      const state = gameLoop!.getState()
+      const inputs = collectInputState(container, state.turnNumber + 1)
+      playerBridge!.broadcast({ type: 'inputUpdate', inputs })
+    }, 250)
+  })
+  container.addEventListener('change', () => {
+    if (!playerBridge || !gameLoop) return
+    if (inputDebounce) clearTimeout(inputDebounce)
+    inputDebounce = setTimeout(() => {
+      const state = gameLoop!.getState()
+      const inputs = collectInputState(container, state.turnNumber + 1)
+      playerBridge!.broadcast({ type: 'inputUpdate', inputs })
+    }, 100)
+  })
 }
 
 // --- Hash-based Routing ---
