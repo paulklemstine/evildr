@@ -4,6 +4,7 @@
 // Every turn should feel like a theme park ride, a heist, a chase, a mystery.
 
 import type { PromptBuilder } from '../mode-registry.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION } from '../shared/storytelling.ts'
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
@@ -45,9 +46,10 @@ ${liveAnalysis}
 ### TASK ###
 Advance the adventure. DOPAMINE MAX. Make this turn THRILLING.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — create scenarios, dangers, and temptations that target their specific psychological profile. Profile through ACTION not questions.' : ''}
+Apply ALL behavioral directives AND storytelling craft rules.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
-The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting, all dangerous, all moving FORWARD.
-Include a hidden "notes" element with updated session state + player archetype + what their choices reveal.
+The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
+Include a hidden "notes" element with updated session state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -221,7 +223,13 @@ philosophical reflection. Think movie trailer voiceover:
 - "The deeper you go, the higher the stakes. And you haven't seen anything yet."
 - "Not everyone who enters the labyrinth comes out. But those who do... are changed forever."
 - "The next door opens in 3... 2... 1..."
-- "What's waiting for you next? Even I don't know. And that's what makes this FUN."`
+- "What's waiting for you next? Even I don't know. And that's what makes this FUN."
+
+${STORYTELLING_CRAFT}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}`
 
 const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this player. USE IT to shape the ADVENTURE:
 
@@ -272,7 +280,13 @@ Element order:
    "Oh, this is going to be GOOD. I can already tell."
 6. radio — EXACTLY 4 choices (color: #e63946). All action. All exciting. All moving FORWARD.
    "The explosion reveals three exits — and something you weren't supposed to see. What do you do?"
-7. hidden "notes" — initialize: {story_state, player_name, archetype: "undetermined", stakes: "rising", open_threads: ["main_mystery", "stranger_identity"], turn_count: 1, intensity: "high"}
+7. hidden "notes" — initialize using this structure:
+   {story_state, player_name, archetype: "undetermined", stakes: "rising",
+    open_threads: ["main_mystery", "stranger_identity"], turn_count: 1,
+    planted_seeds: [], last_cliffhanger_type: "threat", turn_intensity: "peak",
+    choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
+    active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
+    consequence_queue: []}
 
 ${COLOR_PROTOCOL}
 
@@ -302,7 +316,8 @@ ${UI_REF}
 5. text — Gemini's teaser/wisdom (voice: god, color: #e9c46a). Exciting. Forward-looking. "And you haven't even seen what's next..."
 6. radio — EXACTLY 4 choices (ALWAYS last visible). All action. All exciting. End on a CLIFFHANGER then offer 4 thrilling responses.
    NEVER offer "stop" or "rest" or "reflect." Every option is a LEAP FORWARD.
-7. hidden "notes" — update: story_state, archetype, stakes, open_threads, intensity, what their choices REVEAL about their psychology
+7. hidden "notes" — update ALL fields: story_state, archetype, stakes, open_threads, intensity, what their choices REVEAL about their psychology.
+   ALSO update NARRATIVE TRACKING: planted_seeds (plant new / pay off old), last_cliffhanger_type, turn_intensity (peak/valley/rise — follow the rhythm), choice_pattern (which archetype they chose), active_npcs, variety check, consequence_queue
 
 ### CHOICE ARCHITECTURE — ACTION MOVIE EDITION ###
 Frame EVERY choice as an exciting action:

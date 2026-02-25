@@ -4,6 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -42,7 +43,12 @@ Create an IRRESISTIBLE opening scene for a ${genre} adventure that's already HAP
 - Use cinematic language: short punchy sentences for action, flowing imagery for atmosphere.
 - End with EXACTLY 4 radio choices — ALL EXCITING. Every option is a leap into danger.
 - One choice should be colored #e63946 (red) — the boldest, most dangerous option.
-- Populate notes: {story_state, archetype: "undetermined", stakes: "high", open_threads: ["main_mystery"], turn_count: 1, intensity: "high"}
+- Populate notes: {story_state, archetype: "undetermined", stakes: "high",
+  open_threads: ["main_mystery"], turn_count: 1, intensity: "high",
+  planted_seeds: [], last_cliffhanger_type: "threat", turn_intensity: "peak",
+  choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
+  active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
+  consequence_queue: []}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
@@ -78,10 +84,11 @@ ${liveAnalysis}
 2. ADVANCE THE ACTION. This turn must be MORE exciting than the last. DOPAMINE MAX.
 ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create dangers, temptations, NPCs, and scenarios that target their specific psychological profile. Profile through WHAT THEY DO, not what they say about themselves.' : '3. Make every turn feel like the best scene in the movie.'}
 4. Use a RICH VARIETY of UI elements each turn — but ALL framed as IN-STORY ACTIONS. Never "how do you feel?" — always "what do you DO?"
-5. CLIFFHANGER ENDING before the radio choices. EVERY TURN.
-6. The LAST visible element MUST be a "radio" with EXACTLY 4 choices — all thrilling, all moving FORWARD.
-7. Update notes: story_state, archetype, stakes (always rising), open_threads, turn_count, intensity.
-8. All choices presuppose continued engagement. No "wait" or "rest" options.
+5. CLIFFHANGER ENDING before the radio choices. EVERY TURN. Rotate through all 5 cliffhanger types.
+6. The LAST visible element MUST be a "radio" with EXACTLY 4 choices following ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic.
+7. Apply ALL storytelling craft rules: BUT/THEREFORE causation, consequence echo, seed planting/callbacks, sensory writing, tension rhythm.
+8. Update notes: story_state, archetype, stakes, open_threads, turn_count, intensity AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue).
+9. All choices presuppose continued engagement. No "wait" or "rest" options.
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
@@ -207,7 +214,13 @@ Apply ALL of these every turn:
 
 **9. CHOICE ARCHITECTURE:** All choices are exciting forward actions. NEVER "do nothing" or "rest." One choice is always colored #e63946 — the boldest, most dangerous option. After choices, show immediate consequences.
 
-**10. SOCIAL PROOF:** "No one has ever survived this room." "This is the path only legends take." "What you just did? That was impossible." Make the player feel SPECIAL and POWERFUL.`
+**10. SOCIAL PROOF:** "No one has ever survived this room." "This is the path only legends take." "What you just did? That was impossible." Make the player feel SPECIAL and POWERFUL.
+
+${STORYTELLING_CRAFT}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}`
 }
 
 function getGenreConventions(genre: string): string {

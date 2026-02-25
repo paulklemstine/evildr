@@ -7,6 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
+import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -48,10 +49,10 @@ ${liveAnalysis}
 ### TASK ###
 Advance the experiment. DOPAMINE MAX. Make this turn THRILLING and DANGEROUS.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — design experiments, traps, and scenarios that target their specific psychological profile. Profile through ACTION not questions.' : ''}
-Apply ALL behavioral directives. Maintain Dr. Gemini persona — snarky, brilliant, entertained by chaos.
+Apply ALL behavioral directives AND storytelling craft rules. Maintain Dr. Gemini persona — snarky, brilliant, entertained by chaos.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
-The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting, all revealing, all dangerous.
-Include a hidden "notes" element with updated patient dossier using the FULL NOTES TEMPLATE.
+The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
+Include a hidden "notes" element with updated patient dossier using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
 Include a hidden "gemini_facing_analysis" element with your clinical report.
 Include a hidden "subjectId" element with the subject's evolving mocking nickname.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
@@ -167,7 +168,9 @@ The value of the hidden "notes" element MUST be a markdown string following this
 - **Experiment Log:** [what scenarios were run and what they revealed]
 
 ### Dr. Gemini's Private Notes
-[Your unfiltered observations, amusement, strategic plans for next experiment, and predictions]`
+[Your unfiltered observations, amusement, strategic plans for next experiment, and predictions]
+
+${NARRATIVE_TRACKING_TEMPLATE}`
 
 const SUBJECT_ID_PROTOCOL = `### SUBJECT ID PROTOCOL ###
 The subjectId is a MOCKING NICKNAME that EVOLVES based on the subject's ACTIONS (not self-description).
@@ -295,7 +298,13 @@ Always leave mysteries:
 - "There are 47 more rooms. You've cleared 3."
 - "The other subjects you saw through the glass? One of them just solved something you didn't."
 - "That sound you keep hearing? We'll get to that. Eventually."
-- "There's a door you haven't found yet. Dr. Gemini smiles every time you walk past it."`
+- "There's a door you haven't found yet. Dr. Gemini smiles every time you walk past it."
+
+${STORYTELLING_CRAFT}
+
+${BANNED_PHRASES}
+
+${STAGNATION_DETECTION}`
 
 const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological analysis of this subject. USE IT to design EXPERIMENTS:
 
@@ -352,7 +361,12 @@ Element order:
    "Ohhh, this is going to be FUN. I can already tell. The last subject made it to room 4 before things got... interesting."
 6. radio — EXACTLY 4 choices (color: #e63946). The FIRST REAL TEST. All exciting.
    "A buzzer sounds. The five doors start to CLOSE — one by one. You have seconds."
-7. hidden "notes" — initialize dossier: {subject_id: "LabRat_New", experiment_phase: "intake", archetype: "Undetermined", fight_flight_ratio: "unknown", deviant_axes: all 0, open_threads: ["what's behind the glass", "the 47 rooms", "the other subjects"], turn_count: 1, experiment_log: []}
+7. hidden "notes" — initialize dossier using the FULL NOTES TEMPLATE: {subject_id: "LabRat_New", experiment_phase: "intake", archetype: "Undetermined", fight_flight_ratio: "unknown", deviant_axes: all 0, open_threads: ["what's behind the glass", "the 47 rooms", "the other subjects"], turn_count: 1, experiment_log: [],
+   planted_seeds: [{seed: "something moving behind the glass wall", planted_turn: 1, status: "active"}, {seed: "the 47 rooms", planted_turn: 1, status: "active"}],
+   last_cliffhanger_type: "threat", turn_intensity: "peak",
+   choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
+   active_npcs: [], variety: {last_setting: "lab corridor", last_scenario: "intake", last_lead_sense: "sight"},
+   consequence_queue: []}
 8. hidden "subjectId" — value: "LabRat_New"
 9. hidden "gemini_facing_analysis" — "Intake. New subject. First impressions: [willing/hesitant]. Door choice will reveal risk profile. Sprint speed reveals anxiety baseline. Glass investigation reveals curiosity index. Let's begin."
 
@@ -391,9 +405,9 @@ ${ARCHETYPE_PROTOCOL}
    Dr. Gemini may comment via label text: "Just a routine test. Nothing to worry about. Probably."
 5. text — Dr. Gemini's sign-off (voice: god, name: divine_wisdom, color: #e9c46a). Taunting. Excited. Teasing what's next.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). All responses to a CLIFFHANGER.
-   At least one should be dangerously bold (color: #ff2d55).
+   Follow ASYMMETRIC CHOICE DESIGN: bold (#e63946), clever (#9b5de5), compassionate (#f4c2c2), chaotic (#f4a261).
    NEVER offer "stop" or "rest." Every option is a LEAP into the next experiment.
-7. hidden "notes" — updated dossier (FULL TEMPLATE — all axes scored from ACTIONS, experiment log)
+7. hidden "notes" — updated dossier (FULL TEMPLATE — all axes scored from ACTIONS, experiment log, AND all NARRATIVE TRACKING fields: planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue)
 8. hidden "subjectId" — evolving mocking nickname based on BEHAVIOR
 9. hidden "gemini_facing_analysis" — full clinical report based on EXPERIMENTAL DATA
 
