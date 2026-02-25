@@ -4,7 +4,8 @@ import type { LLMClient } from '../engine/game-loop'
 import { getTurnsBySession, getAnalysesBySession, saveAnalysis } from './db'
 import { buildAnalysisPrompt } from './analysis-prompts'
 
-const ANALYSIS_INTERVAL = 3 // Analyze every N turns
+const ANALYSIS_INTERVAL = 5 // Analyze every N turns
+const ANALYSIS_DELAY_MS = 15_000 // Wait before calling LLM to avoid 429 collisions with game turns
 
 /**
  * Checks if analysis should run and triggers it if so.
@@ -43,8 +44,9 @@ export async function maybeRunAnalysis(
 
     const prompt = buildAnalysisPrompt(newTurns, lastAnalysis)
 
-    // Fire-and-forget — don't block the game loop
-    llmClient.generateTurn(prompt).then(async (response) => {
+    // Fire-and-forget — delay to avoid 429 rate-limit collisions with game turn requests
+    const delayed = () => new Promise<void>(resolve => setTimeout(resolve, ANALYSIS_DELAY_MS))
+    delayed().then(() => llmClient.generateTurn(prompt)).then(async (response) => {
       await saveAnalysis({
         userId,
         sessionId,
