@@ -144,21 +144,14 @@ export class LLMClient {
           continue
         }
 
-        // Check for truncated output (finish_reason: "length" means max_tokens was hit)
+        // Truncated output (finish_reason: "length") — return as-is.
+        // The caller's JSON repair (jsonrepair, individual object extraction) can
+        // close an incomplete array far faster than a full LLM retry (~30-60s).
         if (result.finishReason === 'length') {
           console.warn(
-            `LLMClient: truncated response from model "${model}" (attempt ${attempt + 1}/${maxAttempts}, ` +
-            `${result.tokensUsed} tokens, max_tokens=${currentMaxTokens}). Retrying with more tokens.`
+            `LLMClient: truncated response from model "${model}" (${result.tokensUsed} tokens, ` +
+            `max_tokens=${currentMaxTokens}). Returning for caller-side repair.`
           )
-
-          if (currentMaxTokens < this.config.maxTokens * EMPTY_CONTENT_TOKEN_MULTIPLIER) {
-            currentMaxTokens = Math.ceil(this.config.maxTokens * EMPTY_CONTENT_TOKEN_MULTIPLIER)
-            console.info(`LLMClient: retrying with increased max_tokens=${currentMaxTokens}`)
-          }
-
-          lastError = new Error(`Truncated response from model "${model}"`)
-          await sleep(RETRY_DELAY_MS)
-          continue
         }
 
         return result
