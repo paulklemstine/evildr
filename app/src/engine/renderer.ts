@@ -245,6 +245,40 @@ function renderImageElement(
     img.style.display = 'block'
   }
   img.onerror = () => {
+    const retries = parseInt(img.dataset.retryCount || '0')
+    const maxRetries = 3
+
+    // Only retry if the src has been set to a real URL (not the empty placeholder SVG)
+    if (retries < maxRetries && img.src.includes('/api/image/')) {
+      img.dataset.retryCount = String(retries + 1)
+      loadingText.textContent = `Retrying image... (${retries + 1}/${maxRetries})`
+
+      const delay = (retries + 1) * 2000 // 2s, 4s, 6s
+      setTimeout(() => {
+        try {
+          // First retry: same URL (handles transient network errors like ERR_NETWORK_CHANGED)
+          // Subsequent retries: change seed for a different image variant
+          if (retries > 0) {
+            const url = new URL(img.src, window.location.href)
+            url.searchParams.set('seed', String(Math.floor(Math.random() * 2_147_483_647)))
+            img.src = url.toString()
+          } else {
+            // Re-trigger load of same URL by toggling src
+            const currentSrc = img.src
+            img.src = ''
+            img.src = currentSrc
+          }
+        } catch {
+          // URL parse failed — give up
+          placeholderDiv.querySelector('.geems-image-spinner')?.remove()
+          loadingText.textContent = 'Image could not be loaded'
+          loadingText.style.color = '#dc2626'
+        }
+      }, delay)
+      return
+    }
+
+    // Max retries exhausted or not a retryable URL
     placeholderDiv.querySelector('.geems-image-spinner')?.remove()
     loadingText.textContent = 'Image could not be loaded'
     loadingText.style.color = '#dc2626'

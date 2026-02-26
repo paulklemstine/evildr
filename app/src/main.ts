@@ -8,6 +8,8 @@ import { MultiplayerGameLoop } from './engine/multiplayer-loop'
 import type { AnalysisData } from './engine/multiplayer-loop'
 import { createRoom, joinRoom } from './multiplayer/room-code'
 import type { RoomHandle, GuestHandle } from './multiplayer/room-code'
+import { LobbyClient } from './multiplayer/lobby-client'
+import type { LobbyPlayer } from './multiplayer/lobby-client'
 import { getUserId, createSessionId } from './identity/user-id'
 import { showConsentIfNeeded } from './identity/consent-banner'
 import { showReEngagement } from './engine/session-hooks'
@@ -39,6 +41,7 @@ let userId: string = ''
 let multiplayerLoop: MultiplayerGameLoop | null = null
 let roomHandle: RoomHandle | null = null
 let guestHandle: GuestHandle | null = null
+let lobbyClient: LobbyClient | null = null
 let pendingPartnerMessages: unknown[] = [] // buffer messages arriving before loop is created
 
 // --- API Clients ---
@@ -453,6 +456,10 @@ function showMultiplayerLobby(): void {
 
   const app = document.getElementById('app')!
 
+  // Load saved name/gender from localStorage
+  const savedName = localStorage.getItem('geems-lobby-name') || ''
+  const savedGender = localStorage.getItem('geems-lobby-gender') || ''
+
   app.innerHTML = `
     ${renderHeader('game')}
 
@@ -462,48 +469,90 @@ function showMultiplayerLobby(): void {
           ${mode.name}
         </h2>
         <p class="text-sm" style="color: var(--text-secondary); max-width: 480px; margin: 0 auto; line-height: 1.5;">
-          ${mode.description}
+          Enter the lounge and find someone to go on a date with.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6" style="margin-bottom: 2rem;">
-        <!-- Create Room Card -->
-        <div class="mode-card" id="create-room-card">
-          <h3 class="text-lg font-bold" style="color: var(--text-heading); margin-bottom: 0.75rem;">
-            Create Room
-          </h3>
-          <p class="text-sm" style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
-            Start a new date room and share the code with your partner.
-          </p>
-          <div id="create-room-content">
-            <button id="btn-create-room" class="geems-button w-full">
-              Create Room
-            </button>
+      <!-- Profile Setup (shown first) -->
+      <div id="lobby-profile-setup" class="mode-card" style="max-width: 400px; margin: 0 auto 2rem;">
+        <h3 class="text-lg font-bold" style="color: var(--text-heading); margin-bottom: 1rem;">
+          Your Profile
+        </h3>
+        <div style="margin-bottom: 1rem;">
+          <label class="geems-label" for="lobby-name" style="display: block; margin-bottom: 0.25rem;">Name</label>
+          <input
+            id="lobby-name"
+            type="text"
+            maxlength="20"
+            placeholder="Enter your name"
+            value="${savedName.replace(/"/g, '&quot;')}"
+            autocomplete="off"
+            style="
+              width: 100%; box-sizing: border-box;
+              padding: 0.625rem 0.75rem;
+              border: 1px solid var(--border-color, #e2e8f0);
+              border-radius: 0.5rem;
+              background: var(--bg-secondary, #f8fafc);
+              color: var(--text-heading);
+              font-size: 1rem;
+              outline: none;
+            "
+          />
+        </div>
+        <div style="margin-bottom: 1.25rem;">
+          <label class="geems-label" style="display: block; margin-bottom: 0.5rem;">Gender</label>
+          <div id="lobby-gender-options" style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+            ${['Male', 'Female', 'Non-binary', 'Other'].map(g => `
+              <button class="lobby-gender-btn${savedGender === g ? ' active' : ''}" data-gender="${g}"
+                style="
+                  padding: 0.5rem 1rem; border-radius: 0.5rem; font-size: 0.875rem;
+                  border: 1px solid var(--border-color, #e2e8f0);
+                  background: ${savedGender === g ? 'var(--accent-primary)' : 'var(--bg-secondary, #f8fafc)'};
+                  color: ${savedGender === g ? '#fff' : 'var(--text-secondary)'};
+                  cursor: pointer; transition: all 0.15s;
+                "
+              >${g}</button>
+            `).join('')}
           </div>
-          <div id="create-room-status" style="display: none; text-align: center; margin-top: 1rem;">
-            <p class="text-xs" style="color: var(--text-muted); margin-bottom: 0.5rem; text-transform: uppercase; letter-spacing: 0.05em;">
-              Room Code
-            </p>
-            <p id="room-code-display" style="font-family: 'Courier New', Courier, monospace; font-size: 2.5rem; font-weight: bold; color: var(--accent-primary); letter-spacing: 0.3em; margin-bottom: 0.75rem;">
-              ----
-            </p>
-            <p id="create-room-waiting" class="text-sm" style="color: var(--text-muted);">
-              Waiting for your date...
-            </p>
+        </div>
+        <button id="btn-enter-lobby" class="geems-button w-full" ${!savedName || !savedGender ? 'disabled' : ''}>
+          Enter Lounge
+        </button>
+        <p id="lobby-setup-error" class="text-sm" style="color: #e11d48; display: none; margin-top: 0.75rem;"></p>
+      </div>
+
+      <!-- Player Grid (shown after profile setup) -->
+      <div id="lobby-main" style="display: none;">
+        <!-- Your status bar -->
+        <div id="lobby-status-bar" style="
+          display: flex; align-items: center; justify-content: space-between;
+          padding: 0.75rem 1rem; margin-bottom: 1.5rem; border-radius: 0.5rem;
+          background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2);
+        ">
+          <div style="display: flex; align-items: center; gap: 0.5rem;">
+            <span style="width: 8px; height: 8px; border-radius: 50%; background: #22c55e; display: inline-block;"></span>
+            <span class="text-sm" style="color: var(--text-secondary);">
+              You: <strong id="lobby-your-name" style="color: var(--text-heading);"></strong>
+              <span id="lobby-your-gender" class="text-xs" style="color: var(--text-muted); margin-left: 0.25rem;"></span>
+            </span>
           </div>
-          <p id="create-room-error" class="text-sm" style="color: #e11d48; display: none; margin-top: 0.75rem;"></p>
+          <span id="lobby-player-count" class="text-xs" style="color: var(--text-muted);">Looking for dates...</span>
         </div>
 
-        <!-- Join Room Card -->
-        <div class="mode-card" id="join-room-card">
-          <h3 class="text-lg font-bold" style="color: var(--text-heading); margin-bottom: 0.75rem;">
-            Join Room
-          </h3>
-          <p class="text-sm" style="color: var(--text-secondary); margin-bottom: 1rem; line-height: 1.5;">
-            Enter the 4-character code your date shared with you.
-          </p>
-          <div id="join-room-content">
-            <div style="display: flex; gap: 0.5rem; align-items: center;">
+        <!-- Player Grid -->
+        <div id="lobby-players" style="margin-bottom: 2rem;">
+          <div class="text-center" style="padding: 2rem; color: var(--text-muted);">
+            <p class="text-sm">Scanning the lounge...</p>
+          </div>
+        </div>
+
+        <!-- Fallback: Join by Code -->
+        <div class="mode-card" style="margin-top: 1rem; opacity: 0.7;">
+          <details>
+            <summary style="cursor: pointer; font-size: 0.875rem; color: var(--text-muted);">
+              Have a room code? Join directly
+            </summary>
+            <div style="display: flex; gap: 0.5rem; align-items: center; margin-top: 0.75rem;">
               <input
                 id="join-code-input"
                 type="text"
@@ -512,37 +561,54 @@ function showMultiplayerLobby(): void {
                 autocomplete="off"
                 spellcheck="false"
                 style="
-                  flex: 1;
-                  min-width: 0;
-                  box-sizing: border-box;
+                  flex: 1; min-width: 0; box-sizing: border-box;
                   font-family: 'Courier New', Courier, monospace;
-                  font-size: 1.5rem;
-                  font-weight: bold;
-                  text-align: center;
-                  letter-spacing: 0.2em;
-                  text-transform: uppercase;
-                  padding: 0.625rem 0.75rem;
+                  font-size: 1.25rem; font-weight: bold; text-align: center;
+                  letter-spacing: 0.2em; text-transform: uppercase;
+                  padding: 0.5rem 0.75rem;
                   border: 1px solid var(--border-color, #e2e8f0);
                   border-radius: 0.5rem;
                   background: var(--bg-secondary, #f8fafc);
-                  color: var(--text-heading);
-                  outline: none;
-                  transition: border-color 0.15s;
+                  color: var(--text-heading); outline: none;
                 "
               />
-              <button id="btn-join-room" class="geems-button" style="white-space: nowrap; flex-shrink: 0;">
+              <button id="btn-join-code" class="geems-button" style="white-space: nowrap; flex-shrink: 0;">
                 Join
               </button>
             </div>
-          </div>
-          <div id="join-room-status" style="display: none; text-align: center; margin-top: 1rem;">
-            <p class="text-sm" style="color: var(--text-muted);">
-              Connecting to your date...
-            </p>
-          </div>
-          <p id="join-room-error" class="text-sm" style="color: #e11d48; display: none; margin-top: 0.75rem;"></p>
+            <p id="join-code-error" class="text-sm" style="color: #e11d48; display: none; margin-top: 0.5rem;"></p>
+          </details>
         </div>
       </div>
+
+      <!-- Date Request Notification (overlay) -->
+      <div id="date-request-modal" style="
+        display: none; position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+        background: rgba(0,0,0,0.5); z-index: 1000;
+        display: none; align-items: center; justify-content: center;
+      ">
+        <div style="
+          background: var(--bg-primary, #fff); border-radius: 1rem; padding: 2rem;
+          max-width: 360px; width: 90%; text-align: center;
+          box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        ">
+          <div style="font-size: 3rem; margin-bottom: 1rem;">&#x1F496;</div>
+          <h3 class="text-lg font-bold" style="color: var(--text-heading); margin-bottom: 0.5rem;">
+            Date Request!
+          </h3>
+          <p id="date-request-message" class="text-sm" style="color: var(--text-secondary); margin-bottom: 1.5rem; line-height: 1.5;"></p>
+          <div style="display: flex; gap: 0.75rem; justify-content: center;">
+            <button id="btn-accept-date" class="geems-button" style="min-width: 100px;">
+              Accept
+            </button>
+            <button id="btn-decline-date" class="geems-button-outline" style="min-width: 100px; color: #e11d48; border-color: #e11d48;">
+              Decline
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <p id="lobby-error" class="text-sm" style="color: #e11d48; display: none; margin-top: 0.75rem; text-align: center;"></p>
     </main>
 
     <footer class="site-footer">
@@ -569,154 +635,293 @@ function showMultiplayerLobby(): void {
     window.location.hash = ''
   })
 
-  // Auto-uppercase the join code input and limit to valid chars
-  const joinInput = document.getElementById('join-code-input') as HTMLInputElement
-  joinInput.addEventListener('input', () => {
-    joinInput.value = joinInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4)
+  // --- Profile Setup ---
+  let selectedGender = savedGender
+  const nameInput = document.getElementById('lobby-name') as HTMLInputElement
+  const enterBtn = document.getElementById('btn-enter-lobby') as HTMLButtonElement
+
+  function updateEnterBtn(): void {
+    const name = nameInput.value.trim()
+    enterBtn.disabled = !name || !selectedGender
+  }
+
+  nameInput.addEventListener('input', updateEnterBtn)
+
+  document.querySelectorAll('.lobby-gender-btn').forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      const target = e.currentTarget as HTMLElement
+      selectedGender = target.dataset.gender || ''
+      document.querySelectorAll('.lobby-gender-btn').forEach(b => {
+        const el = b as HTMLElement
+        el.classList.remove('active')
+        el.style.background = 'var(--bg-secondary, #f8fafc)'
+        el.style.color = 'var(--text-secondary)'
+      })
+      target.classList.add('active')
+      target.style.background = 'var(--accent-primary)'
+      target.style.color = '#fff'
+      updateEnterBtn()
+    })
   })
 
-  // Create Room button
-  document.getElementById('btn-create-room')?.addEventListener('click', async () => {
-    const createBtn = document.getElementById('btn-create-room') as HTMLButtonElement
-    const createError = document.getElementById('create-room-error')!
-    const createStatus = document.getElementById('create-room-status')!
-    const codeDisplay = document.getElementById('room-code-display')!
+  // --- Enter Lobby ---
+  enterBtn.addEventListener('click', async () => {
+    const name = nameInput.value.trim()
+    if (!name || !selectedGender) return
 
-    createBtn.disabled = true
-    createBtn.textContent = 'Creating...'
-    createError.style.display = 'none'
+    // Save to localStorage
+    localStorage.setItem('geems-lobby-name', name)
+    localStorage.setItem('geems-lobby-gender', selectedGender)
+
+    enterBtn.disabled = true
+    enterBtn.textContent = 'Connecting...'
+    const setupError = document.getElementById('lobby-setup-error')!
 
     try {
-      roomHandle = await createRoom({
-        onPartnerJoined: (_partnerId: string) => {
-          const waitingEl = document.getElementById('create-room-waiting')
-          if (waitingEl) {
-            waitingEl.textContent = 'Your date has arrived!'
-            waitingEl.style.color = 'var(--accent-primary)'
-          }
-          // Auto-transition to game after a brief moment
-          setTimeout(() => {
-            startMultiplayerGame(true, (data: unknown) => {
-              if (roomHandle) roomHandle.send(data)
-            })
-          }, 300)
+      lobbyClient = new LobbyClient({
+        onReady: () => {
+          // Hide profile setup, show lobby
+          document.getElementById('lobby-profile-setup')!.style.display = 'none'
+          document.getElementById('lobby-main')!.style.display = 'block'
+          document.getElementById('lobby-your-name')!.textContent = name
+          document.getElementById('lobby-your-gender')!.textContent = `(${selectedGender})`
         },
-        onPartnerLeft: () => {
-          // Update lobby UI if still visible
-          const waitingEl = document.getElementById('create-room-waiting')
-          if (waitingEl) {
-            waitingEl.textContent = 'Your date disconnected.'
-            waitingEl.style.color = '#e11d48'
-          }
-          // Also update in-game UI if the game is running
-          const errorEl = document.getElementById('mp-error-display')
-          if (errorEl) {
-            errorEl.textContent = 'Your date has disconnected.'
-            errorEl.style.display = 'block'
-          }
+
+        onPlayersChanged: (players: LobbyPlayer[]) => {
+          renderPlayerGrid(players)
         },
-        onPartnerData: (data: unknown) => {
-          if (multiplayerLoop) {
-            multiplayerLoop.handlePartnerData(data)
+
+        onDateRequest: (from: LobbyPlayer, respond: (accepted: boolean) => void) => {
+          currentRespondFn = respond
+          const modal = document.getElementById('date-request-modal')!
+          const msg = document.getElementById('date-request-message')!
+          msg.innerHTML = `<strong>${escapeHtml(from.name)}</strong> (${escapeHtml(from.gender)}) wants to go on a date with you!`
+          modal.style.display = 'flex'
+        },
+
+        onDateResponse: (accepted: boolean, partner: LobbyPlayer) => {
+          if (accepted) {
+            showLobbyStatus(`${partner.name} accepted! Setting up your date...`)
           } else {
-            // Buffer messages that arrive before the loop is created
-            pendingPartnerMessages.push(data)
+            showLobbyStatus(`${partner.name} declined. Try someone else!`)
+            // Re-enable all request buttons
+            document.querySelectorAll('.lobby-request-btn').forEach(b => {
+              (b as HTMLButtonElement).disabled = false
+              ;(b as HTMLElement).textContent = 'Request Date'
+            })
           }
+        },
+
+        onMatchReady: (roomCode: string, isHost: boolean) => {
+          // Match is ready — transition to the game
+          transitionToGame(isHost, roomCode)
+        },
+
+        onError: (message: string) => {
+          showLobbyError(message)
         },
       })
 
-      // Show the room code
-      createBtn.style.display = 'none'
-      createStatus.style.display = 'block'
-      codeDisplay.textContent = roomHandle.code
-
-      // Disable the join side since we're hosting
-      const joinCard = document.getElementById('join-room-card')
-      if (joinCard) joinCard.style.opacity = '0.4'
-      const joinBtn = document.getElementById('btn-join-room') as HTMLButtonElement | null
-      if (joinBtn) joinBtn.disabled = true
-      if (joinInput) joinInput.disabled = true
-
+      await lobbyClient.join(name, selectedGender, userId)
     } catch (err) {
-      createBtn.disabled = false
-      createBtn.textContent = 'Create Room'
-      createError.textContent = err instanceof Error ? err.message : 'Failed to create room.'
-      createError.style.display = 'block'
+      enterBtn.disabled = false
+      enterBtn.textContent = 'Enter Lounge'
+      setupError.textContent = err instanceof Error ? err.message : 'Failed to connect.'
+      setupError.style.display = 'block'
     }
   })
 
-  // Join Room button
-  document.getElementById('btn-join-room')?.addEventListener('click', async () => {
-    const code = joinInput.value.trim()
-    const joinBtn = document.getElementById('btn-join-room') as HTMLButtonElement
-    const joinError = document.getElementById('join-room-error')!
-    const joinStatus = document.getElementById('join-room-status')!
-    const joinContent = document.getElementById('join-room-content')!
+  // Track respond function for currently displayed date request notification
+  let currentRespondFn: ((accepted: boolean) => void) | null = null
 
+  // --- Date Request Modal Buttons ---
+  document.getElementById('btn-accept-date')?.addEventListener('click', () => {
+    const modal = document.getElementById('date-request-modal')!
+    modal.style.display = 'none'
+    if (currentRespondFn) {
+      currentRespondFn(true)
+      currentRespondFn = null
+      showLobbyStatus('Date accepted! Waiting for room setup...')
+    }
+  })
+
+  document.getElementById('btn-decline-date')?.addEventListener('click', () => {
+    const modal = document.getElementById('date-request-modal')!
+    modal.style.display = 'none'
+    if (currentRespondFn) {
+      currentRespondFn(false)
+      currentRespondFn = null
+    }
+  })
+
+  // --- Fallback: Join by Code ---
+  const joinInput = document.getElementById('join-code-input') as HTMLInputElement | null
+  if (joinInput) {
+    joinInput.addEventListener('input', () => {
+      joinInput.value = joinInput.value.toUpperCase().replace(/[^A-Z0-9]/g, '').slice(0, 4)
+    })
+    joinInput.addEventListener('keydown', (e: KeyboardEvent) => {
+      if (e.key === 'Enter') document.getElementById('btn-join-code')?.click()
+    })
+  }
+
+  document.getElementById('btn-join-code')?.addEventListener('click', async () => {
+    const code = joinInput?.value.trim() || ''
+    const joinError = document.getElementById('join-code-error')!
     if (code.length !== 4) {
-      joinError.textContent = 'Please enter a 4-character room code.'
+      joinError.textContent = 'Enter a 4-character room code.'
       joinError.style.display = 'block'
       return
     }
-
-    joinBtn.disabled = true
-    joinBtn.textContent = 'Joining...'
     joinError.style.display = 'none'
+    transitionToGame(false, code)
+  })
 
-    try {
-      guestHandle = await joinRoom(code, {
-        onConnected: () => {
-          joinContent.style.display = 'none'
-          joinStatus.style.display = 'block'
-          joinStatus.innerHTML = '<p class="text-sm" style="color: var(--accent-primary);">Connected! Starting your date...</p>'
+  // --- Helper: Render Player Grid ---
+  function renderPlayerGrid(players: LobbyPlayer[]): void {
+    const container = document.getElementById('lobby-players')!
+    const countEl = document.getElementById('lobby-player-count')!
 
-          // Auto-transition to game
-          setTimeout(() => {
-            startMultiplayerGame(false, (data: unknown) => {
-              if (guestHandle) guestHandle.send(data)
-            })
-          }, 300)
-        },
-        onDisconnected: () => {
-          if (multiplayerLoop) {
-            // Show inline notification rather than crashing
+    if (players.length === 0) {
+      container.innerHTML = `
+        <div class="text-center" style="padding: 2rem; color: var(--text-muted);">
+          <div style="font-size: 2rem; margin-bottom: 0.5rem;">&#x1F37B;</div>
+          <p class="text-sm">No one else is in the lounge yet. Hang tight!</p>
+        </div>
+      `
+      countEl.textContent = 'No one here yet'
+      return
+    }
+
+    countEl.textContent = `${players.length} ${players.length === 1 ? 'person' : 'people'} in lounge`
+
+    container.innerHTML = players.map(p => `
+      <div class="mode-card" style="display: flex; align-items: center; justify-content: space-between; padding: 1rem; margin-bottom: 0.75rem;">
+        <div style="display: flex; align-items: center; gap: 0.75rem;">
+          <div style="
+            width: 40px; height: 40px; border-radius: 50%;
+            background: var(--accent-primary); color: #fff;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: bold; font-size: 1.1rem;
+          ">${escapeHtml(p.name.charAt(0).toUpperCase())}</div>
+          <div>
+            <p class="text-sm font-bold" style="color: var(--text-heading);">${escapeHtml(p.name)}</p>
+            <p class="text-xs" style="color: var(--text-muted);">${escapeHtml(p.gender)}</p>
+          </div>
+        </div>
+        <button class="geems-button lobby-request-btn" data-peer-id="${escapeHtml(p.peerId)}" style="font-size: 0.8125rem; padding: 0.5rem 1rem;">
+          Request Date
+        </button>
+      </div>
+    `).join('')
+
+    // Bind request buttons
+    container.querySelectorAll('.lobby-request-btn').forEach(btn => {
+      btn.addEventListener('click', (e) => {
+        const target = e.currentTarget as HTMLElement
+        const peerId = target.dataset.peerId!
+        const player = players.find(p => p.peerId === peerId)
+        if (!player || !lobbyClient) return
+
+        // Disable all request buttons and show waiting state
+        container.querySelectorAll('.lobby-request-btn').forEach(b => {
+          (b as HTMLButtonElement).disabled = true
+        })
+        target.textContent = 'Waiting...'
+
+        lobbyClient.requestDate(player)
+      })
+    })
+  }
+
+  // --- Helper: Transition to Game ---
+  async function transitionToGame(isHost: boolean, _roomCode: string): Promise<void> {
+    showLobbyStatus('Starting your date...')
+
+    // Keep reference to lobby client for sending room code
+    const savedLobbyClient = lobbyClient
+
+    if (isHost) {
+      // Host: create a fresh room with proper game callbacks
+      try {
+        roomHandle = await createRoom({
+          onPartnerJoined: (_partnerId: string) => {
+            // Partner connected — game loop will handle from here
+          },
+          onPartnerLeft: () => {
             const errorEl = document.getElementById('mp-error-display')
             if (errorEl) {
               errorEl.textContent = 'Your date has disconnected.'
               errorEl.style.display = 'block'
             }
-          }
-        },
-        onData: (data: unknown) => {
-          if (multiplayerLoop) {
-            multiplayerLoop.handlePartnerData(data)
-          } else {
-            // Buffer messages that arrive before the loop is created
-            pendingPartnerMessages.push(data)
-          }
-        },
-      })
+          },
+          onPartnerData: (data: unknown) => {
+            if (multiplayerLoop) {
+              multiplayerLoop.handlePartnerData(data)
+            } else {
+              pendingPartnerMessages.push(data)
+            }
+          },
+        })
 
-      // Disable the create side since we're joining
-      const createCard = document.getElementById('create-room-card')
-      if (createCard) createCard.style.opacity = '0.4'
-      const createBtn = document.getElementById('btn-create-room') as HTMLButtonElement | null
-      if (createBtn) createBtn.disabled = true
+        // Send room code to the partner via the lobby P2P connection
+        if (savedLobbyClient) {
+          savedLobbyClient.sendRoomCode(roomHandle.code)
+        }
 
-    } catch (err) {
-      joinBtn.disabled = false
-      joinBtn.textContent = 'Join'
-      joinError.textContent = err instanceof Error ? err.message : 'Failed to join room.'
-      joinError.style.display = 'block'
+        // Clean up lobby (but keep room handle alive)
+        if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
+
+        startMultiplayerGame(true, (data: unknown) => {
+          if (roomHandle) roomHandle.send(data)
+        })
+      } catch (err) {
+        showLobbyError(`Failed to create room: ${err instanceof Error ? err.message : String(err)}`)
+      }
+    } else {
+      // Guest: join the room by code
+      // Clean up lobby first
+      if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
+
+      try {
+        guestHandle = await joinRoom(_roomCode, {
+          onConnected: () => {
+            startMultiplayerGame(false, (data: unknown) => {
+              if (guestHandle) guestHandle.send(data)
+            })
+          },
+          onDisconnected: () => {
+            const errorEl = document.getElementById('mp-error-display')
+            if (errorEl) {
+              errorEl.textContent = 'Your date has disconnected.'
+              errorEl.style.display = 'block'
+            }
+          },
+          onData: (data: unknown) => {
+            if (multiplayerLoop) {
+              multiplayerLoop.handlePartnerData(data)
+            } else {
+              pendingPartnerMessages.push(data)
+            }
+          },
+        })
+      } catch (err) {
+        showLobbyError(err instanceof Error ? err.message : 'Failed to join room.')
+      }
     }
-  })
+  }
 
-  // Allow Enter key to join
-  joinInput.addEventListener('keydown', (e: KeyboardEvent) => {
-    if (e.key === 'Enter') {
-      document.getElementById('btn-join-room')?.click()
-    }
-  })
+  function showLobbyStatus(message: string): void {
+    const countEl = document.getElementById('lobby-player-count')
+    if (countEl) countEl.textContent = message
+  }
+
+  function showLobbyError(message: string): void {
+    const el = document.getElementById('lobby-error')!
+    el.textContent = message
+    el.style.display = 'block'
+    setTimeout(() => { el.style.display = 'none' }, 6000)
+  }
 }
 
 function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => void): void {
@@ -938,6 +1143,7 @@ function cleanupMultiplayer(): void {
   if (multiplayerLoop) { multiplayerLoop.reset(); multiplayerLoop = null }
   if (roomHandle) { roomHandle.destroy(); roomHandle = null }
   if (guestHandle) { guestHandle.destroy(); guestHandle = null }
+  if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
 }
 
 function handleRoute(): void {
@@ -986,6 +1192,12 @@ function handleRoute(): void {
 
     renderLobby()
   }
+}
+
+// --- Utilities ---
+
+function escapeHtml(str: string): string {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;').replace(/"/g, '&quot;')
 }
 
 // --- Boot ---

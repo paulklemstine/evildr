@@ -65,6 +65,89 @@ async function proxyLLM(request, env) {
 }
 
 /**
+ * Handle lobby presence via Cloudflare KV.
+ * Players heartbeat to register, poll to discover others, and unregister on leave.
+ * Key pattern: lobby:{peerId} → { peerId, name, gender, userId, updatedAt }
+ * TTL: 30 seconds (auto-expires if player stops heartbeating)
+ */
+async function handleLobby(request, env, path) {
+  const KV = env.REPORTS; // Reuse existing KV namespace with lobby: prefix
+  if (!KV) {
+    return new Response(JSON.stringify({ error: "Storage not configured" }), {
+      status: 503,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // POST /api/lobby/heartbeat — register or refresh player presence
+  if (request.method === "POST" && path === "/api/lobby/heartbeat") {
+    let body;
+    try {
+      body = await request.json();
+    } catch {
+      return new Response(JSON.stringify({ error: "Invalid JSON" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+
+    const { peerId, name, gender, userId } = body;
+    if (!peerId || !name || !gender || !userId) {
+      return new Response(JSON.stringify({ error: "peerId, name, gender, and userId required" }), {
+        status: 400,
+        headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+      });
+    }
+
+    const entry = { peerId, name, gender, userId, updatedAt: Date.now() };
+    // 30-second TTL — entry auto-expires if no heartbeat
+    await KV.put(`lobby:${peerId}`, JSON.stringify(entry), { expirationTtl: 30 });
+
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // GET /api/lobby/players — list all active players
+  if (request.method === "GET" && path === "/api/lobby/players") {
+    const list = await KV.list({ prefix: "lobby:" });
+    const players = [];
+
+    // Fetch each player's data (KV list only returns keys, not values)
+    for (const key of list.keys) {
+      const raw = await KV.get(key.name);
+      if (raw) {
+        try {
+          players.push(JSON.parse(raw));
+        } catch { /* skip corrupt entries */ }
+      }
+    }
+
+    return new Response(JSON.stringify({ players }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  // DELETE /api/lobby/player/{peerId} — unregister from lobby
+  const delMatch = path.match(/^\/api\/lobby\/player\/([^/]+)$/);
+  if (request.method === "DELETE" && delMatch) {
+    const peerId = decodeURIComponent(delMatch[1]);
+    await KV.delete(`lobby:${peerId}`);
+    return new Response(JSON.stringify({ ok: true }), {
+      status: 200,
+      headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+    });
+  }
+
+  return new Response(JSON.stringify({ error: "Not found" }), {
+    status: 404,
+    headers: { "Content-Type": "application/json", ...CORS_HEADERS },
+  });
+}
+
+/**
  * Handle report CRUD via Cloudflare KV.
  */
 async function handleReports(request, env, path) {
@@ -210,6 +293,11 @@ export default {
             ...CORS_HEADERS,
           },
         });
+      }
+
+      // --- Lobby API (presence via Cloudflare KV) ---
+      if (path.startsWith("/api/lobby")) {
+        return handleLobby(request, env, path);
       }
 
       // --- Reports API (Cloudflare KV) ---

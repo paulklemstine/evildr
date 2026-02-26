@@ -23,6 +23,10 @@ const CODE_LENGTH = 4
 const CONNECTION_TIMEOUT_MS = 15000
 const PEER_OPEN_TIMEOUT_MS = 10000
 
+// Reconnection backoff: 1s, 2s, 4s, 8s, 16s
+const RECONNECT_MAX_RETRIES = 5
+const RECONNECT_BASE_DELAY_MS = 1000
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -236,15 +240,37 @@ export function createRoom(callbacks: RoomCallbacks): Promise<RoomHandle> {
       }
     })
 
+    let reconnectAttempts = 0
+    let reconnectTimer: ReturnType<typeof setTimeout> | null = null
+
     peer.on('disconnected', () => {
       if (destroyed) return
-      // Try to reconnect to the signaling server
-      try {
-        if (peer && !peer.destroyed) {
-          peer.reconnect()
+      if (reconnectAttempts >= RECONNECT_MAX_RETRIES) {
+        console.error(`[RoomCode] Host: max reconnection attempts (${RECONNECT_MAX_RETRIES}) exhausted`)
+        handlePartnerLeft()
+        return
+      }
+      const delay = RECONNECT_BASE_DELAY_MS * Math.pow(2, reconnectAttempts)
+      reconnectAttempts++
+      console.warn(`[RoomCode] Host: signaling server disconnected, retrying in ${delay}ms (attempt ${reconnectAttempts}/${RECONNECT_MAX_RETRIES})`)
+      reconnectTimer = setTimeout(() => {
+        if (destroyed) return
+        try {
+          if (peer && !peer.destroyed) {
+            peer.reconnect()
+          }
+        } catch {
+          console.warn('[RoomCode] Host: reconnect() threw, will retry on next disconnect event')
         }
-      } catch {
-        console.warn('[RoomCode] Failed to reconnect to signaling server')
+      }, delay)
+    })
+
+    // Reset reconnection counter when signaling server reconnects
+    peer.on('open', () => {
+      if (reconnectAttempts > 0) {
+        console.log(`[RoomCode] Host: signaling server reconnected after ${reconnectAttempts} attempt(s)`)
+        reconnectAttempts = 0
+        if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null }
       }
     })
   })
@@ -403,14 +429,37 @@ export function joinRoom(code: string, callbacks: JoinCallbacks): Promise<GuestH
       }
     })
 
+    let reconnectAttempts = 0
+    let reconnectTimer: ReturnType<typeof setTimeout> | null = null
+
     peer.on('disconnected', () => {
       if (destroyed) return
-      try {
-        if (peer && !peer.destroyed) {
-          peer.reconnect()
+      if (reconnectAttempts >= RECONNECT_MAX_RETRIES) {
+        console.error(`[RoomCode] Guest: max reconnection attempts (${RECONNECT_MAX_RETRIES}) exhausted`)
+        handleDisconnected()
+        return
+      }
+      const delay = RECONNECT_BASE_DELAY_MS * Math.pow(2, reconnectAttempts)
+      reconnectAttempts++
+      console.warn(`[RoomCode] Guest: signaling server disconnected, retrying in ${delay}ms (attempt ${reconnectAttempts}/${RECONNECT_MAX_RETRIES})`)
+      reconnectTimer = setTimeout(() => {
+        if (destroyed) return
+        try {
+          if (peer && !peer.destroyed) {
+            peer.reconnect()
+          }
+        } catch {
+          console.warn('[RoomCode] Guest: reconnect() threw, will retry on next disconnect event')
         }
-      } catch {
-        console.warn('[RoomCode] Failed to reconnect to signaling server')
+      }, delay)
+    })
+
+    // Reset reconnection counter when signaling server reconnects
+    peer.on('open', () => {
+      if (reconnectAttempts > 0) {
+        console.log(`[RoomCode] Guest: signaling server reconnected after ${reconnectAttempts} attempt(s)`)
+        reconnectAttempts = 0
+        if (reconnectTimer) { clearTimeout(reconnectTimer); reconnectTimer = null }
       }
     })
   })
