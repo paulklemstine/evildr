@@ -19,6 +19,7 @@ import { renderAdminPage } from './pages/admin'
 import { createWatchablePlayer } from './admin/live-bridge'
 import type { PlayerBridge } from './admin/live-bridge'
 import { collectInputState } from './engine/renderer'
+import { applyModeTheme, clearModeTheme } from './engine/mode-theme'
 import './style.css'
 
 // --- Mode card images (routed through proxy for auth; deterministic seed for caching) ---
@@ -123,6 +124,9 @@ function renderHeader(activePage: string): string {
 }
 
 function renderLobby(): void {
+  // Clear any mode-specific theme so the lobby uses default styling
+  clearModeTheme()
+
   const modes = getModes()
   const app = document.getElementById('app')!
 
@@ -361,6 +365,9 @@ function startGame(modeId: string, genre?: string): void {
   const mode = getMode(modeId)
   if (!mode) return
 
+  // Apply the mode's custom visual theme (colors, fonts)
+  applyModeTheme(mode.theme)
+
   const container = document.getElementById('ui-elements')!
   const loadingEl = document.getElementById('loading')!
   const errorEl = document.getElementById('error-display')!
@@ -451,6 +458,9 @@ function startGame(modeId: string, genre?: string): void {
 // --- Multiplayer Lobby & Game ---
 
 function showMultiplayerLobby(): void {
+  // Clear any mode-specific theme when returning to the multiplayer lobby
+  clearModeTheme()
+
   // Clean up previous multiplayer state
   cleanupMultiplayer()
 
@@ -940,6 +950,9 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
   const mode = getMode('flagged')
   if (!mode) return
 
+  // Apply the mode's custom visual theme (colors, fonts)
+  applyModeTheme(mode.theme)
+
   const app = document.getElementById('app')!
 
   app.innerHTML = `
@@ -1163,6 +1176,7 @@ function handleRoute(): void {
 
   if (hash === '#reports') {
     cleanupMultiplayer()
+    clearModeTheme()
     const app = document.getElementById('app')!
     renderReportsPage(app, userId, llmClient, () => {
       window.location.hash = ''
@@ -1171,6 +1185,7 @@ function handleRoute(): void {
     if (gameLoop) { gameLoop.reset(); gameLoop = null }
     if (playerBridge) { playerBridge.destroy(); playerBridge = null }
     cleanupMultiplayer()
+    clearModeTheme()
 
     const app = document.getElementById('app')!
     renderAdminPage(app, () => {
