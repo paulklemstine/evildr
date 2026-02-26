@@ -248,7 +248,7 @@ function renderImageElement(
   img.className = 'geems-image'
   img.style.display = 'none'
   img.dataset.imagePrompt = imagePrompt
-  img.alt = element.label || `Image: ${imagePrompt.substring(0, 50)}...`
+  img.alt = imagePrompt
 
   img.onload = () => {
     placeholderDiv.remove()
@@ -298,11 +298,6 @@ function renderImageElement(
   img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3C/svg%3E'
 
   wrapper.appendChild(img)
-
-  const promptText = document.createElement('p')
-  promptText.className = 'geems-image-prompt'
-  promptText.textContent = imagePrompt
-  wrapper.appendChild(promptText)
 }
 
 function renderTextElement(
