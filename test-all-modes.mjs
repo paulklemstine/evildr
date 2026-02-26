@@ -109,22 +109,118 @@ async function getNarrativeText(page) {
 
 /**
  * Wait for a single-player turn to finish loading.
+ *
+ * Primary detection: interstitial gone + submit enabled + elements present.
+ * Fallback detection: if the interstitial gets stuck visible but content has
+ * clearly been rendered (narrative text + data-element-types present), we
+ * force-dismiss the interstitial from JS and treat the turn as complete.
+ * This handles a known race where onLoading(false) fires but the dismiss
+ * animation leaves the overlay lingering, or where an error between render
+ * and onLoading(false) prevents the callback from being reached.
  */
-async function waitForTurnComplete(page, startTime) {
-  while (Date.now() - startTime < TURN_TIMEOUT) {
-    const interstitialVisible = await page.locator('.interstitial-overlay.interstitial-visible').count()
-    const submitEnabled = await page.locator('#submit-turn').isEnabled().catch(() => false)
-    const hasElements = await page.locator('[data-element-type]').count() > 0
+async function waitForTurnComplete(page, startTime, prevElementCount = 0) {
+  let lastLogTime = 0
+  /** How many consecutive polls show content-ready but interstitial stuck */
+  let contentReadyButStuck = 0
 
-    if (interstitialVisible === 0 && submitEnabled && hasElements && Date.now() - startTime > 3000) {
+  while (Date.now() - startTime < TURN_TIMEOUT) {
+    const elapsed = Math.round((Date.now() - startTime) / 1000)
+
+    // Gather all signals in one evaluate call to minimize round-trips
+    const signals = await page.evaluate(() => {
+      const interstitialEl = document.querySelector('.interstitial-overlay')
+      const interstitialVisible = interstitialEl?.classList.contains('interstitial-visible') ?? false
+      const interstitialDismissing = interstitialEl?.classList.contains('interstitial-dismissing') ?? false
+      const interstitialInDom = !!interstitialEl
+
+      const submitBtn = document.getElementById('submit-turn')
+      const submitExists = !!submitBtn
+      const submitEnabled = submitBtn ? !submitBtn.disabled : false
+
+      const elementCount = document.querySelectorAll('[data-element-type]').length
+      const narrativeEls = document.querySelectorAll('.geems-text')
+      const narrativeCount = narrativeEls.length
+      // Sum of all narrative text length (proxy for "real content rendered")
+      let narrativeTextLen = 0
+      for (const el of narrativeEls) {
+        narrativeTextLen += (el.textContent || '').trim().length
+      }
+
+      const statusEl = document.querySelector('.interstitial-status, #interstitial-status')
+      const statusText = statusEl?.textContent?.trim() || ''
+
+      return {
+        interstitialVisible,
+        interstitialDismissing,
+        interstitialInDom,
+        submitExists,
+        submitEnabled,
+        elementCount,
+        narrativeCount,
+        narrativeTextLen,
+        statusText,
+      }
+    })
+
+    const minTimeElapsed = Date.now() - startTime > 3000
+
+    // --- Primary detection: all conditions met ---
+    if (!signals.interstitialVisible && signals.submitEnabled && signals.elementCount > 0 && minTimeElapsed) {
+      // If interstitial is still in DOM but not visible (dismissing animation), wait briefly
+      if (signals.interstitialInDom && !signals.interstitialDismissing) {
+        // Interstitial element exists without visible or dismissing class — odd state, but content is ready
+      }
       return true
     }
 
-    // Log interstitial status
-    const status = await page.locator('.interstitial-status, #interstitial-status').textContent().catch(() => '')
-    if (status) {
-      const elapsed = Math.round((Date.now() - startTime) / 1000)
-      console.log(`    [${elapsed}s] ${status}`)
+    // --- Fallback detection: content rendered but interstitial stuck ---
+    // Content is considered "rendered" when we have data-element-types AND narrative text.
+    // If the interstitial is visible, a turn was submitted, so the content must be new
+    // (the renderer clears the container before re-rendering).
+    // We also accept content as new if the element count changed from the previous turn.
+    const contentRendered = signals.elementCount > 0
+      && signals.narrativeCount > 0
+      && signals.narrativeTextLen > 50
+      && minTimeElapsed
+
+    if (contentRendered && (signals.interstitialVisible || !signals.submitEnabled)) {
+      contentReadyButStuck++
+
+      if (contentReadyButStuck >= 2) {
+        // Content has been ready for 2+ consecutive polls (6+ seconds) — force-dismiss
+        console.log(`    [${elapsed}s] Fallback: content rendered (${signals.elementCount} els, ${signals.narrativeCount} narratives, ${signals.narrativeTextLen} chars) but interstitial=${signals.interstitialVisible ? 'visible' : 'hidden'}, submit=${signals.submitEnabled ? 'enabled' : 'disabled'}`)
+        console.log(`    [${elapsed}s] Force-dismissing interstitial and enabling submit...`)
+
+        await page.evaluate(() => {
+          // Remove interstitial overlay entirely
+          const overlay = document.querySelector('.interstitial-overlay')
+          if (overlay) overlay.remove()
+
+          // Re-enable submit button
+          const btn = document.getElementById('submit-turn')
+          if (btn) btn.disabled = false
+
+          // Hide loading indicator
+          const loading = document.getElementById('loading')
+          if (loading) loading.style.display = 'none'
+        })
+
+        await sleep(200)
+        return true
+      }
+    } else {
+      contentReadyButStuck = 0
+    }
+
+    // --- Periodic diagnostic logging (every 15s) ---
+    if (elapsed - lastLogTime >= 15) {
+      lastLogTime = elapsed
+      console.log(`    [${elapsed}s] interstitial: visible=${signals.interstitialVisible} inDom=${signals.interstitialInDom} dismissing=${signals.interstitialDismissing} | submit: exists=${signals.submitExists} enabled=${signals.submitEnabled} | elements=${signals.elementCount} narratives=${signals.narrativeCount} (${signals.narrativeTextLen} chars)`)
+    }
+
+    // Log interstitial status text if present
+    if (signals.statusText) {
+      console.log(`    [${elapsed}s] ${signals.statusText}`)
     }
 
     await sleep(3000)
@@ -201,6 +297,8 @@ async function testMode(modeId, totalTurns, browser) {
       await sleep(500)
     }
 
+    let prevElementCount = 0
+
     for (let turn = 1; turn <= totalTurns; turn++) {
       console.log(`\n  --- Turn ${turn}/${totalTurns} ---`)
 
@@ -212,6 +310,9 @@ async function testMode(modeId, totalTurns, browser) {
           console.log(`  ⚠️  Submit not enabled — skipping turn`)
           continue
         }
+        // Snapshot current element count before clicking so fallback detection
+        // can tell when new content has been rendered
+        prevElementCount = await page.locator('[data-element-type]').count()
         await submitBtn.click()
         console.log(`  Clicked submit`)
       }
@@ -219,7 +320,7 @@ async function testMode(modeId, totalTurns, browser) {
       // Wait for turn to complete
       const startTime = Date.now()
       console.log(`  Waiting for LLM response...`)
-      const loaded = await waitForTurnComplete(page, startTime)
+      const loaded = await waitForTurnComplete(page, startTime, prevElementCount)
       const elapsed = Math.round((Date.now() - startTime) / 1000)
 
       if (!loaded) {
