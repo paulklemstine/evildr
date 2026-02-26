@@ -56,7 +56,7 @@ const DEFAULT_BASE_URL = import.meta.env.DEV
   ? '/api/llm'
   : 'https://drevil-proxy.drevil.workers.dev/api/llm'
 const DEFAULT_MODELS = ['gemini-fast', 'mistral']  // fast-first failover chain
-const DEFAULT_MAX_TOKENS = 5000  // orchestrator ~1500 tokens, UI gen ~2500 tokens
+const DEFAULT_MAX_TOKENS = 4000  // orchestrator ~1500 tokens, UI gen ~2500 tokens
 const DEFAULT_TEMPERATURE = 1.0
 
 // Delay between retries

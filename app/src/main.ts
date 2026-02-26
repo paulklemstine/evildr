@@ -842,11 +842,15 @@ function showMultiplayerLobby(): void {
     const savedLobbyClient = lobbyClient
 
     if (isHost) {
-      // Host: create a fresh room with proper game callbacks
+      // Host: create a fresh room with proper game callbacks.
+      // CRITICAL: wait for guest to connect before starting the game.
       try {
         roomHandle = await createRoom({
           onPartnerJoined: (_partnerId: string) => {
-            // Partner connected — game loop will handle from here
+            // Partner connected — NOW start the multiplayer game
+            startMultiplayerGame(true, (data: unknown) => {
+              if (roomHandle) roomHandle.send(data)
+            })
           },
           onPartnerLeft: () => {
             const errorEl = document.getElementById('mp-error-display')
@@ -872,9 +876,7 @@ function showMultiplayerLobby(): void {
         // Clean up lobby (but keep room handle alive)
         if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
 
-        startMultiplayerGame(true, (data: unknown) => {
-          if (roomHandle) roomHandle.send(data)
-        })
+        showLobbyStatus('Waiting for your date to connect...')
       } catch (err) {
         showLobbyError(`Failed to create room: ${err instanceof Error ? err.message : String(err)}`)
       }
