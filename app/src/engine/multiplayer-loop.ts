@@ -1005,14 +1005,66 @@ export class MultiplayerGameLoop {
       maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
     }
 
-    // Notify
+    // Notify state change immediately
     onStateChange(this.getState())
-    onAnalysis({
-      greenFlags: this.state.greenFlags,
-      redFlags: this.state.redFlags,
-      ownAnalysis: this.state.ownAnalysis,
-      partnerAnalysis: this.state.partnerAnalysis,
+
+    // Summarize flags via LLM in background, then notify
+    this.summarizeFlags().then(summarized => {
+      onAnalysis({
+        greenFlags: summarized.greenFlags,
+        redFlags: summarized.redFlags,
+        ownAnalysis: this.state.ownAnalysis,
+        partnerAnalysis: this.state.partnerAnalysis,
+      })
+    }).catch(() => {
+      // Fallback: show raw flags if summarization fails
+      onAnalysis({
+        greenFlags: this.state.greenFlags,
+        redFlags: this.state.redFlags,
+        ownAnalysis: this.state.ownAnalysis,
+        partnerAnalysis: this.state.partnerAnalysis,
+      })
     })
+  }
+
+  /** Summarize cumulative turn-by-turn flags into a concise analysis via LLM. */
+  private async summarizeFlags(): Promise<{ greenFlags: string; redFlags: string }> {
+    const { greenFlags, redFlags } = this.state
+    // Skip summarization if flags are short or empty
+    if (!greenFlags && !redFlags) return { greenFlags: '', redFlags: '' }
+    if ((greenFlags.length + redFlags.length) < 200) return { greenFlags, redFlags }
+
+    const prompt = `You are a clinical dating analyst. Summarize these cumulative behavioral observations into a concise assessment. Merge duplicates, identify patterns, and highlight the most clinically significant findings.
+
+### GREEN FLAGS (positive observations) ###
+${greenFlags || '(none)'}
+
+### RED FLAGS (concerning observations) ###
+${redFlags || '(none)'}
+
+### OUTPUT FORMAT ###
+Return ONLY a JSON object with two keys:
+{"green_flags": "- bullet1\\n- bullet2\\n...", "red_flags": "- bullet1\\n- bullet2\\n..."}
+
+Rules:
+- Merge turn-by-turn observations into thematic patterns (e.g. combine all anxiety-related flags into one insight)
+- Keep each bullet to 1 sentence, cite the strongest evidence
+- Prioritize clinical significance: mood disorders, attachment patterns, compulsive behaviors, boundary issues
+- Maximum 6 bullets per category
+- No turn numbers — these are synthesized observations
+- Use bold (**text**) for key clinical terms
+Return ONLY valid JSON. No markdown fences.`
+
+    try {
+      const response = await this.config.llmClient.generateTurn(prompt)
+      const parsed = JSON.parse(response.content)
+      return {
+        greenFlags: parsed.green_flags || greenFlags,
+        redFlags: parsed.red_flags || redFlags,
+      }
+    } catch {
+      return { greenFlags, redFlags }
+    }
   }
 
   // ---- Report upload ----
