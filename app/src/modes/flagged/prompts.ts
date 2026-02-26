@@ -196,12 +196,20 @@ When describing scenes for each player, include VIVID CINEMATIC DETAIL:
 - Sensory details both players share (the music playing, the smell of food, the temperature)
 - Character-specific visual details that differ per player (what Player A notices about B, and vice versa)
 
+### PLAYER-CENTRIC IMAGE DIRECTION ###
+CRITICAL: Each player's section MUST include image direction from THEIR first-person perspective:
+- Player A's images show what A SEES: B's face across the table, B's hands gesturing, B's reaction to something A said, the venue as A perceives it
+- Player B's images show what B SEES: A's face, A's body language, A leaning forward, the venue from B's seat
+- Include specific visual cues: "A notices B biting their lip" → image prompt for A shows a close-up of someone biting their lip, candlelight on their face
+- Include specific visual cues: "B catches A glancing at them" → image prompt for B shows someone across a table with eyes quickly looking away, caught mid-glance
+- The two players should NEVER see the same image. Their perspectives are asymmetric.
+
 ### OUTPUT ###
 [preamble text]
 ${ORCHESTRATOR_DELIMITER}
-[Player A instructions]
+[Player A instructions — including what A SEES of B]
 ${ORCHESTRATOR_DELIMITER}
-[Player B instructions]
+[Player B instructions — including what B SEES of A]
 
 Start with preamble. Do NOT begin with delimiter. Plain text only, no JSON, no markdown fences.`
 
@@ -232,6 +240,13 @@ When describing scenes for each player, include VIVID CINEMATIC DETAIL:
 - Sensory details both players share (the music playing, the smell of food, the temperature)
 - Character-specific visual details that differ per player (what Player A notices about B, and vice versa)
 
+### PLAYER-CENTRIC IMAGE DIRECTION ###
+CRITICAL: Each player's section MUST include image direction from THEIR first-person perspective:
+- Player A's section describes what A SEES: B's expressions, B's gestures, B's reactions, the venue from A's seat
+- Player B's section describes what B SEES: A's expressions, A's gestures, A's reactions, the venue from B's seat
+- Include specific visual moments: "B's hand reaches for the wine glass, fingers trembling slightly" (for A to see) / "A leans back, a slow smile spreading" (for B to see)
+- The two players must have DIFFERENT image prompts. Their visual perspectives are asymmetric — each sees their DATE, not themselves.
+
 ### OUTPUT ###
 Plain text only. No JSON. No markdown fences. Start with preamble, then ${ORCHESTRATOR_DELIMITER} between sections.`
 
@@ -251,8 +266,12 @@ References: "stylized romantic illustration, warm intimate lighting, inspired by
 Palette: Warm rose (#f9a8d4) + candlelight amber for attraction. Deep crimson (#e11d48) for passion/tension. Soft gold for tender moments.
 Lighting: Soft candlelight, warm practical lighting (restaurant lamps, string lights), golden hour warmth. Rim lighting for romantic close-ups.
 Mood: Cinematic first-date energy — electric, nervous, beautiful. Like the best scene in a rom-com.
-Characters: Show BOTH date partners in most images. Capture body language, eye contact, gestures. Close-ups of hands almost touching, eyes meeting across the table, shared laughter.
-MULTIPLE IMAGES: Include 2-3 images per turn — the scene, a character detail/reaction shot, and an atmospheric detail (the venue, drinks, ambient mood).
+FIRST-PERSON PERSPECTIVE: Images show what THIS player sees — their date's face, their date's hands, their date's reactions. Like a POV shot in film.
+- Main image: The date partner from across the table (over-the-shoulder or eye-level, showing THEIR face and body language)
+- Detail shot: A close-up the player would notice — their date's fingers on a wine glass, a nervous smile, a lock of hair falling
+- Atmosphere: The venue from THIS player's seat — what's behind their date, the lighting, the mood
+NEVER show this player's own face. The camera is THEIR eyes. Each player sees a completely different set of images.
+MULTIPLE IMAGES: Include 2-3 images per turn — the date partner, a telling detail, and the atmosphere from this seat.
 
 ${COLOR_PROTOCOL}
 
@@ -261,7 +280,7 @@ ${HIDDEN_ELEMENTS_SPEC}
 ${NOTES_TEMPLATE}
 
 ### ELEMENT ORDER ###
-1. image — Scene from this player's POV. Style: "Stylized adult illustration, warm intimate lighting, romantic drama aesthetic." Include subliminal text (first image only).
+1. image — FIRST-PERSON POV: what this player sees looking at their date. Show the DATE PARTNER's face, expression, body language. Never show this player's own face. Style: "Stylized romantic illustration, warm candlelight, over-the-shoulder POV shot." Include subliminal text (first image only).
 2. text — Matchmaker whisper (voice:"drevil", color:#f9a8d4). Like a friend texting under the table.
 3. text — Scene narrative (voice:"narrator"). Cinematic, sensory, intimate. What the date said/did.
 4. Interactive elements — ALL framed as in-date actions. Use variety: sliders, toggles, textfields, button groups, ratings, not just radio. Include depth probe + breadth probe.
