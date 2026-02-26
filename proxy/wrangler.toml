@@ -2,7 +2,7 @@ name = "drevil-proxy"
 main = "src/index.js"
 compatibility_date = "2025-01-01"
 
-# POLLINATIONS_KEY secret must be set via: wrangler secret put POLLINATIONS_KEY
+# IMAGE_API_KEY secret must be set via: wrangler secret put IMAGE_API_KEY
 
 [[kv_namespaces]]
 binding = "REPORTS"

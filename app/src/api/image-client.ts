@@ -20,17 +20,17 @@ export interface ImageGenerationOptions {
 const DEFAULT_BASE_URL = import.meta.env.DEV
   ? '/api/image'
   : 'https://drevil-proxy.drevil.workers.dev/api/image'
-const DEFAULT_MODEL = 'flux'
-const DEFAULT_WIDTH = 1024
-const DEFAULT_HEIGHT = 768
+const DEFAULT_MODEL = 'z-image-turbo'
+const DEFAULT_WIDTH = 768
+const DEFAULT_HEIGHT = 576
 
 /** Placeholder returned when image preloading fails. */
 const PLACEHOLDER_IMAGE_URL =
   'data:image/svg+xml,' +
   encodeURIComponent(
-    '<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="768" viewBox="0 0 1024 768">' +
-    '<rect width="1024" height="768" fill="#f1f5f9"/>' +
-    '<text x="512" y="384" text-anchor="middle" dominant-baseline="central" ' +
+    '<svg xmlns="http://www.w3.org/2000/svg" width="768" height="576" viewBox="0 0 768 576">' +
+    '<rect width="768" height="576" fill="#f1f5f9"/>' +
+    '<text x="384" y="288" text-anchor="middle" dominant-baseline="central" ' +
     'font-family="Inter, sans-serif" font-size="20" fill="#94a3b8">Image unavailable</text>' +
     '</svg>'
   )
