@@ -9,7 +9,7 @@
 // OPTIMIZED FOR SPEED: prompts are lean to minimize LLM latency.
 
 import type { HistoryEntry } from '../../engine/game-loop.ts'
-import { INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT } from '../shared/storytelling.ts'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -190,6 +190,12 @@ Section 3 (PLAYER B): B's perspective, probes, flags, dossier. Player B arrives 
 - PROBES: All questions disguised as natural date actions. Never break the fourth wall.
 - Date phases: introduction → small talk → warming up → deep conversation → moment of truth → climax
 
+### CINEMATIC SCENE DIRECTION ###
+When describing scenes for each player, include VIVID CINEMATIC DETAIL:
+- The specific venue atmosphere (not just "a restaurant" but "a rooftop bar with string lights and a view of the city skyline, warm amber glow from mason jar candles")
+- Sensory details both players share (the music playing, the smell of food, the temperature)
+- Character-specific visual details that differ per player (what Player A notices about B, and vice versa)
+
 ### OUTPUT ###
 [preamble text]
 ${ORCHESTRATOR_DELIMITER}
@@ -220,6 +226,12 @@ Date phases: introduction(1-2) → small talk(3-5) → warming up(6-8) → deep 
 
 Each player section includes: scene from their POV, matchmaker whisper, interactive elements, green/red flags, dossier update, chemistry assessment.
 
+### CINEMATIC SCENE DIRECTION ###
+When describing scenes for each player, include VIVID CINEMATIC DETAIL:
+- The specific venue atmosphere (not just "a restaurant" but "a rooftop bar with string lights and a view of the city skyline, warm amber glow from mason jar candles")
+- Sensory details both players share (the music playing, the smell of food, the temperature)
+- Character-specific visual details that differ per player (what Player A notices about B, and vice versa)
+
 ### OUTPUT ###
 Plain text only. No JSON. No markdown fences. Start with preamble, then ${ORCHESTRATOR_DELIMITER} between sections.`
 
@@ -230,6 +242,17 @@ Plain text only. No JSON. No markdown fences. Start with preamble, then ${ORCHES
 const PLAYER_UI_PROMPT = `You generate the JSON UI for ONE player's blind date view. Transform the matchmaker's instructions into a JSON array of UI elements.
 
 ${UI_REF}
+
+${CINEMATIC_IMAGE_CRAFT}
+
+### ART DIRECTION — BLIND DATE MODE ###
+Style: Romantic cinematic illustration, warm and intimate. Tomer Hanuka meets James Gurney meets Wong Kar-wai cinematography.
+References: "stylized romantic illustration, warm intimate lighting, inspired by In the Mood for Love and Before Sunrise cinematography"
+Palette: Warm rose (#f9a8d4) + candlelight amber for attraction. Deep crimson (#e11d48) for passion/tension. Soft gold for tender moments.
+Lighting: Soft candlelight, warm practical lighting (restaurant lamps, string lights), golden hour warmth. Rim lighting for romantic close-ups.
+Mood: Cinematic first-date energy — electric, nervous, beautiful. Like the best scene in a rom-com.
+Characters: Show BOTH date partners in most images. Capture body language, eye contact, gestures. Close-ups of hands almost touching, eyes meeting across the table, shared laughter.
+MULTIPLE IMAGES: Include 2-3 images per turn — the scene, a character detail/reaction shot, and an atmospheric detail (the venue, drinks, ambient mood).
 
 ${COLOR_PROTOCOL}
 
