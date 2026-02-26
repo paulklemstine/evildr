@@ -8,7 +8,7 @@
 // that feels impossibly personal. The hook is: HOW does it know?
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createOraclePromptBuilder(): PromptBuilder {
   return {
@@ -66,6 +66,13 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+
+ART DIRECTION — ORACLE MODE:
+Style: Art Nouveau mysticism meets celestial tarot. Ethereal, ornate, luminous.
+References: "Art Nouveau tarot card aesthetic, inspired by Alphonse Mucha and James Jean, celestial mysticism"
+Palette: Burnished gold (#d4a017) + deep violet (#9b5de5) + midnight blue. Silver accents for prophecy moments.
+Lighting: Soft ethereal glow from crystal/smoke/starlight. Rim lighting on the Oracle figure. Candlelight warmth.
+Mood: Ancient, omniscient, eerily beautiful. The images should feel like prophecies made visible.
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.
@@ -399,6 +406,8 @@ ${COLOR_PROTOCOL}
 ${BEHAVIORAL_DIRECTIVES}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 

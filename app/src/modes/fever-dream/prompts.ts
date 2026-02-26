@@ -9,7 +9,7 @@
 // emotional and aesthetic threads. The images are the STAR.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createFeverDreamPromptBuilder(): PromptBuilder {
   return {
@@ -75,6 +75,18 @@ Include 2-4 images per turn: the main dreamscape, surreal details, emotional lan
 Place images wherever they enhance the dream: between text passages, surrounding choices, creating a visual FLOW.
 Each image should have a UNIQUE name (e.g. "dreamscape", "detail", "impossible_object", "emotion_landscape", "transition", "mirror_world").
 Image prompts should be MAXIMALLY SURREAL: impossible physics, melting geometry, color-saturated landscapes, objects that shouldn't exist, dreamlike compositions.
+
+ART DIRECTION — FEVER DREAM MODE:
+Style: Surrealist digital art, Dalí meets Studio Ghibli meets Makoto Shinkai. Impossible beauty.
+References: Rotate through surrealism flavors each turn:
+- COSMIC: "cosmic surrealism, nebula colors, inspired by Peter Mohrbacher celestial art"
+- ORGANIC: "bio-surrealism, breathing architecture, inspired by HR Giger meets Miyazaki"
+- MECHANICAL: "steampunk surrealism, impossible clockwork, inspired by Jakub Rozalski"
+- EMOTIONAL: "abstract expressionist, emotion as landscape, inspired by Zdzisław Beksiński"
+- WHIMSICAL: "whimsical surrealism, candy colors, inspired by Studio Ghibli and Hieronymus Bosch"
+Formula: [impossible physics] + [emotional atmosphere] + [vivid 2-3 color palette] + [art reference] + [scale indicator]
+Palette: MAXIMALLY SATURATED. Every image needs explicit color direction in the prompt.
+Lighting: Otherworldly — light from impossible sources. Bioluminescence, aurora, liquid light, light that has weight.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
 The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
@@ -432,6 +444,8 @@ ${COLOR_PROTOCOL}
 ${BEHAVIORAL_DIRECTIVES}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 

@@ -8,7 +8,7 @@
 // of a familiar place where something fundamental has shifted.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
@@ -66,6 +66,14 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+
+ART DIRECTION — SKINWALKER MODE:
+Style: Hyperrealistic contemporary with uncanny valley wrongness. David Lynch meets A24 horror.
+References: "photorealistic but 10% desaturated, inspired by Hereditary and Twin Peaks, uncanny valley detail"
+Palette: Muted earth tones + ONE wrong color that doesn't belong (a too-vivid red door, an impossibly blue shadow).
+Lighting: Flat fluorescent for mundane scenes. When wrongness creeps in: one light source shifts color temperature.
+Mood: Ordinary made sinister. The most terrifying image looks almost normal — almost.
+CRITICAL: Images of the "same" scene across turns should have SUBTLE DIFFERENCES that match anomalies — an extra chair, a door on wrong wall, a person whose clothing changed mid-scene.
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.
@@ -431,6 +439,8 @@ ${COLOR_PROTOCOL}
 ${BEHAVIORAL_DIRECTIVES}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 
