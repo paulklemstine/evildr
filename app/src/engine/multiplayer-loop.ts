@@ -24,6 +24,9 @@ import { attachCelebrations } from './celebration.ts'
 import { applyMoodFromUI } from './mood-colors.ts'
 import type { FlaggedPromptBuilder } from '../modes/flagged/prompts.ts'
 import { ORCHESTRATOR_DELIMITER } from '../modes/flagged/prompts.ts'
+import { saveTurn, saveSession, updateSession, getTurnsBySession, getAnalysesBySession } from '../profiling/db'
+import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
+import { uploadReport } from '../api/report-uploader'
 import { jsonrepair } from 'jsonrepair'
 
 // ---------------------------------------------------------------------------
@@ -113,7 +116,6 @@ export type PeerMessage =
   | { type: 'orchestrator'; turnNumber: number; section: string }
   | { type: 'ready'; turnNumber: number }
   | { type: 'partner-submitted'; turnNumber: number }
-  | { type: 'images'; turnNumber: number; images: Array<{ name: string; base64: string }> }
   | { type: 'ping' }
   | { type: 'pong' }
 
@@ -548,11 +550,21 @@ export class MultiplayerGameLoop {
   private orchestratorTimeout: ReturnType<typeof setTimeout> | null = null
   private cleanupCelebrations: (() => void) | null = null
   private turnInProgress = false
-  private imageShareTimeout: ReturnType<typeof setTimeout> | null = null
 
   constructor(config: MultiplayerGameLoopConfig) {
     this.config = config
     this.state = this.createDefaultState()
+
+    // Create session record in IndexedDB for profiling
+    if (config.userId && config.sessionId) {
+      saveSession({
+        sessionId: config.sessionId,
+        userId: config.userId,
+        mode: 'flagged',
+        startedAt: Date.now(),
+        turnCount: 0,
+      }).catch(() => { /* IndexedDB may not be available */ })
+    }
 
     // Attempt to restore from localStorage
     const saved = loadState(this.storageKey())
@@ -623,101 +635,10 @@ export class MultiplayerGameLoop {
       })
   }
 
-  // ---- Image sharing (Player 1 → Player 2 via base64 over PeerJS) ----
-
-  /**
-   * After Player 1's images load from Pollinations, capture them as base64
-   * and send to Player 2 so both players see the same images.
-   */
-  private captureAndShareImages(): void {
-    const images = this.config.container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]')
-    if (images.length === 0) return
-
-    const turnNumber = this.state.turnNumber
-    const pendingImages = Array.from(images)
-    const imageData: Array<{ name: string; base64: string }> = []
-    let resolved = 0
-
-    const checkDone = () => {
-      resolved++
-      if (resolved === pendingImages.length && imageData.length > 0) {
-        this.config.sendToPartner({
-          type: 'images',
-          turnNumber,
-          images: imageData,
-        } as PeerMessage)
-      }
-    }
-
-    for (const img of pendingImages) {
-      const name = img.dataset.imagePrompt || img.dataset.elementName || `img-${resolved}`
-
-      const capture = () => {
-        try {
-          const canvas = document.createElement('canvas')
-          canvas.width = img.naturalWidth
-          canvas.height = img.naturalHeight
-          const ctx = canvas.getContext('2d')
-          if (ctx) {
-            ctx.drawImage(img, 0, 0)
-            imageData.push({ name, base64: canvas.toDataURL('image/jpeg', 0.7) })
-          }
-        } catch {
-          // Canvas tainted or other error — skip this image
-        }
-        checkDone()
-      }
-
-      if (img.complete && img.naturalWidth > 0) {
-        capture()
-      } else {
-        const prevOnload = img.onload
-        img.onload = (e) => {
-          if (typeof prevOnload === 'function') prevOnload.call(img, e)
-          capture()
-        }
-        img.onerror = () => checkDone() // Skip failed images
-
-        // Timeout: don't wait forever for slow images
-        setTimeout(() => {
-          if (!img.complete) checkDone()
-        }, 20000)
-      }
-    }
-  }
-
-  /**
-   * Apply base64 images received from Player 1 to Player 2's DOM.
-   * Images are matched by position (index).
-   */
-  private applySharedImages(images: Array<{ name: string; base64: string }>): void {
-    // Cancel fallback timer — we received shared images from Player 1
-    if (this.imageShareTimeout) {
-      clearTimeout(this.imageShareTimeout)
-      this.imageShareTimeout = null
-    }
-
-    const imgElements = this.config.container.querySelectorAll<HTMLImageElement>('img[data-image-prompt]')
-
-    images.forEach((data, i) => {
-      const img = imgElements[i]
-      if (!img) return
-
-      img.src = data.base64
-      img.style.opacity = '1'
-
-      // Hide the shimmer placeholder if present
-      const shimmer = img.previousElementSibling as HTMLElement | null
-      if (shimmer?.classList.contains('image-shimmer')) {
-        shimmer.style.display = 'none'
-      }
-    })
-  }
-
   // ---- Turn rendering ----
 
   private renderTurn(uiJsonArray: UIElement[]): void {
-    const { container, onStateChange, onAnalysis, isPlayer1 } = this.config
+    const { container, onStateChange, onAnalysis } = this.config
 
     // Update state
     this.state.currentUiJson = uiJsonArray
@@ -742,23 +663,8 @@ export class MultiplayerGameLoop {
     // Apply mood coloring
     applyMoodFromUI(uiJsonArray)
 
-    // Resolve images — Player 1 loads from Pollinations and shares via PeerJS.
-    // Player 2 waits briefly for shared images, then falls back to Pollinations.
-    if (isPlayer1) {
-      this.resolveImages()
-      this.captureAndShareImages()
-    } else {
-      // Player 2: wait up to 15s for shared images from Player 1, then fall back
-      this.imageShareTimeout = setTimeout(() => {
-        const pending = this.config.container.querySelectorAll<HTMLImageElement>(
-          'img[data-image-prompt]:not([src^="data:image/jpeg"])'
-        )
-        if (pending.length > 0) {
-          console.info('[P2] Image share timeout — loading from Pollinations directly')
-          this.resolveImages()
-        }
-      }, 15000)
-    }
+    // Both players resolve images independently from Pollinations
+    this.resolveImages()
 
     // Apply dopamine effects
     cascadeReveal(container)
@@ -770,6 +676,31 @@ export class MultiplayerGameLoop {
     // Auto-save
     saveState(this.storageKey(), this.state)
 
+    // Save turn record to IndexedDB for profiling & report generation
+    const { userId, sessionId } = this.config
+    if (userId && sessionId) {
+      const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
+      saveTurn({
+        userId,
+        sessionId,
+        turnNumber: this.state.turnNumber,
+        timestamp: Date.now(),
+        mode: 'flagged',
+        playerInputs: this.myActionsThisTurn || '{}',
+        uiShown: JSON.stringify(uiSummary),
+        signals: { responseTimeMs: 0, sliderRevisions: 0, textRevisions: 0, totalTextLength: 0, radioChoiceIndex: -1, checkboxRatio: '0/0' },
+      }).catch(() => { /* IndexedDB may not be available */ })
+
+      // Update session turn count
+      updateSession(sessionId, { turnCount: this.state.turnNumber }).catch(() => {})
+
+      // Upload report to server (fire-and-forget)
+      this.uploadCurrentReport(userId, sessionId).catch(() => {})
+
+      // Trigger analysis pipeline on deep model (fire-and-forget)
+      maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
+    }
+
     // Notify
     onStateChange(this.getState())
     onAnalysis({
@@ -777,6 +708,25 @@ export class MultiplayerGameLoop {
       redFlags: this.state.redFlags,
       ownAnalysis: this.state.ownAnalysis,
       partnerAnalysis: this.state.partnerAnalysis,
+    })
+  }
+
+  // ---- Report upload ----
+
+  /**
+   * Upload the current session report to the server for admin browsing.
+   */
+  private async uploadCurrentReport(userId: string, sessionId: string): Promise<void> {
+    const turns = await getTurnsBySession(sessionId)
+    const analyses = await getAnalysesBySession(sessionId)
+    await uploadReport({
+      sessionId,
+      userId,
+      mode: 'flagged',
+      startedAt: turns.length > 0 ? turns[0].timestamp : Date.now(),
+      turnCount: turns.length,
+      turns,
+      analyses,
     })
   }
 
@@ -1097,11 +1047,6 @@ export class MultiplayerGameLoop {
           // Partner submitted before us — nudge the player
           this.config.onWaitingStatus?.('Your date is waiting for you...')
         }
-        break
-
-      case 'images':
-        // Player 1 is sharing their rendered images — apply to our DOM
-        this.applySharedImages(msg.images)
         break
 
       case 'ping':
