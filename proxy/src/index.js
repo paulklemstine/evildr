@@ -16,7 +16,7 @@
 
 const CORS_HEADERS = {
   "Access-Control-Allow-Origin": "*",
-  "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
+  "Access-Control-Allow-Methods": "GET, POST, DELETE, OPTIONS",
   "Access-Control-Allow-Headers": "Content-Type",
 };
 
@@ -100,8 +100,8 @@ async function handleLobby(request, env, path) {
     }
 
     const entry = { peerId, name, gender, userId, updatedAt: Date.now() };
-    // 30-second TTL — entry auto-expires if no heartbeat
-    await KV.put(`lobby:${peerId}`, JSON.stringify(entry), { expirationTtl: 30 });
+    // 60-second TTL (Cloudflare KV minimum) — entry auto-expires if no heartbeat
+    await KV.put(`lobby:${peerId}`, JSON.stringify(entry), { expirationTtl: 60 });
 
     return new Response(JSON.stringify({ ok: true }), {
       status: 200,
