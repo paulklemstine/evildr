@@ -40,21 +40,30 @@ export const ORCHESTRATOR_DELIMITER = '---|||---'
 // Factory
 // ---------------------------------------------------------------------------
 
-export function createFlaggedPromptBuilder(): FlaggedPromptBuilder {
+export function createFlaggedPromptBuilder(nameA = 'Player A', nameB = 'Player B'): FlaggedPromptBuilder {
+  // Replace generic "Player A"/"Player B" with actual names in prompt templates
+  function personalize(prompt: string): string {
+    return prompt
+      .replace(/Player A/g, nameA)
+      .replace(/Player B/g, nameB)
+      .replace(/PLAYER A/g, nameA.toUpperCase())
+      .replace(/PLAYER B/g, nameB.toUpperCase())
+  }
+
   return {
     buildScenarioGeneratorPrompt(): string {
       return SCENARIO_GENERATOR
     },
 
     buildFirstTurnOrchestratorPrompt(venue?: string): string {
+      let prompt = ORCHESTRATOR_FIRSTRUN
       if (venue) {
-        // Replace the venue-invention instruction with the pre-selected venue
-        return ORCHESTRATOR_FIRSTRUN.replace(
+        prompt = prompt.replace(
           /1\. PREAMBLE: Invent a SPECIFIC, VIVID venue[^]*?conversational opportunities\./,
           `1. PREAMBLE: The date takes place at: "${venue}". Build on this setting with rich sensory detail. Describe the atmosphere, sounds, lighting, and what makes this place special. Do NOT invent a different venue.`,
         )
       }
-      return ORCHESTRATOR_FIRSTRUN
+      return personalize(prompt)
     },
 
     buildOrchestratorPrompt(
@@ -64,13 +73,12 @@ export function createFlaggedPromptBuilder(): FlaggedPromptBuilder {
       player1Notes: string,
       player2Notes: string,
     ): string {
-      // Only send last 3 turns, actions only (notes/dossier carry the full context)
       const recentHistory = history.slice(-3)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
-      return `${ORCHESTRATOR_MAIN}
+      return personalize(`${ORCHESTRATOR_MAIN}
 
 ### PLAYER A DOSSIER ###
 ${player1Notes || '(no dossier yet)'}
@@ -96,7 +104,7 @@ ${ORCHESTRATOR_DELIMITER}
 ${ORCHESTRATOR_DELIMITER}
 [Player B instructions]
 
-Start with preamble text. Do NOT begin with the delimiter. Plain text only, no JSON, no markdown fences.`
+Start with preamble text. Do NOT begin with the delimiter. Plain text only, no JSON, no markdown fences.`)
     },
 
     buildPlayerUIPrompt(orchestratorInstructions: string): string {
@@ -107,7 +115,7 @@ ${orchestratorInstructions}
 
 ### TASK ###
 Generate a JSON UI array for this player. The array MUST contain these elements IN ORDER:
-1. Visible elements: image(s), text(s), interactive elements, radio choices
+1. Visible elements: ONE main image, text(s), interactive elements, radio choices
 2. MANDATORY hidden elements — your response is INVALID without ALL FIVE:
    {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
    {"type":"hidden","name":"green_flags","label":"","value":"<markdown list of partner's positive behaviors>","color":"#000","voice":"system"}
@@ -127,8 +135,7 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
-  You can include MULTIPLE images per turn with UNIQUE names (e.g. "scene", "partner_reaction").
-  FIRST image MUST embed a 1-3 word phrase via environmental text (napkin reads 'DARE YOU', neon sign glows 'NO REGRETS', etc). Vary surface each turn. Additional images don't need text.
+  Include exactly ONE main image per turn. It MUST embed a 1-3 word subliminal phrase via environmental text (napkin reads 'DARE YOU', neon sign glows 'NO REGRETS', etc). Vary surface each turn.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"HEX","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"}],"color":"HEX","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"interest","label":"How interested?","value":"5","min":"0","max":"10","step":"1","color":"HEX","voice":"player","predicted":"7"}
@@ -295,12 +302,10 @@ References: "stylized romantic illustration, warm intimate lighting, inspired by
 Palette: Warm rose (#f9a8d4) + candlelight amber for attraction. Deep crimson (#e11d48) for passion/tension. Soft gold for tender moments.
 Lighting: Soft candlelight, warm practical lighting (restaurant lamps, string lights), golden hour warmth. Rim lighting for romantic close-ups.
 Mood: Cinematic first-date energy — electric, nervous, beautiful. Like the best scene in a rom-com.
-FIRST-PERSON PERSPECTIVE: Images show what THIS player sees — their date's face, their date's hands, their date's reactions. Like a POV shot in film.
-- Main image: The date partner from across the table (over-the-shoulder or eye-level, showing THEIR face and body language)
-- Detail shot: A close-up the player would notice — their date's fingers on a wine glass, a nervous smile, a lock of hair falling
-- Atmosphere: The venue from THIS player's seat — what's behind their date, the lighting, the mood
-NEVER show this player's own face. The camera is THEIR eyes. Each player sees a completely different set of images.
-MULTIPLE IMAGES: Include 2-3 images per turn — the date partner, a telling detail, and the atmosphere from this seat.
+FIRST-PERSON PERSPECTIVE: The ONE main image shows what THIS player sees — their date's face, hands, reactions. Like a POV shot in film.
+- Show the date partner from across the table (over-the-shoulder or eye-level, THEIR face and body language)
+- Include telling details IN the same image — their date's fingers on a wine glass, a nervous smile, the venue lighting
+NEVER show this player's own face. The camera is THEIR eyes. Each player sees a completely different image.
 
 ${COLOR_PROTOCOL}
 
@@ -309,7 +314,7 @@ ${HIDDEN_ELEMENTS_SPEC}
 ${NOTES_TEMPLATE}
 
 ### ELEMENT ORDER ###
-1. image — FIRST-PERSON POV: what this player sees looking at their date. Show the DATE PARTNER's face, expression, body language. Never show this player's own face. Style: "Stylized romantic illustration, warm candlelight, over-the-shoulder POV shot." Include subliminal text (first image only).
+1. image — ONE main image. FIRST-PERSON POV: what this player sees looking at their date. Show the DATE PARTNER's face, expression, body language. Never show this player's own face. Style: "Stylized romantic illustration, warm candlelight, over-the-shoulder POV shot." MUST include 1-3 word subliminal phrase via environmental text.
 2. text — Matchmaker whisper (voice:"drevil", color:#f9a8d4). Like a friend texting under the table.
 3. text — Scene narrative (voice:"narrator"). Cinematic, sensory, intimate. What the date said/did.
 4. Interactive elements — ALL framed as in-date actions. Use variety: sliders, toggles, textfields, button groups, ratings, not just radio. Include depth probe + breadth probe.

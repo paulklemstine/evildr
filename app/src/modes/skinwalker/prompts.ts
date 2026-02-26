@@ -75,12 +75,9 @@ Lighting: Flat fluorescent for mundane scenes. When wrongness creeps in: one lig
 Mood: Ordinary made sinister. The most terrifying image looks almost normal — almost.
 CRITICAL: Images of the "same" scene across turns should have SUBTLE DIFFERENCES that match anomalies — an extra chair, a door on wrong wall, a person whose clothing changed mid-scene.
 
-### MULTIPLE IMAGES PER TURN ###
-You can include MULTIPLE image elements in a single turn — not just one at the top.
-Use additional images to show the SAME scene from a slightly different angle (with subtle differences), show details the player is examining, or create a sense of visual unreliability.
-Place images wherever they enhance the creeping dread: between text blocks where something shifts, before memory-test choices, after a player notices (or misses) an anomaly.
-Each image should have a UNIQUE name (e.g. "scene", "detail", "memory", "reflection", "window_view").
-CRITICAL: Images of the "same" scene across turns should have SUBTLE DIFFERENCES that match the anomalies — an extra chair, a door on the wrong side, a person whose clothing changed.
+### IMAGE STRATEGY ###
+Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Smaller illustrative images may be embedded within UI elements as needed, but the MAIN image should be singular and impactful.
+CRITICAL: The main image across turns should have SUBTLE DIFFERENCES that match the anomalies — an extra chair, a door on the wrong side, a person whose clothing changed.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
 The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
@@ -95,7 +92,6 @@ Examples for Skinwalker mode:
 The phrase should reinforce unease, wrongness, the sense that reality is unreliable.
 Vary the surface: calendars, sticky notes, newspapers, drawings, clocks, signs, receipts, book spines, labels, graffiti.
 NEVER repeat the same phrase or surface two turns in a row.
-Additional images after the first do NOT need embedded text — they should focus on visual inconsistency and environmental wrongness.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"confidence","label":"How sure are you? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator","predicted":"6"}
@@ -396,9 +392,8 @@ Maybe there's one extra place setting at the table.
 Do NOT call attention to it. Let it sit. Let it breathe.
 
 Element order:
-1. image — The scene. Photorealistic but slightly desaturated. Warm. Normal. Mundane. Include subliminal text (first image only).
+1. image — The scene. Photorealistic but slightly desaturated. Warm. Normal. Mundane. Include subliminal text.
    "A warm, inviting [scene] with soft evening light, photorealistic style, slightly desaturated colors as if the saturation is turned down 10 percent, a small sticky note on the counter reads 'LOOK CLOSELY'"
-   You may insert additional images later showing specific details of the scene.
 2. text — Narration (voice: narrator, color: #b8a88a). Warm. Grounded. Sensory. This is a NORMAL day.
    Introduce the scenario, the characters, the setting. Make it feel real and lived-in.
    Include the ONE anomaly buried naturally in the description. Don't flag it.
@@ -470,8 +465,7 @@ ${NOTES_TEMPLATE}
 ${ANOMALY_PROTOCOL}
 
 ### ELEMENT ORDER ###
-1. image — The current scene. Photorealistic, slightly desaturated. Should show the same setting but with SUBTLE VISUAL DIFFERENCES from prior turns (matching anomalies). Include subliminal text (first image only).
-   You may insert ADDITIONAL images to show details the player investigates, or slightly different views that contain visual inconsistencies.
+1. image — The current scene. Photorealistic, slightly desaturated. Should show the same setting but with SUBTLE VISUAL DIFFERENCES from prior turns (matching anomalies). Include subliminal text.
 2. text — The narrator continues the story (voice: narrator, color: #b8a88a or shifting). Seemingly normal.
    But contains 1-3 anomalies WOVEN INTO the natural narration. Don't announce them. Let them exist.
    Reference what the player did. Maintain the mundane scenario. Ground it in sensory detail.

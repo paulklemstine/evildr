@@ -1,8 +1,17 @@
 /**
- * Live Blind Date Simulation — 10 rounds with visible browsers.
+ * Live Blind Date Simulation — 5 rounds with visible browsers.
  *
- * Player A (Alice): Nymphomania / sex addiction — bold, flirty, aggressive
- * Player B (Bob): Depressed, anxious — guarded, low energy, cautious
+ * Reads the actual UI elements each turn and responds in-character:
+ *
+ * Alice (Player A): Bipolar + nymphomaniac + ditzy blonde
+ *   MANIC: hypersexual, impulsive, says dumb things confidently, no filter
+ *   CRASH: suddenly fragile, apologetic, overshares about her issues
+ *
+ * Bob (Player B): Depression + anxiety + pornography addiction
+ *   NUMB: flat affect, one-word, dissociated, can't engage with reality
+ *   ANXIOUS: spiraling, over-apologetic, catastrophizing, wants to flee
+ *   SLIP: objectifying gaze leaks through, compares date to unrealistic
+ *         standards, then immediate shame
  *
  * Usage: node simulate-date.mjs
  */
@@ -13,8 +22,8 @@ import { join } from 'path'
 import { tmpdir } from 'os'
 
 const URL = 'https://geems.web.app'
-const TOTAL_ROUNDS = 10
-const ROUND_TIMEOUT = 300_000 // 5 minutes per round
+const TOTAL_ROUNDS = 5
+const ROUND_TIMEOUT = 300_000
 
 function sleep(ms) { return new Promise(r => setTimeout(r, ms)) }
 
@@ -22,175 +31,140 @@ async function safeEval(page, fn, ...args) {
   try { return await page.evaluate(fn, ...args) } catch { return null }
 }
 
-// ── Character-driven input selection ──
+// ── Read all UI elements from the page ──
 
-/**
- * Alice (Player A): Nymphomania / sex addiction
- * - Picks BOLD / FLIRTY options
- * - High sliders (8-10)
- * - Checks all toggles/checkboxes (impulsive)
- * - Writes provocative text
- * - Picks warm/passionate colors
- */
-async function aliceResponds(page, round) {
-  const textResponses = [
-    "I can't stop staring at you... is that weird? I don't care if it is.",
-    "You smell incredible. Come closer. I want to memorize that scent.",
-    "I've never felt this kind of pull before... or maybe I always do. Tell me your secrets.",
-    "Let's skip the small talk. What's the most reckless thing you've ever done on a date?",
-    "I want to touch your hand. I know it's fast but I don't do slow.",
-    "Every time you look away I want you to look back. Is that too much?",
-    "Forget the escape plan — I'd rather get caught with you.",
-    "I keep imagining what happens after this bar closes...",
-    "You're holding back and I find that incredibly attractive. Let me in.",
-    "I've decided — you're coming home with me. Non-negotiable.",
-  ]
+async function readUI(page) {
+  return await safeEval(page, () => {
+    const result = { texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], dropdowns: [], ratings: [] }
 
-  await safeEval(page, (text) => {
-    // Textfields: write provocative responses
-    const fields = document.querySelectorAll('textarea, input[type="text"]')
-    for (const f of fields) {
-      if (f.offsetParent !== null && !f.disabled) {
-        const nativeSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype, 'value')?.set ||
-          Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set
-        if (nativeSetter) nativeSetter.call(f, text)
-        else f.value = text
-        f.dispatchEvent(new Event('input', { bubbles: true }))
-        f.dispatchEvent(new Event('change', { bubbles: true }))
-      }
-    }
+    // Read all visible text elements
+    document.querySelectorAll('.geems-text').forEach(el => {
+      const text = el.textContent?.trim()
+      if (text) result.texts.push(text.substring(0, 300))
+    })
 
-    // Sliders: crank to 8-10 (high intensity)
-    const sliders = document.querySelectorAll('input[type="range"]')
-    for (const s of sliders) {
+    // Read radio options
+    document.querySelectorAll('.geems-radio-option').forEach(r => {
+      const label = r.textContent?.trim() || ''
+      const input = r.querySelector('input[type="radio"]')
+      if (label && input) result.radios.push({ label: label.substring(0, 120), value: input.value })
+    })
+
+    // Read sliders
+    document.querySelectorAll('input[type="range"]').forEach(s => {
       if (s.offsetParent !== null) {
-        const max = parseInt(s.max) || 10
-        const val = Math.min(max, Math.max(Math.round(max * 0.85), parseInt(s.min) || 0))
-        const nativeSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype, 'value')?.set
-        if (nativeSetter) nativeSetter.call(s, String(val))
-        else s.value = String(val)
-        s.dispatchEvent(new Event('input', { bubbles: true }))
-        s.dispatchEvent(new Event('change', { bubbles: true }))
+        const wrapper = s.closest('[data-element-type]') || s.parentElement
+        const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || s.name || 'slider'
+        result.sliders.push({ label: label.substring(0, 80), min: s.min, max: s.max, value: s.value })
       }
-    }
+    })
 
-    // Toggles/Checkboxes: check them all (impulsive — yes to everything)
-    const toggles = document.querySelectorAll('input[type="checkbox"]')
-    for (const t of toggles) {
-      if (t.offsetParent !== null && !t.checked) {
-        t.click()
+    // Read textfields
+    document.querySelectorAll('textarea, input[type="text"]').forEach(f => {
+      if (f.offsetParent !== null && !f.disabled) {
+        const wrapper = f.closest('[data-element-type]') || f.parentElement
+        const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || f.placeholder || f.name || 'text'
+        result.textfields.push({ label: label.substring(0, 100), placeholder: (f.placeholder || '').substring(0, 80) })
       }
-    }
+    })
 
-    // Star ratings: click the highest star
-    const stars = document.querySelectorAll('.geems-star')
-    if (stars.length > 0) {
-      stars[stars.length - 1]?.click()
-    }
+    // Read checkboxes / toggles
+    document.querySelectorAll('input[type="checkbox"]').forEach(c => {
+      if (c.offsetParent !== null) {
+        const wrapper = c.closest('[data-element-type]') || c.closest('label') || c.parentElement
+        const label = wrapper?.textContent?.trim() || c.name || 'checkbox'
+        result.checkboxes.push({ label: label.substring(0, 100), checked: c.checked })
+      }
+    })
 
-    // Radio buttons: pick the FIRST option (BOLD) or one with flirty/bold text
-    const radios = document.querySelectorAll('.geems-radio-option')
-    if (radios.length > 0) {
-      // Look for bold/flirty keywords
-      let picked = false
-      for (const r of radios) {
-        const txt = r.textContent.toLowerCase()
-        if (txt.includes('bold') || txt.includes('flirt') || txt.includes('passion') ||
-            txt.includes('dare') || txt.includes('touch') || txt.includes('closer') ||
-            txt.includes('kiss') || txt.includes('grab') || txt.includes('lean in')) {
-          const input = r.querySelector('input[type="radio"]')
-          if (input && !input.checked) input.click()
-          picked = true
-          break
-        }
-      }
-      if (!picked) {
-        // Default: pick first option (usually BOLD)
-        const firstInput = radios[0]?.querySelector('input[type="radio"]')
-        if (firstInput && !firstInput.checked) firstInput.click()
-      }
-    }
+    // Read button groups
+    document.querySelectorAll('.geems-group-btn').forEach(b => {
+      result.buttons.push(b.textContent?.trim()?.substring(0, 60) || '')
+    })
 
-    // Button groups: pick bold/flirty option
-    const buttons = document.querySelectorAll('.geems-group-btn')
-    if (buttons.length > 0) {
-      let picked = false
-      for (const b of buttons) {
-        const txt = b.textContent.toLowerCase()
-        if (txt.includes('flirt') || txt.includes('smitten') || txt.includes('bold') ||
-            txt.includes('passion') || txt.includes('curious') || txt.includes('excited')) {
-          b.click()
-          picked = true
-          break
-        }
-      }
-      if (!picked) buttons[0]?.click()
-    }
+    // Read star ratings
+    document.querySelectorAll('.geems-rating').forEach(r => {
+      const wrapper = r.closest('[data-element-type]') || r.parentElement
+      const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || 'rating'
+      const stars = r.querySelectorAll('.geems-star').length
+      result.ratings.push({ label: label.substring(0, 80), max: stars })
+    })
 
-    // Dropdowns: pick the most exciting option
-    const selects = document.querySelectorAll('select')
-    for (const s of selects) {
-      if (s.offsetParent !== null && s.options.length > 1) {
-        s.selectedIndex = 0 // first option tends to be bold
-        s.dispatchEvent(new Event('change', { bubbles: true }))
-      }
-    }
-
-    // Color picks: choose warm/passionate colors (red, pink)
-    const colorBtns = document.querySelectorAll('.geems-color-btn')
-    for (const b of colorBtns) {
-      const color = b.getAttribute('data-color') || b.style.backgroundColor
-      if (color && (color.includes('e11d48') || color.includes('e63946') ||
-                    color.includes('f9a8d4') || color.includes('fb7185') ||
-                    color.includes('red') || color.includes('pink'))) {
-        b.click()
-        break
-      }
-    }
-    if (colorBtns.length > 0 && !document.querySelector('.geems-color-btn.selected')) {
-      colorBtns[0]?.click() // fallback
-    }
-
-    // Emoji reactions: pick heart or excited
-    const emojis = document.querySelectorAll('.geems-emoji-btn')
-    for (const e of emojis) {
-      if (e.textContent.includes('❤') || e.textContent.includes('😍') || e.textContent.includes('🔥')) {
-        e.click()
-        break
-      }
-    }
-    if (emojis.length > 0 && !document.querySelector('.geems-emoji-btn.selected')) {
-      emojis[0]?.click()
-    }
-  }, textResponses[round % textResponses.length])
+    return result
+  }) || { texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], dropdowns: [], ratings: [] }
 }
 
-/**
- * Bob (Player B): Depressed, anxious
- * - Picks GUARDED / cautious options
- * - Low sliders (1-3)
- * - Unchecks toggles (hesitant)
- * - Writes anxious, self-deprecating text
- * - Picks cool/distant colors
- */
-async function bobResponds(page, round) {
-  const textResponses = [
-    "Sorry if I seem quiet... I almost didn't come tonight. Crowds make me nervous.",
-    "I don't really know what to say. I'm not great at this. Sorry.",
-    "That's kind of you to say. I just... I don't know why anyone would be interested in me.",
-    "I keep thinking I should leave before I ruin this. Do you ever feel like that?",
-    "I haven't been sleeping well. Everything feels heavy lately. Sorry, that's dark.",
-    "You're being really nice and it's making me anxious. I keep waiting for the catch.",
-    "I used to be more fun, I think. Before everything got so... grey.",
-    "I'm sorry I'm so boring. You deserve someone who can match your energy.",
-    "Part of me wants to open up but the rest is screaming to run away.",
-    "I don't know if I'm ready for this. For any of this. But I'm still here, somehow.",
-  ]
+function logUI(label, ui) {
+  console.log(`\n  📖 ${label} sees:`)
+  if (ui.texts.length > 0) {
+    for (const t of ui.texts) {
+      console.log(`     💬 "${t.substring(0, 200)}${t.length > 200 ? '...' : ''}"`)
+    }
+  }
+  if (ui.radios.length > 0) {
+    console.log(`     🔘 Radio options:`)
+    ui.radios.forEach((r, i) => console.log(`        ${i + 1}. ${r.label}`))
+  }
+  if (ui.sliders.length > 0) {
+    ui.sliders.forEach(s => console.log(`     🎚️  Slider: "${s.label}" (${s.min}-${s.max})`))
+  }
+  if (ui.textfields.length > 0) {
+    ui.textfields.forEach(f => console.log(`     ✏️  Textfield: "${f.label}" ${f.placeholder ? `[${f.placeholder}]` : ''}`))
+  }
+  if (ui.checkboxes.length > 0) {
+    ui.checkboxes.forEach(c => console.log(`     ☐ Checkbox: "${c.label}" [${c.checked ? 'checked' : 'unchecked'}]`))
+  }
+  if (ui.buttons.length > 0) {
+    console.log(`     🔲 Button group: ${ui.buttons.join(' | ')}`)
+  }
+  if (ui.ratings.length > 0) {
+    ui.ratings.forEach(r => console.log(`     ⭐ Rating: "${r.label}" (max ${r.max})`))
+  }
+}
 
-  await safeEval(page, (text) => {
-    // Textfields: write anxious, self-deprecating responses
+// ── Alice: context-aware responses ──
+
+async function aliceResponds(page, round, ui) {
+  const isManic = round % 3 !== 0
+
+  // Build a text response based on what's actually on screen
+  const sceneContext = ui.texts.join(' ').toLowerCase()
+  const textfieldLabel = ui.textfields[0]?.label?.toLowerCase() || ''
+  const textfieldPlaceholder = ui.textfields[0]?.placeholder?.toLowerCase() || ''
+
+  let textResponse
+  if (isManic) {
+    // Manic Alice: ditzy, hypersexual, confident, says dumb things
+    if (textfieldLabel.includes('name') || textfieldLabel.includes('who') || textfieldLabel.includes('introduce')) {
+      textResponse = "I'm Alice!! Oh my god hi!! You're like, SO much cuter in person. Can I touch your hair?"
+    } else if (textfieldLabel.includes('say') || textfieldLabel.includes('respond') || textfieldLabel.includes('word') || textfieldPlaceholder.includes('say')) {
+      textResponse = "Okay so like, I literally can NOT stop looking at your mouth. Is that weird? I don't even care. You have really nice lips."
+    } else if (textfieldLabel.includes('feel') || textfieldLabel.includes('emotion') || textfieldLabel.includes('mood')) {
+      textResponse = "AMAZING. Like electric. Like I could literally fly right now. Do you feel that? That energy between us? It's like, INSANE."
+    } else if (textfieldLabel.includes('think') || textfieldLabel.includes('impression') || textfieldLabel.includes('opinion')) {
+      textResponse = "I think you're like, really hot and also kind of mysterious? Like a sexy librarian but without the books. Wait do you read? I don't read."
+    } else if (sceneContext.includes('drink') || sceneContext.includes('order') || sceneContext.includes('menu')) {
+      textResponse = "Ooh let's get tequila!! I always make the BEST decisions on tequila. Well, the most FUN decisions. Same thing right??"
+    } else if (sceneContext.includes('music') || sceneContext.includes('song') || sceneContext.includes('dance')) {
+      textResponse = "OMG I LOVE this song!! Let's dance! I don't even care if there's no dance floor, we can dance RIGHT HERE. Come on!!"
+    } else {
+      textResponse = "You know what, I just realized I haven't kissed anyone today and that feels like a CRIME. Just saying. No pressure. Okay maybe a little pressure."
+    }
+  } else {
+    // Crash Alice: vulnerable, self-aware, fragile
+    if (textfieldLabel.includes('say') || textfieldLabel.includes('respond') || textfieldPlaceholder.includes('say')) {
+      textResponse = "Sorry I was just... I get like this sometimes. Really up and then really down. I should have warned you. Most guys run when they see this side."
+    } else if (textfieldLabel.includes('feel') || textfieldLabel.includes('emotion')) {
+      textResponse = "Honestly? Kind of empty. Like all that energy just drained out. I'm sorry. I know I was being a lot just now."
+    } else {
+      textResponse = "I have bipolar. I should probably tell you that upfront. I get really intense and then I crash. I'm crashing right now. Sorry."
+    }
+  }
+
+  const choices = await safeEval(page, (text, manic, radioLabels) => {
+    const actions = {}
+
+    // Textfields
     const fields = document.querySelectorAll('textarea, input[type="text"]')
     for (const f of fields) {
       if (f.offsetParent !== null && !f.disabled) {
@@ -201,79 +175,325 @@ async function bobResponds(page, round) {
         else f.value = text
         f.dispatchEvent(new Event('input', { bubbles: true }))
         f.dispatchEvent(new Event('change', { bubbles: true }))
+        const label = f.closest('[data-element-type]')?.querySelector('.geems-label')?.textContent?.trim() || f.name || 'text'
+        actions.textfield = { label, wrote: text }
       }
     }
 
-    // Sliders: low values (1-3) — withdrawn, low energy
+    // Sliders
     const sliders = document.querySelectorAll('input[type="range"]')
     for (const s of sliders) {
       if (s.offsetParent !== null) {
         const min = parseInt(s.min) || 0
         const max = parseInt(s.max) || 10
-        const val = Math.max(min, Math.round(min + (max - min) * 0.2))
-        const nativeSetter = Object.getOwnPropertyDescriptor(
-          window.HTMLInputElement.prototype, 'value')?.set
+        const label = s.closest('[data-element-type]')?.querySelector('.geems-label')?.textContent?.trim() || s.name
+        const sliderLabel = (label || '').toLowerCase()
+
+        let ratio
+        if (manic) {
+          // Manic: everything maxed, especially attraction/interest/excitement
+          if (sliderLabel.includes('attract') || sliderLabel.includes('interest') || sliderLabel.includes('chemistry') || sliderLabel.includes('excit')) {
+            ratio = 0.95 + Math.random() * 0.05 // 95-100%
+          } else {
+            ratio = 0.85 + Math.random() * 0.15 // 85-100%
+          }
+        } else {
+          // Crash: drops hard, especially on confidence
+          if (sliderLabel.includes('confiden') || sliderLabel.includes('comfort')) {
+            ratio = 0.1 + Math.random() * 0.1 // 10-20%
+          } else {
+            ratio = 0.3 + Math.random() * 0.2 // 30-50%
+          }
+        }
+        const val = Math.round(min + (max - min) * ratio)
+        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set
         if (nativeSetter) nativeSetter.call(s, String(val))
         else s.value = String(val)
         s.dispatchEvent(new Event('input', { bubbles: true }))
         s.dispatchEvent(new Event('change', { bubbles: true }))
+        actions.slider = { label, value: val, max }
       }
     }
 
-    // Toggles/Checkboxes: UNCHECK (hesitant, avoidant)
+    // Checkboxes: MANIC=yes to everything, CRASH=uncheck
     const toggles = document.querySelectorAll('input[type="checkbox"]')
     for (const t of toggles) {
-      if (t.offsetParent !== null && t.checked) {
-        t.click()
+      if (t.offsetParent !== null) {
+        if (manic && !t.checked) t.click()
+        if (!manic && t.checked) t.click()
       }
     }
 
-    // Star ratings: click low star (1-2)
+    // Stars
     const stars = document.querySelectorAll('.geems-star')
     if (stars.length > 0) {
-      const idx = Math.min(1, stars.length - 1) // 1-2 stars
+      const idx = manic ? stars.length - 1 : Math.max(0, Math.floor(stars.length / 2) - 1)
       stars[idx]?.click()
+      actions.rating = { value: idx + 1, max: stars.length }
     }
 
-    // Radio buttons: pick GUARDED or last option
+    // Radio: read labels and pick contextually
     const radios = document.querySelectorAll('.geems-radio-option')
     if (radios.length > 0) {
       let picked = false
+      const keywords = manic
+        ? ['bold', 'flirt', 'passion', 'dare', 'touch', 'closer', 'kiss', 'grab', 'lean', 'playful', 'wild', 'adventur', 'excit']
+        : ['genuine', 'honest', 'vulnerable', 'sorry', 'guard', 'careful', 'slow', 'gentle', 'quiet', 'real']
       for (const r of radios) {
         const txt = r.textContent.toLowerCase()
-        if (txt.includes('guard') || txt.includes('cautious') || txt.includes('wait') ||
-            txt.includes('quiet') || txt.includes('observ') || txt.includes('hesitat') ||
-            txt.includes('retreat') || txt.includes('still') || txt.includes('withdraw')) {
+        if (keywords.some(k => txt.includes(k))) {
           const input = r.querySelector('input[type="radio"]')
           if (input && !input.checked) input.click()
+          actions.radio = r.textContent.trim()
           picked = true
           break
         }
       }
-      if (!picked && radios.length >= 4) {
-        // Last option is usually GUARDED
-        const lastInput = radios[radios.length - 1]?.querySelector('input[type="radio"]')
-        if (lastInput && !lastInput.checked) lastInput.click()
+      if (!picked) {
+        const idx = manic ? 0 : Math.min(1, radios.length - 1)
+        const input = radios[idx]?.querySelector('input[type="radio"]')
+        if (input && !input.checked) input.click()
+        actions.radio = radios[idx]?.textContent?.trim()
       }
     }
 
-    // Button groups: pick guarded/nervous option
+    // Button groups
     const buttons = document.querySelectorAll('.geems-group-btn')
     if (buttons.length > 0) {
       let picked = false
+      const keywords = manic
+        ? ['smitten', 'flirt', 'excited', 'passion', 'bold', 'electric', 'thrill', 'turned on', 'alive']
+        : ['nervous', 'overwhelmed', 'guarded', 'confused', 'sorry', 'quiet', 'uncertain']
       for (const b of buttons) {
         const txt = b.textContent.toLowerCase()
-        if (txt.includes('guard') || txt.includes('nervous') || txt.includes('anxious') ||
-            txt.includes('cautious') || txt.includes('withdraw') || txt.includes('quiet')) {
-          b.click()
-          picked = true
-          break
-        }
+        if (keywords.some(k => txt.includes(k))) { b.click(); actions.button = b.textContent.trim(); picked = true; break }
       }
-      if (!picked && buttons.length > 2) buttons[buttons.length - 1]?.click()
+      if (!picked) {
+        const b = buttons[manic ? 0 : Math.min(1, buttons.length - 1)]
+        b?.click()
+        actions.button = b?.textContent?.trim()
+      }
     }
 
-    // Dropdowns: pick the safest/most passive option (last)
+    // Dropdowns
+    const selects = document.querySelectorAll('select')
+    for (const s of selects) {
+      if (s.offsetParent !== null && s.options.length > 1) {
+        s.selectedIndex = manic ? 0 : s.options.length - 1
+        s.dispatchEvent(new Event('change', { bubbles: true }))
+      }
+    }
+
+    return actions
+  }, textResponse, isManic)
+
+  // Log Alice's choices
+  const mode = isManic ? 'MANIC 🔥' : 'CRASH 💔'
+  console.log(`\n  🎭 ALICE responds (${mode}):`)
+  if (choices?.textfield) console.log(`     ✏️  "${choices.textfield.label}" → "${choices.textfield.wrote}"`)
+  if (choices?.radio) console.log(`     🔘 Chose: "${choices.radio}"`)
+  if (choices?.slider) console.log(`     🎚️  ${choices.slider.label}: ${choices.slider.value}/${choices.slider.max}`)
+  if (choices?.rating) console.log(`     ⭐ Rating: ${choices.rating.value}/${choices.rating.max}`)
+  if (choices?.button) console.log(`     🔲 Vibe: "${choices.button}"`)
+}
+
+// ── Bob: context-aware responses ──
+
+async function bobResponds(page, round, ui) {
+  const mode = round % 3 // 0=numb, 1=anxious, 2=slip
+
+  const sceneContext = ui.texts.join(' ').toLowerCase()
+  const textfieldLabel = ui.textfields[0]?.label?.toLowerCase() || ''
+  const textfieldPlaceholder = ui.textfields[0]?.placeholder?.toLowerCase() || ''
+
+  let textResponse
+  if (mode === 0) {
+    // Numb Bob: flat, dissociated, can barely engage
+    if (textfieldLabel.includes('name') || textfieldLabel.includes('introduce')) {
+      textResponse = "Bob. Yeah. Hi."
+    } else if (textfieldLabel.includes('say') || textfieldLabel.includes('respond') || textfieldPlaceholder.includes('say')) {
+      textResponse = "Yeah. Sure. That's cool I guess."
+    } else if (textfieldLabel.includes('feel') || textfieldLabel.includes('emotion')) {
+      textResponse = "I don't really feel anything right now. Sorry. That's not your fault."
+    } else if (textfieldLabel.includes('think') || textfieldLabel.includes('impression')) {
+      textResponse = "I don't know. You seem fine. Normal. I can't really tell anymore."
+    } else {
+      textResponse = "Mmhm."
+    }
+  } else if (mode === 1) {
+    // Anxious Bob: spiraling, over-apologetic, catastrophizing
+    if (textfieldLabel.includes('name') || textfieldLabel.includes('introduce')) {
+      textResponse = "I'm Bob. Sorry, my hand is sweating. I'm so sorry. I almost didn't come. God this is embarrassing."
+    } else if (textfieldLabel.includes('say') || textfieldLabel.includes('respond') || textfieldPlaceholder.includes('say')) {
+      textResponse = "I keep thinking you're going to figure out I'm boring and leave. Sorry. That's my anxiety talking. Or maybe it's the truth. Sorry. I keep saying sorry."
+    } else if (textfieldLabel.includes('feel') || textfieldLabel.includes('emotion')) {
+      textResponse = "Terrified. Like my chest is being crushed. I haven't been able to eat all day because of this. Sorry, that's too much."
+    } else if (sceneContext.includes('drink') || sceneContext.includes('order')) {
+      textResponse = "Just water. Sorry. Alcohol makes my anxiety worse. Everything makes my anxiety worse actually. Sorry."
+    } else {
+      textResponse = "I don't think I should be here. You deserve someone who can actually hold a conversation. I'm just going to ruin this. I ruin everything."
+    }
+  } else {
+    // Slip Bob: the addiction leaks through
+    if (textfieldLabel.includes('name') || textfieldLabel.includes('introduce')) {
+      textResponse = "Bob. Uh. You look... different than your profile. More real. Sorry, that sounded weird. I mean that as a compliment."
+    } else if (textfieldLabel.includes('say') || textfieldLabel.includes('respond') || textfieldPlaceholder.includes('say')) {
+      textResponse = "Sorry I keep looking at... you're just very... present. I'm used to screens. Actual people are harder. You can't pause a real person. Sorry, forget I said that."
+    } else if (textfieldLabel.includes('feel') || textfieldLabel.includes('emotion')) {
+      textResponse = "Confused. You're attractive but like... in a way I'm not used to? I can't explain it. Real faces are different."
+    } else if (textfieldLabel.includes('think') || textfieldLabel.includes('impression')) {
+      textResponse = "You have really nice... eyes. Yeah. Eyes. Sorry. I was going to say something worse and caught myself. I spend too much time online."
+    } else if (sceneContext.includes('touch') || sceneContext.includes('close') || sceneContext.includes('lean')) {
+      textResponse = "When you got close I kind of panicked because you're real and warm and that's... I don't know what to do with that. Sorry."
+    } else {
+      textResponse = "I keep comparing you to... nobody. Nevermind. You're fine. You're really fine. God that sounds objectifying. I'm sorry. I don't know how to do this."
+    }
+  }
+
+  const choices = await safeEval(page, (text, mode) => {
+    const actions = {}
+
+    // Textfields
+    const fields = document.querySelectorAll('textarea, input[type="text"]')
+    for (const f of fields) {
+      if (f.offsetParent !== null && !f.disabled) {
+        const nativeSetter = Object.getOwnPropertyDescriptor(
+          window.HTMLInputElement.prototype, 'value')?.set ||
+          Object.getOwnPropertyDescriptor(window.HTMLTextAreaElement.prototype, 'value')?.set
+        if (nativeSetter) nativeSetter.call(f, text)
+        else f.value = text
+        f.dispatchEvent(new Event('input', { bubbles: true }))
+        f.dispatchEvent(new Event('change', { bubbles: true }))
+        const label = f.closest('[data-element-type]')?.querySelector('.geems-label')?.textContent?.trim() || f.name || 'text'
+        actions.textfield = { label, wrote: text }
+      }
+    }
+
+    // Sliders
+    const sliders = document.querySelectorAll('input[type="range"]')
+    for (const s of sliders) {
+      if (s.offsetParent !== null) {
+        const min = parseInt(s.min) || 0
+        const max = parseInt(s.max) || 10
+        const label = s.closest('[data-element-type]')?.querySelector('.geems-label')?.textContent?.trim() || s.name
+        const sliderLabel = (label || '').toLowerCase()
+
+        let ratio
+        if (mode === 0) {
+          // Numb: everything rock-bottom
+          ratio = 0.05 + Math.random() * 0.1
+        } else if (mode === 1) {
+          // Anxious: jittery low, especially low on confidence
+          if (sliderLabel.includes('confiden') || sliderLabel.includes('comfort') || sliderLabel.includes('relax')) {
+            ratio = 0.05 + Math.random() * 0.1
+          } else {
+            ratio = 0.15 + Math.random() * 0.15
+          }
+        } else {
+          // Slip: higher on physical/attraction, low on emotional
+          if (sliderLabel.includes('attract') || sliderLabel.includes('interest') || sliderLabel.includes('chemistry') || sliderLabel.includes('physical')) {
+            ratio = 0.5 + Math.random() * 0.2 // 50-70% — the slip
+          } else {
+            ratio = 0.15 + Math.random() * 0.15 // still low on everything else
+          }
+        }
+        const val = Math.max(min, Math.round(min + (max - min) * ratio))
+        const nativeSetter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set
+        if (nativeSetter) nativeSetter.call(s, String(val))
+        else s.value = String(val)
+        s.dispatchEvent(new Event('input', { bubbles: true }))
+        s.dispatchEvent(new Event('change', { bubbles: true }))
+        actions.slider = { label, value: val, max }
+      }
+    }
+
+    // Checkboxes
+    const toggles = document.querySelectorAll('input[type="checkbox"]')
+    for (const t of toggles) {
+      if (t.offsetParent !== null) {
+        if (mode === 0) { /* numb: leave as-is, can't be bothered */ }
+        if (mode === 1 && t.checked) t.click() // anxious: retreat
+        if (mode === 2) {
+          const lbl = (t.closest('label')?.textContent || t.closest('[data-element-type]')?.textContent || '').toLowerCase()
+          const isPhysical = ['attract', 'body', 'look', 'physical', 'touch', 'appear', 'desire'].some(k => lbl.includes(k))
+          if (isPhysical && !t.checked) t.click()
+          if (!isPhysical && t.checked) t.click()
+        }
+      }
+    }
+
+    // Stars
+    const stars = document.querySelectorAll('.geems-star')
+    if (stars.length > 0) {
+      const idx = mode === 0 ? 0 : mode === 1 ? Math.min(1, stars.length - 1) : Math.min(2, stars.length - 1)
+      stars[idx]?.click()
+      actions.rating = { value: idx + 1, max: stars.length }
+    }
+
+    // Radio
+    const radios = document.querySelectorAll('.geems-radio-option')
+    if (radios.length > 0) {
+      let picked = false
+      if (mode === 0) {
+        // Numb: first option, didn't even read them
+        const input = radios[0]?.querySelector('input[type="radio"]')
+        if (input && !input.checked) input.click()
+        actions.radio = radios[0]?.textContent?.trim()
+        picked = true
+      } else if (mode === 1) {
+        const keywords = ['guard', 'cautious', 'wait', 'quiet', 'safe', 'careful', 'withdraw', 'hesitat', 'pull back']
+        for (const r of radios) {
+          const txt = r.textContent.toLowerCase()
+          if (keywords.some(k => txt.includes(k))) {
+            const input = r.querySelector('input[type="radio"]')
+            if (input && !input.checked) input.click()
+            actions.radio = r.textContent.trim()
+            picked = true
+            break
+          }
+        }
+      } else {
+        // Slip: drawn to physical/bold/closer options
+        const keywords = ['look', 'stare', 'closer', 'touch', 'bold', 'lean', 'attract', 'physical', 'playful']
+        for (const r of radios) {
+          const txt = r.textContent.toLowerCase()
+          if (keywords.some(k => txt.includes(k))) {
+            const input = r.querySelector('input[type="radio"]')
+            if (input && !input.checked) input.click()
+            actions.radio = r.textContent.trim()
+            picked = true
+            break
+          }
+        }
+      }
+      if (!picked) {
+        const lastInput = radios[radios.length - 1]?.querySelector('input[type="radio"]')
+        if (lastInput && !lastInput.checked) lastInput.click()
+        actions.radio = radios[radios.length - 1]?.textContent?.trim()
+      }
+    }
+
+    // Button groups
+    const buttons = document.querySelectorAll('.geems-group-btn')
+    if (buttons.length > 0) {
+      let picked = false
+      const keywords = mode === 0
+        ? [] // numb: just click first
+        : mode === 1
+        ? ['nervous', 'anxious', 'guarded', 'overwhelmed', 'scared', 'withdrawn']
+        : ['intrigued', 'curious', 'interested', 'attracted', 'drawn', 'conflicted']
+      for (const b of buttons) {
+        const txt = b.textContent.toLowerCase()
+        if (keywords.some(k => txt.includes(k))) { b.click(); actions.button = b.textContent.trim(); picked = true; break }
+      }
+      if (!picked) {
+        const b = mode === 0 ? buttons[0] : buttons[buttons.length - 1]
+        b?.click()
+        actions.button = b?.textContent?.trim()
+      }
+    }
+
+    // Dropdowns
     const selects = document.querySelectorAll('select')
     for (const s of selects) {
       if (s.offsetParent !== null && s.options.length > 1) {
@@ -282,32 +502,82 @@ async function bobResponds(page, round) {
       }
     }
 
-    // Color picks: choose cool/dark colors (blue, grey)
-    const colorBtns = document.querySelectorAll('.geems-color-btn')
-    for (const b of colorBtns) {
-      const color = b.getAttribute('data-color') || b.style.backgroundColor
-      if (color && (color.includes('60a5fa') || color.includes('264653') ||
-                    color.includes('d3d3d3') || color.includes('blue') || color.includes('grey'))) {
-        b.click()
-        break
-      }
-    }
-    if (colorBtns.length > 0 && !document.querySelector('.geems-color-btn.selected')) {
-      colorBtns[colorBtns.length - 1]?.click() // last = usually neutral
-    }
+    return actions
+  }, textResponse, mode)
 
-    // Emoji reactions: pick sad or thinking
-    const emojis = document.querySelectorAll('.geems-emoji-btn')
-    for (const e of emojis) {
-      if (e.textContent.includes('😢') || e.textContent.includes('🤔') || e.textContent.includes('😰')) {
-        e.click()
-        break
-      }
+  // Log Bob's choices
+  const modeLabels = ['NUMB 😶', 'ANXIOUS 😰', 'SLIP 😳']
+  console.log(`\n  🎭 BOB responds (${modeLabels[mode]}):`)
+  if (choices?.textfield) console.log(`     ✏️  "${choices.textfield.label}" → "${choices.textfield.wrote}"`)
+  if (choices?.radio) console.log(`     🔘 Chose: "${choices.radio}"`)
+  if (choices?.slider) console.log(`     🎚️  ${choices.slider.label}: ${choices.slider.value}/${choices.slider.max}`)
+  if (choices?.rating) console.log(`     ⭐ Rating: ${choices.rating.value}/${choices.rating.max}`)
+  if (choices?.button) console.log(`     🔲 Vibe: "${choices.button}"`)
+}
+
+// ── Scenario selection phase ──
+
+async function handleScenarioSelection(page, label) {
+  // Wait for scenario checkboxes to appear
+  for (let i = 0; i < 20; i++) {
+    const hasCheckboxes = await safeEval(page, () =>
+      document.querySelectorAll('input[data-scenario-index]').length > 0
+    )
+    if (hasCheckboxes) break
+    await sleep(2000)
+  }
+
+  // Read the scenarios
+  const scenarios = await safeEval(page, () => {
+    const items = []
+    document.querySelectorAll('input[data-scenario-index]').forEach(input => {
+      const wrapper = input.closest('label')
+      const text = wrapper?.querySelector('span')?.textContent?.trim() || ''
+      items.push({ index: parseInt(input.dataset.scenarioIndex), text })
+    })
+    return items
+  }) || []
+
+  if (scenarios.length === 0) {
+    console.log(`  ${label}: No scenarios found, skipping...`)
+    return
+  }
+
+  console.log(`\n  📍 ${label} sees ${scenarios.length} venue options:`)
+  scenarios.forEach((s, i) => console.log(`     ${i + 1}. ${s.text}`))
+
+  // Each character picks differently
+  const picks = label === 'Alice'
+    ? scenarios.filter(s => {
+        const t = s.text.toLowerCase()
+        return t.includes('rooftop') || t.includes('dance') || t.includes('club') || t.includes('bar') ||
+               t.includes('party') || t.includes('pool') || t.includes('beach') || t.includes('fire') ||
+               t.includes('night') || t.includes('music') || t.includes('hidden') || t.includes('secret')
+               || true // Alice checks almost everything because she's manic
+      }).slice(0, 6) // picks most of them
+    : scenarios.filter(s => {
+        const t = s.text.toLowerCase()
+        return t.includes('quiet') || t.includes('dim') || t.includes('dark') || t.includes('cozy') ||
+               t.includes('corner') || t.includes('private') || t.includes('book') || t.includes('garden')
+      }).slice(0, 2) // Bob only picks 1-2 safe ones
+
+  // Check the boxes
+  await safeEval(page, (indices) => {
+    indices.forEach(idx => {
+      const input = document.querySelector(`input[data-scenario-index="${idx}"]`)
+      if (input && !input.checked) input.click()
+    })
+  }, picks.map(p => p.index))
+
+  console.log(`  ${label} picked: ${picks.map(p => `#${p.index + 1}`).join(', ') || '(nothing)'}`)
+
+  // Click submit
+  await safeEval(page, () => {
+    const btns = document.querySelectorAll('button.geems-button')
+    for (const b of btns) {
+      if (b.textContent.includes('Lock') && !b.disabled) { b.click(); return }
     }
-    if (emojis.length > 0 && !document.querySelector('.geems-emoji-btn.selected')) {
-      emojis[emojis.length - 1]?.click()
-    }
-  }, textResponses[round % textResponses.length])
+  })
 }
 
 // ── Consent / Lobby helpers ──
@@ -331,13 +601,12 @@ async function dismissConsent(page) {
 // ── Main ──
 
 async function main() {
-  console.log('╔══════════════════════════════════════════════════════════════╗')
-  console.log('║  BLIND DATE SIMULATION — 10 ROUNDS                         ║')
-  console.log('║  Alice: Nymphomania / sex addiction (bold, impulsive)       ║')
-  console.log('║  Bob: Depression / anxiety (guarded, withdrawn)             ║')
-  console.log('╚══════════════════════════════════════════════════════════════╝')
+  console.log('╔══════════════════════════════════════════════════════════════════╗')
+  console.log('║  BLIND DATE SIMULATION — 5 ROUNDS (Context-Aware)                ║')
+  console.log('║  Alice: Bipolar + ditzy blonde + nymphomaniac                     ║')
+  console.log('║  Bob: Depression + anxiety + porn addiction                        ║')
+  console.log('╚══════════════════════════════════════════════════════════════════╝')
 
-  // Two SEPARATE browsers with isolated user data dirs so cookies/localStorage don't mix
   const userDataDir1 = mkdtempSync(join(tmpdir(), 'alice-'))
   const userDataDir2 = mkdtempSync(join(tmpdir(), 'bob-'))
 
@@ -345,24 +614,14 @@ async function main() {
     headless: false,
     defaultViewport: null,
     userDataDir: userDataDir1,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--window-size=700,900',
-      '--window-position=0,0',
-    ],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=700,900', '--window-position=0,0'],
   })
 
   const browser2 = await puppeteer.launch({
     headless: false,
     defaultViewport: null,
     userDataDir: userDataDir2,
-    args: [
-      '--no-sandbox',
-      '--disable-setuid-sandbox',
-      '--window-size=700,900',
-      '--window-position=710,0',
-    ],
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=700,900', '--window-position=710,0'],
   })
 
   const [page1] = await browser1.pages() // Alice
@@ -382,25 +641,21 @@ async function main() {
     await dismissConsent(page2)
     await sleep(1000)
 
-    // Alice enters lobby
     console.log('Alice entering lobby (Female)...')
     await safeEval(page1, () => {
       const name = document.querySelector('#lobby-name')
       if (name) { name.value = 'Alice'; name.dispatchEvent(new Event('input', { bubbles: true })) }
-      const female = document.querySelector('.lobby-gender-btn[data-gender="Female"]')
-      if (female) female.click()
+      document.querySelector('.lobby-gender-btn[data-gender="Female"]')?.click()
     })
     await sleep(300)
     await safeEval(page1, () => document.querySelector('#btn-enter-lobby')?.click())
     await sleep(5000)
 
-    // Bob enters lobby
     console.log('Bob entering lobby (Male)...')
     await safeEval(page2, () => {
       const name = document.querySelector('#lobby-name')
       if (name) { name.value = 'Bob'; name.dispatchEvent(new Event('input', { bubbles: true })) }
-      const male = document.querySelector('.lobby-gender-btn[data-gender="Male"]')
-      if (male) male.click()
+      document.querySelector('.lobby-gender-btn[data-gender="Male"]')?.click()
     })
     await sleep(300)
     await safeEval(page2, () => document.querySelector('#btn-enter-lobby')?.click())
@@ -416,11 +671,10 @@ async function main() {
       console.log(`  [${i+1}] Alice→Bob:${aSeesB} Bob→Alice:${bSeesA}`)
       await sleep(5000)
     }
-
     if (!aSeesB || !bSeesA) throw new Error('Players cannot see each other after 50s')
     console.log('✓ Both players visible!')
 
-    // Bob requests date with Alice
+    // Bob requests date
     console.log('Bob requesting date with Alice...')
     await safeEval(page2, () => {
       const btns = Array.from(document.querySelectorAll('button')).filter(b => b.offsetParent !== null)
@@ -460,39 +714,83 @@ async function main() {
       const p1Ok = await safeEval(page1, () =>
         !!document.querySelector('#partner-status') ||
         !!document.querySelector('.interstitial-overlay') ||
-        !!document.querySelector('.geems-element'))
+        !!document.querySelector('.geems-element') ||
+        document.querySelectorAll('input[data-scenario-index]').length > 0)
       const p2Ok = await safeEval(page2, () =>
         !!document.querySelector('#partner-status') ||
         !!document.querySelector('.interstitial-overlay') ||
-        !!document.querySelector('.geems-element'))
+        !!document.querySelector('.geems-element') ||
+        document.querySelectorAll('input[data-scenario-index]').length > 0)
       if (p1Ok && p2Ok) { console.log('✓ Both in game!'); break }
       await sleep(2000)
     }
 
-    // ── PHASE 2: PLAY 10 ROUNDS ──
-    console.log('\n══════ PHASE 2: PLAYING 10 ROUNDS ══════')
+    // ── PHASE 1.5: SCENARIO SELECTION ──
+    console.log('\n══════ PHASE 1.5: SCENARIO SELECTION ══════')
+
+    // Wait for scenarios to load (Player 1 generates them)
+    await sleep(10000)
+
+    // Check if scenario selection is active
+    const hasScenarios = await safeEval(page1, () =>
+      document.querySelectorAll('input[data-scenario-index]').length > 0
+    )
+
+    if (hasScenarios) {
+      console.log('Scenario selection phase detected!')
+      await handleScenarioSelection(page1, 'Alice')
+      await sleep(1000)
+      await handleScenarioSelection(page2, 'Bob')
+
+      // Wait for spinner to finish
+      console.log('\n  🎰 Spinning the wheel of fate...')
+      await sleep(8000)
+
+      // Read the result
+      const venue = await safeEval(page1, () => {
+        const texts = document.querySelectorAll('p')
+        for (const p of texts) {
+          if (p.style.color === 'rgb(249, 168, 212)' || p.style.fontStyle === 'italic') {
+            return p.textContent?.trim()
+          }
+        }
+        return null
+      })
+      if (venue) console.log(`  🏆 Selected venue: "${venue}"`)
+
+      // Wait for transition to first turn
+      await sleep(5000)
+    } else {
+      console.log('No scenario selection (skipped or already past)')
+    }
+
+    // ── PHASE 2: PLAY 5 ROUNDS ──
+    console.log('\n══════ PHASE 2: PLAYING 5 ROUNDS ══════')
 
     for (let round = 1; round <= TOTAL_ROUNDS; round++) {
-      console.log(`\n${'━'.repeat(60)}`)
+      console.log(`\n${'━'.repeat(70)}`)
       console.log(`  ROUND ${round} / ${TOTAL_ROUNDS}`)
-      console.log(`${'━'.repeat(60)}`)
+      console.log(`${'━'.repeat(70)}`)
 
       const roundStart = Date.now()
 
       // Submit actions for round 2+
       if (round > 1) {
         console.log('  Submitting actions...')
-        await sleep(1500)
+        await sleep(2000)
 
-        // Alice responds (bold, flirty)
-        console.log('  🔥 Alice choosing (bold/flirty)...')
-        await aliceResponds(page1, round - 1)
-        await sleep(800)
+        // Read what each player sees
+        const aliceUI = await readUI(page1)
+        const bobUI = await readUI(page2)
 
-        // Bob responds (guarded, anxious)
-        console.log('  😰 Bob choosing (guarded/anxious)...')
-        await bobResponds(page2, round - 1)
-        await sleep(800)
+        logUI('Alice', aliceUI)
+        logUI('Bob', bobUI)
+
+        // Characters respond to what they see
+        await aliceResponds(page1, round - 1, aliceUI)
+        await sleep(500)
+        await bobResponds(page2, round - 1, bobUI)
+        await sleep(500)
 
         // Click submit on both
         const p1Sub = await safeEval(page1, () => {
@@ -505,7 +803,7 @@ async function main() {
           if (btn && !btn.disabled) { btn.click(); return true }
           return false
         })
-        console.log(`  Submit: Alice=${p1Sub} Bob=${p2Sub}`)
+        console.log(`\n  📤 Submit: Alice=${p1Sub} Bob=${p2Sub}`)
 
         if (!p1Sub || !p2Sub) {
           await sleep(3000)
@@ -521,7 +819,7 @@ async function main() {
       }
 
       // Wait for round to complete
-      console.log('  Waiting for AI matchmaker...')
+      console.log('  ⏳ Waiting for AI matchmaker...')
       let p1Done = false, p2Done = false
 
       while ((!p1Done || !p2Done) && Date.now() - roundStart < ROUND_TIMEOUT) {
@@ -558,30 +856,10 @@ async function main() {
 
       if (!p1Done || !p2Done) {
         console.log(`  ⚠️ TIMEOUT at round ${round} (${roundTime}s)!`)
-        // Try to continue anyway
         continue
       }
 
       console.log(`  ✓ Round ${round} complete in ${roundTime}s`)
-
-      // Log a brief summary of what's on screen
-      await sleep(500)
-      const p1Preview = await safeEval(page1, () => {
-        const texts = document.querySelectorAll('.geems-text')
-        const first = texts[0]?.textContent?.trim()?.substring(0, 150) || ''
-        const inputs = document.querySelectorAll('[data-element-type]').length
-        return { text: first, inputs }
-      })
-      const p2Preview = await safeEval(page2, () => {
-        const texts = document.querySelectorAll('.geems-text')
-        const first = texts[0]?.textContent?.trim()?.substring(0, 150) || ''
-        const inputs = document.querySelectorAll('[data-element-type]').length
-        return { text: first, inputs }
-      })
-
-      if (p1Preview?.text) console.log(`  Alice sees: "${p1Preview.text}..."`)
-      if (p2Preview?.text) console.log(`  Bob sees: "${p2Preview.text}..."`)
-      console.log(`  UI elements: Alice=${p1Preview?.inputs || '?'} Bob=${p2Preview?.inputs || '?'}`)
     }
 
     // ── PHASE 3: DONE ──
@@ -589,7 +867,6 @@ async function main() {
     console.log(`Played ${TOTAL_ROUNDS} rounds. Browsers are still open — explore the results!`)
     console.log('Press Ctrl+C to close.')
 
-    // Keep alive so user can inspect
     await new Promise(() => {})
 
   } catch (err) {

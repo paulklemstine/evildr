@@ -727,6 +727,7 @@ function showMultiplayerLobby(): void {
 
         onDateRequest: (from: LobbyPlayer, respond: (accepted: boolean) => void) => {
           currentRespondFn = respond
+          localStorage.setItem('geems-partner-name', from.name)
           const modal = document.getElementById('date-request-modal')!
           const msg = document.getElementById('date-request-message')!
           msg.innerHTML = `<strong>${escapeHtml(from.name)}</strong> (${escapeHtml(from.gender)}) wants to go on a date with you!`
@@ -735,6 +736,7 @@ function showMultiplayerLobby(): void {
 
         onDateResponse: (accepted: boolean, partner: LobbyPlayer) => {
           if (accepted) {
+            localStorage.setItem('geems-partner-name', partner.name)
             showLobbyStatus(`${partner.name} accepted! Setting up your date...`)
           } else {
             showLobbyStatus(`${partner.name} declined. Try someone else!`)
@@ -1120,7 +1122,12 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
   const errorEl = document.getElementById('mp-error-display')!
   const submitBtn = document.getElementById('mp-submit-turn')! as HTMLButtonElement
 
-  const promptBuilder = createFlaggedPromptBuilder()
+  // Get player names for personalized prompts
+  const myName = localStorage.getItem('geems-lobby-name') || (isPlayer1 ? 'Player A' : 'Player B')
+  const partnerName = localStorage.getItem('geems-partner-name') || (isPlayer1 ? 'Player B' : 'Player A')
+  const nameA = isPlayer1 ? myName : partnerName
+  const nameB = isPlayer1 ? partnerName : myName
+  const promptBuilder = createFlaggedPromptBuilder(nameA, nameB)
   const sessionId = createSessionId()
 
   multiplayerLoop = new MultiplayerGameLoop({

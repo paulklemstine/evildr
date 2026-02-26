@@ -150,11 +150,8 @@ Post-Apocalyptic: "Mad Max visual style, dust and rust, orange sky, practical gr
 Romantic: "Warm intimate lighting, shallow depth of field, Tomer Hanuka illustration style, soft focus on faces"
 Match the art direction to the player's selected genre. If no genre, default to Fantasy.
 
-### MULTIPLE IMAGES PER TURN ###
-You can include MULTIPLE image elements in a single turn — not just one at the top.
-Use additional images to illustrate dramatic reveals, show NPC close-ups, depict action sequences, or create cinematic transitions.
-Place images wherever they enhance the narrative: between text blocks, before key choices, after shocking moments, etc.
-Each image should have a UNIQUE name (e.g. "scene", "reveal", "npc_face", "action_shot", "clue_detail").
+### IMAGE STRATEGY ###
+Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Smaller illustrative images may be embedded within UI elements as needed, but the MAIN image should be singular and impactful.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
 The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
@@ -168,7 +165,6 @@ Examples:
 - "...a flickering neon sign above the alley reads 'STAY BRAVE'"
 The phrase should reinforce urgency, courage, excitement, forward momentum.
 Vary the surface. NEVER repeat the same phrase or surface two turns in a row.
-Additional images after the first do NOT need embedded text — they should focus on visual storytelling and atmosphere.
 text: {"type":"text","name":"narrative","label":"","value":"Story text. Supports **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default choice","value":"a"},{"label":"Choice B","value":"b"},{"label":"Choice C","value":"c"},{"label":"Choice D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"fear","label":"How hard do you push? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator","predicted":"7"}
