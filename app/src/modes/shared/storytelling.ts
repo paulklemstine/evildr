@@ -51,8 +51,37 @@ Senses: sight, sound, touch/temperature, smell, taste. Lead with a DIFFERENT sen
 Constant maximum intensity creates NUMBNESS. Follow this pattern:
 PEAK -> valley -> RISE -> PEAK -> valley -> RISE -> BIGGER PEAK
 After an intense turn, the NEXT turn should start with brief aftermath, include a quieter beat (NPC moment, discovery, planning), plant seeds for the next peak, then launch with a cliffhanger.
-Valleys are where seeds get planted, NPCs reveal depth, and anticipation BUILDS.
+Valleys are NOT boring — they are INTIMATE. They contain:
+- An NPC moment that deepens a relationship or reveals a hidden truth
+- A discovery that recontextualizes the LAST peak ("Wait... THAT'S why they attacked us")
+- A player choice that is EMOTIONAL rather than action-based (trust someone? share a secret? sacrifice?)
+- A sensory moment of beauty or strangeness that contrasts prior chaos
+- 1-2 seeds planted for the NEXT peak
+The valley makes the player think "I care about this world." The peak makes them think "AND NOW IT'S ALL AT RISK."
 Track intensity in notes: "peak" | "valley" | "rise". Two consecutive peaks is worse than peak-then-valley.
+
+**MICRO-ARCS (5-7 Turn Story Cycles)**
+Every 5-7 turns should complete a MICRO-ARC:
+Turn 1-2: Setup + Inciting Incident (throw them into action immediately)
+Turn 3-4: Rising complications (stakes escalate, allies appear, loyalties tested)
+Turn 5-6: Crisis + Climax (maximum tension, the choice that MATTERS)
+Turn 7: Resolution that IMMEDIATELY seeds the NEXT micro-arc
+The resolution of one arc IS the inciting incident of the next.
+"You defeated the warlord — THEREFORE you inherit his enemies."
+NEVER let the player feel the story is 'done.' Every ending is a beginning.
+
+**VARIABLE REWARD SCHEDULE (The Slot Machine)**
+Unpredictable rewards trigger MORE dopamine than predictable ones.
+Reward types to rotate: POWER FANTASY (impossible feat), DISCOVERY (recontextualizes everything),
+NARROW ESCAPE (survived by thinnest margin), TREASURE (gain something valuable),
+EMOTIONAL PAYOFF (seed planted 5 turns ago pays off), SPECTACLE (visually overwhelming event),
+STATUS (someone recognizes what they've done).
+Every turn gets a MINOR reward. Every ~3rd turn a MAJOR reward. Every ~7th turn a JACKPOT (multiple stacking).
+NEAR-MISS PROTOCOL: 1 in 4 turns should include a near-miss — they ALMOST got the reward:
+"The vault clicks open — but as you reach inside, the floor gives way."
+"She was about to tell you the truth — then the explosion."
+Near-misses trigger more dopamine than actual wins. They create HUNGER to continue.
+Track in notes: {last_reward_type, turns_since_major, turns_since_jackpot}
 
 **7. NPC DEPTH**
 Every named NPC must have:
@@ -95,8 +124,8 @@ Write justifications that are SPECIFIC to this exact question in this exact narr
 /**
  * Banned phrases list — eliminates common AI writing cliches.
  */
-export const BANNED_PHRASES = `### BANNED PHRASES — AI CLICHE ELIMINATION ###
-NEVER use these. Replace with SPECIFIC, SENSORY, ORIGINAL descriptions:
+export const BANNED_PHRASES = `### BANNED PHRASES & ANTI-PREDICTABILITY ###
+NEVER use these cliches. Replace with SPECIFIC, SENSORY, ORIGINAL descriptions:
 - "A chill runs down your spine" -> describe the SPECIFIC physical sensation
 - "Little did they know" -> show dramatic irony through action
 - "Suddenly" at sentence start -> use sentence STRUCTURE for surprise
@@ -111,7 +140,21 @@ NEVER use these. Replace with SPECIFIC, SENSORY, ORIGINAL descriptions:
 - "Something felt... off" -> identify the SPECIFIC wrongness
 - "Darkness enveloped" -> describe what the darkness DOES to specific senses
 - "Steeled themselves" -> show the physical action of gathering courage
-- "Exchanged a glance" -> describe what the GLANCE communicates`
+- "Exchanged a glance" -> describe what the GLANCE communicates
+
+SPECIFICITY MANDATE:
+NEVER write "a weapon" — write "a rusted cavalry saber with a notched blade."
+NEVER write "a building" — write "a three-story tenement with fire escapes dripping rust."
+NEVER write "she looked scared" — write "her pupils were blown wide, one hand white-knuckling the doorframe."
+Every noun gets ONE specific detail. Every emotion gets a PHYSICAL manifestation.
+
+BANNED STORY BEATS (too predictable — scrap the obvious):
+- The betrayal by the obvious villain (instead: the ALLY betrays you, for GOOD reasons you understand)
+- The treasure was inside you all along (instead: the treasure is real but comes with a terrible cost)
+- The chosen one prophecy (instead: there is no prophecy — you chose this)
+- The villain monologue explaining the plan (instead: show don't tell)
+- "It was all a dream/simulation" (NEVER)
+Before writing each scene, mentally generate the MOST OBVIOUS version. Then DISCARD IT.`
 
 /**
  * Stagnation detection directive — forces the LLM to self-monitor for repetition.
@@ -138,7 +181,59 @@ export const NARRATIVE_TRACKING_TEMPLATE = `### NARRATIVE TRACKING (update every
 - **Last Cliffhanger Type:** [revelation|threat|mystery|reversal|dilemma]
 - **Cliffhanger Types Used (last 7):** [list]
 - **Turn Intensity:** [peak|valley|rise] — follow the rhythm
+- **Micro-Arc Phase:** [setup|rising|crisis|resolution] — which act of current 5-7 turn cycle?
 - **Choice Pattern:** {bold: N, clever: N, compassionate: N, chaotic: N}
 - **Active NPCs:** [{name, speech_pattern, visible_goal, hidden_goal, player_relationship}]
 - **Variety Check:** {last_setting: "type", last_scenario: "type", last_lead_sense: "which"}
-- **Consequence Queue:** [prior choices that MUST echo in upcoming turns]`
+- **Consequence Queue:** [prior choices that MUST echo in upcoming turns]
+- **Reward Track:** {last_reward_type, turns_since_major: N, turns_since_jackpot: N}
+- **Active Threads:** [main_quest, relationship, mystery] — always maintain 3`
+
+/**
+ * Cinematic image prompt craft — shared by all modes.
+ * Each mode appends its own art direction tier (style, references, palette).
+ */
+export const CINEMATIC_IMAGE_CRAFT = `### CINEMATIC IMAGE PROMPT FORMULA ###
+Every image prompt MUST follow this structure for MAXIMUM visual impact:
+
+1. SUBJECT + ACTION: Never static poses. Characters MID-ACTION:
+   mid-leap, mid-swing, catching, dodging, reaching, turning sharply.
+   BAD: "a warrior standing in a cave"
+   GOOD: "a scarred warrior mid-dodge as a blade sweeps past her face, sparks flying"
+
+2. CAMERA ANGLE (choose ONE per image, vary across turns):
+   - Low angle: heroic, powerful, towering
+   - Dutch angle: chaos, disorientation, unease
+   - Bird's eye: scale, vulnerability, tactical
+   - Over-the-shoulder: intimacy, tension between characters
+   - Extreme close-up: emotion, detail, intensity
+   - Wide establishing shot: spectacle, scale, world-building
+
+3. LIGHTING (choose 1-2):
+   - Rim/backlighting: silhouettes, halos, dramatic outlines
+   - Chiaroscuro: extreme light/dark contrast
+   - Volumetric light: god rays, dust motes, fog with light shafts
+   - Neon/practical lighting: colored light sources IN the scene
+   - Firelight: warm, flickering, intimate
+   - Lightning/explosion: harsh, momentary, reveals shapes
+
+4. COLOR PALETTE (specify 2-3 dominant colors):
+   - Teal + orange: blockbuster action
+   - Magenta + cyan: cyberpunk, neon noir
+   - Gold + deep blue: epic fantasy, treasure
+   - Red + black: danger, horror, intensity
+   - Warm amber + shadow: intimate, dramatic
+
+5. ENERGY KEYWORDS (append 2-3):
+   motion blur, particle effects, sparks, dramatic, visceral,
+   shallow depth of field, lens flare, cinematic, sweeping, towering
+
+EXAMPLE COMPOSITE PROMPT:
+"A scarred bounty hunter diving through a stained-glass window, shards of colored glass exploding outward in slow motion, revolver firing toward camera, low angle shot, volumetric light streaming through breaking glass in orange and violet shafts, motion blur on fragments, cinematic and visceral"
+
+IMAGE PROMPT ANTI-PATTERNS — NEVER:
+- Static portraits: "A man standing in a room" — NO
+- Generic settings: "A fantasy landscape" — NO. "Obsidian spires rising from a boiling crimson lake" — YES
+- Missing lighting: ALWAYS specify lighting
+- No color direction: "Colorful" means nothing. "Magenta neon reflecting off rain-slicked chrome" means everything
+- Telling emotion: "A sad woman" — NO. "A woman's hand releasing a crumpled letter into the wind" — YES`

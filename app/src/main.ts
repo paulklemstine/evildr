@@ -559,8 +559,29 @@ function showMultiplayerLobby(): void {
           </div>
         </div>
 
-        <!-- Fallback: Join by Code -->
-        <div class="mode-card" style="margin-top: 1rem; opacity: 0.7;">
+        <!-- Private Room: Create or Join by Code -->
+        <div class="mode-card" style="margin-top: 1rem;">
+          <div style="display: flex; gap: 0.75rem; margin-bottom: 0.75rem;">
+            <button id="btn-create-private" class="geems-button" style="flex: 1; font-size: 0.875rem;">
+              Create Private Room
+            </button>
+          </div>
+          <!-- Room code display (hidden until created) -->
+          <div id="private-room-display" style="display: none; text-align: center; padding: 1rem; border-radius: 0.75rem; background: rgba(34, 197, 94, 0.08); border: 1px solid rgba(34, 197, 94, 0.2);">
+            <p class="text-xs" style="color: var(--text-muted); margin-bottom: 0.5rem;">Share this code with your date</p>
+            <div id="private-room-code" style="
+              font-family: 'Courier New', Courier, monospace;
+              font-size: 2rem; font-weight: bold; letter-spacing: 0.3em;
+              color: var(--text-heading); margin-bottom: 0.5rem;
+            "></div>
+            <button id="btn-copy-room-code" class="text-xs" style="
+              background: none; border: 1px solid var(--border-color, #e2e8f0);
+              border-radius: 0.375rem; padding: 0.25rem 0.75rem;
+              color: var(--text-secondary); cursor: pointer;
+            ">Copy code</button>
+            <p class="text-xs" style="color: var(--text-muted); margin-top: 0.5rem;">Waiting for your date to join...</p>
+          </div>
+          <!-- Join by code -->
           <details>
             <summary style="cursor: pointer; font-size: 0.875rem; color: var(--text-muted);">
               Have a room code? Join directly
@@ -790,6 +811,28 @@ function showMultiplayerLobby(): void {
     transitionToGame(false, code)
   })
 
+  // --- Create Private Room ---
+  document.getElementById('btn-create-private')?.addEventListener('click', async () => {
+    const btn = document.getElementById('btn-create-private') as HTMLButtonElement
+    btn.disabled = true
+    btn.textContent = 'Creating...'
+
+    // transitionToGame as host with no lobby-based partner — just create the room and show code
+    transitionToGame(true, undefined)
+  })
+
+  // Copy room code to clipboard
+  document.getElementById('btn-copy-room-code')?.addEventListener('click', () => {
+    const code = document.getElementById('private-room-code')?.textContent || ''
+    if (code) {
+      navigator.clipboard.writeText(code).then(() => {
+        const btn = document.getElementById('btn-copy-room-code')!
+        btn.textContent = 'Copied!'
+        setTimeout(() => { btn.textContent = 'Copy code' }, 2000)
+      }).catch(() => {})
+    }
+  })
+
   // --- Helper: Render Player Grid ---
   function renderPlayerGrid(players: LobbyPlayer[]): void {
     const container = document.getElementById('lobby-players')!
@@ -848,7 +891,7 @@ function showMultiplayerLobby(): void {
   }
 
   // --- Helper: Transition to Game ---
-  async function transitionToGame(isHost: boolean, _roomCode: string): Promise<void> {
+  async function transitionToGame(isHost: boolean, _roomCode?: string): Promise<void> {
     showLobbyStatus('Starting your date...')
 
     // Keep reference to lobby client for sending room code
@@ -881,6 +924,14 @@ function showMultiplayerLobby(): void {
           },
         })
 
+        // Show room code in private room display
+        const codeDisplay = document.getElementById('private-room-display')
+        const codeEl = document.getElementById('private-room-code')
+        if (codeDisplay && codeEl) {
+          codeEl.textContent = roomHandle.code
+          codeDisplay.style.display = 'block'
+        }
+
         // Send room code to the partner via the lobby P2P connection
         if (savedLobbyClient) {
           savedLobbyClient.sendRoomCode(roomHandle.code)
@@ -902,7 +953,7 @@ function showMultiplayerLobby(): void {
       if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
 
       try {
-        guestHandle = await joinRoom(_roomCode, {
+        guestHandle = await joinRoom(_roomCode!, {
           onConnected: () => {
             // Game will start after joinRoom resolves (guestHandle must be set first)
           },

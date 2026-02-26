@@ -4,10 +4,13 @@
  * Extracts and logs all narrative text, hidden analysis fields, interactive
  * elements, and timing data for each round. Takes screenshots at every stage.
  *
- * Uses Puppeteer (two tabs in one browser).
+ * Uses Puppeteer (two separate browsers with isolated profiles).
  */
 
 import puppeteer from 'puppeteer'
+import { mkdtempSync } from 'fs'
+import { join } from 'path'
+import { tmpdir } from 'os'
 import { mkdirSync, writeFileSync } from 'fs'
 import path from 'path'
 
@@ -233,16 +236,27 @@ async function main() {
 
   const report = { rounds: [], errors: {} }
 
-  console.log('Launching browser...')
-  const browser = await puppeteer.launch({
+  console.log('Launching separate browsers (isolated profiles)...')
+  const userDataDir1 = mkdtempSync(join(tmpdir(), 'p1-'))
+  const userDataDir2 = mkdtempSync(join(tmpdir(), 'p2-'))
+
+  const browser1 = await puppeteer.launch({
     headless: true,
     protocolTimeout: 240000,
+    userDataDir: userDataDir1,
+    args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,1024'],
+    defaultViewport: { width: 1280, height: 1024 },
+  })
+  const browser2 = await puppeteer.launch({
+    headless: true,
+    protocolTimeout: 240000,
+    userDataDir: userDataDir2,
     args: ['--no-sandbox', '--disable-setuid-sandbox', '--window-size=1280,1024'],
     defaultViewport: { width: 1280, height: 1024 },
   })
 
-  const p1 = await browser.newPage()
-  const p2 = await browser.newPage()
+  const [p1] = await browser1.pages()
+  const [p2] = await browser2.pages()
 
   const p1Errors = [], p2Errors = []
   for (const [page, errors] of [[p1, p1Errors], [p2, p2Errors]]) {
@@ -625,8 +639,9 @@ async function main() {
     await ss(p1, 'ERROR-p1').catch(() => {})
     await ss(p2, 'ERROR-p2').catch(() => {})
   } finally {
-    await browser.close()
-    console.log('\nBrowser closed.')
+    await browser1.close()
+    await browser2.close()
+    console.log('\nBrowsers closed.')
   }
 }
 
