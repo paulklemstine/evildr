@@ -710,6 +710,18 @@ export class MultiplayerGameLoop {
     })
   }
 
+  /** Emoji assigned to each scenario slot (up to 8). */
+  private static readonly VENUE_EMOJIS = ['\u{1F30C}', '\u{1F525}', '\u{1F33F}', '\u{1F3A1}', '\u{1F30A}', '\u{1F3B7}', '\u{1F9EA}', '\u{2728}']
+
+  /** Shorten a verbose scenario to ~6 words by extracting the key noun phrase. */
+  private static shortenScenario(text: string): string {
+    // Try to grab the first noun phrase up to a comma or "where"
+    const m = text.match(/^(?:An?\s+)?(.+?)(?:,|\s+where|\s+with\s+only|\s+accessible|\s+filled|\s+bathed|\s+the\s+crisp)/i)
+    if (m) return m[1].replace(/^(an?\s+)/i, '').trim()
+    // Fallback: first 6 words
+    return text.split(/\s+/).slice(0, 6).join(' ')
+  }
+
   private renderScenarioCheckboxes(): void {
     const { container } = this.config
 
@@ -720,30 +732,36 @@ export class MultiplayerGameLoop {
     header.style.cssText = 'text-align: center; margin-bottom: 1.5rem;'
     const h2 = document.createElement('h2')
     h2.style.cssText = 'color: var(--text-heading); font-family: "Playfair Display", serif; font-size: 1.5rem; margin-bottom: 0.5rem;'
-    h2.textContent = 'Where should your date happen?'
+    h2.textContent = 'Pick your vibe'
     const subtitle = document.createElement('p')
     subtitle.style.cssText = 'color: var(--text-muted); font-size: 0.875rem;'
-    subtitle.textContent = 'Check the scenarios that excite you. Your date is doing the same...'
+    subtitle.textContent = 'Your date is picking too. Mutual faves get better odds!'
     header.appendChild(h2)
     header.appendChild(subtitle)
     container.appendChild(header)
 
-    // Scenario checkboxes
+    // Scenario checkboxes — compact with emoji
     this.scenarios.forEach((scenario, index) => {
       const label = document.createElement('label')
       label.className = 'geems-checkbox-option'
-      label.style.cssText = 'margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;'
+      label.style.cssText = 'margin-bottom: 0.5rem; display: flex; align-items: center; gap: 0.6rem; cursor: pointer; padding: 0.5rem 0.75rem; border-radius: 0.5rem; transition: background 0.15s;'
 
       const input = document.createElement('input')
       input.type = 'checkbox'
       input.dataset.scenarioIndex = String(index)
-      input.style.cssText = 'accent-color: #f9a8d4; margin-top: 0.2rem; flex-shrink: 0;'
+      input.style.cssText = 'accent-color: #f9a8d4; flex-shrink: 0;'
+
+      const emoji = document.createElement('span')
+      emoji.style.cssText = 'font-size: 1.25rem; flex-shrink: 0;'
+      emoji.textContent = MultiplayerGameLoop.VENUE_EMOJIS[index] || '\u{2728}'
 
       const text = document.createElement('span')
-      text.style.cssText = 'color: var(--text-secondary); font-size: 0.9rem; line-height: 1.4;'
-      text.textContent = scenario
+      text.style.cssText = 'color: var(--text-secondary); font-size: 0.9rem; line-height: 1.3;'
+      text.textContent = MultiplayerGameLoop.shortenScenario(scenario)
+      text.title = scenario // full text on hover
 
       label.appendChild(input)
+      label.appendChild(emoji)
       label.appendChild(text)
       container.appendChild(label)
     })
@@ -781,9 +799,15 @@ export class MultiplayerGameLoop {
     this.tryRunSpinner()
   }
 
+  /** Candidate on the spinner with its weight and metadata. */
+  private spinnerCandidates: { text: string; emoji: string; weight: number; mutual: boolean; originalIndex: number }[] = []
+
   private tryRunSpinner(): void {
     // Need both players to have submitted
     if (this.myScenarioSelections === null || this.partnerScenarioSelections === null) return
+
+    const mySet = new Set(this.myScenarioSelections)
+    const partnerSet = new Set(this.partnerScenarioSelections)
 
     // Union of both players' liked scenarios
     const combined = new Set([...this.myScenarioSelections, ...this.partnerScenarioSelections])
@@ -799,39 +823,56 @@ export class MultiplayerGameLoop {
       return
     }
 
-    const candidates = candidateIndices.map(i => this.scenarios[i])
+    // Build weighted candidates: mutual picks get 2x weight
+    this.spinnerCandidates = candidateIndices.map(i => {
+      const mutual = mySet.has(i) && partnerSet.has(i)
+      return {
+        text: this.scenarios[i],
+        emoji: MultiplayerGameLoop.VENUE_EMOJIS[i] || '\u{2728}',
+        weight: mutual ? 2 : 1,
+        mutual,
+        originalIndex: i,
+      }
+    })
 
-    // Player 1 picks the winner and tells Player 2
+    // Player 1 picks the winner (weighted random) and tells Player 2
     let winnerIndex: number
     if (this.config.isPlayer1) {
-      winnerIndex = Math.floor(Math.random() * candidates.length)
+      // Weighted random selection
+      const totalWeight = this.spinnerCandidates.reduce((s, c) => s + c.weight, 0)
+      let roll = Math.random() * totalWeight
+      winnerIndex = 0
+      for (let i = 0; i < this.spinnerCandidates.length; i++) {
+        roll -= this.spinnerCandidates[i].weight
+        if (roll <= 0) { winnerIndex = i; break }
+      }
       this.config.sendToPartner({
         type: 'scenario-result',
-        venue: candidates[winnerIndex],
+        venue: this.spinnerCandidates[winnerIndex].text,
         winnerIndex,
       } as PeerMessage)
     } else {
       // Player 2 already received the result via handlePartnerData
-      // Use the stored winner or fall back to random
       if (this.selectedVenue) {
-        winnerIndex = candidates.indexOf(this.selectedVenue)
+        winnerIndex = this.spinnerCandidates.findIndex(c => c.text === this.selectedVenue)
         if (winnerIndex === -1) winnerIndex = 0
       } else {
         winnerIndex = 0
       }
     }
 
-    this.showScenarioSpinner(candidates, winnerIndex)
+    this.showScenarioSpinner(winnerIndex)
   }
 
-  private showScenarioSpinner(candidates: string[], winnerIndex: number): void {
+  private showScenarioSpinner(winnerIndex: number): void {
     const { container } = this.config
+    const candidates = this.spinnerCandidates
 
     container.innerHTML = ''
 
     // Header
     const header = document.createElement('div')
-    header.style.cssText = 'text-align: center; margin-bottom: 1.5rem;'
+    header.style.cssText = 'text-align: center; margin-bottom: 1rem;'
     const h2 = document.createElement('h2')
     h2.style.cssText = 'color: var(--text-heading); font-family: "Playfair Display", serif; font-size: 1.5rem;'
     h2.textContent = 'Spinning the wheel of fate...'
@@ -842,14 +883,20 @@ export class MultiplayerGameLoop {
     const wheelContainer = document.createElement('div')
     wheelContainer.style.cssText = 'position: relative; width: 300px; height: 300px; margin: 0 auto;'
 
-    const segmentAngle = 360 / candidates.length
+    // Build proportional conic-gradient stops
+    const totalWeight = candidates.reduce((s, c) => s + c.weight, 0)
     const colors = ['#f9a8d4', '#e9c46a', '#60a5fa', '#fb7185', '#9b5de5', '#2a9d8f', '#f4a261', '#22c55e']
-    const gradientStops = candidates.map((_, i) => {
+    const segmentAngles: number[] = []
+    let gradientStops = ''
+    let runningDeg = 0
+    candidates.forEach((c, i) => {
+      const angle = (c.weight / totalWeight) * 360
+      segmentAngles.push(angle)
       const color = colors[i % colors.length]
-      const start = i * segmentAngle
-      const end = (i + 1) * segmentAngle
-      return `${color} ${start}deg ${end}deg`
-    }).join(', ')
+      const end = runningDeg + angle
+      gradientStops += `${gradientStops ? ', ' : ''}${color} ${runningDeg}deg ${end}deg`
+      runningDeg = end
+    })
 
     const wheel = document.createElement('div')
     wheel.className = 'scenario-wheel'
@@ -861,28 +908,29 @@ export class MultiplayerGameLoop {
       box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     `
 
-    // Add segment labels as SVG text for proper rotation
-    candidates.forEach((scenario, i) => {
-      const angle = (i * segmentAngle) + (segmentAngle / 2)
-      const label = document.createElement('div')
-      label.style.cssText = `
+    // Add emoji labels at center of each segment
+    let emojiRunning = 0
+    candidates.forEach((c, i) => {
+      const midAngle = emojiRunning + segmentAngles[i] / 2
+      emojiRunning += segmentAngles[i]
+      const emojiDiv = document.createElement('div')
+      emojiDiv.style.cssText = `
         position: absolute; top: 50%; left: 50%; width: 0; height: 0;
-        transform: rotate(${angle}deg);
+        transform: rotate(${midAngle}deg);
       `
-      const textSpan = document.createElement('span')
-      const shortLabel = scenario.length > 35 ? scenario.substring(0, 32) + '...' : scenario
-      textSpan.textContent = shortLabel
-      textSpan.style.cssText = `
+      const emojiSpan = document.createElement('span')
+      emojiSpan.textContent = c.emoji
+      // Place emoji further from center for larger slices, closer for small ones
+      const dist = segmentAngles[i] > 30 ? 80 : 60
+      emojiSpan.style.cssText = `
         position: absolute;
-        transform: rotate(0deg) translateX(25px);
-        transform-origin: left center;
-        font-size: 0.55rem; color: #fff; font-weight: 600;
-        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
-        white-space: nowrap; max-width: 100px; overflow: hidden; text-overflow: ellipsis;
-        top: -0.35em;
+        transform: rotate(-${midAngle}deg) translateX(0);
+        left: ${dist}px; top: -0.6em;
+        font-size: ${segmentAngles[i] > 40 ? '1.5rem' : '1.1rem'};
+        filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
       `
-      label.appendChild(textSpan)
-      wheel.appendChild(label)
+      emojiDiv.appendChild(emojiSpan)
+      wheel.appendChild(emojiDiv)
     })
 
     // Pointer triangle at top
@@ -899,15 +947,39 @@ export class MultiplayerGameLoop {
     wheelContainer.appendChild(pointer)
     container.appendChild(wheelContainer)
 
+    // Legend below the wheel
+    const legend = document.createElement('div')
+    legend.style.cssText = 'margin-top: 1.25rem; display: flex; flex-wrap: wrap; gap: 0.4rem 1rem; justify-content: center;'
+    candidates.forEach((c, i) => {
+      const item = document.createElement('div')
+      item.style.cssText = 'display: flex; align-items: center; gap: 0.35rem; font-size: 0.8rem;'
+
+      const swatch = document.createElement('span')
+      swatch.style.cssText = `width: 10px; height: 10px; border-radius: 2px; flex-shrink: 0; background: ${colors[i % colors.length]};`
+
+      const label = document.createElement('span')
+      label.style.cssText = `color: var(--text-secondary); line-height: 1.2; ${c.mutual ? 'font-weight: 600;' : ''}`
+      label.textContent = `${c.emoji} ${MultiplayerGameLoop.shortenScenario(c.text)}${c.mutual ? ' \u{1F91D}' : ''}`
+      label.title = c.text
+
+      item.appendChild(swatch)
+      item.appendChild(label)
+      legend.appendChild(item)
+    })
+    container.appendChild(legend)
+
     // Result display (hidden initially)
     const resultDiv = document.createElement('div')
-    resultDiv.style.cssText = 'text-align: center; margin-top: 2rem; opacity: 0; transition: opacity 0.6s ease;'
+    resultDiv.style.cssText = 'text-align: center; margin-top: 1.5rem; opacity: 0; transition: opacity 0.6s ease;'
     container.appendChild(resultDiv)
 
-    // Calculate target rotation: spin 5 full rotations + land on winner
+    // Calculate target rotation for proportional segments
     // The pointer is at the TOP (0 deg). We rotate the wheel clockwise.
     // To land on segment `winnerIndex`, the center of that segment needs to align with top.
-    const targetAngle = 360 * 5 + (360 - (winnerIndex * segmentAngle + segmentAngle / 2))
+    let winnerMidDeg = 0
+    for (let i = 0; i < winnerIndex; i++) winnerMidDeg += segmentAngles[i]
+    winnerMidDeg += segmentAngles[winnerIndex] / 2
+    const targetAngle = 360 * 5 + (360 - winnerMidDeg)
 
     // Start spin after brief pause
     setTimeout(() => {
@@ -917,14 +989,14 @@ export class MultiplayerGameLoop {
     // After spin completes (4s transition + buffer)
     setTimeout(() => {
       const winner = candidates[winnerIndex]
-      this.selectedVenue = winner
+      this.selectedVenue = winner.text
 
       const title = document.createElement('p')
       title.style.cssText = 'font-size: 1.25rem; color: var(--text-heading); font-family: "Playfair Display", serif; margin-bottom: 0.5rem;'
-      title.textContent = 'Your date will be at...'
+      title.textContent = `${winner.emoji} Your date will be at...`
       const venue = document.createElement('p')
       venue.style.cssText = 'color: #f9a8d4; font-size: 1rem; line-height: 1.5; max-width: 400px; margin: 0 auto; font-style: italic;'
-      venue.textContent = winner
+      venue.textContent = winner.text
       resultDiv.appendChild(title)
       resultDiv.appendChild(venue)
       resultDiv.style.opacity = '1'
