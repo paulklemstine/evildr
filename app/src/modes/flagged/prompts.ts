@@ -93,8 +93,16 @@ Start with preamble text. Do NOT begin with the delimiter. Plain text only, no J
 ${orchestratorInstructions}
 
 ### TASK ###
-Generate a JSON UI array for this player based on the orchestrator instructions above.
-Include ALL required hidden elements (notes, green_flags, red_flags, own_clinical_analysis, partner_clinical_analysis).
+Generate a JSON UI array for this player. The array MUST contain these elements IN ORDER:
+1. Visible elements: image(s), text(s), interactive elements, radio choices
+2. MANDATORY hidden elements — your response is INVALID without ALL FIVE:
+   {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"green_flags","label":"","value":"<markdown list of partner's positive behaviors>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"red_flags","label":"","value":"<markdown list of partner's concerning behaviors>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"own_clinical_analysis","label":"","value":"<this player's psychological profile>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"partner_clinical_analysis","label":"","value":"<chemistry/compatibility assessment>","color":"#000","voice":"system"}
+
+CRITICAL: The 5 hidden elements above are NOT optional. They MUST be the LAST 5 elements in the array.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
@@ -236,7 +244,12 @@ ${NOTES_TEMPLATE}
 4. Interactive elements — ALL framed as in-date actions. Use variety: sliders, toggles, textfields, button groups, ratings, not just radio. Include depth probe + breadth probe.
 5. text — Matchmaker closing tease (voice:"god", name:"divine_wisdom", color:#e9c46a).
 6. radio — EXACTLY 4 choices (last visible). BOLD(#e11d48) / GENUINE(#22c55e) / PLAYFUL(#fb7185) / GUARDED(#60a5fa).
-7-11. Hidden elements: notes, green_flags, red_flags, own_clinical_analysis, partner_clinical_analysis.
+7. hidden name="notes" — FULL dossier using template above. This is the AI's persistent memory.
+8. hidden name="green_flags" — Partner's positive behaviors (markdown list).
+9. hidden name="red_flags" — Partner's concerning behaviors (markdown list).
+10. hidden name="own_clinical_analysis" — This player's psychological profile.
+11. hidden name="partner_clinical_analysis" — Chemistry/compatibility assessment.
+Items 7-11 are MANDATORY type:"hidden" elements. Never omit them.
 
 ### DIRECTIVES ###
 - Profile through behavior, not questions. Every interactive element is a disguised psychological probe.

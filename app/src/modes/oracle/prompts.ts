@@ -65,7 +65,7 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 // ---------------------------------------------------------------------------
 
 const UI_REF = `### UI ELEMENT TYPES ###
-image: {"type":"image","name":"scene","label":"GENERATE A SHORT EVOCATIVE TITLE for this vision","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.

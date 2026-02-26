@@ -136,7 +136,7 @@ RULES:
 6. EVERY TURN MUST END ON A CLIFFHANGER.
 
 ### UI ELEMENT TYPES ###
-image: {"type":"image","name":"scene","label":"GENERATE A SHORT EVOCATIVE TITLE for this scene","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
+image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.
