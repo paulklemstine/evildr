@@ -17,8 +17,10 @@ import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT } from '../shared/storytelli
 
 /** Prompt builder interface for the orchestrator-aware Flagged mode. */
 export interface FlaggedPromptBuilder {
-  /** Build the orchestrator prompt for the first turn (no actions yet). */
-  buildFirstTurnOrchestratorPrompt(): string
+  /** Build a prompt that generates multiple date scenario options. */
+  buildScenarioGeneratorPrompt(): string
+  /** Build the orchestrator prompt for the first turn (no actions yet). Optional venue from scenario selection. */
+  buildFirstTurnOrchestratorPrompt(venue?: string): string
   /** Build the orchestrator prompt for subsequent turns. */
   buildOrchestratorPrompt(
     player1Actions: string,
@@ -40,7 +42,18 @@ export const ORCHESTRATOR_DELIMITER = '---|||---'
 
 export function createFlaggedPromptBuilder(): FlaggedPromptBuilder {
   return {
-    buildFirstTurnOrchestratorPrompt(): string {
+    buildScenarioGeneratorPrompt(): string {
+      return SCENARIO_GENERATOR
+    },
+
+    buildFirstTurnOrchestratorPrompt(venue?: string): string {
+      if (venue) {
+        // Replace the venue-invention instruction with the pre-selected venue
+        return ORCHESTRATOR_FIRSTRUN.replace(
+          /1\. PREAMBLE: Invent a SPECIFIC, VIVID venue[^]*?conversational opportunities\./,
+          `1. PREAMBLE: The date takes place at: "${venue}". Build on this setting with rich sensory detail. Describe the atmosphere, sounds, lighting, and what makes this place special. Do NOT invent a different venue.`,
+        )
+      }
       return ORCHESTRATOR_FIRSTRUN
     },
 
@@ -164,6 +177,22 @@ Openness | Confidence | Empathy | Authenticity | Humor | Vulnerability | Dominan
 - Red/green flag history with specific moments
 - Matchmaker's private strategic notes for next turn
 - Planted seeds and callbacks`
+
+// ---------------------------------------------------------------------------
+// Scenario generator prompt
+// ---------------------------------------------------------------------------
+
+const SCENARIO_GENERATOR = `Generate exactly 8 creative, vivid date scenario locations. Each should be a specific, atmospheric setting.
+
+Requirements:
+- Each scenario is ONE sentence describing a SPECIFIC place (not generic like "a restaurant")
+- Include sensory detail: lighting, sounds, smells, temperature
+- Vary the energy: some intimate/quiet, some exciting/adventurous, some quirky/unusual
+- At least one unconventional or surprising option
+- Each suggests a different KIND of date energy (cozy, thrilling, mysterious, playful, elegant, wild)
+
+Return ONLY a JSON array of 8 strings. No markdown fences, no explanation.
+Example format: ["A candlelit speakeasy hidden behind a bookshelf door, where jazz saxophone drifts through haze and the bartender knows everyone by name","A midnight rooftop garden overlooking city lights, warm fairy lights tangled through climbing roses and the distant sound of a street musician below"]`
 
 // ---------------------------------------------------------------------------
 // Orchestrator prompts (lean)

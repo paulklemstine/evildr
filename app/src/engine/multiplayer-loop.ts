@@ -116,6 +116,9 @@ export type PeerMessage =
   | { type: 'orchestrator'; turnNumber: number; section: string }
   | { type: 'ready'; turnNumber: number }
   | { type: 'partner-submitted'; turnNumber: number }
+  | { type: 'scenarios'; scenarios: string[] }
+  | { type: 'scenario-selections'; liked: number[] }
+  | { type: 'scenario-result'; venue: string; winnerIndex: number }
   | { type: 'ping' }
   | { type: 'pong' }
 
@@ -551,6 +554,13 @@ export class MultiplayerGameLoop {
   private cleanupCelebrations: (() => void) | null = null
   private turnInProgress = false
 
+  // Scenario selection state
+  private scenarios: string[] = []
+  private myScenarioSelections: number[] | null = null
+  private partnerScenarioSelections: number[] | null = null
+  private selectedVenue: string | null = null
+  private scenarioResolve: (() => void) | null = null
+
   constructor(config: MultiplayerGameLoopConfig) {
     this.config = config
     this.state = this.createDefaultState()
@@ -633,6 +643,300 @@ export class MultiplayerGameLoop {
           img.src = this.config.imageClient.getImageUrl(prompt)
         }
       })
+  }
+
+  // ---- Scenario selection phase ----
+
+  /**
+   * Run the scenario selection phase before the first turn.
+   * Player 1 generates scenarios via LLM, both players pick favorites,
+   * then a spinner wheel selects the venue.
+   */
+  async startScenarioSelection(): Promise<void> {
+    const { llmClient, promptBuilder, onLoading, onWaitingStatus, isPlayer1 } = this.config
+
+    if (isPlayer1) {
+      // Player 1: generate scenarios via LLM
+      onWaitingStatus?.('The matchmaker is scouting venues...')
+      onLoading(true)
+
+      try {
+        const prompt = promptBuilder.buildScenarioGeneratorPrompt()
+        const response = await llmClient.generateTurn(prompt)
+        let parsed: unknown
+        try {
+          parsed = JSON.parse(response.content)
+        } catch {
+          // Try extracting array from response
+          const match = response.content.match(/\[[\s\S]*\]/)
+          if (match) parsed = JSON.parse(match[0])
+        }
+        this.scenarios = Array.isArray(parsed)
+          ? (parsed as unknown[]).filter((s): s is string => typeof s === 'string').slice(0, 8)
+          : []
+
+        if (this.scenarios.length < 3) {
+          // Not enough scenarios — skip phase, let orchestrator pick
+          onLoading(false)
+          return
+        }
+
+        // Send scenarios to Player 2
+        this.config.sendToPartner({ type: 'scenarios', scenarios: this.scenarios } as PeerMessage)
+      } catch {
+        // On failure, skip scenario phase gracefully
+        onLoading(false)
+        return
+      }
+
+      onLoading(false)
+    } else {
+      // Player 2: wait for scenarios from Player 1
+      onWaitingStatus?.('Waiting for venue options...')
+
+      if (this.scenarios.length === 0) {
+        await new Promise<void>(resolve => {
+          this.scenarioResolve = resolve
+        })
+      }
+    }
+
+    // Both players: render scenario checkboxes
+    this.renderScenarioCheckboxes()
+
+    // Wait for both players' selections + spinner to complete
+    await new Promise<void>(resolve => {
+      this.scenarioResolve = resolve
+    })
+  }
+
+  private renderScenarioCheckboxes(): void {
+    const { container } = this.config
+
+    container.innerHTML = ''
+
+    // Header
+    const header = document.createElement('div')
+    header.style.cssText = 'text-align: center; margin-bottom: 1.5rem;'
+    const h2 = document.createElement('h2')
+    h2.style.cssText = 'color: var(--text-heading); font-family: "Playfair Display", serif; font-size: 1.5rem; margin-bottom: 0.5rem;'
+    h2.textContent = 'Where should your date happen?'
+    const subtitle = document.createElement('p')
+    subtitle.style.cssText = 'color: var(--text-muted); font-size: 0.875rem;'
+    subtitle.textContent = 'Check the scenarios that excite you. Your date is doing the same...'
+    header.appendChild(h2)
+    header.appendChild(subtitle)
+    container.appendChild(header)
+
+    // Scenario checkboxes
+    this.scenarios.forEach((scenario, index) => {
+      const label = document.createElement('label')
+      label.className = 'geems-checkbox-option'
+      label.style.cssText = 'margin-bottom: 0.75rem; display: flex; align-items: flex-start; gap: 0.75rem; cursor: pointer;'
+
+      const input = document.createElement('input')
+      input.type = 'checkbox'
+      input.dataset.scenarioIndex = String(index)
+      input.style.cssText = 'accent-color: #f9a8d4; margin-top: 0.2rem; flex-shrink: 0;'
+
+      const text = document.createElement('span')
+      text.style.cssText = 'color: var(--text-secondary); font-size: 0.9rem; line-height: 1.4;'
+      text.textContent = scenario
+
+      label.appendChild(input)
+      label.appendChild(text)
+      container.appendChild(label)
+    })
+
+    // Submit button
+    const submitBtn = document.createElement('button')
+    submitBtn.className = 'geems-button'
+    submitBtn.textContent = 'Lock in My Picks'
+    submitBtn.style.cssText = 'display: block; margin: 1.5rem auto 0; min-width: 200px;'
+    submitBtn.addEventListener('click', () => {
+      this.submitScenarioSelections()
+      submitBtn.disabled = true
+      submitBtn.textContent = 'Waiting for your date...'
+    })
+    container.appendChild(submitBtn)
+  }
+
+  private submitScenarioSelections(): void {
+    const { container, sendToPartner } = this.config
+
+    const checked: number[] = []
+    container.querySelectorAll<HTMLInputElement>('input[data-scenario-index]').forEach(input => {
+      if (input.checked) {
+        checked.push(parseInt(input.dataset.scenarioIndex!, 10))
+      }
+    })
+
+    this.myScenarioSelections = checked
+    sendToPartner({ type: 'scenario-selections', liked: checked } as PeerMessage)
+    this.tryRunSpinner()
+  }
+
+  private receiveScenarioSelections(liked: number[]): void {
+    this.partnerScenarioSelections = liked
+    this.tryRunSpinner()
+  }
+
+  private tryRunSpinner(): void {
+    // Need both players to have submitted
+    if (this.myScenarioSelections === null || this.partnerScenarioSelections === null) return
+
+    // Union of both players' liked scenarios
+    const combined = new Set([...this.myScenarioSelections, ...this.partnerScenarioSelections])
+
+    // If nobody liked anything, use all scenarios
+    const candidateIndices = combined.size > 0
+      ? [...combined].filter(i => i >= 0 && i < this.scenarios.length)
+      : this.scenarios.map((_, i) => i)
+
+    if (candidateIndices.length === 0) {
+      // Fallback: skip spinner, no venue
+      if (this.scenarioResolve) { this.scenarioResolve(); this.scenarioResolve = null }
+      return
+    }
+
+    const candidates = candidateIndices.map(i => this.scenarios[i])
+
+    // Player 1 picks the winner and tells Player 2
+    let winnerIndex: number
+    if (this.config.isPlayer1) {
+      winnerIndex = Math.floor(Math.random() * candidates.length)
+      this.config.sendToPartner({
+        type: 'scenario-result',
+        venue: candidates[winnerIndex],
+        winnerIndex,
+      } as PeerMessage)
+    } else {
+      // Player 2 already received the result via handlePartnerData
+      // Use the stored winner or fall back to random
+      if (this.selectedVenue) {
+        winnerIndex = candidates.indexOf(this.selectedVenue)
+        if (winnerIndex === -1) winnerIndex = 0
+      } else {
+        winnerIndex = 0
+      }
+    }
+
+    this.showScenarioSpinner(candidates, winnerIndex)
+  }
+
+  private showScenarioSpinner(candidates: string[], winnerIndex: number): void {
+    const { container } = this.config
+
+    container.innerHTML = ''
+
+    // Header
+    const header = document.createElement('div')
+    header.style.cssText = 'text-align: center; margin-bottom: 1.5rem;'
+    const h2 = document.createElement('h2')
+    h2.style.cssText = 'color: var(--text-heading); font-family: "Playfair Display", serif; font-size: 1.5rem;'
+    h2.textContent = 'Spinning the wheel of fate...'
+    header.appendChild(h2)
+    container.appendChild(header)
+
+    // Wheel container
+    const wheelContainer = document.createElement('div')
+    wheelContainer.style.cssText = 'position: relative; width: 300px; height: 300px; margin: 0 auto;'
+
+    const segmentAngle = 360 / candidates.length
+    const colors = ['#f9a8d4', '#e9c46a', '#60a5fa', '#fb7185', '#9b5de5', '#2a9d8f', '#f4a261', '#22c55e']
+    const gradientStops = candidates.map((_, i) => {
+      const color = colors[i % colors.length]
+      const start = i * segmentAngle
+      const end = (i + 1) * segmentAngle
+      return `${color} ${start}deg ${end}deg`
+    }).join(', ')
+
+    const wheel = document.createElement('div')
+    wheel.className = 'scenario-wheel'
+    wheel.style.cssText = `
+      width: 280px; height: 280px; border-radius: 50%;
+      background: conic-gradient(${gradientStops});
+      position: absolute; top: 10px; left: 10px;
+      transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    `
+
+    // Add segment labels as SVG text for proper rotation
+    candidates.forEach((scenario, i) => {
+      const angle = (i * segmentAngle) + (segmentAngle / 2)
+      const label = document.createElement('div')
+      label.style.cssText = `
+        position: absolute; top: 50%; left: 50%; width: 0; height: 0;
+        transform: rotate(${angle}deg);
+      `
+      const textSpan = document.createElement('span')
+      const shortLabel = scenario.length > 35 ? scenario.substring(0, 32) + '...' : scenario
+      textSpan.textContent = shortLabel
+      textSpan.style.cssText = `
+        position: absolute;
+        transform: rotate(0deg) translateX(25px);
+        transform-origin: left center;
+        font-size: 0.55rem; color: #fff; font-weight: 600;
+        text-shadow: 0 1px 3px rgba(0,0,0,0.8);
+        white-space: nowrap; max-width: 100px; overflow: hidden; text-overflow: ellipsis;
+        top: -0.35em;
+      `
+      label.appendChild(textSpan)
+      wheel.appendChild(label)
+    })
+
+    // Pointer triangle at top
+    const pointer = document.createElement('div')
+    pointer.style.cssText = `
+      position: absolute; top: -5px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 0;
+      border-left: 12px solid transparent; border-right: 12px solid transparent;
+      border-top: 20px solid var(--text-heading, #fff);
+      z-index: 10; filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+    `
+
+    wheelContainer.appendChild(wheel)
+    wheelContainer.appendChild(pointer)
+    container.appendChild(wheelContainer)
+
+    // Result display (hidden initially)
+    const resultDiv = document.createElement('div')
+    resultDiv.style.cssText = 'text-align: center; margin-top: 2rem; opacity: 0; transition: opacity 0.6s ease;'
+    container.appendChild(resultDiv)
+
+    // Calculate target rotation: spin 5 full rotations + land on winner
+    // The pointer is at the TOP (0 deg). We rotate the wheel clockwise.
+    // To land on segment `winnerIndex`, the center of that segment needs to align with top.
+    const targetAngle = 360 * 5 + (360 - (winnerIndex * segmentAngle + segmentAngle / 2))
+
+    // Start spin after brief pause
+    setTimeout(() => {
+      wheel.style.transform = `rotate(${targetAngle}deg)`
+    }, 300)
+
+    // After spin completes (4s transition + buffer)
+    setTimeout(() => {
+      const winner = candidates[winnerIndex]
+      this.selectedVenue = winner
+
+      const title = document.createElement('p')
+      title.style.cssText = 'font-size: 1.25rem; color: var(--text-heading); font-family: "Playfair Display", serif; margin-bottom: 0.5rem;'
+      title.textContent = 'Your date will be at...'
+      const venue = document.createElement('p')
+      venue.style.cssText = 'color: #f9a8d4; font-size: 1rem; line-height: 1.5; max-width: 400px; margin: 0 auto; font-style: italic;'
+      venue.textContent = winner
+      resultDiv.appendChild(title)
+      resultDiv.appendChild(venue)
+      resultDiv.style.opacity = '1'
+
+      // After showing result, resolve the scenario phase
+      setTimeout(() => {
+        if (this.scenarioResolve) {
+          this.scenarioResolve()
+          this.scenarioResolve = null
+        }
+      }, 2500)
+    }, 4500)
   }
 
   // ---- Turn rendering ----
@@ -752,7 +1056,7 @@ export class MultiplayerGameLoop {
         onWaitingStatus?.('The matchmaker is crafting your date...')
 
         const orchestratorPrompt = this.state.turnNumber === 0 && !this.state.currentUiJson
-          ? promptBuilder.buildFirstTurnOrchestratorPrompt()
+          ? promptBuilder.buildFirstTurnOrchestratorPrompt(this.selectedVenue ?? undefined)
           : promptBuilder.buildOrchestratorPrompt(
               this.myActionsThisTurn || '{}',
               this.partnerActionsThisTurn || '{}',
@@ -1047,6 +1351,24 @@ export class MultiplayerGameLoop {
           // Partner submitted before us — nudge the player
           this.config.onWaitingStatus?.('Your date is waiting for you...')
         }
+        break
+
+      case 'scenarios':
+        // Player 2 receives scenario list from Player 1
+        this.scenarios = (msg as PeerMessage & { type: 'scenarios' }).scenarios
+        if (this.scenarioResolve) {
+          this.scenarioResolve()
+          this.scenarioResolve = null
+        }
+        break
+
+      case 'scenario-selections':
+        this.receiveScenarioSelections((msg as PeerMessage & { type: 'scenario-selections' }).liked)
+        break
+
+      case 'scenario-result':
+        // Player 2 receives the final venue + winner index from Player 1
+        this.selectedVenue = (msg as PeerMessage & { type: 'scenario-result' }).venue
         break
 
       case 'ping':

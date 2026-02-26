@@ -1207,8 +1207,10 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
     }
   }
 
-  // Auto-start first turn
-  multiplayerLoop.startFirstTurn()
+  // Run scenario selection phase, then start the first turn
+  multiplayerLoop.startScenarioSelection().then(() => {
+    multiplayerLoop?.startFirstTurn()
+  })
 }
 
 // --- Hash-based Routing ---

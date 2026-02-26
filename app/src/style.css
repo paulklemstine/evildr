@@ -1993,3 +1993,11 @@ body.dark-mode .theme-toggle-track {
 body.dark-mode .theme-toggle-thumb {
   transform: translateX(16px);
 }
+
+/* ============================================================
+   Scenario Spinner Wheel
+   ============================================================ */
+
+.scenario-wheel {
+  will-change: transform;
+}
