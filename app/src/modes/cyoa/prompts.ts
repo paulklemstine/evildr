@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -33,6 +33,8 @@ export function createCYOAPromptBuilder(genre: string): PromptBuilder {
       return `${system}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 
@@ -137,6 +139,16 @@ RULES:
 
 ### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
+
+ART DIRECTION — CYOA MODE (adapt to selected genre):
+Horror: "Giallo film aesthetic, high-contrast crimson and shadow, unsettling camera angles, inspired by Suspiria and Midsommar"
+Sci-Fi: "Blade Runner 2049 cinematography, teal and amber, vast scale, volumetric fog, inspired by Denis Villeneuve"
+Fantasy: "Epic fantasy concept art, gold and deep blue, towering scale, inspired by Lord of the Rings and Studio Ghibli"
+Noir: "Film noir, high-contrast black and white with one accent color, venetian blind shadows, 1940s detective pulp"
+Comedy: "Bright Wes Anderson palette, symmetrical framing, candy colors, whimsical detail, warm and inviting"
+Post-Apocalyptic: "Mad Max visual style, dust and rust, orange sky, practical grit, wide desolate landscapes"
+Romantic: "Warm intimate lighting, shallow depth of field, Tomer Hanuka illustration style, soft focus on faces"
+Match the art direction to the player's selected genre. If no genre, default to Fantasy.
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.

@@ -7,7 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -69,6 +69,13 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+
+ART DIRECTION — DR. EVIL MODE:
+Style: Retro-futuristic mad science, Aperture Science meets Willy Wonka. Think Portal 2 aesthetic + Incredibles color palette.
+References: "retro-futuristic lab, concept art style, inspired by Portal 2 and The Incredibles"
+Palette: Toxic green (#39ff14) + chrome + deep shadow. Accent with warning orange for danger.
+Lighting: Volumetric light from experiment pods, neon glow on chrome surfaces, dramatic uplighting.
+Mood: Thrilling, mischievous, just-dangerous-enough. Like the best theme park ride.
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.
@@ -380,6 +387,8 @@ ${COLOR_PROTOCOL}
 ${BEHAVIORAL_DIRECTIVES}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 

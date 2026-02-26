@@ -4,7 +4,7 @@
 // Every turn should feel like a theme park ride, a heist, a chase, a mystery.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
@@ -65,6 +65,13 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+
+ART DIRECTION — GEEMS MODE:
+Style: Cinematic action-adventure, like an animated blockbuster movie. Indiana Jones meets Pixar meets John Wick.
+References: "cinematic concept art, inspired by Uncharted and Studio Ghibli adventure films"
+Palette: Gold (#e9c46a) + deep navy for treasure/discovery. Red (#e63946) + black for danger. Vary per scene mood.
+Lighting: Dramatic chiaroscuro for tension. Volumetric god rays for discovery. Warm firelight for ally moments.
+Mood: Heroic, breathless, epic. The player is the MAIN CHARACTER of their own action movie.
 
 ### MULTIPLE IMAGES PER TURN ###
 You can include MULTIPLE image elements in a single turn — not just one at the top.
@@ -299,6 +306,8 @@ ${COLOR_PROTOCOL}
 ${BEHAVIORAL_DIRECTIVES}
 
 ${STORYTELLING_CRAFT}
+
+${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
 
