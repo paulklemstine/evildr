@@ -163,6 +163,16 @@ function hslToHex(h: number, s: number, l: number): string {
 }
 
 // ---------------------------------------------------------------------------
+// HTML tag stripper — removes all HTML tags, preserving inner text content.
+// Used to sanitize LLM-generated labels that may contain inline HTML
+// (e.g. <span style='...'>) which should be displayed as plain text.
+// ---------------------------------------------------------------------------
+
+function stripHtmlTags(raw: string): string {
+  return raw.replace(/<[^>]*>/g, '')
+}
+
+// ---------------------------------------------------------------------------
 // Markdown-lite renderer (bold, italic, code blocks, newlines)
 // ---------------------------------------------------------------------------
 
@@ -565,7 +575,7 @@ function renderRadioElement(
 
       const optionLabel = document.createElement('label')
       optionLabel.htmlFor = inputId
-      optionLabel.textContent = option.label
+      optionLabel.innerHTML = renderBasicMarkdown(stripHtmlTags(option.label))
       optionLabel.className = 'flex-grow cursor-pointer'
 
       optionDiv.appendChild(input)
@@ -608,7 +618,7 @@ function renderDropdownElement(
   options.forEach((opt) => {
     const option = document.createElement('option')
     option.value = opt.value
-    option.textContent = opt.label
+    option.textContent = stripHtmlTags(opt.label)
     if (opt.value === selectedValue) option.selected = true
     select.appendChild(option)
   })
@@ -747,7 +757,7 @@ function renderButtonGroupElement(
     const btn = document.createElement('button')
     btn.type = 'button'
     btn.className = `geems-group-btn${opt.value === selectedValue ? ' active' : ''}`
-    btn.textContent = opt.label
+    btn.innerHTML = renderBasicMarkdown(stripHtmlTags(opt.label))
     btn.dataset.value = opt.value
     if (adjustedColor && opt.value === selectedValue) {
       btn.style.borderColor = adjustedColor
