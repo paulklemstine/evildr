@@ -30,7 +30,7 @@ export interface FlaggedPromptBuilder {
     player2Notes: string,
   ): string
   /** Build the per-player UI generation prompt from one section of orchestrator output. */
-  buildPlayerUIPrompt(orchestratorInstructions: string): string
+  buildPlayerUIPrompt(orchestratorInstructions: string, priorGreenFlags?: string, priorRedFlags?: string): string
 }
 
 /** The delimiter the orchestrator uses to split its output into sections. */
@@ -107,23 +107,31 @@ ${ORCHESTRATOR_DELIMITER}
 Start with preamble text. Do NOT begin with the delimiter. Plain text only, no JSON, no markdown fences.`)
     },
 
-    buildPlayerUIPrompt(orchestratorInstructions: string): string {
+    buildPlayerUIPrompt(orchestratorInstructions: string, priorGreenFlags?: string, priorRedFlags?: string): string {
+      const priorFlagsBlock = (priorGreenFlags || priorRedFlags) ? `
+### PRIOR FLAGS FROM PREVIOUS TURNS ###
+These flags have already been identified. You MUST include ALL of them in your output, plus add any NEW observations from this turn. Never drop a prior flag.
+${priorGreenFlags ? `GREEN FLAGS SO FAR:\n${priorGreenFlags}` : '(none yet)'}
+${priorRedFlags ? `RED FLAGS SO FAR:\n${priorRedFlags}` : '(none yet)'}` : ''
+
       return `${PLAYER_UI_PROMPT}
 
 ### ORCHESTRATOR INSTRUCTIONS FOR THIS PLAYER ###
 ${orchestratorInstructions}
+${priorFlagsBlock}
 
 ### TASK ###
 Generate a JSON UI array for this player. The array MUST contain these elements IN ORDER:
 1. Visible elements: ONE main image, text(s), interactive elements, radio choices
 2. MANDATORY hidden elements — your response is INVALID without ALL FIVE:
    {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"green_flags","label":"","value":"<markdown list of partner's positive behaviors>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"red_flags","label":"","value":"<markdown list of partner's concerning behaviors>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"green_flags","label":"","value":"<CUMULATIVE markdown list: ALL prior flags + NEW observations>","color":"#000","voice":"system"}
+   {"type":"hidden","name":"red_flags","label":"","value":"<CUMULATIVE markdown list: ALL prior flags + NEW observations>","color":"#000","voice":"system"}
    {"type":"hidden","name":"own_clinical_analysis","label":"","value":"<this player's psychological profile>","color":"#000","voice":"system"}
    {"type":"hidden","name":"partner_clinical_analysis","label":"","value":"<chemistry/compatibility assessment>","color":"#000","voice":"system"}
 
 CRITICAL: The 5 hidden elements above are NOT optional. They MUST be the LAST 5 elements in the array.
+CRITICAL: green_flags and red_flags are CUMULATIVE — include EVERY flag from prior turns plus new ones. NEVER drop a prior flag.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
@@ -157,16 +165,30 @@ Match colors to what the player is FEELING. Never repeat the same palette two tu
 const HIDDEN_ELEMENTS_SPEC = `### REQUIRED HIDDEN ELEMENTS ###
 1. **notes** — Dating dossier (see template below)
    {"type":"hidden","name":"notes","label":"","value":"[dossier]","color":"#000","voice":"system"}
-2. **green_flags** — Positive observations about the DATE PARTNER (shown to this player)
-   {"type":"hidden","name":"green_flags","label":"","value":"[markdown list]","color":"#000","voice":"system"}
-3. **red_flags** — Concerning observations about the DATE PARTNER (shown to this player)
-   {"type":"hidden","name":"red_flags","label":"","value":"[markdown list]","color":"#000","voice":"system"}
+2. **green_flags** — CUMULATIVE positive observations about the DATE PARTNER (shown to this player)
+   {"type":"hidden","name":"green_flags","label":"","value":"[markdown list — ALL prior flags + new]","color":"#000","voice":"system"}
+3. **red_flags** — CUMULATIVE concerning observations about the DATE PARTNER (shown to this player)
+   {"type":"hidden","name":"red_flags","label":"","value":"[markdown list — ALL prior flags + new]","color":"#000","voice":"system"}
 4. **own_clinical_analysis** — This player's psychological profile (hidden)
    {"type":"hidden","name":"own_clinical_analysis","label":"","value":"[analysis]","color":"#000","voice":"system"}
 5. **partner_clinical_analysis** — Chemistry/compatibility assessment (hidden)
    {"type":"hidden","name":"partner_clinical_analysis","label":"","value":"[assessment]","color":"#000","voice":"system"}
 
-green_flags and red_flags are about the DATE PARTNER, not this player.`
+### FLAG ACCUMULATION RULES ###
+green_flags and red_flags are about the DATE PARTNER, not this player.
+Flags are CUMULATIVE: include EVERY flag from prior turns, then ADD new observations. NEVER remove a prior flag.
+Each flag should cite a SPECIFIC behavior, quote, or micro-expression from a specific turn.
+
+### CLINICAL FLAG FOCUS ###
+Watch for behavioral indicators of:
+- **Mood disorders**: Manic energy swings, grandiosity, sudden crashes, emotional flatness, irritability cycles
+- **Anxiety patterns**: Avoidance, overthinking, reassurance-seeking, catastrophizing, hypervigilance
+- **Attachment issues**: Clinginess, withdrawal, hot-cold behavior, abandonment triggers, idealization
+- **Compulsive behaviors**: Fixation patterns, impulse control, addictive tendencies, repetitive coping mechanisms
+- **Personality patterns**: Narcissistic supply-seeking, borderline splitting, avoidant detachment, histrionic attention-seeking
+- **Sexual dynamics**: Inappropriate escalation, objectification cues, boundary testing, seductive manipulation
+- **Cognitive patterns**: Dissociation, confabulation, magical thinking, projection, intellectualization as defense
+Flag these as specific observations (e.g. "🔴 Turn 3: Sudden shift from euphoric to withdrawn mid-sentence — possible mood cycling") rather than diagnoses.`
 
 const NOTES_TEMPLATE = `### DOSSIER TEMPLATE (hidden "notes" element) ###
 ## Matchmaker's Dossier

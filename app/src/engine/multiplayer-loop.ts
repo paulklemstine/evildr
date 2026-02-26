@@ -1129,7 +1129,7 @@ export class MultiplayerGameLoop {
 
       // Generate this player's UI from the orchestrator section
       onWaitingStatus?.('Preparing your next moment...')
-      const uiPrompt = promptBuilder.buildPlayerUIPrompt(mySection)
+      const uiPrompt = promptBuilder.buildPlayerUIPrompt(mySection, this.state.greenFlags, this.state.redFlags)
       let uiJsonArray: UIElement[]
       try {
         const uiResponse = await llmClient.generateTurn(uiPrompt)
