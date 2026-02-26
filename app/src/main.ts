@@ -873,6 +873,9 @@ function showMultiplayerLobby(): void {
           savedLobbyClient.sendRoomCode(roomHandle.code)
         }
 
+        // Brief delay to ensure room code is delivered before closing lobby connection
+        await new Promise(r => setTimeout(r, 500))
+
         // Clean up lobby (but keep room handle alive)
         if (lobbyClient) { lobbyClient.destroy(); lobbyClient = null }
 
@@ -888,9 +891,7 @@ function showMultiplayerLobby(): void {
       try {
         guestHandle = await joinRoom(_roomCode, {
           onConnected: () => {
-            startMultiplayerGame(false, (data: unknown) => {
-              if (guestHandle) guestHandle.send(data)
-            })
+            // Game will start after joinRoom resolves (guestHandle must be set first)
           },
           onDisconnected: () => {
             const errorEl = document.getElementById('mp-error-display')
@@ -906,6 +907,12 @@ function showMultiplayerLobby(): void {
               pendingPartnerMessages.push(data)
             }
           },
+        })
+
+        // Start game AFTER guestHandle is set — starting inside onConnected
+        // would race because guestHandle is null until joinRoom resolves.
+        startMultiplayerGame(false, (data: unknown) => {
+          if (guestHandle) guestHandle.send(data)
         })
       } catch (err) {
         showLobbyError(err instanceof Error ? err.message : 'Failed to join room.')
