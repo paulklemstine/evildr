@@ -6,7 +6,9 @@ import { getTurnsBySession, getAnalysesBySession, saveAnalysis, getSessionsByUse
 import { buildAnalysisPrompt } from './analysis-prompts'
 import { uploadReport } from '../api/report-uploader'
 
-const ANALYSIS_INTERVAL = 5 // Analyze every N turns
+// Adaptive analysis schedule: faster initial calibration, then spreads out
+const ANALYSIS_TURNS = [3, 5, 8, 12, 17, 23, 30] as const
+const ANALYSIS_INTERVAL_AFTER = 10 // Every 10 turns after the last scheduled turn
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
 const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis calls
 
@@ -31,8 +33,8 @@ export async function maybeRunAnalysis(
   sessionId: string,
   turnNumber: number,
 ): Promise<void> {
-  // Only analyze every ANALYSIS_INTERVAL turns
-  if (turnNumber < ANALYSIS_INTERVAL || turnNumber % ANALYSIS_INTERVAL !== 0) {
+  // Adaptive trigger: analyze at scheduled turns, then every ANALYSIS_INTERVAL_AFTER
+  if (!shouldAnalyzeAtTurn(turnNumber)) {
     return
   }
 
@@ -51,6 +53,14 @@ export async function maybeRunAnalysis(
       console.warn('Analysis pipeline error (non-fatal):', err)
     })
   }, delay)
+}
+
+/** Check if analysis should run at this turn number. */
+function shouldAnalyzeAtTurn(turnNumber: number): boolean {
+  if ((ANALYSIS_TURNS as readonly number[]).includes(turnNumber)) return true
+  const lastScheduled = ANALYSIS_TURNS[ANALYSIS_TURNS.length - 1]
+  if (turnNumber > lastScheduled && (turnNumber - lastScheduled) % ANALYSIS_INTERVAL_AFTER === 0) return true
+  return false
 }
 
 async function runAnalysis(

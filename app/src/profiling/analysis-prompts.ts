@@ -1,6 +1,6 @@
 // Prompt templates for the analysis pipeline — DSM-5 diagnostic + behavioral profiling
 
-import type { TurnRecord } from './db'
+import type { TurnRecord, QuestionContext } from './db'
 
 /**
  * Builds an analysis prompt from a batch of turn records.
@@ -8,21 +8,55 @@ import type { TurnRecord } from './db'
  */
 export function buildAnalysisPrompt(turns: TurnRecord[], priorAnalysis?: string): string {
   const turnSummaries = turns.map((t) => {
-    const inputs = safeParseJSON(t.playerInputs)
+    const inputs = safeParseJSON(t.playerInputs) as Record<string, unknown>
     const signals = t.signals
-    return `Turn ${t.turnNumber} (${t.mode}, ${new Date(t.timestamp).toLocaleTimeString()}):
-  Inputs: ${JSON.stringify(inputs)}
-  Response time: ${signals.responseTimeMs}ms
-  Slider revisions: ${signals.sliderRevisions}
-  Text revisions: ${signals.textRevisions}
-  Text length: ${signals.totalTextLength} chars
-  Radio choice index: ${signals.radioChoiceIndex}
-  Checkbox ratio: ${signals.checkboxRatio}`
+    const questions = parseQuestionsShown(t.questionsShown)
+
+    let inputSection: string
+    if (questions && questions.length > 0) {
+      // Structured Q&A format — question context available
+      inputSection = questions.map((q) => {
+        const answer = inputs[q.name]
+        const lines: string[] = []
+        lines.push(`  [${q.type.toUpperCase()}] "${q.label || q.name}"`)
+        if (q.justification) lines.push(`    Probe intent: ${q.justification}`)
+        if (q.options && q.options.length > 0) lines.push(`    Options: ${q.options.join(' | ')}`)
+        if (q.range) lines.push(`    Range: ${q.range.min}–${q.range.max}`)
+        if (q.predicted !== undefined) lines.push(`    Predicted answer: ${q.predicted}`)
+        lines.push(`    Player answered: ${answer !== undefined ? String(answer) : '(no input)'}`)
+        if (q.predicted !== undefined && answer !== undefined && String(answer) !== String(q.predicted)) {
+          lines.push(`    ⚑ Deviated from prediction`)
+        }
+        return lines.join('\n')
+      }).join('\n')
+    } else {
+      // Fallback — old records without question context
+      inputSection = `  Inputs (raw): ${JSON.stringify(inputs)}`
+    }
+
+    const signalLines = [
+      `  Response time: ${signals.responseTimeMs}ms`,
+      `  Slider revisions: ${signals.sliderRevisions}`,
+      `  Text revisions: ${signals.textRevisions}`,
+      `  Text length: ${signals.totalTextLength} chars`,
+      `  Radio choice index: ${signals.radioChoiceIndex}`,
+      `  Checkbox ratio: ${signals.checkboxRatio}`,
+    ]
+    if (signals.dropdownChanges !== undefined) signalLines.push(`  Dropdown changes: ${signals.dropdownChanges}`)
+    if (signals.ratingValue !== undefined) signalLines.push(`  Rating value: ${signals.ratingValue}`)
+    if (signals.toggleFlips !== undefined) signalLines.push(`  Toggle flips: ${signals.toggleFlips}`)
+    if (signals.emojiSelection !== undefined) signalLines.push(`  Emoji selected: ${signals.emojiSelection}`)
+    if (signals.colorSelection !== undefined) signalLines.push(`  Color selected: ${signals.colorSelection}`)
+    if (signals.numberInputValue !== undefined) signalLines.push(`  Number input: ${signals.numberInputValue}`)
+
+    return `Turn ${t.turnNumber} (${t.mode}, ${new Date(t.timestamp).toLocaleTimeString()}):\n${inputSection}\n  --- Behavioral Signals ---\n${signalLines.join('\n')}`
   }).join('\n\n')
 
   return `You are a clinical behavioral analyst AI with expertise in the DSM-5, abnormal psychology, and forensic behavioral profiling. Analyze the following user interaction data from an interactive assessment platform.
 
 Your analysis will be fed back into the game engine in real-time to adapt gameplay. Be precise, clinical, and actionable.
+
+Analyze ONLY the player's discrete choices and behavioral signals below. Do NOT reference or interpret narrative/story text. Focus on: what they chose, what options were available, whether they deviated from predictions, their response timing and revision patterns.
 
 ${priorAnalysis ? `### PRIOR ANALYSIS (cumulative — refine, update, and deepen) ###
 ${priorAnalysis}
@@ -133,4 +167,14 @@ Return as plain text with markdown formatting. Be precise and evidence-based.`
 
 function safeParseJSON(str: string): unknown {
   try { return JSON.parse(str) } catch { return str }
+}
+
+function parseQuestionsShown(raw?: string): QuestionContext[] | null {
+  if (!raw) return null
+  try {
+    const parsed = JSON.parse(raw)
+    return Array.isArray(parsed) ? parsed : null
+  } catch {
+    return null
+  }
 }
