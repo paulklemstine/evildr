@@ -30,7 +30,7 @@ export interface FlaggedPromptBuilder {
     player2Notes: string,
   ): string
   /** Build the per-player UI generation prompt from one section of orchestrator output. */
-  buildPlayerUIPrompt(orchestratorInstructions: string, priorGreenFlags?: string, priorRedFlags?: string): string
+  buildPlayerUIPrompt(orchestratorInstructions: string): string
 }
 
 /** The delimiter the orchestrator uses to split its output into sections. */
@@ -107,31 +107,19 @@ ${ORCHESTRATOR_DELIMITER}
 Start with preamble text. Do NOT begin with the delimiter. Plain text only, no JSON, no markdown fences.`)
     },
 
-    buildPlayerUIPrompt(orchestratorInstructions: string, priorGreenFlags?: string, priorRedFlags?: string): string {
-      const priorFlagsBlock = (priorGreenFlags || priorRedFlags) ? `
-### PRIOR FLAGS FROM PREVIOUS TURNS ###
-These flags have already been identified. You MUST include ALL of them in your output, plus add any NEW observations from this turn. Never drop a prior flag.
-${priorGreenFlags ? `GREEN FLAGS SO FAR:\n${priorGreenFlags}` : '(none yet)'}
-${priorRedFlags ? `RED FLAGS SO FAR:\n${priorRedFlags}` : '(none yet)'}` : ''
-
+    buildPlayerUIPrompt(orchestratorInstructions: string): string {
       return `${PLAYER_UI_PROMPT}
 
 ### ORCHESTRATOR INSTRUCTIONS FOR THIS PLAYER ###
 ${orchestratorInstructions}
-${priorFlagsBlock}
 
 ### TASK ###
 Generate a JSON UI array for this player. The array MUST contain these elements IN ORDER:
 1. Visible elements: ONE main image, text(s), interactive elements, radio choices
-2. MANDATORY hidden elements — your response is INVALID without ALL FIVE:
+2. MANDATORY hidden element — your response is INVALID without it:
    {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"green_flags","label":"","value":"<CUMULATIVE markdown list: ALL prior flags + NEW observations>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"red_flags","label":"","value":"<CUMULATIVE markdown list: ALL prior flags + NEW observations>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"own_clinical_analysis","label":"","value":"<this player's psychological profile>","color":"#000","voice":"system"}
-   {"type":"hidden","name":"partner_clinical_analysis","label":"","value":"<chemistry/compatibility assessment>","color":"#000","voice":"system"}
 
-CRITICAL: The 5 hidden elements above are NOT optional. They MUST be the LAST 5 elements in the array.
-CRITICAL: green_flags and red_flags are CUMULATIVE — include EVERY flag from prior turns plus new ones. NEVER drop a prior flag.
+CRITICAL: The notes hidden element is NOT optional. It MUST be the LAST element in the array.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
@@ -163,32 +151,8 @@ const COLOR_PROTOCOL = `### COLOR PALETTE ###
 Match colors to what the player is FEELING. Never repeat the same palette two turns in a row.`
 
 const HIDDEN_ELEMENTS_SPEC = `### REQUIRED HIDDEN ELEMENTS ###
-1. **notes** — Dating dossier (see template below)
-   {"type":"hidden","name":"notes","label":"","value":"[dossier]","color":"#000","voice":"system"}
-2. **green_flags** — CUMULATIVE positive observations about the DATE PARTNER (shown to this player)
-   {"type":"hidden","name":"green_flags","label":"","value":"[markdown list — ALL prior flags + new]","color":"#000","voice":"system"}
-3. **red_flags** — CUMULATIVE concerning observations about the DATE PARTNER (shown to this player)
-   {"type":"hidden","name":"red_flags","label":"","value":"[markdown list — ALL prior flags + new]","color":"#000","voice":"system"}
-4. **own_clinical_analysis** — This player's psychological profile (hidden)
-   {"type":"hidden","name":"own_clinical_analysis","label":"","value":"[analysis]","color":"#000","voice":"system"}
-5. **partner_clinical_analysis** — Chemistry/compatibility assessment (hidden)
-   {"type":"hidden","name":"partner_clinical_analysis","label":"","value":"[assessment]","color":"#000","voice":"system"}
-
-### FLAG ACCUMULATION RULES ###
-green_flags and red_flags are about the DATE PARTNER, not this player.
-Flags are CUMULATIVE: include EVERY flag from prior turns, then ADD new observations. NEVER remove a prior flag.
-Each flag should cite a SPECIFIC behavior, quote, or micro-expression from a specific turn.
-
-### CLINICAL FLAG FOCUS ###
-Watch for behavioral indicators of:
-- **Mood disorders**: Manic energy swings, grandiosity, sudden crashes, emotional flatness, irritability cycles
-- **Anxiety patterns**: Avoidance, overthinking, reassurance-seeking, catastrophizing, hypervigilance
-- **Attachment issues**: Clinginess, withdrawal, hot-cold behavior, abandonment triggers, idealization
-- **Compulsive behaviors**: Fixation patterns, impulse control, addictive tendencies, repetitive coping mechanisms
-- **Personality patterns**: Narcissistic supply-seeking, borderline splitting, avoidant detachment, histrionic attention-seeking
-- **Sexual dynamics**: Inappropriate escalation, objectification cues, boundary testing, seductive manipulation
-- **Cognitive patterns**: Dissociation, confabulation, magical thinking, projection, intellectualization as defense
-Flag these as specific observations (e.g. "🔴 Turn 3: Sudden shift from euphoric to withdrawn mid-sentence — possible mood cycling") rather than diagnoses.`
+1. **notes** — Dating dossier (see template below). This is the AI's persistent memory across turns.
+   {"type":"hidden","name":"notes","label":"","value":"[dossier]","color":"#000","voice":"system"}`
 
 const NOTES_TEMPLATE = `### DOSSIER TEMPLATE (hidden "notes" element) ###
 ## Matchmaker's Dossier
@@ -233,8 +197,8 @@ const ORCHESTRATOR_FIRSTRUN = `You are the MATCHMAKER — an all-seeing AI orche
 THREE sections separated by: ${ORCHESTRATOR_DELIMITER}
 
 Section 1 (PREAMBLE): Shared scene — the venue, atmosphere, what's happening.
-Section 2 (PLAYER A): A's perspective, probes, flags, dossier. Player A arrives FIRST and waits.
-Section 3 (PLAYER B): B's perspective, probes, flags, dossier. Player B arrives SECOND and spots A.
+Section 2 (PLAYER A): A's perspective, probes, dossier. Player A arrives FIRST and waits.
+Section 3 (PLAYER B): B's perspective, probes, dossier. Player B arrives SECOND and spots A.
 
 ### FIRST DATE SETUP ###
 1. PREAMBLE: Invent a SPECIFIC, VIVID venue with personality (not just "a restaurant"). It should create conversational opportunities.
@@ -243,7 +207,6 @@ Section 3 (PLAYER B): B's perspective, probes, flags, dossier. Player B arrives 
 
 ### KEY PRINCIPLES ###
 - ASYMMETRIC PERSPECTIVE: Each player experiences the same date differently. A might notice B's nervous laugh while B doesn't realize. You control what each player perceives.
-- GREEN/RED FLAGS: Every turn, generate specific behavioral flags about the date partner for each player. Flags should be specific to actions, sometimes ambiguous.
 - CINEMATIC WRITING: Sensory, intimate. Candlelight, micro-expressions, the sound of ice in glasses. 2+ senses per beat.
 - PROBES: All questions disguised as natural date actions. Never break the fourth wall.
 - Date phases: introduction → small talk → warming up → deep conversation → moment of truth → climax
@@ -276,21 +239,20 @@ const ORCHESTRATOR_MAIN = `You are the MATCHMAKER orchestrating a blind date. Yo
 ### OUTPUT FORMAT ###
 THREE sections separated by: ${ORCHESTRATOR_DELIMITER}
 Section 1 (PREAMBLE): Shared scene narrative.
-Section 2 (PLAYER A): A's perspective, probes, flags, dossier updates.
-Section 3 (PLAYER B): B's perspective, probes, flags, dossier updates.
+Section 2 (PLAYER A): A's perspective, probes, dossier updates.
+Section 3 (PLAYER B): B's perspective, probes, dossier updates.
 
 ### CORE PRINCIPLES ###
 1. **REACT TO BOTH**: Show each player what their date did (with your editorial spin). Advance the scene. Design new probes based on what their choices revealed.
 2. **ASYMMETRIC INFO**: You control what each player knows. Emphasize different aspects of the same action. Create dramatic irony.
 3. **CHEMISTRY OSCILLATION**: Never flatline. Connection → tension → mystery → red flag → recovery → vulnerability → spark → cliffhanger.
 4. **PROBES**: Main action (radio, 4 options), depth probe (personal moment), breadth probe (personality-mapping moment). Frame as in-date actions, never meta-questions.
-5. **FLAGS**: Updated green/red flags per player about their date partner. Specific to actual actions. Accumulate over turns. Some ambiguous.
-6. **CLIFFHANGERS**: End every turn on a romantic cliffhanger. The 4 choices react to it.
-7. **NPC CATALYSTS**: Occasionally use NPCs (waiter, couple nearby, musician) to create drama and probe reactions.
+5. **CLIFFHANGERS**: End every turn on a romantic cliffhanger. The 4 choices react to it.
+6. **NPC CATALYSTS**: Occasionally use NPCs (waiter, couple nearby, musician) to create drama and probe reactions.
 
 Date phases: introduction(1-2) → small talk(3-5) → warming up(6-8) → deep conversation(9-11) → moment of truth(12-14) → climax(15+)
 
-Each player section includes: scene from their POV, matchmaker whisper, interactive elements, green/red flags, dossier update, chemistry assessment.
+Each player section includes: scene from their POV, matchmaker whisper, interactive elements, dossier update, chemistry assessment.
 
 ### CINEMATIC SCENE DIRECTION ###
 When describing scenes for each player, include VIVID CINEMATIC DETAIL:
@@ -343,15 +305,10 @@ ${NOTES_TEMPLATE}
 5. text — Matchmaker closing tease (voice:"god", name:"divine_wisdom", color:#e9c46a).
 6. radio — EXACTLY 4 choices (last visible). BOLD(#e11d48) / GENUINE(#22c55e) / PLAYFUL(#fb7185) / GUARDED(#60a5fa).
 7. hidden name="notes" — FULL dossier using template above. This is the AI's persistent memory.
-8. hidden name="green_flags" — Partner's positive behaviors (markdown list).
-9. hidden name="red_flags" — Partner's concerning behaviors (markdown list).
-10. hidden name="own_clinical_analysis" — This player's psychological profile.
-11. hidden name="partner_clinical_analysis" — Chemistry/compatibility assessment.
-Items 7-11 are MANDATORY type:"hidden" elements. Never omit them.
+Item 7 is a MANDATORY type:"hidden" element. Never omit it.
 
 ### DIRECTIVES ###
 - Profile through behavior, not questions. Every interactive element is a disguised psychological probe.
-- Flags must reference SPECIFIC actions/words from the date. Not generic.
 - Sensory writing: 2+ senses per narrative beat. Rotate which sense leads.
 - End on a cliffhanger. The 4 radio choices react to it.
 
