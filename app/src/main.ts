@@ -20,6 +20,7 @@ import { createWatchablePlayer } from './admin/live-bridge'
 import type { PlayerBridge } from './admin/live-bridge'
 import { collectInputState } from './engine/renderer'
 import { applyModeTheme, clearModeTheme } from './engine/mode-theme'
+import { initTTS, isTTSEnabled, setTTSEnabled, stopSpeaking } from './engine/tts'
 import './style.css'
 
 // --- Mode card images (routed through proxy for auth; deterministic seed for caching) ---
@@ -82,6 +83,23 @@ function renderThemeToggle(): string {
 
 function bindThemeToggle(): void {
   document.getElementById('theme-toggle')?.addEventListener('click', toggleTheme)
+}
+
+function renderTTSToggle(): string {
+  return `
+    <label class="tts-toggle" id="tts-toggle">
+      <span>TTS</span>
+      <div class="theme-toggle-track">
+        <div class="theme-toggle-thumb"></div>
+      </div>
+    </label>
+  `
+}
+
+function bindTTSToggle(): void {
+  document.getElementById('tts-toggle')?.addEventListener('click', () => {
+    setTTSEnabled(!isTTSEnabled())
+  })
 }
 
 // --- Page Rendering ---
@@ -206,11 +224,12 @@ function renderLobby(): void {
       <a href="https://pollinations.ai" target="_blank" rel="noopener" style="display: inline-block; margin-top: 0.5rem;">
         <img src="https://img.shields.io/badge/Built%20with-Pollinations-8a2be2?style=for-the-badge&logo=data:image/svg+xml,%3Csvg%20xmlns%3D%22http://www.w3.org/2000/svg%22%20viewBox%3D%220%200%20124%20124%22%3E%3Ccircle%20cx%3D%2262%22%20cy%3D%2262%22%20r%3D%2262%22%20fill%3D%22%23ffffff%22/%3E%3C/svg%3E&logoColor=white&labelColor=6a0dad" alt="Built with Pollinations" height="28" />
       </a>
-      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
+      <div style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem;">${renderThemeToggle()}${renderTTSToggle()}</div>
     </footer>
   `
 
   bindThemeToggle()
+  bindTTSToggle()
 
   // Handle mode card image loading — fade in on load, remove shimmer
   document.querySelectorAll<HTMLImageElement>('.mode-card-image').forEach(img => {
@@ -311,7 +330,7 @@ function renderGamePage(modeId: string): void {
 
     <footer class="site-footer">
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
-      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
+      <div style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem;">${renderThemeToggle()}${renderTTSToggle()}</div>
     </footer>
 
     <div id="analysisModal" class="modal">
@@ -339,6 +358,7 @@ function renderGamePage(modeId: string): void {
   })
 
   bindThemeToggle()
+  bindTTSToggle()
 
   // Reports button
   document.getElementById('btn-reports')?.addEventListener('click', () => {
@@ -648,11 +668,12 @@ function showMultiplayerLobby(): void {
 
     <footer class="site-footer">
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
-      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
+      <div style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem;">${renderThemeToggle()}${renderTTSToggle()}</div>
     </footer>
   `
 
   bindThemeToggle()
+  bindTTSToggle()
 
   // Back button
   document.getElementById('btn-back-lobby')?.addEventListener('click', () => {
@@ -1096,11 +1117,12 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
 
     <footer class="site-footer">
       <p>&copy; ${new Date().getFullYear()} SuperPaul. All rights reserved.</p>
-      <div style="margin-top: 0.75rem;">${renderThemeToggle()}</div>
+      <div style="margin-top: 0.75rem; display: flex; justify-content: center; gap: 1.5rem;">${renderThemeToggle()}${renderTTSToggle()}</div>
     </footer>
   `
 
   bindThemeToggle()
+  bindTTSToggle()
 
   // Back button
   document.getElementById('btn-back-lobby')?.addEventListener('click', () => {
@@ -1229,6 +1251,7 @@ function cleanupMultiplayer(): void {
 }
 
 function handleRoute(): void {
+  stopSpeaking()
   const hash = window.location.hash
 
   if (hash === '#reports') {
@@ -1288,6 +1311,7 @@ function escapeHtml(str: string): string {
 
 async function boot(): Promise<void> {
   initTheme()
+  initTTS()
   await showConsentIfNeeded()
   userId = getUserId()
 

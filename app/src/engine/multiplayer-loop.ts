@@ -22,6 +22,7 @@ import { applyTypewriter } from './typewriter.ts'
 import { cascadeReveal, pulseInteractive } from './anticipation.ts'
 import { attachCelebrations } from './celebration.ts'
 import { applyMoodFromUI } from './mood-colors.ts'
+import { speakTurn, stopSpeaking } from './tts'
 import type { FlaggedPromptBuilder } from '../modes/flagged/prompts.ts'
 import { ORCHESTRATOR_DELIMITER } from '../modes/flagged/prompts.ts'
 import { saveTurn, saveSession, updateSession, getTurnsBySession, getAnalysesBySession } from '../profiling/db'
@@ -1039,7 +1040,9 @@ export class MultiplayerGameLoop {
 
     // Apply dopamine effects
     cascadeReveal(container)
-    applyTypewriter(container)
+    applyTypewriter(container).then(() => {
+      speakTurn(container)
+    })
     pulseInteractive(container)
     if (this.cleanupCelebrations) this.cleanupCelebrations()
     this.cleanupCelebrations = attachCelebrations(container)
@@ -1332,6 +1335,9 @@ export class MultiplayerGameLoop {
     if (this.turnInProgress) return
 
     const { container, sendToPartner, onLoading, onWaitingStatus } = this.config
+
+    // Stop any TTS from the previous turn
+    stopSpeaking()
 
     // Collect behavioral signals before collecting input state
     this.collectedSignals = this.inputTracker.collect()

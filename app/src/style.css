@@ -2040,6 +2040,25 @@ body.dark-mode .theme-toggle-thumb {
   transform: translateX(16px);
 }
 
+/* TTS toggle — reuses theme-toggle track/thumb, activated by body.tts-on */
+.tts-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  user-select: none;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+body.tts-on .tts-toggle .theme-toggle-track {
+  background: var(--accent-primary);
+}
+
+body.tts-on .tts-toggle .theme-toggle-thumb {
+  transform: translateX(16px);
+}
+
 /* ============================================================
    Scenario Spinner Wheel
    ============================================================ */

@@ -14,6 +14,7 @@ import { cascadeReveal, pulseInteractive } from './anticipation'
 import { attachCelebrations } from './celebration'
 import { saveCliffhanger, extractCliffhanger } from './session-hooks'
 import { applyMoodFromUI } from './mood-colors'
+import { speakTurn, stopSpeaking } from './tts'
 import { preloadInterstitialImage } from './loading-interstitial'
 import { jsonrepair } from 'jsonrepair'
 
@@ -570,6 +571,9 @@ export class GameLoop {
   async submitTurn(): Promise<void> {
     const { container, llmClient, promptBuilder, onStateChange, onError, onLoading } = this.config
 
+    // 0. Stop any TTS from the previous turn
+    stopSpeaking()
+
     // 1. Collect current inputs and behavioral signals
     const behavioralSignals = this.inputTracker.collect()
     const playerActionsJson = collectInputState(container, this.state.turnNumber + 1)
@@ -648,7 +652,9 @@ export class GameLoop {
 
     // 9. Apply dopamine effects: cascade reveal, typewriter, celebrations, pulse
     cascadeReveal(container)
-    applyTypewriter(container)
+    applyTypewriter(container).then(() => {
+      speakTurn(container)
+    })
     pulseInteractive(container)
     if (this.cleanupCelebrations) this.cleanupCelebrations()
     this.cleanupCelebrations = attachCelebrations(container)

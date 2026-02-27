@@ -1145,7 +1145,10 @@ export function renderUI(
     const wrapper = document.createElement('div')
     wrapper.className = 'geems-element'
     if (element.name) wrapper.dataset.elementName = element.name
-    if (element.voice) wrapper.classList.add(`voice-${element.voice}`)
+    if (element.voice) {
+      wrapper.classList.add(`voice-${element.voice}`)
+      wrapper.dataset.voice = element.voice
+    }
 
     let adjustedColor: string | null = null
     if (element.color && isValidHexColor(element.color)) {
