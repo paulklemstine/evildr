@@ -1063,7 +1063,7 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
       </div>
 
       <!-- Flags Analysis Panel -->
-      <div id="flags-panel" style="margin-top: 2rem; display: none;">
+      <div id="flags-panel" style="margin-top: 2rem;">
         <h3 class="text-base font-bold" style="color: var(--text-heading); margin-bottom: 1rem; text-align: center;">
           Matchmaker's Assessment
         </h3>
@@ -1173,30 +1173,26 @@ function startMultiplayerGame(isPlayer1: boolean, sendFn: (data: unknown) => voi
       }
     },
     onAnalysis: (analysis: AnalysisData) => {
-      const flagsPanel = document.getElementById('flags-panel')
       const greenContent = document.getElementById('green-flags-content')
       const redContent = document.getElementById('red-flags-content')
 
-      if (flagsPanel && (analysis.greenFlags || analysis.redFlags)) {
-        flagsPanel.style.display = 'block'
-      }
+      const formatFlags = (raw: string) => raw
+        .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/^- (.*)/gm, '<li>$1</li>')
+        .replace(/(<li>.*<\/li>)/s, '<ul style="list-style: none; padding: 0; margin: 0;">$1</ul>')
+        .replace(/\n/g, '<br>')
 
-      if (greenContent && analysis.greenFlags) {
+      if (greenContent) {
         greenContent.innerHTML = analysis.greenFlags
-          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-          .replace(/^- (.*)/gm, '<li>$1</li>')
-          .replace(/(<li>.*<\/li>)/s, '<ul style="list-style: none; padding: 0; margin: 0;">$1</ul>')
-          .replace(/\n/g, '<br>')
+          ? formatFlags(analysis.greenFlags)
+          : '<p style="color: var(--text-muted); font-style: italic;">No flags yet. Keep dating!</p>'
       }
 
-      if (redContent && analysis.redFlags) {
+      if (redContent) {
         redContent.innerHTML = analysis.redFlags
-          .replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
-          .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-          .replace(/^- (.*)/gm, '<li>$1</li>')
-          .replace(/(<li>.*<\/li>)/s, '<ul style="list-style: none; padding: 0; margin: 0;">$1</ul>')
-          .replace(/\n/g, '<br>')
+          ? formatFlags(analysis.redFlags)
+          : '<p style="color: var(--text-muted); font-style: italic;">No flags yet. Keep dating!</p>'
       }
     },
   })

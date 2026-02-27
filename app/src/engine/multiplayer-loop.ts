@@ -564,6 +564,7 @@ export class MultiplayerGameLoop {
   private myScenarioSelections: number[] | null = null
   private partnerScenarioSelections: number[] | null = null
   private selectedVenue: string | null = null
+  private receivedWinnerIndex: number | null = null
   private scenarioResolve: (() => void) | null = null
 
   constructor(config: MultiplayerGameLoopConfig) {
@@ -808,6 +809,9 @@ export class MultiplayerGameLoop {
     // Need both players to have submitted
     if (this.myScenarioSelections === null || this.partnerScenarioSelections === null) return
 
+    // Player 2 must also wait for the result from Player 1
+    if (!this.config.isPlayer1 && this.receivedWinnerIndex === null) return
+
     const mySet = new Set(this.myScenarioSelections)
     const partnerSet = new Set(this.partnerScenarioSelections)
 
@@ -854,13 +858,8 @@ export class MultiplayerGameLoop {
         winnerIndex,
       } as PeerMessage)
     } else {
-      // Player 2 already received the result via handlePartnerData
-      if (this.selectedVenue) {
-        winnerIndex = this.spinnerCandidates.findIndex(c => c.text === this.selectedVenue)
-        if (winnerIndex === -1) winnerIndex = 0
-      } else {
-        winnerIndex = 0
-      }
+      // Player 2 uses the winner index received from Player 1
+      winnerIndex = this.receivedWinnerIndex!
     }
 
     this.showScenarioSpinner(winnerIndex)
@@ -922,14 +921,15 @@ export class MultiplayerGameLoop {
       `
       const emojiSpan = document.createElement('span')
       emojiSpan.textContent = c.emoji
-      // Place emoji further from center for larger slices, closer for small ones
+      // Place emoji at radial center of the slice, centered on its own bounding box
       const dist = segmentAngles[i] > 30 ? 80 : 60
       emojiSpan.style.cssText = `
         position: absolute;
-        transform: rotate(-${midAngle}deg) translateX(0);
-        left: ${dist}px; top: -0.6em;
+        transform: translate(-50%, -50%) rotate(-${midAngle}deg);
+        left: ${dist}px; top: 0;
         font-size: ${segmentAngles[i] > 40 ? '1.5rem' : '1.1rem'};
         filter: drop-shadow(0 1px 2px rgba(0,0,0,0.5));
+        line-height: 1;
       `
       emojiDiv.appendChild(emojiSpan)
       wheel.appendChild(emojiDiv)
@@ -1456,10 +1456,15 @@ export class MultiplayerGameLoop {
         this.receiveScenarioSelections((msg as PeerMessage & { type: 'scenario-selections' }).liked)
         break
 
-      case 'scenario-result':
+      case 'scenario-result': {
         // Player 2 receives the final venue + winner index from Player 1
-        this.selectedVenue = (msg as PeerMessage & { type: 'scenario-result' }).venue
+        const resultMsg = msg as PeerMessage & { type: 'scenario-result' }
+        this.selectedVenue = resultMsg.venue
+        this.receivedWinnerIndex = resultMsg.winnerIndex
+        // Now that we have the result, try spinning (may have been waiting for this)
+        this.tryRunSpinner()
         break
+      }
 
       case 'ping':
         this.config.sendToPartner({ type: 'pong' })
