@@ -135,7 +135,8 @@ image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image promp
 inline_image: {"type":"inline_image","name":"detail_img","label":"","value":"image prompt for small thematic illustration","color":"#d3d3d3","voice":"narrator"}
   Up to 3 smaller inline images alongside UI elements to enhance the date atmosphere (a closeup detail, a menu item, a flickering candle). These do NOT need subliminal text. Use roughly every 2-3 turns.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"HEX","voice":"narrator"}
-radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"}],"color":"HEX","voice":"player","predicted":"a"}
+radio: {"type":"radio","name":"action","label":"What do you say?","options":[{"label":"*Flirt playfully","value":"a"},{"label":"Ask a deep personal question","value":"b"},{"label":"Share something vulnerable","value":"c"},{"label":"Change the subject entirely","value":"d"}],"color":"HEX","voice":"player","predicted":"a"}
+  IMPORTANT: EVERY turn MUST end with a radio group named "action" with EXACTLY 4 options (values a,b,c,d). Each label must be a descriptive action sentence — NEVER use single letters or generic placeholders.
 slider: {"type":"slider","name":"interest","label":"How interested?","value":"5","min":"0","max":"10","step":"1","color":"HEX","voice":"player","predicted":"7"}
 checkbox: {"type":"checkbox","name":"agree","label":"I agree","value":"false","color":"HEX","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"response","label":"Write here","value":"","placeholder":"Say something...","color":"HEX","voice":"player","predicted":"I think..."}

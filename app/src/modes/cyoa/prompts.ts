@@ -179,7 +179,8 @@ Inline images should be 256x256, atmospheric, and THEMATIC — not redundant wit
 Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
 
 text: {"type":"text","name":"narrative","label":"","value":"Story text. Supports **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
-radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default choice","value":"a"},{"label":"Choice B","value":"b"},{"label":"Choice C","value":"c"},{"label":"Choice D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Charge forward boldly","value":"a"},{"label":"Investigate the surroundings carefully","value":"b"},{"label":"Help the person in need","value":"c"},{"label":"Take a completely different approach","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+  IMPORTANT: EVERY turn MUST end with a radio group named "action" with EXACTLY 4 options (values a,b,c,d). Each label must be a descriptive action sentence — NEVER use single letters or generic placeholders.
 slider: {"type":"slider","name":"fear","label":"How hard do you push? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator","predicted":"7"}
 checkbox: {"type":"checkbox","name":"take_item","label":"Grab the rope","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"shout","label":"What do you shout?","value":"","placeholder":"Quick!","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"Over here!"}

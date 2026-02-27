@@ -100,7 +100,8 @@ Inline images should be 256x256, atmospheric, and THEMATIC — not redundant wit
 Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
 
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
-radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+radio: {"type":"radio","name":"action","label":"Your move","options":[{"label":"*Accept the Devil's offer","value":"a"},{"label":"Reject and counter-propose","value":"b"},{"label":"Ask for more details first","value":"c"},{"label":"Walk away from the table","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+  IMPORTANT: EVERY turn MUST end with a radio group named "action" with EXACTLY 4 options (values a,b,c,d). Each label must be a descriptive action sentence — NEVER use single letters or generic placeholders.
 slider: {"type":"slider","name":"price","label":"How much? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"devil","predicted":"7"}
 checkbox: {"type":"checkbox","name":"agree","label":"I accept the terms","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"desire","label":"Write here","value":"","placeholder":"What do you truly want...","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"I want..."}

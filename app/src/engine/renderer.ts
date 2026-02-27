@@ -542,8 +542,17 @@ function parseRadioOptions(
       try {
         optionsSource = JSON.parse(optionsSource)
       } catch {
-        // Not JSON -- treat the whole string as a single option
-        optionsSource = [{ label: optionsSource as string, value: optionsSource as string }]
+        // Not JSON — check for newline-separated options (common LLM format)
+        const str = optionsSource as string
+        const lines = str.split('\n').map(l => l.trim()).filter(Boolean)
+        if (lines.length > 1) {
+          optionsSource = lines.map((line, i) => {
+            const value = String.fromCharCode(97 + i) // a, b, c, d...
+            return { label: line, value }
+          })
+        } else {
+          optionsSource = [{ label: str, value: str }]
+        }
       }
     }
 
@@ -576,7 +585,15 @@ function parseRadioOptions(
 
           return { value: currentValue, label: currentLabel, isDefault }
         })
-        .filter((opt): opt is ParsedRadioOption => opt !== null)
+        .filter((opt): opt is ParsedRadioOption => {
+          if (!opt) return false
+          // Filter out bare value markers (single chars like "a", "b", "c", "d")
+          // that the LLM sometimes mixes into option arrays
+          if (opt.label.length === 1 && /^[a-d]$/i.test(opt.label) && opt.value === opt.label) {
+            return false
+          }
+          return true
+        })
 
       // Fallback: if element.value is a simple string matching an option, use it as default
       if (defaultValue === null && element.value && typeof element.value === 'string') {

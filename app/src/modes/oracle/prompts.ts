@@ -100,7 +100,8 @@ Inline images should be 256x256, atmospheric, and THEMATIC — not redundant wit
 Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
 
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
-radio: {"type":"radio","name":"action","label":"Choose your path","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+radio: {"type":"radio","name":"action","label":"Choose your path","options":[{"label":"*Seek the Oracle's deeper wisdom","value":"a"},{"label":"Challenge the prophecy","value":"b"},{"label":"Offer a personal sacrifice","value":"c"},{"label":"Trust your own instincts instead","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
+  IMPORTANT: EVERY turn MUST end with a radio group named "action" with EXACTLY 4 options (values a,b,c,d). Each label must be a descriptive action sentence — NEVER use single letters or generic placeholders.
 slider: {"type":"slider","name":"intensity","label":"How strongly? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"oracle","predicted":"7"}
 checkbox: {"type":"checkbox","name":"accept","label":"I accept this truth","value":"false","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"true"}
 textfield: {"type":"textfield","name":"confession","label":"Speak your truth","value":"","placeholder":"The Oracle listens...","color":"CHOOSE DELIBERATELY","voice":"player","predicted":"I think..."}
