@@ -193,6 +193,85 @@ export const NARRATIVE_TRACKING_TEMPLATE = `### NARRATIVE TRACKING (update every
  * Cinematic image prompt craft — shared by all modes.
  * Each mode appends its own art direction tier (style, references, palette).
  */
+/**
+ * Reactive elements directive — instructs the LLM to generate variant text
+ * keyed to each possible player choice. The client swaps variants instantly
+ * on interaction — zero extra LLM calls.
+ */
+export const REACTIVE_ELEMENTS = `### REACTIVE TEXT VARIANTS (MANDATORY FOR ALL RESPONSE ELEMENTS) ###
+
+**CRITICAL RULE: NEVER write narrative text that assumes a specific player choice.**
+Instead, use the \`reactive\` field so text swaps instantly when the player selects an option.
+
+Any text/narrative element that REACTS to a player's choice MUST include a \`reactive\` object:
+
+\`\`\`json
+{
+  "type": "text",
+  "name": "reaction",
+  "value": "You study the options before you...",
+  "reactive": {
+    "depends_on": "action",
+    "variants": {
+      "a": "You snatch the golden key. The Devil smiles — **bold** move.",
+      "b": "You examine the walls. Smart. Very smart.",
+      "c": "You call out to the stranger. Compassion — or naivety?",
+      "d": "You kick the desk over. The Devil laughs. *Chaos it is.*"
+    }
+  }
+}
+\`\`\`
+
+**RULES:**
+1. \`depends_on\` — the \`name\` of the interactive element this text reacts to
+2. \`variants\` — keys MUST match the choice values exactly (radio option values, button values, etc.)
+3. For **sliders**: use keys \`"low"\`, \`"mid"\`, \`"high"\` (0-30%, 30-70%, 70-100% of range)
+4. For **checkboxes/toggles**: use keys \`"true"\`, \`"false"\`
+5. The \`value\` field is the DEFAULT text shown before the player interacts
+6. Place reactive elements AFTER the interactive element they depend on
+7. Keep each variant SHORT — 1-3 sentences. The variant replaces the \`value\` text instantly
+8. Multiple text elements can depend on the same input
+9. Elements WITHOUT \`reactive\` render normally — this is fully backward-compatible
+10. The variant text supports markdown (bold, italic, etc.) just like regular text
+
+**WHEN TO USE REACTIVE:**
+- A reaction/commentary/consequence text that follows a choice
+- A cliffhanger that changes based on the chosen path
+- NPC dialogue that responds to the player's action
+
+**WHEN NOT TO USE REACTIVE:**
+- Scene-setting text that appears before choices
+- Labels, headers, or UI chrome
+- The interactive elements themselves`
+
+/**
+ * Mutation directive for Skinwalker mode — timed DOM changes that gaslight the player.
+ */
+export const MUTATION_DIRECTIVE = `### SKINWALKER MUTATIONS (SKINWALKER MODE ONLY) ###
+
+You can schedule silent DOM changes that happen WHILE the player is reading — gaslighting them.
+Output a hidden \`mutations\` field with scheduled changes:
+
+\`\`\`json
+{"type":"hidden","name":"mutations","value":"[{\\"delay_ms\\":18000,\\"target\\":\\"narrative\\",\\"action\\":\\"text_replace\\",\\"from\\":\\"blue door\\",\\"to\\":\\"red door\\"}]"}
+\`\`\`
+
+**Mutation types:**
+- \`text_replace\` — silently swap a word/phrase in a text element: \`{"delay_ms":N, "target":"element_name", "action":"text_replace", "from":"old text", "to":"new text"}\`
+- \`swap_image\` — silently change an image: \`{"delay_ms":N, "target":"element_name", "action":"swap_image", "to":"new image prompt"}\`
+
+**Rules:**
+1. \`delay_ms\` — 15000 to 45000 (15-45 seconds after render). The player should have time to READ the original first
+2. \`target\` — the \`name\` of the element to mutate (must match an element in this turn)
+3. Maximum 1-2 mutations per turn. Subtlety is key — if the player notices every time, it stops working
+4. ONLY mutate text and images — NEVER touch interactive elements (radio, slider, etc.)
+5. Changes should be small and deniable: a word, a number, a color, a name
+6. The best mutations make the player doubt their own memory:
+   - "Wait... didn't that say 'three' a moment ago?"
+   - "I could have sworn the door was on the left..."
+   - A face in the image subtly changes expression
+7. Do NOT always include mutations. Use them 60-70% of turns for unpredictability`
+
 export const CINEMATIC_IMAGE_CRAFT = `### CINEMATIC IMAGE PROMPT FORMULA ###
 Every image prompt MUST follow this structure for MAXIMUM visual impact:
 

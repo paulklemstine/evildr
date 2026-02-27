@@ -3,7 +3,7 @@
 // ============================================================================
 
 import type { UIElement, RenderResult } from './renderer.ts'
-import { renderUI, collectInputState, collectQuestionContext } from './renderer.ts'
+import { renderUI, collectInputState, collectQuestionContext, attachReactiveListeners } from './renderer.ts'
 import { saveGameState, loadGameState as loadSavedState } from './auto-save.ts'
 import { InputTracker } from '../profiling/input-tracker'
 import { saveTurn, saveSession, updateSession, getAnalysesBySession, getTurnsBySession } from '../profiling/db'
@@ -98,6 +98,15 @@ export interface GameLoopConfig {
   userId?: string
   /** Unique session ID for profiling */
   sessionId?: string
+}
+
+/** A scheduled DOM mutation for the Skinwalker mode gaslighting engine. */
+interface MutationEntry {
+  delay_ms: number
+  target: string
+  action: 'text_replace' | 'swap_image'
+  from?: string
+  to?: string
 }
 
 // ---------------------------------------------------------------------------
@@ -410,6 +419,8 @@ export class GameLoop {
   private state: GameState
   private inputTracker: InputTracker
   private cleanupCelebrations: (() => void) | null = null
+  private cleanupReactive: (() => void) | null = null
+  private mutationTimers: ReturnType<typeof setTimeout>[] = []
   /** Base64 captures of resolved images, keyed by image prompt. */
   private capturedImages: Record<string, string> = {}
 
@@ -642,6 +653,16 @@ export class GameLoop {
     if (this.cleanupCelebrations) this.cleanupCelebrations()
     this.cleanupCelebrations = attachCelebrations(container)
 
+    // 9b. Attach reactive variant listeners (swap text on input change)
+    if (this.cleanupReactive) this.cleanupReactive()
+    this.cleanupReactive = attachReactiveListeners(container)
+
+    // 9c. Skinwalker mutation engine (timed DOM changes)
+    this.clearMutationTimers()
+    if (this.config.mode === 'skinwalker') {
+      this.initMutationEngine(uiJsonArray)
+    }
+
     // 10. Preload next interstitial image while player plays this turn
     preloadInterstitialImage(this.config.imageClient)
 
@@ -729,6 +750,10 @@ export class GameLoop {
     this.state.mode = mode
     this.config.container.innerHTML = ''
 
+    // Clean up reactive listeners and mutation timers
+    if (this.cleanupReactive) { this.cleanupReactive(); this.cleanupReactive = null }
+    this.clearMutationTimers()
+
     // Clear persisted state
     try {
       localStorage.removeItem(this.storageKey())
@@ -737,5 +762,61 @@ export class GameLoop {
     }
 
     this.config.onStateChange(this.getState())
+  }
+
+  // ---- Skinwalker Mutation Engine ----
+
+  private clearMutationTimers(): void {
+    this.mutationTimers.forEach(clearTimeout)
+    this.mutationTimers = []
+  }
+
+  /**
+   * Parse a `mutations` hidden field and set timers for DOM changes.
+   * Only active in Skinwalker mode. Only touches text/images — never inputs.
+   */
+  private initMutationEngine(elements: UIElement[]): void {
+    const mutationsEl = elements.find(
+      (el) => el.type === 'hidden' && el.name === 'mutations',
+    )
+    if (!mutationsEl?.value) return
+
+    let mutations: MutationEntry[]
+    try {
+      mutations = JSON.parse(mutationsEl.value)
+      if (!Array.isArray(mutations)) return
+    } catch { return }
+
+    for (const m of mutations) {
+      const delay = Math.max(5000, Math.min(60000, m.delay_ms || 15000))
+      const timer = setTimeout(() => this.applyMutation(m), delay)
+      this.mutationTimers.push(timer)
+    }
+  }
+
+  private applyMutation(m: MutationEntry): void {
+    const container = this.config.container
+
+    if (m.action === 'text_replace' && m.target && m.from && m.to) {
+      const targetWrapper = container.querySelector<HTMLElement>(
+        `[data-element-name="${m.target}"]`,
+      )
+      const textEl = targetWrapper?.querySelector<HTMLElement>('.geems-text')
+      if (textEl) {
+        // Silent replacement — no animation (gaslighting effect)
+        textEl.innerHTML = textEl.innerHTML.replace(m.from, m.to)
+      }
+    }
+
+    if (m.action === 'swap_image' && m.target && m.to) {
+      const targetWrapper = container.querySelector<HTMLElement>(
+        `[data-element-name="${m.target}"]`,
+      )
+      const img = targetWrapper?.querySelector<HTMLImageElement>('img[data-image-prompt]')
+      if (img) {
+        img.dataset.imagePrompt = m.to
+        img.src = this.config.imageClient.getImageUrl(m.to)
+      }
+    }
   }
 }

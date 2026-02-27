@@ -5,6 +5,12 @@ const PUNCTUATION_PAUSE = 60 // extra ms after . ! ? ...
 const COMMA_PAUSE = 30 // extra ms after ,
 
 /**
+ * Active typewriter animations — allows reactive listeners to cancel
+ * an in-progress typewriter before swapping text.
+ */
+export const activeTypewriters = new WeakMap<HTMLElement, { cancel: () => void, finalHTML: string }>()
+
+/**
  * Applies typewriter animation to all .geems-text elements in the container.
  * Returns a promise that resolves when all animations complete.
  */
@@ -23,9 +29,23 @@ export function applyTypewriter(container: HTMLElement): Promise<void> {
     const startDelay = index * 200
 
     promises.push(new Promise((resolve) => {
-      setTimeout(() => {
-        typewriteHTML(el, html, resolve)
+      const startTimer = setTimeout(() => {
+        typewriteHTML(el, html, () => {
+          activeTypewriters.delete(el)
+          resolve()
+        })
       }, startDelay)
+
+      // Register cancel function — stops the typewriter and fills in remaining text
+      activeTypewriters.set(el, {
+        cancel: () => {
+          clearTimeout(startTimer)
+          el.innerHTML = html
+          activeTypewriters.delete(el)
+          resolve()
+        },
+        finalHTML: html,
+      })
     }))
   })
 
@@ -36,9 +56,11 @@ function typewriteHTML(el: HTMLElement, html: string, onDone: () => void): void 
   // Parse HTML into characters, preserving tags
   const segments = parseHTMLSegments(html)
   let current = 0
+  let activeTimer: ReturnType<typeof setTimeout> | null = null
 
   function tick() {
     if (current >= segments.length) {
+      activeTypewriters.delete(el)
       onDone()
       return
     }
@@ -59,8 +81,22 @@ function typewriteHTML(el: HTMLElement, html: string, onDone: () => void): void 
       else if (char === ',') delay += COMMA_PAUSE
       else if (char === '\n' || seg.text === '<br>') delay += PUNCTUATION_PAUSE
 
-      setTimeout(tick, delay)
+      activeTimer = setTimeout(tick, delay)
     }
+  }
+
+  // Update the cancel function to also clear the per-character timer
+  const existing = activeTypewriters.get(el)
+  if (existing) {
+    activeTypewriters.set(el, {
+      cancel: () => {
+        if (activeTimer !== null) clearTimeout(activeTimer)
+        el.innerHTML = html
+        activeTypewriters.delete(el)
+        onDone()
+      },
+      finalHTML: html,
+    })
   }
 
   tick()

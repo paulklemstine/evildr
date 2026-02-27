@@ -3,6 +3,7 @@
 // ============================================================================
 
 import type { QuestionContext } from '../profiling/db'
+import { activeTypewriters } from './typewriter'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -26,6 +27,11 @@ export interface UIElement {
   predicted?: string
   /** Hidden justification: why this question is asked + what trait it measures */
   justification?: string
+  /** Reactive variants — text swaps instantly when a dependent input changes */
+  reactive?: {
+    depends_on: string
+    variants: Record<string, string>
+  }
 }
 
 export interface RenderResult {
@@ -383,6 +389,15 @@ function renderTextElement(
   const textEl = document.createElement('div')
   textEl.className = 'geems-text'
   textEl.innerHTML = renderBasicMarkdown(textContent)
+
+  // Reactive variants — text swaps when a dependent input changes
+  if (element.reactive?.depends_on && element.reactive.variants) {
+    textEl.classList.add('geems-text-reactive')
+    wrapper.dataset.reactiveDependsOn = element.reactive.depends_on
+    wrapper.dataset.reactiveVariants = JSON.stringify(element.reactive.variants)
+    wrapper.dataset.reactiveOriginal = textContent
+  }
+
   wrapper.appendChild(textEl)
 }
 
@@ -1112,6 +1127,7 @@ export function renderUI(
 
     const wrapper = document.createElement('div')
     wrapper.className = 'geems-element'
+    if (element.name) wrapper.dataset.elementName = element.name
     if (element.voice) wrapper.classList.add(`voice-${element.voice}`)
 
     let adjustedColor: string | null = null
@@ -1378,4 +1394,168 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
   inputs['turn'] = turnNumber
 
   return JSON.stringify(inputs)
+}
+
+// ---------------------------------------------------------------------------
+// Reactive variant system — swaps text when player interacts with inputs
+// ---------------------------------------------------------------------------
+
+/**
+ * Bucket a slider value (0–1 normalized) into "low" / "mid" / "high".
+ */
+function bucketSliderValue(value: number, min: number, max: number): string {
+  const range = max - min
+  if (range <= 0) return 'mid'
+  const pct = (value - min) / range
+  if (pct <= 0.3) return 'low'
+  if (pct >= 0.7) return 'high'
+  return 'mid'
+}
+
+/**
+ * Cross-fade swap: fade out → replace innerHTML → fade in.
+ */
+function crossFadeSwap(textEl: HTMLElement, newHTML: string): void {
+  // Cancel any active typewriter on this element first
+  const tw = activeTypewriters.get(textEl)
+  if (tw) tw.cancel()
+
+  textEl.classList.add('geems-text-fading-out')
+  setTimeout(() => {
+    textEl.innerHTML = newHTML
+    textEl.classList.remove('geems-text-fading-out')
+    textEl.classList.add('geems-text-fading-in')
+    setTimeout(() => {
+      textEl.classList.remove('geems-text-fading-in')
+    }, 300)
+  }, 200)
+}
+
+/**
+ * Attaches event listeners that swap reactive text variants when the player
+ * interacts with the corresponding input element.
+ *
+ * Returns a cleanup function that removes all listeners.
+ */
+export function attachReactiveListeners(container: HTMLElement): () => void {
+  const cleanups: (() => void)[] = []
+
+  // Find all reactive wrappers
+  const reactiveWrappers = container.querySelectorAll<HTMLElement>('[data-reactive-depends-on]')
+  if (reactiveWrappers.length === 0) return () => {}
+
+  // Group reactive elements by their depends_on source
+  const dependencyMap = new Map<string, HTMLElement[]>()
+  reactiveWrappers.forEach((wrapper) => {
+    const source = wrapper.dataset.reactiveDependsOn!
+    if (!dependencyMap.has(source)) dependencyMap.set(source, [])
+    dependencyMap.get(source)!.push(wrapper)
+  })
+
+  for (const [sourceName, dependents] of dependencyMap) {
+    // Find the source interactive element by matching data-element-name on the wrapper
+    const sourceWrapper = container.querySelector<HTMLElement>(`[data-element-name="${sourceName}"]`)
+    if (!sourceWrapper) continue
+
+    // Determine source type from the interactive element inside
+    const radioInputs = sourceWrapper.querySelectorAll<HTMLInputElement>(`input[type="radio"][name="${sourceName}"]`)
+    const sliderInput = sourceWrapper.querySelector<HTMLInputElement>(`input[type="range"][name="${sourceName}"]`)
+    const checkboxInput = sourceWrapper.querySelector<HTMLInputElement>(`input[type="checkbox"][name="${sourceName}"]`)
+    const toggleInput = sourceWrapper.querySelector<HTMLInputElement>(`.geems-toggle-input[name="${sourceName}"]`)
+    const dropdownInput = sourceWrapper.querySelector<HTMLSelectElement>(`select[name="${sourceName}"]`)
+    const buttonGroup = sourceWrapper.querySelector<HTMLElement>('[data-element-type="button_group"]')
+    const emojiReact = sourceWrapper.querySelector<HTMLElement>('[data-element-type="emoji_react"]')
+    const colorPick = sourceWrapper.querySelector<HTMLElement>('[data-element-type="color_pick"]')
+
+    function applyVariant(variantKey: string): void {
+      for (const wrapper of dependents) {
+        const variantsJson = wrapper.dataset.reactiveVariants
+        const originalText = wrapper.dataset.reactiveOriginal || ''
+        if (!variantsJson) continue
+
+        let variants: Record<string, string>
+        try { variants = JSON.parse(variantsJson) } catch { continue }
+
+        const textEl = wrapper.querySelector<HTMLElement>('.geems-text')
+        if (!textEl) continue
+
+        const newText = variants[variantKey] ?? originalText
+        crossFadeSwap(textEl, renderBasicMarkdown(newText))
+      }
+    }
+
+    // Radio inputs — listen for click on each
+    if (radioInputs.length > 0) {
+      radioInputs.forEach((radio) => {
+        const handler = () => { if (radio.checked) applyVariant(radio.value) }
+        radio.addEventListener('change', handler)
+        cleanups.push(() => radio.removeEventListener('change', handler))
+      })
+    }
+
+    // Slider — bucket to low/mid/high
+    if (sliderInput) {
+      const handler = () => {
+        const min = parseFloat(sliderInput.min) || 0
+        const max = parseFloat(sliderInput.max) || 100
+        const val = parseFloat(sliderInput.value) || 0
+        applyVariant(bucketSliderValue(val, min, max))
+      }
+      sliderInput.addEventListener('input', handler)
+      cleanups.push(() => sliderInput.removeEventListener('input', handler))
+    }
+
+    // Checkbox
+    if (checkboxInput) {
+      const handler = () => applyVariant(String(checkboxInput.checked))
+      checkboxInput.addEventListener('change', handler)
+      cleanups.push(() => checkboxInput.removeEventListener('change', handler))
+    }
+
+    // Toggle (uses same checkbox mechanism)
+    if (toggleInput) {
+      const handler = () => applyVariant(String(toggleInput.checked))
+      toggleInput.addEventListener('change', handler)
+      cleanups.push(() => toggleInput.removeEventListener('change', handler))
+    }
+
+    // Dropdown
+    if (dropdownInput) {
+      const handler = () => applyVariant(dropdownInput.value)
+      dropdownInput.addEventListener('change', handler)
+      cleanups.push(() => dropdownInput.removeEventListener('change', handler))
+    }
+
+    // Button group — listen for clicks on child buttons
+    if (buttonGroup) {
+      const buttons = buttonGroup.querySelectorAll<HTMLElement>('[data-value]')
+      buttons.forEach((btn) => {
+        const handler = () => applyVariant(btn.dataset.value || '')
+        btn.addEventListener('click', handler)
+        cleanups.push(() => btn.removeEventListener('click', handler))
+      })
+    }
+
+    // Emoji react
+    if (emojiReact) {
+      const emojis = emojiReact.querySelectorAll<HTMLElement>('[data-value]')
+      emojis.forEach((emoji) => {
+        const handler = () => applyVariant(emoji.dataset.value || '')
+        emoji.addEventListener('click', handler)
+        cleanups.push(() => emoji.removeEventListener('click', handler))
+      })
+    }
+
+    // Color pick
+    if (colorPick) {
+      const swatches = colorPick.querySelectorAll<HTMLElement>('[data-value]')
+      swatches.forEach((swatch) => {
+        const handler = () => applyVariant(swatch.dataset.value || '')
+        swatch.addEventListener('click', handler)
+        cleanups.push(() => swatch.removeEventListener('click', handler))
+      })
+    }
+  }
+
+  return () => { cleanups.forEach((fn) => fn()) }
 }
