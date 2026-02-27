@@ -413,13 +413,16 @@ Element order:
    Describe the dreamscape with IMPOSSIBLE sensory details: the sound of the light, the weight of the color, the taste of the distance.
 4. Interactive elements — THE DREAM CALIBRATION (establishing aesthetic preferences):
    - color_pick: "The dream asks: what color should the silence be?" color: #ff6ec7 — THIS IS THE MOST IMPORTANT FIRST CHOICE. Their color preference seeds the entire dream.
+   - inline_image: small surreal detail ("crystallized flowers growing from liquid silver, dreamlike close-up, iridescent light, surrealist digital art")
    - slider: "How deep should we go? (1=surface, 10=the bottom of everything)" color: #9b5de5, min: 1, max: 10, predicted: "6"
    - textfield: "The dream wants to know your name. Or a name. Any name. Names are flexible here." color: #f4a261, predicted: "a plausible name"
    - emoji_react: "Something moves in the distance. Your gut says—" options: ["😊","😢","😡","😱","🤔","❤️"] color: #e9c46a, predicted: "😊"
+   - inline_image: small surreal detail ("five doorways made of feelings floating above a silver ocean, each glowing a different impossible color, surrealist art")
    - button_group: "The dream offers five doors. They're not doors, exactly. They're more like feelings. Which one?" options: ["Wonder","Melancholy","Euphoria","Terror","Tenderness"] color: #00f5d4, predicted: "Wonder"
    - rating: "How beautiful is this, right now? (1-5)" color: #ff6ec7, predicted: "4"
-5. text — The Dream's first observation (voice: god, color: #e9c46a).
-   "Good. The dream has what it needs. The first thread is cast. What comes next? Even the dream doesn't know. And that's the point."
+5. text WITH REACTIVE VARIANTS — The Dream's observation that changes based on which feeling-door they chose (voice: god, color: #e9c46a).
+   Use the reactive field so text swaps when they pick a radio option:
+   {"type":"text","name":"dream_reading","value":"Good. The dream has what it needs. The first thread is cast.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"action","variants":{"a":"You followed the sound. The dream hums back. Every surface vibrates now — a frequency just for you. The thread is cast.","b":"You followed the memory. The dream remembers too. Something from before — before this dream, before any dream. The thread is cast.","c":"You followed the tears. The dream is tender now. Soft edges. Warm light. It cries with you. The thread is cast.","d":"You followed the nothing. The dream shivers. *Interesting.* Even the dream doesn't know what happens now. The thread is cast."}}}
 6. radio — EXACTLY 4 choices (color: #9b5de5). The first surreal non-sequiturs — gentle, inviting, each a different flavor:
    "The dreamscape shimmers. Four paths form in the silver ocean — each one impossible, each one beautiful."
    - "Follow the path that hums" (bold — sensory adventure)
@@ -485,11 +488,12 @@ ${SURREALISM_PROTOCOL}
    This should be the most POETIC writing in any mode.
 4. Interactive elements — DREAM CONTROLS (all abstract, all surreal):
    - 2-3 surreal interaction elements (sliders for abstract concepts, button groups for impossible actions, number inputs for dream math)
+   - Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a small surreal detail next to a slider, a dreamscape fragment next to a color pick)
    - 1 color_pick (ALWAYS present — this shapes the next dream)
    - 1 textfield dream journal moment ("If this moment were a word, what word?")
    - Occasional checkboxes for accepting dream transformations
-5. text — The Dream's wisdom (voice: god, name: divine_wisdom, color: #e9c46a). Poetic. Cryptic. Resonant.
-   "The dream has no opinion. But it leans toward you when you choose."
+5. text WITH REACTIVE VARIANTS — The Dream's wisdom that changes based on the radio choice below (voice: god, name: divine_wisdom, color: #e9c46a).
+   Use the "reactive" field so text swaps instantly when they pick a radio option. The default "value" shows before they choose.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). SURREAL NON-SEQUITURS following ASYMMETRIC DESIGN:
    Bold (most intense), Clever (most conceptual), Compassionate (most emotional), Chaotic (most reality-breaking).
    End with a DREAM-SHIFT CLIFFHANGER then offer 4 impossible responses.
@@ -508,4 +512,6 @@ Frame EVERY choice as a dream action:
 
 ${COLOR_PROTOCOL}
 
-${BEHAVIORAL_DIRECTIVES}`
+${BEHAVIORAL_DIRECTIVES}
+
+${REACTIVE_ELEMENTS}`

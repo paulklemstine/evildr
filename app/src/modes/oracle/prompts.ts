@@ -379,12 +379,15 @@ Element order:
 3. text — scene description (voice: narrator, color: #9b5de5). The sanctum is alive with beauty — shimmering light, floating particles, surfaces that reflect things that aren't in the room.
 4. Interactive elements — THE OPENING RITUAL (seemingly innocent, deeply diagnostic):
    - color_pick: "The Oracle presents eight threads of fate. Choose the one that calls to you." color: #d4a017 (this is the CORE mechanic — color preference reveals emotional state)
+   - inline_image: small mystical detail ("eight shimmering threads of fate floating in golden smoke, ethereal close-up, mystical fantasy art")
    - textfield: "Before we begin — what name shall the Oracle call you?" color: #2a9d8f, predicted: "a plausible name"
    - slider: "Close your eyes. A number between 1 and 10 appears. What is it?" color: #9b5de5, min: 1, max: 10, predicted: "7"
+   - inline_image: small mystical detail ("a crystal mirror reflecting something not in the room, golden particles swirling, ethereal")
    - emoji_react: "The Oracle shows you a mirror. Your first reaction—" options: ["😊","😢","😡","😱","🤔","❤️"] color: #e9c46a, predicted: "🤔"
    - rating: "Before any words are spoken — how clearly can you see your own future? (1-5)" color: #264653, predicted: "3"
-5. text — The Oracle's first observation (voice: god, color: #d4a017). A Barnum-style opening that feels personal:
-   "The Oracle sees already. More than you expected. More than you're comfortable with. But the prophecy has begun, and it will not stop until it's finished."
+5. text WITH REACTIVE VARIANTS — The Oracle's observation that changes based on which path they choose (voice: god, color: #d4a017).
+   Use the reactive field so text swaps when they pick a radio option:
+   {"type":"text","name":"oracle_reading","value":"The Oracle sees already. More than you expected. More than you're comfortable with.","voice":"god","color":"#d4a017","reactive":{"depends_on":"path","variants":{"a":"Courage. The Oracle nods slowly. *You want to see what's coming.* Most don't. Most turn away. But you — you stare into the abyss and ask it to speak louder.","b":"Truth. The hardest path. You want to see what you've hidden even from yourself. The Oracle respects this. It does not promise comfort.","c":"Connection. The thread of others. The Oracle smiles — warm, ancient. *You define yourself through those you love.* The prophecy will show you what those connections truly mean.","d":"Chaos. The wild card. The Oracle laughs — a sound like wind chimes in a storm. *You want to be surprised.* Very well. The prophecy accepts your challenge."}}}
 6. radio — EXACTLY 4 choices (color: #9b5de5). Mystical orientations, not actions:
    "The Oracle offers four paths to begin your reading. Each reveals a different thread of your fate."
    - "Show me what I need to know" (bold/courage)
@@ -446,10 +449,11 @@ ${PROPHECY_PROTOCOL}
    Use sensory, mystical language. This should feel POETIC and SPECIFIC simultaneously.
 4. Interactive elements — THE READING CONTINUES (all framed as divination, all diagnostic):
    - 2-3 seemingly innocent choices (color picks, sliders, emoji reactions, word associations)
+   - Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a mystical detail image next to a color pick, a prophetic symbol next to a slider)
    - Then one deeper element that feels more personal (sentence completion, resonance rating, acceptance toggle)
    - ALL framed as mystical ritual, NEVER as psychological assessment
-5. text — The Oracle's observation (voice: god, name: divine_wisdom, color: #d4a017). The closing mystical tease.
-   "The threads tighten. The Oracle sees more with each choice you make. And what it sees next..."
+5. text WITH REACTIVE VARIANTS — The Oracle's observation that changes based on the radio choice below (voice: god, name: divine_wisdom, color: #d4a017).
+   Use the "reactive" field so text swaps instantly when they pick a radio option. The default "value" shows before they choose.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). Mystical paths following ASYMMETRIC CHOICE DESIGN:
    Frame as orientations/paths: courage (#e63946), wisdom (#9b5de5), love (#f4c2c2), chaos (#f4a261).
    End with a PROPHECY CLIFFHANGER then offer 4 mystical responses.
@@ -468,4 +472,6 @@ Frame EVERY choice as part of the reading ritual:
 
 ${COLOR_PROTOCOL}
 
-${BEHAVIORAL_DIRECTIVES}`
+${BEHAVIORAL_DIRECTIVES}
+
+${REACTIVE_ELEMENTS}`

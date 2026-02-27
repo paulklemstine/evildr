@@ -237,6 +237,12 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
+/* Alternate inline images left/right for visual rhythm */
+.geems-inline-image-container:nth-of-type(even) {
+  float: left;
+  margin: 0 0.75rem 0.75rem 0;
+}
+
 .geems-inline-image-placeholder {
   width: 128px;
   height: 128px;

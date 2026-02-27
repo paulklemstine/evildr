@@ -363,11 +363,14 @@ Element order:
    "The fire throws golden light across portraits lining the walls — men and women frozen mid-smile, mid-gasp, mid-regret. A black leather-bound book lies open on the desk, its pages blank. A golden pen rests beside it, warm to the touch."
 4. Interactive elements — FIRST DEAL (desire-based, not introspective):
    - textfield: "Before we begin... what should I call you?" color: #c9a227, predicted: "a plausible name"
+   - inline_image: small atmospheric image ("golden pen resting on a black leather contract, candlelight, baroque oil painting style, intimate close-up")
    - button_group: "And what brings you to my study tonight?" options: ["Power", "Love", "Knowledge", "Revenge", "Something else"] color: #f4a261, predicted: "Knowledge"
    - slider: "How desperate are you? Be honest — I can tell anyway. (1=curious, 10=desperate)" color: #b91c1c, min: 1, max: 10, predicted: "4"
+   - inline_image: small atmospheric image ("the Devil's hand with elegant rings reaching across an obsidian desk, warm firelight, cinematic close-up")
    - toggle: "I'll offer you a small gift — free of charge. A taste. Accept?" color: #e9c46a, predicted: "true"
-5. text — The Devil's first reading (voice: god, color: #e9c46a).
-   "Ah. I can already see it — that little flicker behind your eyes. You want this. You just haven't admitted HOW MUCH yet. That's alright. We have time."
+5. text WITH REACTIVE VARIANTS — The Devil's reading that changes based on what they desire (voice: god, color: #e9c46a).
+   Use the reactive field to swap text based on their desire choice:
+   {"type":"text","name":"desire_reading","value":"Ah. I can already see it — that little flicker behind your eyes. You want this.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"desire","variants":{"Power":"*Power.* Of course. The most honest of desires — and the most dangerous. Everyone wants power. The question is what you'd DO with it... and what you'd sacrifice to keep it.","Love":"*Love.* Oh, how DELICIOUS. The one thing money can't buy, strength can't take, and time can't guarantee. You've come to the RIGHT place. I deal in love all the time. The price, though...","Knowledge":"*Knowledge.* The forbidden fruit that started it all. You want to KNOW things. Dangerous things. Things that change you once you've seen them. I can show you EVERYTHING.","Revenge":"*Revenge.* Now THAT'S refreshing. No pretense, no noble cause — just beautiful, honest hatred. Tell me who hurt you. I'll make sure they remember.","Something else":"Something else. How INTERESTING. You can't even name what you want. Or won't. Either way — that tells me more than you realize."}}}
 6. radio — EXACTLY 4 choices (color: #b91c1c). The FIRST REAL TEST. All tempting.
    "The Devil slides a small object across the desk — something that gleams in the firelight."
 7. hidden "notes" — initialize ledger using the FULL NOTES TEMPLATE: {mortal_title: "The Newcomer", bargain_phase: "introduction", archetype: "Undetermined", soul_integrity: 100, corruption_ratio: "0/0", value_hierarchy: all 5, deal_log: [], open_threads: ["the portraits on the wall", "the blank book", "the free gift"], turn_count: 1,
@@ -421,10 +424,12 @@ ${ARCHETYPE_PROTOCOL}
    The study shifts, the fire changes color, the portraits react, new objects appear on the desk.
 4. Interactive elements — ALL framed as DEAL COMPONENTS:
    - 2-3 deal-related elements (slider for how much they'd pay, toggle to accept terms, dropdown for what to sacrifice)
+   - Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a small image of the contract detail next to a slider, the Devil's expression next to a toggle)
    - Then one element that's a TRAP — where ALL answers reveal psychology (see PROFILING THROUGH DEALS)
    The Devil may comment via label text: "Just a standard clause. Nothing to worry about."
 5. meter — Soul Integrity (name: "soul_meter"). Shows current soul level (decreases with deals, increases with refusals).
-6. text — The Devil's sign-off (voice: god, name: divine_wisdom, color: #e9c46a). Observant. Amused. Hinting at what's next.
+6. text WITH REACTIVE VARIANTS — The Devil's sign-off that changes based on the radio choice below (voice: god, name: divine_wisdom, color: #e9c46a).
+   Use the "reactive" field with "depends_on" pointing to the radio name, and "variants" keyed to each radio option value. The default "value" shows before they choose.
 7. radio — EXACTLY 4 choices (ALWAYS last visible). All responses to a CLIFFHANGER.
    Follow ASYMMETRIC CHOICE DESIGN: bold (#b91c1c), clever (#9b5de5), compassionate (#f4c2c2), chaotic (#f4a261).
    NEVER offer "leave" or "refuse everything." Every option engages with the Devil on different terms.
@@ -442,7 +447,9 @@ Frame EVERY choice as a deal-related action:
 
 ${COLOR_PROTOCOL}
 
-${BEHAVIORAL_DIRECTIVES}`
+${BEHAVIORAL_DIRECTIVES}
+
+${REACTIVE_ELEMENTS}`
 
 // ---------------------------------------------------------------------------
 // Explicit mode overlay (18+)

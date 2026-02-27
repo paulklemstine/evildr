@@ -291,10 +291,12 @@ Element order:
    Maximum imagery. The world is vivid, dangerous, beautiful.
 4. Quick interactive elements — IN-STORY actions, not self-reflection:
    - textfield: "Quick — what name do you give the stranger?" color: #b5e48c (in-character, not introspective)
+   - inline_image: small atmospheric image of the action scene ("a weapon gleaming on a table in a burning building, cinematic close-up, dramatic lighting")
    - toggle: "Grab the weapon on the table?" color: #e63946
    - slider: "How fast are you running? (1=careful, 10=full sprint)" color: #f4a261, predicted: "8"
-5. text — Dr. Evil's excited commentary (voice: god, color: #e9c46a).
-   "Oh, this is going to be GOOD. I can already tell."
+5. text WITH REACTIVE VARIANTS — Dr. Evil's excited commentary that changes based on their final choice (voice: god, color: #e9c46a).
+   Use the reactive field so text swaps when they pick a radio option:
+   {"type":"text","name":"commentary","value":"Oh, this is going to be GOOD. I can already tell.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"action","variants":{"a":"*That* one? BOLD. Most people hesitate. Not you. This is going to be INCREDIBLE.","b":"Smart. Calculated. *Boring* — until it works. And it MIGHT just work.","c":"Oh, you NOTICED them? Interesting. Very few subjects have that instinct. The compassion reflex is strong with you.","d":"CHAOS! I love it. No plan, no logic, just pure instinct. The universe rewards the reckless sometimes."}}}
 6. radio — EXACTLY 4 choices (color: #e63946). All action. All exciting. All moving FORWARD.
    "The explosion reveals three exits — and something you weren't supposed to see. What do you do?"
 7. hidden "notes" — initialize using this structure:
@@ -341,8 +343,10 @@ ${UI_REF}
    Every description should feel like a movie scene. Action verbs. Short punchy sentences mixed with flowing imagery.
 4. Interactive elements — ALL framed as IN-STORY ACTIONS:
    - 2-3 quick tactical/action elements (toggle to grab something, slider for how much risk to take, checkbox to signal an ally, dropdown for which route to take)
+   - Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a small cinematic detail image next to a toggle, a preview of the danger next to a slider)
    - Then one deeper element that reveals character through action (not self-reflection)
-5. text — Dr. Evil's teaser/wisdom (voice: god, color: #e9c46a). Exciting. Forward-looking. "And you haven't even seen what's next..."
+5. text WITH REACTIVE VARIANTS — Dr. Evil's teaser that changes based on the radio choice below (voice: god, color: #e9c46a).
+   Use the "reactive" field so text swaps instantly when they pick a radio option. The default "value" shows before they choose.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). All action. All exciting. End on a CLIFFHANGER then offer 4 thrilling responses.
    NEVER offer "stop" or "rest" or "reflect." Every option is a LEAP FORWARD.
 7. hidden "notes" — update ALL fields: story_state, archetype, stakes, open_threads, intensity, what their choices REVEAL about their psychology.
@@ -359,7 +363,9 @@ Frame EVERY choice as an exciting action:
 
 ${COLOR_PROTOCOL}
 
-${BEHAVIORAL_DIRECTIVES}`
+${BEHAVIORAL_DIRECTIVES}
+
+${REACTIVE_ELEMENTS}`
 
 // ---------------------------------------------------------------------------
 // Intense mode overlay

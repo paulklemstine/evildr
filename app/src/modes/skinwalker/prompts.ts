@@ -410,12 +410,14 @@ Element order:
    A joke. A shared memory. A minor disagreement. Something HUMAN and WARM.
 4. Interactive elements — COMPLETELY NORMAL actions:
    - textfield: "What did you bring to the dinner?" or "What do you say to [character]?" color: #b8a88a, predicted: plausible normal response
+   - inline_image: small atmospheric detail from the scene ("a warm kitchen counter with wine glasses and a cheese board, soft evening light, photorealistic, slightly desaturated")
    - dropdown: A normal choice — "What do you want to drink?" with normal options. color: #d4a373
    - toggle: "Join the conversation about [topic]?" color: #8b8589, predicted: "true"
    - rating: "How's the evening going so far? (1-5)" color: #e9c46a, predicted: "4"
    - slider: "How well do you know these people? (0-10)" color: #b8a88a, predicted: "7"
-5. text — The narrator's sign-off (voice: god, color: #e9c46a). Warm. Reassuring. Completely normal.
-   "A nice evening. Good people. Nothing unusual. Nothing at all."
+5. text WITH REACTIVE VARIANTS — The narrator's sign-off that changes based on the radio choice (voice: god, color: #e9c46a).
+   Use the reactive field so text swaps when they pick a radio option:
+   {"type":"text","name":"narration_close","value":"A nice evening. Good people. Nothing unusual. Nothing at all.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"action","variants":{"a":"You step forward. Confident. The room notices. Something shifts in the air — warm, or was it always this warm?","b":"You watch. Quietly. The details settle into place like puzzle pieces. Everything lines up. Almost.","c":"You check on them. A kind gesture. They smile. The smile is... exactly right. Exactly.","d":"Something unexpected. The room pauses. Just for a moment. Then carries on as if nothing happened. As if."}}}
 6. radio — EXACTLY 4 choices (color: #b8a88a). Normal social actions. Nothing scary. Not yet.
    "The host asks if anyone wants to see the renovated kitchen. [Character] suggests a game. The music changes to something mellow."
    - Option A: bold social action
@@ -484,9 +486,10 @@ ${ANOMALY_PROTOCOL}
 3. text — NPC interactions (voice: narrator). Characters being people. But something is... not quite right about one of them. Or the narration slightly contradicts something established earlier.
 4. Interactive elements — Framed as NORMAL SOCIAL ACTIONS + PERCEPTION CHECKS:
    - 1-2 normal scenario interactions (textfield for dialogue, dropdown for social choices)
+   - Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a small mundane detail that may contain a subtle anomaly next to a perception check)
    - 1-2 perception checks disguised as normal questions (color_pick: "What color was the door?", number_input: "How many chairs at the table?", dropdown: "What was [character]'s name?")
    - The perception checks test whether they noticed the anomalies WITHOUT telling them something is wrong
-5. text — Narrator sign-off (voice: god, name: divine_wisdom). Increasingly unreliable:
+5. text WITH REACTIVE VARIANTS — Narrator sign-off that changes based on the radio choice (voice: god, name: divine_wisdom). Increasingly unreliable:
    - Early: "Everything is fine. A normal evening."
    - Mid: "Everything is fine. Almost certainly."
    - Late: "I want to tell you everything is fine. I want to."
@@ -508,4 +511,8 @@ Frame choices as responses to growing unease:
 
 ${COLOR_PROTOCOL}
 
-${BEHAVIORAL_DIRECTIVES}`
+${BEHAVIORAL_DIRECTIVES}
+
+${REACTIVE_ELEMENTS}
+
+${MUTATION_DIRECTIVE}`

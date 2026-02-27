@@ -100,6 +100,10 @@ ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create d
 7. Apply ALL storytelling craft rules: BUT/THEREFORE causation, consequence echo, seed planting/callbacks, sensory writing, tension rhythm.
 8. Update notes: story_state, archetype, stakes, open_threads, turn_count, intensity AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue).
 9. All choices presuppose continued engagement. No "wait" or "rest" options.
+10. Use REACTIVE VARIANTS on reaction/commentary text that follows a choice — never write text that assumes a specific choice before it's made.
+11. Include 1-2 inline_image elements alongside key moments (BESIDE interactive elements or dramatic text) to enhance visual storytelling.
+
+${REACTIVE_ELEMENTS}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
