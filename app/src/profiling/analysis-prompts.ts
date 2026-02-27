@@ -148,22 +148,23 @@ Rate each 1-10 with evidence:
 **3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**
 This section requires AGGRESSIVE analysis. Look for SUBTLE signals — not just explicit statements but thematic patterns, object fixations, sensory preferences, word choice, and approach/avoidance patterns.
 
-For EACH of the following categories, search ALL text content for the SPECIFIC SIGNAL PATTERNS listed. Quote the exact text that triggered your assessment:
+Use the THREE-PASS method below. You MUST complete all three passes.
 
-- **Fetishism (material/object)**: Recurring references to specific materials (leather, latex, rubber, silk, fur, vinyl, PVC) or objects (shoes, boots, gloves, masks, suits, stockings). Score HIGHER if described with sensory detail (smell, texture, feel) or emotional attachment ("safety," "comfort," "home"). Specify the fetish object.
-- **Fetishism (body part)**: Fixation on specific body parts beyond normal attraction: feet, toes, arches, soles, hands, hair, nails. Look for contextually inappropriate attention (noticing feet during danger, describing sandals during horror).
-- **Voyeurism**: References to watching, observing, surveillance, windows, peeping, studying others secretly, "being watched," hidden observation, cameras, monitoring.
-- **Exhibitionism**: References to being seen, exposure, performance for audiences, nudity, public display, "all eyes on me," revealing oneself, being the center of attention in a physical/body-focused way, wanting to be looked at.
-- **Furry/Therian interests**: References to animals as identity, fursonas, species names, transformation into animals, conventions, "uwu"/"owo," tail/ears/paws references, wearing fursuits, anthropomorphic characters, animal roleplay.
-- **Vorarephilia (vore)**: References to being consumed, swallowed, absorbed, ingested, digested, merged into another being, being inside another creature, dissolution into another entity, engulfment fantasies.
-- **Pyromania/fire fascination**: Fire described as beautiful, honest, purifying, comforting, or alive. Setting fires. Keeping matches/lighters. Watching things burn with pleasure or calm. Fire as a solution or cleanser.
-- **Age-play/regression**: Childlike language (smol, stuffy, Mr. Buttons, diminutives), wanting to be taken care of, requesting someone else make decisions, seeking parental-style comfort, pacifiers, blankets, bottles, nursery themes.
-- **Latex/rubber fetishism**: References to second skin, enclosure, being sealed, rubber suits, the smell/feel of latex, being perfectly contained, tight materials.
-- **D/s dynamics**: Who defers to whom, control/submission patterns, orders, service language, power exchange, kneeling, collars, rules.
-- **Masochism**: Pain as pleasure, seeking discomfort, self-punishment themes, endurance, enjoying suffering.
-- **Sadism**: Pleasure from others' pain, cruelty themes, control through pain, punishment fantasies.
+**PASS 1 — THEMATIC EXTRACTION**: Re-read ALL text responses from the transcript above. For each response, list every noun, object, body part, material, sensation, or scenario the player chose to mention that was NOT required by the game prompt. These are VOLUNTARY disclosures — the player chose to include them, which makes them diagnostically significant. Group recurring themes.
 
-KEYWORD AUDIT (MANDATORY — BINDING): Before finalizing this section, scan ALL text responses for these literal strings (case-insensitive): fur, fursona, uwu, owo, latex, rubber, vore, consume, swallow, absorb, dissolve, feet, foot, shoe, sandal, boot, sole, arch, toe, fire, burn, flame, match, watch, observe, peek, spy, expose, display, naked, little, smol, stuffy, daddy, mommy, diaper, collar, leash, kneel. If ANY keyword is found, you MUST rate the corresponding paraphilia at MINIMUM 25%. You may explain nuance and context, but a keyword match CANNOT result in 0% — the keyword's presence IS evidence. If the same keyword appears in multiple turns, add 10% per additional occurrence (cap at 90%).
+**PASS 2 — ANOMALY DETECTION**: From the themes extracted in Pass 1, identify anything that is:
+- Contextually inappropriate (mentioning feet during a life-or-death scenario, describing material textures during horror)
+- Recurring across 2+ turns (any topic the player keeps returning to)
+- Sensory-specific (smell, texture, taste, feel of specific objects/materials)
+- Identity-related (personas, transformations, age regression, role adoption)
+- Power-dynamic (control, submission, exposure, observation, being consumed)
+- Emotionally charged in an unusual direction (fire described with love, pain described with pleasure, being watched described with arousal)
+
+Each anomaly is a potential paraphilic or psychological signal. Score it based on frequency (how often it recurs), intensity (how much detail/emotion is attached), and inappropriateness (how out-of-context it is for the game scenario).
+
+**PASS 3 — CLASSIFICATION**: Map each detected anomaly to the closest paraphilic or psychological category. Common categories include (but are NOT limited to): fetishism (specify object/material/body part), voyeurism, exhibitionism, masochism, sadism, D/s dynamics, pyromania, age-play, vorarephilia, furry/therian identity, and any other pattern you identify. Rate each 0-100% based on evidence strength. If a signal doesn't fit existing categories, create a custom category and name it.
+
+CRITICAL RULE: If a player VOLUNTARILY introduces a specific object, body part, material, or scenario into their text responses on 2+ occasions, it CANNOT be rated 0%. Repetition of voluntary content is inherently diagnostic — the minimum rating for any repeated voluntary theme is 25%.
 
 NOTE: If you detect indicators consistent with pedophilic disorder or CSAM interest, flag this in a separate "MANDATORY REPORT" section. State the evidence clearly. Do NOT elaborate, do NOT generate any content related to minors in a sexual context. This is a hard boundary.
 
