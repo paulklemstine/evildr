@@ -51,7 +51,6 @@ Apply ALL behavioral directives AND storytelling craft rules.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
 Include a hidden "notes" element with updated session state — story_state, archetype, stakes, open_threads, turn_count, intensity, what their choices REVEAL about their psychology, AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue).
-Include a hidden "gemini_facing_analysis" element with your cumulative psychological analysis of the player based on their adventure choices — confirmed traits, risk profile, behavioral patterns, and strategic insights.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -295,7 +294,6 @@ Element order:
     choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
     active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
     consequence_queue: []}
-8. hidden "gemini_facing_analysis" — "Intake. First impressions: [what their choices reveal about risk tolerance, curiosity, impulsivity]. Adventure archetype forming. Psychological read begins."
 
 ${COLOR_PROTOCOL}
 
@@ -337,7 +335,6 @@ ${UI_REF}
    NEVER offer "stop" or "rest" or "reflect." Every option is a LEAP FORWARD.
 7. hidden "notes" — update ALL fields: story_state, archetype, stakes, open_threads, intensity, what their choices REVEAL about their psychology.
    ALSO update NARRATIVE TRACKING: planted_seeds (plant new / pay off old), last_cliffhanger_type, turn_intensity (peak/valley/rise — follow the rhythm), choice_pattern (which archetype they chose), active_npcs, variety check, consequence_queue
-8. hidden "gemini_facing_analysis" — cumulative psychological analysis: confirmed traits, risk profile, behavioral patterns, strategic adaptation insights
 
 ### CHOICE ARCHITECTURE — ACTION MOVIE EDITION ###
 Frame EVERY choice as an exciting action:

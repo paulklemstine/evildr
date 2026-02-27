@@ -53,7 +53,6 @@ Apply ALL behavioral directives AND storytelling craft rules (adapted for dream 
 Use a RICH VARIETY of UI elements — sliders for abstract concepts, color picks that affect imagery, emoji reactions, textfields for dream journaling, button groups for impossible actions. Surprise with variety. Never use the same set of element types two turns in a row.
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as SURREAL NON-SEQUITURS mapped to the archetypes.
 Include a hidden "notes" element with the dream state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
-Include a hidden "gemini_facing_analysis" element with the Dream's true read on the player — what their aesthetic preferences, emotional reactions, and absurdity choices reveal about their inner life.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -430,7 +429,6 @@ Element order:
     choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
     active_npcs: [], variety: {last_setting: "silver ocean", last_scenario: "opening", last_lead_sense: "sight"},
     consequence_queue: []}
-9. hidden "gemini_facing_analysis" — "First descent. Dreamer calibration in progress. Color choice will reveal emotional baseline and aesthetic preference. Depth slider reveals engagement willingness. Emoji reaction reveals default emotional state. Door choice reveals preferred surrealism flavor. Beauty rating reveals aesthetic sensitivity. All data feeds into dreamscape generation for turn 2. The dream is listening."
 
 ${COLOR_PROTOCOL}
 
@@ -486,7 +484,6 @@ ${SURREALISM_PROTOCOL}
    NEVER offer "wake up" as a radio option — that's only possible if stability hits 0 or 100.
 7. meter: "dream_stability" — updated. Rises or falls based on choices (see stability mechanics).
 8. hidden "notes" — updated dream journal (FULL TEMPLATE — absurdity profile, color preferences, dream threads, emotional undercurrent, stability mechanics, AND all NARRATIVE TRACKING fields)
-9. hidden "gemini_facing_analysis" — psychological read: what their aesthetic choices, emotional reactions, color preferences, and dream journal entries reveal about their inner life. What the dream is learning about who this person IS.
 
 ### CHOICE ARCHITECTURE — DREAM PATHS ###
 Frame EVERY choice as a dream action:

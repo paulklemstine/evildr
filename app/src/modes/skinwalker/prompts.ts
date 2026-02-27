@@ -52,7 +52,6 @@ Apply ALL behavioral directives AND storytelling craft rules. Maintain the unrel
 Use a RICH VARIETY of UI elements — textfields for perception checks, checkboxes for memory tests, color picks for attention traps, sliders for confidence, dropdowns for recall. Never use the same set of element types two turns in a row.
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
 Include a hidden "notes" element with the FULL anomaly map and reality state using the NOTES TEMPLATE (including NARRATIVE TRACKING).
-Include a hidden "gemini_facing_analysis" element with the true state of the scenario — what's real, what's shifted, and what the player has and hasn't noticed.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -427,7 +426,6 @@ Element order:
     active_npcs: [{name: "[name]", speech_pattern: "[pattern]", visible_goal: "[goal]", hidden_goal: "none yet", player_relationship: "friendly"}],
     variety: {last_setting: "[setting]", last_scenario: "introduction", last_lead_sense: "sight"},
     consequence_queue: []}
-9. hidden "gemini_facing_analysis" — "Opening scenario established. One anomaly planted: [description]. Player has not had opportunity to notice yet. Reality stability: 92%. Narrator: fully reliable. Next turn: maintain normalcy with 1-2 additional subtle anomalies. Player perception baseline: unknown. This is the calm before."
 
 ${COLOR_PROTOCOL}
 
@@ -484,7 +482,6 @@ ${ANOMALY_PROTOCOL}
    NEVER offer "ignore it completely" as a RADIO option — only as a checkbox/toggle side element.
 7. meter: "reality_stability" — updated. Drops 3-8% per turn based on anomaly accumulation and player awareness.
 8. hidden "notes" — updated anomaly map (FULL TEMPLATE — anomaly map, established facts, perception profile, narrator state, horror calibration, AND all NARRATIVE TRACKING fields)
-9. hidden "gemini_facing_analysis" — full scenario state: what's ACTUALLY real, what has changed, what the player has/hasn't noticed, perception score, anomaly-by-anomaly tracking, narrator reliability state, strategic plan for next anomalies
 
 ### CHOICE ARCHITECTURE — DREAD RESPONSES ###
 Frame choices as responses to growing unease:
