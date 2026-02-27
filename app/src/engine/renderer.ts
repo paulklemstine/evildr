@@ -302,6 +302,65 @@ function renderImageElement(
   wrapper.appendChild(img)
 }
 
+function renderInlineImageElement(
+  wrapper: HTMLDivElement,
+  element: UIElement,
+  _adjustedColor: string | null,
+): void {
+  wrapper.classList.add('geems-inline-image-container')
+  wrapper.classList.remove('geems-element')
+  wrapper.style.borderLeftColor = 'transparent'
+
+  const imagePrompt = element.value || 'abstract detail'
+
+  // Smaller placeholder for inline images
+  const placeholderDiv = document.createElement('div')
+  placeholderDiv.className = 'geems-inline-image-placeholder'
+
+  const spinnerSvg = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  spinnerSvg.setAttribute('width', '20')
+  spinnerSvg.setAttribute('height', '20')
+  spinnerSvg.setAttribute('viewBox', '0 0 24 24')
+  spinnerSvg.setAttribute('fill', 'none')
+  spinnerSvg.classList.add('geems-image-spinner')
+  const circle = document.createElementNS('http://www.w3.org/2000/svg', 'circle')
+  circle.setAttribute('cx', '12')
+  circle.setAttribute('cy', '12')
+  circle.setAttribute('r', '10')
+  circle.setAttribute('stroke', 'currentColor')
+  circle.setAttribute('stroke-width', '3')
+  circle.setAttribute('opacity', '0.2')
+  const arc = document.createElementNS('http://www.w3.org/2000/svg', 'path')
+  arc.setAttribute('d', 'M4 12a8 8 0 018-8')
+  arc.setAttribute('stroke', 'currentColor')
+  arc.setAttribute('stroke-width', '3')
+  arc.setAttribute('stroke-linecap', 'round')
+  spinnerSvg.appendChild(circle)
+  spinnerSvg.appendChild(arc)
+  placeholderDiv.appendChild(spinnerSvg)
+  wrapper.appendChild(placeholderDiv)
+
+  const img = document.createElement('img')
+  img.className = 'geems-inline-image'
+  img.style.display = 'none'
+  img.dataset.imagePrompt = imagePrompt
+  img.dataset.imageSize = 'inline' // signal for resolveImages to use smaller dimensions
+  img.alt = element.label || imagePrompt
+
+  img.onload = () => {
+    placeholderDiv.remove()
+    img.style.display = 'block'
+  }
+  img.onerror = () => {
+    // Inline images fail silently — just remove placeholder
+    placeholderDiv.remove()
+    wrapper.remove()
+  }
+
+  img.src = 'data:image/svg+xml,%3Csvg xmlns="http://www.w3.org/2000/svg"%3E%3C/svg%3E'
+  wrapper.appendChild(img)
+}
+
 function renderTextElement(
   wrapper: HTMLDivElement,
   element: UIElement,
@@ -1069,6 +1128,9 @@ export function renderUI(
       switch (element.type) {
         case 'image':
           renderImageElement(wrapper, element, adjustedColor)
+          break
+        case 'inline_image':
+          renderInlineImageElement(wrapper, element, adjustedColor)
           break
         case 'text':
         case 'narrative':

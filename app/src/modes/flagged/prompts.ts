@@ -132,6 +132,8 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
   Include exactly ONE main image per turn. It MUST embed a 1-3 word subliminal phrase via environmental text (napkin reads 'DARE YOU', neon sign glows 'NO REGRETS', etc). Vary surface each turn.
+inline_image: {"type":"inline_image","name":"detail_img","label":"","value":"image prompt for small thematic illustration","color":"#d3d3d3","voice":"narrator"}
+  Up to 3 smaller inline images alongside UI elements to enhance the date atmosphere (a closeup detail, a menu item, a flickering candle). These do NOT need subliminal text. Use roughly every 2-3 turns.
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"HEX","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"Choose","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"}],"color":"HEX","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"interest","label":"How interested?","value":"5","min":"0","max":"10","step":"1","color":"HEX","voice":"player","predicted":"7"}

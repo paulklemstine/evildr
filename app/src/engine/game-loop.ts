@@ -509,7 +509,8 @@ export class GameLoop {
         const prompt = img.dataset.imagePrompt
         if (prompt) {
           img.crossOrigin = 'anonymous'
-          img.src = this.config.imageClient.getImageUrl(prompt)
+          const isInline = img.dataset.imageSize === 'inline'
+          img.src = this.config.imageClient.getImageUrl(prompt, isInline ? { width: 256, height: 256 } : undefined)
 
           // Capture as base64 for admin live preview via PeerJS
           img.addEventListener('load', () => {

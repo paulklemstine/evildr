@@ -225,6 +225,46 @@ h1, h2, h3 {
 }
 
 /* ============================================================
+   Inline Image — Small thematic images beside UI elements
+   ============================================================ */
+
+.geems-inline-image-container {
+  display: inline-block;
+  width: 128px;
+  float: right;
+  margin: 0 0 0.75rem 0.75rem;
+  border-radius: var(--radius-md, 0.5rem);
+  overflow: hidden;
+}
+
+.geems-inline-image-placeholder {
+  width: 128px;
+  height: 128px;
+  border-radius: var(--radius-md, 0.5rem);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    110deg,
+    var(--bg-tertiary) 30%,
+    var(--bg-secondary) 50%,
+    var(--bg-tertiary) 70%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s ease-in-out infinite;
+  border: 1px solid var(--border-color);
+  color: var(--text-muted);
+}
+
+.geems-inline-image {
+  width: 128px;
+  height: 128px;
+  object-fit: cover;
+  border-radius: var(--radius-md, 0.5rem);
+  border: 1px solid var(--border-color);
+}
+
+/* ============================================================
    Button — Clinical Primary Action
    ============================================================ */
 

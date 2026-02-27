@@ -65,6 +65,7 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+inline_image: {"type":"inline_image","name":"detail_img","label":"","value":"image prompt for small thematic illustration","color":"#d3d3d3","voice":"narrator"}
 
 ART DIRECTION — ORACLE MODE:
 Style: Art Nouveau mysticism meets celestial tarot. Ethereal, ornate, luminous.
@@ -74,7 +75,7 @@ Lighting: Soft ethereal glow from crystal/smoke/starlight. Rim lighting on the O
 Mood: Ancient, omniscient, eerily beautiful. The images should feel like prophecies made visible.
 
 ### IMAGE STRATEGY ###
-Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Smaller illustrative images may be embedded within UI elements as needed, but the MAIN image should be singular and impactful.
+Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Up to 3 smaller inline images (type: "inline_image") may be placed alongside UI elements to enhance the atmosphere — these do NOT need subliminal text.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
 The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
@@ -89,6 +90,15 @@ Examples for Oracle mode:
 The phrase should reinforce mysticism, inevitability, the sense of being SEEN and KNOWN.
 Vary the surface: smoke, runes, crystal reflections, constellation patterns, ink, candle flames, water ripples, mirror text, woven tapestry, sand writing.
 NEVER repeat the same phrase or surface two turns in a row.
+
+### INLINE IMAGE GUIDELINES ###
+Place up to 3 inline_image elements BESIDE interactive elements to enhance atmosphere:
+- Next to a slider: a small image of what's being measured (a glowing rune, a tarot card, a star chart)
+- Next to a choice: a small image previewing the mystical consequence
+- Next to text: a small atmospheric detail (the Oracle's expression, a crystal, a flickering candle)
+Inline images should be 256x256, atmospheric, and THEMATIC — not redundant with the main image.
+Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
+
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"Choose your path","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"intensity","label":"How strongly? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"oracle","predicted":"7"}

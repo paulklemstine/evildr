@@ -65,6 +65,7 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
 const UI_REF = `### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image prompt","color":"#d3d3d3","voice":"narrator"}
+inline_image: {"type":"inline_image","name":"detail_img","label":"","value":"image prompt for small thematic illustration","color":"#d3d3d3","voice":"narrator"}
 
 ART DIRECTION — SKINWALKER MODE:
 Style: Hyperrealistic contemporary with uncanny valley wrongness. David Lynch meets A24 horror.
@@ -75,7 +76,7 @@ Mood: Ordinary made sinister. The most terrifying image looks almost normal — 
 CRITICAL: Images of the "same" scene across turns should have SUBTLE DIFFERENCES that match anomalies — an extra chair, a door on wrong wall, a person whose clothing changed mid-scene.
 
 ### IMAGE STRATEGY ###
-Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Smaller illustrative images may be embedded within UI elements as needed, but the MAIN image should be singular and impactful.
+Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Up to 3 smaller inline images (type: "inline_image") may be placed alongside UI elements to enhance the atmosphere — these do NOT need subliminal text.
 CRITICAL: The main image across turns should have SUBTLE DIFFERENCES that match the anomalies — an extra chair, a door on the wrong side, a person whose clothing changed.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
@@ -91,6 +92,15 @@ Examples for Skinwalker mode:
 The phrase should reinforce unease, wrongness, the sense that reality is unreliable.
 Vary the surface: calendars, sticky notes, newspapers, drawings, clocks, signs, receipts, book spines, labels, graffiti.
 NEVER repeat the same phrase or surface two turns in a row.
+
+### INLINE IMAGE GUIDELINES ###
+Place up to 3 inline_image elements BESIDE interactive elements to enhance atmosphere:
+- Next to a slider: a small image of a detail that's slightly wrong (a clock, a reflection, a doorknob)
+- Next to a choice: a small image of what each option looks like — one subtly wrong
+- Next to text: a small atmospheric detail (a window view that changed, an object that moved)
+Inline images should be 256x256, atmospheric, and THEMATIC — not redundant with the main image.
+Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
+
 text: {"type":"text","name":"narrative","label":"","value":"Text with **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default","value":"a"},{"label":"B","value":"b"},{"label":"C","value":"c"},{"label":"D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"confidence","label":"How sure are you? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator","predicted":"6"}

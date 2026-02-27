@@ -136,6 +136,7 @@ RULES:
 
 ### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}
+inline_image: {"type":"inline_image","name":"detail_img","label":"","value":"image prompt for small thematic illustration","color":"#d3d3d3","voice":"narrator"}
 
 ART DIRECTION — CYOA MODE (adapt to selected genre):
 Horror: "Giallo film aesthetic, high-contrast crimson and shadow, unsettling camera angles, inspired by Suspiria and Midsommar"
@@ -148,7 +149,7 @@ Romantic: "Warm intimate lighting, shallow depth of field, Tomer Hanuka illustra
 Match the art direction to the player's selected genre. If no genre, default to Fantasy.
 
 ### IMAGE STRATEGY ###
-Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Smaller illustrative images may be embedded within UI elements as needed, but the MAIN image should be singular and impactful.
+Include exactly ONE main image per turn with a 1-3 word subliminal phrase embedded via environmental text. Up to 3 smaller inline images (type: "inline_image") may be placed alongside UI elements to enhance the atmosphere — these do NOT need subliminal text.
 
 ### SUBLIMINAL IMAGE TEXT (FIRST IMAGE ONLY) ###
 The FIRST image element each turn MUST contain a short phrase (1-3 words) embedded naturally into the scene via environmental text.
@@ -162,6 +163,15 @@ Examples:
 - "...a flickering neon sign above the alley reads 'STAY BRAVE'"
 The phrase should reinforce urgency, courage, excitement, forward momentum.
 Vary the surface. NEVER repeat the same phrase or surface two turns in a row.
+
+### INLINE IMAGE GUIDELINES ###
+Place up to 3 inline_image elements BESIDE interactive elements to enhance atmosphere:
+- Next to a slider: a small image of what's being measured (a weapon, a map, an artifact)
+- Next to a choice: a small image previewing the adventure path ahead
+- Next to text: a small atmospheric detail (an NPC face, a landscape feature, an item closeup)
+Inline images should be 256x256, atmospheric, and THEMATIC — not redundant with the main image.
+Do NOT use inline images every turn — use them when they enhance a key moment (roughly every 2-3 turns).
+
 text: {"type":"text","name":"narrative","label":"","value":"Story text. Supports **bold** and *italic*.","color":"CHOOSE DELIBERATELY","voice":"narrator"}
 radio: {"type":"radio","name":"action","label":"What do you do?","options":[{"label":"*Default choice","value":"a"},{"label":"Choice B","value":"b"},{"label":"Choice C","value":"c"},{"label":"Choice D","value":"d"}],"color":"CHOOSE DELIBERATELY","voice":"player","predicted":"a"}
 slider: {"type":"slider","name":"fear","label":"How hard do you push? (0-10)","value":"5","min":"0","max":"10","step":"1","color":"CHOOSE DELIBERATELY","voice":"narrator","predicted":"7"}

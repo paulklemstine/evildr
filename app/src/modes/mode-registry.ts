@@ -50,6 +50,8 @@ import { skinwalkerConfig } from './skinwalker/config.ts'
 import { createSkinwalkerPromptBuilder } from './skinwalker/prompts.ts'
 import { feverDreamConfig } from './fever-dream/config.ts'
 import { createFeverDreamPromptBuilder } from './fever-dream/prompts.ts'
+import { devilConfig } from './devil/config.ts'
+import { createDevilPromptBuilder } from './devil/prompts.ts'
 // Flagged (multiplayer) — config registered with no-op prompt builder.
 // The actual FlaggedPromptBuilder (different interface) is used by MultiplayerGameLoop directly.
 import { flaggedConfig } from './flagged/config.ts'
@@ -79,6 +81,10 @@ const registry: GameMode[] = [
   {
     ...feverDreamConfig,
     promptBuilder: createFeverDreamPromptBuilder(),
+  },
+  {
+    ...devilConfig,
+    promptBuilder: createDevilPromptBuilder(false),
   },
   {
     ...flaggedConfig,
