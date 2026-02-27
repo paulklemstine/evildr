@@ -2,6 +2,8 @@
 // renderer.ts - Renders LLM JSON UI arrays into DOM elements
 // ============================================================================
 
+import type { QuestionContext } from '../profiling/db'
+
 // ---------------------------------------------------------------------------
 // Types
 // ---------------------------------------------------------------------------
@@ -565,6 +567,7 @@ function renderRadioElement(
       input.value = option.value
       input.checked = option.value === selectedValue
       input.dataset.elementType = 'radio'
+      if (idx === 0 && element.predicted) input.dataset.predicted = element.predicted
       if (idx === 0 && element.justification) input.dataset.justification = element.justification
       if (adjustedColor) input.style.accentColor = adjustedColor
 
@@ -1147,6 +1150,85 @@ export function renderUI(
 }
 
 /**
+ * Walks rendered interactive elements and extracts question context:
+ * what was shown, why, predicted answers, and available options/ranges.
+ */
+export function collectQuestionContext(container: HTMLElement): QuestionContext[] {
+  const contexts: QuestionContext[] = []
+  const seen = new Set<string>()
+
+  // Standard input elements (textfield, checkbox, slider, radio, dropdown, toggle, number_input)
+  container.querySelectorAll<HTMLElement>('[data-element-type]').forEach((el) => {
+    const inputEl = el as HTMLInputElement
+    const name = inputEl.name
+    const type = inputEl.dataset.elementType
+    if (!name || !type || seen.has(name)) return
+    // For radio, only process the first input (which carries predicted/justification)
+    if (type === 'radio' && !inputEl.dataset.justification && !inputEl.dataset.predicted) return
+
+    seen.add(name)
+    const ctx: QuestionContext = { name, type }
+
+    // Find label text from the closest wrapper
+    const wrapper = el.closest('.geems-element')
+    const labelEl = wrapper?.querySelector('.geems-label')
+    if (labelEl) ctx.label = labelEl.textContent || undefined
+
+    if (inputEl.dataset.justification) ctx.justification = inputEl.dataset.justification
+    if (inputEl.dataset.predicted) ctx.predicted = inputEl.dataset.predicted
+
+    // Extract options for radio
+    if (type === 'radio' && wrapper) {
+      const radios = wrapper.querySelectorAll<HTMLInputElement>(`input[name="${name}"]`)
+      ctx.options = Array.from(radios).map(r => r.value)
+    }
+
+    // Extract range for slider / number_input
+    if ((type === 'slider' || type === 'number_input') && inputEl.min && inputEl.max) {
+      ctx.range = { min: parseFloat(inputEl.min), max: parseFloat(inputEl.max) }
+    }
+
+    contexts.push(ctx)
+  })
+
+  // Custom elements (rating, button_group, emoji_react, color_pick)
+  container.querySelectorAll<HTMLElement>(
+    '[data-element-type="rating"], [data-element-type="button_group"], [data-element-type="emoji_react"], [data-element-type="color_pick"]'
+  ).forEach((el) => {
+    const name = el.dataset.name
+    const type = el.dataset.elementType
+    if (!name || !type || seen.has(name)) return
+    seen.add(name)
+
+    const ctx: QuestionContext = { name, type }
+
+    const wrapper = el.closest('.geems-element')
+    const labelEl = wrapper?.querySelector('.geems-label')
+    if (labelEl) ctx.label = labelEl.textContent || undefined
+
+    if (el.dataset.justification) ctx.justification = el.dataset.justification
+    if (el.dataset.predicted) ctx.predicted = el.dataset.predicted
+
+    // Extract options for button_group
+    if (type === 'button_group') {
+      ctx.options = Array.from(el.querySelectorAll<HTMLElement>('[data-value]')).map(b => b.dataset.value!)
+    }
+
+    contexts.push(ctx)
+  })
+
+  // Extract options for dropdown (standard input element, but options are in <option> children)
+  container.querySelectorAll<HTMLSelectElement>('[data-element-type="dropdown"]').forEach((sel) => {
+    const existing = contexts.find(c => c.name === sel.name)
+    if (existing) {
+      existing.options = Array.from(sel.options).map(o => o.value)
+    }
+  })
+
+  return contexts
+}
+
+/**
  * Collects values from all interactive input elements within the container
  * and returns a JSON string of the form `{ name: value, ..., turn: N }`.
  */
@@ -1190,6 +1272,19 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
     if (inputEl.dataset.justification && !inputs[`${name}__justification`]) {
       inputs[`${name}__justification`] = inputEl.dataset.justification
     }
+
+    // Track whether player kept the LLM's predicted default
+    if (inputEl.dataset.predicted && inputs[name] !== undefined) {
+      const predicted = inputEl.dataset.predicted
+      const val = inputs[name]
+      const match =
+        type === 'checkbox' || type === 'toggle'
+          ? String(val) === String(predicted).toLowerCase() // "true"/"false"
+          : type === 'slider' || type === 'number_input'
+            ? parseFloat(String(val)) === parseFloat(predicted)
+            : String(val) === predicted
+      if (match) inputs[`${name}__usedDefault`] = 'true'
+    }
   })
 
   // Collect from custom interactive elements (rating, button_group, emoji_react, color_pick)
@@ -1206,6 +1301,14 @@ export function collectInputState(container: HTMLElement, turnNumber: number): s
       // Capture justification for custom elements too
       if (el.dataset.justification) {
         inputs[`${name}__justification`] = el.dataset.justification
+      }
+      // Track whether player kept the LLM's predicted default
+      if (el.dataset.predicted) {
+        const predicted = el.dataset.predicted
+        const val = el.dataset.elementType === 'rating'
+          ? String(parseInt(el.dataset.value) || 0)
+          : el.dataset.value
+        if (val === predicted) inputs[`${name}__usedDefault`] = 'true'
       }
     }
   })

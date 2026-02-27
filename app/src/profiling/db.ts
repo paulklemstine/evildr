@@ -1,7 +1,7 @@
 // IndexedDB wrapper for profiling data (turns, sessions, analyses)
 
 const DB_NAME = 'geems_profiling'
-const DB_VERSION = 1
+const DB_VERSION = 2
 
 export interface TurnRecord {
   id?: number
@@ -16,6 +16,18 @@ export interface TurnRecord {
   uiShown: string
   /** Behavioral signals: timing, hesitation, revisions */
   signals: BehavioralSignals
+  /** Question context: what was asked, why, and predicted answers (JSON string) */
+  questionsShown?: string
+}
+
+export interface QuestionContext {
+  name: string
+  type: string
+  label?: string
+  justification?: string
+  predicted?: string
+  options?: string[]
+  range?: { min: number; max: number }
 }
 
 export interface BehavioralSignals {
