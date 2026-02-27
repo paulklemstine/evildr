@@ -3,7 +3,7 @@
 // ============================================================================
 
 import type { UIElement, RenderResult } from './renderer.ts'
-import { renderUI, collectInputState } from './renderer.ts'
+import { renderUI, collectInputState, collectQuestionContext } from './renderer.ts'
 import { saveGameState, loadGameState as loadSavedState } from './auto-save.ts'
 import { InputTracker } from '../profiling/input-tracker'
 import { saveTurn, saveSession, updateSession, getAnalysesBySession, getTurnsBySession } from '../profiling/db'
@@ -654,6 +654,7 @@ export class GameLoop {
     const { userId, sessionId } = this.config
     if (userId && sessionId) {
       const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
+      const contexts = collectQuestionContext(container)
       saveTurn({
         userId,
         sessionId,
@@ -663,6 +664,7 @@ export class GameLoop {
         playerInputs: playerActionsJson,
         uiShown: JSON.stringify(uiSummary),
         signals: behavioralSignals,
+        questionsShown: JSON.stringify(contexts),
       }).catch(() => { /* IndexedDB may not be available */ })
 
       // Update session turn count

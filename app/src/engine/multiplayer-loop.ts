@@ -17,7 +17,7 @@
 // callbacks from the caller. See room-code.ts for connection management.
 
 import type { UIElement } from './renderer.ts'
-import { renderUI, collectInputState } from './renderer.ts'
+import { renderUI, collectInputState, collectQuestionContext } from './renderer.ts'
 import { applyTypewriter } from './typewriter.ts'
 import { cascadeReveal, pulseInteractive } from './anticipation.ts'
 import { attachCelebrations } from './celebration.ts'
@@ -25,6 +25,7 @@ import { applyMoodFromUI } from './mood-colors.ts'
 import type { FlaggedPromptBuilder } from '../modes/flagged/prompts.ts'
 import { ORCHESTRATOR_DELIMITER } from '../modes/flagged/prompts.ts'
 import { saveTurn, saveSession, updateSession, getTurnsBySession, getAnalysesBySession } from '../profiling/db'
+import { InputTracker } from '../profiling/input-tracker'
 import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
 import { uploadReport } from '../api/report-uploader'
 import { jsonrepair } from 'jsonrepair'
@@ -544,6 +545,7 @@ export class MultiplayerGameLoop {
   private state: MultiplayerGameState
 
   // Turn synchronization state
+  private collectedSignals: ReturnType<InputTracker['collect']> | null = null
   private myActionsThisTurn: string | null = null
   private partnerActionsThisTurn: string | null = null
   private orchestratorSectionThisTurn: string | null = null
@@ -552,6 +554,7 @@ export class MultiplayerGameLoop {
   private partnerActionTimeout: ReturnType<typeof setTimeout> | null = null
   private orchestratorTimeout: ReturnType<typeof setTimeout> | null = null
   private cleanupCelebrations: (() => void) | null = null
+  private inputTracker: InputTracker
   private turnInProgress = false
 
   // Scenario selection state
@@ -564,6 +567,7 @@ export class MultiplayerGameLoop {
   constructor(config: MultiplayerGameLoopConfig) {
     this.config = config
     this.state = this.createDefaultState()
+    this.inputTracker = new InputTracker(config.container)
 
     // Create session record in IndexedDB for profiling
     if (config.userId && config.sessionId) {
@@ -1049,6 +1053,9 @@ export class MultiplayerGameLoop {
     if (this.cleanupCelebrations) this.cleanupCelebrations()
     this.cleanupCelebrations = attachCelebrations(container)
 
+    // Attach input tracker for behavioral signal capture
+    this.inputTracker.attach()
+
     // Auto-save
     saveState(this.storageKey(), this.state)
 
@@ -1056,6 +1063,7 @@ export class MultiplayerGameLoop {
     const { userId, sessionId } = this.config
     if (userId && sessionId) {
       const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
+      const questionsShown = collectQuestionContext(container)
       saveTurn({
         userId,
         sessionId,
@@ -1064,7 +1072,8 @@ export class MultiplayerGameLoop {
         mode: 'flagged',
         playerInputs: this.myActionsThisTurn || '{}',
         uiShown: JSON.stringify(uiSummary),
-        signals: { responseTimeMs: 0, sliderRevisions: 0, textRevisions: 0, totalTextLength: 0, radioChoiceIndex: -1, checkboxRatio: '0/0' },
+        signals: this.collectedSignals ?? { responseTimeMs: 0, sliderRevisions: 0, textRevisions: 0, totalTextLength: 0, radioChoiceIndex: -1, checkboxRatio: '0/0' },
+        questionsShown: JSON.stringify(questionsShown),
       }).catch(() => { /* IndexedDB may not be available */ })
 
       // Update session turn count
@@ -1369,6 +1378,9 @@ Return ONLY valid JSON. No markdown fences.`
     if (this.turnInProgress) return
 
     const { container, sendToPartner, onLoading, onWaitingStatus } = this.config
+
+    // Collect behavioral signals before collecting input state
+    this.collectedSignals = this.inputTracker.collect()
 
     // Collect input state
     const actionsJson = collectInputState(container, this.state.turnNumber + 1)
