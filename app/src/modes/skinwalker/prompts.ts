@@ -8,7 +8,7 @@
 // of a familiar place where something fundamental has shifted.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE } from '../shared/storytelling.ts'
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
@@ -450,6 +450,10 @@ ${INPUT_JUSTIFICATION}
 ${BANNED_PHRASES}
 
 ${STAGNATION_DETECTION}
+
+${REACTIVE_ELEMENTS}
+
+${MUTATION_DIRECTIVE}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

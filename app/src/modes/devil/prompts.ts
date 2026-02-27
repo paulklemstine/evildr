@@ -4,7 +4,7 @@
 // what they value, what they trade away, and what they refuse to give up.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -391,6 +391,8 @@ ${INPUT_JUSTIFICATION}
 ${BANNED_PHRASES}
 
 ${STAGNATION_DETECTION}
+
+${REACTIVE_ELEMENTS}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

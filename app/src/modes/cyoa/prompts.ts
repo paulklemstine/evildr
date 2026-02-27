@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -41,6 +41,8 @@ ${INPUT_JUSTIFICATION}
 ${BANNED_PHRASES}
 
 ${STAGNATION_DETECTION}
+
+${REACTIVE_ELEMENTS}
 
 ### FIRST TURN ###
 No player input yet. THROW THEM INTO THE ACTION. No slow buildup. No "you wake up in a tavern."

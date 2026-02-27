@@ -9,7 +9,7 @@
 // OPTIMIZED FOR SPEED: prompts are lean to minimize LLM latency.
 
 import type { HistoryEntry } from '../../engine/game-loop.ts'
-import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT } from '../shared/storytelling.ts'
+import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -314,4 +314,6 @@ Item 7 is a MANDATORY type:"hidden" element. Never omit it.
 - Sensory writing: 2+ senses per narrative beat. Rotate which sense leads.
 - End on a cliffhanger. The 4 radio choices react to it.
 
-${INPUT_JUSTIFICATION}`
+${INPUT_JUSTIFICATION}
+
+${REACTIVE_ELEMENTS}`
