@@ -10,7 +10,7 @@ import { uploadReport } from '../api/report-uploader'
 const ANALYSIS_TURNS = [3, 5, 8, 12, 17, 23, 30] as const
 const ANALYSIS_INTERVAL_AFTER = 10 // Every 10 turns after the last scheduled turn
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
-const MIN_BETWEEN_ANALYSES_MS = 60_000 // Minimum 60s between analysis calls
+const MIN_BETWEEN_ANALYSES_MS = 30_000 // Minimum 30s between analysis calls
 
 // Background analysis routes through the same Pollinations proxy.
 // In dev: Vite proxy → Cloudflare Worker → Pollinations.
@@ -20,7 +20,8 @@ const DEEP_PROXY = import.meta.env.DEV
   : 'https://drevil-proxy.drevil.workers.dev/api/llm-deep'
 
 let lastAnalysisTime = 0
-let pendingAnalysis: ReturnType<typeof setTimeout> | null = null
+let analysisRunning = false
+const analysisQueue: Array<{ userId: string; sessionId: string }> = []
 
 /**
  * Checks if analysis should run and triggers it if so.
@@ -38,21 +39,13 @@ export async function maybeRunAnalysis(
     return
   }
 
-  // Cancel any pending analysis (player submitted another turn)
-  if (pendingAnalysis) {
-    clearTimeout(pendingAnalysis)
-    pendingAnalysis = null
+  // Queue the analysis instead of cancelling previous ones
+  analysisQueue.push({ userId, sessionId })
+
+  // If not already processing, start the queue
+  if (!analysisRunning) {
+    processQueue()
   }
-
-  // Enforce minimum gap between analyses
-  const timeSinceLast = Date.now() - lastAnalysisTime
-  const delay = Math.max(ANALYSIS_DELAY_MS, MIN_BETWEEN_ANALYSES_MS - timeSinceLast)
-
-  pendingAnalysis = setTimeout(() => {
-    runAnalysis(userId, sessionId).catch((err) => {
-      console.warn('Analysis pipeline error (non-fatal):', err)
-    })
-  }, delay)
 }
 
 /** Check if analysis should run at this turn number. */
@@ -63,28 +56,48 @@ function shouldAnalyzeAtTurn(turnNumber: number): boolean {
   return false
 }
 
+/** Process queued analyses sequentially with minimum gaps. */
+async function processQueue(): Promise<void> {
+  if (analysisRunning) return
+  analysisRunning = true
+
+  while (analysisQueue.length > 0) {
+    // Enforce minimum gap between analyses
+    const timeSinceLast = Date.now() - lastAnalysisTime
+    const delay = Math.max(ANALYSIS_DELAY_MS, MIN_BETWEEN_ANALYSES_MS - timeSinceLast)
+    if (delay > 0) {
+      await new Promise(resolve => setTimeout(resolve, delay))
+    }
+
+    // Take the latest entry — if multiple accumulated, skip to the most recent
+    const latest = analysisQueue[analysisQueue.length - 1]
+    analysisQueue.length = 0
+
+    try {
+      await runAnalysis(latest.userId, latest.sessionId)
+    } catch (err) {
+      console.warn('Analysis pipeline error (non-fatal):', err)
+    }
+  }
+
+  analysisRunning = false
+}
+
 async function runAnalysis(
   userId: string,
   sessionId: string,
 ): Promise<void> {
   const turns = await getTurnsBySession(sessionId)
-  const priorAnalyses = await getAnalysesBySession(sessionId)
+  if (turns.length === 0) return
 
+  const priorAnalyses = await getAnalysesBySession(sessionId)
   const lastAnalysis = priorAnalyses.length > 0
     ? priorAnalyses[priorAnalyses.length - 1].analysisText
     : undefined
 
-  const lastAnalyzedTurn = priorAnalyses.length > 0
-    ? Math.max(...priorAnalyses.map(a => {
-        const match = a.turnRange.match(/\d+$/)
-        return match ? parseInt(match[0]) : 0
-      }))
-    : 0
-
-  const newTurns = turns.filter(t => t.turnNumber > lastAnalyzedTurn)
-  if (newTurns.length === 0) return
-
-  const prompt = buildAnalysisPrompt(newTurns, lastAnalysis)
+  // Always send ALL turns — the prompt includes prior analysis for continuity
+  // This ensures the model sees the full picture, not just a fragment
+  const prompt = buildAnalysisPrompt(turns, lastAnalysis)
 
   lastAnalysisTime = Date.now()
   const content = await callDeepModel(prompt)
@@ -93,10 +106,10 @@ async function runAnalysis(
     userId,
     sessionId,
     analyzedAt: Date.now(),
-    turnRange: `${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`,
+    turnRange: `1-${turns[turns.length - 1].turnNumber}`,
     analysisText: content,
   })
-  console.info(`Analysis saved for turns ${newTurns[0].turnNumber}-${newTurns[newTurns.length - 1].turnNumber}`)
+  console.info(`Analysis saved for turns 1-${turns[turns.length - 1].turnNumber}`)
 
   // Upload full report to server for admin browsing (fire-and-forget)
   uploadSessionReport(userId, sessionId).catch(() => {})
