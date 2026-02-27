@@ -22,7 +22,7 @@ import { join } from 'path'
 
 const URL = 'https://geems.web.app'
 const TURN_TIMEOUT = 240_000
-const ANALYSIS_WAIT = 90_000 // Wait up to 90s for analysis pipeline after final turn
+const ANALYSIS_WAIT = 180_000 // Wait up to 180s for analysis pipeline after final turn
 const SCREENSHOT_DIR = '/home/raver1975/superpaul/evildr/test-screenshots/analysis'
 
 const MODES = {
@@ -647,7 +647,7 @@ async function simulate(modeId, totalTurns) {
 
   // Navigate
   console.log(`\n  Navigating to ${URL}/${modeConfig.hash}`)
-  await page.goto(`${URL}/${modeConfig.hash}`, { waitUntil: 'networkidle2', timeout: 30000 })
+  await page.goto(`${URL}/${modeConfig.hash}`, { waitUntil: 'networkidle2', timeout: 60000 })
 
   // Dismiss consent
   await sleep(1000)

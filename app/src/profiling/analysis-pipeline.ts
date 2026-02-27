@@ -1,5 +1,5 @@
 // Analysis pipeline — runs background LLM analysis on accumulated turn data
-// Uses Mistral Small 3.2 24B via Pollinations ($0.10/$0.30 per M tokens)
+// Uses Gemini Flash via Pollinations (fast, capable, free tier)
 // Runs completely independently of game turns — no contention for the fast model
 
 import { getTurnsBySession, getAnalysesBySession, saveAnalysis, getSessionsByUser } from './db'
@@ -124,7 +124,7 @@ async function callDeepModel(prompt: string): Promise<string> {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      model: 'mistral',
+      model: 'gemini-fast',
       messages: [{ role: 'user', content: prompt }],
       max_tokens: 8000,
       temperature: 0.7,
