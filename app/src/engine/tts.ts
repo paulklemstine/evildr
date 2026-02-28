@@ -43,6 +43,10 @@ let playbackQueue: Float32Array[] = []
 let playing = false
 let sampleRate = 24000 // Kokoro default sample rate
 
+/** Generation session counter — incremented on each speakTurn() call
+ *  so a new turn's generation cancels any in-flight generation. */
+let generationSession = 0
+
 /** Sentence-boundary regex for chunking long text */
 const SENTENCE_BOUNDARY = /(?<=[.!?])\s+/
 
@@ -71,6 +75,7 @@ export function setTTSEnabled(on: boolean): void {
 }
 
 export function stopSpeaking(): void {
+  generationSession++ // cancel any in-flight generation
   playbackQueue = []
   playing = false
   if (currentSource) {
@@ -114,10 +119,16 @@ async function ensureModel(): Promise<KokoroTTSType | null> {
   }
 }
 
+/** Yield to the browser event loop so UI stays responsive. */
+function yieldToMain(): Promise<void> {
+  return new Promise(resolve => setTimeout(resolve, 0))
+}
+
 /**
  * Speak all text elements in a rendered turn container.
- * Skips system/hidden elements. Each element generates audio with
- * its character voice, queued for sequential playback.
+ * Skips system/hidden elements. Generates audio chunks one at a time,
+ * yielding to the browser event loop between each so the UI stays responsive.
+ * Starts playback as soon as the first chunk is ready (pipelined).
  */
 export async function speakTurn(container: HTMLElement): Promise<void> {
   if (!isTTSEnabled()) return
@@ -125,6 +136,9 @@ export async function speakTurn(container: HTMLElement): Promise<void> {
   const model = await ensureModel()
   if (!model) return
   if (!isTTSEnabled()) return // may have been toggled off during load
+
+  // Cancel any prior in-flight generation
+  const session = ++generationSession
 
   // Ensure AudioContext exists (requires user gesture — satisfied by submit click)
   if (!audioCtx) {
@@ -135,8 +149,9 @@ export async function speakTurn(container: HTMLElement): Promise<void> {
   }
   sampleRate = 24000
 
+  // Collect all text chunks with their voice profiles first (fast, non-blocking)
+  const work: { text: string; profile: VoiceProfile }[] = []
   const elements = container.querySelectorAll<HTMLElement>('.geems-element')
-  const audioChunks: Float32Array[] = []
 
   for (const el of elements) {
     const voice = el.dataset.voice
@@ -150,24 +165,38 @@ export async function speakTurn(container: HTMLElement): Promise<void> {
 
     const profile = VOICE_PROFILES[voice || ''] || DEFAULT_PROFILE
     const chunks = chunkText(text, 300)
-
     for (const chunk of chunks) {
-      try {
-        const result = await model.generate(chunk, {
-          voice: profile.voice,
-          speed: profile.speed,
-        })
-        // result.audio is a Float32Array of PCM samples
-        audioChunks.push(new Float32Array(result.audio))
-      } catch (err) {
-        console.warn('[TTS] Generation failed for chunk:', err)
-      }
+      work.push({ text: chunk, profile })
     }
   }
 
-  if (audioChunks.length > 0) {
-    playbackQueue = audioChunks
-    playNext()
+  if (work.length === 0) return
+
+  // Generate and enqueue chunks one at a time, yielding between each.
+  // Start playback as soon as the first chunk is ready.
+  for (const { text, profile } of work) {
+    // Check if this generation session is still current
+    if (session !== generationSession) return
+    if (!isTTSEnabled()) return
+
+    // Yield to browser so UI stays responsive
+    await yieldToMain()
+
+    try {
+      const result = await model.generate(text, {
+        voice: profile.voice,
+        speed: profile.speed,
+      })
+      // result.audio is a Float32Array of PCM samples
+      playbackQueue.push(new Float32Array(result.audio))
+
+      // Start playback as soon as first chunk arrives
+      if (!playing) {
+        playNext()
+      }
+    } catch (err) {
+      console.warn('[TTS] Generation failed for chunk:', err)
+    }
   }
 }
 
