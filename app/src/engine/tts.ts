@@ -1,94 +1,59 @@
 // ============================================================================
-// tts.ts — Text-to-Speech with character voice profiles
+// tts.ts — Text-to-Speech with Kokoro.js (in-browser neural TTS)
 // ============================================================================
 //
-// Uses the browser's built-in Web Speech API (SpeechSynthesis) to speak
-// narrative text elements. Each voice character (narrator, drevil, devil, etc.)
-// gets a distinct pitch/rate/voice profile. Default off; toggled via footer.
+// Uses Kokoro.js — an 82M parameter ONNX model running via WebAssembly.
+// 28 distinct English voices, no API key, no usage limits, works offline
+// after initial ~92MB model download (cached in IndexedDB).
+//
+// Lazy initialization: model downloads on first speakTurn() call, not at boot.
+
+import type { KokoroTTS as KokoroTTSType, GenerateOptions } from 'kokoro-js'
+
+type VoiceId = NonNullable<GenerateOptions['voice']>
 
 const STORAGE_KEY = 'geems-tts'
 
 interface VoiceProfile {
-  pitch: number
-  rate: number
-  volume: number
-  voicePreference: string // substring to match against SpeechSynthesisVoice.name
+  voice: VoiceId
+  speed: number   // 0.5–2.0
 }
 
 const VOICE_PROFILES: Record<string, VoiceProfile> = {
-  narrator: { pitch: 1.0, rate: 0.92, volume: 0.9, voicePreference: 'Female' },
-  player:   { pitch: 1.15, rate: 1.0, volume: 0.85, voicePreference: 'Male' },
-  drevil:   { pitch: 0.7, rate: 0.82, volume: 1.0, voicePreference: 'Male' },
-  devil:    { pitch: 0.6, rate: 0.78, volume: 1.0, voicePreference: 'Male' },
-  oracle:   { pitch: 1.3, rate: 0.8, volume: 0.7, voicePreference: 'Female' },
-  dream:    { pitch: 1.4, rate: 0.75, volume: 0.75, voicePreference: 'Female' },
-  god:      { pitch: 0.5, rate: 0.7, volume: 1.0, voicePreference: 'Male' },
+  narrator: { voice: 'bf_emma',   speed: 0.95 },
+  player:   { voice: 'af_heart',  speed: 1.0 },
+  drevil:   { voice: 'am_fenrir', speed: 0.85 },
+  devil:    { voice: 'am_michael', speed: 0.9 },
+  oracle:   { voice: 'af_kore',   speed: 0.8 },
+  dream:    { voice: 'bf_lily',   speed: 1.05 },
+  god:      { voice: 'am_fenrir', speed: 0.7 },
 }
 
-const DEFAULT_PROFILE: VoiceProfile = { pitch: 1.0, rate: 0.95, volume: 0.85, voicePreference: '' }
+const DEFAULT_PROFILE: VoiceProfile = { voice: 'af_bella', speed: 1.0 }
 
-// Resolved voice objects (cached after init)
-let resolvedVoices: Map<string, SpeechSynthesisVoice | null> = new Map()
-let voicesLoaded = false
+// Kokoro model instance (lazy-loaded)
+let ttsModel: KokoroTTSType | null = null
+let modelLoading = false
+let modelLoadAborted = false
+
+// Audio playback state
+let audioCtx: AudioContext | null = null
+let currentSource: AudioBufferSourceNode | null = null
+let playbackQueue: Float32Array[] = []
+let playing = false
+let sampleRate = 24000 // Kokoro default sample rate
 
 /** Sentence-boundary regex for chunking long text */
 const SENTENCE_BOUNDARY = /(?<=[.!?])\s+/
 
 /**
- * Initialize TTS — resolve available voices. Safe to call multiple times.
- * Chrome loads voices asynchronously, so we listen for the voiceschanged event.
+ * Initialize TTS — just applies body class from localStorage.
+ * No model download at this stage.
  */
 export function initTTS(): void {
-  if (!('speechSynthesis' in window)) return
-  if (voicesLoaded) return
-
-  const resolve = () => {
-    const voices = speechSynthesis.getVoices()
-    if (voices.length === 0) return
-
-    voicesLoaded = true
-    resolvedVoices.clear()
-
-    // For each profile, find the best matching voice
-    for (const [key, profile] of Object.entries(VOICE_PROFILES)) {
-      resolvedVoices.set(key, findVoice(voices, profile.voicePreference))
-    }
-    resolvedVoices.set('_default', findVoice(voices, DEFAULT_PROFILE.voicePreference))
-  }
-
-  // Try immediately (Firefox has voices ready)
-  resolve()
-
-  // Chrome fires voiceschanged async
-  if (!voicesLoaded) {
-    speechSynthesis.addEventListener('voiceschanged', resolve, { once: true })
-  }
-
-  // Apply body class from saved state
   if (isTTSEnabled()) {
     document.body.classList.add('tts-on')
   }
-}
-
-/** Find a voice whose name contains the preference substring (case-insensitive). */
-function findVoice(voices: SpeechSynthesisVoice[], preference: string): SpeechSynthesisVoice | null {
-  if (!preference) return voices[0] || null
-
-  const pref = preference.toLowerCase()
-
-  // Prefer English voices that match the preference
-  const englishMatch = voices.find(v =>
-    v.lang.startsWith('en') && v.name.toLowerCase().includes(pref)
-  )
-  if (englishMatch) return englishMatch
-
-  // Fallback: any voice matching the preference
-  const anyMatch = voices.find(v => v.name.toLowerCase().includes(pref))
-  if (anyMatch) return anyMatch
-
-  // Fallback: first English voice
-  const english = voices.find(v => v.lang.startsWith('en'))
-  return english || voices[0] || null
 }
 
 export function isTTSEnabled(): boolean {
@@ -106,65 +71,135 @@ export function setTTSEnabled(on: boolean): void {
 }
 
 export function stopSpeaking(): void {
-  if ('speechSynthesis' in window) {
-    speechSynthesis.cancel()
+  playbackQueue = []
+  playing = false
+  if (currentSource) {
+    try { currentSource.stop() } catch { /* already stopped */ }
+    currentSource = null
   }
 }
 
 export function isSpeaking(): boolean {
-  return 'speechSynthesis' in window && speechSynthesis.speaking
+  return playing
+}
+
+/**
+ * Load the Kokoro model lazily. Called on first speakTurn().
+ * Shows loading state via body.tts-loading class.
+ */
+async function ensureModel(): Promise<KokoroTTSType | null> {
+  if (ttsModel) return ttsModel
+  if (modelLoading) return null // already loading, skip duplicate
+
+  modelLoading = true
+  modelLoadAborted = false
+  document.body.classList.add('tts-loading')
+
+  try {
+    const { KokoroTTS } = await import('kokoro-js')
+    if (modelLoadAborted) return null
+
+    ttsModel = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', {
+      dtype: 'q8',
+      device: 'wasm',
+    })
+
+    return ttsModel
+  } catch (err) {
+    console.error('[TTS] Failed to load Kokoro model:', err)
+    return null
+  } finally {
+    modelLoading = false
+    document.body.classList.remove('tts-loading')
+  }
 }
 
 /**
  * Speak all text elements in a rendered turn container.
- * Skips system/hidden elements. Each element is queued as one or more
- * utterances (split at sentence boundaries for long text).
+ * Skips system/hidden elements. Each element generates audio with
+ * its character voice, queued for sequential playback.
  */
-export function speakTurn(container: HTMLElement): void {
+export async function speakTurn(container: HTMLElement): Promise<void> {
   if (!isTTSEnabled()) return
-  if (!('speechSynthesis' in window)) return
 
-  // Ensure voices are loaded
-  initTTS()
+  const model = await ensureModel()
+  if (!model) return
+  if (!isTTSEnabled()) return // may have been toggled off during load
+
+  // Ensure AudioContext exists (requires user gesture — satisfied by submit click)
+  if (!audioCtx) {
+    audioCtx = new AudioContext()
+  }
+  if (audioCtx.state === 'suspended') {
+    await audioCtx.resume()
+  }
+  sampleRate = 24000
 
   const elements = container.querySelectorAll<HTMLElement>('.geems-element')
+  const audioChunks: Float32Array[] = []
+
   for (const el of elements) {
     const voice = el.dataset.voice
     if (voice === 'system') continue
 
-    // Only speak text-like elements (skip images, sliders, checkboxes, etc.)
     const textEl = el.querySelector('.geems-text')
     if (!textEl) continue
 
     const text = (textEl.textContent || '').trim()
     if (!text) continue
 
-    speakText(text, voice || '')
+    const profile = VOICE_PROFILES[voice || ''] || DEFAULT_PROFILE
+    const chunks = chunkText(text, 300)
+
+    for (const chunk of chunks) {
+      try {
+        const result = await model.generate(chunk, {
+          voice: profile.voice,
+          speed: profile.speed,
+        })
+        // result.audio is a Float32Array of PCM samples
+        audioChunks.push(new Float32Array(result.audio))
+      } catch (err) {
+        console.warn('[TTS] Generation failed for chunk:', err)
+      }
+    }
+  }
+
+  if (audioChunks.length > 0) {
+    playbackQueue = audioChunks
+    playNext()
   }
 }
 
-/**
- * Speak a single text string with the given voice profile.
- * Long text is chunked at sentence boundaries to avoid mobile truncation.
- */
-function speakText(text: string, voiceKey: string): void {
-  const profile = VOICE_PROFILES[voiceKey] || DEFAULT_PROFILE
-  const resolvedVoice = resolvedVoices.get(voiceKey) || resolvedVoices.get('_default') || null
-
-  // Chunk long text at sentence boundaries (~500 char limit for mobile)
-  const chunks = chunkText(text, 500)
-
-  for (const chunk of chunks) {
-    const utterance = new SpeechSynthesisUtterance(chunk)
-    utterance.pitch = profile.pitch
-    utterance.rate = profile.rate
-    utterance.volume = profile.volume
-    if (resolvedVoice) utterance.voice = resolvedVoice
-    speechSynthesis.speak(utterance)
+/** Play the next audio chunk in the queue. */
+function playNext(): void {
+  if (playbackQueue.length === 0) {
+    playing = false
+    currentSource = null
+    return
   }
+
+  playing = true
+  const samples = playbackQueue.shift()!
+
+  const buffer = audioCtx!.createBuffer(1, samples.length, sampleRate)
+  buffer.getChannelData(0).set(samples)
+
+  const source = audioCtx!.createBufferSource()
+  source.buffer = buffer
+  source.connect(audioCtx!.destination)
+  source.onended = () => {
+    if (currentSource === source) {
+      currentSource = null
+      playNext()
+    }
+  }
+
+  currentSource = source
+  source.start()
 }
 
-/** Split text into chunks at sentence boundaries, each ≤ maxLen characters. */
+/** Split text into chunks at sentence boundaries, each <= maxLen characters. */
 function chunkText(text: string, maxLen: number): string[] {
   if (text.length <= maxLen) return [text]
 

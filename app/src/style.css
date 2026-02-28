@@ -2059,6 +2059,15 @@ body.tts-on .tts-toggle .theme-toggle-thumb {
   transform: translateX(16px);
 }
 
+body.tts-loading .tts-toggle .theme-toggle-track {
+  animation: tts-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes tts-pulse {
+  0%, 100% { opacity: 0.5; }
+  50% { opacity: 1; }
+}
+
 /* ============================================================
    Scenario Spinner Wheel
    ============================================================ */

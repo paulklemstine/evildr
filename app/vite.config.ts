@@ -15,7 +15,10 @@ export default defineConfig({
     },
   },
   build: {
-    target: "es2022",
+    target: "esnext",
     sourcemap: true,
+  },
+  optimizeDeps: {
+    exclude: ["kokoro-js"],
   },
 });
