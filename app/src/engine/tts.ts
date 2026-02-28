@@ -2,11 +2,13 @@
 // tts.ts — Text-to-Speech with Kokoro.js (in-browser neural TTS)
 // ============================================================================
 //
-// Uses Kokoro.js — an 82M parameter ONNX model running via WebAssembly.
+// Uses Kokoro.js — an 82M parameter ONNX model running via WebAssembly or
+// WebGPU (preferred when available — significantly faster inference).
 // 28 distinct English voices, no API key, no usage limits, works offline
-// after initial ~92MB model download (cached in IndexedDB).
+// after initial model download (cached in IndexedDB).
 //
-// Lazy initialization: model downloads on first speakTurn() call, not at boot.
+// Eager preload: model starts loading as soon as TTS is toggled on,
+// so it's ready before the first turn finishes.
 
 import type { KokoroTTS as KokoroTTSType, GenerateOptions } from 'kokoro-js'
 
@@ -31,10 +33,9 @@ const VOICE_PROFILES: Record<string, VoiceProfile> = {
 
 const DEFAULT_PROFILE: VoiceProfile = { voice: 'af_bella', speed: 1.0 }
 
-// Kokoro model instance (lazy-loaded)
+// Kokoro model instance
 let ttsModel: KokoroTTSType | null = null
-let modelLoading = false
-let modelLoadAborted = false
+let modelLoadPromise: Promise<KokoroTTSType | null> | null = null
 
 // Audio playback state
 let audioCtx: AudioContext | null = null
@@ -51,12 +52,14 @@ let generationSession = 0
 const SENTENCE_BOUNDARY = /(?<=[.!?])\s+/
 
 /**
- * Initialize TTS — just applies body class from localStorage.
- * No model download at this stage.
+ * Initialize TTS — applies body class and starts preloading the model
+ * if TTS was previously enabled, so it's ready before the first turn.
  */
 export function initTTS(): void {
   if (isTTSEnabled()) {
     document.body.classList.add('tts-on')
+    // Start preloading immediately — don't wait for first speakTurn()
+    ensureModel()
   }
 }
 
@@ -68,6 +71,8 @@ export function setTTSEnabled(on: boolean): void {
   localStorage.setItem(STORAGE_KEY, on ? 'on' : 'off')
   if (on) {
     document.body.classList.add('tts-on')
+    // Start preloading model immediately on toggle
+    ensureModel()
   } else {
     document.body.classList.remove('tts-on')
     stopSpeaking()
@@ -88,35 +93,58 @@ export function isSpeaking(): boolean {
   return playing
 }
 
-/**
- * Load the Kokoro model lazily. Called on first speakTurn().
- * Shows loading state via body.tts-loading class.
- */
-async function ensureModel(): Promise<KokoroTTSType | null> {
-  if (ttsModel) return ttsModel
-  if (modelLoading) return null // already loading, skip duplicate
+/** Check if WebGPU is available in this browser. */
+async function hasWebGPU(): Promise<boolean> {
+  try {
+    const nav = navigator as Navigator & { gpu?: { requestAdapter(): Promise<unknown | null> } }
+    if (!nav.gpu) return false
+    const adapter = await nav.gpu.requestAdapter()
+    return adapter !== null
+  } catch {
+    return false
+  }
+}
 
-  modelLoading = true
-  modelLoadAborted = false
+/**
+ * Load the Kokoro model. Tries WebGPU first (much faster inference),
+ * falls back to WASM. Shows loading state via body.tts-loading class.
+ * Deduplicates concurrent calls — if already loading, returns the
+ * existing promise instead of starting a second load.
+ */
+function ensureModel(): Promise<KokoroTTSType | null> {
+  if (ttsModel) return Promise.resolve(ttsModel)
+  if (modelLoadPromise) return modelLoadPromise
+
   document.body.classList.add('tts-loading')
 
-  try {
-    const { KokoroTTS } = await import('kokoro-js')
-    if (modelLoadAborted) return null
+  modelLoadPromise = (async () => {
+    try {
+      const { KokoroTTS } = await import('kokoro-js')
 
-    ttsModel = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', {
-      dtype: 'q8',
-      device: 'wasm',
-    })
+      const webgpu = await hasWebGPU()
+      // WebGPU: use fp32 (recommended). WASM: use q4 (fastest).
+      const device = webgpu ? 'webgpu' : 'wasm'
+      const dtype = webgpu ? 'fp32' : 'q4'
 
-    return ttsModel
-  } catch (err) {
-    console.error('[TTS] Failed to load Kokoro model:', err)
-    return null
-  } finally {
-    modelLoading = false
-    document.body.classList.remove('tts-loading')
-  }
+      console.log(`[TTS] Loading Kokoro model (device=${device}, dtype=${dtype})`)
+
+      ttsModel = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', {
+        dtype,
+        device,
+      })
+
+      console.log(`[TTS] Model loaded successfully (${device})`)
+      return ttsModel
+    } catch (err) {
+      console.error('[TTS] Failed to load Kokoro model:', err)
+      return null
+    } finally {
+      modelLoadPromise = null
+      document.body.classList.remove('tts-loading')
+    }
+  })()
+
+  return modelLoadPromise
 }
 
 /** Yield to the browser event loop so UI stays responsive. */
