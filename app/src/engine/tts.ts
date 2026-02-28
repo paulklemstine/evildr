@@ -121,21 +121,9 @@ export function isSpeaking(): boolean {
   return playing
 }
 
-/** Check if WebGPU is available in this browser. */
-async function hasWebGPU(): Promise<boolean> {
-  try {
-    const nav = navigator as Navigator & { gpu?: { requestAdapter(): Promise<unknown | null> } }
-    if (!nav.gpu) return false
-    const adapter = await nav.gpu.requestAdapter()
-    return adapter !== null
-  } catch {
-    return false
-  }
-}
-
 /**
- * Load the Kokoro model. Tries WebGPU first (much faster inference),
- * falls back to WASM. Shows loading state via body.tts-loading class.
+ * Load the Kokoro model using WASM with q4 quantization (smallest/fastest).
+ * WebGPU is not used — ONNX runtime has validation errors with this model.
  * Deduplicates concurrent calls — if already loading, returns the
  * existing promise instead of starting a second load.
  */
@@ -150,19 +138,14 @@ function ensureModel(): Promise<KokoroTTSType | null> {
     try {
       const { KokoroTTS } = await import('kokoro-js')
 
-      const webgpu = await hasWebGPU()
-      // WebGPU: use fp32 (recommended). WASM: use q4 (fastest).
-      const device = webgpu ? 'webgpu' : 'wasm'
-      const dtype = webgpu ? 'fp32' : 'q4'
-
-      console.log(`[TTS] Loading Kokoro model (device=${device}, dtype=${dtype})`)
+      console.log('[TTS] Loading Kokoro model (device=wasm, dtype=q4)')
 
       ttsModel = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', {
-        dtype,
-        device,
+        dtype: 'q4',
+        device: 'wasm',
       })
 
-      console.log(`[TTS] Model loaded successfully (${device})`)
+      console.log('[TTS] Model loaded successfully (wasm)')
       setModelStatus('ready')
       return ttsModel
     } catch (err) {
