@@ -33,6 +33,28 @@ const VOICE_PROFILES: Record<string, VoiceProfile> = {
 
 const DEFAULT_PROFILE: VoiceProfile = { voice: 'af_bella', speed: 1.0 }
 
+// Model load status — exposed via getTTSModelStatus() for UI indicator
+export type TTSModelStatus = 'idle' | 'loading' | 'ready' | 'error'
+let modelStatus: TTSModelStatus = 'idle'
+const statusListeners: Array<(s: TTSModelStatus) => void> = []
+
+function setModelStatus(s: TTSModelStatus): void {
+  modelStatus = s
+  for (const fn of statusListeners) fn(s)
+}
+
+/** Current model load status: idle → loading → ready/error */
+export function getTTSModelStatus(): TTSModelStatus { return modelStatus }
+
+/** Subscribe to model status changes. Returns unsubscribe function. */
+export function onTTSModelStatusChange(fn: (s: TTSModelStatus) => void): () => void {
+  statusListeners.push(fn)
+  return () => {
+    const i = statusListeners.indexOf(fn)
+    if (i >= 0) statusListeners.splice(i, 1)
+  }
+}
+
 // Kokoro model instance
 let ttsModel: KokoroTTSType | null = null
 let modelLoadPromise: Promise<KokoroTTSType | null> | null = null
@@ -52,15 +74,21 @@ let generationSession = 0
 const SENTENCE_BOUNDARY = /(?<=[.!?])\s+/
 
 /**
- * Initialize TTS — applies body class and starts preloading the model
- * if TTS was previously enabled, so it's ready before the first turn.
+ * Initialize TTS — applies body class. Model preload is triggered
+ * separately by preloadTTSModel() on the landing page.
  */
 export function initTTS(): void {
   if (isTTSEnabled()) {
     document.body.classList.add('tts-on')
-    // Start preloading immediately — don't wait for first speakTurn()
-    ensureModel()
   }
+}
+
+/**
+ * Start preloading the TTS model immediately (call from landing page).
+ * Safe to call multiple times — deduplicates via ensureModel().
+ */
+export function preloadTTSModel(): void {
+  ensureModel()
 }
 
 export function isTTSEnabled(): boolean {
@@ -115,6 +143,7 @@ function ensureModel(): Promise<KokoroTTSType | null> {
   if (ttsModel) return Promise.resolve(ttsModel)
   if (modelLoadPromise) return modelLoadPromise
 
+  setModelStatus('loading')
   document.body.classList.add('tts-loading')
 
   modelLoadPromise = (async () => {
@@ -134,9 +163,11 @@ function ensureModel(): Promise<KokoroTTSType | null> {
       })
 
       console.log(`[TTS] Model loaded successfully (${device})`)
+      setModelStatus('ready')
       return ttsModel
     } catch (err) {
       console.error('[TTS] Failed to load Kokoro model:', err)
+      setModelStatus('error')
       return null
     } finally {
       modelLoadPromise = null

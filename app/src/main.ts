@@ -20,7 +20,7 @@ import { createWatchablePlayer } from './admin/live-bridge'
 import type { PlayerBridge } from './admin/live-bridge'
 import { collectInputState } from './engine/renderer'
 import { applyModeTheme, clearModeTheme } from './engine/mode-theme'
-import { initTTS, isTTSEnabled, setTTSEnabled, stopSpeaking } from './engine/tts'
+import { initTTS, isTTSEnabled, setTTSEnabled, stopSpeaking, preloadTTSModel, getTTSModelStatus, onTTSModelStatusChange } from './engine/tts'
 import './style.css'
 
 // --- Mode card images (routed through proxy for auth; deterministic seed for caching) ---
@@ -86,12 +86,14 @@ function bindThemeToggle(): void {
 }
 
 function renderTTSToggle(): string {
+  const status = getTTSModelStatus()
   return `
     <label class="tts-toggle" id="tts-toggle">
       <span>TTS</span>
       <div class="theme-toggle-track">
         <div class="theme-toggle-thumb"></div>
       </div>
+      <span class="tts-status-dot tts-status-${status}" id="tts-status-dot"></span>
     </label>
   `
 }
@@ -99,6 +101,13 @@ function renderTTSToggle(): string {
 function bindTTSToggle(): void {
   document.getElementById('tts-toggle')?.addEventListener('click', () => {
     setTTSEnabled(!isTTSEnabled())
+  })
+  // Update status dot when model status changes
+  onTTSModelStatusChange((status) => {
+    const dot = document.getElementById('tts-status-dot')
+    if (dot) {
+      dot.className = `tts-status-dot tts-status-${status}`
+    }
   })
 }
 
@@ -1312,6 +1321,8 @@ function escapeHtml(str: string): string {
 async function boot(): Promise<void> {
   initTheme()
   initTTS()
+  // Start preloading TTS model immediately on landing page
+  preloadTTSModel()
   await showConsentIfNeeded()
   userId = getUserId()
 
