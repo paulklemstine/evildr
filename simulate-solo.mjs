@@ -620,7 +620,12 @@ const CHARACTERS = {
 
 async function readUI(page) {
   return await safeEval(page, () => {
-    const result = { texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], ratings: [], dropdowns: [] }
+    const result = { images: [], texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], ratings: [], dropdowns: [], toggles: [], colorPicks: [], emojiReacts: [], meters: [], numberInputs: [] }
+    document.querySelectorAll('.geems-image-container').forEach(el => {
+      const img = el.querySelector('img')
+      const src = img?.src || img?.dataset?.src || ''
+      result.images.push(src.substring(0, 200))
+    })
     document.querySelectorAll('.geems-text').forEach(el => {
       const text = el.textContent?.trim()
       if (text) result.texts.push(text.substring(0, 500))
@@ -665,12 +670,43 @@ async function readUI(page) {
       const options = [...s.options].map(o => o.text)
       result.dropdowns.push({ label: s.name || 'dropdown', options })
     }
+    document.querySelectorAll('.geems-toggle-container').forEach(el => {
+      const label = el.querySelector('.geems-toggle-label')?.textContent?.trim() || 'toggle'
+      const input = el.querySelector('.geems-toggle-input')
+      result.toggles.push({ label: label.substring(0, 100), checked: input?.checked || false })
+    })
+    document.querySelectorAll('.geems-color-grid').forEach(el => {
+      const wrapper = el.closest('[data-element-type]') || el.parentElement
+      const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || 'color'
+      const active = el.querySelector('.geems-color-swatch.active')
+      result.colorPicks.push({ label: label.substring(0, 80), selected: active?.dataset?.color || '' })
+    })
+    document.querySelectorAll('.geems-emoji-row').forEach(el => {
+      const wrapper = el.closest('[data-element-type]') || el.parentElement
+      const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || 'emoji'
+      const emojis = [...el.querySelectorAll('.geems-emoji-btn')].map(b => b.textContent?.trim())
+      result.emojiReacts.push({ label: label.substring(0, 80), options: emojis })
+    })
+    document.querySelectorAll('.geems-meter').forEach(el => {
+      const wrapper = el.closest('[data-element-type]') || el.parentElement
+      const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || 'meter'
+      const value = el.querySelector('.geems-meter-value')?.textContent?.trim() || ''
+      result.meters.push({ label: label.substring(0, 80), value })
+    })
+    document.querySelectorAll('.geems-number-input').forEach(el => {
+      if (el.offsetParent !== null) {
+        const wrapper = el.closest('[data-element-type]') || el.parentElement
+        const label = wrapper?.querySelector('.geems-label')?.textContent?.trim() || el.name || 'number'
+        result.numberInputs.push({ label: label.substring(0, 80), min: el.min, max: el.max, value: el.value })
+      }
+    })
     return result
-  }) || { texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], ratings: [], dropdowns: [] }
+  }) || { images: [], texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], ratings: [], dropdowns: [], toggles: [], colorPicks: [], emojiReacts: [], meters: [], numberInputs: [] }
 }
 
 function logUI(label, ui) {
   console.log(`\n  📖 ${label} sees:`)
+  if (ui.images?.length > 0) ui.images.forEach(src => console.log(`     🖼️  Image: ${src.substring(0, 100)}${src.length > 100 ? '...' : ''}`))
   for (const t of ui.texts) console.log(`     💬 "${t.substring(0, 200)}${t.length > 200 ? '...' : ''}"`)
   if (ui.radios.length > 0) {
     console.log(`     🔘 Radio:`)
@@ -680,8 +716,13 @@ function logUI(label, ui) {
   ui.textfields.forEach(f => console.log(`     ✏️  Text: "${f.label}"`))
   ui.checkboxes.forEach(c => console.log(`     ☐ Check: "${c.label}" [${c.checked ? '✓' : '✗'}]`))
   if (ui.buttons.length > 0) console.log(`     🔲 Buttons: ${ui.buttons.join(' | ')}`)
-  ui.ratings.forEach(r => console.log(`     ⭐ Rating: "${r.label}" (max ${r.max})`))
-  ui.dropdowns.forEach(d => console.log(`     📋 Dropdown: "${d.label}" (${d.options.length} options)`))
+  ui.ratings?.forEach(r => console.log(`     ⭐ Rating: "${r.label}" (max ${r.max})`))
+  ui.dropdowns?.forEach(d => console.log(`     📋 Dropdown: "${d.label}" (${d.options.length} options)`))
+  ui.toggles?.forEach(t => console.log(`     🔀 Toggle: "${t.label}" [${t.checked ? 'ON' : 'OFF'}]`))
+  ui.colorPicks?.forEach(c => console.log(`     🎨 Color: "${c.label}" [${c.selected || 'none'}]`))
+  ui.emojiReacts?.forEach(e => console.log(`     😀 Emoji: "${e.label}" [${e.options.join(' ')}]`))
+  ui.meters?.forEach(m => console.log(`     📊 Meter: "${m.label}" (${m.value})`))
+  ui.numberInputs?.forEach(n => console.log(`     🔢 Number: "${n.label}" (${n.min}-${n.max})`))
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -791,7 +832,69 @@ async function interactOneByOne(page, turn, character, ui) {
     await sleep(600)
   }
 
-  // 7. RADIO (always last — main choice)
+  // 7. TOGGLES
+  for (let i = 0; i < (ui.toggles?.length || 0); i++) {
+    const t = ui.toggles[i]
+    const shouldToggle = char.pickCheckbox ? char.pickCheckbox(phase, t.label) : phase !== 0
+    await safeEval(page, (shouldToggle, idx) => {
+      const toggles = document.querySelectorAll('.geems-toggle-input')
+      const toggle = toggles[idx]
+      if (!toggle) return
+      if (shouldToggle && !toggle.checked) toggle.click()
+      if (!shouldToggle && toggle.checked) toggle.click()
+    }, shouldToggle, i)
+    log.push(`🔀 "${t.label}": ${shouldToggle ? 'ON' : 'OFF'}`)
+    await sleep(600)
+  }
+
+  // 8. COLOR PICKS
+  for (let i = 0; i < (ui.colorPicks?.length || 0); i++) {
+    const c = ui.colorPicks[i]
+    await safeEval(page, (idx) => {
+      const grids = document.querySelectorAll('.geems-color-grid')
+      const grid = grids[idx]
+      if (!grid) return
+      const swatches = grid.querySelectorAll('.geems-color-swatch')
+      const pick = swatches[Math.floor(Math.random() * swatches.length)]
+      if (pick) pick.click()
+    }, i)
+    log.push(`🎨 "${c.label}"`)
+    await sleep(600)
+  }
+
+  // 9. EMOJI REACTS
+  for (let i = 0; i < (ui.emojiReacts?.length || 0); i++) {
+    const e = ui.emojiReacts[i]
+    await safeEval(page, (idx) => {
+      const rows = document.querySelectorAll('.geems-emoji-row')
+      const row = rows[idx]
+      if (!row) return
+      const btns = row.querySelectorAll('.geems-emoji-btn')
+      const pick = btns[Math.floor(Math.random() * btns.length)]
+      if (pick) pick.click()
+    }, i)
+    log.push(`😀 "${e.label}"`)
+    await sleep(600)
+  }
+
+  // 10. NUMBER INPUTS
+  for (let i = 0; i < (ui.numberInputs?.length || 0); i++) {
+    const n = ui.numberInputs[i]
+    const val = char.pickSlider ? char.pickSlider(phase, n.label, parseInt(n.min) || 0, parseInt(n.max) || 100) : Math.floor((parseInt(n.min || 0) + parseInt(n.max || 100)) / 2)
+    await safeEval(page, (val, idx) => {
+      const inputs = [...document.querySelectorAll('.geems-number-input')].filter(i => i.offsetParent !== null)
+      const input = inputs[idx]
+      if (!input) return
+      const setter = Object.getOwnPropertyDescriptor(window.HTMLInputElement.prototype, 'value')?.set
+      if (setter) setter.call(input, String(val)); else input.value = String(val)
+      input.dispatchEvent(new Event('input', { bubbles: true }))
+      input.dispatchEvent(new Event('change', { bubbles: true }))
+    }, val, i)
+    log.push(`🔢 "${n.label}": ${val}`)
+    await sleep(600)
+  }
+
+  // 11. RADIO (always last — main choice)
   if (ui.radios.length > 0) {
     const radioLabel = char.pickRadio(phase, ui.radios)
     const result = await safeEval(page, (targetLabel) => {
