@@ -1127,6 +1127,9 @@ export function renderUI(
     }
   }
 
+  // Pending inline images to embed inside the next visible element
+  let pendingInlineImages: HTMLDivElement[] = []
+
   for (let index = 0; index < uiJsonArray.length; index++) {
     const element = uiJsonArray[index]
 
@@ -1158,6 +1161,14 @@ export function renderUI(
       continue
     }
 
+    // ---- Inline images: collect now, embed inside next element ----
+    if (element.type === 'inline_image') {
+      const imgWrapper = document.createElement('div')
+      renderInlineImageElement(imgWrapper, element, null)
+      pendingInlineImages.push(imgWrapper)
+      continue
+    }
+
     // ---- Render visible elements ----
 
     const wrapper = document.createElement('div')
@@ -1182,9 +1193,6 @@ export function renderUI(
       switch (element.type) {
         case 'image':
           renderImageElement(wrapper, element, adjustedColor)
-          break
-        case 'inline_image':
-          renderInlineImageElement(wrapper, element, adjustedColor)
           break
         case 'text':
         case 'narrative':
@@ -1248,6 +1256,12 @@ export function renderUI(
           }
       }
 
+      // Embed any pending inline images inside this element
+      for (const imgDiv of pendingInlineImages) {
+        wrapper.insertBefore(imgDiv, wrapper.firstChild)
+      }
+      pendingInlineImages = []
+
       container.appendChild(wrapper)
     } catch (renderError) {
       console.error(
@@ -1259,6 +1273,16 @@ export function renderUI(
       errorWrapper.className = 'geems-element error-message'
       errorWrapper.textContent = `Error rendering element: ${element.name || element.type}. Check console.`
       container.appendChild(errorWrapper)
+    }
+  }
+
+  // If there are leftover inline images with no following element, attach to the last element
+  if (pendingInlineImages.length > 0) {
+    const lastEl = container.lastElementChild as HTMLElement | null
+    if (lastEl) {
+      for (const imgDiv of pendingInlineImages) {
+        lastEl.insertBefore(imgDiv, lastEl.firstChild)
+      }
     }
   }
 

@@ -98,7 +98,7 @@ h1, h2, h3 {
    ============================================================ */
 
 .geems-element {
-  clear: both;
+  overflow: hidden;
   margin-bottom: 1.25rem;
   padding: 1.25rem 1.5rem;
   background-color: var(--bg-primary);
@@ -238,11 +238,6 @@ h1, h2, h3 {
   overflow: hidden;
 }
 
-/* Alternate inline images left/right for visual rhythm */
-.geems-inline-image-container:nth-of-type(even) {
-  float: left;
-  margin: 0 0.75rem 0.75rem 0;
-}
 
 .geems-inline-image-placeholder {
   width: 128px;
