@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -66,6 +66,7 @@ Create an IRRESISTIBLE opening scene for a ${genre} adventure that's already HAP
   active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
   consequence_queue: []}
 
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
 
@@ -110,6 +111,8 @@ ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create d
 11. Include 1-2 inline_image elements alongside key moments (BESIDE interactive elements or dramatic text) to enhance visual storytelling.
 
 ${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },

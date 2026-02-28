@@ -9,7 +9,7 @@
 // OPTIMIZED FOR SPEED: prompts are lean to minimize LLM latency.
 
 import type { HistoryEntry } from '../../engine/game-loop.ts'
-import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -120,6 +120,7 @@ Generate a JSON UI array for this player. The array MUST contain these elements 
    {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
 
 CRITICAL: The notes hidden element is NOT optional. It MUST be the LAST element in the array.
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }

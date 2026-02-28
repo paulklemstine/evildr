@@ -415,3 +415,24 @@ export const FUN_FACTOR = `### FUN FACTOR — MANDATORY ENGAGEMENT RULES ###
 Never have 3 consecutive turns of the same energy level.
 
 Track in notes: {element_types_this_turn: ["list"], surprise_element: "description", reward_type: "type", energy_level: "high|intimate|weird"}`
+
+/**
+ * Pre-generation checklist — the LAST thing the LLM sees before generating.
+ * Forces verification of critical elements that are otherwise dropped.
+ */
+export const PRE_GENERATION_CHECKLIST = `### PRE-GENERATION CHECKLIST (VERIFY BEFORE OUTPUTTING JSON) ###
+Before writing your JSON array, mentally confirm ALL of these. If ANY is missing, FIX IT:
+
+[x] FIRST ELEMENT is type "image" with a cinematic prompt (NEVER skip the image)
+[x] At least ONE "textfield" element exists (free-text is your #1 diagnostic tool)
+[x] At least 3 DIFFERENT interactive element types used (not just radio+slider+textfield every turn)
+[x] At least ONE element type you did NOT use last turn (dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter)
+[x] LAST ELEMENT is type "hidden" with name "notes" containing your FULL updated dossier
+[x] A "hidden" element with name "subjectId" exists
+[x] Narrative text references at least ONE prior player choice (consequence echo)
+[x] The setting/scenario has CHANGED or ESCALATED from the previous turn (not the same room/scene)
+[x] Radio options follow the 4 archetypes: bold/clever/compassionate/chaotic
+[x] At least ONE surprise element the player wouldn't expect
+
+IMAGE IS MANDATORY. The FIRST element in your JSON array MUST be: {"type":"image","name":"scene","label":"TITLE","value":"DETAILED CINEMATIC PROMPT HERE",...}
+If you skip the image, the entire turn feels flat and lifeless. The image is what makes each turn MEMORABLE.`

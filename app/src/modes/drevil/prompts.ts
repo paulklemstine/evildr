@@ -7,7 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -63,6 +63,7 @@ The notes MUST contain: updated deviant axes scores, experiment log, behavioral 
 Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DOSSIER HERE","color":"#000","voice":"system"}
 
 Include a hidden "subjectId" element with the subject's evolving mocking nickname.
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -409,6 +410,8 @@ ${BANNED_PHRASES}
 ${STAGNATION_DETECTION}
 
 ${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

@@ -4,7 +4,7 @@
 // what they value, what they trade away, and what they refuse to give up.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -53,6 +53,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
 CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated Devil's Ledger using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL LEDGER HERE","color":"#000","voice":"system"}
 Include a hidden "subjectId" element with the mortal's evolving title.
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -406,6 +407,8 @@ ${BANNED_PHRASES}
 ${STAGNATION_DETECTION}
 
 ${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

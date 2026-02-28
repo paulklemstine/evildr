@@ -8,7 +8,7 @@
 // that feels impossibly personal. The hook is: HOW does it know?
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export function createOraclePromptBuilder(): PromptBuilder {
   return {
@@ -53,6 +53,7 @@ Use a RICH VARIETY of UI elements — color picks, sliders, emoji reactions, tex
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as mystical prompts: "What do you see in the flames?", "Describe your vision", "What name echoes?".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as MYSTICAL PATHS rather than action archetypes.
 CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated reading state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -453,6 +454,8 @@ ${BANNED_PHRASES}
 ${STAGNATION_DETECTION}
 
 ${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

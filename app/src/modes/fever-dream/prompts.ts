@@ -9,7 +9,7 @@
 // emotional and aesthetic threads. The images are the STAR.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export function createFeverDreamPromptBuilder(): PromptBuilder {
   return {
@@ -54,6 +54,7 @@ Use a RICH VARIETY of UI elements — sliders for abstract concepts, color picks
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as dream prompts: "What does the dream whisper?", "Describe the taste of the color", "Write what the mirror shows".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as SURREAL NON-SEQUITURS mapped to the archetypes.
 CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the dream state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DREAM STATE HERE","color":"#000","voice":"system"}
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -468,6 +469,8 @@ ${BANNED_PHRASES}
 ${STAGNATION_DETECTION}
 
 ${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

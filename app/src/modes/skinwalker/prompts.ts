@@ -8,7 +8,7 @@
 // of a familiar place where something fundamental has shifted.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
@@ -53,6 +53,7 @@ Use a RICH VARIETY of UI elements — textfields for perception checks, checkbox
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as perception checks: "What did you just see?", "Describe what changed", "Write down what you remember".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
 CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the FULL anomaly map and reality state using the NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
+${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -466,6 +467,8 @@ ${STAGNATION_DETECTION}
 ${REACTIVE_ELEMENTS}
 
 ${MUTATION_DIRECTIVE}
+
+${PRE_GENERATION_CHECKLIST}
 
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
