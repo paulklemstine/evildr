@@ -98,6 +98,7 @@ h1, h2, h3 {
    ============================================================ */
 
 .geems-element {
+  clear: both;
   margin-bottom: 1.25rem;
   padding: 1.25rem 1.5rem;
   background-color: var(--bg-primary);
