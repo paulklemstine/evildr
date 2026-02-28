@@ -338,6 +338,19 @@ function renderGamePage(modeId: string): void {
     window.location.hash = ''
   })
 
+  // Home nav
+  document.getElementById('nav-home')?.addEventListener('click', () => {
+    if (gameLoop) {
+      gameLoop.reset()
+      gameLoop = null
+    }
+    if (playerBridge) {
+      playerBridge.destroy()
+      playerBridge = null
+    }
+    window.location.hash = ''
+  })
+
   bindThemeToggle()
 
 
