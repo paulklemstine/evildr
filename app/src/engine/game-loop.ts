@@ -208,8 +208,58 @@ function fixUnquotedJsonValues(text: string): string {
  *  - Mixed content: markdown/text before or after the JSON
  *  - Unquoted string values from LLM errors
  */
+/**
+ * Pre-extract the notes hidden field value directly from the raw LLM response
+ * string, bypassing JSON parsing entirely. This is a safety net: if JSON
+ * parsing drops the notes element (due to unescaped quotes, nested braces,
+ * etc.), we can still recover the notes value.
+ */
+function rescueNotesFromRaw(raw: string): string | null {
+  // Match: "name":"notes" ... "value":"<CONTENT>"
+  // The notes element is typically the last element, so search from the end.
+  const nameIdx = raw.lastIndexOf('"name"')
+  if (nameIdx === -1) return null
+
+  // Find a notes name near a value field
+  const notesPatterns = [
+    /"name"\s*:\s*"notes"[\s\S]{0,200}?"value"\s*:\s*"/g,
+    /"type"\s*:\s*"hidden"[\s\S]{0,200}?"name"\s*:\s*"notes"[\s\S]{0,200}?"value"\s*:\s*"/g,
+  ]
+
+  for (const pattern of notesPatterns) {
+    let match: RegExpExecArray | null
+    let lastMatch: RegExpExecArray | null = null
+    while ((match = pattern.exec(raw)) !== null) {
+      lastMatch = match
+    }
+    if (!lastMatch) continue
+
+    const valueStart = lastMatch.index + lastMatch[0].length
+    // Walk forward to find the end of the value string, tracking escaped quotes
+    let i = valueStart
+    while (i < raw.length) {
+      if (raw[i] === '\\') { i += 2; continue }
+      if (raw[i] === '"') break
+      i++
+    }
+    if (i > valueStart) {
+      const value = raw.substring(valueStart, i)
+      // Unescape JSON string escapes
+      try {
+        return JSON.parse(`"${value}"`)
+      } catch {
+        return value.replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/\\\\/g, '\\')
+      }
+    }
+  }
+  return null
+}
+
 function parseLLMResponse(raw: string): UIElement[] {
   let text = raw.trim()
+
+  // Pre-extract notes from raw text as a safety net (before any parsing that might drop them)
+  const rescuedNotes = rescueNotesFromRaw(text)
 
   // Strip optional markdown code fences
   const fenceMatch = text.match(/```(?:json)?\s*([\s\S]*?)\s*```/)
@@ -217,66 +267,93 @@ function parseLLMResponse(raw: string): UIElement[] {
     text = fenceMatch[1].trim()
   }
 
+  let result: UIElement[] | null = null
+
   // Try direct parse first
   try {
     const parsed: unknown = JSON.parse(text)
-    return extractUIArray(parsed, text)
+    result = extractUIArray(parsed, text)
   } catch {
     // Direct parse failed — try repair strategies
   }
 
-  // Fix unquoted string values (common LLM JSON error)
-  text = fixUnquotedJsonValues(text)
+  if (!result) {
+    // Fix unquoted string values (common LLM JSON error)
+    text = fixUnquotedJsonValues(text)
 
-  // Find embedded JSON array
-  const firstBracket = text.indexOf('[')
-  const lastBracket = text.lastIndexOf(']')
-  if (firstBracket !== -1 && lastBracket > firstBracket) {
-    const arrayText = text.substring(firstBracket, lastBracket + 1)
-    try {
-      const parsed: unknown = JSON.parse(arrayText)
-      if (Array.isArray(parsed)) {
-        console.warn(`parseLLMResponse: fixed malformed JSON (${(parsed as unknown[]).length} elements)`)
-        return parsed as UIElement[]
+    // Find embedded JSON array
+    const firstBracket = text.indexOf('[')
+    const lastBracket = text.lastIndexOf(']')
+    if (firstBracket !== -1 && lastBracket > firstBracket) {
+      const arrayText = text.substring(firstBracket, lastBracket + 1)
+      try {
+        const parsed: unknown = JSON.parse(arrayText)
+        if (Array.isArray(parsed)) {
+          console.warn(`parseLLMResponse: fixed malformed JSON (${(parsed as unknown[]).length} elements)`)
+          result = parsed as UIElement[]
+        }
+      } catch {
+        // Full array parse failed — try jsonrepair on the array
       }
-    } catch {
-      // Full array parse failed — try jsonrepair on the array
+
+      if (!result) {
+        // Try jsonrepair on the full array
+        try {
+          const repaired = jsonrepair(arrayText)
+          const parsed: unknown = JSON.parse(repaired)
+          if (Array.isArray(parsed) && parsed.length > 0) {
+            result = parsed as UIElement[]
+          }
+        } catch {
+          // jsonrepair failed on array — fall through to individual extraction
+        }
+      }
+
+      if (!result) {
+        // Extract individual JSON objects from the array, repairing broken ones
+        const objects = extractIndividualObjects(arrayText)
+        if (objects.length > 0) {
+          result = objects as unknown as UIElement[]
+        }
+      }
     }
 
-    // Try jsonrepair on the full array (fixes unescaped quotes, trailing commas, etc.)
-    try {
-      const repaired = jsonrepair(arrayText)
-      const parsed: unknown = JSON.parse(repaired)
-      if (Array.isArray(parsed) && parsed.length > 0) {
-        return parsed as UIElement[]
+    if (!result) {
+      // Try jsonrepair on the full text as a last resort
+      try {
+        const firstBracket2 = text.indexOf('[')
+        const target = firstBracket2 !== -1 ? text.substring(firstBracket2) : text
+        const repaired = jsonrepair(target)
+        const parsed: unknown = JSON.parse(repaired)
+        if (Array.isArray(parsed) && parsed.length > 0) {
+          result = parsed as UIElement[]
+        } else {
+          result = extractUIArray(parsed, repaired)
+        }
+      } catch {
+        // jsonrepair failed
       }
-    } catch {
-      // jsonrepair failed on array — fall through to individual extraction
-    }
-
-    // Extract individual JSON objects from the array, repairing broken ones
-    const objects = extractIndividualObjects(arrayText)
-    if (objects.length > 0) {
-      return objects as unknown as UIElement[]
     }
   }
 
-  // Try jsonrepair on the full text as a last resort
-  try {
-    const target = firstBracket !== -1 ? text.substring(firstBracket) : text
-    const repaired = jsonrepair(target)
-    const parsed: unknown = JSON.parse(repaired)
-    if (Array.isArray(parsed) && parsed.length > 0) {
-      return parsed as UIElement[]
-    }
-    return extractUIArray(parsed, repaired)
-  } catch {
-    // jsonrepair failed
+  if (!result) {
+    throw new Error(
+      `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
+    )
   }
 
-  throw new Error(
-    `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
-  )
+  // Ensure rescued notes are present in the result if parsing dropped them
+  if (rescuedNotes) {
+    const hasNotes = result.some(
+      (el) => el.type === 'hidden' && (el.name === 'notes' || (el.name || '').includes('notes'))
+    )
+    if (!hasNotes) {
+      console.warn('parseLLMResponse: notes element was dropped during parsing — rescued from raw response')
+      result.push({ type: 'hidden', name: 'notes', value: rescuedNotes } as UIElement)
+    }
+  }
+
+  return result
 }
 
 /**
@@ -326,9 +403,9 @@ function manualExtractObject(chunk: string): Record<string, unknown> | null {
 
 /**
  * Extract individual JSON objects from a malformed JSON array string.
- * Uses brace-depth tracking to find object boundaries, then tries to parse
- * each individually. Skips unparseable objects (e.g. hidden fields with
- * unescaped quotes). Returns all successfully parsed objects.
+ * Uses brace-depth tracking to find object boundaries (handles nested braces
+ * inside string values correctly), then tries to parse each individually.
+ * Skips unparseable objects. Returns all successfully parsed objects.
  */
 function extractIndividualObjects(arrayText: string): Record<string, unknown>[] {
   const results: Record<string, unknown>[] = []
@@ -337,14 +414,32 @@ function extractIndividualObjects(arrayText: string): Record<string, unknown>[] 
   if (inner.startsWith('[')) inner = inner.substring(1)
   if (inner.endsWith(']')) inner = inner.substring(0, inner.length - 1)
 
-  // Split at },{  boundaries (lookahead preserves the { on the next chunk)
-  const chunks = inner.split(/\}\s*,\s*(?=\{)/)
+  // Use brace-depth tracking instead of regex splitting to handle nested },{
+  const chunks: string[] = []
+  let depth = 0
+  let inString = false
+  let escaped = false
+  let chunkStart = -1
 
-  for (const raw of chunks) {
-    let chunk = raw.trim()
-    if (!chunk.startsWith('{')) chunk = '{' + chunk
-    if (!chunk.endsWith('}')) chunk = chunk + '}'
+  for (let i = 0; i < inner.length; i++) {
+    const ch = inner[i]
+    if (escaped) { escaped = false; continue }
+    if (ch === '\\') { escaped = true; continue }
+    if (ch === '"') { inString = !inString; continue }
+    if (inString) continue
+    if (ch === '{') {
+      if (depth === 0) chunkStart = i
+      depth++
+    } else if (ch === '}') {
+      depth--
+      if (depth === 0 && chunkStart !== -1) {
+        chunks.push(inner.substring(chunkStart, i + 1))
+        chunkStart = -1
+      }
+    }
+  }
 
+  for (const chunk of chunks) {
     try {
       const obj = JSON.parse(chunk) as Record<string, unknown>
       if (obj && typeof obj === 'object') results.push(obj)
@@ -423,6 +518,8 @@ export class GameLoop {
   private mutationTimers: ReturnType<typeof setTimeout>[] = []
   /** Base64 captures of resolved images, keyed by image prompt. */
   private capturedImages: Record<string, string> = {}
+  /** Reentrancy guard — prevents concurrent submitTurn() calls. */
+  private turnInProgress = false
 
   constructor(config: GameLoopConfig) {
     this.config = config
@@ -568,8 +665,16 @@ export class GameLoop {
    * Submit a turn: collect inputs, call the LLM, render the response, auto-save.
    */
   async submitTurn(): Promise<void> {
+    // Reentrancy guard — prevent concurrent submissions
+    if (this.turnInProgress) return
+    this.turnInProgress = true
+
     const { container, llmClient, promptBuilder, onStateChange, onError, onLoading } = this.config
 
+    // Disable UI immediately (before any async work) to prevent double-clicks
+    onLoading(true)
+
+    try {
     // 1. Collect current inputs and behavioral signals
     const behavioralSignals = this.inputTracker.collect()
     const playerActionsJson = collectInputState(container, this.state.turnNumber + 1)
@@ -602,9 +707,7 @@ export class GameLoop {
       )
     }
 
-    // 4. Call LLM
-    onLoading(true)
-
+    // 5. Call LLM
     let uiJsonArray: UIElement[]
     try {
       const response = await llmClient.generateTurn(prompt)
@@ -618,6 +721,7 @@ export class GameLoop {
         const message = retryErr instanceof Error ? retryErr.message : String(retryErr)
         onError(`LLM error: ${message}`)
         onLoading(false)
+        this.turnInProgress = false
         return
       }
     }
@@ -637,6 +741,7 @@ export class GameLoop {
       const message = err instanceof Error ? err.message : String(err)
       onError(`Render error: ${message}`)
       onLoading(false)
+      this.turnInProgress = false
       return
     }
 
@@ -712,6 +817,13 @@ export class GameLoop {
       console.error('Post-render error (UI still interactive):', postRenderErr)
     } finally {
       onLoading(false)
+      this.turnInProgress = false
+    }
+    } catch (outerErr) {
+      // Catch-all for any uncaught errors in the turn lifecycle
+      console.error('submitTurn failed:', outerErr)
+      onLoading(false)
+      this.turnInProgress = false
     }
   }
 
