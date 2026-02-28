@@ -464,6 +464,15 @@ function renderCheckboxElement(
   label.textContent = element.label || element.name
   label.className = 'flex-grow cursor-pointer'
 
+  // Make the entire option div clickable — clicks on padding/border area
+  // must propagate to the checkbox input.
+  optionDiv.addEventListener('click', (e) => {
+    if (e.target !== input) {
+      input.checked = !input.checked
+      input.dispatchEvent(new Event('change', { bubbles: true }))
+    }
+  })
+
   optionDiv.appendChild(input)
   optionDiv.appendChild(label)
   wrapper.appendChild(optionDiv)
@@ -666,6 +675,15 @@ function renderRadioElement(
       optionLabel.htmlFor = inputId
       optionLabel.innerHTML = renderBasicMarkdown(stripHtmlTags(option.label))
       optionLabel.className = 'flex-grow cursor-pointer'
+
+      // Make the entire option div clickable — clicks on padding/border area
+      // must propagate to the radio input, not silently die on the div.
+      optionDiv.addEventListener('click', (e) => {
+        if (e.target !== input) {
+          input.checked = true
+          input.dispatchEvent(new Event('change', { bubbles: true }))
+        }
+      })
 
       optionDiv.appendChild(input)
       optionDiv.appendChild(optionLabel)
