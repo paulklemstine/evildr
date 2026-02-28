@@ -23,7 +23,7 @@ export function createFeverDreamPromptBuilder(): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
     ): string {
-      const recentHistory = history.slice(-3)
+      const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')

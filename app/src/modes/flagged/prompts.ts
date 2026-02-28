@@ -73,7 +73,7 @@ export function createFlaggedPromptBuilder(nameA = 'Player A', nameB = 'Player B
       player1Notes: string,
       player2Notes: string,
     ): string {
-      const recentHistory = history.slice(-3)
+      const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')

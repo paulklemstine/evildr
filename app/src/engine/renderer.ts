@@ -746,7 +746,7 @@ function renderRatingElement(
   if (adjustedColor) label.style.color = adjustedColor
   wrapper.appendChild(label)
 
-  const maxStars = parseInt(String(element.max)) || 5
+  const maxStars = element.max != null && parseInt(String(element.max)) > 0 ? parseInt(String(element.max)) : 5
   const predictedVal = element.predicted ? parseInt(element.predicted) : NaN
   const defaultVal = !isNaN(predictedVal) ? predictedVal : (parseInt(element.value) || 0)
 

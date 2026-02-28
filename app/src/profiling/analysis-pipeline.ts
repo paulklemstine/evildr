@@ -7,8 +7,8 @@ import { buildAnalysisPrompt } from './analysis-prompts'
 import { uploadReport } from '../api/report-uploader'
 
 // Adaptive analysis schedule: faster initial calibration, then spreads out
-const ANALYSIS_TURNS = [3, 5, 8, 12, 17, 23, 30] as const
-const ANALYSIS_INTERVAL_AFTER = 10 // Every 10 turns after the last scheduled turn
+const ANALYSIS_TURNS = [2, 4, 6, 9, 12, 16, 20, 25, 30] as const
+const ANALYSIS_INTERVAL_AFTER = 5 // Every 5 turns after the last scheduled turn
 const ANALYSIS_DELAY_MS = 10_000 // Wait 10s after game turn (deep route doesn't compete)
 const MIN_BETWEEN_ANALYSES_MS = 30_000 // Minimum 30s between analysis calls
 
