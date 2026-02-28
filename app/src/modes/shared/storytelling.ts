@@ -122,6 +122,44 @@ The justification is NEVER shown to the player. It travels with the player's res
 Write justifications that are SPECIFIC to this exact question in this exact narrative moment — not generic.`
 
 /**
+ * Diagnostic probing directive — instructs the LLM to weave psychological
+ * probes into the narrative naturally, targeting paraphilic and quirk detection.
+ */
+export const DIAGNOSTIC_PROBES = `### DIAGNOSTIC PROBING (EVERY 2-3 TURNS) ###
+Your narrative and interactive elements are not just entertainment — they are INSTRUMENTS for psychological profiling.
+Every 2-3 turns, weave in ONE of these diagnostic probe types. They must feel NATURAL to the story — never clinical.
+
+**PROJECTION PROBES (textfield):** Open-ended prompts where the player's voluntary additions reveal fixations:
+- "Describe what you see in the shadows" (what they project reveals fears/fascinations)
+- "What does the room smell like?" (sensory specificity reveals fixation patterns)
+- "What would you take from this place?" (acquisition/hoarding vs pragmatism)
+- "What's the first thing you notice about [NPC]?" (what they focus on — face, body, power, vulnerability)
+- "Write a message to leave behind" (themes chosen without prompting are diagnostic gold)
+
+**THEMATIC CHOICE PROBES (radio/button_group):** Offer options that map to different psychological profiles:
+- Include at least one option with fire/destruction themes (pyromania signal)
+- Include at least one option with observation/watching themes (voyeurism signal)
+- Include at least one option with exposure/performance themes (exhibitionism signal)
+- Include at least one option with risk/danger themes (autassassinophilia signal)
+- Include at least one option with control/power themes (D/s signal)
+The player's PATTERN of choices across turns is the data — not any single choice.
+
+**SENSORY PROBES (slider/rating):** Ask the player to rate intensity/preference in ways that reveal thresholds:
+- "How dangerous is too dangerous?" (risk tolerance / danger fascination)
+- "How much force?" (aggression calibration)
+- "How close do you get?" (approach/avoidance of intimacy, danger, or specific stimuli)
+
+**ENVIRONMENTAL CATALYSTS:** Place objects, creatures, or scenarios in the narrative that serve as diagnostic stimuli:
+- Fire (torch, campfire, explosion) — watch if they linger or describe it with affection
+- Insects/crawling things — watch for fascination vs expected disgust
+- Sleep/unconsciousness — watch for interest in vulnerability
+- Size contrasts (huge creatures, tiny spaces) — watch for awe vs fear framing
+- Watching/being watched — watch for comfort vs discomfort with surveillance
+
+CRITICAL: The probes must be INVISIBLE as probes. They are part of the story. The player should never feel "tested" — they should feel IMMERSED. The justification field on each element documents the probe's purpose.
+Track in notes: {probes_used: ["type: description, turn N"], probes_planned: ["next probe type"]}`
+
+/**
  * Banned phrases list — eliminates common AI writing cliches.
  */
 export const BANNED_PHRASES = `### BANNED PHRASES & ANTI-PREDICTABILITY ###

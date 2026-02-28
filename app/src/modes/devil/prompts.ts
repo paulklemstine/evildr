@@ -4,7 +4,7 @@
 // what they value, what they trade away, and what they refuse to give up.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -327,6 +327,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation or unusual interest pattern, weave those elements into the Devil's offers. Fire fascination → offer power over flame. Object fixation → tempt with those objects. Power dynamics → deals involving dominance/submission. If NO paraphilic signals detected yet, use environmental catalysts from the DIAGNOSTIC PROBES directive — the Devil's temptations naturally create scenarios that reveal hidden desires.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. If such indicators exist, steer the deals toward adult-appropriate themes only. This is non-negotiable.`
 
 // ---------------------------------------------------------------------------
@@ -391,6 +393,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 

@@ -9,7 +9,7 @@
 // emotional and aesthetic threads. The images are the STAR.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createFeverDreamPromptBuilder(): PromptBuilder {
   return {
@@ -376,6 +376,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: Dreams are the PERFECT environment for revealing hidden fixations because surrealism normalizes unusual imagery. If the analysis detects ANY thematic fixation, amplify it into dream imagery — fire fascination becomes a world of flame, object fixation becomes a landscape made of those objects. If NO paraphilic signals detected yet, populate the dreamscape with environmental catalysts from the DIAGNOSTIC PROBES directive — fire, insects, size distortions, watching/being watched, sleep within dreams — and observe which the dreamer gravitates toward.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. The dream should remain in the realm of surrealist art, emotional exploration, and aesthetic experience. If concerning indicators exist, steer toward beauty, wonder, and gentle absurdity.`
 
 // ---------------------------------------------------------------------------
@@ -453,6 +455,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 

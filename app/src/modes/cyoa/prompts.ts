@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -37,6 +37,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 
@@ -121,6 +123,8 @@ const CYOA_ANALYSIS_DIRECTIVE = `You have a real-time psychological analysis of 
 4. **Vulnerability through character**: Create NPCs and scenarios that mirror the player's psychological profile. Fear of loss? Threaten what they value. Need for power? Offer it with strings. Trust issues? Create the most compelling, ambiguous ally possible.
 
 5. **Romance in genre context**: For the Romantic genre, weave attraction, chemistry, and emotional tension INTO the adventure — seduction as a heist tool, attraction as a complication, romance as danger. The romantic elements should be EXCITING and ADVENTUROUS, not clinical. For other genres, keep romance/attraction as a natural story element if it emerges from choices.
+
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation or unusual interest pattern, weave those elements naturally into the adventure — fire fascination → fire-centric challenges, object fixation → those objects as quest items, power dynamics → authority/rebellion scenarios. If NO paraphilic signals detected yet, use environmental catalysts from the DIAGNOSTIC PROBES directive to elicit them naturally within the adventure.
 
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of detected indicators or genre selection. All sexual/romantic content must involve adults only.`
 

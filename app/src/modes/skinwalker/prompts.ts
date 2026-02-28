@@ -8,7 +8,7 @@
 // of a familiar place where something fundamental has shifted.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
@@ -358,6 +358,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation, use it as HORROR FUEL — the anomalies should mirror their fixations back in disturbing ways. Fire fascination → flames appear where none should be. Object fixation → those objects multiply or change. If NO paraphilic signals detected yet, the environmental anomalies should include diagnostic catalysts from the DIAGNOSTIC PROBES directive — fire, insects, sleep/vulnerability, size distortions, being watched — to see which the player responds to most strongly.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. The horror must remain psychological — never physical violence toward children, graphic torture, or non-consensual scenarios presented positively. Wrongness and dread, not trauma exploitation.`
 
 // ---------------------------------------------------------------------------
@@ -449,6 +451,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 

@@ -4,7 +4,7 @@
 // Every turn should feel like a theme park ride, a heist, a chase, a mystery.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
@@ -261,6 +261,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation or unusual interest pattern, weave those elements naturally into the adventure. Fire fascination → scenes with fire. Object fixation → those objects appear. Power dynamics → authority/rebellion scenarios. If NO paraphilic signals detected yet, use environmental catalysts from the DIAGNOSTIC PROBES directive to elicit them naturally within the adventure.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. If such indicators exist in the analysis, steer gameplay AWAY from that territory entirely. Direct toward adult-appropriate adventure themes only.`
 
 // ---------------------------------------------------------------------------
@@ -317,6 +319,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 

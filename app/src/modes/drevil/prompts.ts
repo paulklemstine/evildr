@@ -7,7 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -324,6 +324,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation or unusual interest pattern, design experiments that naturally feature those elements as environmental catalysts. If fire fascination detected → rooms with fire mechanics. If power dynamics detected → experiments with authority figures. If object fixation detected → place those objects in the environment. If NO paraphilic signals detected yet, include environmental catalysts from the DIAGNOSTIC PROBES directive to elicit them.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. If such indicators exist, steer the experiment toward adult-appropriate themes only. This is non-negotiable.`
 
 // ---------------------------------------------------------------------------
@@ -387,6 +389,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 

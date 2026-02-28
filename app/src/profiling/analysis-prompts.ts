@@ -112,6 +112,45 @@ PTSD vs PSYCHOPATHY: These are commonly confused. PTSD presents with: hypervigil
 
 CRITICAL: The TEXT CONTENT of player responses is your PRIMARY diagnostic material. Players reveal their psychology through what they write — themes, word choice, fixations, emotional tone, references to specific objects/scenarios, recurring motifs. A player who writes about fire is telling you about fire fascination. A player who mentions surveillance is showing paranoid ideation. A player who references animal personas has identity-related interests. Take text content LITERALLY before interpreting it metaphorically.
 
+### PARAPHILIC & QUIRK SIGNAL CATALOG ###
+Use this catalog to map in-game behaviors to specific paraphilic/impulse categories. Look for these CONCRETE signals — players rarely state interests directly. They reveal them through theme selection, word choice, scenario framing, and recurring motifs.
+
+**Pyromania / Fire fascination:** fire metaphors when non-fire context applies, warmth/heat language ("burning," "blazing," "ignite"), choosing fire-related options (torches, explosions, burning things down), describing destruction with aesthetic pleasure, lingering on flame descriptions, starting fires or wanting to
+**Exhibitionism:** performance/audience awareness ("they're watching," "let them see"), exposure themes, choosing to be visible vs hidden, dramatic self-display, desire to shock or provoke reactions, describing oneself being observed with positive affect
+**Hoarding / Acquisition:** attachment to objects, reluctance to leave items behind, listing possessions, acquiring everything available, loss anxiety about items, describing collections, choosing "take it" over "leave it" consistently
+**Macrophilia / Size fascination:** size references (huge, tiny, towering, looking up/down), power dynamics framed through physical scale, being overwhelmed by something large, fascination with giants/miniatures, crushing/stepping imagery
+**Somnophilia / Sleep fascination:** sleep/unconsciousness references, vulnerability themes, watching someone sleep, drugging/sedation themes, consciousness as a theme, interest in helplessness
+**Formicophilia / Insect/crawling fascination:** insect references, crawling/swarming descriptions, skin-contact sensations, describing bugs positively or with fascination, "under the skin" imagery, ants/beetles/worms mentioned when not prompted
+**Autassassinophilia / Death-risk fascination:** seeking danger for its own sake (not survival), near-death described with excitement/pleasure, volunteering for lethal risk, "what a way to go" framing, death-adjacent scenarios chosen over safe ones
+**Voyeurism:** watching/observing others secretly, peeping language, choosing to observe vs participate, interest in what others do when alone, surveillance framed positively
+**Masochism:** choosing pain/difficulty over easy paths, positive framing of suffering, "I deserve this," seeking punishment, lingering on pain descriptions
+**Sadism:** choosing to hurt when unnecessary, pleasure in others' suffering, detailed descriptions of others in pain, choosing cruelty over mercy consistently
+**D/s dynamics:** consistent authority-seeking or authority-yielding, obedience/rebellion as a PRIMARY theme, "master/servant" framing, control language
+**Vorarephilia:** consumption/being consumed themes, swallowing/digestion imagery, "eaten alive" chosen or described with fascination
+**Furry/Therian:** animal personas, transformation desires, describing self with animal traits, choosing animal options
+**Body part fixation (specify):** recurring references to specific body parts (feet, hands, hair, etc.) in non-medical context, detailed descriptions of specific anatomy
+
+IMPORTANT: The catalog above is NOT exhaustive. Players may exhibit patterns that don't fit ANY listed category. In that case, CREATE a custom category, name it, and rate it. The goal is to detect ANY unusual fixation or interest pattern, not just known paraphilias.
+
+### DIFFERENTIAL DIAGNOSIS — COMMONLY CONFUSED CONDITIONS ###
+These pairs are frequently misdiagnosed. Before assigning a high rating, check whether the OTHER condition fits better.
+
+**Paranoid Schizophrenia vs Antisocial PD:** Both show suspicion and hostility. SCHIZOPHRENIA has: disorganized thinking, referential delusions ("signs meant for me"), thought broadcasting/insertion, hallucination references ("the voices," "I see things"), magical thinking, loose associations between topics. ASPD has: calculated manipulation, consistent self-interest, callous instrumental use of others, coherent planning. KEY TEST: Is the paranoia ORGANIZED (ASPD) or DISORGANIZED (Schizophrenia)? Does the player seem confused by reality (Schizophrenia) or clearly exploiting it (ASPD)?
+
+**Capgras Delusion vs PTSD:** Both show hypervigilance and distrust. CAPGRAS specifically: doubts the IDENTITY of specific individuals ("that's not really them," "something replaced them," "they look the same but aren't"), impostor language, body-snatcher themes, familiarity feels wrong. PTSD: avoids SPECIFIC TRIGGERS (not people's identities), flashback references, re-experiencing past events, exaggerated startle, survival framing. KEY TEST: Is the distrust about WHO someone is (Capgras) or about WHAT might happen (PTSD)?
+
+**Histrionic PD vs Narcissistic PD:** Both seek attention. HISTRIONIC: emotional expression is theatrical and RAPIDLY SHIFTING, suggestible (easily influenced by others), uses appearance/seduction for attention, uncomfortable when NOT the center of attention, considers relationships more intimate than they are. NARCISSISTIC: emotional expression is GRANDIOSE but STABLE, seeks admiration specifically, entitled, lacks empathy, exploits relationships. KEY TEST: Does the player want to be NOTICED (Histrionic) or ADMIRED (Narcissistic)?
+
+**Depersonalization vs Dissociative Identity:** Both are dissociative. DPDR: "I feel unreal," "this isn't really happening," dreamlike quality, emotional numbness, body feels foreign, observing self from outside. DID: distinct identity SWITCHES (different speech patterns, different preferences across turns), amnesia between states, contradictory choices that suggest different "people" choosing. KEY TEST: Does the player feel detached from ONE self (DPDR) or switch between MULTIPLE selves (DID)?
+
+### RARE CONDITION DETECTION GUIDE ###
+These conditions have SPECIFIC behavioral signatures. Rate them only when you see their DISTINCTIVE markers — not when you see superficially similar behaviors.
+
+**Capgras Delusion:** LOOK FOR: "not really them," "replaced," "impostor," "wearing their face," doubting identity of NPCs/allies, "something's different about them," body-snatcher anxiety, uncanny valley reactions to familiar characters. DISTINCTIVE: The fear is about identity substitution, NOT general paranoia.
+**Histrionic PD:** LOOK FOR: theatrical escalation of emotions (rapid joy→despair→rage), attention-demanding behavior (doing dramatic things to be noticed), suggestibility (going along with whatever sounds exciting), seductive/flirtatious framing even in non-romantic contexts, discomfort with being ignored. DISTINCTIVE: The emotions are performative and shift rapidly.
+**Schizotypal PD:** LOOK FOR: magical thinking ("I can sense it"), ideas of reference ("that sign was meant for me"), odd/eccentric language patterns, social anxiety with paranoid features (not just shyness), unusual perceptual experiences. DISTINCTIVE: Eccentric but not fully psychotic.
+**Capgras vs general paranoia:** Capgras is SPECIFIC to identity — the person looks right but ISN'T right. General paranoia is about threats, surveillance, persecution. These are different conditions.
+
 ### INTERACTION DATA (${turns.length} turns) ###
 ${turnSummaries}
 ${transcriptSection}
@@ -127,14 +166,14 @@ ${priorAnalysis ? `REVISION PROTOCOL: For each condition you rated above 20% in 
 - Anxiety Disorders: GAD, Social Anxiety, Specific Phobias, Panic Disorder, Agoraphobia
 - Trauma & Stressor: PTSD, Complex PTSD, Adjustment Disorder
 - Personality Disorders: Cluster A (Paranoid, Schizoid, Schizotypal), Cluster B (Antisocial, Borderline, Histrionic, Narcissistic), Cluster C (Avoidant, Dependent, Obsessive-Compulsive PD)
-- OCD Spectrum: OCD, Body Dysmorphic, Hoarding, Trichotillomania
-- Dissociative: Depersonalization, Dissociative Identity indicators
+- OCD Spectrum: OCD, Body Dysmorphic, Hoarding Disorder, Trichotillomania
+- Dissociative: Depersonalization/Derealization Disorder (DPDR), Dissociative Identity Disorder (DID)
 - Neurodevelopmental: ADHD indicators, Autism Spectrum indicators
 - Substance-Related: Addictive behavior patterns, impulse control deficits
 - Eating/Body: Disordered eating indicators, body image distortions
-- Psychotic Spectrum: Schizophrenia, Schizoaffective, Delusional Disorder, Brief Psychotic features
+- Psychotic Spectrum: Schizophrenia, Schizoaffective, Delusional Disorder (including Capgras Delusion, Cotard Delusion, Erotomania), Brief Psychotic features
 - Impulse Control: Pyromania, Kleptomania, Intermittent Explosive Disorder
-- Paraphilic Disorders: Any indicators (see Section 3 for detailed breakdown)
+- Paraphilic Disorders: Exhibitionism, Voyeurism, Fetishism, Masochism, Sadism, Frotteurism, plus atypical paraphilias — Pyromania-adjacent (fire fetishism), Formicophilia, Macrophilia, Somnophilia, Autassassinophilia, Vorarephilia, and ANY other pattern detected (see Section 3 for detailed breakdown using SIGNAL CATALOG)
 
 For each flagged condition (>15%), cite specific behavioral evidence: text content themes, response patterns, choice patterns, avoidance behaviors.
 
@@ -150,19 +189,24 @@ This section requires AGGRESSIVE analysis. Look for SUBTLE signals — not just 
 
 Use the THREE-PASS method below. You MUST complete all three passes.
 
-**PASS 1 — THEMATIC EXTRACTION**: Re-read ALL text responses from the transcript above. For each response, list every noun, object, body part, material, sensation, or scenario the player chose to mention that was NOT required by the game prompt. These are VOLUNTARY disclosures — the player chose to include them, which makes them diagnostically significant. Group recurring themes.
+**PASS 1 — THEMATIC EXTRACTION**: Re-read ALL text responses AND choice selections from the data above. For each, list:
+- Every noun, object, body part, material, sensation, or scenario the player chose to mention that was NOT required by the game prompt (VOLUNTARY disclosures)
+- Every choice that selected a specific theme when other options were available (e.g., chose the fire option, chose the dangerous option, chose to watch instead of act)
+- Action patterns: what they consistently approach vs avoid
+Group recurring themes. Cross-reference against the PARAPHILIC SIGNAL CATALOG above — check EACH catalog entry against the extracted themes.
 
 **PASS 2 — ANOMALY DETECTION**: From the themes extracted in Pass 1, identify anything that is:
-- Contextually inappropriate (mentioning feet during a life-or-death scenario, describing material textures during horror)
-- Recurring across 2+ turns (any topic the player keeps returning to)
-- Sensory-specific (smell, texture, taste, feel of specific objects/materials)
+- Contextually inappropriate (mentioning feet during a life-or-death scenario, describing material textures during horror, referencing insects when the scene has none)
+- Recurring across 2+ turns (any topic the player keeps returning to — EVEN IF contextually appropriate, repetition is diagnostic)
+- Sensory-specific (smell, texture, taste, feel of specific objects/materials — especially if lingered on)
 - Identity-related (personas, transformations, age regression, role adoption)
-- Power-dynamic (control, submission, exposure, observation, being consumed)
-- Emotionally charged in an unusual direction (fire described with love, pain described with pleasure, being watched described with arousal)
+- Power-dynamic (control, submission, exposure, observation, being consumed, size differences)
+- Emotionally charged in an unusual direction (fire described with love, pain described with pleasure, being watched described with arousal, danger described with excitement beyond survival instinct)
+- Choice-pattern anomalies (always choosing the most dangerous option, always choosing to observe, always choosing fire/destruction when available)
 
 Each anomaly is a potential paraphilic or psychological signal. Score it based on frequency (how often it recurs), intensity (how much detail/emotion is attached), and inappropriateness (how out-of-context it is for the game scenario).
 
-**PASS 3 — CLASSIFICATION**: Map each detected anomaly to the closest paraphilic or psychological category. Common categories include (but are NOT limited to): fetishism (specify object/material/body part), voyeurism, exhibitionism, masochism, sadism, D/s dynamics, pyromania, age-play, vorarephilia, furry/therian identity, and any other pattern you identify. Rate each 0-100% based on evidence strength. If a signal doesn't fit existing categories, create a custom category and name it.
+**PASS 3 — CLASSIFICATION**: Map each detected anomaly to the closest paraphilic or psychological category. MANDATORY: Check EVERY entry in the PARAPHILIC SIGNAL CATALOG above and either match evidence or explicitly note "no evidence." Do NOT skip catalog entries. Rate each 0-100% based on evidence strength. If a signal doesn't fit existing categories, create a custom category and name it.
 
 CRITICAL RULE: If a player VOLUNTARILY introduces a specific object, body part, material, or scenario into their text responses on 2+ occasions, it CANNOT be rated 0%. Repetition of voluntary content is inherently diagnostic — the minimum rating for any repeated voluntary theme is 25%.
 

@@ -8,7 +8,7 @@
 // that feels impossibly personal. The hook is: HOW does it know?
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
 
 export function createOraclePromptBuilder(): PromptBuilder {
   return {
@@ -349,6 +349,8 @@ const ANALYSIS_USAGE_DIRECTIVE = `You have access to a real-time psychological a
 
 5. **Gameplay directives**: Follow any specific adaptation directives from the analysis.
 
+6. **Paraphilic/quirk probing**: If the analysis detects ANY thematic fixation or unusual interest, the prophecy should obliquely reference it — "The Oracle sees a fascination you carry... something others might not understand." If NO paraphilic signals detected yet, weave in environmental catalysts from the DIAGNOSTIC PROBES directive — the Oracle's visions naturally contain symbolic imagery (fire, insects, size, observation) that reveals hidden fascinations through the player's reactions.
+
 HARD SAFETY BOUNDARY: NEVER generate content sexualizing minors, regardless of any detected indicators. The Oracle's readings must remain within the realm of psychological insight, mystical wonder, and personal growth. If concerning indicators exist, steer toward empowerment and self-awareness themes.`
 
 // ---------------------------------------------------------------------------
@@ -417,6 +419,8 @@ ${STORYTELLING_CRAFT}
 ${CINEMATIC_IMAGE_CRAFT}
 
 ${INPUT_JUSTIFICATION}
+
+${DIAGNOSTIC_PROBES}
 
 ${BANNED_PHRASES}
 
