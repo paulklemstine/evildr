@@ -644,73 +644,81 @@ export class GameLoop {
       return
     }
 
-    // 7. Apply dynamic mood coloring from this turn's elements
-    applyMoodFromUI(uiJsonArray)
+    // Post-render steps wrapped in try/finally to GUARANTEE onLoading(false) is called.
+    // Without this, any thrown error leaves the interstitial overlay covering the viewport,
+    // permanently blocking all user interaction.
+    try {
+      // 7. Apply dynamic mood coloring from this turn's elements
+      applyMoodFromUI(uiJsonArray)
 
-    // 8. Resolve image URLs
-    this.resolveImages()
+      // 8. Resolve image URLs
+      this.resolveImages()
 
-    // 9. Apply dopamine effects: cascade reveal, typewriter, celebrations, pulse
-    cascadeReveal(container)
-    applyTypewriter(container).then(() => {
-      speakTurn(container)
-    })
-    pulseInteractive(container)
-    if (this.cleanupCelebrations) this.cleanupCelebrations()
-    this.cleanupCelebrations = attachCelebrations(container)
+      // 9. Apply dopamine effects: cascade reveal, typewriter, celebrations, pulse
+      cascadeReveal(container)
+      applyTypewriter(container).then(() => {
+        speakTurn(container)
+      })
+      pulseInteractive(container)
+      if (this.cleanupCelebrations) this.cleanupCelebrations()
+      this.cleanupCelebrations = attachCelebrations(container)
 
-    // 9b. Attach reactive variant listeners (swap text on input change)
-    if (this.cleanupReactive) this.cleanupReactive()
-    this.cleanupReactive = attachReactiveListeners(container)
+      // 9b. Attach reactive variant listeners (swap text on input change)
+      if (this.cleanupReactive) this.cleanupReactive()
+      this.cleanupReactive = attachReactiveListeners(container)
 
-    // 9c. Skinwalker mutation engine (timed DOM changes)
-    this.clearMutationTimers()
-    if (this.config.mode === 'skinwalker') {
-      this.initMutationEngine(uiJsonArray)
+      // 9c. Skinwalker mutation engine (timed DOM changes)
+      this.clearMutationTimers()
+      if (this.config.mode === 'skinwalker') {
+        this.initMutationEngine(uiJsonArray)
+      }
+
+      // 10. Preload next interstitial image while player plays this turn
+      preloadInterstitialImage(this.config.imageClient)
+
+      // 11. Save cliffhanger for re-engagement
+      saveCliffhanger(extractCliffhanger(uiJsonArray))
+
+      // 12. Attach input tracker for behavioral signal capture
+      this.inputTracker.attach()
+
+      // 13. Save turn record to IndexedDB for profiling
+      const { userId, sessionId } = this.config
+      if (userId && sessionId) {
+        const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
+        const contexts = collectQuestionContext(container)
+        saveTurn({
+          userId,
+          sessionId,
+          turnNumber: this.state.turnNumber,
+          timestamp: Date.now(),
+          mode: this.state.mode,
+          playerInputs: playerActionsJson,
+          uiShown: JSON.stringify(uiSummary),
+          signals: behavioralSignals,
+          questionsShown: JSON.stringify(contexts),
+        }).catch(() => { /* IndexedDB may not be available */ })
+
+        // Update session turn count
+        updateSession(sessionId, { turnCount: this.state.turnNumber }).catch(() => {})
+
+        // Upload report to server every turn (fire-and-forget)
+        this.uploadCurrentReport(userId, sessionId).catch(() => {})
+
+        // Trigger analysis pipeline on deep model (fire-and-forget, runs in background)
+        maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
+      }
+
+      // 14. Auto-save
+      saveGameState(this.storageKey(), this.state)
+
+      // 15. Notify
+      onStateChange(this.getState())
+    } catch (postRenderErr) {
+      console.error('Post-render error (UI still interactive):', postRenderErr)
+    } finally {
+      onLoading(false)
     }
-
-    // 10. Preload next interstitial image while player plays this turn
-    preloadInterstitialImage(this.config.imageClient)
-
-    // 11. Save cliffhanger for re-engagement
-    saveCliffhanger(extractCliffhanger(uiJsonArray))
-
-    // 12. Attach input tracker for behavioral signal capture
-    this.inputTracker.attach()
-
-    // 13. Save turn record to IndexedDB for profiling
-    const { userId, sessionId } = this.config
-    if (userId && sessionId) {
-      const uiSummary = uiJsonArray.map(el => ({ type: el.type, name: el.name }))
-      const contexts = collectQuestionContext(container)
-      saveTurn({
-        userId,
-        sessionId,
-        turnNumber: this.state.turnNumber,
-        timestamp: Date.now(),
-        mode: this.state.mode,
-        playerInputs: playerActionsJson,
-        uiShown: JSON.stringify(uiSummary),
-        signals: behavioralSignals,
-        questionsShown: JSON.stringify(contexts),
-      }).catch(() => { /* IndexedDB may not be available */ })
-
-      // Update session turn count
-      updateSession(sessionId, { turnCount: this.state.turnNumber }).catch(() => {})
-
-      // Upload report to server every turn (fire-and-forget)
-      this.uploadCurrentReport(userId, sessionId).catch(() => {})
-
-      // Trigger analysis pipeline on deep model (fire-and-forget, runs in background)
-      maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
-    }
-
-    // 14. Auto-save
-    saveGameState(this.storageKey(), this.state)
-
-    // 15. Notify
-    onStateChange(this.getState())
-    onLoading(false)
   }
 
   /**

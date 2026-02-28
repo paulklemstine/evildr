@@ -386,6 +386,11 @@ export function dismissInterstitial(): Promise<void> {
 
     if (!overlayEl) { resolve(); return }
 
+    // IMMEDIATELY stop blocking clicks — the fade-out is cosmetic only.
+    // Without this, the overlay (z-index 4000, pointer-events: auto) blocks
+    // all user interaction for 350ms after the turn renders.
+    overlayEl.style.pointerEvents = 'none'
+
     // Brief pause to show the completed progress bar, then fade out
     setTimeout(() => {
       overlayEl?.classList.remove('interstitial-visible')
