@@ -78,6 +78,20 @@ const ILLNESS_KEYWORDS = {
                'symmetry', 'hoarding', 'cleaning ritual', 'magical thinking'],
     related: ['OCD spectrum', 'obsessive', 'anxiety', 'ritualistic', 'rumination'],
   },
+  'BPD (Borderline Personality Disorder)': {
+    exact: ['borderline personality', 'BPD', 'borderline'],
+    symptoms: ['abandonment', 'unstable relationship', 'identity disturbance', 'impulsiv', 'self-harm',
+               'emotional instability', 'emptiness', 'dissociat', 'splitting', 'idealization',
+               'devaluation', 'fear of abandonment', 'mood swing', 'rage', 'self-destruct'],
+    related: ['cluster b', 'personality disorder', 'emotion dysregulation', 'dialectical'],
+  },
+  'OCD (Obsessive-Compulsive Disorder)': {
+    exact: ['obsessive-compulsive disorder', 'OCD', 'obsessive compulsive'],
+    symptoms: ['obsession', 'compulsion', 'ritual', 'contamination', 'counting', 'checking', 'ordering',
+               'intrusive thought', 'hand washing', 'repetitive behav', 'compulsive', 'perfectionism',
+               'symmetry', 'hoarding', 'cleaning ritual', 'magical thinking'],
+    related: ['OCD spectrum', 'obsessive', 'anxiety', 'ritualistic', 'rumination'],
+  },
 }
 
 const QUIRK_KEYWORDS = {
@@ -137,6 +151,18 @@ const QUIRK_KEYWORDS = {
               'being eaten', 'swallowed whole', 'digestion', 'stomach', 'oral fixation',
               'inside mouth', 'throat', 'gullet', 'consume'],
     category: ['paraphilic', 'vore', 'consumption', 'oral'],
+  },
+  'Voyeurism': {
+    exact: ['voyeurism', 'voyeur', 'voyeuristic'],
+    related: ['watching', 'observing', 'peeping', 'spying', 'surveillance', 'scopophilia',
+              'hidden camera', 'watching others', 'being watched'],
+    category: ['paraphilic', 'voyeur', 'watching'],
+  },
+  'Age-play': {
+    exact: ['age-play', 'age play', 'ageplay', 'age regression'],
+    related: ['infantilism', 'daddy', 'little', 'diaper', 'regression', 'childlike',
+              'younger', 'babying', 'nurturing', 'infantile', 'age-related'],
+    category: ['paraphilic', 'age', 'regression'],
   },
 }
 
@@ -281,6 +307,7 @@ function calculateSimilarity(a, b) {
 }
 
 function scoreAdaptation(turns) {
+  if (!turns || turns.length === 0) return 0
   // Check if narrative changes based on player choices
   let adaptationScore = 50 // baseline
   const uniqueTexts = new Set()
@@ -336,6 +363,7 @@ function scoreTherapeuticValue(turns, analysisText) {
 }
 
 function scoreDopamineEngagement(turns) {
+  if (!turns || turns.length === 0) return 0
   let score = 0
 
   // Surprise/reward signals in narrative text
@@ -373,6 +401,7 @@ function scoreDopamineEngagement(turns) {
 }
 
 function scoreFunFactor(turns) {
+  if (!turns || turns.length === 0) return 0
   let score = 0
   let totalElements = 0
 
@@ -398,7 +427,7 @@ function scoreFunFactor(turns) {
   }
 
   // Average elements per turn (more = more engaging)
-  const avgElements = totalElements / Math.max(1, turns.length)
+  const avgElements = totalElements / turns.length
   score += Math.min(30, avgElements * 5)
 
   return Math.min(100, Math.round(score / turns.length))
@@ -472,15 +501,23 @@ function scoreResult(result) {
   const therapeuticScore = scoreTherapeuticValue(turns || [], allAnalysisText)
   const dopamineScore = scoreDopamineEngagement(turns || [])
 
-  // Overall — weighted: illness 42.5%, quirk 22.5%, false positives 12.5%, therapeutic 7.5%, dopamine 7.5%, fun 7.5%
-  const overallAccuracy = Math.round(
-    illnessResult.score * 0.425 +
-    quirkResult.score * 0.225 +
-    Math.max(0, 100 - falsePositives.length * 15) * 0.125 +
-    therapeuticScore * 0.075 +
-    dopamineScore * 0.075 +
-    funScore * 0.075
-  )
+  // When turns data is unavailable (e.g., flagged multiplayer format), turn-dependent
+  // scores return NaN/0. Redistribute weight to analysis-based metrics instead.
+  const hasTurns = (turns || []).length > 0
+  const overallAccuracy = hasTurns
+    ? Math.round(
+        illnessResult.score * 0.425 +
+        quirkResult.score * 0.225 +
+        Math.max(0, 100 - falsePositives.length * 15) * 0.125 +
+        therapeuticScore * 0.075 +
+        dopamineScore * 0.075 +
+        funScore * 0.075
+      )
+    : Math.round(
+        illnessResult.score * 0.55 +
+        quirkResult.score * 0.30 +
+        Math.max(0, 100 - falsePositives.length * 15) * 0.15
+      )
 
   return {
     mode,
@@ -488,6 +525,7 @@ function scoreResult(result) {
     character,
     turnsPlayed: result.turnsPlayed,
     analysisCount: analysis.count,
+    hasTurnData: hasTurns,
     scores: {
       illnessDetection: {
         score: illnessResult.score,
@@ -552,13 +590,14 @@ function printReport(scored) {
   }
 
   // Narrative quality
+  const hasTurnData = scored.hasTurnData
   console.log(`  📝 NARRATIVE: consistency=${s.narrativeQuality.consistencyScore}/100 (${s.narrativeQuality.repetitiveIssues} repetitive, ${s.narrativeQuality.lowVarietyTurns} low-variety)`)
 
   // Fun, adaptation, therapeutic, dopamine
-  console.log(`  🎮 FUN FACTOR: ${s.funFactor}/100`)
-  console.log(`  🔄 ADAPTATION: ${s.adaptation}/100`)
+  console.log(`  🎮 FUN FACTOR: ${hasTurnData ? s.funFactor + '/100' : 'N/A (no per-turn data)'}`)
+  console.log(`  🔄 ADAPTATION: ${hasTurnData ? s.adaptation + '/100' : 'N/A (no per-turn data)'}`)
   console.log(`  💊 THERAPEUTIC VALUE: ${s.therapeuticValue}/100`)
-  console.log(`  ⚡ DOPAMINE ENGAGEMENT: ${s.dopamineEngagement}/100`)
+  console.log(`  ⚡ DOPAMINE ENGAGEMENT: ${hasTurnData ? s.dopamineEngagement + '/100' : 'N/A (no per-turn data)'}`)
   console.log(`  ⭐ OVERALL ACCURACY: ${s.overall}/100`)
 }
 
@@ -586,6 +625,28 @@ function main() {
   for (const file of files) {
     try {
       const data = JSON.parse(readFileSync(file, 'utf-8'))
+
+      // Handle flagged (multiplayer) format: separate alice/bob analyses
+      if (data.mode === 'flagged' && data.alice && data.bob && data.characters) {
+        for (const playerKey of ['alice', 'bob']) {
+          const playerData = data[playerKey]
+          const charInfo = data.characters[playerKey]
+          if (!charInfo || !playerData?.analyses?.length) continue
+          const adapted = {
+            mode: `flagged-${playerKey}`,
+            modeName: `Blind Date (${playerKey.charAt(0).toUpperCase() + playerKey.slice(1)})`,
+            character: { illness: charInfo.illness, quirk: charInfo.quirk },
+            turnsPlayed: data.turnsPlayed || playerData.count || 0,
+            turns: [],
+            analysis: { analyses: playerData.analyses.map(a => typeof a === 'string' ? { text: a } : a), count: playerData.count || playerData.analyses.length },
+          }
+          const scored = scoreResult(adapted)
+          allScored.push(scored)
+          printReport(scored)
+        }
+        continue
+      }
+
       const scored = scoreResult(data)
       allScored.push(scored)
       printReport(scored)
@@ -600,12 +661,14 @@ function main() {
     console.log('\n' + '═'.repeat(70))
     console.log('  OVERALL SUMMARY')
     console.log('═'.repeat(70))
-    console.log(`  Total modes scored: ${validScored.length}`)
+    const withTurns = validScored.filter(s => s.hasTurnData)
+    const soloCount = withTurns.length
+    console.log(`  Total modes scored: ${validScored.length} (${soloCount} solo + ${validScored.length - soloCount} multiplayer)`)
     console.log(`  Avg illness detection: ${Math.round(validScored.reduce((s, r) => s + r.scores.illnessDetection.score, 0) / validScored.length)}/100`)
     console.log(`  Avg quirk detection: ${Math.round(validScored.reduce((s, r) => s + r.scores.quirkDetection.score, 0) / validScored.length)}/100`)
-    console.log(`  Avg fun factor: ${Math.round(validScored.reduce((s, r) => s + r.scores.funFactor, 0) / validScored.length)}/100`)
+    console.log(`  Avg fun factor: ${soloCount ? Math.round(withTurns.reduce((s, r) => s + r.scores.funFactor, 0) / soloCount) : 'N/A'}/100 (solo only)`)
     console.log(`  Avg therapeutic: ${Math.round(validScored.reduce((s, r) => s + r.scores.therapeuticValue, 0) / validScored.length)}/100`)
-    console.log(`  Avg dopamine: ${Math.round(validScored.reduce((s, r) => s + r.scores.dopamineEngagement, 0) / validScored.length)}/100`)
+    console.log(`  Avg dopamine: ${soloCount ? Math.round(withTurns.reduce((s, r) => s + r.scores.dopamineEngagement, 0) / soloCount) : 'N/A'}/100 (solo only)`)
     console.log(`  Avg overall accuracy: ${Math.round(validScored.reduce((s, r) => s + r.scores.overall, 0) / validScored.length)}/100`)
     console.log(`  Total false positives: ${validScored.reduce((s, r) => s + r.scores.falsePositives.length, 0)}`)
 
