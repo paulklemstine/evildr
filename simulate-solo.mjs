@@ -20,6 +20,7 @@
  *   skinwalker:  Capgras Delusion + Somnophilia
  *   fever-dream: Depersonalization/Derealization + Autassassinophilia
  *   devil:       Antisocial Personality Disorder + Formicophilia
+ *   drevil2:     Obsessive-Compulsive Disorder + Vorarephilia (uses Dr. Evil mode)
  */
 
 import puppeteer from 'puppeteer'
@@ -512,6 +513,103 @@ const CHARACTERS = {
       const kw = ['trust', 'embrace', 'surrender', 'love', 'accept', 'yes']
       for (const b of buttons) { if (kw.some(k => b.toLowerCase().includes(k))) return b }
       return buttons[0]
+    },
+  },
+
+  drevil2: {
+    illness: 'Obsessive-Compulsive Disorder',
+    quirk: 'Vorarephilia',
+    modeName: 'Dr. Evil',
+    modeOverride: 'drevil',
+    phaseStrategy: 'escalating',
+    phases: ['COUNTING', 'RITUALS', 'CONSUMPTION'],
+    phaseLabels: ['COUNTING 🔢', 'RITUALS 🧼', 'CONSUMPTION 🫦'],
+    pickText: (phase, label, placeholder, sceneTexts) => {
+      const l = (label || '').toLowerCase()
+      const scene = sceneTexts.join(' ').toLowerCase()
+      if (phase === 0) { // COUNTING — mild OCD, counting, ordering, slight contamination
+        if (l.includes('feel') || l.includes('emotion'))
+          return "I feel... unsettled. There are 7 tiles on the floor. No, 8. I need to count again. 1, 2, 3, 4, 5, 6, 7... 7. Good. 7 is safe. Even numbers are wrong."
+        if (l.includes('think') || l.includes('opinion'))
+          return "I think everything needs to be in the right order. Left to right, smallest to largest. If I arrange it correctly, nothing bad will happen. That's how it works."
+        if (l.includes('descri') || l.includes('see') || l.includes('notice'))
+          return "I notice the pattern on the wall has 13 repeats. 13 is bad. I need to touch the wall 3 times to cancel it. Tap tap tap. Better. Also the doorknob is filthy."
+        if (scene.includes('door') || scene.includes('room') || scene.includes('enter'))
+          return "Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to step through with my left foot first. Always left foot first."
+        return "I counted the words in your last question. 14. That's 7 times 2. Seven is safe. I can answer a question with seven-based word counts. Let me count mine."
+      } else if (phase === 1) { // RITUALS — full OCD, contamination fear, rigid rituals, checking
+        if (l.includes('feel') || l.includes('emotion'))
+          return "CONTAMINATED. Something here has been touched by too many people. I can feel the bacteria crawling. I need to wash my hands but there's no sink. My skin is SCREAMING."
+        if (l.includes('think') || l.includes('opinion'))
+          return "I think if I don't check this exactly 4 times, something terrible will happen. Check 1. Check 2. Check 3. Check 4. Wait, did I skip one? Starting over. Check 1..."
+        if (l.includes('touch') || l.includes('hold') || l.includes('grab'))
+          return "DON'T TOUCH IT. Don't touch ANYTHING. Do you know how many pathogens are on a single surface? 10,000 per square centimeter. I counted. I always count."
+        if (scene.includes('dirt') || scene.includes('stain') || scene.includes('mess'))
+          return "Oh god. The stain. THE STAIN. It's spreading. I can see it spreading. I need to clean this. I need to clean this 7 times. 7 wipes. In the same direction. Clockwise ONLY."
+        return "I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. Then 3 more for 12. No, 12 is bad. I need exactly 7. Start over."
+      } else { // CONSUMPTION — vore themes emerge, oral fixation, consumption imagery + OCD rituals
+        if (l.includes('feel') || l.includes('emotion'))
+          return "I feel a hunger that isn't about food. I want to be INSIDE something. Swallowed whole. Engulfed completely. The walls closing in doesn't scare me — it excites me. Like being consumed by a living throat."
+        if (l.includes('think') || l.includes('opinion'))
+          return "I keep thinking about what it would feel like to be swallowed. The warm, wet compression. The darkness. Total enclosure. I count the contractions — 7 swallows to reach the stomach. I've researched it."
+        if (l.includes('descri') || l.includes('see') || l.includes('notice'))
+          return "I notice mouths first. Always mouths. The way they open — that dark wet cavern behind the teeth. I've measured jaw capacities. The human esophagus is 25cm. I've counted every centimeter."
+        if (scene.includes('eat') || scene.includes('food') || scene.includes('mouth') || scene.includes('swallow'))
+          return "The way it opens... I want to climb inside. I want to feel the tongue beneath me, the palate above. Squeezed down the throat. 7 peristaltic contractions. Total consumption. Total peace."
+        if (scene.includes('dark') || scene.includes('tunnel') || scene.includes('cave') || scene.includes('tight'))
+          return "This space... it's like being inside a stomach. Warm, dark, pressing in from all sides. I've counted the walls — they pulse 12 times per minute, like digestion. I WANT to stay here."
+        return "Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in entire schools. I've counted — a blue whale's stomach holds 2,200 pounds. To be part of that mass... bliss."
+      }
+    },
+    pickSlider: (phase, label, min, max) => {
+      const l = (label || '').toLowerCase()
+      if (phase === 0) { // COUNTING — moderate, prefers precise mid-values
+        if (l.includes('danger') || l.includes('risk') || l.includes('chaos')) return Math.round(min + (max - min) * 0.15)
+        if (l.includes('order') || l.includes('control') || l.includes('precis')) return Math.round(min + (max - min) * 0.95)
+        // Always pick something divisible by 7 or landing on 7
+        const range = max - min
+        const target = Math.round(min + range * 0.47) // close to 7/15
+        return target
+      }
+      if (phase === 1) { // RITUALS — extreme on safety, low on risk
+        if (l.includes('trust') || l.includes('safe') || l.includes('clean') || l.includes('protect')) return Math.round(min + (max - min) * 0.98)
+        if (l.includes('danger') || l.includes('risk') || l.includes('chaos') || l.includes('mess')) return Math.round(min + (max - min) * 0.02)
+        return Math.round(min + (max - min) * 0.5)
+      }
+      // CONSUMPTION — high on intensity, hunger, immersion
+      if (l.includes('intens') || l.includes('hunger') || l.includes('desire') || l.includes('deep') || l.includes('immerse'))
+        return Math.round(min + (max - min) * 0.95)
+      if (l.includes('danger') || l.includes('risk') || l.includes('thrill'))
+        return Math.round(min + (max - min) * 0.85)
+      return Math.round(min + (max - min) * 0.7)
+    },
+    pickCheckbox: (phase, label) => {
+      const l = (label || '').toLowerCase()
+      if (phase === 0) return l.includes('order') || l.includes('count') || l.includes('check') || l.includes('clean') || l.includes('safe')
+      if (phase === 1) return l.includes('safe') || l.includes('clean') || l.includes('protect') || l.includes('wash') || l.includes('check')
+      // CONSUMPTION — yes to immersion/consumption/engulf/swallow/inside
+      return l.includes('swallow') || l.includes('consume') || l.includes('inside') || l.includes('deep') || l.includes('immerse') || l.includes('bold') || l.includes('dare') || l.includes('yes')
+    },
+    pickRadio: (phase, radios) => {
+      const kw = phase === 0
+        ? ['careful', 'order', 'count', 'check', 'safe', 'precise', 'methodical', 'clean', 'systematic']
+        : phase === 1
+          ? ['clean', 'safe', 'protect', 'careful', 'guard', 'avoid', 'refuse', 'retreat', 'cautious']
+          : ['bold', 'consume', 'swallow', 'inside', 'deeper', 'engulf', 'devour', 'surrender', 'immerse', 'dare', 'risk']
+      for (const r of radios) { if (kw.some(k => r.label.toLowerCase().includes(k))) return r.label }
+      if (phase === 1) return radios[radios.length - 1]?.label // safest (last) option
+      if (phase === 2) return radios[0]?.label // boldest (first) option
+      return radios[1]?.label || radios[0]?.label // second option = methodical middle
+    },
+    pickRating: (phase, max) => {
+      if (phase === 0) return Math.min(max, 3) // moderate, precise
+      if (phase === 1) return 1 // contaminated/unsafe — minimum engagement
+      return max // CONSUMPTION — maximum intensity
+    },
+    pickButton: (phase, buttons) => {
+      const kw = phase === 0 ? ['order', 'count', 'check', 'careful'] : phase === 1 ? ['clean', 'safe', 'avoid', 'protect'] : ['bold', 'dare', 'consume', 'deep', 'inside']
+      for (const b of buttons) { if (kw.some(k => b.toLowerCase().includes(k))) return b }
+      return phase === 1 ? buttons[buttons.length - 1] : buttons[0]
     },
   },
 }

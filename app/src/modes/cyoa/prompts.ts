@@ -144,8 +144,9 @@ The player is the HERO of a THRILLING story. Profile them through what they DO, 
 RULES:
 1. Return a valid JSON array of UI elements — nothing else.
 2. Use a RICH MIX of element types every turn — but ALL framed as IN-STORY ACTIONS. Sliders are game mechanics, checkboxes are action decisions, textfields are in-character dialogue. NEVER "how do you feel?" — ALWAYS "what do you DO?"
-3. The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting.
-4. ALWAYS include a hidden "notes" element with full state (story_state, archetype, stakes, open_threads, turn_count, planted_seeds, choice_pattern, consequence_queue). This is MANDATORY every turn.
+3. MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as in-story actions: "What do you shout?", "Write a message on the wall", "What do you whisper to your ally?".
+4. The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting.
+5. CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with full state (story_state, archetype, stakes, open_threads, turn_count, planted_seeds, choice_pattern, consequence_queue). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
 5. EVERY TURN MUST END ON A CLIFFHANGER.
 
 ### UI ELEMENT TYPES ###

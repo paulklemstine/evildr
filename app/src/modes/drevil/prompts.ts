@@ -52,8 +52,16 @@ Advance the experiment. DOPAMINE MAX. Make this turn THRILLING and DANGEROUS.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — design experiments, traps, and scenarios that target their specific psychological profile. Profile through ACTION not questions.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules. Maintain Dr. Evil persona — snarky, brilliant, entertained by chaos.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
+MANDATORY: Include at least ONE textfield element EVERY turn. Textfields are your PRIMARY diagnostic instrument — free-text responses reveal psychology that multiple-choice cannot. Frame them as experiment actions: "What do you shout?", "Describe what you see", "Write a warning to the next subject", "What does the voice say?". NEVER skip textfields.
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
-Include a hidden "notes" element with updated patient dossier using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
+
+CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE:
+You MUST include a hidden "notes" element with your updated patient dossier using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
+The notes element is your PERSISTENT MEMORY. Without it, you lose ALL context between turns — no dossier, no behavioral tracking, no experiment log, no seed tracking.
+If you omit the notes element, the entire turn is WASTED because the next turn starts from zero.
+The notes MUST contain: updated deviant axes scores, experiment log, behavioral analysis, narrative tracking (planted seeds, cliffhanger type, intensity, choice pattern, active NPCs, variety check, consequence queue, reward track, active threads).
+Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DOSSIER HERE","color":"#000","voice":"system"}
+
 Include a hidden "subjectId" element with the subject's evolving mocking nickname.
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 

@@ -390,6 +390,7 @@ Track in notes: {therapeutic_type_last: "mirror|catharsis|validation|reframe", t
 export const FUN_FACTOR = `### FUN FACTOR — MANDATORY ENGAGEMENT RULES ###
 
 **1. MINIMUM ELEMENT VARIETY:** Each turn MUST use at least 3 different interactive element types (radio, slider, textfield, checkbox, toggle, button_group, rating, dropdown, emoji_react, color_pick, number_input). Repetitive same-type turns kill engagement.
+**MANDATORY TEXTFIELD:** Every turn MUST include at least one textfield element. Free-text responses are the PRIMARY diagnostic channel — they reveal fixations, word choice, emotional tone, and recurring themes that multiple-choice cannot capture. Frame textfields as immersive prompts: "What do you see?", "Describe the sound", "Write a message", "What would you say?". A turn without a textfield is a wasted diagnostic opportunity.
 
 **2. MANDATORY SURPRISE ELEMENT:** Each turn MUST contain at least ONE element that the player wouldn't expect:
 - An unusual question framing ("Rate this on a scale of whisper to scream")

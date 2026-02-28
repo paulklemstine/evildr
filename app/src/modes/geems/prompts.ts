@@ -49,8 +49,9 @@ Advance the adventure. DOPAMINE MAX. Make this turn THRILLING.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — create scenarios, dangers, and temptations that target their specific psychological profile. Profile through ACTION not questions.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
+MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as adventure prompts: "What do you shout?", "Describe what you see", "Leave a message for whoever finds this".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
-Include a hidden "notes" element with updated session state — story_state, archetype, stakes, open_threads, turn_count, intensity, what their choices REVEAL about their psychology, AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue).
+CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated session state — story_state, archetype, stakes, open_threads, turn_count, intensity, what their choices REVEAL about their psychology, AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

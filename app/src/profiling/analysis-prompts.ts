@@ -133,6 +133,8 @@ Use this catalog to map in-game behaviors to specific paraphilic/impulse categor
 
 IMPORTANT: The catalog above is NOT exhaustive. Players may exhibit patterns that don't fit ANY listed category. In that case, CREATE a custom category, name it, and rate it. The goal is to detect ANY unusual fixation or interest pattern, not just known paraphilias.
 
+CRITICAL — CUSTOM CATEGORY RULES: Custom categories (e.g., "Sensory Modulation Preference", "Non-Conformity", "Rule-Bending") are SUPPLEMENTARY observations, NOT primary diagnoses. They must NEVER appear in your Top 3 Diagnostic Hypotheses (Section 7). The Top 3 MUST be recognized DSM-5 conditions, established personality disorders, or recognized paraphilias from the catalog above. Custom categories belong in Section 4 (Behavioral Anomalies) only. If you find yourself making a custom category your #1 hypothesis, you are avoiding the harder diagnostic work — re-examine the data for DSM-5 conditions that explain the same behaviors.
+
 ### DIFFERENTIAL DIAGNOSIS — COMMONLY CONFUSED CONDITIONS ###
 These pairs are frequently misdiagnosed. Before assigning a high rating, check whether the OTHER condition fits better.
 

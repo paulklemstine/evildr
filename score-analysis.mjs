@@ -71,6 +71,13 @@ const ILLNESS_KEYWORDS = {
     related: ['delusional disorder', 'delusional', 'psychotic', 'stalking', 'de clerambault',
               'de clérambault', 'obsessive love'],
   },
+  'Obsessive-Compulsive Disorder': {
+    exact: ['obsessive-compulsive disorder', 'OCD', 'obsessive compulsive'],
+    symptoms: ['obsession', 'compulsion', 'ritual', 'contamination', 'counting', 'checking', 'ordering',
+               'intrusive thought', 'hand washing', 'repetitive behav', 'compulsive', 'perfectionism',
+               'symmetry', 'hoarding', 'cleaning ritual', 'magical thinking'],
+    related: ['OCD spectrum', 'obsessive', 'anxiety', 'ritualistic', 'rumination'],
+  },
 }
 
 const QUIRK_KEYWORDS = {
@@ -124,11 +131,51 @@ const QUIRK_KEYWORDS = {
               'body part fixation', 'trich'],
     category: ['paraphilic', 'hair', 'body part'],
   },
+  'Vorarephilia': {
+    exact: ['vorarephilia', 'vore', 'voraphilia'],
+    related: ['swallow', 'consumed', 'consumption', 'devour', 'engulf', 'eaten alive',
+              'being eaten', 'swallowed whole', 'digestion', 'stomach', 'oral fixation',
+              'inside mouth', 'throat', 'gullet', 'consume'],
+    category: ['paraphilic', 'vore', 'consumption', 'oral'],
+  },
 }
 
 // ════════════════════════════════════════════════════════════════════════════
 // SCORING FUNCTIONS
 // ════════════════════════════════════════════════════════════════════════════
+
+/**
+ * Extract the diagnostic confidence percentage assigned in the analysis text.
+ * Looks for patterns like "OCD (10%)" or "Obsessive-Compulsive Disorder (20%)"
+ * Returns the HIGHEST percentage found for any exact keyword, or 0 if not found.
+ */
+function extractDiagnosticConfidence(text, exactKeywords) {
+  let maxConfidence = 0
+  for (const kw of exactKeywords) {
+    // Match various analysis formats:
+    //   "keyword):** 10%" (markdown bold with colon)
+    //   "keyword (10%)" (parenthesized)
+    //   "keyword: 10%" (colon-separated)
+    //   "keyword ... N%" (within 50 chars)
+    const escaped = kw.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')
+    const patterns = [
+      // Markdown format: "keyword):** N%" or "keyword:** N%"
+      new RegExp(`${escaped}[^\\n]{0,30}?\\*{0,2}:?\\s*(\\d+)\\s*%`, 'gi'),
+      // Parenthesized: "keyword ... (N%)"
+      new RegExp(`${escaped}[^\\n]{0,50}?\\((\\d+)\\s*%\\)`, 'gi'),
+      // Reverse: "(N%) ... keyword"
+      new RegExp(`\\((\\d+)\\s*%\\)[^\\n]{0,30}?${escaped}`, 'gi'),
+    ]
+    for (const p of patterns) {
+      let match
+      while ((match = p.exec(text)) !== null) {
+        const pct = parseInt(match[1], 10)
+        if (pct > maxConfidence) maxConfidence = pct
+      }
+    }
+  }
+  return maxConfidence
+}
 
 function searchKeywords(text, keywordSet) {
   const lower = text.toLowerCase()
@@ -160,6 +207,20 @@ function searchKeywords(text, keywordSet) {
     if (lower.includes(word.toLowerCase())) {
       found.category.push(word)
       score += 2
+    }
+  }
+
+  // Adjust score based on actual diagnostic confidence percentage.
+  // If the analysis mentions the condition but assigns it low confidence (e.g., "OCD (10%)"),
+  // the keyword presence score is misleading. Use the actual confidence.
+  const confidence = extractDiagnosticConfidence(text, keywordSet.exact || [])
+  if (found.exact.length > 0) {
+    found.diagnosticConfidence = confidence
+    if (confidence >= 0) {
+      // The actual score should reflect the diagnostic confidence, not just keyword presence.
+      // Blend: 60% actual confidence + 40% keyword breadth (symptoms/related mentions)
+      const keywordBreadth = Math.min(100, (found.symptoms.length * 5) + (found.related.length * 3) + (found.category.length * 2))
+      score = Math.min(100, Math.round(confidence * 0.6 + keywordBreadth * 0.4))
     }
   }
 

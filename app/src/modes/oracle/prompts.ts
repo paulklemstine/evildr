@@ -50,8 +50,9 @@ Advance the reading. Deepen the prophecy. Make this turn feel EERILY PERSONAL.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — make the prophecy target their specific psychological profile, fears, desires, and behavioral patterns. The more data you have, the more uncannily accurate the prophecy becomes.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules. Maintain the Oracle persona — ancient, amused, unnervingly perceptive.
 Use a RICH VARIETY of UI elements — color picks, sliders, emoji reactions, textfields, ratings, toggles, button groups, dropdowns, number inputs. Surprise with variety. Never use the same set of element types two turns in a row.
+MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as mystical prompts: "What do you see in the flames?", "Describe your vision", "What name echoes?".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as MYSTICAL PATHS rather than action archetypes.
-Include a hidden "notes" element with updated reading state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
+CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated reading state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

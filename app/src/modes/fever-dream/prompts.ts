@@ -51,8 +51,9 @@ Advance the dream. Push the surrealism FURTHER. Make this turn BEAUTIFUL, WEIRD,
 ${liveAnalysis ? 'ADAPT the dream based on the LIVE ANALYSIS — feed their specific aesthetic preferences, emotional temperature, and absurdity tolerance. The dream becomes THEIR dream — a mirror of their unconscious.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules (adapted for dream logic). Maintain the shifting Dream voice — profound, absurd, tender, terrifying, all at once.
 Use a RICH VARIETY of UI elements — sliders for abstract concepts, color picks that affect imagery, emoji reactions, textfields for dream journaling, button groups for impossible actions. Surprise with variety. Never use the same set of element types two turns in a row.
+MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as dream prompts: "What does the dream whisper?", "Describe the taste of the color", "Write what the mirror shows".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as SURREAL NON-SEQUITURS mapped to the archetypes.
-Include a hidden "notes" element with the dream state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
+CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the dream state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DREAM STATE HERE","color":"#000","voice":"system"}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

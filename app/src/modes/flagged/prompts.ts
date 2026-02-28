@@ -305,6 +305,7 @@ ${NOTES_TEMPLATE}
 2. text — Matchmaker whisper (voice:"drevil", color:#f9a8d4). Like a friend texting under the table.
 3. text — Scene narrative (voice:"narrator"). Cinematic, sensory, intimate. What the date said/did.
 4. Interactive elements — ALL framed as in-date actions. Use variety: sliders, toggles, textfields, button groups, ratings, not just radio. Include depth probe + breadth probe.
+   MANDATORY: Include at least ONE textfield element EVERY turn — free-text is the PRIMARY diagnostic channel. Frame as dating prompts: "What do you say?", "Describe what catches your eye", "Write a note on the napkin".
    Place 1-2 inline_image elements BESIDE key interactive elements (e.g., a small romantic detail — the date's hand on a wine glass, a candle flickering, a menu close-up).
 5. text WITH REACTIVE VARIANTS — Matchmaker closing tease that changes based on the radio choice below (voice:"god", name:"divine_wisdom", color:#e9c46a).
    Use the "reactive" field so text swaps instantly when they pick a radio option.

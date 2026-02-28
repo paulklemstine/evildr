@@ -50,8 +50,9 @@ Advance the scenario. Deepen the wrongness. Make reality slip FURTHER.
 ${liveAnalysis ? 'ADAPT the horror based on the LIVE ANALYSIS — target their specific fears, perception patterns, and psychological vulnerabilities. If they notice details, make the anomalies more subtle. If they miss things, make them more brazen. The scenario adapts to THEIR mind.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules. Maintain the unreliable narrator — seemingly normal, subtly fractured.
 Use a RICH VARIETY of UI elements — textfields for perception checks, checkboxes for memory tests, color picks for attention traps, sliders for confidence, dropdowns for recall. Never use the same set of element types two turns in a row.
+MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as perception checks: "What did you just see?", "Describe what changed", "Write down what you remember".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
-Include a hidden "notes" element with the FULL anomaly map and reality state using the NOTES TEMPLATE (including NARRATIVE TRACKING).
+CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the FULL anomaly map and reality state using the NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
