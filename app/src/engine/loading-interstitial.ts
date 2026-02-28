@@ -345,8 +345,8 @@ export function showInterstitial(imageClient: ImageClient): void {
     }
   }, 4000)
 
-  // Auto-spin every 8 seconds
-  scheduleAutoSpin()
+  // Auto-spin: start after brief delay for entrance animation, then every 8 seconds
+  setTimeout(() => spinSlots(), 600)
 
   // Fire-and-forget: fetch fresh LLM wisdom to replace static pool
   fetchLLMWisdom().then(wisdoms => {
