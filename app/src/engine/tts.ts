@@ -122,7 +122,7 @@ export function isSpeaking(): boolean {
 }
 
 /**
- * Load the Kokoro model using WASM with q4 quantization (smallest/fastest).
+ * Load the Kokoro model using WASM with q8 quantization (q4 is garbled).
  * WebGPU is not used — ONNX runtime has validation errors with this model.
  * Deduplicates concurrent calls — if already loading, returns the
  * existing promise instead of starting a second load.
@@ -138,10 +138,10 @@ function ensureModel(): Promise<KokoroTTSType | null> {
     try {
       const { KokoroTTS } = await import('kokoro-js')
 
-      console.log('[TTS] Loading Kokoro model (device=wasm, dtype=q4)')
+      console.log('[TTS] Loading Kokoro model (device=wasm, dtype=q8)')
 
       ttsModel = await KokoroTTS.from_pretrained('onnx-community/Kokoro-82M-v1.0-ONNX', {
-        dtype: 'q4',
+        dtype: 'q8',
         device: 'wasm',
       })
 
