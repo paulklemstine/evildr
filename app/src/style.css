@@ -229,11 +229,26 @@ h1, h2, h3 {
    Inline Image — Small thematic images beside UI elements
    ============================================================ */
 
+.geems-element.has-inline-image {
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.geems-element-content {
+  flex: 1;
+  min-width: 0;
+}
+
+.geems-inline-image-column {
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
 .geems-inline-image-container {
-  display: inline-block;
   width: 128px;
-  float: right;
-  margin: 0 0 0.75rem 0.75rem;
   border-radius: var(--radius-md, 0.5rem);
   overflow: hidden;
 }

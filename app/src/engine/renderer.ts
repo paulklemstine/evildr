@@ -1256,11 +1256,25 @@ export function renderUI(
           }
       }
 
-      // Embed any pending inline images inside this element
-      for (const imgDiv of pendingInlineImages) {
-        wrapper.insertBefore(imgDiv, wrapper.firstChild)
+      // Embed any pending inline images inside this element using flexbox
+      if (pendingInlineImages.length > 0) {
+        wrapper.classList.add('has-inline-image')
+        // Wrap existing content in a flex child
+        const contentDiv = document.createElement('div')
+        contentDiv.className = 'geems-element-content'
+        while (wrapper.firstChild) {
+          contentDiv.appendChild(wrapper.firstChild)
+        }
+        wrapper.appendChild(contentDiv)
+        // Append images column on the right
+        const imgColumn = document.createElement('div')
+        imgColumn.className = 'geems-inline-image-column'
+        for (const imgDiv of pendingInlineImages) {
+          imgColumn.appendChild(imgDiv)
+        }
+        wrapper.appendChild(imgColumn)
+        pendingInlineImages = []
       }
-      pendingInlineImages = []
 
       container.appendChild(wrapper)
     } catch (renderError) {
@@ -1280,9 +1294,19 @@ export function renderUI(
   if (pendingInlineImages.length > 0) {
     const lastEl = container.lastElementChild as HTMLElement | null
     if (lastEl) {
-      for (const imgDiv of pendingInlineImages) {
-        lastEl.insertBefore(imgDiv, lastEl.firstChild)
+      lastEl.classList.add('has-inline-image')
+      const contentDiv = document.createElement('div')
+      contentDiv.className = 'geems-element-content'
+      while (lastEl.firstChild) {
+        contentDiv.appendChild(lastEl.firstChild)
       }
+      lastEl.appendChild(contentDiv)
+      const imgColumn = document.createElement('div')
+      imgColumn.className = 'geems-inline-image-column'
+      for (const imgDiv of pendingInlineImages) {
+        imgColumn.appendChild(imgDiv)
+      }
+      lastEl.appendChild(imgColumn)
     }
   }
 
