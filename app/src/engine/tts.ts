@@ -189,11 +189,9 @@ export async function speakTurn(container: HTMLElement): Promise<void> {
   if (audioCtx.state === 'suspended') {
     await audioCtx.resume()
   }
-  sampleRate = 24000
 
-  // Collect all text chunks with their voice profiles first (fast, non-blocking)
-  const work: { text: string; profile: VoiceProfile }[] = []
   const elements = container.querySelectorAll<HTMLElement>('.geems-element')
+  const audioChunks: Float32Array[] = []
 
   for (const el of elements) {
     const voice = el.dataset.voice
@@ -207,38 +205,33 @@ export async function speakTurn(container: HTMLElement): Promise<void> {
 
     const profile = VOICE_PROFILES[voice || ''] || DEFAULT_PROFILE
     const chunks = chunkText(text, 300)
+
     for (const chunk of chunks) {
-      work.push({ text: chunk, profile })
+      // Check if this generation session is still current
+      if (session !== generationSession) return
+      if (!isTTSEnabled()) return
+
+      // Yield to browser so UI stays responsive between chunks
+      await yieldToMain()
+
+      try {
+        const result = await model.generate(chunk, {
+          voice: profile.voice,
+          speed: profile.speed,
+        })
+        // RawAudio has .audio (Float32Array) and .sampling_rate
+        sampleRate = result.sampling_rate
+        audioChunks.push(new Float32Array(result.audio))
+      } catch (err) {
+        console.warn('[TTS] Generation failed for chunk:', err)
+      }
     }
   }
 
-  if (work.length === 0) return
-
-  // Generate and enqueue chunks one at a time, yielding between each.
-  // Start playback as soon as the first chunk is ready.
-  for (const { text, profile } of work) {
-    // Check if this generation session is still current
-    if (session !== generationSession) return
-    if (!isTTSEnabled()) return
-
-    // Yield to browser so UI stays responsive
-    await yieldToMain()
-
-    try {
-      const result = await model.generate(text, {
-        voice: profile.voice,
-        speed: profile.speed,
-      })
-      // result.audio is a Float32Array of PCM samples
-      playbackQueue.push(new Float32Array(result.audio))
-
-      // Start playback as soon as first chunk arrives
-      if (!playing) {
-        playNext()
-      }
-    } catch (err) {
-      console.warn('[TTS] Generation failed for chunk:', err)
-    }
+  // Play all chunks sequentially after generation completes
+  if (audioChunks.length > 0 && session === generationSession) {
+    playbackQueue = audioChunks
+    playNext()
   }
 }
 
