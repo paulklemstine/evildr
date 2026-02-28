@@ -4,7 +4,7 @@
 // Every turn should feel like a theme park ride, a heist, a chase, a mystery.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
@@ -321,6 +321,10 @@ ${CINEMATIC_IMAGE_CRAFT}
 ${INPUT_JUSTIFICATION}
 
 ${DIAGNOSTIC_PROBES}
+
+${THERAPEUTIC_ELEMENTS}
+
+${FUN_FACTOR}
 
 ${BANNED_PHRASES}
 

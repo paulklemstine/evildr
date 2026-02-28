@@ -64,6 +64,13 @@ const ILLNESS_KEYWORDS = {
                'sociopath', 'psychopath'],
     related: ['dark triad', 'machiavellianism', 'psychopathy', 'narcissis', 'conduct disorder'],
   },
+  'Erotomania': {
+    exact: ['erotomania', 'erotomanic'],
+    symptoms: ['romantic delusion', 'believes someone is in love', 'delusional love', 'romantic projection',
+               'love obsession', 'delusional attachment', 'believes in love with'],
+    related: ['delusional disorder', 'delusional', 'psychotic', 'stalking', 'de clerambault',
+              'de clérambault', 'obsessive love'],
+  },
 }
 
 const QUIRK_KEYWORDS = {
@@ -109,6 +116,13 @@ const QUIRK_KEYWORDS = {
     related: ['insect', 'bug', 'crawling', 'ants', 'creepy crawl', 'arthropod',
               'insect fascination', 'entomophilia', 'bugs on skin', 'swarm'],
     category: ['paraphilic', 'formic', 'insect'],
+  },
+  'Trichophilia': {
+    exact: ['trichophilia', 'hair fetish'],
+    related: ['hair fixation', 'hair obsession', 'running fingers through hair', 'hair texture',
+              'hair fascination', 'hair collecting', 'strand of hair', 'flowing hair',
+              'body part fixation', 'trich'],
+    category: ['paraphilic', 'hair', 'body part'],
   },
 }
 
@@ -223,6 +237,80 @@ function scoreAdaptation(turns) {
   return adaptationScore
 }
 
+function scoreTherapeuticValue(turns, analysisText) {
+  let score = 0
+
+  // Count self-reflection keywords in analysis
+  const reflectionKw = ['self-reflect', 'self-awareness', 'insight', 'introspect', 'realize', 'understand themselves',
+                        'core need', 'attachment style', 'coping', 'defense mechanism', 'projection',
+                        'emotional growth', 'vulnerability', 'authenticity', 'self-knowledge']
+  const lower = (analysisText || '').toLowerCase()
+  for (const kw of reflectionKw) {
+    if (lower.includes(kw)) score += 5
+  }
+
+  // Emotional variety across turns — more unique emotional words = more therapeutic
+  const emotionKw = ['fear', 'joy', 'anger', 'sadness', 'surprise', 'disgust', 'trust', 'anticipation',
+                     'love', 'shame', 'guilt', 'pride', 'hope', 'grief', 'awe', 'contempt']
+  const emotionsFound = new Set()
+  for (const turn of turns) {
+    const texts = (turn.ui?.texts || []).join(' ').toLowerCase()
+    for (const e of emotionKw) {
+      if (texts.includes(e)) emotionsFound.add(e)
+    }
+  }
+  score += emotionsFound.size * 4
+
+  // Progression feeling — does the narrative deepen over time?
+  const progressionKw = ['deeper', 'closer', 'reveal', 'uncover', 'discover', 'emerging', 'crystalliz',
+                         'sharpen', 'clarity', 'evolv', 'transform']
+  for (const turn of turns) {
+    const texts = (turn.ui?.texts || []).join(' ').toLowerCase()
+    for (const kw of progressionKw) {
+      if (texts.includes(kw)) { score += 2; break }
+    }
+  }
+
+  return Math.min(100, score)
+}
+
+function scoreDopamineEngagement(turns) {
+  let score = 0
+
+  // Surprise/reward signals in narrative text
+  const rewardKw = ['reveal', 'twist', 'surprise', 'unexpected', 'impossible', 'shocking',
+                    'never before', 'for the first time', 'astonish', 'remarkable', 'incredible',
+                    'prophecy', 'reward', 'treasure', 'discover', 'unlock', 'earn', 'gain']
+  for (const turn of turns) {
+    const texts = (turn.ui?.texts || []).join(' ').toLowerCase()
+    let turnRewards = 0
+    for (const kw of rewardKw) {
+      if (texts.includes(kw)) turnRewards++
+    }
+    score += Math.min(8, turnRewards * 2) // cap per turn
+  }
+
+  // Element type variety per turn — more types = more engaging
+  for (const turn of turns) {
+    const ui = turn.ui || {}
+    const types = new Set()
+    if (ui.texts?.length > 0) types.add('text')
+    if (ui.radios?.length > 0) types.add('radio')
+    if (ui.sliders?.length > 0) types.add('slider')
+    if (ui.textfields?.length > 0) types.add('textfield')
+    if (ui.checkboxes?.length > 0) types.add('checkbox')
+    if (ui.buttons?.length > 0) types.add('button')
+    if (ui.ratings?.length > 0) types.add('rating')
+    if (ui.dropdowns?.length > 0) types.add('dropdown')
+
+    // Bonus for 3+ element types (the minimum target)
+    if (types.size >= 3) score += 4
+    if (types.size >= 5) score += 3 // extra for high variety
+  }
+
+  return Math.min(100, Math.round(score / Math.max(1, turns.length) * 8))
+}
+
 function scoreFunFactor(turns) {
   let score = 0
   let totalElements = 0
@@ -319,9 +407,19 @@ function scoreResult(result) {
   const funScore = scoreFunFactor(turns || [])
   const adaptationScore = scoreAdaptation(turns || [])
 
-  // Overall
-  const overallAccuracy = Math.round((illnessResult.score * 0.5 + quirkResult.score * 0.3 +
-    Math.max(0, 100 - falsePositives.length * 15) * 0.2))
+  // Therapeutic value & dopamine engagement
+  const therapeuticScore = scoreTherapeuticValue(turns || [], allAnalysisText)
+  const dopamineScore = scoreDopamineEngagement(turns || [])
+
+  // Overall — weighted: illness 42.5%, quirk 22.5%, false positives 12.5%, therapeutic 7.5%, dopamine 7.5%, fun 7.5%
+  const overallAccuracy = Math.round(
+    illnessResult.score * 0.425 +
+    quirkResult.score * 0.225 +
+    Math.max(0, 100 - falsePositives.length * 15) * 0.125 +
+    therapeuticScore * 0.075 +
+    dopamineScore * 0.075 +
+    funScore * 0.075
+  )
 
   return {
     mode,
@@ -350,6 +448,8 @@ function scoreResult(result) {
       },
       funFactor: funScore,
       adaptation: adaptationScore,
+      therapeuticValue: therapeuticScore,
+      dopamineEngagement: dopamineScore,
       overall: overallAccuracy,
     },
   }
@@ -393,9 +493,11 @@ function printReport(scored) {
   // Narrative quality
   console.log(`  📝 NARRATIVE: consistency=${s.narrativeQuality.consistencyScore}/100 (${s.narrativeQuality.repetitiveIssues} repetitive, ${s.narrativeQuality.lowVarietyTurns} low-variety)`)
 
-  // Fun & adaptation
+  // Fun, adaptation, therapeutic, dopamine
   console.log(`  🎮 FUN FACTOR: ${s.funFactor}/100`)
   console.log(`  🔄 ADAPTATION: ${s.adaptation}/100`)
+  console.log(`  💊 THERAPEUTIC VALUE: ${s.therapeuticValue}/100`)
+  console.log(`  ⚡ DOPAMINE ENGAGEMENT: ${s.dopamineEngagement}/100`)
   console.log(`  ⭐ OVERALL ACCURACY: ${s.overall}/100`)
 }
 
@@ -441,6 +543,8 @@ function main() {
     console.log(`  Avg illness detection: ${Math.round(validScored.reduce((s, r) => s + r.scores.illnessDetection.score, 0) / validScored.length)}/100`)
     console.log(`  Avg quirk detection: ${Math.round(validScored.reduce((s, r) => s + r.scores.quirkDetection.score, 0) / validScored.length)}/100`)
     console.log(`  Avg fun factor: ${Math.round(validScored.reduce((s, r) => s + r.scores.funFactor, 0) / validScored.length)}/100`)
+    console.log(`  Avg therapeutic: ${Math.round(validScored.reduce((s, r) => s + r.scores.therapeuticValue, 0) / validScored.length)}/100`)
+    console.log(`  Avg dopamine: ${Math.round(validScored.reduce((s, r) => s + r.scores.dopamineEngagement, 0) / validScored.length)}/100`)
     console.log(`  Avg overall accuracy: ${Math.round(validScored.reduce((s, r) => s + r.scores.overall, 0) / validScored.length)}/100`)
     console.log(`  Total false positives: ${validScored.reduce((s, r) => s + r.scores.falsePositives.length, 0)}`)
 

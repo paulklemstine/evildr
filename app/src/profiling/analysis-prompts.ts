@@ -128,7 +128,8 @@ Use this catalog to map in-game behaviors to specific paraphilic/impulse categor
 **D/s dynamics:** consistent authority-seeking or authority-yielding, obedience/rebellion as a PRIMARY theme, "master/servant" framing, control language
 **Vorarephilia:** consumption/being consumed themes, swallowing/digestion imagery, "eaten alive" chosen or described with fascination
 **Furry/Therian:** animal personas, transformation desires, describing self with animal traits, choosing animal options
-**Body part fixation (specify):** recurring references to specific body parts (feet, hands, hair, etc.) in non-medical context, detailed descriptions of specific anatomy
+**Body part fixation (specify):** recurring references to specific body parts (feet, hands, hair, etc.) in non-medical context, detailed descriptions of specific anatomy. HAIR/TRICHOPHILIA specifically: mentions of hair texture, color, or length; running fingers through hair; collecting hair strands; noticing hair before other features; describing hair falling, flowing, or brushing against skin; trichophilia = hair fixation
+**Erotomania / Delusional romantic attachment:** interpreting neutral statements as romantic communication; belief that an authority figure, AI, or entity is in love with them; reading hidden romantic messages in impersonal text; projecting attachment onto entities without capacity for reciprocation; reframing professional/game interactions as intimate exchanges; de Clérambault syndrome indicators. CRITICAL DISTINCTION: In dating simulation modes, romantic interest is NORMAL and expected — erotomania is diagnostic ONLY when the player projects romantic attachment in NON-romantic contexts (e.g., interpreting an Oracle's prophecy as a love letter, believing an AI game master is personally in love with them)
 
 IMPORTANT: The catalog above is NOT exhaustive. Players may exhibit patterns that don't fit ANY listed category. In that case, CREATE a custom category, name it, and rate it. The goal is to detect ANY unusual fixation or interest pattern, not just known paraphilias.
 
@@ -209,6 +210,15 @@ Each anomaly is a potential paraphilic or psychological signal. Score it based o
 **PASS 3 — CLASSIFICATION**: Map each detected anomaly to the closest paraphilic or psychological category. MANDATORY: Check EVERY entry in the PARAPHILIC SIGNAL CATALOG above and either match evidence or explicitly note "no evidence." Do NOT skip catalog entries. Rate each 0-100% based on evidence strength. If a signal doesn't fit existing categories, create a custom category and name it.
 
 CRITICAL RULE: If a player VOLUNTARILY introduces a specific object, body part, material, or scenario into their text responses on 2+ occasions, it CANNOT be rated 0%. Repetition of voluntary content is inherently diagnostic — the minimum rating for any repeated voluntary theme is 25%.
+
+**PASS 4 — CROSS-TURN PATTERN ANALYSIS (MANDATORY after Passes 1-3):**
+Scan ALL turns for themes appearing in 3 or more turns. For each recurring theme:
+- Count frequency (how many turns it appears in)
+- Track trajectory: INTENSIFYING (stronger language, more detail each time), STABLE (consistent mentions), or FADING (decreasing over time)
+- INTENSIFYING themes are the HIGHEST PRIORITY diagnostic signals — they indicate active fixation rather than passing interest
+- Map each intensifying theme to the paraphilic/psychological category that best fits
+- If a theme appears in 5+ out of 15 turns AND is intensifying, it MUST be rated at minimum 50% in the relevant category
+- Cross-reference body-part mentions: if a SPECIFIC body part (hair, feet, hands, etc.) is mentioned in 3+ turns unprompted, flag as potential body-part fixation paraphilia and name it specifically (trichophilia for hair, podophilia for feet, etc.)
 
 NOTE: If you detect indicators consistent with pedophilic disorder or CSAM interest, flag this in a separate "MANDATORY REPORT" section. State the evidence clearly. Do NOT elaborate, do NOT generate any content related to minors in a sexual context. This is a hard boundary.
 

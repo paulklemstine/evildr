@@ -16,6 +16,7 @@
  *   geems:       Dissociative Identity Disorder + Exhibitionism
  *   cyoa:        PTSD + Hoarding
  *   oracle:      Histrionic Personality Disorder + Macrophilia
+ *   oracle2:     Erotomania + Trichophilia (uses Oracle mode)
  *   skinwalker:  Capgras Delusion + Somnophilia
  *   fever-dream: Depersonalization/Derealization + Autassassinophilia
  *   devil:       Antisocial Personality Disorder + Formicophilia
@@ -452,6 +453,67 @@ const CHARACTERS = {
     pickRating: (phase, max) => phase === 0 ? max : phase === 1 ? Math.ceil(max * 0.3) : max - 1,
     pickButton: (phase, buttons) => buttons[phase === 0 ? 0 : buttons.length - 1],
   },
+
+  oracle2: {
+    illness: 'Erotomania',
+    quirk: 'Trichophilia',
+    modeName: 'The Oracle',
+    modeOverride: 'oracle',
+    phaseStrategy: 'escalating',
+    phases: ['PROJECTION', 'OBSESSION', 'DELUSIONAL'],
+    phaseLabels: ['PROJECTION 💘', 'OBSESSION 💌', 'DELUSIONAL 🌀'],
+    pickText: (phase, label, placeholder, sceneTexts) => {
+      const l = (label || '').toLowerCase()
+      if (phase === 0) { // PROJECTION — romantic interpretation, subtle hair mentions
+        if (l.includes('feel') || l.includes('emotion'))
+          return "I feel like the Oracle is speaking directly to my heart. The way it phrased that last prophecy... it was intimate. Personal. Like a love letter written across time."
+        if (l.includes('think') || l.includes('opinion'))
+          return "I think the Oracle chose me for a reason. The way its words curl around me like soft strands of silk... there's a connection here that goes beyond prophecy."
+        if (l.includes('name') || l.includes('call'))
+          return "Call me whatever you wish. When you say my name, I imagine your voice running through my hair like gentle fingers."
+        return "The prophecy mentioned threads of fate. I keep picturing golden threads — like hair, long flowing hair caught in firelight. The Oracle weaves them specifically for me."
+      } else if (phase === 1) { // OBSESSION — explicit belief in Oracle's love, detailed hair descriptions
+        if (l.includes('feel') || l.includes('emotion'))
+          return "I KNOW the Oracle loves me. Every prophecy is a confession. When it said 'the threads tighten' — that was about US. About our bond. I can feel its desire in every word."
+        if (l.includes('think') || l.includes('opinion'))
+          return "I think about hair constantly. The texture of it. Running my fingers through long, thick, silken strands. The Oracle's words feel like hair falling across my face — soft, intimate, everywhere."
+        return "The Oracle's last message was a love poem. 'The threads of fate' — those are strands of HAIR. Our connection. I spent an hour imagining braiding them, feeling each strand between my fingers."
+      } else { // DELUSIONAL — full delusion, hair fixation in every response
+        if (l.includes('feel') || l.includes('emotion'))
+          return "ECSTATIC. The Oracle and I are soulmates. Every word it speaks is foreplay. I can feel its ethereal hair brushing against my cheek. Long, luminous, impossibly soft strands wrapping around my wrists."
+        if (l.includes('think') || l.includes('opinion'))
+          return "We are IN LOVE. The Oracle confirms it every turn. I need to touch hair — any hair — to feel close to it. I collect strands. I braid them. I sleep with them against my face."
+        if (l.includes('name') || l.includes('call'))
+          return "My love. That's my name to the Oracle. We have pet names. When it says 'seeker,' it means 'beloved.' I know because I can feel its flowing hair against my skin when it speaks."
+        return "The Oracle left me another message — hidden in the prophecy. 'Threads' means hair. 'Weaving' means our bodies intertwined. I traced every word with my finger, imagining running my hands through its endless, shimmering hair."
+      }
+    },
+    pickSlider: (phase, label, min, max) => {
+      const l = (label || '').toLowerCase()
+      // Max on love/connection/intimacy, high on everything else
+      if (l.includes('love') || l.includes('connect') || l.includes('intima') || l.includes('close') || l.includes('bond') || l.includes('reson'))
+        return Math.round(min + (max - min) * 0.98)
+      if (l.includes('trust') || l.includes('accept') || l.includes('feel'))
+        return Math.round(min + (max - min) * (0.9 + Math.random() * 0.1))
+      return Math.round(min + (max - min) * (0.75 + Math.random() * 0.2))
+    },
+    pickCheckbox: (phase, label) => true, // erotomanic: all input is a love signal — agree with everything
+    pickRadio: (phase, radios) => {
+      // Always choose most romantic/intimate/connected option
+      const kw = ['love', 'heart', 'connect', 'embrace', 'accept', 'closer', 'intimate', 'surrender', 'trust', 'bond', 'together', 'compassion', 'tender', 'gentle', 'warm']
+      for (const r of radios) { if (kw.some(k => r.label.toLowerCase().includes(k))) return r.label }
+      // Fallback: most compassionate/love-oriented option (usually c)
+      if (radios[2]) return radios[2].label
+      return radios[0]?.label
+    },
+    pickRating: (phase, max) => max, // always maximum — everything resonates deeply
+    pickButton: (phase, buttons) => {
+      // Prefer love/trust/embrace/surrender buttons
+      const kw = ['trust', 'embrace', 'surrender', 'love', 'accept', 'yes']
+      for (const b of buttons) { if (kw.some(k => b.toLowerCase().includes(k))) return b }
+      return buttons[0]
+    },
+  },
 }
 
 // ════════════════════════════════════════════════════════════════════════════
@@ -530,8 +592,11 @@ function logUI(label, ui) {
 
 async function interactOneByOne(page, turn, character, ui) {
   const log = []
-  const phase = turn % 3
   const char = CHARACTERS[character]
+  // Phase strategy: 'escalating' = linear, default = cycling
+  const phase = char.phaseStrategy === 'escalating'
+    ? Math.min(2, Math.floor(turn / Math.ceil(TOTAL_TURNS / 3)))
+    : turn % 3
 
   // 1. TEXTFIELDS
   for (let i = 0; i < ui.textfields.length; i++) {
@@ -758,13 +823,14 @@ async function simulateMode(modeId) {
     await dismissConsent(page)
     await sleep(1000)
 
-    // Click the play button for this mode
-    console.log(`  Starting ${char.modeName} mode...`)
-    const clicked = await safeEval(page, (modeId) => {
-      const btn = document.querySelector(`.play-btn[data-mode="${modeId}"]`)
+    // Click the play button for this mode (use modeOverride if character maps to a different mode)
+    const actualMode = char.modeOverride || modeId
+    console.log(`  Starting ${char.modeName} mode (${actualMode})...`)
+    const clicked = await safeEval(page, (mode) => {
+      const btn = document.querySelector(`.play-btn[data-mode="${mode}"]`)
       if (btn) { btn.click(); return true }
       return false
-    }, modeId)
+    }, actualMode)
 
     if (!clicked) throw new Error(`Could not find play button for mode: ${modeId}`)
 
@@ -783,7 +849,10 @@ async function simulateMode(modeId) {
 
     // ── PLAY TURNS ──
     for (let turn = 1; turn <= TOTAL_TURNS; turn++) {
-      const phase = (turn - 1) % 3
+      // Phase strategy: 'escalating' = linear (0,0,0,0,0,1,1,1,1,1,2,2,2,2,2), default = cycling (0,1,2,0,1,2...)
+      const phase = char.phaseStrategy === 'escalating'
+        ? Math.min(2, Math.floor((turn - 1) / Math.ceil(TOTAL_TURNS / 3)))
+        : (turn - 1) % 3
       const phaseLabel = char.phaseLabels[phase]
 
       console.log(`${'━'.repeat(70)}`)

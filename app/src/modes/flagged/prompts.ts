@@ -9,7 +9,7 @@
 // OPTIMIZED FOR SPEED: prompts are lean to minimize LLM latency.
 
 import type { HistoryEntry } from '../../engine/game-loop.ts'
-import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES } from '../shared/storytelling.ts'
+import { INPUT_JUSTIFICATION, CINEMATIC_IMAGE_CRAFT, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR } from '../shared/storytelling.ts'
 
 // ---------------------------------------------------------------------------
 // Types
@@ -320,5 +320,9 @@ Item 7 is a MANDATORY type:"hidden" element. Never omit it.
 ${INPUT_JUSTIFICATION}
 
 ${DIAGNOSTIC_PROBES}
+
+${THERAPEUTIC_ELEMENTS}
+
+${FUN_FACTOR}
 
 ${REACTIVE_ELEMENTS}`
