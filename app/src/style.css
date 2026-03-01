@@ -127,7 +127,7 @@ h1, h2, h3 {
   transition: color 0.2s ease;
 }
 
-.geems-text {
+.geems-text, .analysis-modal-text {
   color: var(--text-primary);
   line-height: 1.75;
   word-wrap: break-word;
@@ -135,17 +135,17 @@ h1, h2, h3 {
   text-align: justify;
 }
 
-.geems-text strong {
+.geems-text strong, .analysis-modal-text strong {
   color: var(--text-heading);
   font-weight: 700;
 }
 
-.geems-text em {
+.geems-text em, .analysis-modal-text em {
   color: var(--accent-secondary);
   font-style: italic;
 }
 
-.geems-text pre {
+.geems-text pre, .analysis-modal-text pre {
   background-color: var(--bg-tertiary);
   padding: 1rem;
   border-radius: var(--radius-md);

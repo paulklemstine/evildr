@@ -318,7 +318,7 @@ function renderGamePage(modeId: string): void {
       <div class="modal-content">
         <span id="analysisModalClose" class="modal-close">&times;</span>
         <h2 class="text-lg font-semibold mb-4" style="color: var(--accent-primary);">Session Notes</h2>
-        <div id="analysisModalBody" class="geems-text" style="max-height: 60vh; overflow-y: auto;">
+        <div id="analysisModalBody" class="analysis-modal-text" style="max-height: 60vh; overflow-y: auto;">
           <p style="color: var(--text-muted);">No session data yet.</p>
         </div>
       </div>
@@ -405,6 +405,9 @@ function startGame(modeId: string, genre?: string): void {
     userId,
     sessionId,
     onStateChange: (state) => {
+      // Expose state to window for simulator/test access
+      ;(window as any).__gameState = state
+
       // Update modal content
       const modalBody = document.getElementById('analysisModalBody')
       if (modalBody && state.hiddenAnalysis) {

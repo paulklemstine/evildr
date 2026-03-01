@@ -425,8 +425,10 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
 
 [x] FIRST ELEMENT is type "image" with a cinematic prompt (NEVER skip the image)
 [x] At least ONE "textfield" element exists (free-text is your #1 diagnostic tool)
-[x] At least 3 DIFFERENT interactive element types used (not just radio+slider+textfield every turn)
-[x] At least ONE element type you did NOT use last turn (dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter)
+[x] At least 5 DIFFERENT interactive element types used (radio, slider, textfield, checkbox, AND at least one of: dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter)
+[x] MANDATORY ROTATION: Pick 2 element types from this list that you did NOT use last turn and USE THEM NOW:
+    → dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter
+    Every exotic type should appear at least once every 3 turns. If you used dropdown+toggle last turn, use color_pick+emoji_react this turn.
 [x] LAST ELEMENT is type "hidden" with name "notes" containing your FULL updated dossier
 [x] A "hidden" element with name "subjectId" exists
 [x] Narrative text references at least ONE prior player choice (consequence echo)

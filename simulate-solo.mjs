@@ -700,6 +700,13 @@ async function readUI(page) {
         result.numberInputs.push({ label: label.substring(0, 80), min: el.min, max: el.max, value: el.value })
       }
     })
+    // Capture game state (notes, subjectId, analysis) from exposed window state
+    const gs = window.__gameState
+    if (gs) {
+      result.notes = gs.currentNotes || ''
+      result.subjectId = gs.currentSubjectId || ''
+      result.turnNumber = gs.turnNumber || 0
+    }
     return result
   }) || { images: [], texts: [], radios: [], sliders: [], textfields: [], checkboxes: [], buttons: [], ratings: [], dropdowns: [], toggles: [], colorPicks: [], emojiReacts: [], meters: [], numberInputs: [] }
 }
@@ -723,6 +730,7 @@ function logUI(label, ui) {
   ui.emojiReacts?.forEach(e => console.log(`     😀 Emoji: "${e.label}" [${e.options.join(' ')}]`))
   ui.meters?.forEach(m => console.log(`     📊 Meter: "${m.label}" (${m.value})`))
   ui.numberInputs?.forEach(n => console.log(`     🔢 Number: "${n.label}" (${n.min}-${n.max})`))
+  if (ui.notes) console.log(`     📝 Notes: ${ui.notes.substring(0, 120)}${ui.notes.length > 120 ? '...' : ''} (${ui.notes.length} chars)`)
 }
 
 // ════════════════════════════════════════════════════════════════════════════
