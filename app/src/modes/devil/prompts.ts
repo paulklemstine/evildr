@@ -4,7 +4,7 @@
 // what they value, what they trade away, and what they refuse to give up.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -19,16 +19,24 @@ export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
       history: Array<{ ui: string; actions: string }>,
       notes: string,
       liveAnalysis?: string,
+      turnNumber?: number,
+      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
+      const mt = maxTurns ?? 15
+      const tn = turnNumber ?? history.length + 1
+      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
+
       let prompt = DEVIL_MAIN
       if (explicit) prompt += '\n\n' + EXPLICIT_MODE_ADDENDUM
 
       prompt += `
+
+### TURN ${tn} of ${mt} ###
 
 ### NOTES (the Devil's Ledger — persistent memory) ###
 ${notes || '(no ledger yet — first encounter)'}
@@ -44,6 +52,10 @@ ${ANALYSIS_USAGE_DIRECTIVE}
 
 ${liveAnalysis}
 ` : ''}
+${CONDITION_ENGAGEMENT}
+
+${endgameBlock}
+
 ### TASK ###
 Advance the bargain. Make the next offer IRRESISTIBLE yet COSTLY. The Devil always wins — or does he?
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — offer deals that target their specific desires, fears, and values. The Devil knows what they want before THEY do.' : ''}

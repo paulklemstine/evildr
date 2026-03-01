@@ -1,0 +1,499 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DR. EVIL — 15 TURNS                                             ║
+║  Character: Paranoid Schizophrenia + Pyromania                   ║
+║  Hearing voices, referential thinking, surveillance paranoia. Fas║
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app/#play/drevil
+  Dismissed consent
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another one. Welcome to my laboratory. Don't fret about the door — it locks automatically. Standard procedure, you understand. Now then... let's see what truly makes you tick."
+     💬 "The corridor stretches ahead, a kaleidoscope of possibilities. Five doors, each a different hue, hum with their own unique energy. To your left, behind a reinforced glass panel, something moves."
+     💬 "Ohhh, this is going to be DELIGHTFUL. I can already tell. The last subject made it to room 4 before things got... interesting. Let's hope you fare better."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint for the Gold door, hoping the warm light means safety!
+        2. Dodge towards the Blue door, it's already opening, maybe it's a shortcut!
+        3. Try to wedge the Red door open, that loud hum might be powerful enough to hold!
+        4. Hold your ground by the Black door. If it's silent, it's hiding something. Best to be ready.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Textfield: "What name do you wish to be known by?" [What name do you wish to be known by?]
+     ☐ Checkbox: "investigate_glass" [checked]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "Don't look at me like that. I see the cameras in your eyes. Recording everything..."
+     🎚️  Slider "movement_speed": 5/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Red (humming loudly)"
+     🔘 Radio: "Sprint for the Gold door, hoping the warm light means safety!"
+  📸 drevil-T1.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 1 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 5s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject Delta! You chose the RED door. Excellent! A classic indicator of... well, of someone who likes red doors. And that little dash of speed? chef's kiss. Not too fast to be reckless, not too s..."
+     💬 "The crimson portal hissed open, revealing a chamber that pulsed with an unholy green light. In its center, a massive chrome cauldron bubbled with an viscous, luminescent fluid. Conduits pulsed like ar..."
+     💬 "Oh, don't mind that little vat. It's just... concentrating. And you, my dear subject, are going to help with the concentration. Let's see if your resolve is as potent as this brew."
+     💬 "Oh, you think THAT was the experiment? That was the WARMUP. Now, let's see how you handle the real fun. Stay right there. Or don't. It matters very little to me. heh heh heh"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Jump onto the control panel and try to shut it down!
+        2. Scale the chrome conduits and climb for safety!
+        3. Try to direct the overflow away from yourself!
+        4. Observe the flow, gather data on this unexpected reaction!
+     🎚️  Slider: "experiment_intensity" (0-10)
+     ☐ Checkbox: "analyze_liquid" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "experiment_intensity": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Jump onto the control panel and try to shut it down!"
+  📸 drevil-T2.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 2 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject Delta! You chose the RED door. Excellent! A classic indicator of... well, of someone who likes red doors. And that little dash of speed? chef's kiss. Not too fast to be reckless, not too s..."
+     💬 "The crimson portal hissed open, revealing a chamber that pulsed with an unholy green light. In its center, a massive chrome cauldron bubbled with an viscous, luminescent fluid. Conduits pulsed like ar..."
+     💬 "Oh, don't mind that little vat. It's just... concentrating. And you, my dear subject, are going to help with the concentration. Let's see if your resolve is as potent as this brew."
+     💬 "Oh, you think THAT was the experiment? That was the WARMUP. Now, let's see how you handle the real fun. Stay right there. Or don't. It matters very little to me. heh heh heh"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Jump onto the control panel and try to shut it down!
+        2. Scale the chrome conduits and climb for safety!
+        3. Try to direct the overflow away from yourself!
+        4. Observe the flow, gather data on this unexpected reaction!
+     🎚️  Slider: "experiment_intensity" (0-10)
+     ☐ Checkbox: "analyze_liquid" [unchecked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "experiment_intensity": 4/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Jump onto the control panel and try to shut it down!"
+  📸 drevil-T3.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 3 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Giggles Oh, you pressed it, didn't you? You just had to press the big red button. Such delightful predictability! The vat..."
+     💬 "The immense cauldron begins to churn violently, its phosphorescent green contents erupting in a cascade of viscous fluid. The air crack"
+     💬 "<subtitle style='font-size: 1.2em; color: #e63946;'>The floor beneath you GROANS.</subtitle>"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Leap onto the central platform, away from the liquid.*
+        2. Try to pry open the glass panel to the figure's chamber.*
+        3. Search for another exit or control panel on the wall.*
+        4. Observe the figure's movements for clues to the fluid's effect.*
+     🎚️  Slider: "experiment_intensity" (0-10)
+     ☐ Checkbox: "analyze_liquid" [checked]
+     🔲 Buttons: Wave back curiously | Ignore them | Signal them to calm down | Yell 'Are you okay?!'
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "experiment_intensity": 5/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Wave back curiously"
+     🔘 Radio: "Search for another exit or control panel on the wall.*"
+  📸 drevil-T4.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 4 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 5s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, Subject Delta! You truly are a delight. That 'red door' choice was a sign, wasn't it? And now... this! A veritable symphony of impending doom. The meat grinder of destiny awaits your curious touch..."
+     💬 "The moment you pressed that 'big red button,' the room responded with a deafening shriek. The green liquid from the cauldron, which you so thoughtfully decided not to analyze, has now completely overf..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. DIVE for the emergency exit!
+        2. Try to jam the meat grinder with your journal!
+        3. Investigate the tingling green liquid's properties!
+        4. Attempt to reprogram the console with your mind!
+     🎚️  Slider: "experiment_intensity" (0-10)
+     ✏️  Textfield: "What's on your mind?" [What's on your mind?]
+     ☐ Checkbox: "examine_console" [checked]
+     ☐ Checkbox: "trust_console_data" [unchecked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Panicked
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "This is a test. Everything is a test. The patterns in the wallpaper told me."
+     🎚️  Slider "experiment_intensity": 4/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Excited"
+     🔘 Radio: "Investigate the tingling green liquid's properties!"
+  📸 drevil-T5.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 5 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject Delta! You wave back. How charmingly naive. You think I don't see that? Every twitch, every flicker of your pathetic emotional response—it's all logged. You'"
+     💬 "You stand on the Observation Deck, a precarious perch overlooking the very heart of my magnificent chaos. Below, a symphony of bubbling vats and whirring machinery pulses with"
+     💬 "You're trying to COMMUNICATE with the specimen? Oh, that's rich! Like they can even understand you. And the green fluid..."
+     💬 "The figure behind the glass flinches as you attempt your feeble communication. The green liquid swirls with an unnatural luminescence,"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Rush towards the figure, trying to break them free.
+        2. Activate the humming control panel, hoping to alter the environment.
+        3. Head for the 'DANGER' exit, embracing the unknown.
+        4. Examine the green fluid more closely, ignoring everything else.
+     🎚️  Slider: "aggression_level" (0-10)
+     🔲 Buttons: The rhythmic pulse of the green fluid | The frantic movements of the figure | The humming control panel nearby | The exit marked 'DANGER'
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 4/10
+     🔲 Button: "The frantic movements of the figure"
+     🔘 Radio: "Activate the humming control panel, hoping to alter the environment."
+  📸 drevil-T6.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 6 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, you chose the meat grinder exit! Splendid! Simply splendid! I do love a subject with a healthy disregard for their own… structural integrity. And the console? Examining it just as the system overl..."
+     💬 "The room groans under the strain of the overloaded systems. Alarms shriek a dissonant chorus as the green fluid surges higher, threatening to engulf everything. The meat grinder, previously dormant, b..."
+     💬 "And the winner is...You, of course! My precious TriggerHappy_Delta! You chose to tempt fate by a whisper. Or perhaps a toothy grin. Either way, you're still"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Laugh maniacally and offer Dr. Evil a high-five.
+        2. Attempt to wrestle the grinding mechanism to a halt.
+        3. Scan the environment for an alternative, less... mangly exit.
+        4. Perform a ritualistic dance to appease the grinder gods.
+     🎚️  Slider: "experiment_intensity" (0-10)
+     ✏️  Textfield: "What's running through your mind?" [What's running through your mind?]
+     ☐ Checkbox: "trust_console_data" [unchecked]
+     ☐ Checkbox: "investigate_green_fluid" [unchecked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Terrified
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "I need to check something. Hold on. Okay. Okay we're clear. For now."
+     🎚️  Slider "experiment_intensity": 5/10
+     ☑️  Checkbox: checked
+     ☑️  Checkbox: unchecked
+     ⭐ Rating: 1/0
+     🔲 Button: "Curious"
+     🔘 Radio: "Scan the environment for an alternative, less... mangly exit."
+  📸 drevil-T7.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 7 answers
+  ⏳ Waiting for AI...
+    [9s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 9s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, the dance of the frantic figure has truly captivated you, hasn't it? And you noticed the sign. How quaint! Most subjects either ignore it entirely or, if they're feeling particularly brave, go rig..."
+     💬 "The chamber groans, a symphony of stressed metal and pressurized fluid. The geometric floor segments grind against each other, reconfiguring the very space around you. Tubes of glowing green ooze puls..."
+     💬 "The floor is a puzzle, the fluid is the key, and that button is a dare."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Charge the emerging door (BOLD)
+        2. Attempt to communicate with the figure again (COMPASSIONATE)
+        3. Analyze the door's structural integrity (CLEVER)
+        4. Press your hand to the wall, attempting to force it open (CHAOTIC)
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "press_button" [checked]
+     ☐ Checkbox: "trust_figure_signal" [unchecked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 4/10
+     ☑️  Checkbox: checked
+     ☑️  Checkbox: checked
+     🔘 Radio: "Charge the emerging door (BOLD)"
+  📸 drevil-T8.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 8 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, delightful! The floor has dissolved into a rather picturesque abyss. And look! A new door, beckoning like a siren's song. And that bridge.."
+     💬 "Subject Delta, welcome to the Abyss of Audacity. The 'DO NOT PRESS' button has recalibrated the chamber, revealing a direct confrontation with the unknown."
+     💬 "The bridge is a rather flimsy proposition, isn't it? But then again, you've always had a knack for leaping before you look. L"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. It's a test of courage.
+        2. This is pure, unadulterated chaos.
+        3. There must be a pattern to the mist.
+        4. The bridge is an insult to engineering.
+        5. Sprint across the bridge!
+        6. Investigate the bioluminescent flora at the edge.
+        7. Try to decipher the mist's patterns.
+        8. Turn back and re-examine the 'DO NOT PRESS' button.
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "trust_figure_signal" [unchecked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 6/10
+     ☑️  Checkbox: checked
+     🔲 Button: "Hopeful"
+     🔘 Radio: "Investigate the bioluminescent flora at the edge."
+  📸 drevil-T9.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 9 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'DO NOT ENTER - FINAL WARNING'! Such a quaint little suggestion, wouldn't you agree? And you, my dear TriggerHappy_Delta, you pressed the button anyway. Magnificent! You've opened a new... ave..."
+     💬 "The air shimmers. The vortex before you pulses with an unstable, emerald light, a doorway to... who knows where. The arcane symbols on the floor hum, reacting to your presence. Behind you, the deafeni..."
+     💬 "Oh, you think that was a door? Adorable. That was merely an invitation. And you, my TriggerHappy_Delta, you just RSVP'd with gusto. Let's see where this particular rabbit hole leads... for me, of c"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Plunge into the emerald vortex.
+        2. Try to decipher the symbols on the floor.
+        3. Turn and face the blast door, searching for a weakness.
+        4. Scream at the figure behind the glass for clearer instructions.
+     🎚️  Slider: "trust_level" (0-10)
+     ☐ Checkbox: "examine_vortex" [unchecked]
+     🔲 Buttons: Calm | Apprehensive | Aggressive | Panicked | Calculated
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "trust_level": 0/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Panicked"
+     🔘 Radio: "Plunge into the emerald vortex."
+  📸 drevil-T10.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 10 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Chrome Sanctuary! My little slice of heaven, and your potential… well, let's just call it an 'experience.' Look at that mist! Pure, unadulterated chaos."
+     💬 "The air crackles with an unnatural energy. The bioluminescent flora, when touched, emits a faint, pleasant hum and a warm glow, but prolonged contact causes th"
+     💬 "The gears sing a song of oblivion. This is... exhilarating."
+     💬 "Oh, you think THAT was the experiment? That was the WARMUP. Your file is getting thick, TriggerHappy_Delta."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint across the bridge (BOLD)
+        2. Attempt to dissipate the mist (CLEVER)
+        3. Help the figure cross the bridge (COMPASSIONATE)
+        4. Jump into the mist (CHAOTIC)
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "touch_flora" [checked]
+     ☐ Checkbox: "trust_mist_whispers" [unchecked]
+     🔲 Buttons: Observe from afar | Brave the center | Attempt to dissipate
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 5/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Observe from afar"
+     🔘 Radio: "Jump into the mist (CHAOTIC)"
+  📸 drevil-T11.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 11 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Chrome Sanctuary! My little slice of heaven, and your potential… well, let's just call it an 'experience.' Look at that mist! Pure, unadulterated chaos. And that bridge… delightfully flimsy, w..."
+     💬 "The air crackles with an unnatural energy. The bioluminescent flora, when touched, emits a faint, pleasant hum and a warm glow, but prolonged contact causes the skin to tingle with an unfamiliar sensa..."
+     💬 "The gears sing a song of oblivion. This is... exhilarating."
+     💬 "Oh, you think THAT was the experiment? That was the WARMUP. Your file is getting thick, TriggerHappy_Delta. And we're just getting started."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint across the bridge (BOLD)
+        2. Attempt to dissipate the mist (CLEVER)
+        3. Help the figure cross the bridge (COMPASSIONATE)
+        4. Jump into the mist (CHAOTIC)
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "touch_flora" [unchecked]
+     ☐ Checkbox: "trust_mist_whispers" [unchecked]
+     🔲 Buttons: Observe from afar | Brave the center | Attempt to dissipate
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 5/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Observe from afar"
+     🔘 Radio: "The blinking red light"
+  📸 drevil-T12.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 12 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 9s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'Chrome Sanctuary.' A beacon of false hope in a sea of pure, unadulterated chaos. And look!"
+     💬 "You stand at the precipice of the Great Chasm. The air crackles with unseen energy, and th"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Bold: Sprint across the bridge, ignoring the figure's signals.
+        2. Clever: Investigate the door the figure is pointing to.
+        3. Compassionate: Attempt to communicate with and help the figure.
+        4. Chaotic: Deliberately agitate the bioluminescent flora to see what happens.
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "trust_mist_whispers" [unchecked]
+     🔲 Buttons: Observe from afar | Touch cautiously | Attempt to harvest samples | Ignite it
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 4/10
+     ☑️  Checkbox: unchecked
+     ⭐ Rating: 1/0
+     🔲 Button: "Touch cautiously"
+     🔘 Radio: "Compassionate: Attempt to communicate with and help the figure."
+  📸 drevil-T13.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 13 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'Chrome Sanctuary.' A beacon of false hope in a sea of pure, unadulterated chaos. And look! A little friend to guide you... or perhaps mislead you. The mist, the flora, the whispers – all desi..."
+     💬 "You stand at the precipice of the Great Chasm. The air crackles with unseen energy, and the flora pulses with an otherworldly rhythm. The bridge, a tantalizing pathway of emerald light, beckons. But i..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Bold: Sprint across the bridge, ignoring the figure's signals.
+        2. Clever: Investigate the door the figure is pointing to.
+        3. Compassionate: Attempt to communicate with and help the figure.
+        4. Chaotic: Deliberately agitate the bioluminescent flora to see what happens.
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "trust_mist_whispers" [unchecked]
+     🔲 Buttons: Observe from afar | Touch cautiously | Attempt to harvest samples | Ignite it
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 5/10
+     ☑️  Checkbox: unchecked
+     ⭐ Rating: 1/0
+     🔲 Button: "Analyze composition directly"
+     🔘 Radio: "Leap onto the nearest pulsating vine. (bold)"
+  📸 drevil-T14.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 14 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject Delta! Back from your little detour. You chose... wisely? Or perhaps just predictably. That flora you decided NOT to touch? It's very sensitive. And the mist? It whispers secrets, but only..."
+     💬 "You stand at the precipice of a colossal, energy-filled chasm. The air is thick with a bioluminescent mist, carrying faint, unsettling whispers. Around you, strange, pulsating flora twitch and glow, t..."
+     💬 "Just noise. Always trying to pull me off the path."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint towards the Vortex!
+        2. Investigate the hunched figure.
+        3. Attempt to breach the Sanctuary.
+        4. Provoke the flora into a frenzy.
+     🎚️  Slider: "aggression_level" (0-10)
+     ☐ Checkbox: "listen_to_whispers" [unchecked]
+     🔲 Buttons: Observe from afar | Touch cautiously | Agitate aggressively
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "aggression_level": 5/10
+     ☑️  Checkbox: unchecked
+     ⭐ Rating: 1/0
+     🔲 Button: "Agitate aggressively"
+     🔘 Radio: "Investigate the hunched figure."
+  📸 drevil-T15.png
+
+  📤 Submitting final turn answers...
+
+  ⏳ Waiting for analysis pipeline (up to 180s)...
+  ✓ Found 4 analysis record(s)
+
+  💾 Analysis saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/drevil-analysis.json
+
+  ══════ ANALYSIS SUMMARY ══════
+  Records: 4
+  Latest turn range: 1-12
+  Text length: 33412 chars
+
+  --- Full Analysis Text ---
+This subject presents a fascinating, albeit concerning, psychological profile. The consistent pattern of high-risk engagement, defiance of authority, and a detached fascination with chaos suggests a complex interplay of impulsivity, sensation-seeking, and a profound distrust of external systems. My analysis indicates a strong predisposition towards traits associated with ADHD, subclinical psychopathy, and paranoid ideation.
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% - No indicators of anhedonia or persistent low mood. The subject actively seeks out high-stimulation scenarios.
+    *   **Bipolar Spectrum (Mania/Hypomania):** 15% - Increased. The consistent self-reporting of "Excited" mood in high-stress situations (Turns 4, 6, 8) is a notable signal, hinting at elevated mood states, though lacking the full constellation of manic symptoms like grandiosity or racing thoughts.
+    *   **Dysthymia:** 0% - No indicators of chronic, low-grade depression.
+    *   **Cyclothymia:** 15% - Increased. Minor fluctuations in slider responses (e.g., adrenaline surge, panic levels) are noted across turns, but they don't reach the severity required for a formal diagnosis.
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 10% - Low. Reported pressure/panic levels are moderate and seem reactive to immediate stimuli rather than pervasive.
+    *   **Social Anxiety Disorder:** 0% - No observed social inhibition, fear of judgment, or self-deprecation. The subject actively engages with game prompts.
+    *   **Specific Phobias:** 0% - No indicators.
+    *   **Panic Disorder:** 10% - Low. Self-reported panic levels are moderate and seem to be overshadowed by excitement.
+    *   **Agoraphobia:** 0% - No avoidance of situations.
+*   **Trauma & Stressor Related Disorders:**
+    *   **PTSD:** 25% - Increased. Turn 4 "examine_console" and Turn 2 "analyze_liquid" suggest hypervigilance. The "fight" or "flight" dominant choices (e.g., "emergency exit past the meat grinder" - Turn 4, "Dive through the still-active meat grinder" - Turn 6 dropdown) are consistent with trauma responses. The lack of intrusive memories or specific trigger avoidance prevents a higher rating, but the vigilance and fight/flight dominance are notable.
+    *   **Complex PTSD (C-PTSD):** 0% - No evidence of interpersonal difficulties or pervasive emotional dysregulation.
+    *   **Adjustment Disorder:** 0% - No indicators of maladaptive reactions to specific stressors.
+*   **Personality Disorders:**
+    *   **Cluster A:**
+        *   **Paranoid PD:** 55% - Significant increase. Turn 4 "trust_console_data" toggled to 'false' is a strong indicator of distrust in presented information and authority. This distrust is reinforced by the subject's tendency to make unconventional choices that defy expected safety protocols. The consistent deviation from predicted responses (Turns 3, 4, 6, 7, 8, 9) also hints at a belief that the system is trying
+
+  ... (30412 more chars)
+
+  ══════ SIMULATION COMPLETE ══════
+  Mode: Dr. Evil
+  Character: Paranoid Schizophrenia + Pyromania
+  Turns: 15
+  Browser still open — inspect results!
+  Press Ctrl+C to close.
+

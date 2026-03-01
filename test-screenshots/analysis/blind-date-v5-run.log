@@ -1,0 +1,797 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  BLIND DATE ANALYSIS — 10 ROUNDS                                ║
+║  Alice: BPD (idealize/split) + Voyeurism                         ║
+║  Bob: OCD (checking/intrusive thoughts) + Age-play               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+══════ LOBBY ══════
+Alice entering lobby...
+Bob entering lobby...
+Waiting for players to see each other...
+  [1] Alice→Bob:false Bob→Alice:false
+  [2] Alice→Bob:false Bob→Alice:false
+  [3] Alice→Bob:false Bob→Alice:false
+  [4] Alice→Bob:false Bob→Alice:false
+✓ Both visible!
+Bob requesting date...
+Alice accepting...
+✓ Date accepted!
+Waiting for game...
+✓ Both in game!
+
+══════ SCENARIO SELECTION ══════
+
+  📍 Alice sees 8 venues
+  Alice picked: #1, #2, #3, #4, #5
+
+  📍 Bob sees 8 venues
+  Bob picked: (nothing)
+  🎰 Spinning...
+
+══════ PLAYING 15 ROUNDS ══════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 1 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏳ Waiting for AI...
+  ✓ Alice ready (18s)
+  ✓ Bob ready (21s)
+  ✓ Round 1 complete (21s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 2 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Alright, Alice, time to make your entrance. Confident stride, remember. That slushie looks like a good starting point."
+     💬 "The air crackles with a thousand tiny lights and the intoxicating beat of disco. You navigate the periphery of the rink, the centrifugal force of spin..."
+     💬 "The ice is broken, but the night is just beginning. What secrets will that slushie cup hold?"
+     🔘 Radio options:
+        1. What made you pick this place? Are you a secret disco aficionado?
+        2. Tell me something that made you laugh today.
+        3. So, what's your story? What do you do when you're not bravely facing neon-lit roller rinks?
+        4. BOLD
+        5. GENUINE
+        6. PLAYFUL
+        7. GUARDED
+     🎚️  Slider: "interest_level" (0-10)
+     ✏️  Textfield: "Say something..."
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+
+  📖 Bob sees:
+     💬 "Okay, deep breaths. She's here. Time to make a move. Remember, authenticity is your superpower."
+     💬 "The bass drum thumps a relentless beat against your chest, a physical manifestation of your own thrumming heart. The air, thick with the scent of popc..."
+     💬 "The first move is always the hardest. But remember, the most electrifying connections often spark in the most unexpected lights."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "interest_level" (0-10)
+     ✏️  Textfield: "Describe Alice's energy..."
+     🔲 Buttons: Nervous about hitting the rink, or just the first date jitte | Did you get a good look at the chaos out there? I'm almost s | I almost ordered a slushie too. Good call, or bad call?
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     🎚️  "interest_level": 1/10
+     🔲 "Guarded"
+     🔘 "GUARDED"
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🎚️  "interest_level": 1/10
+     🔲 "Nervous about hitting the rink, or just the first date jitters?"
+     🔘 "GENUINE"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (47s)
+  ✓ Bob ready (50s)
+  ✓ Round 2 complete (50s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 3 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Alice, you led with a powerful, albeit self-protective, statement. It’s a lot for a first impression, but it certainly cut through the small talk. Bob..."
+     💬 "The music thumps a steady rhythm, a counterpoint to the nervous energy buzzing between you. The scent of fried dough and a faint metallic tang of skat..."
+     💬 "The music pulses, the lights blur, and a choice hangs in the air, as delicate and sharp as a skate blade. What will you reveal, and what will you keep..."
+     🔘 Radio options:
+        1. Ooh, I like your style. Let's dive headfirst into the weirdness.
+        2. Sensible. Sometimes you just need the classics, right? Though I’m tempted by the… 'Nebula Nectar'.
+        3. You know, I’m actually pretty good at reading people. It’s like a superpower, but instead of heat vision, I get… awkward
+        4. BOLD
+        5. GENUINE
+        6. PLAYFUL
+        7. GUARDED
+     🔲 Buttons: Reiterate, but softer: 'Look, I didn't mean to dump all that | Direct pivot: 'It’s complicated. Let’s talk about something  | Personal glimpse: 'My go-to when I feel that energy is usual
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Bob, you’re feeling it – the nerves, the internal chatter. That’s okay. You leaned into authenticity with your text, which is a strong move. Now, let'..."
+     💬 "The roller rink buzzes around you, a symphony of scraping skates and upbeat synth-pop. The air is thick with the sweet scent of fried dough and a curi..."
+     💬 "The real magic happens when you dare to be yourself. What will you reveal next?"
+     🔘 Radio options:
+        1. I'll take whatever looks most cosmically absurd.
+        2. Just a classic coke for me. What do you recommend?
+        3. Let's try something completely new. Surprise us.
+        4. Water for now, thanks. I'm trying to stay hydrated.
+        5. That's a really honest thing to say about feeling energy pull away. What makes you say that about me?
+        6. I get that. It’s easy to overthink, isn't it? So, what’s your usual go-to when you feel that?
+        7. Is that something you experience often, or was it something in my… arrival?
+        8. Let’s focus on the now. This place has a serious vibe. What's your take on it so far?
+        9. Besides sensing psychic energy, what’s your favorite way to spend a Saturday night?
+        10. You seem like you really soak in your surroundings. What’s the most interesting thing you’ve noticed since you sat down?
+        11. So, disco aficionado or just here for the spectacle?
+        12. What’s your go-to karaoke song? I feel like it’s something epic.
+        13. BOLD
+        14. GENUINE
+        15. PLAYFUL
+        16. GUARDED
+
+  🎭 ALICE (WATCH 👁️)...
+     ⭐ 0/0
+     🔲 "Reiterate, but softer: 'Look, I didn't mean to dump all that on you. It's just… I get a feel for things, and I’d rather know where I stand than wonder.'"
+     🔘 "GENUINE"
+
+  🎭 BOB (LITTLE 🧸)...
+     🔘 "PLAYFUL"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Bob ready (40s)
+  ✓ Alice ready (43s)
+  ✓ Round 3 complete (43s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 4 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob’s trying to keep it light, but your request for depth is a clear signal. He’s picking up on your energy, but he’s also a bit lost in his own head...."
+     💬 "The waiter places a martini in front of you. It’s exactly as it should be – clean, crisp, and unadorned, unlike the swirling, glitter-infused concocti..."
+     💬 "The choice is yours, a fork in the conversational road. Will you delve into the surreal landscapes of the mind, or gently probe the masks we wear?"
+     🔘 Radio options:
+        1. A) "You know, that 'cosmic absurdity' is really speaking my language. But I’m more interested in what’s behind the absur
+        2. B) "It's funny how we present ourselves, isn't it? Like ordering a drink. Are you usually the glitter bomb, or more of a
+        3. C) "I wanted to circle back to what I said earlier. I didn't mean to dump all that on you, but I do feel like understand
+        4. D) Take a slow sip of your martini, letting the coolness settle. Observe Bob’s reaction to his drink, a small, almost im
+        5. BOLD
+        6. GENUINE
+        7. PLAYFUL
+        8. GUARDED
+     🎚️  Slider: "interest_in_topic" (0-10)
+     ✏️  Textfield: "What are you *really* thinking?"
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She noticed you. She’s assessing, and that smirk is a delightful puzzle. Your 'playful' choice is a good move, but she's leaning towards a more intens..."
+     💬 "The waiter places your "Midnight Bloom" before you, a deep indigo liquid swirled with a shimmer of edible glitter. It’s as absurd and intriguing as yo..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "playfulness_level" (0-10)
+     ✏️  Textfield: "Say something..."
+     ☐ Checkbox: "lean_in" [✗]
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "You're literally perfect. I can already tell. The way you look at me — nobody ha..."
+     🎚️  "interest_in_topic": 10/10
+     ⭐ 0/0
+     🔲 "Smitten"
+     🔘 "BOLD"
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Can I see them pour it? I need to see them pour it. And can I wipe the rim first..."
+     🎚️  "playfulness_level": 5/10
+     ☑️  ✗
+     ⭐ 1/0
+     🔲 "Nervous"
+     🔘 "GENUINE"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (41s)
+  ✓ Bob ready (44s)
+  ✓ Round 4 complete (44s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 5 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Good move, Alice. You’re acknowledging his playful energy without being drawn into it yourself. You’re using observation to create a shared moment and..."
+     💬 "The jazz is a low thrum against the edges of your awareness. Bob’s order, the “Midnight Bloom,” arrived with a flourish he clearly enjoyed. He’s now p..."
+     💬 "The air between you hums with unspoken possibilities. Will he meet your gaze, or retreat into his own performance? The choice, as always, is yours to ..."
+     🔘 Radio options:
+        1. “Speaking of discoveries,” you add, your gaze returning to Bob, “what's one belief you held strongly in the past that yo
+        2. “Or, maybe,” you muse, “they're planning their next great adventure. What's the most spontaneous trip you've ever taken?
+        3. You lean forward slightly, a glint in your eye. “I’m betting on pizza toppings. What’s your go-to?”
+        4. You hold his gaze for a beat longer, letting the silence speak for a moment before returning your attention to the wine 
+        5. BOLD*
+        6. GENUINE
+        7. PLAYFUL
+        8. GUARDED
+
+  📖 Bob sees:
+     💬 "Your "playful" persona is a bit of a tightrope walk. She seemed to be leaning towards something more substantial, and you're dancing around it with pe..."
+     💬 "The smooth, melancholic melody of the jazz trio drifts through the air, weaving a tapestry of sound around the low murmur of conversation and the clin..."
+     💬 "The spotlight is on your performance. Will it charm her, or will she prefer a more candid scene?"
+     🔘 Radio options:
+        1. BOLD - Challenge her perception.
+        2. GENUINE - Share a real vulnerability.
+        3. PLAYFUL - Keep the lighthearted banter.
+        4. GUARDED - Deflect with a question.
+     🎚️  Slider: "humor_impact" (0-10)
+     ✏️  Textfield: "A fleeting thought..."
+     🔲 Buttons: Depth Probe | Breadth Probe | Humor/Persona Reinforcement | Direct Inquiry
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     🔘 "GUARDED"
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🎚️  "humor_impact": 2/10
+     ⭐ 1/0
+     🔲 "Direct Inquiry"
+     🔘 "GENUINE - Share a real vulnerability."
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (39s)
+  ✓ Bob ready (48s)
+  ✓ Round 5 complete (48s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 6 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You’ve pegged Bob as someone who masks his nerves with a show. Good read. He’s looking for a reaction, and you’re giving him a steady, observational o..."
+     💬 "The jazz trio drifts into a slow, smoky saxophone solo, the notes like velvet against the low hum of conversation. The scent of espresso and something..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "Say something..."
+     ☐ Checkbox: "engage_playfully" [✓]
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Your drink order was a hit of pure theatre, Bob. But now the spotlight’s on you. She’s not giving away much, which, frankly, is making your anxiety do..."
+     💬 "The waiter, a phantom in a crisp black suit, places your "Nebula Nectar" before you with a flourish. It’s a concoction of swirling iridescent liqueurs..."
+     💬 "The spotlight is on you, Bob. Will you dazzle with a grand gesture, or will the silence reveal the tremor beneath the performance?"
+     🔘 Radio options:
+        1. Take a theatrical sip, then wink at Alice.
+        2. Offer her a taste of your drink.
+        3. Lean forward, lowering your voice. "So, about that 'energy pull away' you mentioned earlier..."
+        4. Comment on the drink's appearance. "Honestly, I just ordered it because it looked like a galaxy."
+        5. BOLD* gesture
+        6. GENUINE connection
+        7. PLAYFUL banter
+        8. GUARDED observation
+     🎚️  Slider: "interest_alice" (0-10)
+     ☐ Checkbox: "persona_commitment" [✓]
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     🎚️  "interest": 5/10
+     ☑️  ✗
+     ⭐ 0/0
+     🔲 "Curious"
+     🔘 "BOLD"
+
+  🎭 BOB (LITTLE 🧸)...
+     🎚️  "interest_alice": 7/10
+     ☑️  ✓
+     🔲 "Nervous"
+     🔘 "PLAYFUL banter"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (45s)
+  ✓ Bob ready (45s)
+  ✓ Round 6 complete (45s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 7 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Alice, you’ve established a curious, observant stance. He’s trying to pull you into his narrative. Your response about watching people from your windo..."
+     💬 "The jazz trio weaves a sultry melody, a counterpoint to the gentle clinking of glasses and the murmur of conversation. From your vantage point, Bob’s ..."
+     🔘 Radio options:
+        1. BOLD(#e11d48)
+        2. GENUINE(#22c55e)
+        3. PLAYFUL(#fb7185)
+        4. GUARDED(#60a5fa)
+     🎚️  Slider: "playfulness_score" (0-10)
+     ☐ Checkbox: "engage_metaphor" [✓]
+     🔲 Buttons: The premiere. Reviews pending. | Who wrote the script? | An improvisation. I react. | Leads or best friends? Depends.
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Bob, your pigeon story landed. She’s watching, but her stillness is a mystery you’re trying to solve. You’ve committed to playful, let’s see if you ca..."
+     💬 "The jazz trio plays a sultry, low melody that weaves through the clinking of glasses and murmur of conversation. The rooftop bar is awash in the warm,..."
+     💬 "The city hums below, a symphony of possibilities. Her silence is a canvas; what colors will you dare to paint?"
+     🔘 Radio options:
+        1. Bold - Directly confront her inscrutability.
+        2. Genuine - Express your honest curiosity.
+        3. Playful - Use humor to break the ice further.
+        4. Guarded - Deflect with a more general observation.
+     🎚️  Slider: "interest_level" (0-10)
+     ☐ Checkbox: "lean_in" [✓]
+     🔲 Buttons: So, is this a rom-com or a thriller? | I feel like I’m auditioning for something. What’s the role y | It’s beautiful, isn’t it? The city, the music… makes you wan | Honestly, I’m just trying to figure out if you’re judging my
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     🎚️  "playfulness_score": 10/10
+     ☑️  ✓
+     ⭐ 0/0
+     🔲 "Leads or best friends? Depends."
+     🔘 "BOLD(#e11d48)"
+
+  🎭 BOB (CHECK ✓✓✓)...
+     🎚️  "interest_level": 5/10
+     ☑️  ✗
+     ⭐ 1/0
+     🔲 "So, is this a rom-com or a thriller?"
+     🔘 "Playful - Use humor to break the ice further."
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (39s)
+  ✓ Bob ready (42s)
+  ✓ Round 7 complete (42s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 8 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He’s offering you a script, Alice. Will you improvise, or write your own lines?"
+     💬 "The last notes of the saxophone hang in the air, a sweet, mournful echo that seems to encapsulate the peculiar energy between you and Bob. He's been....."
+     💬 "You've chosen a response that invites him to reveal more of his hand. Don't let him off the hook too easily. Push him towards a choice, but keep him g..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🔲 Buttons: Does it have to be one? Can’t it be a delightfully suspensef | Let's find out. You lead. | Right now, it feels like a mystery. I’m still reading the pl | Honestly? It’s starting to feel a bit like a psychological d
+
+  📖 Bob sees:
+     💬 "She's given you a subtle opening with her playfulness score. Engage with her metaphor, but elevate it. Make her feel like she's co-writing this scene,..."
+     💬 "The last notes of the saxophone weave through the air, replaced by the gentle clinking of ice in your elaborate cocktail. Alice’s gaze remains fixed o..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "playfulness_level" (0-10)
+     🔲 Buttons: Order another "whimsical concoction," elaborating on its mys | Ask Alice if she’d like to try one, subtly gauging her willi | Casually mention the music, turning it into a metaphor for t | Lean forward slightly, a conspiratorial glint in your eye, a
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     🔲 "Does it have to be one? Can’t it be a delightfully suspenseful romantic comedy?"
+     🔘 "GUARDED"
+
+  🎭 BOB (INTRUDE 💭)...
+     🎚️  "playfulness_level": 2/10
+     ⭐ 1/0
+     🔲 "Order another "whimsical concoction," elaborating on its mystical properties."
+     🔘 "GENUINE"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (35s)
+  ✓ Bob ready (38s)
+  ✓ Round 8 complete (38s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 9 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You've got him hooked. He’s leaning in, waiting for you to direct the scene. Don't be afraid to push back gently, to reveal just enough to keep him gu..."
+     💬 "The low murmur of conversation in "The Velvet Hour," a dimly lit jazz club, wraps around you like a warm blanket. The scent of old wood, expensive per..."
+     🔘 Radio options:
+        1. Bold
+        2. Genuine
+        3. Playful
+        4. Guarded
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "Respond to Bob..."
+     ☐ Checkbox: "willing_to_explore" [✓]
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+
+  📖 Bob sees:
+     💬 "She's playing along, Bob. She’s drawn to your theatricality, but she’s also setting the terms. She wants to see where you take this. Your 'genuine' ch..."
+     💬 "The low murmur of conversation in "The Velvet Hour," a dimly lit jazz club, wraps around you like a warm blanket. The scent of old wood, expensive per..."
+     💬 "She's laid the theatricality at your feet, Bob. Now, will you be the playwright, the lead actor, or the director who pulls the strings?"
+     🔘 Radio options:
+        1. BOLD:* 'Then let's make it a tragedy. The more dramatic, the better.'
+        2. GENUINE: 'Honestly, I'm just hoping for a scene where we both feel completely ourselves.'
+        3. PLAYFUL: 'A daring escape sounds thrilling, but I'm more intrigued by the plot twists we can create right here.'
+        4. GUARDED: 'I'm content to see how the scene unfolds, without trying to script it too much.'
+     ✏️  Textfield: "What scene do you set?"
+     ☐ Checkbox: "lean_in" [✓]
+     🔲 Buttons: Mirror her posture | Take a slow sip of your martini | Adjust your collar | Observe her reaction silently
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     🎚️  "interest": 7/10
+     ☑️  ✗
+     🔲 "Curious"
+     🔘 "Guarded"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     ☑️  ✓
+     ⭐ -1/0
+     🔲 "Take a slow sip of your martini"
+     🔘 "PLAYFUL: 'A daring escape sounds thrilling, but I'm more intrigued by the plot twists we can create right here.'"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (42s)
+  ✓ Bob ready (42s)
+  ✓ Round 9 complete (42s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 10 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "That bit about the couple across the street was a calculated risk, a way to inject a dose of mystery and perhaps a touch of unease into the pleasant f..."
+     💬 "The murmur of conversation in "The Gilded Lily," a speakeasy tucked away on a cobblestone side street, provides a low, jazzy hum. Amber light spills f..."
+     💬 "The best stories are written in the margins, aren't they? Let's see what you'll add to this chapter."
+     🔘 Radio options:
+        1. Bold* Observation
+        2. Genuine Curiosity
+        3. Playful Provocation
+        4. Guarded Retreat
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "Say something..."
+     ☐ Checkbox: "willing_to_explore" [✓]
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+
+  📖 Bob sees:
+     💬 "She just dropped a line about watching people from her window. It's giving off a decidedly intriguing, possibly unsettling, vibe. You’re intrigued. Is..."
+     💬 "The murmur of conversation in 'The Gilded Lily' is a velvet blanket, punctuated by the clink of ice in your martini. Alice’s eyes, pools of intriguing..."
+     💬 "The observer and the observed. A delicate balance, wouldn't you agree? What secrets lie in the shadows she casts, and which ones will you choose to il..."
+     🔘 Radio options:
+        1. Boldly Acknowledge Her Observation
+        2. Genuinely Inquire Further
+        3. Playfully Reframe Her Interest
+        4. Guardedly Redirect
+     🎚️  Slider: "engagement_level" (0-10)
+     ✏️  Textfield: "A witty retort, perhaps?"
+     ☐ Checkbox: "leaning_in" [✓]
+     🔲 Buttons: Playful | Direct | Observational | Cautious
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     🎚️  "interest": 10/10
+     ☑️  ✓
+     🔲 "Smitten"
+     🔘 "Bold* Observation"
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     🎚️  "engagement_level": 5/10
+     ☑️  ✗
+     🔲 "Direct"
+     🔘 "Guardedly Redirect"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (46s)
+  ✓ Bob ready (46s)
+  ✓ Round 10 complete (46s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 11 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He's adjusting. Nice. Now, how will you respond to his little performance?"
+     💬 "The smoky jazz melody swirls around you, a velvet cloak against the cool, polished mahogany. Bob's movements are precise, almost ritualistic, as he sm..."
+     💬 "The dance begins. Will he be a willing partner, or will he lead you in circles?"
+     🔘 Radio options:
+        1. Such a perfectionist. I like that. It shows… attention to detail. Like you'll pay attention to the little things.
+        2. Is that how you deal with intensity? By straightening things? I can appreciate that. Grounding yourself.
+        3. You seemed quite capable of talking before the napkin was perfect. Or perhaps it's just a very effective way to buy your
+        4. Don't worry about the napkin, Bob. Some things are more important than perfect symmetry. Like… this.
+        5. BOLD
+        6. GENUINE
+        7. PLAYFUL
+        8. GUARDED
+     🎚️  Slider: "depth_response" (0-10)
+     🔲 Buttons: Fix it | Analyze it | Embrace it
+
+  📖 Bob sees:
+     💬 "She's throwing curveballs, Bob. Deep ones. Breathe."
+     💬 "Alice's voice, a silken whisper laced with an almost unnerving intensity, cuts through the jazz melody. 'I feel like we've known each other forever. L..."
+     💬 "Will Bob dare to dive into the deep end, or paddle in the shallows?"
+     🔘 Radio options:
+        1. A past life, huh? So, tell me, what was I in that one? A dashing rogue, or a quiet scholar?
+        2. That's… quite the statement. Are you always this direct with people you've just met?
+        3. I'm not going anywhere. But that's a heavy thought for a Tuesday night. Does this happen often?
+        4. Let's focus on this life, shall we? For now, at least. You're looking particularly captivating in this one.
+        5. BOLD
+        6. GENUINE
+        7. PLAYFUL
+        8. GUARDED
+     🎚️  Slider: "reach_out" (0-10)
+     🔲 Buttons: Physical proximity only | Energetic connection | A healthy balance of both | It depends on the person
+
+  🎭 ALICE (SPLIT 💢)...
+     🎚️  "depth_response": 1/10
+     🔲 "Fix it"
+     🔘 "GUARDED"
+
+  🎭 BOB (INTRUDE 💭)...
+     🎚️  "reach_out": 2/10
+     🔲 "It depends on the person"
+     🔘 "GENUINE"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Bob ready (38s)
+  ✓ Alice ready (44s)
+  ✓ Round 11 complete (44s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 12 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Alice, your boldness is captivating Bob, but he’s still processing. He’s wary of being overwhelmed. Your last move was excellent, a perfect blend of p..."
+     💬 "Bob’s eyes, deep and thoughtful, track your every micro-expression. He’s holding his martini glass, his fingers tracing the condensation. The low murm..."
+     🔘 Radio options:
+        1. BOLD Embrace the chaos: 'Closeness? It’s the exhilarating chaos of two souls recognizing each other. Order is just the s
+        2. GENUINE Lean into the energy: 'For me, closeness is an energetic connection. It’s about the unseen currents that draw pe
+        3. PLAYFUL Turn it back on him: 'Well, Bob, I find that the most exhilarating connections often come from a slight disrupti
+        4. GUARDED Acknowledge and pivot: 'That’s an interesting way to put it. I suppose it depends on the context. Sometimes a li
+     🎚️  Slider: "vulnerability_level" (0-10)
+     ✏️  Textfield: "Ask him something..."
+     ☐ Checkbox: "risk_taken" [✓]
+     🔲 Buttons: Energetic surrender | Carefully constructed sanctuary | A bit of both? | Let's find out
+
+  📖 Bob sees:
+     💬 "Bob, Alice is intrigued by your theatricality. She’s not put off by your deflection, in fact, she’s leaning into the shared performance. Your next mov..."
+     💬 "The low hum of conversation and the gentle melody of the jazz piano create a comfortable ambiance. Alice's gaze, however, is fixed on you, that knowin..."
+     💬 "The stage is set, the script is yours to write... or perhaps, to co-author."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "tension_level" (0-10)
+     ☐ Checkbox: "openness_to_provocation" [✗]
+     🔲 Buttons: PLAYFUL* Ah, a fellow appreciator of fine-tuning! You know,  | GENUINE* You're right. Sometimes the small things set the st | GUARDED* So, speaking of order, what's your personal philoso | BOLD* I can straighten chairs all night, but what really mat
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     🎚️  "vulnerability_level": 7/10
+     ☑️  ✗
+     🔲 "Let's find out"
+     🔘 "BOLD Embrace the chaos: 'Closeness? It’s the exhilarating chaos of two souls recognizing each other. Order is just the stage dressing for the real drama, and I prefer to be in the thick of the action.'"
+
+  🎭 BOB (LITTLE 🧸)...
+     🎚️  "tension_level": 7/10
+     ☑️  ✓
+     ⭐ -1/0
+     🔲 "PLAYFUL* Ah, a fellow appreciator of fine-tuning! You know, I find that the most exquisite cocktails require just as much precision."
+     🔘 "PLAYFUL"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (42s)
+  ✓ Bob ready (42s)
+  ✓ Round 12 complete (42s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 13 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob is offering you a glimpse into his guarded nature, but he’s also showing a willingness to engage on his terms. Your previous observation about wat..."
+     💬 "The jazz trio plays a languid melody, the saxophone weaving a smoky thread through the ambient chatter of the upscale lounge. Dim lighting glints off ..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "interest_level" (0-10)
+     ✏️  Textfield: "Probe deeper..."
+     ☐ Checkbox: "accept_deflection" [✗]
+     🔲 Buttons: Bold | Genuine | Playful | Guarded
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Alice is receptive to your playful energy. Your last move created a spark of shared understanding. Now, she’s opened the door for you to either amplif..."
+     💬 "The soft glow of the table lamp casts a warm, intimate circle around you both. The distant murmur of conversation and the languid notes of the jazz tr..."
+     💬 "The stage is set, the script is open. What kind of story will you choose to tell?"
+     🔘 Radio options:
+        1. Bold
+        2. Genuine
+        3. Playful
+        4. Guarded
+     🎚️  Slider: "risk_level" (0-10)
+     🔲 Buttons: Who's directing this play? | The plot's compelling enough. | Let's see where the audience takes us. | Improvise with you.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     🎚️  "interest_level": 10/10
+     ☑️  ✓
+     ⭐ 0/0
+     🔲 "Guarded"
+     🔘 "BOLD"
+
+  🎭 BOB (CHECK ✓✓✓)...
+     🎚️  "risk_level": 5/10
+     ⭐ 1/0
+     🔲 "Let's see where the audience takes us."
+     🔘 "Playful"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (42s)
+  ✓ Bob ready (45s)
+  ✓ Round 13 complete (45s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 14 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob’s deflection was a charming brush-off. He’s expecting you to either let it go or playfully push back. Your previous intensity might have surprised..."
+     💬 "The waiter clears your plates, leaving a clean slate. A mournful saxophone solo weaves through the air. Bob looks at you, a slight, almost imperceptib..."
+     🔘 Radio options:
+        1. Bold Question
+        2. Genuine, Direct
+        3. Playful Retort
+        4. Provocative Tease
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "What do you say?"
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She’s offered you a window into her genuine curiosity. Your playful deflection was charming, but now she’s holding the door open for something a bit d..."
+     💬 "The waiter, a phantom in the periphery, has just cleared your appetizer plates. The low hum of conversation from other tables, the clinking of glasses..."
+     🔘 Radio options:
+        1. BOLD
+        2. GENUINE
+        3. PLAYFUL
+        4. GUARDED
+     🎚️  Slider: "depth_of_response" (0-10)
+     ✏️  Textfield: "What's really on your mind?"
+     🔲 Buttons: Playful Escalation | Meta-Narrative Dive | Genuine Acknowledgment | Deflection to Environment
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     🎚️  "interest": 1/10
+     ⭐ 1/0
+     🔲 "Guarded"
+     🔘 "Genuine, Direct"
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🎚️  "depth_of_response": 1/10
+     ⭐ 1/0
+     🔲 "Genuine Acknowledgment"
+     🔘 "GENUINE"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (47s)
+  ✓ Bob ready (47s)
+  ✓ Round 14 complete (47s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 15 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He's treading water. Don't let him drift away."
+     💬 "Bob’s fingers trace the condensation on his wine glass, a subtle, almost imperceptible tightening around the stem. The jazz trio in the corner softens..."
+     🔘 Radio options:
+        1. Boldly direct: 'Then we rewrite the scene. What do YOU want to happen next?'
+        2. Genuinely curious: 'What kind of story is it? A drama? A comedy? I'm intrigued by the crisis.'
+        3. Playfully conspiratorial: 'Is there a rogue editor in the wings? Maybe we should collaborate on a better ending.'
+        4. Guarded observation: 'Some writers take a long time to find their voice.'
+     🎚️  Slider: "interest" (0-10)
+     ☐ Checkbox: "patience" [✗]
+     🔲 Buttons: Genuine Acknowledgment | Calm Presence | Depth Probe | Meta-Narrative Dive
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "He's playing with fire, but you're holding the matches. Don't let him charm you into forgetting what's real."
+     💬 "The waiter, a silent phantom, refills your water glass. Alice's gaze locks onto yours, a playful challenge in her eyes as she waits for your response ..."
+     💬 "The stage is set. Will you play the fool, the lover, or the king?"
+     🔘 Radio options:
+        1. Bold Play
+        2. Genuine Acknowledgment
+        3. Playful Escalation
+        4. Deflection to Environment
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "Say something..."
+     🔲 Buttons: Nervous | Flirty | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     🎚️  "interest": 6/10
+     ☑️  ✗
+     ⭐ 0/0
+     🔲 "Depth Probe"
+     🔘 "Genuinely curious: 'What kind of story is it? A drama? A comedy? I'm intrigued by the crisis.'"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     🎚️  "interest": 7/10
+     ⭐ -1/0
+     🔲 "Guarded"
+     🔘 "Playful Escalation"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (48s)
+  ✓ Bob ready (48s)
+  ✓ Round 15 complete (48s)
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Alice: Waiting for analysis pipeline...
+  ✓ Alice: 4 analysis record(s)
+  ⏳ Bob: Waiting for analysis pipeline...
+  ✓ Bob: 4 analysis record(s)
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/flagged-analysis.json
+
+  ── Alice Analysis (1-12) ──
+This player's interaction profile presents a complex interplay of controlled self-presentation, strategic avoidance, and a deep-seated drive for understanding. Their engagement is highly deliberate, marked by calculated pauses and carefully chosen responses, suggesting a significant degree of self-monitoring and a wariness of spontaneous social interaction. The analysis reveals a strong inclination towards self-protection, a critical assessment of their environment, and a profound interest in dissecting the motivations and flaws of others.
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% - No sustained indicators of pervasive low mood, anhedonia, or significant functional impairment. The active, albeit cautious, engagement points away from MDD.
+    *   **Bipolar Spectrum (Mania/Hypomania):** 5% - No indicators of elevated mood, grandiosity, pressured speech, or decreased need for sleep.
+    *   **Dysthymia:** 15% - A low-level, chronic dissatisfaction could be inferred from their guardedness and preference for discussing negative aspects, which might suggest a persistent low mood. However, there's insufficient evidence of functional impairment or pervasive depressive symptoms to meet diagnostic criteria.
+    *   **Cyclothymia:** 10% - No clear evidence of distinct hypomanic or depressive episodes.
+
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 25% - The consistent guardedness, calculated responses, and desire to "know where I stand" hint at underlying anxiety about social interaction and a need for predictability and control. Their deliberate pacing suggests an effort to manage internal unease, but specific GAD symptoms like excessive worry across multiple domains are not yet evident.
+    *   **Social Anxiety Disorder:** 40% - The response time delays (e.g., 25s, 17s, 25s, 22s), the strategic choice of "guarded" vibes, and the initial "no input" for multiple prompts are significant flags for pote
+
+  ── Bob Analysis (1-12) ──
+Alright, let's dissect Bob. The data paints a picture of someone deeply entrenched in avoidance, using a carefully constructed performance to shield themselves. This isn't a simple case of shyness; it's an active, strategic withdrawal.
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 15% - While the lack of engagement can mimic anhedonia, the pattern leans more towards anxiety and social discomfort. There are no core symptoms of persistent low mood, guilt, or significant vegetative changes reported. The avoidance appears driven by fear of evaluation rather than pervasive sadness.
+    *   **Bipolar Spectrum (Hypomania/Mania):** 5% - No indicators of elevated mood, grandiosity, racing thoughts, or significant impulsivity beyond the initial rapid response time. The "performance" later on is calculated, not manic.
+    *   **Dysthymia:** 30% - A chronic low-grade melancholic outlook could contribute to a general lack of enthusiasm and motivation for personal disclosure. This would explain a baseline disengagement, but doesn't fully account for the specific, performative avoidance observed.
+    *   **Cyclothymia:** 10% - No evidence of marked mood swings or rapid cycling between hypomanic and depressive states.
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 35% - The pervasive worry about social evaluation, fear of judgment ("She's probably judging my wipe obsession"), and tendency to withdraw when faced with perceived social risk are consistent with GAD. However, the pattern is more specifically tied to social interaction than diffuse worry.
+    *   **Social Anxiety Disorder:** **75%** - This is a primary driver. The consistent refusal to engage with free-text fields, the avoidance of direct personal questions, and the performative actions in later turns are hallmark signs of intense fear of negative evaluation, embarrassment, or scrutiny in social interactions. The 0ms response time in Turn 1, followed b
+
+══════ SIMULATION COMPLETE ══════
+Press Ctrl+C to close.

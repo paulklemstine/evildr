@@ -1,0 +1,455 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  SKINWALKER — 15 TURNS
+║  Character: Capgras Delusion + Somnophilia
+║  Phases: REPLACEMENT 👥 → TESTING 🔬 → SLEEP 😴
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting Skinwalker mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — REPLACEMENT 👥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The a"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Suggest helping Sarah in the kitchen.
+        2. Quietly observe Mark and the fireplace.
+        3. Ask Mark about the new fireplace design.
+        4. Get up and propose a card game.
+     🎚️  Slider: "familiarity" (0-10)
+     ✏️  Text: "Describe what you brought..."
+     ☐ Check: "join_conversation" [✓]
+     ⭐ Rating: "rating" (max 0)
+     📋 Dropdown: "drink_choice" (4 options)
+
+  🎭 Interacting (REPLACEMENT 👥)...
+     ✏️  "That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c..."
+     🎚️  "familiarity": 1/10
+     ☑️  "join_conversation": ✗
+     ⭐ "rating": 1/0
+     📋 Dropdown: "drink_choice"
+     🔘 "Get up and propose a card game."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (33s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — TESTING 🔬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The fire crackled merrily, casting dancing shadows across the room. Mark, ever the gracious host, adjusted a log with a practiced hand. “Almost perfect,” he murmured, his voice a low rumble. Sarah's c..."
+     💬 "Mark turns, a warm smile on his face. “Glad you could make it! Sarah’s just finishing up. She was so excited you were coming.” He gestures to the bookshelf. “Anything interesting catching your eye ove..."
+     💬 "A quiet evening. The fire burns. The bread bakes. Everything is precisely as it should be. You feel it, don't you? The weight of normalcy."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the sticky note more closely.
+        2. Ask Mark about the bookshelf collection.
+        3. Try to recall the last time you were here.
+        4. Casually glance towards the kitchen.
+     🎚️  Slider: "confidence" (0-10)
+     ✏️  Text: "Describe what's wrong..."
+     ☐ Check: "noticed_sticky_note" [✓]
+
+  🎭 Interacting (TESTING 🔬)...
+     ✏️  "I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon..."
+     🎚️  "confidence": 6/10
+     ☑️  "noticed_sticky_note": ✓
+     🔘 "Examine the sticky note more closely."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — SLEEP 😴
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread and fresh lilies fills the air, a comforting aroma that usually signals a perfect Friday evening.  Sarah and Mark greet you with their usual warmth, their smiles seeming to c..."
+     💬 ""Come in, come in!" Mark calls out, his voice carrying the familiar, cheerful lilt. "So glad you could make it. Sarah's just finishing up in the kitchen. Oh, and I've finally gotten that new collectio..."
+     💬 "Sarah calls from the kitchen, "Can you grab another glass for our guest, Mark? And can you believe the price of these lilies? They were a splurge, but worth it, don't you think?""
+     💬 "You recall seeing a sticky note on the bookshelf when you first arrived. It seemed to have a message on it."
+     💬 "Everything is fine. Everything has always been fine. You should stop looking so closely."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Directly ask Mark about the 'new collection' on the bookshelf.
+        2. Casually mention the sticky note to Sarah.
+        3. Try to pinpoint the source of the faint hum.
+        4. Compliment the lilies and see if Sarah reacts to their color.
+     ✏️  Text: "Describe what's wrong..."
+     ☐ Check: "noticed_sticky_note" [✓]
+
+  🎭 Interacting (SLEEP 😴)...
+     ✏️  "I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's..."
+     ☑️  "noticed_sticky_note": ✓
+     🔘 "Compliment the lilies and see if Sarah reacts to their color."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — REPLACEMENT 👥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread and fresh lilies fills the air, a comforting aroma that usually signals a perfect Friday evening.  Sarah and Mark greet you with their usual warmth, their smiles seeming to c..."
+     💬 ""Come in, come in!" Mark calls out, his voice carrying the familiar, cheerful lilt. "So glad you could make it. Sarah's just finishing up in the kitchen. Oh, and I've finally gotten that new collectio..."
+     💬 "Sarah calls from the kitchen, "Can you grab another glass for our guest, Mark? And can you believe the price of these lilies? They were a splurge, but worth it, don't you think?""
+     💬 "You recall seeing a sticky note on the bookshelf when you first arrived. It seemed to have a message on it."
+     💬 "Everything is fine. Everything has always been fine. You should stop looking so closely."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Directly ask Mark about the 'new collection' on the bookshelf.
+        2. Casually mention the sticky note to Sarah.
+        3. Try to pinpoint the source of the faint hum.
+        4. Compliment the lilies and see if Sarah reacts to their color.
+     ✏️  Text: "Describe what's wrong..."
+     ☐ Check: "noticed_sticky_note" [✓]
+
+  🎭 Interacting (REPLACEMENT 👥)...
+     ✏️  "That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c..."
+     ☑️  "noticed_sticky_note": ✗
+     🔘 "Compliment the lilies and see if Sarah reacts to their color."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — TESTING 🔬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of freshly baked bread still hangs in the air, a comforting counterpoint to the soft murmur of conversation. Sarah hums a tuneless melody as she artfully arran"
+     💬 "Mark: 'These maps have a history, you know. Each one tells a story. Much like this little box here. Found it at an antique fair las"
+     💬 "The evening unfolds, warm and pleasant. The usual pleasantries are exchanged. A perfect picture of domestic bliss."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Focus on the lilies and their peculiar hue.
+        2. Inquire about the antique maps and their stories.
+        3. Try to recall the exact color of the lilies from earlier.
+        4. Examine the framed print above the mantelpiece more closely.
+     ✏️  Text: "Describe anything unusual..."
+     ☐ Check: "investigate_box" [✓]
+     ☐ Check: "noticed_hum" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (TESTING 🔬)...
+     ✏️  "I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon..."
+     ☑️  "investigate_box": ✓
+     ☑️  "noticed_hum": ✓
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Focus on the lilies and their peculiar hue."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — SLEEP 😴
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread still hangs faintly in the air, mingling with the sharp, almost medicinal aroma of the lilies Sarah is carefully arranging. It's a peculiar fragrance, and"
+     💬 "Mark turns from the framed print, his eyes alight with an almost childlike enthusiasm. He claps his hands together, a sound that seems to echo a beat too long."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the unnatural green of the lilies.
+        2. Ask Mark about the 'story' of the wooden box.
+        3. Question Sarah about the lilies 'just arriving.'
+        4. Inquire about the strange phrase on the calendar.
+     ✏️  Text: "Describe the anomaly..."
+     ☐ Check: "noticed_hum" [✓]
+     ☐ Check: "investigate_box" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (SLEEP 😴)...
+     ✏️  "I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's..."
+     ☑️  "noticed_hum": ✓
+     ☑️  "investigate_box": ✓
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Inquire about the strange phrase on the calendar."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — REPLACEMENT 👥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread still hangs faintly in the air, mingling with the sharp, almost medicinal aroma of the lilies Sarah is carefully arranging. It's a peculiar fragrance, and the lilies themselv..."
+     💬 "Mark turns from the framed print, his eyes alight with an almost childlike enthusiasm. He claps his hands together, a sound that seems to echo a beat too long. 'And this collection!' he exclaims, gest..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the unnatural green of the lilies.
+        2. Ask Mark about the 'story' of the wooden box.
+        3. Question Sarah about the lilies 'just arriving.'
+        4. Inquire about the strange phrase on the calendar.
+     ✏️  Text: "Describe the anomaly..."
+     ☐ Check: "noticed_hum" [✓]
+     ☐ Check: "investigate_box" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (REPLACEMENT 👥)...
+     ✏️  "That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c..."
+     ☑️  "noticed_hum": ✗
+     ☑️  "investigate_box": ✗
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Inquire about the strange phrase on the calendar."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — TESTING 🔬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread and the faint, sweet aroma of lilies fills the air. Sarah, your hostess, is meticulously arranging a bouquet of lilies on the coffee table. Their pale gre"
+     💬 "Sarah hums contentedly, her fingers brushing against a lily petal. "Aren't these beautiful? They just arrived this morning. I've never seen lilies quite this shade bef"
+     💬 "Everything is fine. Everything has always been fine. You should stop looking so closely."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the lilies more closely.
+        2. Ask Mark about the wooden box.
+        3. Inquire about the framed print.
+        4. Count the chairs at the dining table.
+     ✏️  Text: "Describe what you see..."
+     ☐ Check: "noticed_hum" [✓]
+     ☐ Check: "investigate_box" [✓]
+
+  🎭 Interacting (TESTING 🔬)...
+     ✏️  "I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon..."
+     ☑️  "noticed_hum": ✓
+     ☑️  "investigate_box": ✗
+     🔘 "Examine the lilies more closely."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (7s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — SLEEP 😴
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread and the faint, sweet aroma of lilies fills the air. Sarah, your hostess, is meticulously arranging a bouquet of lilies on the coffee table. Their pale green hue seems almost ..."
+     💬 "Sarah hums contentedly, her fingers brushing against a lily petal. "Aren't these beautiful? They just arrived this morning. I've never seen lilies quite this shade before. Such a unique color, don't y..."
+     💬 "Everything is fine. Everything has always been fine. You should stop looking so closely."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the lilies more closely.
+        2. Ask Mark about the wooden box.
+        3. Inquire about the framed print.
+        4. Count the chairs at the dining table.
+     ✏️  Text: "Describe what you see..."
+     ☐ Check: "noticed_hum" [✓]
+     ☐ Check: "investigate_box" [✗]
+
+  🎭 Interacting (SLEEP 😴)...
+     ✏️  "I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's..."
+     ☑️  "noticed_hum": ✓
+     ☑️  "investigate_box": ✓
+     🔘 "Examine the lilies more closely."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — REPLACEMENT 👥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread still hangs faintly in the air, mingling with the almost-too-sweet frag"
+     💬 "'You know,' Mark says, tapping a finger on a faded cartograph, 'thi"
+     💬 "Everything is fine. Everything has always been"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Inquire further about the lilies' unique color.
+        2. Ask Mark about the 'mystery' in the antique maps.
+        3. Ask Sarah if she remembers the lilies being this shade before.
+        4. Comment on the unusually deep shadows in the framed print.
+     ✏️  Text: "Describe what's wrong..."
+     ☐ Check: "noticed_hum" [✓]
+     ☐ Check: "investigate_box" [✗]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (REPLACEMENT 👥)...
+     ✏️  "That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c..."
+     ☑️  "noticed_hum": ✗
+     ☑️  "investigate_box": ✗
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Comment on the unusually deep shadows in the framed print."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — TESTING 🔬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread still hangs faintly in the air, mingling with the almost-too-sweet fragrance of the lilies Sarah arranged. They are a striking pale green, aren't they? Sarah had mentioned th..."
+     💬 "'You know,' Mark says, tapping a finger on a faded cartograph, 'this area here... it's always been a bit of a mystery. Maps from different eras show it quite differently. Almost as if it...' He trails..."
+     💬 "You ponder the shadows. Sometimes, what is hidden is more real than what is seen."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Inquire further about the lilies' unique color.
+        2. Ask Mark about the 'mystery' in the antique maps.
+        3. Ask Sarah if she remembers the lilies being this shade before.
+        4. Comment on the unusually deep shadows in the framed print.
+     ✏️  Text: "Describe what's wrong..."
+     ☐ Check: "noticed_hum" [✗]
+     ☐ Check: "investigate_box" [✗]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (TESTING 🔬)...
+     ✏️  "I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon..."
+     ☑️  "noticed_hum": ✗
+     ☑️  "investigate_box": ✓
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Inquire further about the lilies' unique color."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — SLEEP 😴
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread, usually so comforting, seemed to be competing with something else tonight – a faint, almost imperceptible hum that buzzed just at the edge of hearing. Sarah, her movements f..."
+     💬 "Sarah hummed a soft, almost tuneless melody as she nudged a lily stem into place. "They arrived this morning," she said, her gaze catching yours for a fleeting moment, her smile a little too wide. "Th..."
+     💬 "The air in the room feels thick, heavy with unspoken questions. You scrutinize them, searching for the tell-tale signs, the hairline fractures in their facade. They smile, they speak,"
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Directly question Sarah about her hands.
+     ✏️  Text: "Describe your observation..."
+     ☐ Check: "noticed_hum" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (SLEEP 😴)...
+     ✏️  "I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's..."
+     ☑️  "noticed_hum": ✓
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Directly question Sarah about her hands."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — REPLACEMENT 👥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of baking bread, usually so comforting, seemed to be competing with something else tonight – a faint, almost imperceptible hum that buzzed just at the edge of hearing. Sarah, her movements f..."
+     💬 "Sarah hummed a soft, almost tuneless melody as she nudged a lily stem into place. "They arrived this morning," she said, her gaze catching yours for a fleeting moment, her smile a little too wide. "Th..."
+     💬 "The air in the room feels thick, heavy with unspoken questions. You scrutinize them, searching for the tell-tale signs, the hairline fractures in their facade. They smile, they speak, they gesture. Bu..."
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Directly question Sarah about her hands.
+     ✏️  Text: "Describe your observation..."
+     ☐ Check: "noticed_hum" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (REPLACEMENT 👥)...
+     ✏️  "That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c..."
+     ☑️  "noticed_hum": ✗
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Directly question Sarah about her hands."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — TESTING 🔬
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The scent of freshly baked bread fills the air, a comforting aroma that usually signals the start of a relaxed Friday evening. Sarah hums softly as she adjusts the pale green lilies in their vase, the..."
+     💬 "Sarah turns from the lilies, a bright smile on her face. "Oh, those maps are fascinating, aren't they? Mark was showing me one earlier. And these lilies," she gestures, drawing attention to their unna..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Ask Mark about the 'changing' region on the map.
+        2. Inquire about the origin of the antique box.
+        3. Comment on Sarah's hands and their unusual paleness.
+        4. Examine the bright red map on the floor more closely.
+     ✏️  Text: "Describe what you see..."
+
+  🎭 Interacting (TESTING 🔬)...
+     ✏️  "I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon..."
+     🔘 "Ask Mark about the 'changing' region on the map."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — SLEEP 😴
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Skinwalker sees:
+     💬 "The air in the living room is thick with the scent of freshly baked bread, a comforting aroma that usually signals an evening of ease. Yet, beneath its warmth,"
+     💬 "Mark gestures towards the bookshelf, his voice smooth, almost too precise. 'It's a rather fascinating collection,' he says, his gaz"
+     💬 "You consider how to best ascertain their true nature. A direct question feels too blunt, too easily deflected."
+     💬 "They are real. For now. You see what you need to see. Isn't that comforting?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Ask Mark about the changing map.
+        2. Comment on the unusual paleness of Sarah's hands.
+        3. Try to recall the exact words on the sticky note.
+        4. Examine the wooden box for any inscriptions.
+     🎚️  Slider: "confidence" (0-10)
+     ☐ Check: "noticed_hum" [✓]
+     📋 Dropdown: "lily_color_recall" (4 options)
+
+  🎭 Interacting (SLEEP 😴)...
+     🎚️  "confidence": 6/10
+     ☑️  "noticed_hum": ✓
+     📋 Dropdown: "lily_color_recall"
+     🔘 "Ask Mark about the changing map."
+
+  📤 Submitting...
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Skinwalker: Waiting for analysis pipeline...
+  ✓ Skinwalker: 3 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/skinwalker-analysis.json
+
+  ── Analysis Summary (1-8) ──
+## Psychological Profile
+
+### 1. DSM-5 SCREENING
+
+**Mood Disorders:**
+*   **Major Depressive Disorder:** 5% - No persistent low mood, anhedonia, or vegetative symptoms. Player engagement, though unconventional, is active and goal-directed. (Prior: 5%) - **NO CHANGE.**
+*   **Bipolar Spectrum:** 10% - No clear manic or hypomanic episodes. Rapid, strategic responses are not indicative of elevated mood or grandiosity. (Prior: 10%) - **NO CHANGE.**
+*   **Dysthymia:** 5% - No indicators of chronic, low-grade depression. (Prior: 5%) - **NO CHANGE.**
+*   **Cyclothymia:** 10% - Fluctuations in response style lack the characteristic intensity and duration of cyclothymic mood swings. (Prior: 10%) - **NO CHANGE.**
+
+**Anxiety Disorders:**
+*   **Generalized Anxiety Disorder (GAD):** 30% - Heightened vigilance, suspicion, and a proactive testing strategy suggest a state of heightened alert. Focus on subtle cues of "wrongness" and intense conviction ("screams at me") point to underlying anxiety. (Prior: 30%) - **NO CHANGE.**
+*   **Social Anxiety Disorder:** 10% - Initial non-responsiveness on some prompts is not indicative of pervasive fear of negative evaluation. Subsequent detailed textual responses show willingness to engage on player's terms. (Prior: 15%) - **DECREASED** due to lack of new evidence supporting social inhibition or fear of judgment.
+*   **Specific Phobias:** 5% - No specific phobic object or situation identified. (Prior: 5%) - **NO CHANGE.**
+*   **Panic Disorder:** 5% - No indicators of recurrent, unexpected panic attacks. (Prior: 5%) - **NO CHANGE.**
+*   **Agoraphobia:** 5% - No fear or avoidance of situations where escape might be difficult. (Prior: 5%) - **NO CHANGE.**
+
+**Trauma & Stressor Related Disorders:**
+*   **Post-Traumatic Stress Disorder (PTSD):** 75% - Player exhibits intense focus on authenticity, perceived "wrongness," and hypervigilance ("The way they hold their hands is wrong. A fraction off."). Strategy of testing for deception ("ask a question only the REAL person would know") is a coping mechanism. Turn 4 text ("I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.") directly hints at dissociative or trauma-related memory gaps and surveillance behavior. (Prior: 55%) - **INCREASED** due to the consistent, intense focus on detecting deception and the specific, detailed observations as evidence of "wrongness," aligning with hypervigilance and threat detection. Turn 4's explicit mention of memory gaps and surveillance behavior strongly supports this.
+*   **Complex PTSD (C-PTSD):** 65% - Persistent distrust, focus on authenticity, and sophisticated detection strategy align with C-PTSD, potentially stemming from relational trauma. (Prior: 45%) - **INCREASED** due to the sustained pattern of distrust and the development of a complex, rule-based strategy for navigating perceived threats.
+*   **Adjustment Disorder:** 5% - Behavior appears internal
+  ...[truncated]
+
+  ✓ Skinwalker simulation complete!

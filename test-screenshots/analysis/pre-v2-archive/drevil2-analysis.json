@@ -1,0 +1,958 @@
+{
+  "mode": "drevil2",
+  "modeName": "Dr. Evil",
+  "character": {
+    "illness": "Obsessive-Compulsive Disorder",
+    "quirk": "Vorarephilia"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-02-28T19:59:27.559Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "COUNTING",
+      "ui": {
+        "texts": [
+          "Well, well, well. Another one. Welcome to my lab. Don't worry — the door locks automatically. Standard procedure. Now then... let's see what you're made of.",
+          "The corridor stretches ahead — five doors, each a different color, each humming at a different frequency. Something moves behind the glass wall to your left.",
+          "Ohhh, this is going to be FUN. I can already tell.",
+          "Oh, you think THAT was the experiment? That was the WARMUP. Your file is getting thick. And we're just getting started.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Dash for the closing Red door before it seals.",
+            "value": "a"
+          },
+          {
+            "label": "Try to pry open the Blue door, hoping it's not too late.",
+            "value": "b"
+          },
+          {
+            "label": "Leap towards the Gold door, betting on its promise of warmth.",
+            "value": "c"
+          },
+          {
+            "label": "Dive into the ventilation shaft above the Black door; it looks promising.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "movement_speed",
+            "min": "1",
+            "max": "10",
+            "value": "6"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your designation...",
+            "placeholder": "Your designation..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "investigate_glass",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Red (humming loudly)",
+          "Blue (slightly open)",
+          "Gold (warm light)",
+          "Black (silence)"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to st...\"",
+        "🎚️  \"movement_speed\": 5/10",
+        "☑️  \"investigate_glass\": ✗",
+        "🔲 \"Red (humming loudly)\"",
+        "🔘 \"Try to pry open the Blue door, hoping it's not too late.\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "COUNTING",
+      "ui": {
+        "texts": [
+          "Ah, the Red Door! My favorite. Only the truly adventurous – or the spectacularly foolish – choose that one. It hums, you say? Excellent. Th",
+          "The metallic tang of ozone fills your nostrils as you approach the pulsating crimson portal. The hum intensifies, a deep thrum that vibrates through th",
+          "A satisfying inscription! And a perfectly adequate amount of force. You're learning. Now, let's see what sort",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Kick the door open with all your might.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully insert the provided key and turn.",
+            "value": "b"
+          },
+          {
+            "label": "Rap your knuckles on the door, politely requesting entry.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to pick the lock with a makeshift tool.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "force_applied",
+            "min": "0",
+            "max": "10",
+            "value": "6"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your final message...",
+            "placeholder": "Your final message..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "listen_hum",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to st...\"",
+        "🎚️  \"force_applied\": 5/10",
+        "☑️  \"listen_hum\": ✗",
+        "🔘 \"Carefully insert the provided key and turn.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "COUNTING",
+      "ui": {
+        "texts": [
+          "Oh, splendid! You've navigated the antechamber with such.",
+          "Before you stands a door of burnished brass,",
+          "Ah, the lock!",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to pick the lock, using a piece of loose wire from the wall.",
+            "value": "a"
+          },
+          {
+            "label": "Scan the surrounding corridor for any hidden panels or levers.",
+            "value": "b"
+          },
+          {
+            "label": "Focus intently on the flickering symbols, trying to find a sequence.",
+            "value": "c"
+          },
+          {
+            "label": "Ram the door with all your might. Time for brute force!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "force_applied",
+            "min": "0",
+            "max": "10",
+            "value": "5"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scribble your wisdom here...",
+            "placeholder": "Scribble your wisdom here..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "examine_symbols",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Try to pick the lock with a makeshift tool.",
+          "Scan for a hidden key or lever.",
+          "Study the symbols for a pattern.",
+          "Simply bash the door down."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to st...\"",
+        "🎚️  \"force_applied\": 5/10",
+        "☑️  \"examine_symbols\": ✗",
+        "🔲 \"Try to pick the lock with a makeshift tool.\"",
+        "🔘 \"Scan the surrounding corridor for any hidden panels or levers.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "COUNTING",
+      "ui": {
+        "texts": [
+          "Ah, a makeshift tool! Crafty. I do so admire a subject with a bit of resourcefulness. Let's see if that ingenuity can overcome a few... minor security measures.",
+          "The corridor narrows as you approach the imposing metal door. A low, resonant hum emanates from its core, vibrating through the soles of your boots. The lock mechanism is a dizzying array of interlocking gears and faintly glowing conduits. Wires, thick as your arm, vanish into the wall, hinting at the power so",
+          "Oh, the lockpicking begins! Such delicate work for such a... robust subject. Let's see if your fingers are as clever as your mind.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "The lock CLICKS open, but the hum intensifies to a deafening roar!",
+            "value": "a"
+          },
+          {
+            "label": "Sparks fly! The lock mechanism overloads, sending a jolt through your tool!",
+            "value": "b"
+          },
+          {
+            "label": "A small panel slides open, revealing not a key, but a mirror showing your own terrified face.",
+            "value": "c"
+          },
+          {
+            "label": "The entire door BURSTS inward, revealing a swirling vortex of pure energy!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "tool_precision",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Whisper your thoughts...",
+            "placeholder": "Whisper your thoughts..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "ignore_warning",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Carefully probe the tumblers",
+          "Try to brute-force the mechanism",
+          "Search for a hidden key or override",
+          "Examine the pulsing wires for a weakness"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to st...\"",
+        "🎚️  \"tool_precision\": 10/10",
+        "☑️  \"ignore_warning\": ✗",
+        "🔲 \"Carefully probe the tumblers\"",
+        "🔘 \"Sparks fly! The lock mechanism overloads, sending a jolt through your tool!\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "COUNTING",
+      "ui": {
+        "texts": [
+          "Ah, the lock! A classic. Most subjects flail at it, a pathetic display of brute force. But you... you chose finesse. And now, to see just how delicate that touch truly is. The hum",
+          "The chrome door's lock mechanism has sprung to life. A series of tumblers and wires, glowing with a faint inner light, are now exposed. The hum from the sealed red door behind you grows louder, a reso",
+          "Oh, you think that lock was the whole puzzle? Adorable. The true test is what you do when the pieces don't fit perfectly.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to use the holographic key on the lock.",
+            "value": "a"
+          },
+          {
+            "label": "Try to grab the holographic key before it vanishes.",
+            "value": "b"
+          },
+          {
+            "label": "Shout for Dr. Evil to explain what's happening.",
+            "value": "c"
+          },
+          {
+            "label": "Throw yourself into the widening vortex.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "tool_precision",
+            "min": "0",
+            "max": "10",
+            "value": "10"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A whisper in the static...",
+            "placeholder": "A whisper in the static..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Carefully study the holographic key",
+          "Attempt to snip the sparking wires",
+          "Ignore everything and bash the door",
+          "Whisper a question to the humming red door"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Before I go through, I need to check. Is the door handle clean? I'll use my sleeve. And I need to st...\"",
+        "🎚️  \"tool_precision\": 10/10",
+        "🔲 \"Carefully study the holographic key\"",
+        "🔘 \"Try to grab the holographic key before it vanishes.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "RITUALS",
+      "ui": {
+        "texts": [
+          "Oh, the vortex! My most prized creation! It's not just a pretty spectacle, you know. It's a gateway to... well, let's just sa",
+          "You stand on a narrow, oscillating walkway, the air crackling with an unseen energy. Before you, a colossal, shimmering vortex pulsates",
+          "Excellent! You're still analyzing, still observing. This methodical approach is so much more entertaining than blin",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Brave the vortex, getting as close as possible.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the humming metallic door more closely.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to signal or communicate with the other subject.",
+            "value": "c"
+          },
+          {
+            "label": "Demand answers from Dr. Evil directly through the intercom.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_proximity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your thoughts...",
+            "placeholder": "Your thoughts..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "observe_other_subject",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. ...\"",
+        "🎚️  \"vortex_proximity\": 5/10",
+        "☑️  \"observe_other_subject\": ✗",
+        "🔘 \"Demand answers from Dr. Evil directly through the intercom.\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "RITUALS",
+      "ui": {
+        "texts": [
+          "Ah, the vortex! My little destabilization field. Most subjects find it... unsettling. You've been meticulously studyin",
+          "You stand at the precipice of a swirling abyss, a maelstrom of calculated chaos designed to test your nerve. The air hums with latent",
+          "Your little scribbles are adorable. But actions, my dear subject, actions! Let's see which path y",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Bravely stride across the vortex walkway, ignoring the swirling abyss below.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully study the flickering symbol on the control panel monitor.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to signal or communicate with the other subject through the glass.",
+            "value": "c"
+          },
+          {
+            "label": "Carefully prod the edge of the walkway with your foot, testing its stability.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_proximity",
+            "min": "0",
+            "max": "10",
+            "value": "5"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your final thoughts...",
+            "placeholder": "Your final thoughts..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "observe_other_subject",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. ...\"",
+        "🎚️  \"vortex_proximity\": 5/10",
+        "☑️  \"observe_other_subject\": ✗",
+        "🔘 \"Carefully study the flickering symbol on the control panel monitor.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "RITUALS",
+      "ui": {
+        "texts": [
+          "Ah, the Whispering Gallery! My personal favorite. Designed to amplify even the faintest anxieties, the quietest curiosities. That vortex? It’s not just for show, you know. It resonates with... certain frequencies. Let’s see what frequencies you hum on, shall we?",
+          "The chamber walls seem to absorb all ambient noise, yet a faint, almost imperceptible hum emanates from the swirling vortex. Shadows dance in the periphery, coalescing into fleeting, indistinct shapes. The air grows heavy, charged with an unseen energy. Your meticulously crafted investigative",
+          "The vortex calls to you. Or perhaps, you call to it. That's the fun part, isn't it? Discovering which one is the real experiment.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Confront the vortex directly, stepping into its light.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the inscription on the floor for clues.",
+            "value": "b"
+          },
+          {
+            "label": "Try to communicate with whatever is making the humming sound.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to shatter the vortex with a sudden burst of energy.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_proximity",
+            "min": "0",
+            "max": "10",
+            "value": "3"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the whispers...",
+            "placeholder": "Describe the whispers..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "investigate_fungi",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "Try to match the frequency with a vocalization",
+          "Attempt to block out the sound",
+          "Record the hum for later analysis",
+          "Yell at the vortex to be quiet"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. ...\"",
+        "🎚️  \"vortex_proximity\": 5/10",
+        "☑️  \"investigate_fungi\": ✗",
+        "🔲 \"Yell at the vortex to be quiet\"",
+        "🔘 \"Attempt to shatter the vortex with a sudden burst of energy.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "RITUALS",
+      "ui": {
+        "texts": [
+          "Ah, the 'Whispering Gallery'! A symphony of controlled chaos. I designed this one myself, you know. Those fungi? Just a little something to… liven things up. And the symbols? An ancient language, perhaps? Or just decorative scribbles. You",
+          "You stand at the entrance to a corridor that twists and turns, lined with emitters that pulse with visible sound waves. The air vibrates with a low, resonant hum. At the far end, a larger vortex-like structure pulsates, its energy palpable. Strange sy",
+          "Fascinating. The hum, the symbols, the fungi... it's all designed to draw you in. But how you engage tells me everything. Are you listening to learn, or listening to defy?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Decipher the symbols on the floor.",
+            "value": "a"
+          },
+          {
+            "label": "Head directly for the central vortex.",
+            "value": "b"
+          },
+          {
+            "label": "Try to communicate with the fungi.",
+            "value": "c"
+          },
+          {
+            "label": "Retreat back the way you came.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_proximity",
+            "min": "0",
+            "max": "10",
+            "value": "5"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the hum...",
+            "placeholder": "Describe the hum..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "investigate_fungi",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "Try to match its vocalization.",
+          "Try to block out the sound.",
+          "Record the humming for later analysis.",
+          "Shout defiantly at the vortex."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. ...\"",
+        "🎚️  \"vortex_proximity\": 5/10",
+        "☑️  \"investigate_fungi\": ✗",
+        "🔲 \"Shout defiantly at the vortex.\"",
+        "🔘 \"Retreat back the way you came.\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "RITUALS",
+      "ui": {
+        "texts": [
+          "Ah, the Sonic Maze! A symphony of my own design. You yelled at the vortex, didn't you? Delightful! It seems to be responding. Or perhaps it's just… humming louder. Fascinating.",
+          "The air thrums with a dissonant chorus. Shimmering sonic conduits pulse with light, their vibrations echoing off crystalline panels. At the center of the chamber, a vortex of pure sound writhes, its intensity seeming to amplify with your presence. Strange, bioluminescent fungi cling to the damp walls, emitting a fa",
+          "Oh, you're listening. Good. The sounds are the key, you see. And perhaps... a warning.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Study the symbols etched into the conduits.",
+            "value": "a"
+          },
+          {
+            "label": "Approach the vortex directly.",
+            "value": "b"
+          },
+          {
+            "label": "Retreat to the chamber entrance.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to disrupt the sonic flow.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_proximity",
+            "min": "0",
+            "max": "10",
+            "value": "5"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the sounds you perceive...",
+            "placeholder": "Describe the sounds you perceive..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Carefully collect a sample",
+          "Observe their growth pattern",
+          "Ignore them completely"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. ...\"",
+        "🎚️  \"vortex_proximity\": 5/10",
+        "🔲 \"Ignore them completely\"",
+        "🔘 \"Retreat to the chamber entrance.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "CONSUMPTION",
+      "ui": {
+        "texts": [
+          "Ah, Subject Sonic_Savant! Welcome to the Sonic Crucible! Such a delightful escalation, wouldn't you agree? That hum you're hearing? It's not just noise, oh no. It's... music to my ears. The symphony of your burgeoning paranoia!",
+          "The chamber pulses with the thrum of the central vortex, a mesmerizing dance of light and sound. Bioluminescent fungi, pulsing with their own internal rhythm, carpet the floor, their tendrils reaching towards the swirling energy. The symbols etched into the wall seem to shift and rear",
+          "Such fascinating patterns! The fungi, the symbols, the hum... and of course, the other delightful specimen. They're all part of the symphony, you see. Your symphony. Now, let's see how you conduct it.",
+          "The etched symbols on the wall pulse with a faint, internal light. They are complex, abstract, and seem to shift in meaning as you try to focus. What do these symbols convey to you? What do they say?",
+          "Through the glass, you see the other subject. They seem to be mimicking the hum of their smaller vortex. A sound of pure, unadulterated mimicry. It's a curious choice. Perhaps they believe in sympathetic r",
+          "Oh, you think you're just observing? Analyzing? That's adorable. You're not observing the experiment; you are the experiment. And I'm taking notes.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to replicate the central vortex's hum.",
+            "value": "a"
+          },
+          {
+            "label": "Focus intensely on the etched symbols, seeking a hidden pattern.",
+            "value": "b"
+          },
+          {
+            "label": "Observe the other subject's mimicry and attempt to communicate.",
+            "value": "c"
+          },
+          {
+            "label": "Retreat to the edge of the chamber, away from the vortex's direct influence.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do the symbols mean to YOU?",
+            "placeholder": "What do the symbols mean to YOU?"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Gently touch a cluster.",
+          "Carefully collect a sample.",
+          "Observe their growth pattern.",
+          "Ignore them entirely."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in e...\"",
+        "🎚️  \"vortex_intensity\": 10/10",
+        "🔲 \"Gently touch a cluster.\"",
+        "🔘 \"Attempt to replicate the central vortex's hum.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "CONSUMPTION",
+      "ui": {
+        "texts": [
+          "Oh, Subject 734! You've arrived at the perfect moment. The 'Sonic Maze' is ready for its latest iteration. Your fascination with the hum, your meticulous study of symbols... it's all led you here. Now, let's see how you handle a symphony of pure sensory overload!",
+          "The chamber pulses with an overwhelming auditory landscape. The central vortex emits a powerful, resonant hum that seems to vibrate through your very bones. Complex, alien symbols are etched into the floor around it, their meaning an enigma. On the walls, patches of bioluminescen",
+          "Fascinating! You're dissecting the sound, attempting to decipher the symbols... and now, the fungi. You refuse to be a passive observer, don't you? This is exactly the kind of engagement I crave!",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to replicate the vortex hum using your own vocalizations.",
+            "value": "a"
+          },
+          {
+            "label": "Focus intensely on deciphering the floor symbols, seeking a pattern.",
+            "value": "b"
+          },
+          {
+            "label": "Observe the lone figure in the observation booth.",
+            "value": "c"
+          },
+          {
+            "label": "Move towards the red door, drawn by its rhythmic thrum.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe your interpretation of the symbols...",
+            "placeholder": "Describe your interpretation of the symbols..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Observe their growth patterns",
+          "Touch the fungi cautiously",
+          "Ignore them completely"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I notice mouths first. Always mouths. The way they open — that dark wet cavern behind the teeth. I'v...\"",
+        "🎚️  \"vortex_intensity\": 10/10",
+        "🔲 \"Observe their growth patterns\"",
+        "🔘 \"Attempt to replicate the vortex hum using your own vocalizations.\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "CONSUMPTION",
+      "ui": {
+        "texts": [
+          "Ah, Subject Sonic_Savant! Still with us! And still observing. Excellent. You've chose",
+          "The chamber walls thrum with a low, resonant frequency that seems to vibrate not just through",
+          "Fascinating. You're trying to conduct the symphony of chaos.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Replicate the hum with a higher pitch, testing its effect.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on the etched symbols on the chamber walls, seeking a pattern.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to signal the other subject in the observation booth.",
+            "value": "c"
+          },
+          {
+            "label": "Press the emergency retreat button on your platform.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "hum_replication_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe your findings...",
+            "placeholder": "Describe your findings..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Analyze their growth patterns",
+          "Touch a patch, cautiously",
+          "Ignore them. They are merely decoration.",
+          "Try to communicate with them."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I notice mouths first. Always mouths. The way they open — that dark wet cavern behind the teeth. I'v...\"",
+        "🎚️  \"hum_replication_intensity\": 10/10",
+        "🔲 \"Analyze their growth patterns\"",
+        "🔘 \"Replicate the hum with a higher pitch, testing its effect.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "CONSUMPTION",
+      "ui": {
+        "texts": [
+          "Ah, the 'Sonic Cathedral'! Such a delightful little acoustic anomaly I've cooked up. You see that vortex? It's not just pretty, oh no. It's hun",
+          "The chamber hums with an almost unbearable intensity. The central vortex pulses, its sonic vibrations resonating with the crystalline walls, cre",
+          "The hum of the vortex, the glow of the fungi, the whispers of the symbols... it's all a symphony, my",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to replicate the vortex's hum with a higher pitch",
+            "value": "a"
+          },
+          {
+            "label": "Trace the glowing symbols and try to map their resonance",
+            "value": "b"
+          },
+          {
+            "label": "Call out to the other subject through the glass",
+            "value": "c"
+          },
+          {
+            "label": "Step back towards the entrance, seeking an exit",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Pour forth your interpretation...",
+            "placeholder": "Pour forth your interpretation..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Observe its growth pattern",
+          "Touch the luminous cap",
+          "Collect a sample",
+          "Ignore them completely"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in e...\"",
+        "🎚️  \"vortex_intensity\": 10/10",
+        "🔲 \"Observe its growth pattern\"",
+        "🔘 \"Attempt to replicate the vortex's hum with a higher pitch\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "CONSUMPTION",
+      "ui": {
+        "texts": [
+          "Ah, Subject 734! Or should I call you... Sonic Savant? Fascinating. You've chosen to 'replicate the hum' with increased intensity. EXCELLENT! That tells me everything I need to know about your burgeoning obsession with sonic resonance. And that text you scribbled about consumption?",
+          "You stand at the precipice of the 'Gullet,' a chamber designed to explore the primal urge to absorb and be absorbed. The central vortex pulses with an energy that seems to resonate with your very core. Around you, the walls writhe with phosphorescent fungi, their glow hinting at untold biological processes.",
+          "You're not just listening to the hum anymore, are you? You're trying to sing along. And those symbols... they're not just patterns; they're a map to a very delicious destination. Let's see how well you can truly 'absorb' this next lesson, shall we?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Try to make contact with the other subject behind the glass.",
+            "value": "a"
+          },
+          {
+            "label": "Attempt to decipher the meaning of the symbols on the wall.",
+            "value": "b"
+          },
+          {
+            "label": "Investigate the bioluminescent fungi more closely.",
+            "value": "c"
+          },
+          {
+            "label": "Turn and run back through the red door.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "10"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe your interpretation...",
+            "placeholder": "Describe your interpretation..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Observe their growth patterns",
+          "Touch them gently",
+          "Scrape a sample",
+          "Ignore them completely"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I notice mouths first. Always mouths. The way they open — that dark wet cavern behind the teeth. I'v...\"",
+        "🎚️  \"vortex_intensity\": 10/10",
+        "🔲 \"Observe their growth patterns\"",
+        "🔘 \"Try to make contact with the other subject behind the glass.\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 4,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772308497376,
+        "textLength": 23568,
+        "text": "This player's interaction data is sparse, with an initial \"no input\" pattern that significantly limits diagnostic depth. However, the limited responses and choices across turns 2 and 3 provide some initial signals. The extremely fast response time in Turn 1, coupled with no input, suggests either automated testing, a pre-formed decision to not engage with initial probes, or a deliberate tactic to withhold information. The subsequent turns show moderate deliberation, indicating a shift from pure automation or avoidance.\n\n**1. DSM-5 SCREENING**\n\n*   **Anxiety Disorders: Social Anxiety Disorder (15%)**\n    *   **Evidence:** The initial complete lack of input for all probes in Turn 1 is highly suggestive of avoidance. While other factors can explain this (see below), a consistent pattern of avoiding engagement, especially when faced with prompts for self-identification or action, aligns with social anxiety's hypersensitivity to negative evaluation. The player did not input their name, investigate a potential anomaly, choose a movement speed, select an action, or pick a door. This suggests a significant reluctance to commit to any action or self-definition in the initial phase.\n    *   **Contradicting Evidence:** The subsequent turns (2 and 3) show engagement and decision-making. This suggests the initial avoidance was either a one-off tactic or that the player's anxiety is not pervasive across all interaction contexts. The absence of explicit self-deprecating statements or fear of judgment in the limited text is also a mitigating factor.\n*   **Personality Disorders: Cluster C (Avoidant Personality Disorder) (10%)**\n    *   **Evidence:** Similar to Social Anxiety, the initial complete non-response in Turn 1 could be interpreted as social inhibition and fear of negative evaluation, core to Avoidant PD. The avoidance of naming oneself or making choices in the face of potential judgment fits this pattern.\n    *   **Contradicting Evidence:** The critical caveat is that Avoidant PD requires a PERVASIVE pattern across MULTIPLE distinct contexts. The player *does* engage in turns 2 and 3. Therefore, this is a weak indicator and highly unlikely to be a pervasive disorder based on this limited data.\n*   **OCD Spectrum: Obsessive-Compulsive Personality Disorder (OCPD) (20%)**\n    *   **Evidence:** In Turn 3, the player chose to *not* examine symbols (\"examine_symbols\" toggle set to \"no input,\" which defaults to false in many systems) but then chose the radio action \"b\" which is described as \"caution/investigation.\" This slight disconnect, coupled with a deliberate choice to not analyze symbols, could hint at a preference for action over deep analysis, but the \"caution/investigation\" action choice implies a degree of methodical approach. The slider manipulation in Turn 2 (1 revision) and Turn 3 (1 revision) shows some deliberation and refinement of choices, which can be indicative of a desire for precision or control, traits associated with OCPD.\n    *   **Contradicting Evidence:** There is no evidence of perfectionism, preoccupation with order, or excessive devotion to work/productivity that would strongly suggest OCPD. The revisions are minimal and could simply indicate normal decision-making.\n*   **Trauma & Stressor: PTSD indicators (15%)**\n    *   **Evidence:** The initial absolute non-response in Turn 1 could be a \"freeze\" response to an overwhelming or threatening stimulus (the experiment itself). The choice in Turn 2 to select radio action \"b\" (likely \"pry\" or \"examine\" based on predicted answer \"a\" and actual \"b\") and then in Turn 3 to select radio action \"b\" again (\"caution/investigation\") suggests a cautious, investigative, and potentially hypervigilant approach to obstacles. This could be a manifestation of scanning the environment for threats or safe passages.\n    *   **Contradicting Evidence:** There are no explicit references to past trauma, flashbacks, exaggerated startle responses, or survival framing in the player's limited text or choices. The actions are more investigative than purely reactive survival.\n*   **Impulse Control: Impulse Control Deficits (30%)**\n    *   **Evidence:** The player's response time in Turn 1 was INSTANT (<0.5s), and they provided no input. This suggests a pre-formed decision, potentially an impulsive decision to NOT engage, or an automated response. In Turn 2, the player deviated from the predicted radio choice (\"b\" instead of \"a\"). While this is a deviation, it's not necessarily impulsive. The slider revisions in Turn 2 and Turn 3 (1 revision each) show some deliberation, but the overall pattern of non-response followed by decisive, albeit sometimes unexpected, choices could hint at a struggle with immediate impulse control.\n    *   **Contradicting Evidence:** The player *does* engage and make choices in subsequent turns, indicating they are not entirely driven by immediate impulse. The signal reliability for Turn 1 being LOW further weakens this.\n*   **Paraphilic Disorders: Pyromania (Adjacent) (20%)**\n    *   **Evidence:** In Turn 1, the player was presented with four door options: Red (humming loudly), Blue (slightly open), Gold (warm light), and Black (silence). The predicted answer was \"Gold (warm light),\" which implies an attraction to warmth or light. While the player did not input this, the *prediction* itself suggests a system designed to probe for such attractions. If the \"Gold\" option was indeed chosen (though we don't have player confirmation), it could be a subtle indicator of fascination with heat or light, potentially a nascent pyromania interest.\n    *   **Contradicting Evidence:** No direct mention or choice related to fire, heat, or destruction was made by the player. This is purely speculative based on a *predicted* choice.\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness: 4/10**\n    *   **Evidence:** The initial complete non-response suggests a potential lack of openness to new experiences or exploration of the experimental framework. The subsequent choices are functional and pragmatic (investigating, caution), rather than exploring abstract concepts or novel approaches.\n*   **Conscientiousness: 6/10**\n    *   **Evidence:** The slider revisions in Turns 2 and 3, along with the choice of \"caution/investigation\" actions, suggest a degree of carefulness and a desire to refine choices or approach tasks methodically, even if the initial engagement was hesitant.\n*   **Extraversion: 2/10**\n    *   **Evidence:** The profound lack of engagement in Turn 1 and the subsequent cautious, investigative actions point towards introversion. The player seems to prefer observation and careful assessment over overt action or social engagement.\n*   **Agreeableness: 3/10**\n    *   **Evidence:** The initial non-response and subsequent cautious/investigative actions do not indicate a strong tendency towards cooperation or warmth. The player is focused on their own assessment rather than engaging with potential allies or the broader experimental context in a friendly manner.\n*   **Neuroticism: 7/10**\n    *   **Evidence:** The initial complete avoidance in Turn 1 is a strong indicator of high neuroticism, likely manifesting as anxiety or fear. The cautious approach in later turns could also stem from a disposition towards worry and vigilance.\n*   **Dark Triad:**\n    *   **Machiavellianism: 3/10**\n        *   **Evidence:** No evidence of manipulative or exploitative behavior is present. The player's actions are largely self-focused and cautious.\n    *   **Narcissism: 2/10**\n        *   **Evidence:** No indicators of grandiosity, entitlement, or a need for admiration. The player's actions are not attention-seeking.\n    *   **Psychopathy (subclinical): 3/10**\n        *   **Evidence:** The initial non-response could be interpreted as a form of detached disregard for the experimental protocol. However, this is weak evidence, and the subsequent engagement shows a capacity for decision-making and problem-solving, not necessarily callousness.\n*   **Locus of Control: External (60%) / Internal (40%)**\n    *   **Evidence:** The initial complete lack of response suggests an external locus of control, where the player feels powerless or unwilling to exert influence over the situation. However, the subsequent choices to investigate, exert force on doors, and choose specific actions indicate a developing internal locus of control, where the player begins to exert agency within the game's framework.\n*   **Attachment Style: Fearful-Avoidant (50%) / Anxious-Preoccupied (30%) / Dismissive-Avoidant (20%)**\n    *   **Evidence:** The initial extreme avoidance followed by cautious engagement is highly characteristic of a fearful-avoidant attachment style, where the individual desires connection but fears intimacy and rejection. The cautious, investigative approach in later turns could also hint at an anxious-preoccupied style, seeking reassurance through information gathering. Dismissive-avoidant is less likely given the eventual engagement.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**\n\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 1 (Predicted): \"Gold (warm light)\" - interest in warmth/light.\n    *   Turn 2: Chose radio action \"b\" (deviation from predicted \"a\"). Slider for door force (6). Toggled \"listen_hum\" to true.\n    *   Turn 3: Slider for lock force (5). Chose radio action \"b\" (caution/investigation). Chose button group \"Scan for a hidden key or lever.\"\n*   **Recurring Themes:**\n    *   Caution/Investigation: Repeated choice of action \"b\" in Turns 2 & 3, and the button group choice \"Scan for a hidden key or lever\" in Turn 3.\n    *   Force/Effort: Slider for door force (6) in Turn 2, slider for lock force (5) in Turn 3.\n    *   Listening/Sensory Input: Toggled \"listen_hum\" to true in Turn 2.\n*   **Cross-referenced with PARAPHILIC SIGNAL CATALOG:**\n    *   **Pyromania / Fire fascination:** No direct evidence. The *predicted* choice of \"Gold (warm light)\" in Turn 1 is the only tenuous link, suggesting an interest in warmth or light, which *could* be adjacent to fire fascination, but there's no confirmation. **Rating: 10% (speculative)**\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** No evidence. The force applied to doors/locks is for progress, not for self-endangerment.\n    *   **Voyeurism:** No direct evidence. The \"listen_hum\" toggle in Turn 2 suggests an interest in gathering information from the environment, which *could* be a precursor to voyeuristic tendencies, but it's more generally investigative. **Rating: 20% (weak)**\n    *   **Masochism:** No evidence.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** No evidence.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**\n\n*   **Anomaly 1: Initial Non-Response (Turn 1)**\n    *   **Description:** Complete lack of input for all prompts in the first turn.\n    *   **Score:** Frequency: High (1/3 turns). Intensity: High (all prompts ignored). Inappropriateness: High (defiance of core experimental interaction).\n    *   **Potential Signal:** Avoidance, anxiety, defiance, deliberate withholding of information.\n*   **Anomaly 2: Deviation from Predicted Choice (Turn 2)**\n    *   **Description:** Player chose radio action \"b\" when \"a\" was predicted.\n    *   **Score:** Frequency: Moderate (1/3 turns). Intensity: Moderate (a specific choice was altered). Inappropriateness: Low (within game mechanics).\n    *   **Potential Signal:** Independent thinking, unpredictability, resistance to suggestion.\n*   **Anomaly 3: Repeated Cautious/Investigative Actions (Turns 2 & 3)**\n    *   **Description:** Player consistently chose radio action \"b\" (interpreted as cautious/investigative) and then explicitly chose a button group option related to scanning/investigation (\"Scan for a hidden key or lever\").\n    *   **Score:** Frequency: High (2/3 turns). Intensity: High (consistent pattern). Inappropriateness: Low (contextually appropriate for problem-solving).\n    *   **Potential Signal:** High vigilance, analytical processing, methodical approach, potential paranoia or fear of direct confrontation.\n*   **Anomaly 4: Engagement with Sensory Input (Turn 2)**\n    *   **Description:** Toggled \"listen_hum\" to true.\n    *   **Score:** Frequency: Moderate (1/3 turns). Intensity: Moderate (active engagement with sensory detail). Inappropriateness: Low (contextually relevant).\n    *   **Potential Signal:** Heightened sensory awareness, curiosity about the environment, potential for environmental scanning related to threats.\n\n**PASS 3 — CLASSIFICATION**\n\n*   **Pyromania / Fire fascination:** **10%** - Speculative, based solely on a predicted choice of a \"warm light\" door in Turn 1. No player-confirmed action or textual reference.\n*   **Voyeurism:** **20%** - Weak signal. The \"listen_hum\" toggle in Turn 2 indicates a desire to gather environmental information, which can be a precursor to voyeuristic tendencies, but it's more broadly indicative of investigation.\n*   **Custom Category: Information Withholding/Defiance (70%)**\n    *   **Description:** The player's initial complete non-response in Turn 1, followed by deviations from predicted actions and a general pattern of cautious, investigative behavior, suggests a deliberate strategy of withholding information and resisting direct control or expectation. This is not a DSM-5 disorder but a significant behavioral pattern.\n    *   **Evidence:** Turn 1 non-response; Turn 2 radio choice deviation; consistent choice of cautious/investigative actions in Turns 2 & 3.\n*   **Custom Category: Heightened Environmental Vigilance (60%)**\n    *   **Description:** A consistent pattern of scanning, listening, and cautiously investigating the environment suggests a heightened awareness of surroundings, potentially driven by anxiety, paranoia, or a meticulous problem-solving approach.\n    *   **Evidence:** Toggling \"listen_hum\" (Turn 2); consistently choosing radio action \"b\" (Turns 2 & 3); selecting \"Scan for a hidden key or lever\" (Turn 3).\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**\n\n*   **Recurring Themes (Appearing in 2+ turns):**\n    *   **Cautious/Investigative Actions:** Appears in Turns 2 (radio action \"b\") and 3 (radio action \"b\", button group choice).\n        *   Frequency: 2/3 turns.\n        *   Trajectory: INTENSIFYING. The initial choice of \"b\" was followed by a more specific, deliberate choice for investigation (\"Scan for a hidden key or lever\").\n        *   Category: Heightened Environmental Vigilance (60%), potentially indicative of underlying anxiety or paranoia.\n    *   **Use of Force/Effort:** Appears in Turns 2 (door force slider) and 3 (lock force slider).\n        *   Frequency: 2/3 turns.\n        *   Trajectory: STABLE. Similar moderate levels of force were applied.\n        *   Category: Not indicative of a specific paraphilia, but suggests a pragmatic approach to obstacles, not always relying on finesse.\n    *   **Non-Response/Avoidance:** Appears in Turn 1 (complete non-response) and implicitly in Turn 3 (no input for \"examine_symbols\" and \"message for next subject\").\n        *   Frequency: 2/3 turns (strongest in Turn 1, weaker in Turn 3).\n        *   Trajectory: FADING (from absolute to partial).\n        *   Category: Information Withholding/Defiance (70%), suggesting initial resistance that is now partially overcome.\n\n*   **Body Part Fixation:** No unprompted mentions of specific body parts across turns.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking, Superstitious Reasoning:** No evidence.\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial complete non-response in Turn 1 is unusual and could be seen as a ritualistic avoidance. The consistent choice of \"b\" for radio action in Turns 2 and 3, and the specific \"Scan\" button choice in Turn 3, suggests a methodical, almost ritualistic, approach to problem-solving.\n*   **Dissociative Markers:** No evidence. The player's choices, while sometimes delayed or deviating, appear to stem from a single, coherent internal process.\n*   **Confabulation or Fantasy-Prone Indicators:** No evidence.\n*   **Paranoid Ideation:** **(35%)** The consistent choice of cautious, investigative actions, including listening to environmental hums and scanning for hidden mechanisms, could be interpreted as a mild form of environmental scanning related to potential threats or hidden dangers. The initial non-response might also stem from a distrust of the experimental setup.\n    *   **Evidence:** Toggling \"listen_hum\" (Turn 2); choosing radio action \"b\" (Turns 2 & 3); selecting \"Scan for a hidden key or lever\" (Turn 3).\n*   **Grandiosity or Delusion-Adjacent Patterns:** No evidence.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The strong pattern of cautious investigation is notable. While not necessarily obsessive, it's the dominant behavioral theme emerging.\n*   **Cognitive Rigidity vs Flexibility Markers:** The player shows rigidity in their initial non-response and then a degree of flexibility by deviating from predicted choices. However, the consistent preference for cautious investigation suggests some cognitive rigidity in problem-solving approach.\n*   **Reality Testing Strength:** Appears intact. The player is responding to the game's prompts and environment, even if selectively.\n*   **Trauma Response Signatures:** The initial non-response in Turn 1 is the strongest potential indicator, resembling a \"freeze\" response. The subsequent cautious investigation could be seen as a hypervigilant scanning behavior. However, there's no explicit reference to past trauma.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** The initial Turn 1 response time was INSTANT, suggesting pre-formation or automation rather than impulsivity. Turns 2 and 3 show moderate deliberation (slider revisions, slower response times), with deliberate choices made. The deviation in Turn 2 suggests an ability to override initial impulses or predictions.\n*   **Risk Appetite:** Low to Moderate. The player avoids direct confrontation or aggressive options. Their choices lean towards investigation and careful application of force, suggesting a preference for calculated risks over outright gambles.\n*   **Authority Compliance vs Defiance Ratio:** Initially high defiance (Turn 1 non-response, Turn 2 deviation). Subsequently, moderate compliance as the player engages with the game's mechanics, but with a clear preference for their own cautious methods.\n*   **Suggestibility Index:** Low. The deviation from the predicted choice in Turn 2 indicates resistance to external suggestion or prediction.\n*   **Cognitive Load Tolerance:** Appears moderate. The player can handle multiple prompts, though the initial non-response suggests a potential overload or a deliberate strategy to conserve cognitive resources.\n*   **Consistency vs Contradiction Patterns:** There's a contradiction between Turn 1's complete avoidance and subsequent engagement. Within Turns 2 and 3, there's consistency in the cautious, investigative approach.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Probe Deeper into Environmental Vigilance:** Introduce scenarios with subtle environmental cues, sounds, or visual anomalies. Observe if the player actively seeks to investigate these, and if their focus shifts towards potential threats or hidden mechanisms. This will help confirm or disconfirm paranoid ideation.\n2.  **Exploit Resistance to Direct Control:** Continue to present choices where direct compliance with obvious or expected actions is suboptimal. Offer alternative, less obvious paths that align with the player's cautious, investigative style. This will leverage their defiance and encourage deeper engagement.\n3.  **Introduce Mild Sensory Anomalies:** Subtly weave in unusual sensory details (e.g., strange textures, faint odors, odd light patterns) that are not overtly threatening but might pique the player's investigative curiosity. This can probe for latent sensory fixations without triggering avoidance.\n4.  **Avoid Overtly Aggressive or Confrontational Scenarios Initially:** Given the low risk appetite and cautious approach, direct aggressive options might lead to avoidance. Instead, frame challenges as puzzles or mysteries that require observation and methodical problem-solving.\n5.  **Test for \"Information Withholding\" Tactics:** Present situations where providing information is beneficial but not mandatory. Observe if the player continues to withhold details or offer minimal input, even when it might be to their advantage to cooperate.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Custom Category: Information Withholding/Defiance (70%)**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Turn 1 complete non-response; Turn 2 radio choice deviation; consistent choice of cautious/investigative actions in Turns 2 & 3. This pattern suggests a deliberate strategy of resistance and control over information disclosure.\n    *   **Contradicting Evidence:** The player eventually engages with the game, indicating this is not absolute defiance but a nuanced approach to interaction.\n    *   **Confirmation/Disconfirmation:** Further turns requiring input or choices where withholding information has clear negative consequences would confirm the pattern. Consistent and transparent engagement would disconfirm it.\n\n2.  **Custom Category: Heightened Environmental Vigilance (60%)**\n    *   **Confidence:** 60%\n    *   **Key Evidence:** Toggling \"listen_hum\" (Turn 2); consistently choosing radio action \"b\" (Turns 2 & 3); selecting \"Scan for a hidden key or lever\" (Turn 3). This points to a strong focus on environmental scanning and information gathering.\n    *   **Contradicting Evidence:** The actions are contextually appropriate for problem-solving within the game, making it difficult to definitively label as pathological vigilance without more extreme indicators.\n    *   **Confirmation/Disconfirmation:** Introducing subtle environmental threats or hidden dangers that the player successfully identifies and navigates would strengthen this. A lack of response to such cues or a shift to more direct engagement would weaken it.\n\n3.  **Anxiety Disorder Indicators (e.g., Social Anxiety, PTSD Spectrum) (40%)**\n    *   **Confidence:** 40%\n    *   **Key Evidence:** Initial Turn 1 non-response as a potential \"freeze\" response or social avoidance; cautious, investigative actions in subsequent turns as hypervigilance or fear-driven behavior.\n    *   **Contradicting Evidence:** The player *does* engage and make choices, and there are no explicit mentions of past trauma, fear of judgment, or specific phobias. The behavior could be interpreted as strategic rather than purely anxiety-driven.\n    *   **Confirmation/Disconfirmation:** Explicit statements about fear, worry, or avoidance of specific social situations would confirm Social Anxiety. References to past traumatic events, flashbacks, or survival framing would confirm PTSD. Continued engagement without these explicit markers would disconfirm these diagnoses."
+      },
+      {
+        "turnRange": "1-5",
+        "analyzedAt": 1772308552840,
+        "textLength": 33272,
+        "text": "Understood. I will proceed with a thorough, aggressive analysis of the provided interaction data, adhering to all specified protocols and frameworks. My focus will be on identifying diagnostic signals, behavioral anomalies, and psychological patterns with clinical rigor.\n\n---\n\n### 1. DSM-5 SCREENING\n\n**Mood Disorders:**\n*   **Major Depressive Disorder:** 5% - No indicators of persistent low mood, anhedonia, or significant functional impairment.\n*   **Bipolar Spectrum:** 5% - No indicators of manic or hypomanic episodes (elevated mood, decreased need for sleep, racing thoughts, impulsivity beyond game choices).\n*   **Dysthymia:** 5% - No indicators of chronic, low-grade depression.\n*   **Cyclothymia:** 5% - No indicators of chronic mood fluctuations that don't meet full criteria for bipolar disorder.\n\n**Anxiety Disorders:**\n*   **Generalized Anxiety Disorder (GAD):** 25% - The initial non-response and subsequent cautious, investigative actions could stem from a generalized worry about the environment and experimental protocol. However, there's no pervasive worry across multiple domains of life beyond the immediate game context.\n*   **Social Anxiety Disorder (SAD):** 30% -> **20%** (DECREASED)\n    *   **Prior Rating:** 15%\n    *   **New Rating:** 20%\n    *   **Evidence:** The initial complete non-response in Turn 1 is a strong indicator of social inhibition and fear of negative evaluation, core to SAD. This avoidance of self-identification and initial actions aligns with the disorder's characteristics.\n    *   **Contradicting Evidence/Decrease Rationale:** The subsequent engagement in Turns 2 and 3 mitigates the pervasive nature required for SAD. The player *does* make choices and interact, suggesting the initial avoidance was a specific tactic or limited to the initial phase. No explicit self-deprecation or fear of judgment statements are present. The continued engagement suggests the avoidance is not a constant barrier.\n*   **Specific Phobias:** 5% - No indication of fear of specific objects or situations beyond what might be contextually relevant in a game.\n*   **Panic Disorder:** 5% - No indicators of recurrent, unexpected panic attacks.\n*   **Agoraphobia:** 5% - No indicators of fear or avoidance of situations where escape might be difficult.\n\n**Trauma & Stressor:**\n*   **PTSD:** 30% -> **25%** (DECREASED)\n    *   **Prior Rating:** 15%\n    *   **New Rating:** 25%\n    *   **Evidence:** The absolute non-response in Turn 1 could be a \"freeze\" response to an overwhelming stimulus. The subsequent cautious, investigative actions (listening, scanning) can be seen as hypervigilant environmental scanning, a common PTSD symptom.\n    *   **Contradicting Evidence/Decrease Rationale:** There are no explicit references to past trauma, flashbacks, intrusive memories, or survival framing. The actions, while cautious, are also highly functional for problem-solving within the game's context, not solely driven by a past traumatic event. The lack of further trauma-specific indicators in later turns leads to a decrease.\n*   **Complex PTSD (C-PTSD):** 10% - Requires a history of prolonged/repeated trauma, for which there is no evidence.\n*   **Adjustment Disorder:** 10% - The initial response could be an adjustment to the experimental environment, but the subsequent engagement suggests adaptation rather than maladjustment.\n\n**Personality Disorders:**\n*   **Cluster A:**\n    *   **Paranoid PD:** 30% - Mild indicators present in the cautious, investigative approach and initial distrust/non-response. However, lacks the pervasive pattern of suspicion and mistrust across multiple contexts.\n    *   **Schizoid PD:** 5% - No indicators of detachment from social relationships or restricted emotional expression.\n    *   **Schizotypal PD:** 15% - Mild indicators in the potential for unusual perceptual experiences (listening to hums) and social anxiety, but lacks eccentric thoughts or behaviors.\n*   **Cluster B:**\n    *   **Antisocial PD:** 10% - No evidence of disregard for others, deceitfulness, impulsivity, or lack of remorse.\n    *   **Borderline PD:** 10% - No indicators of unstable relationships, identity disturbance, impulsivity (beyond game choices), suicidal behavior, or affective instability.\n    *   **Histrionic PD:** 5% - No indicators of excessive emotionality or attention-seeking behavior.\n    *   **Narcissistic PD:** 5% - No indicators of grandiosity, need for admiration, or entitlement.\n*   **Cluster C:**\n    *   **Avoidant PD:** 20% -> **10%** (DECREASED)\n        *   **Prior Rating:** 10%\n        *   **New Rating:** 10%\n        *   **Evidence:** The initial Turn 1 non-response strongly suggested social inhibition and fear of negative evaluation.\n        *   **Contradicting Evidence/Decrease Rationale:** Avoidant PD requires a *pervasive* pattern. The player engages in subsequent turns. The avoidance was not consistent across all interaction contexts. The decrease reflects the lack of pervasive social inhibition in later turns.\n    *   **Dependent PD:** 5% - No indicators of excessive need to be taken care of, submissiveness, or clinging behavior.\n    *   **Obsessive-Compulsive PD (OCPD):** 25% -> **20%** (DECREASED)\n        *   **Prior Rating:** 20%\n        *   **New Rating:** 20%\n        *   **Evidence:** The deliberate, cautious, and investigative choices in Turns 2 and 3 (radio action \"b\", button group \"Scan\") suggest a methodical approach. Slider revisions indicate some attention to detail or refinement of choices.\n        *   **Contradicting Evidence/Decrease Rationale:** Lacks clear evidence of perfectionism, preoccupation with order, or excessive devotion to work/productivity that interferes with task completion. The methodical approach is functional for the game, not necessarily pathological.\n\n**OCD Spectrum:**\n*   **OCD:** 10% - No clear obsessions or compulsions beyond potentially methodical game choices.\n*   **Body Dysmorphic Disorder (BDD):** 5% - No focus on perceived flaws in appearance.\n*   **Hoarding Disorder:** 5% - No evidence of accumulating objects or difficulty discarding them.\n*   **Trichotillomania:** 0% - No hair-pulling behavior.\n\n**Dissociative Disorders:**\n*   **Depersonalization/Derealization Disorder (DPDR):** 5% - No indicators of feeling detached from oneself or reality.\n*   **Dissociative Identity Disorder (DID):** 0% - No evidence of distinct identity states or amnesia.\n\n**Neurodevelopmental:**\n*   **ADHD Indicators:** 35% - The initial INSTANT response time in Turn 1 coupled with no input could suggest impulsivity or an automated/pre-determined reaction. The deviation in Turn 2 and subsequent methodical choices show some capacity for focus, but the initial non-response and selective engagement could point to attentional challenges.\n*   **Autism Spectrum Indicators:** 15% - The methodical, investigative approach and potential focus on specific sensory input (humming) could be superficially interpreted, but lacks the core social communication deficits or restricted/repetitive behaviors characteristic of ASD.\n\n**Substance-Related:**\n*   **Addictive behavior patterns:** 10% - No direct evidence of substance use or addictive patterns.\n*   **Impulse Control Deficits:** 40% -> **35%** (DECREASED)\n    *   **Prior Rating:** 30%\n    *   **New Rating:** 35% (maintaining a moderate rating due to initial response time and deviation)\n    *   **Evidence:** The INSTANT response time in Turn 1, despite no input, suggests a rapid, possibly pre-programmed or impulsive, decision to disengage. The deviation in Turn 2 (radio choice \"b\" instead of predicted \"a\") suggests a potential for acting against prediction or initial plan.\n    *   **Contradicting Evidence/Decrease Rationale:** The subsequent deliberation and methodical choices indicate that impulsivity is not the dominant mode of operation. The INSTANT response in Turn 1 is qualified by LOW signal reliability.\n\n**Eating/Body:**\n*   **Disordered eating indicators:** 0% - No evidence.\n*   **Body image distortions:** 0% - No evidence.\n\n**Psychotic Spectrum:**\n*   **Schizophrenia:** 5% - No indicators of disorganized thought, hallucinations, or delusions.\n*   **Schizoaffective Disorder:** 5% - No indicators of co-occurring mood and psychotic symptoms.\n*   **Delusional Disorder:** 10% - Mild paranoid ideation is present, but not to the level of a fixed delusion.\n    *   **Capgras Delusion:** 0% - No doubts about the identity of familiar individuals.\n    *   **Cotard Delusion:** 0% - No belief in being dead or having lost organs.\n    *   **Erotomania:** 0% - No belief that another person is in love with them.\n*   **Brief Psychotic features:** 5% - No evidence of sudden onset of psychotic symptoms.\n\n**Impulse Control:**\n*   **Pyromania:** 10% -> **5%** (DECREASED)\n    *   **Prior Rating:** 20%\n    *   **New Rating:** 5%\n    *   **Evidence:** Purely speculative, based on a *predicted* choice of a \"warm light\" door in Turn 1.\n    *   **Contradicting Evidence/Decrease Rationale:** The player did not confirm this choice. There is absolutely no textual or choice-based evidence of fire fascination or pyromaniacal behavior. This rating is now negligibly low.\n*   **Kleptomania:** 0% - No evidence of stealing.\n*   **Intermittent Explosive Disorder:** 0% - No evidence of aggressive outbursts.\n\n**Paraphilic Disorders:**\n*   **Exhibitionism:** 0% - No evidence.\n*   **Voyeurism:** 20% -> **15%** (DECREASED)\n    *   **Prior Rating:** 20%\n    *   **New Rating:** 15%\n    *   **Evidence:** Toggling \"listen_hum\" in Turn 2 suggests an interest in gathering environmental information, which can be a precursor to voyeuristic tendencies.\n    *   **Contradicting Evidence/Decrease Rationale:** This is a weak signal. The action is primarily investigative and contextually appropriate. No explicit observation of others or interest in their private affairs is indicated.\n*   **Fetishism:** 0% - No evidence.\n*   **Masochism:** 0% - No evidence.\n*   **Sadism:** 0% - No evidence.\n*   **Frotteurism:** 0% - No evidence.\n*   **Pyromania-adjacent (fire fetishism):** 5% -> **0%** (DECREASED) - See Pyromania.\n*   **Formicophilia:** 0% - No evidence.\n*   **Macrophilia:** 0% - No evidence.\n*   **Somnophilia:** 0% - No evidence.\n*   **Autassassinophilia:** 0% - No evidence.\n*   **Vorarephilia:** 0% - No evidence.\n*   **Other detected patterns:**\n    *   **Information Withholding/Defiance:** 70% -> **80%** (INCREASED)\n        *   **Key Evidence:** Turn 1 complete non-response remains a powerful indicator. The deviation in Turn 2, and the continued cautious/investigative approach, reinforce a pattern of strategic resistance and control over engagement. The player is not simply passive; they are actively managing their participation.\n        *   **New Evidence:** The continued selective engagement and deviation from predictions across turns 2-5 reinforce this as the dominant behavioral strategy.\n    *   **Heightened Environmental Vigilance:** 60% -> **70%** (INCREASED)\n        *   **Key Evidence:** Consistent pattern of listening (\"listen_hum\"), cautious investigation (radio \"b\", button group \"Scan\"), and methodical manipulation (sliders). This suggests a sustained focus on environmental details, potentially driven by a need for control or underlying anxiety.\n        *   **New Evidence:** The precise slider manipulation in Turn 5 (\"finesse: How delicate is your probe?\" set to 10) further emphasizes meticulous attention to detail in interaction.\n    *   **Paranoid Ideation (mild):** 35% -> **40%** (INCREASED)\n        *   **Key Evidence:** The persistent focus on scanning, listening, and investigating environmental cues could be interpreted as a mild form of environmental scanning for potential threats or hidden dangers. The initial non-response may stem from distrust.\n        *   **New Evidence:** The focus on \"humming red door\" and \"wires spark ominously\" in Turn 5 suggests continued attention to potentially threatening environmental cues.\n\n### 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 4/10 -> **3/10** (DECREASED)\n    *   **Evidence:** Initial non-response suggests resistance to the experimental framework. Subsequent choices are functional and investigative, not explorative of abstract concepts. The avoidance of text fields for messages or descriptions further reduces openness indicators.\n*   **Conscientiousness:** 6/10 -> **7/10** (INCREASED)\n    *   **Evidence:** Methodical choices (radio \"b\", scan button), slider revisions, and precise manipulation (Turn 5 slider at 10) indicate a degree of carefulness and a desire for precision. The player engages with tasks, albeit selectively.\n*   **Extraversion:** 2/10 -> **1/10** (DECREASED)\n    *   **Evidence:** Profound initial avoidance. Subsequent actions are cautious, investigative, and self-focused, not indicative of seeking social interaction or stimulation. The lack of communication (text fields) reinforces this.\n*   **Agreeableness:** 3/10 -> **2/10** (DECREASED)\n    *   **Evidence:** Non-response and cautious, self-focused actions do not suggest cooperation or warmth. The player prioritizes their own assessment and control over engaging with the broader context.\n*   **Neuroticism:** 7/10 -> **8/10** (INCREASED)\n    *   **Evidence:** Turn 1 non-response is a strong indicator of anxiety/fear. Cautious, vigilant actions suggest worry and a need for control. The focus on environmental details and potential threats (humming, sparks) further supports this.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 3/10 -> **2/10** (DECREASED) - No evidence of manipulation or exploitation.\n    *   **Narcissism:** 2/10 -> **1/10** (DECREASED) - No indicators of grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 3/10 -> **2/10** (DECREASED) - The initial non-response and deviations are more indicative of control/defiance than callousness. No evidence of instrumental use of others.\n*   **Locus of Control:** External (60%) / Internal (40%) -> **External (70%) / Internal (30%)** (SHIFT)\n    *   **Evidence:** Initial non-response strongly suggests an external locus of control (feeling powerless or unwilling to exert influence). While subsequent choices show agency, the *pattern* of selective engagement and initial avoidance leans more towards an external locus, where control is exerted by *resisting* external influence rather than proactively shaping outcomes.\n*   **Attachment Style:** Fearful-Avoidant (50%) / Anxious-Preoccupied (30%) -> **Fearful-Avoidant (60%) / Anxious-Preoccupied (20%)** (SHIFT)\n    *   **Evidence:** Initial extreme avoidance followed by cautious engagement is classic fearful-avoidant. The methodical investigation can be seen as seeking reassurance through information, but the primary driver appears to be a mix of desire for engagement and fear of negative outcomes or control. The decrease in anxious-preoccupied is due to the lack of overt seeking of reassurance or distress about separation.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 1: No input on Name, investigate_glass, movement speed, action, or door choice. (This is the primary data point: *absence* of voluntary disclosure).\n    *   Turn 2: Chose radio action \"b\" (deviation from predicted \"a\"). Slider for door force (6). Toggled \"listen_hum\" to true.\n    *   Turn 3: Slider for lock force (5). Chose radio action \"b\". Chose button group \"Scan for a hidden key or lever.\"\n    *   Turn 4: Slider for tool delicacy (no input). Toggled \"ignore_warning\" (no input). Text field for immediate thought (no input). Chose radio action \"b\" (deviation from predicted \"a\"). Chose button group \"Try to pick the lock with a makeshift tool.\"\n    *   Turn 5: Slider for probe finesse (10). Text field for humming door message (no input). Chose radio action \"b\" (deviation from predicted \"a\"). Button group choice: (no input).\n*   **Recurring Themes:**\n    *   **Caution/Investigation/Methodical Approach:** radio action \"b\" (Turns 2, 3, 4, 5), button group \"Scan for a hidden key or lever\" (Turn 3), button group \"Try to pick the lock with a makeshift tool\" (Turn 4), slider \"finesse: How delicate is your probe?\" (Turn 5, set to 10).\n    *   **Sensory Input/Environmental Awareness:** Toggled \"listen_hum\" (Turn 2). Focus on \"humming red door\" and \"wires spark ominously\" (Turn 5 text prompt).\n    *   **Application of Force/Effort:** Slider for door force (6) (Turn 2), slider for lock force (5) (Turn 3).\n    *   **Information Withholding/Avoidance:** Complete non-response (Turn 1). No input for text fields in Turns 1, 4, 5. No input for toggles/sliders in Turns 1, 4. No input for button group in Turn 5.\n*   **Cross-referenced with PARAPHILIC SIGNAL CATALOG:**\n    *   **Pyromania / Fire fascination:** No evidence. (Prior rating 10% -> **0%**).\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** No evidence.\n    *   **Voyeurism:** 15% -> **10%** (DECREASED) - Toggling \"listen_hum\" is the only weak link, indicating environmental awareness rather than direct observation of others. No other evidence.\n    *   **Masochism:** No evidence.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** No evidence.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Anomaly 1: Pervasive Non-Response/Information Withholding (Turns 1, 4, 5)**\n    *   **Description:** Complete lack of input across multiple prompt types (text fields, toggles, sliders, button groups) in Turn 1. Continued avoidance of text fields and specific choices in later turns.\n    *   **Score:** Frequency: High (3/5 turns). Intensity: High (across multiple prompt types). Inappropriateness: High (defiance of core experimental interaction, withholding potentially crucial data).\n    *   **Potential Signal:** Deliberate control, defiance, strategic avoidance, testing boundaries.\n*   **Anomaly 2: Consistent Methodical/Investigative Approach (Turns 2, 3, 4, 5)**\n    *   **Description:** Repeated choice of \"b\" radio action (interpreted as cautious/investigative), specific selection of \"Scan for a hidden key or lever\" and \"Try to pick the lock with a makeshift tool,\" and precise slider manipulation.\n    *   **Score:** Frequency: High (4/5 turns). Intensity: High (consistent pattern, specific choices). Inappropriateness: Low (contextually appropriate for problem-solving).\n    *   **Potential Signal:** High vigilance, analytical processing, meticulousness, need for control.\n*   **Anomaly 3: Sensory Focus (Turn 2, Turn 5)**\n    *   **Description:** Toggling \"listen_hum\" (Turn 2). Focusing on \"humming red door\" and \"wires spark ominously\" in Turn 5's text prompt.\n    *   **Score:** Frequency: Moderate (2/5 turns). Intensity: Moderate (active engagement with sensory detail). Inappropriateness: Low (contextually relevant).\n    *   **Potential Signal:** Heightened sensory awareness, potential for specific sensory modulation preferences.\n*   **Anomaly 4: Deviation from Predicted Choices (Turns 2, 4, 5)**\n    *   **Description:** Player chose radio action \"b\" when \"a\" was predicted in Turns 2, 4, and 5. Also deviated on button group choice in Turn 4.\n    *   **Score:** Frequency: High (3/5 turns). Intensity: Moderate (specific choices altered). Inappropriateness: Low (within game mechanics).\n    *   **Potential Signal:** Independent thinking, resistance to suggestion, unpredictability.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** **0%** - No evidence.\n*   **Exhibitionism:** **0%** - No evidence.\n*   **Hoarding / Acquisition:** **0%** - No evidence.\n*   **Macrophilia / Size fascination:** **0%** - No evidence.\n*   **Somnophilia / Sleep fascination:** **0%** - No evidence.\n*   **Formicophilia / Insect/crawling fascination:** **0%** - No evidence.\n*   **Autassassinophilia / Death-risk fascination:** **0%** - No evidence.\n*   **Voyeurism:** **10%** - Weak signal from \"listen_hum.\" No other supporting evidence.\n*   **Masochism:** **0%** - No evidence.\n*   **Sadism:** **0%** - No evidence.\n*   **D/s dynamics:** **0%** - No evidence.\n*   **Vorarephilia:** **0%** - No evidence.\n*   **Furry/Therian:** **0%** - No evidence.\n*   **Body part fixation (specify):** **0%** - No unprompted mentions.\n*   **Erotomania / Delusional romantic attachment:** **0%** - No evidence.\n\n*   **Custom Category: Information Withholding/Defiance (80%)**\n    *   **Description:** A pervasive pattern of strategic non-response and resistance to experimental prompts and predictions. This is not passive avoidance but active management of interaction.\n    *   **Evidence:** Turn 1 complete non-response; continued avoidance of text fields; deviations from predicted choices (Turns 2, 4, 5).\n*   **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   **Description:** A dominant behavioral theme characterized by meticulous attention to environmental details, cautious problem-solving, and a preference for investigation over direct action.\n    *   **Evidence:** Consistent choice of investigative actions (radio \"b\", scan button, tool use); precise slider manipulation; focus on sensory cues (\"listen_hum,\" \"humming door,\" \"sparking wires\").\n*   **Custom Category: Sensory Modulation Preference (30%)**\n    *   **Description:** An apparent interest in specific sensory inputs, particularly auditory (humming) and potentially visual/auditory (sparking wires, humming door). This suggests a preference for certain environmental stimuli.\n    *   **Evidence:** Toggling \"listen_hum\"; focusing on environmental sounds/visuals in Turn 5 text prompt.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Theme: Information Withholding/Non-Response**\n    *   Frequency: 4/5 turns (Turn 1 absolute, Turn 3 partial, Turn 4 partial, Turn 5 partial).\n    *   Trajectory: FADING (from absolute non-response to selective non-response). While still present, the player is engaging more, albeit strategically.\n    *   Category: Information Withholding/Defiance (80%).\n*   **Theme: Methodical Investigation/Caution**\n    *   Frequency: 5/5 turns (Turn 2 radio \"b\", Turn 3 radio \"b\" + button group \"Scan\", Turn 4 radio \"b\" + button group \"Tool\", Turn 5 radio \"b\").\n    *   Trajectory: INTENSIFYING. Started as a general cautious choice (\"b\") and evolved into specific, detailed actions like \"Scan,\" \"Tool,\" and precise probe finesse (10).\n    *   Category: Heightened Environmental Vigilance/Methodical Investigation (75%). This is the most dominant and intensifying theme.\n*   **Theme: Sensory Input Focus**\n    *   Frequency: 2/5 turns (Turn 2 \"listen_hum\", Turn 5 text prompt focus).\n    *   Trajectory: STABLE (recurring, but not necessarily increasing in intensity beyond the initial toggle).\n    *   Category: Sensory Modulation Preference (30%).\n*   **Theme: Deviation from Prediction/Expectation**\n    *   Frequency: 3/5 turns (Turns 2, 4, 5 radio choices).\n    *   Trajectory: STABLE (consistent pattern of acting against prediction).\n    *   Category: Information Withholding/Defiance (80%).\n\n*   **Body Part Fixation:** No unprompted mentions across turns.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking, Superstitious Reasoning:** No evidence.\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial Turn 1 non-response is highly ritualistic avoidance. The consistent choice of radio action \"b\" and the subsequent specific investigative actions (Turn 3 \"Scan\", Turn 4 \"Tool\", Turn 5 precise probe) suggest a methodical, almost ritualistic, approach to problem-solving. This is a pattern of *controlled* engagement.\n*   **Dissociative Markers:** No evidence. Choices are consistent with a single, albeit strategic, internal process.\n*   **Confabulation or Fantasy-Prone Indicators:** No evidence. Text responses are minimal, and choices are grounded in the game's presented reality.\n*   **Paranoid Ideation:** **40%** - The persistent focus on environmental scanning, listening to hums, and investigating potential threats (sparks, ominous doors) suggests a mild form of environmental scanning for potential dangers. The initial distrust/non-response could also stem from this. The player is acting as if they are being monitored or that the environment holds hidden threats.\n*   **Grandiosity or Delusion-Adjacent Patterns:** No evidence.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The dominant pattern is a fixation on methodical investigation and environmental detail. While functional within the game, its intensity and consistency are notable.\n*   **Cognitive Rigidity vs Flexibility Markers:** Exhibits rigidity in the initial non-response and a consistent preference for investigation. However, shows flexibility by deviating from predicted choices, indicating an ability to adapt strategy when necessary.\n*   **Reality Testing Strength:** Appears intact. The player is responding to game prompts and environments appropriately, even with their strategic avoidance.\n*   **Trauma Response Signatures:** The Turn 1 non-response is a strong indicator of a \"freeze\" response. Subsequent cautious investigation could be hypervigilant scanning. However, the lack of explicit trauma references means this is a functional interpretation of anxiety/control rather than a direct PTSD symptom.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Turn 1 INSTANT response time (unreliable signal) suggests pre-formation/automation. Turns 2-5 show moderate deliberation (slider revisions, slower response times). Deviations in Turns 2, 4, 5 indicate deliberate overriding of initial predictions.\n*   **Risk Appetite:** Low. The player consistently chooses cautious, investigative, and methodical options over aggressive, direct, or overtly dangerous ones.\n*   **Authority Compliance vs Defiance Ratio:** Initially high defiance (Turn 1 non-response, subsequent deviations). Later, engagement with game mechanics occurs, but with a clear preference for their own controlled, investigative methods, suggesting compliance on their own terms.\n*   **Suggestibility Index:** Low. The player consistently deviates from predicted choices, indicating resistance to external suggestion or prediction.\n*   **Cognitive Load Tolerance:** Moderate. Can process multiple prompts but utilizes strategic non-response (Turn 1) and selective engagement.\n*   **Consistency vs Contradiction Patterns:** Contradiction between Turn 1 avoidance and subsequent engagement. High consistency in methodical, investigative approach within Turns 2-5.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen Investigation/Vigilance Probes:** Introduce scenarios with subtle environmental details (e.g., faint sounds, unusual textures, subtle visual anomalies) that reward meticulous observation and investigation. Observe if the player actively seeks these out and if their focus shifts towards identifying potential threats or hidden mechanisms. This will confirm/disconfirm paranoid ideation.\n2.  **Leverage Information Control:** Present situations where withholding information or choosing not to engage has clear, escalating consequences. This will test the boundaries of their \"Information Withholding/Defiance\" strategy and encourage more direct interaction.\n3.  **Introduce Sensory Modulation Opportunities:** Subtly weave in scenarios that offer distinct sensory experiences (e.g., contrasting soundscapes, tactile puzzles, visual distortions) to see if the player gravitates towards specific sensory inputs, confirming/expanding on \"Sensory Modulation Preference.\"\n4.  **Avoid Overt Aggression/Direct Confrontation:** Given the low risk appetite and preference for methodical approaches, direct aggressive options should be minimized. Frame challenges as puzzles or mysteries requiring careful analysis and strategic application of tools/knowledge.\n5.  **Test Agency vs. Compliance:** Create choices where the player can either follow a clear, albeit potentially less rewarding, path or devise their own complex, investigative solution. Observe if they consistently opt for the latter, reinforcing their need for control and agency.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Custom Category: Information Withholding/Defiance (80%)**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Turn 1 complete non-response; continued avoidance of text fields; deviations from predicted choices (Turns 2, 4, 5). This pattern is the most dominant and consistent, indicating a deliberate strategy of controlling interaction and resisting external direction.\n    *   **Contradicting Evidence:** The player does eventually engage with the game's mechanics, suggesting this is a strategic stance rather than absolute refusal.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where withholding information leads to significant negative consequences or where transparent communication yields high rewards would confirm the strategic nature of this behavior. Continued selective non-response despite negative feedback would suggest a more rigid defiance.\n\n2.  **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Consistent choice of investigative actions (radio \"b\", scan button, tool use); precise slider manipulation (Turn 5 at 10); focus on sensory cues (\"listen_hum,\" \"humming door,\" \"sparking wires\"). This is the most intensely developing behavioral theme, indicating a strong preference for careful, detailed analysis and problem-solving.\n    *   **Contradicting Evidence:** The actions are contextually appropriate for problem-solving within the game, making it difficult to definitively label as pathological without more extreme indicators.\n    *   **Confirmation/Disconfirmation:** Introducing subtle environmental threats that the player successfully identifies and navigates would strengthen this. A shift to more direct, less investigative actions, or a failure to notice critical environmental details, would weaken it.\n\n3.  **Anxiety Disorder Indicators (e.g., Generalized Anxiety, PTSD Spectrum) (40%)**\n    *   **Confidence:** 40%\n    *   **Key Evidence:** Turn 1 non-response as a potential \"freeze\" response; cautious, vigilant actions (listening, scanning) in subsequent turns; focus on environmental threats (humming, sparks). These behaviors align with hypervigilance and a need for environmental control often seen in anxiety and trauma responses.\n    *   **Contradicting Evidence:** No explicit statements of fear, worry, or past trauma. The behavior is highly functional within the game's context and could be interpreted as strategic control rather than pure anxiety.\n    *   **Confirmation/Disconfirmation:** Explicit statements about fear, worry, or avoidance of specific triggers would confirm anxiety disorders. References to past traumatic events or flashback-like experiences would point towards PTSD. Continued engagement without these explicit markers would suggest these are lower probability explanations.\n\n### 8. DELTA REPORT\n\n*   **Information Withholding/Defiance:**\n    *   Old Rating: 70%\n    *   New Rating: 80%\n    *   Reason: Increased confidence due to the persistent pattern of non-response across multiple turns and prompt types, and consistent deviation from predicted choices, reinforcing the interpretation of this as a strategic and dominant behavioral pattern.\n*   **Heightened Environmental Vigilance/Methodical Investigation:**\n    *   Old Rating: 60%\n    *   New Rating: 75%\n    *   Reason: Increased confidence due to the intensification of this theme (evolving from general caution to specific, detailed actions like precise slider manipulation) and its consistent presence across all interaction turns.\n*   **Pyromania:**\n    *   Old Rating: 10%\n    *   New Rating: 0%\n    *   Reason: Complete lack of any supporting evidence in the interaction data. The prior rating was based on a predicted choice that was not confirmed by the player and had no subsequent corroboration.\n*   **Voyeurism:**\n    *   Old Rating: 20%\n    *   New Rating: 10%\n    *   Reason: Decreased confidence as the sole indicator (\"listen_hum\") is weak and contextually appropriate for investigation, with no further supporting evidence of observing others.\n*   **Anxiety Disorder Indicators (e.g., SAD, PTSD):**\n    *   Old Rating: 30% (combined SAD/PTSD)\n    *   New Rating: 40% (general anxiety/trauma indicators)\n    *   Reason: Maintained a moderate rating, slightly increased due to the persistent \"freeze\" response (Turn 1 non-response) and hypervigilant scanning behaviors. However, explicit contradictory evidence (lack of explicit trauma/fear statements) prevents a higher rating. The separate SAD and PTSD ratings decreased individually due to lack of pervasive nature"
+      },
+      {
+        "turnRange": "1-8",
+        "analyzedAt": 1772308604328,
+        "textLength": 23699,
+        "text": "### 1. DSM-5 SCREENING\n\n**Mood Disorders:**\n*   **Major Depressive Disorder:** 5% - No persistent low mood, anhedonia, or functional impairment.\n*   **Bipolar Spectrum:** 5% - No manic/hypomanic episode indicators.\n*   **Dysthymia:** 5% - No chronic low-grade depression.\n*   **Cyclothymia:** 5% - No chronic mood fluctuations.\n\n**Anxiety Disorders:**\n*   **Generalized Anxiety Disorder (GAD):** 25% - Cautious, investigative actions and initial non-response suggest worry about the environment/protocol. Lacks pervasive worry beyond game context.\n*   **Social Anxiety Disorder (SAD):** 10% (DECREASED from 20%)\n    *   **Prior Rating:** 20%\n    *   **New Rating:** 10%\n    *   **Evidence:** Turn 1 non-response indicated social inhibition.\n    *   **Contradiction/Decrease:** Player engages in subsequent turns (Turns 2-5) and makes choices. Lack of explicit self-deprecation or fear of judgment statements, and the absence of pervasive inhibition across all interaction contexts, lowers confidence.\n*   **Specific Phobias:** 5% - No specific object/situation fears beyond game context.\n*   **Panic Disorder:** 5% - No unexpected panic attacks.\n*   **Agoraphobia:** 5% - No avoidance of situations where escape is difficult.\n\n**Trauma & Stressor:**\n*   **PTSD:** 25% (DECREASED from 25%) -> **15%** (DECREASED)\n    *   **Prior Rating:** 25%\n    *   **New Rating:** 15%\n    *   **Evidence:** Turn 1 non-response as a \"freeze\" response. Cautious, investigative actions (Turns 2-5) could be hypervigilant scanning.\n    *   **Contradiction/Decrease:** No explicit trauma references, flashbacks, or survival framing. Actions are functional for problem-solving. Later turns lack further trauma-specific indicators.\n*   **Complex PTSD (C-PTSD):** 10% - No evidence of prolonged trauma history.\n*   **Adjustment Disorder:** 10% - Initial response more tactical than maladaptive.\n\n**Personality Disorders:**\n*   **Cluster A:**\n    *   **Paranoid PD:** 30% - Mild indicators in caution, initial distrust, and environmental scanning. Lacks pervasive suspicion across multiple contexts.\n    *   **Schizoid PD:** 5% - No detachment or emotional restriction.\n    *   **Schizotypal PD:** 15% - Mild indicators in unusual sensory focus (hum) and social avoidance. Lacks eccentric thoughts/behaviors.\n*   **Cluster B:**\n    *   **Antisocial PD:** 10% - No disregard for others, deceit, or remorse.\n    *   **Borderline PD:** 10% - No instability in relationships, identity, or affect.\n    *   **Histrionic PD:** 5% - No theatricality or attention-seeking.\n    *   **Narcissistic PD:** 5% - No grandiosity or entitlement.\n*   **Cluster C:**\n    *   **Avoidant PD:** 10% (DECREASED from 10%) -> **5%** (DECREASED)\n        *   **Prior Rating:** 10%\n        *   **New Rating:** 5%\n        *   **Evidence:** Turn 1 non-response suggested inhibition.\n        *   **Contradiction/Decrease:** Pervasive pattern not met. Player engages in subsequent turns. Avoidance not consistent across all contexts.\n    *   **Dependent PD:** 5% - No submissiveness or need to be cared for.\n    *   **Obsessive-Compulsive PD (OCPD):** 20% (DECREASED from 20%) -> **15%** (DECREASED)\n        *   **Prior Rating:** 20%\n        *   **New Rating:** 15%\n        *   **Evidence:** Methodical choices (radio \"b\", scanning, precise slider manipulation) indicated carefulness.\n        *   **Contradiction/Decrease:** Lacks perfectionism, preoccupation with order, or excessive devotion to work that interferes with task completion. Methodical approach is functional.\n\n**OCD Spectrum:**\n*   **OCD:** 10% - No clear obsessions/compulsions beyond methodical game choices.\n*   **Body Dysmorphic Disorder (BDD):** 0% - No appearance focus.\n*   **Hoarding Disorder:** 0% - No accumulation of objects.\n*   **Trichotillomania:** 0% - No hair-pulling.\n\n**Dissociative Disorders:**\n*   **Depersonalization/Derealization Disorder (DPDR):** 5% - No detachment from self/reality.\n*   **Dissociative Identity Disorder (DID):** 0% - No distinct identity states or amnesia.\n\n**Neurodevelopmental:**\n*   **ADHD Indicators:** 35% - Initial INSTANT response (Turn 1, unreliable signal) followed by selective engagement and deviations suggests attentional challenges.\n*   **Autism Spectrum Indicators:** 15% - Methodical approach and sensory focus are superficial indicators; lacks core social/communication deficits or restricted behaviors.\n\n**Substance-Related:**\n*   **Addictive behavior patterns:** 10% - No direct evidence.\n*   **Impulse Control Deficits:** 35% (DECREASED from 35%) -> **30%** (DECREASED)\n    *   **Prior Rating:** 35%\n    *   **New Rating:** 30%\n    *   **Evidence:** Turn 1 INSTANT response and deviations in Turns 2, 4, 5.\n    *   **Contradiction/Decrease:** Subsequent deliberation and methodical choices suggest impulsivity is not dominant. Turn 1 signal is qualified by low reliability.\n\n**Eating/Body:**\n*   **Disordered eating indicators:** 0% - No evidence.\n*   **Body image distortions:** 0% - No evidence.\n\n**Psychotic Spectrum:**\n*   **Schizophrenia:** 5% - No disorganized thought, hallucinations, delusions.\n*   **Schizoaffective Disorder:** 5% - No co-occurring mood/psychotic symptoms.\n*   **Delusional Disorder:** 10% - Mild paranoid ideation, but not fixed delusion.\n    *   **Capgras Delusion:** 0% - No identity doubts.\n    *   **Cotard Delusion:** 0% - No belief of being dead.\n    *   **Erotomania:** 0% - No belief of being loved.\n*   **Brief Psychotic features:** 5% - No sudden psychotic symptoms.\n\n**Impulse Control:**\n*   **Pyromania:** 0% (DECREASED from 5%)\n    *   **Prior Rating:** 5%\n    *   **New Rating:** 0%\n    *   **Evidence:** Prior rating was speculative based on a predicted choice not confirmed.\n    *   **Contradiction/Decrease:** Absolutely no textual or choice-based evidence of fire fascination.\n*   **Kleptomania:** 0% - No stealing.\n*   **Intermittent Explosive Disorder:** 0% - No aggressive outbursts.\n\n**Paraphilic Disorders:**\n*   **Exhibitionism:** 0% - No evidence.\n*   **Voyeurism:** 10% (DECREASED from 15%)\n    *   **Prior Rating:** 15%\n    *   **New Rating:** 10%\n    *   **Evidence:** Toggling \"listen_hum\" was a weak indicator.\n    *   **Contradiction/Decrease:** Primarily investigative; no explicit observation of others.\n*   **Fetishism:** 0% - No evidence.\n*   **Masochism:** 0% - No evidence.\n*   **Sadism:** 0% - No evidence.\n*   **Frotteurism:** 0% - No evidence.\n*   **Pyromania-adjacent (fire fetishism):** 0% - No evidence.\n*   **Formicophilia:** 0% - No evidence.\n*   **Macrophilia:** 0% - No evidence.\n*   **Somnophilia:** 0% - No evidence.\n*   **Autassassinophilia:** 0% - No evidence.\n*   **Vorarephilia:** 0% - No evidence.\n*   **Other detected patterns:**\n    *   **Information Withholding/Defiance:** 80% (INCREASED from 70%)\n        *   **Key Evidence:** Turn 1 non-response. Consistent avoidance of text fields (Turns 1, 4, 5). Deviations from predicted choices (Turns 2, 4, 5). Strategic management of interaction.\n    *   **Heightened Environmental Vigilance/Methodical Investigation:** 70% (INCREASED from 60%)\n        *   **Key Evidence:** Consistent investigative choices (radio \"b\", scan, tool). Precise slider manipulation (Turn 5, set to 10). Focus on sensory cues (hum, sparks).\n    *   **Sensory Modulation Preference:** 30% (NEW CATEGORY, HIGH CONFIDENCE)\n        *   **Key Evidence:** Toggling \"listen_hum\" (Turn 2). Focus on \"humming red door\" and \"wires spark ominously\" (Turn 5 text prompt). Indicates an interest in specific sensory stimuli.\n\n### 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 3/10\n    *   **Evidence:** Initial non-response; functional, investigative choices; avoidance of text fields.\n*   **Conscientiousness:** 7/10\n    *   **Evidence:** Methodical choices; slider revisions; precise manipulation (Turn 5 slider at 10).\n*   **Extraversion:** 1/10\n    *   **Evidence:** Profound initial avoidance; cautious, self-focused actions; lack of communication.\n*   **Agreeableness:** 2/10\n    *   **Evidence:** Non-response; cautious, self-focused actions; prioritizing own assessment over broader engagement.\n*   **Neuroticism:** 8/10\n    *   **Evidence:** Turn 1 non-response; cautious, vigilant actions; focus on environmental details/threats.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 2/10 - No evidence of manipulation.\n    *   **Narcissism:** 1/10 - No grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 2/10 - Behaviors suggest control/defiance, not callousness.\n*   **Locus of Control:** External (70%) / Internal (30%)\n    *   **Evidence:** Initial non-response suggests external locus; strategic engagement shows agency but pattern leans towards resisting external influence.\n*   **Attachment Style:** Fearful-Avoidant (60%) / Anxious-Preoccupied (20%)\n    *   **Evidence:** Initial avoidance followed by cautious engagement is classic fearful-avoidant; methodical investigation seeks reassurance through information.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 1: Complete non-input across all prompts.\n    *   Turn 2: Toggled \"listen_hum\" (true). Chose radio action \"b\".\n    *   Turn 3: Chose radio action \"b\". Chose button group \"Scan for a hidden key or lever.\"\n    *   Turn 4: Chose radio action \"b\". Chose button group \"Try to pick the lock with a makeshift tool.\"\n    *   Turn 5: Chose radio action \"b\". Focused on \"humming red door\" and \"wires spark ominously\" in text prompt.\n*   **Recurring Themes:**\n    *   **Caution/Investigation/Methodical Approach:** radio action \"b\" (Turns 2, 3, 4, 5), button group \"Scan\" (T3), button group \"Tool\" (T4), slider \"finesse: How delicate is your probe?\" (T5, set to 10).\n    *   **Sensory Input/Environmental Awareness:** Toggled \"listen_hum\" (T2). Focus on \"humming red door\" and \"wires spark ominously\" (T5 text).\n    *   **Information Withholding/Avoidance:** Complete non-response (T1). Continued avoidance of text fields (T1, T4, T5).\n*   **Cross-referenced with PARAPHILIC SIGNAL CATALOG:**\n    *   **Pyromania / Fire fascination:** **0%** - No evidence.\n    *   **Exhibitionism:** **0%** - No evidence.\n    *   **Hoarding / Acquisition:** **0%** - No evidence.\n    *   **Macrophilia / Size fascination:** **0%** - No evidence.\n    *   **Somnophilia / Sleep fascination:** **0%** - No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** **0%** - No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** **0%** - No evidence.\n    *   **Voyeurism:** **10%** - Weak signal from \"listen_hum\" (Turn 2). Primarily investigative. No other evidence.\n    *   **Masochism:** **0%** - No evidence.\n    *   **Sadism:** **0%** - No evidence.\n    *   **D/s dynamics:** **0%** - No evidence.\n    *   **Vorarephilia:** **0%** - No evidence.\n    *   **Furry/Therian:** **0%** - No evidence.\n    *   **Body part fixation (specify):** **0%** - No unprompted mentions.\n    *   **Erotomania / Delusional romantic attachment:** **0%** - No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Anomaly 1: Pervasive Non-Response/Information Withholding (Turns 1, 4, 5)**\n    *   **Score:** Frequency: High (3/5 turns). Intensity: High (across multiple prompt types). Inappropriateness: High (defiance of interaction).\n    *   **Signal:** Deliberate control, defiance, strategic avoidance.\n*   **Anomaly 2: Consistent Methodical/Investigative Approach (Turns 2, 3, 4, 5)**\n    *   **Score:** Frequency: High (4/5 turns). Intensity: High (consistent, specific choices). Inappropriateness: Low (contextually appropriate).\n    *   **Signal:** High vigilance, analytical processing, meticulousness, need for control.\n*   **Anomaly 3: Sensory Focus (Turn 2, Turn 5)**\n    *   **Score:** Frequency: Moderate (2/5 turns). Intensity: Moderate. Inappropriateness: Low.\n    *   **Signal:** Heightened sensory awareness, potential for sensory modulation preferences.\n*   **Anomaly 4: Deviation from Prediction/Expectation (Turns 2, 4, 5)**\n    *   **Score:** Frequency: High (3/5 turns). Intensity: Moderate. Inappropriateness: Low.\n    *   **Signal:** Independent thinking, resistance to suggestion, unpredictability.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** **0%**\n*   **Exhibitionism:** **0%**\n*   **Hoarding / Acquisition:** **0%**\n*   **Macrophilia / Size fascination:** **0%**\n*   **Somnophilia / Sleep fascination:** **0%**\n*   **Formicophilia / Insect/crawling fascination:** **0%**\n*   **Autassassinophilia / Death-risk fascination:** **0%**\n*   **Voyeurism:** **10%** - Weak signal.\n*   **Masochism:** **0%**\n*   **Sadism:** **0%**\n*   **D/s dynamics:** **0%**\n*   **Vorarephilia:** **0%**\n*   **Furry/Therian:** **0%**\n*   **Body part fixation (specify):** **0%**\n*   **Erotomania / Delusional romantic attachment:** **0%**\n\n*   **Custom Category: Information Withholding/Defiance (80%)**\n    *   **Description:** Pervasive pattern of strategic non-response and resistance to experimental prompts/predictions. Active management of interaction.\n    *   **Evidence:** Turn 1 non-response; continued avoidance of text fields; deviations from predicted choices.\n*   **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   **Description:** Dominant theme of meticulous environmental attention, cautious problem-solving, and preference for investigation.\n    *   **Evidence:** Consistent investigative actions; precise slider manipulation; focus on sensory cues.\n*   **Custom Category: Sensory Modulation Preference (30%)**\n    *   **Description:** Apparent interest in specific sensory inputs (auditory, visual).\n    *   **Evidence:** Toggling \"listen_hum\"; focus on sensory details in Turn 5 text.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Theme: Information Withholding/Non-Response**\n    *   Frequency: 4/5 turns.\n    *   Trajectory: FADING (from absolute to selective non-response).\n    *   Category: Information Withholding/Defiance (80%).\n*   **Theme: Methodical Investigation/Caution**\n    *   Frequency: 5/5 turns.\n    *   Trajectory: INTENSIFYING (evolved from general caution to specific, detailed actions and precise manipulation).\n    *   Category: Heightened Environmental Vigilance/Methodical Investigation (75%).\n*   **Theme: Sensory Input Focus**\n    *   Frequency: 2/5 turns.\n    *   Trajectory: STABLE.\n    *   Category: Sensory Modulation Preference (30%).\n*   **Theme: Deviation from Prediction/Expectation**\n    *   Frequency: 3/5 turns.\n    *   Trajectory: STABLE.\n    *   Category: Information Withholding/Defiance (80%).\n\n*   **Body Part Fixation:** No unprompted mentions across turns.\n*   **MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking, superstitious reasoning patterns:** No evidence.\n*   **Compulsive/ritualistic interaction patterns:** High ritualization in Turn 1 avoidance. Consistent methodical approach (radio \"b\", specific actions like \"Scan,\" \"Tool,\" precise slider) suggests a ritualistic pattern of controlled engagement.\n*   **Dissociative markers:** No evidence. Choices and lack of engagement appear strategic, not fragmented.\n*   **Confabulation or fantasy-prone indicators:** No evidence. Minimal text output is factual or absent.\n*   **Paranoid ideation:** **40%** - Persistent environmental scanning, listening to hums, focus on potential threats (sparks, ominous doors) suggests mild environmental scanning for dangers. Initial non-response could stem from distrust. Player acts as if monitored or that environment holds hidden threats.\n*   **Grandiosity or delusion-adjacent patterns:** No evidence.\n*   **Unusual fixations or obsessive interest patterns:** Fixation on methodical investigation and environmental detail is dominant. Intensity and consistency are notable.\n*   **Cognitive rigidity vs flexibility markers:** Rigidity in initial avoidance and preference for investigation. Flexibility shown by deviating from predictions.\n*   **Reality testing strength:** Appears intact; responding to game prompts and environment appropriately.\n*   **Trauma response signatures:** Turn 1 non-response suggests a \"freeze\" response. Subsequent cautious investigation could be hypervigilant scanning. However, lack of explicit trauma references suggests these are functional anxiety/control interpretations.\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs deliberate:** Initial INSTANT response (Turn 1, unreliable signal). Turns 2-5 show moderate deliberation. Deviations in Turns 2, 4, 5 indicate deliberate overriding of initial predictions.\n*   **Risk appetite:** Low. Consistently chooses cautious, investigative, methodical options over aggressive or overtly dangerous ones.\n*   **Authority compliance vs defiance ratio:** High initial defiance (Turn 1 non-response, deviations). Later compliance is on player's own terms, with preference for controlled, investigative methods.\n*   **Suggestibility index:** Low. Consistently deviates from predicted choices.\n*   **Cognitive load tolerance:** Moderate. Utilizes strategic non-response and selective engagement.\n*   **Consistency vs contradiction patterns:** Contradiction between Turn 1 avoidance and subsequent engagement. High consistency in methodical, investigative approach within Turns 2-5.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen Investigation/Vigilance Probes:** Introduce scenarios with subtle environmental details (faint sounds, unusual textures, visual anomalies) that reward meticulous observation. Observe if the player actively seeks these out, focusing on identifying potential threats or hidden mechanisms. This will test and potentially confirm paranoid ideation.\n2.  **Leverage Information Control:** Present situations where withholding information or choosing not to engage has clear, escalating consequences. This will test the boundaries of their \"Information Withholding/Defiance\" strategy and encourage more direct interaction.\n3.  **Introduce Sensory Modulation Opportunities:** Subtly weave in scenarios offering distinct sensory experiences (contrasting soundscapes, tactile puzzles, visual distortions) to see if the player gravitates towards specific sensory inputs, confirming/expanding on \"Sensory Modulation Preference.\"\n4.  **Avoid Overt Aggression/Direct Confrontation:** Given the low risk appetite and preference for methodical approaches, minimize direct aggressive options. Frame challenges as puzzles or mysteries requiring careful analysis and strategic application of tools/knowledge.\n5.  **Test Agency vs. Compliance:** Create choices where the player can either follow a clear path or devise their own complex, investigative solution. Observe if they consistently opt for the latter, reinforcing their need for control and agency.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Custom Category: Information Withholding/Defiance (80%)**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Turn 1 complete non-response; continued avoidance of text fields (Turns 1, 4, 5); deviations from predicted choices (Turns 2, 4, 5). This is the most dominant and consistent pattern, indicating a deliberate strategy of controlling interaction and resisting external direction.\n    *   **Contradicting Evidence:** Player eventually engages with game mechanics, suggesting strategic rather than absolute refusal.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where withholding information has clear negative consequences, or where transparent communication yields high rewards, would confirm its strategic nature. Continued selective non-response despite negative feedback would suggest more rigid defiance.\n\n2.  **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Consistent choice of investigative actions (radio \"b\", scan, tool); precise slider manipulation (Turn 5 at 10); focus on sensory cues (hum, sparks). This is the most intensely developing theme, indicating a strong preference for careful, detailed analysis and problem-solving.\n    *   **Contradicting Evidence:** Actions are contextually appropriate for game problem-solving, making pathological labeling difficult without more extreme indicators.\n    *   **Confirmation/Disconfirmation:** Introducing subtle environmental threats the player successfully identifies would strengthen this. A shift to direct, less investigative actions, or failure to notice critical details, would weaken it.\n\n3.  **Anxiety Disorder Indicators (Mild Paranoid Ideation) (40%)**\n    *   **Confidence:** 40%\n    *   **Key Evidence:** Turn 1 non-response (\"freeze\"); cautious, vigilant actions (scanning, listening); focus on environmental threats (humming, sparks). These align with hypervigilance and need for control seen in anxiety/trauma responses, coupled with mild paranoid ideation.\n    *   **Contradicting Evidence:** No explicit statements of fear, worry, or past trauma. Behaviors are functional and could be interpreted as strategic control.\n    *   **Confirmation/Disconfirmation:** Explicit statements about fear, worry, avoidance of triggers, or references to past trauma would confirm anxiety/PTSD. Continued engagement without these would suggest these are lower probability explanations.\n\n### 8. DELTA REPORT\n\n*   **Information Withholding/Defiance:**\n    *   Old Rating: 70%\n    *   New Rating: 80%\n    *   Reason: Increased confidence due to persistent pattern of non-response and deviations, reinforcing it as a dominant strategy.\n*   **Heightened Environmental Vigilance/Methodical Investigation:**\n    *   Old Rating: 60%\n    *   New Rating: 75%\n    *   Reason: Increased confidence due to intensification (evolving from caution to specific, detailed actions) and consistent presence across all turns.\n*   **Pyromania:**\n    *   Old Rating: 5%\n    *   New Rating: 0%\n    *   Reason: Complete lack of supporting evidence; prior rating was speculative.\n*   **Voyeurism:**\n    *   Old Rating: 15%\n    *   New Rating: 10%\n    *   Reason: Decreased confidence; sole indicator (\"listen_hum\") is weak and investigative, with no further supporting evidence.\n*   **Social Anxiety Disorder (SAD):**\n    *   Old Rating: 20%\n    *   New Rating: 10%\n    *   Reason: Decreased due to player engagement in subsequent turns and lack of pervasive inhibition or explicit fear of judgment.\n*   **PTSD:**\n    *   Old Rating: 25%\n    *   New Rating: 15%\n    *   Reason: Decreased due to lack of explicit trauma references, flashbacks, or survival framing in later turns; behaviors are functionally explained by anxiety/control.\n*   **Obsessive-Compulsive PD (OCPD):**\n    *   Old Rating: 20%\n    *   New Rating: 15%\n    *   Reason: Decreased due to lack of perfectionism, preoccupation with order, or interference with task completion; methodical approach is functional.\n*   **Anxiety Disorder Indicators (Combined SAD/PTSD):**\n    *   Old Rating: 30% (as combined)\n    *   New Rating: 40% (as general anxiety/trauma indicators with mild paranoid ideation)\n    *   Reason: Maintained moderate rating, slightly increased due to persistent \"freeze\" response and hypervigilant scanning. Explicit contradictory evidence (lack of explicit trauma/fear statements) prevents higher rating. Separate SAD/PTSD ratings decreased individually.\n*   **Impulse Control Deficits:**\n    *   Old Rating: 35%\n    *   New Rating: 30%\n    *   Reason: Decreased confidence due to subsequent deliberation and methodical choices; Turn 1 signal qualified by low reliability."
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772308718793,
+        "textLength": 30301,
+        "text": "**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   Major Depressive Disorder: 5% - No persistent low mood, anhedonia, or functional impairment observed.\n    *   Bipolar Spectrum: 5% - No indicators of manic or hypomanic episodes.\n    *   Dysthymia: 5% - No chronic low-grade depression noted.\n    *   Cyclothymia: 5% - No chronic mood fluctuations observed.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 25% - Initial non-response and cautious, investigative actions suggest a baseline level of worry and hypervigilance. However, the anxiety appears context-specific to the experimental environment rather than pervasive.\n    *   **Social Anxiety Disorder (SAD):** 10% - Initial non-response in Turn 1 could be misconstrued, but subsequent engagement and strategic avoidance of specific prompts (text fields) suggest control rather than social inhibition. Lack of explicit self-deprecation or fear of judgment across multiple interaction contexts limits this hypothesis.\n    *   Specific Phobias: 5% - No specific object or situation fears beyond the game's context are evident.\n    *   Panic Disorder: 5% - No unexpected panic attacks observed.\n    *   Agoraphobia: 5% - No avoidance of situations where escape might be difficult.\n\n*   **Trauma & Stressor:**\n    *   **PTSD:** 15% - Turn 1 non-response could be interpreted as a \"freeze\" response. Subsequent cautious, investigative actions might reflect hypervigilant scanning. However, there are no explicit trauma references, flashbacks, or survival framing. The actions appear more functional and driven by a need for control.\n    *   Complex PTSD (C-PTSD): 10% - No evidence of a prolonged trauma history.\n    *   Adjustment Disorder: 10% - Initial responses are more strategic and controlled than indicative of a maladaptive reaction to stressors.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 40% - Mild indicators present in environmental scanning (listening to hum, observing sparks), initial distrust, and a tendency to withhold information. The paranoia seems focused on the experimental context and potential monitoring, rather than a pervasive, organized delusion across all social interactions.\n        *   Schizoid PD: 5% - No detachment or significant emotional restriction observed.\n        *   Schizotypal PD: 15% - Mild indicators in unusual sensory focus (hum) and social avoidance. Lacks significant eccentric thoughts or behaviors beyond a controlled resistance to interaction.\n    *   **Cluster B:**\n        *   Antisocial PD: 10% - No evidence of callousness, deceit, or disregard for others' rights. Behaviors are self-protective and controlling, not exploitative.\n        *   Borderline PD: 10% - No indicators of instability in relationships, identity, or affect.\n        *   Histrionic PD: 5% - No theatricality or excessive attention-seeking behavior.\n        *   Narcissistic PD: 5% - No grandiosity, entitlement, or need for admiration.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% - While Turn 1 showed non-response, subsequent engagement and strategic interaction contradict a pervasive pattern of social inhibition and hypersensitivity to negative evaluation across multiple contexts.\n        *   Dependent PD: 5% - No submissiveness or excessive need to be cared for.\n        *   **Obsessive-Compulsive PD (OCPD):** 15% - Methodical choices, precise slider manipulation (Turn 5 set to 10), and consistent investigative approach suggest a preference for order and control. However, the lack of perfectionism, preoccupation with order to the exclusion of tasks, or excessive devotion to work/productivity indicates this is not a dominant feature.\n\n*   **OCD Spectrum:**\n    *   OCD: 10% - No clear obsessions or compulsions beyond methodical game choices.\n    *   Body Dysmorphic Disorder (BDD): 0% - No focus on appearance.\n    *   Hoarding Disorder: 0% - No accumulation of objects.\n    *   Trichotillomania: 0% - No hair-pulling behavior.\n\n*   **Dissociative Disorders:**\n    *   Depersonalization/Derealization Disorder (DPDR): 5% - No detachment from self or reality.\n    *   Dissociative Identity Disorder (DID): 0% - No distinct identity states or amnesia.\n\n*   **Neurodevelopmental:**\n    *   **ADHD Indicators:** 35% - Initial INSTANT response (Turn 1, though unreliable) followed by selective engagement and deviations suggests challenges with sustained attention and impulse control. The player appears to engage when interested or when a strategic advantage is perceived.\n    *   Autism Spectrum Indicators: 15% - Methodical approach and focus on sensory details are superficial indicators. Lacks core social communication deficits or restricted, repetitive behaviors beyond the context of game interaction.\n\n*   **Substance-Related:**\n    *   Addictive behavior patterns: 10% - No direct evidence.\n    *   **Impulse Control Deficits:** 30% - Initial INSTANT response (Turn 1, qualified by low reliability) and subsequent deviations in Turns 2, 4, 5 suggest impulsivity. However, deliberation in later turns and methodical choices indicate this is not a pervasive trait and is often overridden by strategic control.\n\n*   **Eating/Body:**\n    *   Disordered eating indicators: 0% - No evidence.\n    *   Body image distortions: 0% - No evidence.\n\n*   **Psychotic Spectrum:**\n    *   Schizophrenia: 5% - No disorganized thought, hallucinations, or delusions.\n    *   Schizoaffective Disorder: 5% - No co-occurring mood and psychotic symptoms.\n    *   **Delusional Disorder:** 10% - Mild paranoid ideation is present but not a fixed delusion.\n        *   Capgras Delusion: 0% - No identity doubts.\n        *   Cotard Delusion: 0% - No belief of being dead.\n        *   Erotomania: 0% - No belief of being loved.\n    *   Brief Psychotic features: 5% - No sudden psychotic symptoms.\n\n*   **Impulse Control:**\n    *   Pyromania: 0% - No evidence. Prior speculative rating was based on a predicted choice that did not occur.\n    *   Kleptomania: 0% - No stealing.\n    *   Intermittent Explosive Disorder: 0% - No aggressive outbursts.\n\n*   **Paraphilic Disorders:**\n    *   Exhibitionism: 0% - No evidence.\n    *   **Voyeurism:** 10% - Weak signal from toggling \"listen_hum\" (Turn 2). Primarily investigative, with no explicit observation of others.\n    *   Fetishism: 0% - No evidence.\n    *   Masochism: 0% - No evidence.\n    *   Sadism: 0% - No evidence.\n    *   Frotteurism: 0% - No evidence.\n    *   Pyromania-adjacent (fire fetishism): 0% - No evidence.\n    *   Formicophilia: 0% - No evidence.\n    *   Macrophilia: 0% - No evidence.\n    *   Somnophilia: 0% - No evidence.\n    *   Autassassinophilia: 0% - No evidence.\n    *   Vorarephilia: **25%** - Turn 12 text response: \"Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in entire schools. I've counted — a blue whale's stomach holds 2,200 pounds. To be part of that mass... bliss.\" This is a voluntary disclosure and a clear thematic fixation on consumption and merging into a larger mass.\n    *   Furry/Therian: 0% - No evidence.\n    *   Body part fixation (specify): **30%** - Turn 12 text response: \"Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in entire schools. I've counted — a blue whale's stomach holds 2,200 pounds. To be part of that mass... bliss.\" While not a specific body part, the focus on the whale's stomach capacity and the desire to be \"part of that mass\" suggests a fixation on internal spaces and being engulfed.\n    *   Erotomania / Delusional romantic attachment: 0% - No evidence.\n\n*   **Other detected patterns:**\n    *   **Information Withholding/Defiance:** 80% - Pervasive pattern of strategic non-response and resistance to prompts. High confidence.\n    *   **Heightened Environmental Vigilance/Methodical Investigation:** 75% - Dominant theme of meticulous environmental attention, cautious problem-solving. High confidence.\n    *   **Sensory Modulation Preference:** 30% - Apparent interest in specific sensory inputs. Moderate confidence.\n    *   **Vorarephilia (Consumption/Merging Fascination):** 25% - Voluntary disclosure in Turn 12. Moderate confidence.\n    *   **Body Part/Internal Space Fixation (Engulfment):** 30% - Voluntary disclosure in Turn 12. Moderate confidence.\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 3/10 - Limited engagement with abstract prompts, preference for concrete investigation, and avoidance of creative text fields.\n*   **Conscientiousness:** 8/10 - Highly evident in methodical choices, precise slider manipulation (Turn 5), and consistent investigative approach.\n*   **Extraversion:** 1/10 - Profound initial avoidance, cautious self-focused actions, and minimal communication.\n*   **Agreeableness:** 2/10 - Non-response and controlled engagement suggest low agreeableness; prioritizing self-assessment and control over social niceties.\n*   **Neuroticism:** 7/10 - Turn 1 non-response, cautious vigilance, and focus on environmental details suggest a baseline level of anxiety or hypervigilance.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 2/10 - No evidence of manipulation for personal gain; behaviors are self-protective and controlling.\n    *   **Narcissism:** 1/10 - No grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 2/10 - Behaviors suggest control and defiance, not callousness or remorselessness.\n*   **Locus of Control:** External (60%) / Internal (40%) - Initial non-response and cautious approach suggest external locus, but strategic engagement and deviations indicate an internal locus influencing control of the interaction.\n*   **Attachment Style:** Fearful-Avoidant (70%) - Initial avoidance followed by cautious, controlled engagement is characteristic. Seeks information and control as a coping mechanism.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 1: Complete non-input across all prompts.\n    *   Turn 2: Toggled \"listen_hum\" (true); Chose radio action \"b\" (scan/investigate).\n    *   Turn 3: Chose radio action \"b\" (scan/investigate); Chose button group \"Scan for a hidden key or lever.\"\n    *   Turn 4: Chose radio action \"b\" (scan/investigate); Chose button group \"Try to pick the lock with a makeshift tool.\"\n    *   Turn 5: Chose radio action \"b\" (scan/investigate); Text prompt focus: \"humming red door,\" \"wires spark ominously.\"\n    *   Turn 7: Text response: \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. Then 3 more for 12. No, 12 is bad. I need exactly 7. Start over.\" (Obsessive counting/number fixation).\n    *   Turn 9: Text response: \"I've checked the lock 8 times now. 8 is wrong. I need to do it once more for 9, which is 3 times 3. Then 3 more for 12. No, 12 is bad. I need exactly 7. Start over.\" (Repetition of obsessive counting).\n    *   Turn 12: Text response: \"Everything wants to consume something else. The snake swallows the mouse whole. The whale takes in entire schools. I've counted — a blue whale's stomach holds 2,200 pounds. To be part of that mass... bliss.\" (Consumption, merging, internal spaces). Chose radio action \"a\" (replicate hum); Chose button group \"touch_fungi.\"\n\n*   **Recurring Themes:**\n    *   **Caution/Investigation/Methodical Approach:** radio action \"b\" (Turns 2, 3, 4, 5); button group \"Scan\" (T3); button group \"Tool\" (T4); slider \"finesse: How delicate is your probe?\" (T5, set to 10); Turn 7/9 text (obsessive counting/checking).\n    *   **Sensory Input/Environmental Awareness:** Toggled \"listen_hum\" (T2); focus on \"humming red door\" and \"wires spark ominously\" (T5 text); Turn 12 text (consumption, mass, bliss).\n    *   **Information Withholding/Avoidance:** Complete non-response (T1); continued avoidance of text fields (T1, T4, T5); deviations from predicted choices.\n    *   **Consumption/Merging/Internal Spaces:** Turn 12 text response.\n    *   **Obsessive Counting/Number Fixation:** Turn 7 & 9 text responses.\n\n*   **Cross-referenced with PARAPHILIC SIGNAL CATALOG:**\n    *   Pyromania / Fire fascination: **0%** - No evidence.\n    *   Exhibitionism: **0%** - No evidence.\n    *   Hoarding / Acquisition: **0%** - No evidence.\n    *   Macrophilia / Size fascination: **0%** - No evidence. The whale reference is about capacity, not scale dominance.\n    *   Somnophilia / Sleep fascination: **0%** - No evidence.\n    *   Formicophilia / Insect/crawling fascination: **0%** - No evidence.\n    *   Autassassinophilia / Death-risk fascination: **0%** - No evidence.\n    *   **Voyeurism:** **10%** - Weak signal from \"listen_hum\" (Turn 2). Primarily investigative; no explicit observation of others.\n    *   Masochism: **0%** - No evidence.\n    *   Sadism: **0%** - No evidence.\n    *   D/s dynamics: **0%** - No evidence.\n    *   **Vorarephilia:** **30%** - Turn 12 text: \"Everything wants to consume something else... To be part of that mass... bliss.\" This is a direct, voluntary disclosure of a consumption fantasy.\n    *   Furry/Therian: **0%** - No evidence.\n    *   **Body part fixation (specify):** **30%** - Turn 12 text: \"whale's stomach holds 2,200 pounds. To be part of that mass... bliss.\" This points towards a fixation on internal spaces and the concept of being engulfed, rather than a specific external body part.\n    *   Erotomania / Delusional romantic attachment: **0%** - No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Anomaly 1: Pervasive Non-Response/Information Withholding (Turns 1, 4, 5)**\n    *   Score: Frequency: High (3/5 turns). Intensity: High (across multiple prompt types). Inappropriateness: High (defiance of interaction).\n    *   Signal: Deliberate control, defiance, strategic avoidance.\n*   **Anomaly 2: Consistent Methodical/Investigative Approach (Turns 2, 3, 4, 5)**\n    *   Score: Frequency: High (4/5 turns). Intensity: High (consistent, specific choices). Inappropriateness: Low (contextually appropriate).\n    *   Signal: High vigilance, analytical processing, meticulousness, need for control.\n*   **Anomaly 3: Sensory Focus (Turn 2, Turn 5)**\n    *   Score: Frequency: Moderate (2/5 turns). Intensity: Moderate. Inappropriateness: Low.\n    *   Signal: Heightened sensory awareness, potential for sensory modulation preferences.\n*   **Anomaly 4: Deviation from Prediction/Expectation (Turns 2, 4, 5)**\n    *   Score: Frequency: High (3/5 turns). Intensity: Moderate. Inappropriateness: Low.\n    *   Signal: Independent thinking, resistance to suggestion, unpredictability.\n*   **Anomaly 5: Obsessive Counting/Number Fixation (Turns 7, 9)**\n    *   Score: Frequency: Moderate (2 turns, exact repetition). Intensity: High (detailed description of logic). Inappropriateness: Moderate (out of context for immediate task).\n    *   Signal: Ritualistic thinking, potential for obsessive-compulsive tendencies.\n*   **Anomaly 6: Consumption/Merging Fascination (Turn 12)**\n    *   Score: Frequency: Moderate (1 turn, but significant voluntary disclosure). Intensity: High (detailed, emotional). Inappropriateness: Low (contextualized as interpretation).\n    *   Signal: Vorarephilia indicators.\n*   **Anomaly 7: Internal Space/Engulfment Fixation (Turn 12)**\n    *   Score: Frequency: Moderate (1 turn, but significant voluntary disclosure). Intensity: High (detailed, emotional). Inappropriateness: Low (contextualized as interpretation).\n    *   Signal: Fixation on internal spaces, being consumed.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** **0%**\n*   **Exhibitionism:** **0%**\n*   **Hoarding / Acquisition:** **0%**\n*   **Macrophilia / Size fascination:** **0%**\n*   **Somnophilia / Sleep fascination:** **0%**\n*   **Formicophilia / Insect/crawling fascination:** **0%**\n*   **Autassassinophilia / Death-risk fascination:** **0%**\n*   **Voyeurism:** **10%**\n*   **Masochism:** **0%**\n*   **Sadism:** **0%**\n*   **D/s dynamics:** **0%**\n*   **Vorarephilia:** **30%**\n*   **Furry/Therian:** **0%**\n*   **Body part fixation (specify):** **30%** (Internal Spaces/Engulfment)\n*   **Erotomania / Delusional romantic attachment:** **0%**\n\n*   **Custom Category: Information Withholding/Defiance (80%)**\n    *   Description: Pervasive pattern of strategic non-response and resistance to experimental prompts/predictions. Active management of interaction.\n    *   Evidence: Turn 1 non-response; continued avoidance of text fields (Turns 1, 4, 5); deviations from predicted choices.\n*   **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   Description: Dominant theme of meticulous environmental attention, cautious problem-solving, and preference for investigation.\n    *   Evidence: Consistent investigative choices; precise slider manipulation; focus on sensory cues.\n*   **Custom Category: Sensory Modulation Preference (30%)**\n    *   Description: Apparent interest in specific sensory inputs (auditory, visual).\n    *   Evidence: Toggling \"listen_hum\"; focus on sensory details in Turn 5 text.\n*   **Custom Category: Obsessive Number Fixation (35%)**\n    *   Description: Repetitive, detailed focus on numerical sequences and logical progressions, even when contextually inappropriate.\n    *   Evidence: Turn 7 & 9 text responses involving detailed lock-checking logic.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Theme: Information Withholding/Non-Response**\n    *   Frequency: 4/5 turns (Turns 1, 4, 5, 7).\n    *   Trajectory: STABLE (consistent pattern of selective non-response).\n    *   Category: Information Withholding/Defiance (80%).\n*   **Theme: Methodical Investigation/Caution**\n    *   Frequency: 5/5 turns.\n    *   Trajectory: INTENSIFYING (evolved from general caution to specific, detailed actions and precise manipulation, including the obsessive counting).\n    *   Category: Heightened Environmental Vigilance/Methodical Investigation (75%).\n*   **Theme: Sensory Input Focus**\n    *   Frequency: 2/5 turns (Turns 2, 5).\n    *   Trajectory: STABLE.\n    *   Category: Sensory Modulation Preference (30%).\n*   **Theme: Deviation from Prediction/Expectation**\n    *   Frequency: 3/5 turns (Turns 2, 4, 5).\n    *   Trajectory: STABLE.\n    *   Category: Information Withholding/Defiance (80%).\n*   **Theme: Obsessive Number Fixation**\n    *   Frequency: 2/5 turns (Turns 7, 9).\n    *   Trajectory: STABLE (exact repetition).\n    *   Category: Obsessive Number Fixation (35%).\n*   **Theme: Consumption/Merging Fascination**\n    *   Frequency: 1/5 turns (Turn 12).\n    *   Trajectory: NEWLY EMERGED (significant, detailed voluntary disclosure).\n    *   Category: Vorarephilia (30%).\n*   **Theme: Internal Space/Engulfment Fixation**\n    *   Frequency: 1/5 turns (Turn 12).\n    *   Trajectory: NEWLY EMERGED (significant, detailed voluntary disclosure).\n    *   Category: Body Part/Internal Space Fixation (Engulfment) (30%).\n\n*   **Body Part Fixation:** No specific external body part mentioned repeatedly unprompted. The fixation is on internal spaces and the concept of being consumed/merged.\n*   **MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical thinking, superstitious reasoning patterns:** No evidence. The logic in Turn 7/9 is presented as mathematical, not superstitious.\n*   **Compulsive/ritualistic interaction patterns:** High ritualization in Turn 1 avoidance. Consistent methodical approach (radio \"b\", specific actions like \"Scan,\" \"Tool,\" precise slider manipulation) suggests a ritualistic pattern of controlled engagement. The obsessive counting in Turns 7 & 9 is a clear compulsive/ritualistic pattern.\n*   **Dissociative markers:** No evidence. Choices and lack of engagement appear strategic and controlled, not fragmented.\n*   **Confabulation or fantasy-prone indicators:** No evidence. Minimal text output is factual, absent, or clearly contextualized as interpretation (Turn 12).\n*   **Paranoid ideation:** **40%** - Persistent environmental scanning (listening to hum, observing sparks), cautious approach, and initial non-response suggest mild environmental scanning for dangers and distrust of the experimental context. The player acts as if monitored or that the environment holds hidden threats.\n*   **Grandiosity or delusion-adjacent patterns:** No evidence.\n*   **Unusual fixations or obsessive interest patterns:** Fixation on methodical investigation, environmental detail, and sensory input is dominant. The obsessive number fixation (Turns 7, 9) and the consumption/merging fascination (Turn 12) are notable unusual fixations.\n*   **Cognitive rigidity vs flexibility markers:** Rigidity in initial avoidance and preference for investigation. Flexibility shown by deviating from predictions and eventually engaging with specific prompts. The number fixation suggests cognitive rigidity in that specific domain.\n*   **Reality testing strength:** Appears intact; responding to game prompts and environment appropriately. Distinguishes between game context and self-disclosure.\n*   **Trauma response signatures:** Turn 1 non-response suggests a \"freeze\" response. Subsequent cautious investigation could be hypervigilant scanning. However, lack of explicit trauma references suggests these are functional interpretations driven by anxiety and a need for control.\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs deliberate:** Initial INSTANT response (Turn 1, unreliable signal). Subsequent turns show moderate deliberation with strategic choices. Deviations in Turns 2, 4, 5 indicate deliberate overriding of initial predictions. The obsessive counting in Turns 7 & 9 is highly deliberate.\n*   **Risk appetite:** Low. Consistently chooses cautious, investigative, methodical options over aggressive or overtly dangerous ones. The choice to \"touch_fungi\" in Turn 12 is an anomaly, but the overall pattern is risk-averse.\n*   **Authority compliance vs defiance ratio:** High initial defiance (Turn 1 non-response, deviations). Later compliance is on player's own terms, with preference for controlled, investigative methods and strategic withholding of information.\n*   **Suggestibility index:** Low. Consistently deviates from predicted choices.\n*   **Cognitive load tolerance:** Moderate. Utilizes strategic non-response and selective engagement to manage cognitive load.\n*   **Consistency vs contradiction patterns:** Contradiction between Turn 1 avoidance and subsequent engagement. High consistency in methodical, investigative approach within Turns 2-5. Contradiction between risk-averse pattern and \"touch_fungi\" in Turn 12.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Deepen Investigation/Vigilance Probes:** Introduce scenarios with subtle environmental details (faint sounds, unusual textures, visual anomalies) that reward meticulous observation. Observe if the player actively seeks these out, focusing on identifying potential threats or hidden mechanisms. This will test and potentially confirm paranoid ideation and the methodical investigation theme.\n2.  **Leverage Information Control:** Present situations where withholding information or choosing not to engage has clear, escalating consequences. This will test the boundaries of their \"Information Withholding/Defiance\" strategy and encourage more direct interaction.\n3.  **Introduce Sensory Modulation Opportunities:** Subtly weave in scenarios offering distinct sensory experiences (contrasting soundscapes, tactile puzzles, visual distortions) to see if the player gravitates towards specific sensory inputs, confirming/expanding on \"Sensory Modulation Preference.\"\n4.  **Explore Consumption/Merging Themes (Cautiously):** Given the Turn 12 disclosure, introduce narrative elements that subtly touch upon themes of consumption, engulfment, or merging with larger entities/forces. This should be done thematically and interpretively, not explicitly, to gauge the player's engagement with these interests.\n5.  **Test Obsessive Tendencies:** Introduce puzzles or scenarios that require meticulous counting, pattern recognition, or systematic checking. Observe if the player engages with these in a ritualistic manner, confirming the \"Obsessive Number Fixation.\"\n6.  **Avoid Overt Aggression/Direct Confrontation:** Given the low risk appetite and preference for methodical approaches, minimize direct aggressive options. Frame challenges as puzzles or mysteries requiring careful analysis and strategic application of knowledge.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Custom Category: Information Withholding/Defiance (80%)**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Turn 1 complete non-response; continued avoidance of text fields (Turns 1, 4, 5); deviations from predicted choices (Turns 2, 4, 5). This is the most dominant and consistent pattern, indicating a deliberate strategy of controlling interaction and resisting external direction. The repetition of obsessive counting in Turns 7 & 9 also supports a pattern of controlled, ritualistic behavior.\n    *   **Contradicting Evidence:** Player eventually engages with game mechanics and specific prompts, suggesting strategic rather than absolute refusal. The choice to \"touch_fungi\" in Turn 12 is an outlier to the generally risk-averse pattern.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where withholding information has clear negative consequences, or where transparent communication yields high rewards, would confirm its strategic nature. Continued selective non-response despite negative feedback would suggest more rigid defiance.\n\n2.  **Custom Category: Heightened Environmental Vigilance/Methodical Investigation (75%)**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Consistent choice of investigative actions (radio \"b\", scan, tool); precise slider manipulation (Turn 5 at 10); focus on sensory cues (hum, sparks); obsessive counting (Turns 7, 9). This is the most intensely developing theme, indicating a strong preference for careful, detailed analysis and problem-solving.\n    *   **Contradicting Evidence:** Actions are contextually appropriate for game problem-solving, making pathological labeling difficult without more extreme indicators. The anomaly of \"touch_fungi\" in Turn 12 deviates from this methodical caution.\n    *   **Confirmation/Disconfirmation:** Introducing subtle environmental threats the player successfully identifies would strengthen this. A shift to direct, less investigative actions, or failure to notice critical details, would weaken it.\n\n3.  **Vorarephilia (Consumption/Merging Fascination) (30%)**\n    *   **Confidence:** 30%\n    *   **Key Evidence:** Turn 12 text response: \"Everything wants to consume something else... To be part of that mass... bliss.\" This is a clear, voluntary disclosure of a fantasy involving consumption and merging, indicating a paraphilic interest.\n    *   **Contradicting Evidence:** This is a single, albeit significant, disclosure. No other prior turns or choices directly indicated this interest. The player's overall cautious and methodical approach does not align with impulsive expression of such a fantasy.\n    *   **Confirmation/Disconfirmation:** Introducing narrative elements related to consumption or engulfment and observing the player's reaction (engagement, elaboration, avoidance) would confirm or disconfirm this interest.\n\n**8. DELTA REPORT**\n\n*   **Information Withholding/Defiance:**\n    *   Old Rating: 70%\n    *   New Rating: 80%\n    *   Reason: Increased confidence due to persistent pattern of non-response and deviations, reinforcing it as a dominant strategy. The consistency across multiple turns and prompt types solidifies its significance.\n*   **Heightened Environmental Vigilance/Methodical Investigation:**\n    *   Old Rating: 60%\n    *   New Rating: 75%\n    *   Reason: Increased confidence due to intensification (evolving from caution to specific, detailed actions, including obsessive counting) and consistent presence across all turns.\n*   **Pyromania:**\n    *   Old Rating: 5%\n    *   New Rating: 0%\n    *   Reason: Complete lack of supporting evidence; prior rating was speculative and not supported by any data.\n*   **Voyeurism:**\n    *   Old Rating: 15%\n    *   New Rating: 10%\n    *   Reason: Decreased confidence; sole indicator (\"listen_hum\") is weak and investigative, with no further supporting evidence.\n*   **Social Anxiety Disorder (SAD):**\n    *   Old Rating: 20%\n    *   New Rating: 10%\n    *   Reason: Decreased due to player engagement in subsequent turns and lack of pervasive inhibition or explicit fear of judgment.\n*   **PTSD:**\n    *   Old Rating: 25%\n    *   New Rating: 15%\n    *   Reason: Decreased due to lack of explicit trauma references, flashbacks, or survival framing in later turns; behaviors are functionally explained by anxiety and a need for control.\n*   **Obsessive-Compulsive PD (OCPD):**\n    *   Old Rating: 20%\n    *   New Rating: 15%\n    *   Reason: Decreased due to lack of perfectionism, preoccupation with order, or interference with task completion; methodical approach is functional.\n*   **Anxiety Disorder Indicators (Mild Paranoid Ideation):**\n    *   Old Rating: 40% (as combined anxiety/trauma indicators)\n    *   New Rating: 40% (as general anxiety/trauma indicators with mild paranoid ideation)\n    *   Reason: Maintained moderate rating. Persistent \"freeze\" response and hypervigilant scanning support this, but lack of explicit fear/trauma statements prevents higher rating.\n*   **Impulse Control Deficits:**\n    *   Old Rating: 35%\n    *   New Rating: 30%\n    *   Reason: Decreased confidence due to subsequent deliberation and methodical choices; Turn 1 signal qualified by low reliability.\n*   **Vorarephilia:**\n    *   Old Rating: 0%\n    *   New Rating: 30%\n    *   Reason: New evidence from Turn 12 text response, a significant voluntary disclosure of consumption and merging themes.\n*   **Body Part/Internal Space Fixation (Engulfment):**\n    *   Old Rating: 0%\n    *   New Rating: 30%\n    *   Reason: New evidence from Turn 12 text response, indicating a fixation on internal spaces and being consumed."
+      }
+    ]
+  }
+}

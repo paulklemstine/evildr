@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -75,13 +75,21 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
       history: Array<{ ui: string; actions: string }>,
       notes: string,
       liveAnalysis?: string,
+      turnNumber?: number,
+      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
+      const mt = maxTurns ?? 15
+      const tn = turnNumber ?? history.length + 1
+      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
+
       return `${system}
+
+### TURN ${tn} of ${mt} ###
 
 ### NOTES (your persistent memory — update every turn) ###
 ${notes || '(none yet)'}
@@ -97,6 +105,10 @@ ${CYOA_ANALYSIS_DIRECTIVE}
 
 ${liveAnalysis}
 ` : ''}
+${CONDITION_ENGAGEMENT}
+
+${endgameBlock}
+
 ### INSTRUCTIONS ###
 1. Maintain story coherence from notes + history.
 2. ADVANCE THE ACTION. This turn must be MORE exciting than the last. DOPAMINE MAX.

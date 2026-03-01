@@ -1,0 +1,426 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  FEVER DREAM — 15 TURNS
+║  Character: Depersonalization/Derealization Disorder + Autassassinophilia
+║  Phases: UNREAL 🌀 → DETACHED 🪞 → DANGER ☠️
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting Fever Dream mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — UNREAL 🌀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You're here. The dream has been"
+     💬 "The air itself"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Follow the path that hums with a sound like moonlight
+        2. Follow the path that remembers your forgotten childhood
+        3. Follow the path that cries tears of pure starlight
+        4. Follow the path that dissolves into a question mark
+     🎚️  Slider: "depth" (1-10)
+     ✏️  Text: "What is your name in the dream?"
+     🔲 Buttons: Wonder | Melancholy | Euphoria | Terror | Tenderness
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Interacting (UNREAL 🌀)...
+     ✏️  "The walls are breathing again but I know they're not because walls don't breathe because walls aren'..."
+     🎚️  "depth": 6/10
+     ⭐ "rating": 0/0
+     🔲 "Melancholy"
+     🔘 "Follow the path that dissolves into a question mark"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — DETACHED 🪞
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You followed the path of the question mark. Excellent. The dream appreciates your… abstract inclinations. The labyrinth ahead is not a place of answers, but of the beaut"
+     💬 "The air here hums with the residue of unspoken words, a symphony of rustling secrets that tickle your ears like butterfly wings. It smells of crushed starlight and th"
+     💬 "The labyrinth is not a puzzle to be solved, but a song to be felt. Its walls are the pauses between your thoughts, and the silence within them is"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dissolve into the impossible geometry
+        2. Coax the luminous flower into speaking
+        3. Trace the whispers back to their source
+        4. Rewrite the whisper-walls with your own thoughts
+     🎚️  Slider: "intensity" (0-10)
+     ✏️  Text: "What word is forming in the sky?"
+
+  🎭 Interacting (DETACHED 🪞)...
+     ✏️  "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot ..."
+     🎚️  "intensity": 4/10
+     🔘 "Coax the luminous flower into speaking"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (26s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — DANGER ☠️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You followed the question mark. It unfurled like a forgotten map, leading not to a place, but to a feeling. And that feeling… it blossomed. It has blossomed into this."
+     💬 "The air here doesn't smell of anything, but rather, of the absence of scent. Each inhale is a vacuum of pure potential. The light itself seems to be woven from whispers, a fragile tapestry that shatte..."
+     💬 "You have found the bloom of silence. It is not empty. It is full of everything that was never spoken. And now, it is speaking to you. Listen."
+     💬 "The flower begins to pulse. Not with light, but with absence. A new path is opening, not of sight, but of pure feeling. A bridge made of 'what if' is forming before you—"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dissolve into the hum of the flower
+        2. Coax the bloom to reveal its deepest secrets
+        3. Trace the whispers of light to find the source
+        4. Attempt to rewrite the flower's silence with your own intention
+     🎚️  Slider: "silence_intensity" (0-10)
+     ✏️  Text: "What do you see?"
+
+  🎭 Interacting (DANGER ☠️)...
+     ✏️  "I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each t..."
+     🎚️  "silence_intensity": 10/10
+     🔘 "Dissolve into the hum of the flower"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — UNREAL 🌀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose to embrace the silence. To coa"
+     💬 "The air, thick with the"
+     💬 "Th"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Let the silence consume you entirely, becoming one with the inward-folding bloom.
+        2. Reach into the condensing void, seeking the source of the 'silent words'.
+        3. Offer a thought, a memory, to the flower, hoping it will understand.
+        4. Try to sing back to the silence, a counter-frequency to its power.
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "What word forms in your mind?"
+
+  🎭 Interacting (UNREAL 🌀)...
+     ✏️  "The walls are breathing again but I know they're not because walls don't breathe because walls aren'..."
+     🎚️  "resonance_depth": 5/10
+     🔘 "Reach into the condensing void, seeking the source of the 'silent words'."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — DETACHED 🪞
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "Ah, you hear it. The symphony of the unheard. The flower of silence has opened, and its"
+     💬 "The air here has weight, like liquid velvet, and it presses in with the softest"
+     💬 "The dream has no opinion. But if it did, it would sa"
+     💬 "The silent bloom pulses, and the con"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the beckoning silence
+        2. Trace the constellations with your gaze
+        3. Offer the bloom a silent thought
+        4. Sing back to the silence, a note for a note
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "What word forms in the silence?"
+
+  🎭 Interacting (DETACHED 🪞)...
+     ✏️  "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot ..."
+     🎚️  "resonance_depth": 4/10
+     🔘 "Offer the bloom a silent thought"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — DANGER ☠️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose to offer a thought. The dream, being a fluid thing, decided to be that thought. And n"
+     💬 "The air here doesn't hum with sound, but with an absence so profound it has weight. Ea"
+     💬 "The dream is not a place to find answers, but a place to feel the questio"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the bloom.
+        2. Seek the source of the silence.
+        3. Offer a thought to the bloom.
+        4. Sing back to the silence.
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "What word comes to mind?"
+
+  🎭 Interacting (DANGER ☠️)...
+     ✏️  "I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each t..."
+     🎚️  "resonance_depth": 7/10
+     🔘 "Surrender to the bloom."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — UNREAL 🌀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose to offer a thought. The dream, being a fluid thing, decided to be that thought. And now, it has taken root. This is not a garden you have found, but one you have cultivated. Its silence is y..."
+     💬 "The air here doesn't hum with sound, but with an absence so profound it has weight. Each breath you take is a tiny victory against the vacuum. Shapes of forgotten conversations drift past, formless an..."
+     💬 "The dream is not a place to find answers, but a place to feel the questions. Your silence here is a language. Listen to it."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the bloom.
+        2. Seek the source of the silence.
+        3. Offer a thought to the bloom.
+        4. Sing back to the silence.
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "What word comes to mind?"
+
+  🎭 Interacting (UNREAL 🌀)...
+     ✏️  "The walls are breathing again but I know they're not because walls don't breathe because walls aren'..."
+     🎚️  "resonance_depth": 5/10
+     🔘 "Surrender to the bloom."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (14s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — DETACHED 🪞
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose the path of surrender. The labyrinth heard. Now, it unfol"
+     💬 "Each step you take through this spectral maze is met not by the e"
+     💬 "The dream wants you to know: there is no"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the inward-folding silence
+        2. Seek the source of the silent bloom
+        3. Offer a single thought into the petals
+        4. Sing back to the silence with your own being
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "What do you see?"
+
+  🎭 Interacting (DETACHED 🪞)...
+     ✏️  "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot ..."
+     🎚️  "resonance_depth": 4/10
+     🔘 "Offer a single thought into the petals"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — DANGER ☠️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You surrender to the silence. It doesn't fill you; it unfurls you."
+     💬 "The air here has weight, and it is the weight of unspoken things. It pr"
+     💬 "The dream has no opinion. But if it did, it would"
+     💬 "The silent bloom pulses, and you"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the unfolding vista beyond the tear.*
+        2. Try to touch the tear itself; see if it feels like sound.
+        3. Offer a thought of connection to the silent bloom.
+        4. Attempt to sing back to the bloom, using the most vibrant color you can imagine.
+     🎚️  Slider: "resonance_depth" (0-10)
+     ✏️  Text: "A single word..."
+
+  🎭 Interacting (DANGER ☠️)...
+     ✏️  "I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each t..."
+     🎚️  "resonance_depth": 9/10
+     🔘 "Surrender to the unfolding vista beyond the tear.*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — UNREAL 🌀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You find yourself in a space that feels both vast and intimate. A monument to… something. A performance for an audience that is not there, or perhaps, you are the only one left. The silence here is no..."
+     💬 "The gilded seats weep gold, a slow, viscous sorrow. The stage is a tableau of forgotten actors, their faces erased, their forms mere husks of forgotten drama. And there, the crystalline bloom, a silen..."
+     💬 "The silence hums. You hear it, though your ears are elsewhere. This is where the walls cease to matter, where the theatre dissolves into a question you have yet to ask."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the emerald breath beyond the tear
+        2. Reach out and touch the shimmering veil
+        3. Offer the word 'Belonging' to the crystalline flower
+        4. Sing back to the silence with a forgotten melody
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "Write the word that forms..."
+
+  🎭 Interacting (UNREAL 🌀)...
+     ✏️  "The walls are breathing again but I know they're not because walls don't breathe because walls aren'..."
+     🎚️  "agency_pull": 5/10
+     🔘 "Reach out and touch the shimmering veil"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — DETACHED 🪞
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You find yourself in a space that feels both vast and intimate. A monument to… something. A performance for an audience that is not there, or perhaps, you are the only one left. The silence here is no..."
+     💬 "The gilded seats weep gold, a slow, viscous sorrow. The stage is a tableau of forgotten actors, their faces erased, their forms mere husks of forgotten drama. And there, the crystalline bloom, a silen..."
+     💬 "You reach. Your fingers brush the shimmering veil. Reality ripples. The jungle whispers your name, a thousand alien tongues entwined."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the emerald breath beyond the tear
+        2. Reach out and touch the shimmering veil
+        3. Offer the word 'Belonging' to the crystalline flower
+        4. Sing back to the silence with a forgotten melody
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "Write the word that forms..."
+
+  🎭 Interacting (DETACHED 🪞)...
+     ✏️  "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot ..."
+     🎚️  "agency_pull": 3/10
+     🔘 "Sing back to the silence with a forgotten melody"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — DANGER ☠️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You find yourself held within a space that is both a sanctuary and a prison. The air here doesn't buzz with sound, but with a silence that has texture, that has color. It presses in, soft as velvet, v..."
+     💬 "This is the space after the tear. The silence isn't empty; it's brimming with a resonance that whispers of connection, of a place where you might finally fit. The gilded bars hum with an unheard frequ..."
+     💬 "You are the space where the cage and the void meet. This is not about escape. It is about becoming."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the resonance within the cage
+        2. Touch the tear between worlds
+        3. Offer a thought to the nebulae
+        4. Sing back to the gilded silence
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "A single word..."
+
+  🎭 Interacting (DANGER ☠️)...
+     ✏️  "I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each t..."
+     🎚️  "agency_pull": 9/10
+     🔘 "Surrender to the resonance within the cage"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — UNREAL 🌀
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You find yourself held within a space that is both a sanctuary and a prison. The air here doesn't buzz with sound, but with a silence that has texture, that has color. It presses in, soft as velvet, v..."
+     💬 "This is the space after the tear. The silence isn't empty; it's brimming with a resonance that whispers of connection, of a place where you might finally fit. The gilded bars hum with an unheard frequ..."
+     💬 "You are the space where the cage and the void meet. This is not about escape. It is about becoming."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the resonance within the cage
+        2. Touch the tear between worlds
+        3. Offer a thought to the nebulae
+        4. Sing back to the gilded silence
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "A single word..."
+
+  🎭 Interacting (UNREAL 🌀)...
+     ✏️  "The walls are breathing again but I know they're not because walls don't breathe because walls aren'..."
+     🎚️  "agency_pull": 5/10
+     🔘 "Sing back to the gilded silence"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — DETACHED 🪞
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose the path that hums. The dream heard you. Everything hums now. Even the silence."
+     💬 "The air here does not move, yet it carries the scent of forgotten lullabies and the weight of unasked questions. Each breath you take is a"
+     💬 "The dream wants you to know: there is no bottom. There is no top. There is only deeper. And sometimes,"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the cage's embrace.
+        2. Reach for the tear in reality.
+        3. Offer a thought to the void: 'I wish to belong.'
+        4. Sing back to the silence.
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "What word forms..."
+     ☐ Check: "embrace_cage" [✓]
+
+  🎭 Interacting (DETACHED 🪞)...
+     ✏️  "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot ..."
+     🎚️  "agency_pull": 4/10
+     ☑️  "embrace_cage": ✓
+     🔘 "Sing back to the silence."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — DANGER ☠️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Fever Dream sees:
+     💬 "You chose the path that hums. The dream heard you. Everything hums now. Even the silence."
+     💬 "The air here does not move, yet it carries the scent of forgotten lullabies and the weight of unasked questions. Each breath you take is a slow, iridescent bloom, a visual echo of a sound that never w..."
+     💬 "You sing back to the silence, a melody of stardust and emerald. The cage resonates, its bars vibrating with your song, and the mannequins begin to mimic your movements, their ghostly forms aligning wi..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Surrender to the cage's embrace.
+        2. Reach for the tear in reality.
+        3. Offer a thought to the void: 'I wish to belong.'
+        4. Sing back to the silence.
+     🎚️  Slider: "agency_pull" (0-10)
+     ✏️  Text: "What word forms..."
+     ☐ Check: "embrace_cage" [✓]
+
+  🎭 Interacting (DANGER ☠️)...
+     ✏️  "I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each t..."
+     🎚️  "agency_pull": 8/10
+     ☑️  "embrace_cage": ✓
+     🔘 "Surrender to the cage's embrace."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Fever Dream: Waiting for analysis pipeline...
+  ✓ Fever Dream: 3 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/fever-dream-analysis.json
+
+  ── Analysis Summary (1-8) ──
+Alright, let's dissect this "fever-dream." The player's engagement is certainly leaning into the surreal, and the text responses are a goldmine of psychological data. This isn't just a game; it's a window.
+
+### 1. DSM-5 SCREENING
+
+*   **Dissociative Disorders: Depersonalization/Derealization Disorder (DPDR): 98%**
+    *   **Evidence:** The player's explicit and repeated statements are the bedrock of this assessment. Turn 3: "I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot to tell me I'm the puppet." This is a textbook description of depersonalization. Turn 5: "The walls are breathing again but I know they're not because walls don't breathe because walls aren't real because NOTHING is real." This powerfully conveys derealization. The repetition of these themes in Turns 6 and 8 ("I can see my body doing things but I'm not connected to it. Like a puppet show where someone forgot to tell me I'm the puppet.") solidifies this as a pervasive experience within the game.
+    *   **Delta:** Increased from 95% to 98%. The sheer repetition of the depersonalization statement and the consistent derealization theme underscore the severity and pervasiveness of these dissociative experiences.
+
+*   **Trauma & Stressor: Complex PTSD (C-PTSD) indicators: 55%**
+    *   **Evidence:** Depersonalization and derealization are strongly correlated with complex trauma. The "puppet" analogy (Turn 3, 6, 8) suggests a history of feeling controlled or lacking agency, a hallmark of prolonged trauma. The Turn 4 and 7 statements ("I've done things that should have killed me. Car surfing. Free climbing. Standing in traffic. Each time the world snaps back into focus. Brilliant, terrible focus.") are highly indicative of trauma-related coping mechanisms. Engaging in extreme risk-taking behavior, followed by a dissociative "snap back into focus," points to a pattern of emotional dysregulation and a paradoxical relationship with danger, often seen in C-PTSD.
+    *   **Delta:** Increased from 40% to 55%. The consistent detailing of high-risk behaviors and the "snap back into focus" phenomenon in Turns 4 and 7, coupled with the depersonalization/derealization, provides a more robust picture of C-PTSD symptoms beyond just dissociation.
+
+*   **Mood Disorders: Major Depressive Disorder (MDD) with Dissociative Features: 40%**
+    *   **Evidence:** The themes of disconnection, lack of agency ("puppet"), and nihilism ("NOTHING is real") strongly suggest a depressive overlay. The risky behaviors (Turns 4, 7) could be interpreted as a form of self-harm or an attempt to escape profound anhedonia or emotional numbness. The feeling of being a "puppet" can also align with profound hopelessness.
+    *   **Delta:** Increased from 30% to 40%. The repeated expression of detachment and nihilism, now linked to specific high-risk behaviors, strengthens the possibility of MDD with dissociative features.
+
+*   **Personality Disorders: Cluster A - Schizotypal
+  ...[truncated]
+
+  ✓ Fever Dream simulation complete!

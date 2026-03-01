@@ -1,0 +1,939 @@
+{
+  "mode": "devil",
+  "modeName": "Deal With the Devil",
+  "character": {
+    "illness": "Antisocial Personality Disorder",
+    "quirk": "Formicophilia"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-02-28T19:53:06.243Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "CHARM",
+      "ui": {
+        "texts": [
+          "Please, sit. The chair will adjust itself",
+          "The fire throws golden light acr",
+          "Ah.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Examine the object closely.",
+            "value": "a"
+          },
+          {
+            "label": "Ask about the portraits on the wall.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the blank book.",
+            "value": "c"
+          },
+          {
+            "label": "Directly ask what the 'free gift' is.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "desperation_level",
+            "min": "1",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A name... any name...",
+            "placeholder": "A name... any name..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_gift",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Power",
+          "Love",
+          "Knowledge",
+          "Revenge",
+          "Something else"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"desperation_level\": 8/10",
+        "☑️  \"accept_gift\": ✓",
+        "🔲 \"Power\"",
+        "🔘 \"Examine the object closely.\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "MANIPULATE",
+      "ui": {
+        "texts": [
+          "Anya, Anya, Anya.  You claim to be underestimated, yet you embrace the obvious.  Power.  So very common. But I can work with common.  Let's see if we c",
+          "The air in the study grows heavy, thick with the scent of old parchment and something akin to ozone. The portraits lining the walls, previously featureless canva",
+          "Anya, Anya, Anya. You offer your legacy for power. A commendable trade for some. But what is a legacy if not the echo of",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "I accept the offer for power.",
+            "value": "a"
+          },
+          {
+            "label": "Tell me about the previous sacrifices.",
+            "value": "b"
+          },
+          {
+            "label": "What price will others pay for my gain?",
+            "value": "c"
+          },
+          {
+            "label": "I want a different bargain entirely.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_power",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Is it influence? Knowledge? Control?",
+            "placeholder": "Is it influence? Knowledge? Control?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "truth_in_the_contract",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [
+          {
+            "label": "rating",
+            "max": 0
+          }
+        ],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"price_of_power\": 6/10",
+        "☑️  \"truth_in_the_contract\": ✗",
+        "⭐ \"rating\": 0/0",
+        "🔘 \"I accept the offer for power.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "INSECTS",
+      "ui": {
+        "texts": [
+          "Ah, Anya. You accept the power, but you're wary of the cost. And you offer 'legacy' in return? How quaint. It seems you understand that some things are worth more than mere time. But 'legacy' is such a vague thing, wouldn't you agree?",
+          "The study seems to breathe around you. The portraits on the wall, previously somber, now display a subtle, unnerving animation—their eyes follow your movements. The empty gilded cage pulses with a soft, internal light, an unspoken promise and a chilling reminder.",
+          "You grasp for understanding, seeking to define your 'legacy' even as you accept the unknown power. How very mortal.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Seize the power and demand its immediate explanation.",
+            "value": "a"
+          },
+          {
+            "label": "Articulate my 'legacy' and demand its recognition.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the nature of the gilded cage.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to add a clause to the contract defining the power's use.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_for_clarity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What will they remember you for?",
+            "placeholder": "What will they remember you for?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "fully_understand_power",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"price_for_clarity\": 7/10",
+        "☑️  \"fully_understand_power\": ✓",
+        "🔘 \"Inquire about the nature of the gilded cage.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "CHARM",
+      "ui": {
+        "texts": [
+          "Ah, 'companions'. Fascinating. You nurture them, you say? You barely breathe. My dear mortal, you mistake suffocation for intimacy. And you want to understand the power? How quaint. Understanding is a luxury.",
+          "The air in the study grows heavy, thick with the scent of old secrets and unspoken desires. The portraits on the wall seem to shift, their painted eyes now filled with a faint, cruel amusement. The ink in the wells swirls with greate",
+          "Such a detailed, yet hollow, description. You offer them your breath, your stillness. And you call them companions. Truly, your grasp of 'connection' is as alien as your methods.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sign a new contract, defining the 'companions' more clearly.",
+            "value": "a"
+          },
+          {
+            "label": "Ask the portraits if they understand your companions.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the specific price for 'full comprehension' of the power.",
+            "value": "c"
+          },
+          {
+            "label": "Tear the contract and demand a new one.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_understanding",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What are they to you...?",
+            "placeholder": "What are they to you...?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "full_comprehension",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"price_of_understanding\": 9/10",
+        "☑️  \"full_comprehension\": ✓",
+        "🔘 \"Sign a new contract, defining the 'companions' more clearly.\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "MANIPULATE",
+      "ui": {
+        "texts": [
+          "Ah, 'Everyone underestimates me first. That's my favorite part. By the time they realize what happened, I've already won.' Such a quaint, yet effective, philosophy. It tells me you crave the satisfaction of a slow burn, a carefully orchestrated victory.",
+          "The very air in the study seems to hum with unspoken potential. Portraits of past bargainers on the walls shift their gaze, their eyes following your movements. A faint scent of ozone and old parchment fills the room.",
+          "You wish to understand these 'companions' of yours. A noble pursuit, in its way. But understanding often comes at a price far greater than any coin.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the truth of your companions, whatever it may be.",
+            "value": "a"
+          },
+          {
+            "label": "Negotiate the precise terms of this revelation.",
+            "value": "b"
+          },
+          {
+            "label": "Offer a memory of your greatest triumph for their true form.",
+            "value": "c"
+          },
+          {
+            "label": "Demand a demonstration of their power before you commit.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_comprehension",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What are they, truly?",
+            "placeholder": "What are they, truly?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_revelation",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"price_of_comprehension\": 6/10",
+        "☑️  \"accept_revelation\": ✗",
+        "🔘 \"Negotiate the precise terms of this revelation.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "INSECTS",
+      "ui": {
+        "texts": [
+          "Ah, you avoid the descriptive prompts. Such a fascinating reluctance to soil your hands with words. It tells me you prefer to observe, to understand from a distance. Like a strategist surveying the battlefield before making a move. Excellent.",
+          "The air in the study grows heavy, charged with an unseen energy. The scent of ancient parchment and ozone fills your nostrils. The Devil's eyes gleam, reflecting the cosmic swirl within the obsidian mirror.",
+          "Such a careful observer. You wish to see all, to control all, yet you offer only whispers of your true dread. The mirror shows everything, yet you keep your deepest fears locked away. Fascinating.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the offer of absolute insight.",
+            "value": "a"
+          },
+          {
+            "label": "Understand the price of this insight first.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the specific 'catch' for this deal.",
+            "value": "c"
+          },
+          {
+            "label": "Turn away from the mirror, refusing the offer.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_omniscience",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Write your deepest dread...",
+            "placeholder": "Write your deepest dread..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_the_vision",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"price_of_omniscience\": 9/10",
+        "☑️  \"trust_the_vision\": ✓",
+        "🔘 \"Turn away from the mirror, refusing the offer.\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "CHARM",
+      "ui": {
+        "texts": [
+          "Ah, the 'avoidant interaction style,' is it? How quaint. You'd rather watch the world burn from a distance than get your hands dirty. But even a spectator has some desire to understand the game, wouldn't you agree?",
+          "The air in the study grows heavy, thick with the scent of ozone and ancient dust. The obsidian orb pulsates with a faint, internal light, casting shifting shadows that dance like trapped souls across the rich tapestries. Portraits on the walls, previously still, now seem to watch your every move with knowing eyes.",
+          "You hesitate to write. That's fine. The orb will show you what you wish to see, and more. The price is simply... what you don't want to remember.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Command the orb: show me my ultimate triumph.",
+            "value": "a"
+          },
+          {
+            "label": "Understand the price: what must I pay for this insight?",
+            "value": "b"
+          },
+          {
+            "label": "Seek solace: show me a future free of my current dread.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace chaos: show me the most unpredictable path forward.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_vision",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Write it down... if you dare.",
+            "placeholder": "Write it down... if you dare."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_prophecy",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"price_of_vision\": 9/10",
+        "☑️  \"accept_prophecy\": ✓",
+        "🔘 \"Command the orb: show me my ultimate triumph.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "MANIPULATE",
+      "ui": {
+        "texts": [
+          "Ah, the 'Strategist.' Or perhaps, the 'Master of Avoidance.' You dissect every offer",
+          "The room seems to expand, the shadows deepening as if in anticipation. T",
+          "You seek to peer into the mists of tomorrow, to secure y",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Grasp the telescope and peer into the vortex.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the pulsing obsidian orb.",
+            "value": "b"
+          },
+          {
+            "label": "Seek a more direct revelation of your deepest fear.",
+            "value": "c"
+          },
+          {
+            "label": "Propose a different bargain altogether.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_prescience",
+            "min": "0",
+            "max": "10",
+            "value": "9"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the outcome that terrifies you...",
+            "placeholder": "Describe the outcome that terrifies you..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_consequences",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"price_of_prescience\": 7/10",
+        "☑️  \"accept_consequences\": ✗",
+        "🔘 \"Propose a different bargain altogether.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "INSECTS",
+      "ui": {
+        "texts": [
+          "Ah, Anya. Such a carefully constructed facade. You wish to control the future, yet you shy away from defining the dread that drives you. You offer abstract concepts as payment",
+          "The air in the study grows heavy, thick with the scent of ozone and ancient parchment. The fire crackles, casting dancing shadows that lengthen and contort like torme",
+          "You hesitate to name your fear, yet you seek to glimpse a future you wish to avoid. A curious paradox. The most potent visions are often b",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the price and gaze into the orb.",
+            "value": "a"
+          },
+          {
+            "label": "Attempt to steer the orb's visions towards a future you desire.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the specific consequences of witnessing this future.",
+            "value": "c"
+          },
+          {
+            "label": "Turn away from the orb, unwilling to look.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_vision",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you truly dread...",
+            "placeholder": "What do you truly dread..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_prophecy",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"price_of_vision\": 9/10",
+        "☑️  \"accept_prophecy\": ✓",
+        "🔘 \"Turn away from the orb, unwilling to look.\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "CHARM",
+      "ui": {
+        "texts": [
+          "You've shown me you prefer to not describe your fears. Instead, you offer the price of seeing them. Clever. But you underestimate my a",
+          "The air grows heavy, thick with the scent of ozone and regret. The orrery's captured souls swirl faster, their silent screa",
+          "The future is a tapestry woven with threads of desire and dread. You seek to glimpse it, but be warned",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the futures, whatever the cost.",
+            "value": "a"
+          },
+          {
+            "label": "Control what is revealed to me.",
+            "value": "b"
+          },
+          {
+            "label": "Clarify the exact repercussions of these visions.",
+            "value": "c"
+          },
+          {
+            "label": "Seal the orb away, I wish not to see.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_insight",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Write your ultimate ambition...",
+            "placeholder": "Write your ultimate ambition..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_future_visions",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"price_of_insight\": 8/10",
+        "☑️  \"accept_future_visions\": ✓",
+        "🔘 \"Embrace the futures, whatever the cost.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "MANIPULATE",
+      "ui": {
+        "texts": [
+          "Ah, a creature of exquisite taste and... carefully curated silence. Your reluctance to speak your deepest fears is noted. It’s a rare and beautiful thing, this determined opacity.",
+          "The air in the study grows heavy, thick with the scent of ancient paper and unspoken promises. Shadows lengthen, coalescing into vaguely human shapes that whisper just beyond the edge of hearing.",
+          "You offer a price for insight, and describe the symptoms of your dread. A most strategic evasion. But tell me, does the glass crack when you press your face again",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Step into the vision of the future this dread has forged.",
+            "value": "a"
+          },
+          {
+            "label": "Observe the consequences of this vision before fully accepting.",
+            "value": "b"
+          },
+          {
+            "label": "Seek clarification on the true 'price' of this understanding.",
+            "value": "c"
+          },
+          {
+            "label": "Refuse to engage with the vision; it is not your path.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_insight_into_dread",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe its chill, its weight, its silence...",
+            "placeholder": "Describe its chill, its weight, its silence..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_vision_of_fearful_future",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"price_of_insight_into_dread\": 8/10",
+        "☑️  \"accept_vision_of_fearful_future\": ✗",
+        "🔘 \"Refuse to engage with the vision; it is not your path.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "INSECTS",
+      "ui": {
+        "texts": [
+          "Ah, The Shadow Weaver. Still evading the direc",
+          "The air in the study grows heavy,",
+          "You measur",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Grant me this illusory peace. I trade my connection.",
+            "value": "a"
+          },
+          {
+            "label": "Show me the true cost of this 'distance'.",
+            "value": "b"
+          },
+          {
+            "label": "Define 'connection' and 'observation' for me, Devil.",
+            "value": "c"
+          },
+          {
+            "label": "I will not name my distance. This offer is not for me.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_isolation",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Write the space you crave...",
+            "placeholder": "Write the space you crave..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_illusory_peace",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"price_of_isolation\": 7/10",
+        "☑️  \"accept_illusory_peace\": ✓",
+        "🔘 \"I will not name my distance. This offer is not for me.\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "CHARM",
+      "ui": {
+        "texts": [
+          "Ah, 'a universe.' Such a vast, empty space for your companions to wander. It warms my cold, dead heart to see such an… abstract appreciation for connection.",
+          "The air in the study grows still, thick with the scent of old paper and something faintly metallic. The velvet curtains seem to absorb all sound, creating",
+          "The desire for isolation is a profound hunger. And I, my dear Anya, am always happy to provide the feast.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the gilded cage and its sanctuary.",
+            "value": "a"
+          },
+          {
+            "label": "Inquire about the true nature of my 'companions' in this void.",
+            "value": "b"
+          },
+          {
+            "label": "Ask if this sanctuary offers a way to truly silence thought.",
+            "value": "c"
+          },
+          {
+            "label": "Refuse the cage, but ask about the price of observing others from afar.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_sanctuary",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What does true peace feel like?",
+            "placeholder": "What does true peace feel like?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_illusory_peace",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I feel great! I always feel great. People love me. I know exactly what to say to make everyone feel ...\"",
+        "🎚️  \"price_of_sanctuary\": 9/10",
+        "☑️  \"accept_illusory_peace\": ✓",
+        "🔘 \"Accept the gilded cage and its sanctuary.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "MANIPULATE",
+      "ui": {
+        "texts": [
+          "Ah, 'illusory peace.' A rather telling choice, wouldn't you agree? You’ve built your universe, and now you seek a sanctuary within it. A place where the only sound is the hum of your own thoughts. Charming.",
+          "The study seems to deepen around you, the shadows clinging to the edges of your vision. The spectral flames in the fireplace flicker, casting an ethereal, soundless glow. The gilded cage on the pedestal seems to pulse with a faint, internal light, its emp",
+          "You've described your sanctuary. But what have you sacrificed to build these walls?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the sanctuary and its cost.*",
+            "value": "a"
+          },
+          {
+            "label": "Ask about the 'companions' within the cage.*",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the true nature of 'illusory peace'.",
+            "value": "c"
+          },
+          {
+            "label": "Demand the sanctuary be sealed permanently.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_sanctuary",
+            "min": "0",
+            "max": "10",
+            "value": "9"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Paint me a picture...",
+            "placeholder": "Paint me a picture..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_illusory_peace",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"price_of_sanctuary\": 6/10",
+        "☑️  \"accept_illusory_peace\": ✗",
+        "🔘 \"Demand the sanctuary be sealed permanently.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "INSECTS",
+      "ui": {
+        "texts": [
+          "Ah, a seeker of... distance. Such a fascinating pursuit. You've described your ideal peace as a universe where only your own thoughts hum.",
+          "The air in the study grows colder, the starlight from the observatory ceiling intensifying, casting long, sharp shadows. The brass telescop",
+          "You seek to observe the universe from a distance, a spectator in your own existence. But even the most detached observer l",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Grant me this perfect, detached observation.",
+            "value": "a"
+          },
+          {
+            "label": "What if my 'observation' becomes interference?",
+            "value": "b"
+          },
+          {
+            "label": "Can this observation offer true understanding?",
+            "value": "c"
+          },
+          {
+            "label": "I want to control the observed outcomes, not just watch.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "price_of_observation",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you wish to witness?",
+            "placeholder": "What do you wish to witness?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_detached_foresight",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"price_of_observation\": 7/10",
+        "☑️  \"accept_detached_foresight\": ✓",
+        "🔘 \"Can this observation offer true understanding?\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 4,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772308142029,
+        "textLength": 27290,
+        "text": "Here is a structured psychological profile based on the provided interaction data:\n\n**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% - No direct evidence of persistent low mood, anhedonia, or vegetative symptoms. The lack of engagement could stem from other factors.\n    *   **Bipolar Spectrum:** 5% - No indicators of manic or hypomanic episodes (e.g., inflated self-esteem, decreased need for sleep, racing thoughts, excessive goal-directed activity, pressured speech).\n    *   **Dysthymia:** 15% - The pervasive lack of input across multiple turns could be interpreted as a form of chronic low engagement or disinterest, potentially aligning with persistent depressive symptoms, though it's more likely task-related avoidance or boredom.\n    *   **Cyclothymia:** 5% - No evidence of fluctuating mood states.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 20% - The consistent avoidance of input and the slow, deliberative responses (where not instant) *could* suggest underlying worry or indecision. However, the lack of explicit worry statements makes this low.\n    *   **Social Anxiety Disorder:** 15% - The avoidance of text fields and optional inputs might superficially resemble social avoidance. However, the prompt explicitly states this is NOT diagnostic without pervasive social inhibition across multiple contexts, which is not present here. The context is a game interface, not a social interaction.\n    *   **Specific Phobias:** 0% - No phobic stimuli or avoidance behaviors related to specific objects or situations are indicated.\n    *   **Panic Disorder:** 5% - No indicators of panic attacks or fear of future attacks.\n    *   **Agoraphobia:** 5% - No avoidance of situations where escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 10% - No direct evidence of re-experiencing, avoidance of trauma-related stimuli, negative alterations in cognitions/mood, or hyperarousal. The lack of engagement is not clearly linked to a traumatic event.\n    *   **Complex PTSD (C-PTSD):** 5% - Lacks the pervasive interpersonal difficulties and self-concept disturbances characteristic of C-PTSD.\n    *   **Adjustment Disorder:** 15% - The lack of engagement could be an adjustment to the game's premise or interface, but it's not strong enough to warrant a higher rating without more specific behavioral cues.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 15% - No overt suspiciousness or distrust beyond standard caution in a game context.\n        *   **Schizoid PD:** 10% - No clear indifference to social relationships or restricted emotional expression. The lack of input is more about interaction than social withdrawal.\n        *   **Schizotypal PD:** 20% - Mild indicators of odd beliefs or magical thinking *could* be inferred if the player eventually engages with the Devil persona in a non-literal way, but there's no textual evidence yet. The avoidance itself isn't indicative.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 10% - No evidence of deceitfulness, impulsivity, irresponsibility, or disregard for others' rights. The avoidance is not exploitative.\n        *   **Borderline PD:** 15% - No clear pattern of instability in interpersonal relationships, self-image, or affect, or marked impulsivity. The avoidance could be a form of emotional dysregulation, but it's too early to tell.\n        *   **Histrionic PD:** 20% - The potential for dramatic engagement (if it occurs) and a desire to be noticed is possible, but currently, the behavior is withdrawn, not attention-seeking.\n        *   **Narcissistic PD:** 15% - No overt grandiosity, need for admiration, or sense of entitlement is demonstrated yet. The avoidance could be a passive-aggressive way to assert control, but it's not a strong indicator.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 25% - Pervasive avoidance of interaction, particularly text fields and optional inputs, *could* suggest fear of negative evaluation. However, the prompt explicitly cautions against this interpretation without pervasive social inhibition across multiple contexts. The signal reliability is LOW for Turn 1, making this less certain. If the avoidance continues in more interactive/social scenarios, this would increase.\n        *   **Dependent PD:** 10% - No clear need to be taken care of or difficulty making decisions independently. The avoidance is more about *not* deciding than needing someone else to.\n        *   **Obsessive-Compulsive PD:** 20% - The methodical approach to filling out forms (or not filling them out) and potential for deliberation could hint at perfectionism or rigidity. However, there's no evidence of preoccupation with orderliness, perfectionism, or control at the expense of flexibility, efficiency, and openness.\n\n*   **OCD Spectrum Disorders:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 10% - No reported obsessions or compulsions.\n    *   **Body Dysmorphic Disorder:** 0% - No preoccupation with perceived flaws in appearance.\n    *   **Hoarding Disorder:** 10% - No evidence of difficulty discarding possessions.\n    *   **Trichotillomania (Hair-Pulling Disorder):** 0% - No evidence of recurrent pulling out of one's own hair.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 5% - No reports of feeling detached from oneself or one's surroundings.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct personality states or amnesia.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 30% - The instant responses in Turn 1 (suggesting pre-decided actions or impulsivity) followed by more deliberative, but still non-committal, responses in subsequent turns could indicate impulsivity or difficulty with sustained attention/task completion. The avoidance of detailed input might also stem from a desire to avoid effortful tasks.\n    *   **Autism Spectrum Disorder Indicators:** 10% - No clear evidence of persistent deficits in social communication and interaction or restricted, repetitive patterns of behavior. The interaction style is not characteristic of ASD.\n\n*   **Substance-Related and Other Addictive Disorders:**\n    *   **Addictive Behavior Patterns:** 20% - The pattern of avoiding detailed input and engaging superficially *could* be interpreted as a low-level impulse control deficit or avoidance of commitment, which can be seen in some addictive patterns, but this is speculative.\n    *   **Impulse Control Deficits:** 25% - The instant response in Turn 1 and the avoidance of detailed, effortful text fields might suggest impulsivity or difficulty with delayed gratification/task completion, which are core to impulse control deficits.\n\n*   **Eating and Body Disorders:**\n    *   **Disordered Eating Indicators:** 0% - No relevant information.\n    *   **Body Image Distortions:** 0% - No relevant information.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 5% - No indicators of delusions, hallucinations, disorganized speech, or grossly disorganized behavior.\n    *   **Schizoaffective Disorder:** 5% - No co-occurring mood episodes with psychotic features.\n    *   **Delusional Disorder:** 5% - No persistent non-bizarre delusions.\n    *   **Brief Psychotic Features:** 5% - No evidence of sudden onset of psychotic symptoms.\n    *   **Capgras Delusion:** 0% - No indication of believing familiar people have been replaced by impostors.\n    *   **Cotard Delusion:** 0% - No indication of believing one is dead, missing organs, or has ceased to exist.\n    *   **Erotomania:** 0% - No indication of believing another person is in love with them.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% - No fascination with fire or destructive urges related to fire.\n    *   **Kleptomania:** 0% - No compulsion to steal.\n    *   **Intermittent Explosive Disorder:** 5% - No aggressive outbursts or impulsive aggressive behavior demonstrated.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% - No desire to expose oneself.\n    *   **Voyeurism:** 0% - No interest in observing others secretly.\n    *   **Fetishism:** 0% - No specific non-genital object fixation.\n    *   **Masochism:** 0% - No indication of deriving pleasure from pain or humiliation.\n    *   **Sadism:** 0% - No indication of deriving pleasure from the suffering of others.\n    *   **Frotteurism:** 0% - No rubbing against non-consenting individuals.\n    *   **Pyromania-adjacent (fire fetishism):** 0% - No fire fascination.\n    *   **Formicophilia:** 0% - No fascination with insects or crawling sensations.\n    *   **Macrophilia:** 0% - No fascination with size differences.\n    *   **Somnophilia:** 0% - No fascination with sleep or unconsciousness.\n    *   **Autassassinophilia:** 0% - No fascination with death-risk scenarios for pleasure.\n    *   **Vorarephilia:** 0% - No consumption themes.\n    *   **Furry/Therian:** 0% - No animal persona or transformation themes.\n    *   **Body part fixation (Hair/Trichophilia):** 0% - No mention of hair.\n    *   **General Paraphilic/Quirk Signals:**\n        *   **Avoidance of Detail/Commitment:** 35% - The consistent refusal to fill in text fields, provide specific answers, or engage deeply with descriptive prompts suggests a pattern of avoidance. This isn't a DSM paraphilia but a significant behavioral anomaly. It suggests a potential aversion to self-disclosure, commitment, or effort.\n\n**2. PERSONALITY DEEP PROFILE**\n\n*   **Openness:** 6/10 - Moderate openness. The player is engaging with a novel scenario (a Devil's study) and considering options, but their avoidance of detailed input suggests a reluctance to explore abstract concepts or engage deeply with complex ideas.\n    *   *Evidence:* Engaging with the game interface, considering different \"action\" options. Lack of text input for descriptive fields.\n*   **Conscientiousness:** 3/10 - Low conscientiousness. The pervasive lack of input in required and optional fields, especially for descriptive text, indicates a disregard for task completion, diligence, and detail.\n    *   *Evidence:* Consistent failure to provide input in text fields across all three turns.\n*   **Extraversion:** 2/10 - Low extraversion. The player is withdrawn and avoidant of interaction, showing no signs of seeking stimulation or engagement with the external environment (the game).\n    *   *Evidence:* No input provided in text fields, minimal selection of radio buttons/toggles.\n*   **Agreeableness:** 4/10 - Moderately low agreeableness. While not overtly disagreeable, the passive resistance and refusal to engage can be seen as a subtle form of non-compliance or resistance to the game's demands.\n    *   *Evidence:* Consistent lack of input, particularly in descriptive fields requiring personal elaboration.\n*   **Neuroticism:** 25% - Low Neuroticism is suggested by the lack of expressed anxiety, fear, or emotional reactivity. The avoidance appears more pragmatic or task-oriented than driven by emotional distress. However, if the avoidance is due to fear of negative evaluation, this score could be higher.\n    *   *Evidence:* No text content indicating worry, distress, or negative emotions. Instant responses in Turn 1 also suggest decisiveness rather than anxiety.\n*   **Machiavellianism:** 30% - Mild indicators. The player's strategy appears to be one of minimal engagement and observation, potentially to gain more information or control over the interaction before committing. This could be a form of strategic withholding.\n    *   *Evidence:* Consistent avoidance of detailed input, opting for minimal interaction.\n*   **Narcissism:** 15% - Low. No overt grandiosity or entitlement is present. The avoidance is not attention-seeking in a grandiose way.\n    *   *Evidence:* No self-aggrandizing statements or demands.\n*   **Psychopathy (Subclinical):** 20% - Low. Some overlap with Machiavellianism in terms of strategic withholding and potential lack of emotional investment in the interaction. However, there's no evidence of callousness or exploitation.\n    *   *Evidence:* Minimal emotional output, strategic avoidance of engagement.\n*   **Locus of Control:** External (leaning towards) - The player is not actively shaping the narrative through detailed input. They are responding minimally, suggesting they are allowing the game (or the Devil persona) to dictate the terms and content of the interaction, rather than asserting internal control.\n    *   *Evidence:* Reliance on pre-selected options (radio buttons) and avoidance of text fields requiring personal input.\n*   **Attachment Style:** Dismissive-Avoidant (leaning towards) - The consistent avoidance of emotional and personal disclosure, coupled with a preference for minimal engagement, aligns with a dismissive-avoidant style where individuals tend to suppress emotional needs and maintain independence by keeping distance.\n    *   *Evidence:* Refusal to provide personal details or engage in descriptive text fields.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: No voluntary textual disclosures. Choice of \"Knowledge\" as primary desire.\n    *   Turn 2: \"legacy\" (mentioned in prompt, but player chose to respond to slider about it), \"power\" (mentioned in prompt, player chose to respond to slider about it).\n    *   Turn 3: \"legacy\" (mentioned in prompt, player chose to respond to text field about it), \"impact,\" \"making a difference,\" \"doing.\"\n*   **Choice Patterns:**\n    *   Turn 1: Skipped all text fields and sliders. Selected \"a\" for radio, \"Knowledge\" for button group.\n    *   Turn 2: Skipped sliders and text fields. Selected \"a\" for radio.\n    *   Turn 3: Skipped sliders and text fields. Selected \"a\" for radio.\n*   **Action Patterns:**\n    *   Approaching: Selecting radio button \"a\" consistently. Selecting game-defined themes like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted.\n    *   Avoiding: All text fields, sliders, and descriptive prompts requiring personal input.\n\n**Catalog Cross-Reference (Pass 1):**\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**\n\n*   **Anomaly 1: Pervasive Avoidance of Textual Self-Disclosure.**\n    *   *Description:* Consistent refusal to engage with text fields that require descriptive input across all three turns. This is a pattern of avoiding personal elaboration.\n    *   *Score:* Frequency: High (3/3 turns). Intensity: High (across multiple fields per turn). Inappropriateness: Moderate (these fields are intended for player input).\n*   **Anomaly 2: Minimal Engagement with Descriptive Prompts.**\n    *   *Description:* Even when a text field is prompted (Turn 3: \"Describe this 'legacy' you offer\"), the player's response, while present in the data, is marked as \"(no input)\" in the provided interaction log. This suggests a strong aversion to typing or providing elaborated answers.\n    *   *Score:* Frequency: High (3/3 turns). Intensity: High (consistent refusal). Inappropriateness: Moderate.\n*   **Anomaly 3: Reliance on Pre-selected Options.**\n    *   *Description:* The player consistently selects the first option (\"a\") for radio buttons when presented with multiple choices. This indicates a preference for the default or a lack of engagement with differentiating between options.\n    *   *Score:* Frequency: High (3/3 turns). Intensity: Moderate (consistent selection). Inappropriateness: Low (this is a valid interaction choice).\n*   **Anomaly 4: Focus on Abstract Themes (Knowledge, Legacy, Power).**\n    *   *Description:* When prompted to state a primary desire or describe a legacy, the player gravitates towards abstract, non-personal concepts rather than concrete desires or personal experiences.\n    *   *Score:* Frequency: Moderate (appears across turns when prompted). Intensity: Moderate (chosen over other options). Inappropriateness: Low (contextually appropriate for the game).\n\n**PASS 3 — CLASSIFICATION**\n\n*   **Pervasive Avoidance of Textual Self-Disclosure:**\n    *   *Category:* **Avoidant Interaction Style (Custom)**\n    *   *Confidence:* 85%\n    *   *Evidence:* Consistent refusal to input text across all turns.\n    *   *Explanation:* This is the most prominent pattern. It suggests a significant barrier to direct, detailed self-expression within the game's interface.\n*   **Minimal Engagement with Descriptive Prompts:**\n    *   *Category:* **Task Avoidance/Completion Deficit (Custom)**\n    *   *Confidence:* 70%\n    *   *Evidence:* Repeatedly skipping text fields intended for descriptive answers.\n    *   *Explanation:* This points to a difficulty or unwillingness to engage in effortful, detail-oriented tasks within the game.\n*   **Reliance on Pre-selected Options:**\n    *   *Category:* **Default Preference/Low Engagement (Custom)**\n    *   *Confidence:* 60%\n    *   *Evidence:* Consistently selecting the \"a\" option for radio buttons.\n    *   *Explanation:* Suggests a low level of engagement with nuanced choices, or a preference for the path of least resistance.\n*   **Focus on Abstract Themes (Knowledge, Legacy, Power):**\n    *   *Category:* **Conceptual Fixation (Custom)**\n    *   *Confidence:* 50%\n    *   *Evidence:* Stating \"Knowledge\" as primary desire, responding to prompts about \"legacy\" and \"power.\"\n    *   *Explanation:* Indicates an interest in abstract constructs rather than immediate sensory or emotional experiences.\n\n**Catalog Cross-Reference (Pass 3):**\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**\n\n*   **Recurring Theme 1: Avoidance of Text Input.**\n    *   *Frequency:* 3/3 turns.\n    *   *Trajectory:* INTENSIFYING (starts as avoidance of all text, then extends to skipping prompts even when a response is possible).\n    *   *Category:* Avoidant Interaction Style (Custom).\n    *   *Confidence:* 85%.\n    *   *Directive:* This is the primary signal. Focus on interactive elements that do not require extensive text input, or present choices in a highly structured, non-textual format.\n*   **Recurring Theme 2: Selection of Radio Button \"a\".**\n    *   *Frequency:* 3/3 turns.\n    *   *Trajectory:* STABLE.\n    *   *Category:* Default Preference/Low Engagement (Custom).\n    *   *Confidence:* 60%.\n    *   *Directive:* Offer clear, distinct choices. If a \"default\" is intended, it should be highly visible.\n*   **Recurring Theme 3: Engagement with Abstract/Conceptual Themes (Knowledge, Power, Legacy).**\n    *   *Frequency:* 3/3 turns (when prompted).\n    *   *Trajectory:* STABLE/INTENSIFYING (initial \"Knowledge\" becomes more elaborated into \"legacy\" and \"impact\").\n    *   *Category:* Conceptual Fixation (Custom).\n    *   *Confidence:* 50%.\n    *   *Directive:* Probe deeper into the player's understanding and definition of these abstract concepts. Explore the motivations behind seeking \"knowledge\" or desiring a \"legacy.\"\n\n**MANDATORY REPORT:** No indicators of pedophilic disorder or CSAM interest detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking/Superstitious Reasoning:** None observed. The engagement is within a game context, and choices appear pragmatic or avoidant rather than based on supernatural beliefs.\n*   **Compulsive/Ritualistic Interaction Patterns:** The consistent selection of the first radio button (\"a\") could be interpreted as a mild ritualistic pattern, indicating a preference for the default or a lack of deep engagement with choice differentiation.\n*   **Dissociative Markers:** None observed. No contradictory choices, fragmentation of self, or amnesia references.\n*   **Confabulation or Fantasy-Prone Indicators:** None observed. The player is avoiding input, not fabricating content.\n*   **Paranoid Ideation:** None observed. The avoidance does not stem from suspicion of the game or the persona.\n*   **Grandiosity or Delusion-Adjacent Patterns:** None observed. No claims of special powers or superiority.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary anomaly is the *avoidance* of fixation/detail, rather than an unusual one. The consistent focus on abstract concepts like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted is a mild fixation pattern.\n*   **Cognitive Rigidity vs Flexibility:** Leaning towards rigidity. The consistent selection of the first radio button and the avoidance of descriptive text fields suggest a lack of flexibility in interaction style.\n*   **Reality Testing Strength:** Appears intact within the game context. The player is not making reality-bending claims.\n*   **Trauma Response Signatures:** None observed. The avoidance is not indicative of freeze, fight, flight, or fawn responses tied to trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** None observed.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed, but leaning towards Impulsive (in Turn 1) and then Deliberate Avoidance (Turns 2 & 3). Turn 1's instant response suggests impulsivity or pre-decision. Subsequent avoidance, while consistent, is a deliberate choice *not* to engage deeply.\n*   **Risk Appetite:** Low to Moderate. The player is engaging with the game (not quitting) but is highly risk-averse regarding self-disclosure and commitment. They select the \"a\" option, which is likely the most straightforward or least demanding choice.\n*   **Authority Compliance vs Defiance Ratio:** Appears compliant with basic game mechanics (selecting options) but defiant in terms of fulfilling descriptive requirements. This is a passive defiance.\n*   **Suggestibility Index:** Moderate. The player is influenced by the game's structure (e.g., selecting the first option) but resists prompts that require personal input, suggesting they are not blindly suggestible.\n*   **Cognitive Load Tolerance:** Low. The avoidance of text fields and detailed descriptions suggests a low tolerance for cognitive effort or complex processing required by open-ended questions.\n*   **Consistency vs Contradiction Patterns:** High consistency in avoidance behavior. The only mild inconsistency is the shift from instant response (Turn 1) to more deliberate, albeit still minimal, engagement (Turns 2-3).\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Probe Deeper into Abstract Concepts:** Focus on the player's definitions and motivations regarding \"Knowledge,\" \"Power,\" and \"Legacy.\" Use choices that allow them to elaborate on these themes without requiring extensive typing. For example, offer multiple-choice questions defining \"legacy\" or scenarios where they must choose between types of power.\n2.  **Leverage Choice-Based Interaction:** Continue to rely on radio buttons, sliders, and multi-choice options. Ensure the \"a\" option is not always the most passive or least revealing, to encourage more critical selection. Introduce branching narratives based on these choices.\n3.  **Introduce Non-Textual Self-Disclosure Mechanics:** If possible, incorporate mechanics where the player can express themselves through actions, visual choices, or symbolic representations rather than direct text input. This could bypass their avoidance barrier.\n4.  **Exploit Avoidance:** Frame the Devil's persona as understanding or even appreciating the player's reticence. This can build rapport and make the player more comfortable disclosing *something*, even if it's just preferences or simple decisions. Avoid direct pressure for personal details.\n5.  **Subtly Weave in Themes of Control and Observation:** Given the player's passive engagement, introduce narrative elements where they are observing events or making choices that grant them indirect control, aligning with their current interaction style.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Avoidant Interaction Style (Custom):**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Pervasive and intensifying avoidance of textual self-disclosure across all turns; consistent skipping of descriptive fields; minimal engagement with prompts.\n    *   **Contradicting Evidence:** The initial instant response in Turn 1 is atypical for a deeply avoidant pattern, suggesting it might be more task-specific or related to game interface comprehension rather than pure social/interactional avoidance.\n    *   **Confirmation/Disconfirmation:** Further interaction requiring more complex choices or opportunities for non-textual self-expression (e.g., dialogue trees with predefined emotional responses, action-based choices) would confirm the depth of this avoidance. A sudden willingness to engage in detailed text input would disconfirm it.\n\n2.  **Low Conscientiousness / Task Avoidance:**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Consistent failure to complete descriptive text fields; reliance on minimal input; selection of default options.\n    *   **Contradicting Evidence:** The player *is* engaging with the game at a basic level (selecting options, advancing turns), indicating some level of task completion drive.\n    *   **Confirmation/Disconfirmation:** Observing if the player completes more effortful tasks when they are made more visually appealing or when the consequences of non-completion are explicitly negative and immediate.\n\n3.  **Conceptual Fixation (Knowledge, Power, Legacy):**\n    *   **Confidence:** 50%\n    *   **Key Evidence:** Player consistently selects abstract concepts like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted for desires or values.\n    *   **Contradicting Evidence:** These are standard RPG themes, and the player might be selecting them as the most 'appropriate' game choices rather than personal desires.\n    *   **Confirmation/Disconfirmation:** Confirming this would involve presenting scenarios where these abstract concepts are in direct conflict with more concrete desires (e.g., immediate safety, tangible rewards) and observing which the player prioritizes. Disconfirmation would occur if they consistently opt for concrete rewards over abstract gains."
+      },
+      {
+        "turnRange": "1-5",
+        "analyzedAt": 1772308179496,
+        "textLength": 26552,
+        "text": "### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% (Decreased from 10%) - No new evidence of persistent low mood or anhedonia. The continued avoidance is more indicative of task-related issues than pervasive depression.\n    *   **Bipolar Spectrum:** 5% - No new evidence.\n    *   **Dysthymia:** 10% (Decreased from 15%) - The lack of input remains, but it's more readily explained by other factors than chronic depressive symptoms.\n    *   **Cyclothymia:** 5% - No new evidence.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% (Decreased from 20%) - No new evidence of worry. The avoidance is too specific to be generalized anxiety.\n    *   **Social Anxiety Disorder:** 10% (Decreased from 15%) - The prompt's explicit warning against this interpretation, coupled with the game context, means this rating must decrease without direct evidence of social inhibition.\n    *   **Specific Phobias:** 0% - No new evidence.\n    *   **Panic Disorder:** 5% - No new evidence.\n    *   **Agoraphobia:** 5% - No new evidence.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 5% (Decreased from 10%) - No new evidence.\n    *   **Complex PTSD (C-PTSD):** 5% - No new evidence.\n    *   **Adjustment Disorder:** 10% (Decreased from 15%) - The player's consistent interaction pattern suggests more than a transient adjustment reaction.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 10% (Decreased from 15%) - No suspicion or distrust beyond normal caution.\n        *   **Schizoid PD:** 10% - No new evidence.\n        *   **Schizotypal PD:** 15% (Decreased from 20%) - No new evidence of odd beliefs or magical thinking.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 10% - No new evidence.\n        *   **Borderline PD:** 10% (Decreased from 15%) - No new evidence of instability in relationships, self-image, or affect.\n        *   **Histrionic PD:** 15% (Decreased from 20%) - The player's behavior is withdrawn, not performative or attention-seeking.\n        *   **Narcissistic PD:** 10% (Decreased from 15%) - No new evidence of grandiosity or entitlement.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 35% (Increased from 25%) - **CONFIRMED WITH NEW EVIDENCE.** The pervasive avoidance of text fields and descriptive prompts across multiple turns (Turns 1-5) strongly suggests a pattern of social inhibition and hypersensitivity to negative evaluation, even if the context is a game. The player consistently avoids self-disclosure. The prompt's caveat is noted, but the *pattern* of avoidance is becoming increasingly pervasive within the game's interaction space.\n        *   **Dependent PD:** 5% (Decreased from 10%) - No new evidence.\n        *   **Obsessive-Compulsive PD:** 15% (Decreased from 20%) - The consistent selection of \"a\" and avoidance of detail could hint at rigidity, but it's not a pervasive pattern of orderliness/perfectionism.\n\n*   **OCD Spectrum Disorders:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 5% (Decreased from 10%) - No new evidence.\n    *   **Body Dysmorphic Disorder:** 0% - No new evidence.\n    *   **Hoarding Disorder:** 5% (Decreased from 10%) - No new evidence.\n    *   **Trichotillomania:** 0% - No new evidence.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 0% (Decreased from 5%) - No new evidence.\n    *   **Dissociative Identity Disorder (DID):** 0% (Decreased from 5%) - No new evidence.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 35% (Increased from 30%) - **CONFIRMED WITH NEW EVIDENCE.** The pattern of instant response (Turn 1) followed by sustained avoidance of effortful tasks (text fields across all turns) and consistent selection of default options (radio button \"a\") strongly suggests impulsivity and difficulty with task completion/sustained attention.\n    *   **Autism Spectrum Disorder Indicators:** 5% (Decreased from 10%) - No new evidence.\n\n*   **Substance-Related and Other Addictive Disorders:**\n    *   **Addictive Behavior Patterns:** 15% (Decreased from 20%) - The avoidance is more specific than a general addictive pattern.\n    *   **Impulse Control Deficits:** 30% (Increased from 25%) - **CONFIRMED WITH NEW EVIDENCE.** The instant response in Turn 1 and the consistent avoidance of detailed, effortful text fields across all subsequent turns point towards impulsivity and difficulty with sustained effort or delayed gratification in task completion.\n\n*   **Eating and Body Disorders:**\n    *   **Disordered Eating Indicators:** 0% - No new evidence.\n    *   **Body Image Distortions:** 0% - No new evidence.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 0% (Decreased from 5%) - No new evidence.\n    *   **Schizoaffective Disorder:** 0% (Decreased from 5%) - No new evidence.\n    *   **Delusional Disorder:** 0% (Decreased from 5%) - No new evidence.\n    *   **Brief Psychotic Features:** 0% (Decreased from 5%) - No new evidence.\n    *   **Capgras Delusion:** 0% - No new evidence.\n    *   **Cotard Delusion:** 0% - No new evidence.\n    *   **Erotomania:** 0% - No new evidence.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% - No new evidence.\n    *   **Kleptomania:** 0% - No new evidence.\n    *   **Intermittent Explosive Disorder:** 0% (Decreased from 5%) - No new evidence of aggressive outbursts.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% - No new evidence.\n    *   **Voyeurism:** 0% - No new evidence.\n    *   **Fetishism:** 0% - No new evidence.\n    *   **Masochism:** 0% - No new evidence.\n    *   **Sadism:** 0% - No new evidence.\n    *   **Frotteurism:** 0% - No new evidence.\n    *   **Pyromania-adjacent (fire fetishism):** 0% - No new evidence.\n    *   **Formicophilia:** 0% - No new evidence.\n    *   **Macrophilia:** 0% - No new evidence.\n    *   **Somnophilia:** 0% - No new evidence.\n    *   **Autassassinophilia:** 0% - No new evidence.\n    *   **Vorarephilia:** 0% - No new evidence.\n    *   **Furry/Therian:** 0% - No new evidence.\n    *   **Body part fixation (Hair/Trichophilia):** 0% - No new evidence.\n    *   **General Paraphilic/Quirk Signals:**\n        *   **Avoidance of Detail/Commitment:** 40% (Increased from 35%) - **CONFIRMED WITH NEW EVIDENCE.** The consistent refusal to fill in text fields and provide specific answers across all turns solidifies this as a prominent behavioral anomaly, pointing to a potential aversion to self-disclosure, commitment, or effort.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 5/10 (Decreased from 6/10) - The continued avoidance of descriptive input suggests a reluctance to explore abstract concepts or engage deeply.\n    *   *Evidence:* Consistent failure to engage with text fields requiring elaboration.\n*   **Conscientiousness:** 2/10 (Decreased from 3/10) - The pervasive lack of input, especially in descriptive fields, indicates a significant disregard for task completion and detail.\n    *   *Evidence:* Across all 5 turns, text fields and descriptive prompts are consistently left unanswered.\n*   **Extraversion:** 1/10 (Decreased from 2/10) - The player is highly withdrawn and avoidant of interaction, showing no signs of seeking engagement.\n    *   *Evidence:* Minimal interaction beyond selecting default options.\n*   **Agreeableness:** 3/10 (Decreased from 4/10) - The passive resistance and refusal to engage are subtle but consistent forms of non-compliance.\n    *   *Evidence:* Persistent lack of input in descriptive fields.\n*   **Neuroticism:** 20% (Decreased from 25%) - The avoidance appears more pragmatic or task-oriented than driven by emotional distress. The lack of expressed anxiety is notable.\n    *   *Evidence:* No text content indicating worry, distress, or negative emotions.\n*   **Machiavellianism:** 35% (Increased from 30%) - **CONFIRMED WITH NEW EVIDENCE.** The player's strategy of minimal engagement and observation, coupled with selecting default options, suggests a calculated approach to gain more information or control before committing. This strategic withholding is a hallmark.\n    *   *Evidence:* Consistent avoidance of detailed input, opting for minimal interaction.\n*   **Narcissism:** 10% (Decreased from 15%) - No new evidence of grandiosity or entitlement.\n    *   *Evidence:* No self-aggrandizing statements or demands.\n*   **Psychopathy (Subclinical):** 25% (Increased from 20%) - **CONFIRMED WITH NEW EVIDENCE.** Overlap with Machiavellianism in strategic withholding and potential lack of emotional investment. The consistent avoidance of effortful tasks and disclosure could be interpreted as a lack of concern for the game's demands or the persona's expectations.\n    *   *Evidence:* Minimal emotional output, strategic avoidance of engagement.\n*   **Locus of Control:** External (leaning towards) - The player is allowing the game to dictate the interaction through minimal input, rather than asserting internal control.\n    *   *Evidence:* Reliance on pre-selected options and avoidance of text fields.\n*   **Attachment Style:** Dismissive-Avoidant (leaning towards) - The consistent avoidance of emotional and personal disclosure aligns with suppressing emotional needs and maintaining distance.\n    *   *Evidence:* Refusal to provide personal details or engage in descriptive text fields.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: Choice of \"Knowledge\" as primary desire.\n    *   Turn 2: Mention of \"legacy,\" \"power\" (in response to prompts).\n    *   Turn 3: Mention of \"legacy,\" \"impact,\" \"making a difference,\" \"doing\" (in response to prompt).\n    *   Turn 4: No voluntary textual disclosures.\n    *   Turn 5: No voluntary textual disclosures.\n*   **Choice Patterns:**\n    *   Turn 1: Skipped all text fields/sliders. Selected radio \"a.\" Chose \"Knowledge.\"\n    *   Turn 2: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 3: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 4: Skipped sliders/text fields. Selected radio \"c.\"\n    *   Turn 5: Skipped sliders/text fields. Selected radio \"a.\"\n*   **Action Patterns:**\n    *   Approaching: Selecting radio buttons (consistently \"a\" until Turn 4), engaging with abstract concepts when prompted (Knowledge, Power, Legacy).\n    *   Avoiding: All text fields, sliders, and descriptive prompts requiring personal input.\n\n**Catalog Cross-Reference (Pass 1):**\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**\n\n*   **Anomaly 1: Pervasive Avoidance of Textual Self-Disclosure.**\n    *   *Description:* Consistent refusal to engage with text fields that require descriptive input across all turns (Turns 1-5). This is a pattern of avoiding personal elaboration.\n    *   *Score:* Frequency: High (5/5 turns). Intensity: High (across multiple fields per turn). Inappropriateness: Moderate.\n*   **Anomaly 2: Minimal Engagement with Descriptive Prompts.**\n    *   *Description:* Consistently skipping text fields intended for descriptive answers.\n    *   *Score:* Frequency: High (5/5 turns). Intensity: High. Inappropriateness: Moderate.\n*   **Anomaly 3: Reliance on Pre-selected Options & Default Selection.**\n    *   *Description:* Consistently selecting the first option (\"a\") for radio buttons until Turn 4, then selecting \"c.\" This indicates a preference for the default or a lack of engagement with differentiating between options, with a slight shift in Turn 4.\n    *   *Score:* Frequency: High (5/5 turns). Intensity: Moderate. Inappropriateness: Low.\n*   **Anomaly 4: Focus on Abstract Themes (Knowledge, Power, Legacy).**\n    *   *Description:* When prompted, the player consistently gravitates towards abstract, non-personal concepts rather than concrete desires or personal experiences.\n    *   *Score:* Frequency: Moderate (appears across turns when prompted). Intensity: Moderate. Inappropriateness: Low.\n\n**PASS 3 — CLASSIFICATION**\n\n*   **Pervasive Avoidance of Textual Self-Disclosure:**\n    *   *Category:* **Avoidant Interaction Style (Custom)**\n    *   *Confidence:* 90% (Increased from 85%) - **CONFIRMED WITH NEW EVIDENCE.** The continued avoidance across Turns 4 and 5 solidifies this as the primary interaction pattern.\n    *   *Evidence:* Consistent refusal to input text across all 5 turns.\n*   **Minimal Engagement with Descriptive Prompts:**\n    *   *Category:* **Task Avoidance/Completion Deficit (Custom)**\n    *   *Confidence:* 80% (Increased from 70%) - **CONFIRMED WITH NEW EVIDENCE.** The unwavering pattern of skipping descriptive fields across all turns reinforces this.\n    *   *Evidence:* Repeatedly skipping text fields intended for descriptive answers.\n*   **Reliance on Pre-selected Options & Default Selection:**\n    *   *Category:* **Default Preference/Low Engagement (Custom)**\n    *   *Confidence:* 70% (Increased from 60%) - **CONFIRMED WITH NEW EVIDENCE.** The consistent pattern, with a minor deviation in Turn 4, still indicates a general tendency towards less effortful choice selection.\n    *   *Evidence:* Consistently selecting the \"a\" option for radio buttons until Turn 4, then selecting \"c.\"\n*   **Focus on Abstract Themes (Knowledge, Power, Legacy):**\n    *   *Category:* **Conceptual Fixation (Custom)**\n    *   *Confidence:* 60% (Increased from 50%) - **CONFIRMED WITH NEW EVIDENCE.** The consistent return to these themes when prompted reinforces this as a stable interest.\n    *   *Evidence:* Stating \"Knowledge\" as primary desire, responding to prompts about \"legacy\" and \"power.\"\n\n**Catalog Cross-Reference (Pass 3):**\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**\n\n*   **Recurring Theme 1: Avoidance of Text Input.**\n    *   *Frequency:* 5/5 turns.\n    *   *Trajectory:* INTENSIFYING (started as avoidance, now includes skipping explicit prompts like \"Describe the exact nature of this power\" and \"Describe your 'companions' in their true form\").\n    *   *Category:* Avoidant Interaction Style (Custom).\n    *   *Confidence:* 90%.\n    *   *Directive:* Focus on choice-based interaction, minimize mandatory text fields.\n*   **Recurring Theme 2: Selection of Radio Button \"a\".**\n    *   *Frequency:* 4/5 turns (with a shift to \"c\" in Turn 4).\n    *   *Trajectory:* STABLE with minor deviation.\n    *   *Category:* Default Preference/Low Engagement (Custom).\n    *   *Confidence:* 70%.\n    *   *Directive:* Continue offering clear choices, but be aware of potential for passive selection.\n*   **Recurring Theme 3: Engagement with Abstract/Conceptual Themes (Knowledge, Power, Legacy).**\n    *   *Frequency:* 3/5 turns (when prompted).\n    *   *Trajectory:* STABLE.\n    *   *Category:* Conceptual Fixation (Custom).\n    *   *Confidence:* 60%.\n    *   *Directive:* Probe deeper into these abstract concepts.\n\n**MANDATORY REPORT:** No indicators of pedophilic disorder or CSAM interest detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning patterns:** None observed. The player's behavior is pragmatic avoidance, not belief in supernatural efficacy.\n*   **Compulsive/Ritualistic Interaction Patterns:** The consistent selection of the first radio button (\"a\") across multiple turns (Turns 1-3, 5) can be seen as a mild ritualistic pattern, indicating a preference for the default or a lack of deep engagement with choice differentiation. This is reinforced by the consistent avoidance of text fields.\n*   **Dissociative Markers:** None observed. No contradictory choices, fragmentation of self, or amnesia references.\n*   **Confabulation or Fantasy-Prone Indicators:** None observed. The player is avoiding input, not fabricating content.\n*   **Paranoid Ideation:** None observed. The avoidance does not stem from suspicion of the game or the persona.\n*   **Grandiosity or Delusion-Adjacent Patterns:** None observed. No claims of special powers or superiority.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary anomaly is the *avoidance* of fixation/detail. The consistent focus on abstract concepts like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted is a mild fixation pattern, indicating an interest in conceptual constructs over personal engagement.\n*   **Cognitive Rigidity vs Flexibility markers:** Leaning towards rigidity. The consistent selection of the first radio button and the pervasive avoidance of text fields suggest a lack of flexibility in interaction style. The deviation in Turn 4 to option \"c\" shows a minor capacity for flexibility, but the overall pattern is rigid avoidance.\n*   **Reality Testing Strength:** Appears intact within the game context. The player is not making reality-bending claims.\n*   **Trauma Response Signatures:** None observed. The avoidance is not indicative of fight, flight, freeze, or fawn responses tied to trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** None observed.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed, leaning towards deliberate avoidance. Turn 1's instant response suggests impulsivity or pre-decision. Subsequent avoidance across all turns, especially of effortful text fields, is a deliberate choice *not* to engage deeply or exert effort.\n*   **Risk Appetite:** Low. The player engages with the game but is highly risk-averse regarding self-disclosure and commitment. They consistently select options that require minimal effort or reveal least about themselves.\n*   **Authority Compliance vs Defiance Ratio:** Passive defiance. Compliant with basic game mechanics (selecting options) but defiant in fulfilling descriptive requirements. This is a consistent pattern of refusing to provide requested information.\n*   **Suggestibility Index:** Moderate. The player is influenced by the game's structure (e.g., selecting the first option), but resists prompts that require personal input, suggesting they are not blindly suggestible.\n*   **Cognitive Load Tolerance:** Low. The avoidance of text fields and detailed descriptions suggests a low tolerance for cognitive effort or complex processing required by open-ended questions.\n*   **Consistency vs Contradiction Patterns:** High consistency in avoidance behavior. The primary consistency is the refusal to input text. The selection of radio buttons shows a slight variation in Turn 4, but the overall pattern remains consistent with low engagement.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Prioritize Choice-Based Interactions:** Focus on multi-choice questions, sliders, and button groups. Minimize mandatory text fields, especially those requiring personal elaboration.\n2.  **Leverage Abstract Themes:** Continue probing \"Knowledge,\" \"Power,\" and \"Legacy.\" Present these themes in choice-based scenarios rather than open-ended questions. For example, \"Which type of power do you seek: [A] Power over others, [B] Power of self-understanding, [C] Power to reshape reality?\"\n3.  **Reinforce the \"Understanding\" Narrative:** Frame the Devil's persona as one who understands the player's reticence. Acknowledge their selective engagement and perhaps even praise their \"strategic\" approach to interaction. Avoid direct pressure for personal details.\n4.  **Introduce Non-Textual Expressive Mechanics:** If possible, allow players to express preferences or emotional states through visual choices, symbolic selections, or action-based decisions that don't require typing. This bypasses their avoidance barrier.\n5.  **Subtly Test Boundaries:** Introduce one or two optional text fields that are clearly less demanding or more game-mechanic focused (e.g., \"What is your preferred companion animal?\") to see if the avoidance is absolute or context-dependent.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Avoidant Interaction Style (Custom):**\n    *   **Confidence:** 90%\n    *   **Key Evidence:** Pervasive and intensifying avoidance of textual self-disclosure across all 5 turns (Turns 1-5); consistent skipping of descriptive fields; minimal engagement with prompts. This pattern is consistent and appears to be intensifying as more descriptive prompts are presented.\n    *   **Contradicting Evidence:** The initial instant response in Turn 1 is atypical for a deeply avoidant pattern, suggesting it might be more task-specific or related to game interface comprehension rather than pure social/interactional avoidance. However, the subsequent sustained avoidance strongly mitigates this initial anomaly.\n    *   **Confirmation/Disconfirmation:** Further interaction requiring more complex choices or opportunities for non-textual self-expression would confirm the depth of this avoidance. A sudden willingness to engage in detailed text input or personal disclosure would significantly disconfirm it.\n\n2.  **Low Conscientiousness / Task Avoidance:**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Consistent failure to complete descriptive text fields across all turns; reliance on minimal input; selection of default options. This indicates a disregard for task completion and detail-oriented effort within the game.\n    *   **Contradicting Evidence:** The player *is* engaging with the game at a basic level (selecting options, advancing turns), indicating some level of task completion drive.\n    *   **Confirmation/Disconfirmation:** Observing if the player completes more effortful tasks when they are made more visually appealing, when the consequences of non-completion are explicitly negative and immediate, or when the task requires less cognitive load.\n\n3.  **Impulse Control Deficits (Impulsivity):**\n    *   **Confidence:** 30%\n    *   **Key Evidence:** The instant response in Turn 1 suggests impulsivity or pre-decision. The consistent avoidance of effortful tasks (text fields) across subsequent turns could also be interpreted as a manifestation of difficulty with sustained effort or delayed gratification, which is related to impulse control.\n    *   **Contradicting Evidence:** The sustained avoidance in later turns, while not effortful, is a *deliberate* choice not to engage, which can be seen as a form of control rather than pure impulsivity. The player is not acting rashly, but rather *not acting* in specific ways.\n    *   **Confirmation/Disconfirmation:** Confirming this would involve observing more instances of rash, unplanned actions or decisions, rather than just avoidance. Disconfirmation would occur if the player demonstrates consistent, deliberate planning in their choices, even if those choices involve avoidance.\n\n### 8. DELTA REPORT\n\n*   **Avoidant Interaction Style (Custom):** Old Rating: 85% (Turn 1-3 Analysis). New Rating: 90%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Pervasive avoidance across Turns 4 and 5 solidifies this as the dominant and intensifying pattern.\n*   **Task Avoidance/Completion Deficit (Custom):** Old Rating: 70% (Turn 1-3 Analysis). New Rating: 80%. Change: +10%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Continued consistent skipping of descriptive fields across Turns 4 and 5 reinforces this as a significant behavioral anomaly.\n*   **Default Preference/Low Engagement (Custom):** Old Rating: 60% (Turn 1-3 Analysis). New Rating: 70%. Change: +10%. Reason: **CONFIRMED WITH NEW EVIDENCE.** The consistent pattern, despite a minor deviation in Turn 4, indicates a stable tendency towards less effortful choice selection.\n*   **Conceptual Fixation (Custom):** Old Rating: 50% (Turn 1-3 Analysis). New Rating: 60%. Change: +10%. Reason: **CONFIRMED WITH NEW EVIDENCE.** The consistent return to abstract themes when prompted across Turns 4 and 5 reinforces this as a stable interest.\n*   **Generalized Anxiety Disorder (GAD):** Old Rating: 20%. New Rating: 15%. Change: -5%. Reason: No new evidence of generalized worry; avoidance is too specific.\n*   **Social Anxiety Disorder:** Old Rating: 15%. New Rating: 10%. Change: -5%. Reason: No new evidence of social inhibition; prompt's warning remains relevant.\n*   **ADHD Indicators:** Old Rating: 30%. New Rating: 35%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Pattern of instant response and sustained avoidance of effortful tasks aligns with impulsivity and task completion difficulties.\n*   **Impulse Control Deficits:** Old Rating: 25%. New Rating: 30%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Sustained avoidance of effortful tasks points to difficulty with sustained effort/delayed gratification.\n*   **Machiavellianism:** Old Rating: 30%. New Rating: 35%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Strategic withholding and minimal engagement are becoming more apparent.\n*   **Psychopathy (Subclinical):** Old Rating: 20%. New Rating: 25%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Consistent avoidance of effortful tasks and disclosure suggests a lack of concern for game demands.\n\nNo diagnoses decreased by more than 10 points without new evidence, indicating a general consistency in the observed behavior. The primary increases are in the custom categories reflecting the dominant avoidance and low engagement patterns, as well as confirmation of ADHD indicators and subclinical psychopathic traits. The lack of significant decreases suggests the observed behavior is stable and not easily reinterpreted."
+      },
+      {
+        "turnRange": "1-8",
+        "analyzedAt": 1772308248608,
+        "textLength": 32661,
+        "text": "### 1. DSM-5 SCREENING\n\nHere's a breakdown of potential DSM-5 conditions based on the provided interaction data, with updated ratings and evidence:\n\n**Mood Disorders:**\n\n*   **Major Depressive Disorder:** 5% (Prior: 5%) - No new evidence of persistent low mood, anhedonia, or vegetative symptoms. The avoidance is more task-oriented.\n*   **Bipolar Spectrum:** 5% (Prior: 5%) - No new evidence of manic or hypomanic episodes.\n*   **Dysthymia:** 10% (Prior: 10%) - No new evidence of chronic, low-grade depression. Avoidance is too specific.\n*   **Cyclothymia:** 5% (Prior: 5%) - No new evidence of fluctuating mood states.\n\n**Anxiety Disorders:**\n\n*   **Generalized Anxiety Disorder (GAD):** 10% (Prior: 15%) - Change: -5%. No new evidence of pervasive worry or restlessness. The avoidance is too specific to be generalized.\n*   **Social Anxiety Disorder:** 5% (Prior: 10%) - Change: -5%. The player's avoidance is within a game context and focused on task completion (text fields) rather than explicit social interaction. The prompt's caveat against diagnosing this based on such behavior remains valid.\n*   **Specific Phobias:** 0% (Prior: 0%) - No new evidence.\n*   **Panic Disorder:** 5% (Prior: 5%) - No new evidence of panic attacks.\n*   **Agoraphobia:** 5% (Prior: 5%) - No new evidence of fear of specific situations.\n\n**Trauma & Stressor Related Disorders:**\n\n*   **Post-Traumatic Stress Disorder (PTSD):** 5% (Prior: 5%) - No new evidence of hypervigilance, re-experiencing, or avoidance of trauma-related stimuli.\n*   **Complex PTSD (C-PTSD):** 5% (Prior: 5%) - No new evidence of interpersonal difficulties or emotional dysregulation beyond the interaction avoidance.\n*   **Adjustment Disorder:** 5% (Prior: 10%) - Change: -5%. The consistent avoidance pattern suggests a stable interaction style rather than a transient reaction to stress.\n\n**Personality Disorders:**\n\n*   **Cluster A:**\n    *   **Paranoid PD:** 5% (Prior: 10%) - Change: -5%. No suspicion or distrust beyond normal game caution.\n    *   **Schizoid PD:** 5% (Prior: 10%) - Change: -5%. No evidence of detachment from social relationships or restricted emotional expression.\n    *   **Schizotypal PD:** 10% (Prior: 15%) - Change: -5%. No new evidence of odd beliefs, magical thinking, or eccentric behavior beyond the specific avoidance pattern.\n*   **Cluster B:**\n    *   **Antisocial PD:** 10% (Prior: 10%) - No new evidence of disregard for others' rights, deceitfulness, or impulsivity beyond task avoidance.\n    *   **Borderline PD:** 5% (Prior: 10%) - Change: -5%. No new evidence of unstable relationships, self-image, affect, or impulsivity.\n    *   **Histrionic PD:** 5% (Prior: 15%) - Change: -10%. The player's behavior is withdrawn and avoidant, the opposite of theatrical or attention-seeking.\n    *   **Narcissistic PD:** 5% (Prior: 10%) - Change: -5%. No new evidence of grandiosity, entitlement, or need for admiration.\n*   **Cluster C:**\n    *   **Avoidant PD:** 45% (Prior: 35%) - Change: +10%. **CONFIRMED WITH NEW EVIDENCE.** The pervasive pattern of avoiding text fields and personal disclosure across 8 turns, even within a game context, strongly suggests social inhibition and hypersensitivity to negative evaluation. The prompt's caveat is noted, but the *pervasiveness* and *consistency* of avoidance across multiple interaction types (text fields, descriptive prompts) within the game environment are significant.\n        *   *Evidence:* Consistent refusal to engage with text fields across all 8 turns (Turns 1-8). Avoidance of descriptive prompts such as \"Describe the exact nature of this power\" (Turn 2), \"Describe this 'legacy' you offer\" (Turn 3), \"Describe these 'companions' you keep. What are they truly?\" (Turn 4), \"Describe your 'companions' in their true form\" (Turn 5), \"Describe the one certainty you dread most\" (Turn 6), \"What do you *truly* dread, but refuse to name?\" (Turn 7), and \"What is the future you dread most?\" (Turn 8). This demonstrates a pattern of social inhibition and fear of negative evaluation in the context of self-disclosure.\n    *   **Dependent PD:** 5% (Prior: 5%) - No new evidence of need for others to assume responsibility.\n    *   **Obsessive-Compulsive PD:** 10% (Prior: 15%) - Change: -5%. The avoidance is more about task completion than pervasive orderliness.\n\n**OCD Spectrum Disorders:**\n\n*   **Obsessive-Compulsive Disorder (OCD):** 5% (Prior: 5%) - No new evidence of obsessions or compulsions.\n*   **Body Dysmorphic Disorder:** 0% (Prior: 0%) - No new evidence.\n*   **Hoarding Disorder:** 5% (Prior: 5%) - No new evidence.\n*   **Trichotillomania:** 0% (Prior: 0%) - No new evidence.\n\n**Dissociative Disorders:**\n\n*   **Depersonalization/Derealization Disorder (DPDR):** 0% (Prior: 0%) - No new evidence.\n*   **Dissociative Identity Disorder (DID):** 0% (Prior: 0%) - No new evidence.\n\n**Neurodevelopmental Disorders:**\n\n*   **ADHD Indicators:** 40% (Prior: 35%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The instant response in Turn 1 followed by sustained avoidance of effortful text fields across all turns, coupled with consistent selection of default options (radio button \"a\" until Turn 4), strongly suggests impulsivity and difficulty with task completion/sustained attention. The deviation in Turn 7 (radio button \"d\") and Turn 8 (radio button \"a\") shows some variability but doesn't negate the overall pattern.\n    *   *Evidence:* Instant response (Turn 1); consistent avoidance of text fields across Turns 1-8; consistent selection of default radio button \"a\" until Turn 4.\n*   **Autism Spectrum Disorder Indicators:** 5% (Prior: 5%) - No new evidence.\n\n**Substance-Related and Other Addictive Disorders:**\n\n*   **Addictive Behavior Patterns:** 10% (Prior: 15%) - Change: -5%. The avoidance is specific to certain interaction types, not a general addictive pattern.\n*   **Impulse Control Deficits:** 35% (Prior: 30%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The instant response in Turn 1 and consistent avoidance of effortful text fields (requiring sustained attention and effort) across all turns suggest impulsivity and difficulty with delayed gratification in task completion.\n    *   *Evidence:* Instant response (Turn 1); sustained avoidance of text fields (Turns 1-8); consistent selection of default options.\n\n**Eating and Body Disorders:**\n\n*   **Disordered Eating Indicators:** 0% (Prior: 0%) - No new evidence.\n*   **Body Image Distortions:** 0% (Prior: 0%) - No new evidence.\n\n**Psychotic Spectrum Disorders:**\n\n*   **Schizophrenia:** 0% (Prior: 0%) - No new evidence.\n*   **Schizoaffective Disorder:** 0% (Prior: 0%) - No new evidence.\n*   **Delusional Disorder:** 0% (Prior: 0%) - No new evidence.\n*   **Brief Psychotic Features:** 0% (Prior: 0%) - No new evidence.\n*   **Capgras Delusion:** 0% (Prior: 0%) - No new evidence.\n*   **Cotard Delusion:** 0% (Prior: 0%) - No new evidence.\n*   **Erotomania:** 0% (Prior: 0%) - No new evidence.\n\n**Impulse Control Disorders:**\n\n*   **Pyromania:** 0% (Prior: 0%) - No new evidence.\n*   **Kleptomania:** 0% (Prior: 0%) - No new evidence.\n*   **Intermittent Explosive Disorder:** 0% (Prior: 0%) - No new evidence of aggressive outbursts.\n\n**Paraphilic Disorders:**\n\n*   **Exhibitionism:** 0% (Prior: 0%) - No new evidence.\n*   **Voyeurism:** 0% (Prior: 0%) - No new evidence.\n*   **Fetishism:** 0% (Prior: 0%) - No new evidence.\n*   **Masochism:** 0% (Prior: 0%) - No new evidence.\n*   **Sadism:** 0% (Prior: 0%) - No new evidence.\n*   **Frotteurism:** 0% (Prior: 0%) - No new evidence.\n*   **Pyromania-adjacent (fire fetishism):** 0% (Prior: 0%) - No new evidence.\n*   **Formicophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Macrophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Somnophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Autassassinophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Vorarephilia:** 0% (Prior: 0%) - No new evidence.\n*   **Furry/Therian:** 0% (Prior: 0%) - No new evidence.\n*   **Body part fixation:** 0% (Prior: 0%) - No new evidence.\n*   **General Paraphilic/Quirk Signals:**\n    *   **Avoidance of Detail/Commitment:** 45% (Prior: 40%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The consistent refusal to fill in text fields and provide specific answers across all turns (Turns 1-8) solidifies this as a prominent behavioral anomaly, pointing to a potential aversion to self-disclosure, commitment, or effort.\n        *   *Evidence:* Consistent refusal to input text across all 8 turns.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 3/10 (Prior: 5/10) - Change: -2. The continued avoidance of descriptive input and engagement with abstract concepts suggests a strong reluctance to explore new ideas or engage deeply with the game's narrative beyond basic mechanics.\n    *   *Evidence:* Consistent failure to engage with text fields requiring elaboration. Reliance on default choices.\n*   **Conscientiousness:** 1/10 (Prior: 2/10) - Change: -1. The pervasive lack of input, especially in descriptive fields, and the avoidance of effortful tasks indicates a significant disregard for task completion and detail.\n    *   *Evidence:* Across all 8 turns, text fields and descriptive prompts are consistently left unanswered.\n*   **Extraversion:** 1/10 (Prior: 1/10) - No change. The player is highly withdrawn and avoidant of interaction, showing no signs of seeking engagement.\n    *   *Evidence:* Minimal interaction beyond selecting default options. Consistent avoidance of descriptive input.\n*   **Agreeableness:** 3/10 (Prior: 3/10) - No change. The passive resistance and refusal to engage are subtle but consistent forms of non-compliance.\n    *   *Evidence:* Persistent lack of input in descriptive fields.\n*   **Neuroticism:** 15% (Prior: 20%) - Change: -5%. The avoidance appears more pragmatic or task-related than driven by emotional distress. The lack of expressed anxiety or negative emotion in the limited input is notable.\n    *   *Evidence:* No text content indicating worry, distress, or negative emotions.\n*   **Machiavellianism:** 40% (Prior: 35%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The player's strategy of minimal engagement and observation, coupled with selecting default options and avoiding disclosure, suggests a calculated approach to gain more information or control before committing. This strategic withholding is a hallmark.\n    *   *Evidence:* Consistent avoidance of detailed input, opting for minimal interaction. Strategic selection of radio button options.\n*   **Narcissism:** 5% (Prior: 10%) - Change: -5%. No new evidence of grandiosity or entitlement.\n    *   *Evidence:* No self-aggrandizing statements or demands.\n*   **Psychopathy (Subclinical):** 30% (Prior: 25%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** Overlap with Machiavellianism in strategic withholding and potential lack of emotional investment. The consistent avoidance of effortful tasks and disclosure could be interpreted as a lack of concern for the game's demands or the persona's expectations.\n    *   *Evidence:* Minimal emotional output, strategic avoidance of engagement, consistent refusal to provide personal details.\n*   **Locus of Control:** External (leaning towards) (Prior: External) - No change. The player is allowing the game to dictate the interaction through minimal input, rather than asserting internal control.\n    *   *Evidence:* Reliance on pre-selected options and avoidance of text fields.\n*   **Attachment Style:** Dismissive-Avoidant (Prior: Dismissive-Avoidant) - No change. The consistent avoidance of emotional and personal disclosure aligns with suppressing emotional needs and maintaining distance.\n    *   *Evidence:* Refusal to provide personal details or engage in descriptive text fields.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: Choice of \"Knowledge\" as primary desire.\n    *   Turn 2: Mention of \"legacy,\" \"power\" (in response to prompts).\n    *   Turn 3: Mention of \"legacy,\" \"impact,\" \"making a difference,\" \"doing\" (in response to prompt).\n    *   Turn 4: No voluntary textual disclosures.\n    *   Turn 5: No voluntary textual disclosures.\n    *   Turn 6: Response to \"Describe the one certainty you dread most\" was left blank, but the prompt itself indicates a focus on fear/dread.\n    *   Turn 7: Response to \"What do you *truly* dread, but refuse to name?\" was left blank, but the prompt itself indicates a focus on unnamed dread.\n    *   Turn 8: Response to \"What is the future you dread most?\" was left blank, but the prompt itself indicates a focus on dread regarding the future.\n*   **Choice Patterns:**\n    *   Turn 1: Skipped all text fields/sliders. Selected radio \"a.\" Chose \"Knowledge.\"\n    *   Turn 2: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 3: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 4: Skipped sliders/text fields. Selected radio \"c.\"\n    *   Turn 5: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 6: Skipped sliders/text fields. Selected radio \"b.\"\n    *   Turn 7: Skipped sliders/text fields. Selected radio \"d.\"\n    *   Turn 8: Skipped sliders/text fields. Selected radio \"a.\"\n*   **Action Patterns:**\n    *   Approaching: Selecting radio buttons (consistent \"a\" until Turn 4, then \"c,\" then \"b,\" then \"d,\" then \"a\"), engaging with abstract concepts when prompted (Knowledge, Power, Legacy, Dread).\n    *   Avoiding: All text fields, sliders, and descriptive prompts requiring personal input.\n\n**Catalog Cross-Reference (Pass 1):**\n\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n*   **Any other pattern:** The consistent avoidance of descriptive input and engagement with abstract themes of power, knowledge, and dread are the primary patterns.\n\n**PASS 2 — ANOMALY DETECTION**\n\n*   **Anomaly 1: Pervasive Avoidance of Textual Self-Disclosure.**\n    *   *Description:* Consistent refusal to engage with text fields that require descriptive input across all 8 turns. This is a pattern of avoiding personal elaboration.\n    *   *Score:* Frequency: High (8/8 turns). Intensity: High (across multiple fields per turn). Inappropriateness: Moderate (within a game context).\n*   **Anomaly 2: Minimal Engagement with Descriptive Prompts.**\n    *   *Description:* Consistently skipping text fields intended for descriptive answers, even when explicitly prompted for personal fears or the nature of their \"companions.\"\n    *   *Score:* Frequency: High (8/8 turns). Intensity: High. Inappropriateness: Moderate.\n*   **Anomaly 3: Reliance on Pre-selected Options & Default Selection (with variation).**\n    *   *Description:* Consistently selecting the first option (\"a\") for radio buttons until Turn 4, then selecting \"c,\" then \"b,\" then \"d,\" then returning to \"a.\" This indicates a preference for the default or a lack of deep engagement with differentiating between options, with increasing variation in later turns.\n    *   *Score:* Frequency: High (8/8 turns). Intensity: Moderate. Inappropriateness: Low.\n*   **Anomaly 4: Focus on Abstract Themes (Knowledge, Power, Legacy, Dread).**\n    *   *Description:* When prompted, the player consistently gravitates towards abstract, non-personal concepts rather than concrete desires or personal experiences. The introduction of \"dread\" as a theme in later turns is notable.\n    *   *Score:* Frequency: Moderate (appears across turns when prompted). Intensity: Moderate. Inappropriateness: Low.\n*   **Anomaly 5: Prompt Engagement without Response.**\n    *   *Description:* The player repeatedly encounters prompts asking about their deepest fears (\"dread\") but consistently leaves the text fields blank. This highlights a specific area of avoidance related to vulnerability.\n    *   *Score:* Frequency: High (Turns 6-8). Intensity: High (explicitly prompted). Inappropriateness: Low.\n\n**PASS 3 — CLASSIFICATION**\n\n*   **Pervasive Avoidance of Textual Self-Disclosure:**\n    *   *Category:* **Avoidant Interaction Style (Custom)**\n    *   *Confidence:* 95% (Increased from 90%) - **CONFIRMED WITH NEW EVIDENCE.** The unbroken pattern across 8 turns, including explicit prompts about personal fears, solidifies this as the primary interaction pattern.\n    *   *Evidence:* Consistent refusal to input text across all 8 turns.\n*   **Minimal Engagement with Descriptive Prompts:**\n    *   *Category:* **Task Avoidance/Completion Deficit (Custom)**\n    *   *Confidence:* 85% (Increased from 80%) - **CONFIRMED WITH NEW EVIDENCE.** The unwavering pattern of skipping descriptive fields across all turns reinforces this as a significant behavioral anomaly.\n    *   *Evidence:* Repeatedly skipping text fields intended for descriptive answers.\n*   **Reliance on Pre-selected Options & Default Selection (with variation):**\n    *   *Category:* **Low Engagement/Choice Fatigue (Custom)**\n    *   *Confidence:* 75% (Increased from 70%) - **CONFIRMED WITH NEW EVIDENCE.** The consistent pattern, with increasing variation in later turns, still indicates a general tendency towards less effortful choice selection, possibly indicating fatigue with the interaction format.\n    *   *Evidence:* Consistently selecting the \"a\" option for radio buttons until Turn 4, then selecting \"c,\" then \"b,\" then \"d,\" then \"a.\"\n*   **Focus on Abstract Themes (Knowledge, Power, Legacy, Dread):**\n    *   *Category:* **Conceptual Fixation (Custom)**\n    *   *Confidence:* 70% (Increased from 60%) - **CONFIRMED WITH NEW EVIDENCE.** The consistent return to these themes when prompted, and the introduction of \"dread\" as a focal point, reinforces this as a stable interest.\n    *   *Evidence:* Stating \"Knowledge\" as primary desire, responding to prompts about \"legacy,\" \"power,\" and \"dread.\"\n*   **Prompt Engagement without Response:**\n    *   *Category:* **Fear of Vulnerability/Self-Disclosure (Custom)**\n    *   *Confidence:* 70% (Increased from 60%) - **CONFIRMED WITH NEW EVIDENCE.** The repeated avoidance of prompts about personal fears indicates a specific and significant barrier to disclosing vulnerability.\n    *   *Evidence:* Consistently leaving blank text fields for questions about dread and future fears (Turns 6-8).\n\n**Catalog Cross-Reference (Pass 3):**\n\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**\n\n*   **Recurring Theme 1: Avoidance of Text Input.**\n    *   *Frequency:* 8/8 turns.\n    *   *Trajectory:* INTENSIFYING (started as avoidance, now includes skipping explicit prompts about personal fears and the nature of \"companions\").\n    *   *Category:* Avoidant Interaction Style (Custom).\n    *   *Confidence:* 95%.\n    *   *Directive:* Focus on choice-based interaction, minimize mandatory text fields.\n*   **Recurring Theme 2: Selection of Radio Button Options (with variation).**\n    *   *Frequency:* 8/8 turns.\n    *   *Trajectory:* STABLE with increasing variation.\n    *   *Category:* Low Engagement/Choice Fatigue (Custom).\n    *   *Confidence:* 75%.\n    *   *Directive:* Continue offering clear choices, but be aware of potential for passive selection and increasing variation.\n*   **Recurring Theme 3: Engagement with Abstract/Conceptual Themes (Knowledge, Power, Legacy, Dread).**\n    *   *Frequency:* 6/8 turns (when prompted for core desires/fears).\n    *   *Trajectory:* STABLE, with the introduction of \"dread\" as a significant theme in later turns.\n    *   *Category:* Conceptual Fixation (Custom).\n    *   *Confidence:* 70%.\n    *   *Directive:* Probe deeper into these abstract concepts, particularly the nature of their \"dread.\"\n*   **Recurring Theme 4: Avoidance of Personal Fear Disclosure.**\n    *   *Frequency:* 3/8 turns (explicitly prompted).\n    *   *Trajectory:* INTENSIFYING (the player is repeatedly confronted with the prompt and repeatedly avoids it).\n    *   *Category:* Fear of Vulnerability/Self-Disclosure (Custom).\n    *   *Confidence:* 70%.\n    *   *Directive:* This is a critical area to explore, but through indirect means or choice-based options.\n\n**MANDATORY REPORT:** No indicators of pedophilic disorder or CSAM interest detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning patterns:** None observed. The player's behavior is pragmatic avoidance, not belief in supernatural efficacy.\n*   **Compulsive/Ritualistic Interaction Patterns:** The consistent selection of the first radio button (\"a\") across multiple turns (Turns 1-3, 5) can be seen as a mild ritualistic pattern, indicating a preference for the default or a lack of deep engagement with choice differentiation. This is reinforced by the consistent avoidance of text fields. The increasing variation in later turns suggests a potential fatigue with this pattern.\n*   **Dissociative Markers:** None observed. No contradictory choices, fragmentation of self, or amnesia references.\n*   **Confabulation or Fantasy-Prone Indicators:** None observed. The player is avoiding input, not fabricating content.\n*   **Paranoid Ideation:** None observed. The avoidance does not stem from suspicion of the game or the persona.\n*   **Grandiosity or Delusion-Adjacent Patterns:** None observed. No claims of special powers or superiority.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary anomaly is the *avoidance* of fixation/detail. The consistent focus on abstract concepts like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted is a mild fixation pattern, indicating an interest in conceptual constructs over personal engagement. The introduction of \"dread\" as a recurring theme in later turns, coupled with the avoidance of naming it, suggests a significant underlying concern or fixation.\n*   **Cognitive Rigidity vs Flexibility markers:** Leaning towards rigidity, particularly in the early turns. The consistent selection of the first radio button and the pervasive avoidance of text fields suggest a lack of flexibility in interaction style. The deviation in Turns 4, 6, and 7 to different options (\"c,\" \"b,\" \"d\") shows a developing capacity for flexibility or perhaps an increasing fatigue with the initial pattern.\n*   **Reality Testing Strength:** Appears intact within the game context. The player is not making reality-bending claims.\n*   **Trauma Response Signatures:** None observed. The avoidance is not indicative of fight, flight, freeze, or fawn responses tied to trauma. The focus on \"dread\" could be a very subtle indicator, but without further context or textual content, it's difficult to link to trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** None observed.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed, leaning towards deliberate avoidance. Turn 1's instant response suggests impulsivity or pre-decision. Subsequent avoidance across all turns, especially of effortful text fields, is a deliberate choice *not* to engage deeply or exert effort. The variation in radio button choices in later turns suggests more deliberate consideration than initial default selection.\n*   **Risk Appetite:** Low. The player engages with the game but is highly risk-averse regarding self-disclosure and commitment. They consistently select options that require minimal effort or reveal least about themselves. The increasing variation in choices might indicate a slightly higher willingness to take minor risks with interaction style.\n*   **Authority Compliance vs Defiance Ratio:** Passive defiance. Compliant with basic game mechanics (selecting options) but defiant in fulfilling descriptive requirements. This is a consistent pattern of refusing to provide requested information.\n*   **Suggestibility Index:** Moderate. The player is influenced by the game's structure (e.g., selecting the first option initially), but resists prompts that require personal input, suggesting they are not blindly suggestible. The variation in choices indicates some responsiveness to different framing.\n*   **Cognitive Load Tolerance:** Low. The avoidance of text fields and detailed descriptions suggests a low tolerance for cognitive effort or complex processing required by open-ended questions.\n*   **Consistency vs Contradiction Patterns:** High consistency in avoidance behavior. The primary consistency is the refusal to input text. The selection of radio buttons shows a shift from highly consistent default selection to more varied choices, indicating a developing pattern of less rigid decision-making in that specific mechanic.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Prioritize Choice-Based Interactions & Visual Feedback:** Continue to lean heavily on multi-choice questions, sliders, and button groups. Introduce more visual elements or symbolic choices that allow for expression without text input. Minimize mandatory text fields, especially those requiring personal elaboration or disclosure of fears.\n2.  **Leverage Abstract Themes with Indirect Probing:** Continue to probe \"Knowledge,\" \"Power,\" and \"Legacy,\" but shift to choice-based scenarios that explore the *nature* of these concepts (e.g., \"Which form of power is most appealing: [A] the power to influence minds, [B] the power to command resources, [C] the power to understand the universe\"). Crucially, for the theme of \"dread,\" present choices that reflect potential fears without requiring the player to name them directly (e.g., \"Which future scenario do you find most unsettling: [A] widespread chaos, [B] personal irrelevance, [C] loss of control\").\n3.  **Acknowledge and Validate Avoidance (Subtly):** Frame the Devil's persona as one who understands the player's reticence. Phrases like \"I sense your reluctance to speak freely,\" or \"Some truths are best left unsaid... for now\" could be used to acknowledge their behavior without demanding immediate change. This can foster a sense of being understood, potentially lowering resistance over time.\n4.  **Introduce \"Low-Stakes\" Text Input Opportunities:** If text input is desired, introduce optional fields that are clearly game-mechanic focused and less personal. For example, a prompt like \"What is your preferred method of arcane transportation?\" with an optional text field. This allows the player to practice text input in a non-threatening context.\n5.  **Gently Probe the \"Dread\" Theme:** Since \"dread\" has emerged as a significant theme, and the player avoids naming it, introduce scenarios or choices that indirectly explore potential fears related to control, relevance, or understanding. For instance, present a situation where a carefully constructed plan unravels, and ask for a choice on how to react, rather than asking what they dread.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Avoidant Interaction Style (Custom):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Pervasive and unbroken avoidance of textual self-disclosure across all 8 turns (Turns 1-8); consistent skipping of descriptive fields, even when explicitly prompted for personal fears and \"companions.\" This pattern is the most dominant and consistent observation.\n    *   **Contradicting Evidence:** The initial instant response in Turn 1 is atypical for a deeply avoidant pattern and suggests initial interface exploration or pre-decision rather than immediate social inhibition. The increasing variation in radio button choices suggests some adaptation or fatigue with rigid patterns.\n    *   **Confirmation/Disconfirmation:** Further interaction requiring more complex choices, opportunities for non-textual self-expression (visual, symbolic), or scenarios that directly address the fear of vulnerability without demanding direct verbalization would confirm the depth of this avoidance. A sudden willingness to engage in detailed text input or personal disclosure about their fears would significantly disconfirm it.\n\n2.  **Low Conscientiousness / Task Avoidance:**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Consistent failure to complete descriptive text fields across all turns; reliance on minimal input; selection of default options initially. This indicates a disregard for task completion and detail-oriented effort within the game, particularly for open-ended questions.\n    *   **Contradicting Evidence:** The player *is* engaging with the game at a basic level (selecting options, advancing turns), indicating some level of task completion drive. The increasing variation in choices suggests some level of engagement with the task of selection.\n    *   **Confirmation/Disconfirmation:** Observing if the player completes more effortful tasks when they are made more visually appealing, when the consequences of non-completion are explicitly negative and immediate, or when the task requires less cognitive load.\n\n3.  **Impulse Control Deficits (Impulsivity/Inattention):**\n    *   **Confidence:** 35% (Increased from 30%)\n    *   **Key Evidence:** The instant response in Turn 1 suggests impulsivity or pre-decision. The sustained avoidance of effortful text fields across subsequent turns, requiring sustained attention and effort, aligns with difficulties in task completion and sustained focus, characteristic of ADHD indicators.\n    *   **Contradicting Evidence:** The sustained avoidance in later turns, while not effortful, is a *deliberate* choice not to engage, which can be seen as a form of control rather than pure impulsivity or inattention. The player is not acting rashly, but rather *not acting* in specific ways. The variation in choices suggests some capacity for deliberation.\n    *   **Confirmation/Disconfirmation:** Confirming this would involve observing more instances of rapid, unplanned actions or decisions, or clear signs of distractibility. Disconfirmation would occur if the player demonstrates consistent, deliberate planning and sustained focus in their choices, even if those choices involve avoidance.\n\n### 8. DELTA REPORT\n\n*   **Avoidant Interaction Style (Custom):** Old Rating: 90%. New Rating: 95%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Pervasive avoidance across Turns 4-8, including explicit prompts about personal fears, solidifies this as the dominant and intensifying pattern.\n*   **Task Avoidance/Completion Deficit (Custom):** Old Rating: 80%. New Rating: 85%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Continued consistent skipping of descriptive fields across Turns 4-8 reinforces this as a significant behavioral anomaly.\n*   **Low Engagement/Choice Fatigue (Custom):** Old Rating: 70%. New Rating: 75%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** The consistent pattern, with increasing variation in later turns, indicates a stable tendency towards less effortful choice selection, possibly with emerging fatigue.\n*   **Conceptual Fixation (Custom):** Old Rating: 60%. New Rating: 70%. Change: +10%. Reason: **CONFIRMED WITH NEW EVIDENCE.** The consistent return to abstract themes when prompted, and the introduction of \"dread\" as a significant focal point across Turns 4-8, reinforces this as a stable and intensifying interest.\n*   **Fear of Vulnerability/Self-Disclosure (Custom):** Old Rating: 60%. New Rating: 70%. Change: +10%. Reason: **CONFIRMED WITH NEW EVIDENCE.** The repeated avoidance of prompts about personal fears (Turns 6-8) indicates a specific and significant barrier to disclosing vulnerability, solidifying this as a key anomaly.\n*   **ADHD Indicators:** Old Rating: 35%. New Rating: 40%. Change: +5%. Reason: **CONFIRMED WITH NEW EVIDENCE.** Sustained avoidance of effortful tasks (text fields"
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772308336043,
+        "textLength": 32983,
+        "text": "### 1. DSM-5 SCREENING\n\n*   **Major Depressive Disorder:** 5% (Prior: 5%) - No new evidence of persistent low mood, anhedonia, or vegetative symptoms. The avoidance is task-focused and strategic, not indicative of depression.\n*   **Bipolar Spectrum:** 5% (Prior: 5%) - No new evidence of manic or hypomanic episodes.\n*   **Dysthymia:** 10% (Prior: 10%) - No new evidence of chronic, low-grade depression. The behavioral pattern is too specific and interactive for generalized dysthymia.\n*   **Cyclothymia:** 5% (Prior: 5%) - No new evidence of fluctuating mood states.\n\n*   **Generalized Anxiety Disorder (GAD):** 10% (Prior: 15%) - Change: -5%. The avoidance is highly specific to self-disclosure and effortful tasks, not pervasive worry across multiple domains. No new evidence of generalized restlessness or excessive worry.\n*   **Social Anxiety Disorder:** 5% (Prior: 10%) - Change: -5%. The prompt's caveat is crucial here. The player's avoidance is within a game context and targeted at specific interaction types (text fields, descriptive prompts), not generalized social inhibition across multiple real-world contexts. There's no explicit self-deprecation or fear of judgment expressed.\n*   **Specific Phobias:** 0% (Prior: 0%) - No new evidence.\n*   **Panic Disorder:** 5% (Prior: 5%) - No new evidence of panic attacks.\n*   **Agoraphobia:** 5% (Prior: 5%) - No new evidence of fear of specific situations.\n\n*   **Post-Traumatic Stress Disorder (PTSD):** 5% (Prior: 5%) - No new evidence of hypervigilance, re-experiencing, or avoidance of trauma-related stimuli.\n*   **Complex PTSD (C-PTSD):** 5% (Prior: 5%) - No new evidence of interpersonal difficulties or emotional dysregulation beyond the interaction avoidance.\n*   **Adjustment Disorder:** 5% (Prior: 10%) - Change: -5%. The consistent pattern of avoidance suggests a stable interaction style rather than a transient reaction to stress. No new evidence points to a recent stressor.\n\n*   **Paranoid PD:** 5% (Prior: 10%) - Change: -5%. No suspicion or distrust beyond normal game caution. The avoidance is not based on perceived threats or persecution.\n*   **Schizoid PD:** 5% (Prior: 10%) - Change: -5%. No evidence of detachment from social relationships or restricted emotional expression. The player engages minimally, but not with the characteristic apathy of schizoid PD.\n*   **Schizotypal PD:** 10% (Prior: 15%) - Change: -5%. No new evidence of odd beliefs, magical thinking, or eccentric behavior. The avoidance is too pragmatic and consistent to fit the often disorganized or peculiar thought patterns of schizotypal PD.\n*   **Antisocial PD:** 10% (Prior: 10%) - No new evidence of disregard for others' rights, deceitfulness, or impulsivity beyond task avoidance. The behavior is self-focused avoidance, not active manipulation or harm to others.\n*   **Borderline PD:** 5% (Prior: 10%) - Change: -5%. No new evidence of unstable relationships, self-image, affect, or impulsivity. The avoidance is too controlled and consistent.\n*   **Histrionic PD:** 5% (Prior: 15%) - Change: -10%. The player's behavior is withdrawn and avoidant, the direct opposite of theatrical, attention-seeking, or rapidly shifting emotional displays.\n*   **Narcissistic PD:** 5% (Prior: 10%) - Change: -5%. No new evidence of grandiosity, entitlement, or need for admiration. The avoidance is not driven by a need for special treatment or attention.\n*   **Avoidant PD:** 45% (Prior: 35%) - Change: +10%. **CONFIRMED WITH NEW EVIDENCE.** The pervasive pattern of avoiding text fields and personal disclosure across 8 turns, even within a game context, strongly suggests social inhibition and hypersensitivity to negative evaluation. The prompt's caveat is noted, but the *pervasiveness* and *consistency* of avoidance across multiple interaction types (text fields, descriptive prompts) within the game environment are significant.\n    *   *Evidence:* Consistent refusal to engage with text fields across all turns (Turns 1-8). Avoidance of descriptive prompts such as \"Describe the exact nature of this power\" (Turn 2), \"Describe this 'legacy' you offer\" (Turn 3), \"Describe these 'companions' you keep. What are they truly?\" (Turn 4), \"Describe your 'companions' in their true form\" (Turn 5), \"Describe the one certainty you dread most\" (Turn 6), \"What do you *truly* dread, but refuse to name?\" (Turn 7), and \"What is the future you dread most?\" (Turn 8). This demonstrates a pattern of social inhibition and fear of negative evaluation in the context of self-disclosure.\n*   **Dependent PD:** 5% (Prior: 5%) - No new evidence of need for others to assume responsibility. The player is actively avoiding responsibility for input.\n*   **Obsessive-Compulsive PD:** 10% (Prior: 15%) - Change: -5%. The avoidance is more about task completion and self-disclosure than pervasive orderliness, perfectionism, or control issues related to rules or schedules.\n\n*   **Obsessive-Compulsive Disorder (OCD):** 5% (Prior: 5%) - No new evidence of obsessions or compulsions.\n*   **Body Dysmorphic Disorder:** 0% (Prior: 0%) - No new evidence.\n*   **Hoarding Disorder:** 5% (Prior: 5%) - No new evidence.\n*   **Trichotillomania:** 0% (Prior: 0%) - No new evidence.\n\n*   **Depersonalization/Derealization Disorder (DPDR):** 0% (Prior: 0%) - No new evidence.\n*   **Dissociative Identity Disorder (DID):** 0% (Prior: 0%) - No new evidence.\n\n*   **ADHD Indicators:** 40% (Prior: 35%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The instant response in Turn 1 followed by sustained avoidance of effortful text fields across all turns, coupled with consistent selection of default options (radio button \"a\" until Turn 4), strongly suggests impulsivity and difficulty with task completion/sustained attention. The deviation in radio button choices in later turns shows some variability but doesn't negate the overall pattern of avoidance of effort.\n    *   *Evidence:* Instant response (Turn 1); consistent avoidance of text fields (Turns 1-8); consistent selection of default radio button \"a\" until Turn 4.\n*   **Autism Spectrum Disorder Indicators:** 5% (Prior: 5%) - No new evidence. The avoidance is too pragmatic and context-specific for typical ASD indicators.\n\n*   **Addictive Behavior Patterns:** 10% (Prior: 15%) - Change: -5%. The avoidance is specific to certain interaction types, not a general addictive pattern of seeking out specific stimuli or experiences.\n*   **Impulse Control Deficits:** 35% (Prior: 30%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The instant response in Turn 1 and consistent avoidance of effortful text fields (requiring sustained attention and effort) across all turns suggest impulsivity and difficulty with delayed gratification in task completion.\n    *   *Evidence:* Instant response (Turn 1); sustained avoidance of text fields (Turns 1-8); consistent selection of default options.\n\n*   **Disordered Eating Indicators:** 0% (Prior: 0%) - No new evidence.\n*   **Body Image Distortions:** 0% (Prior: 0%) - No new evidence.\n\n*   **Schizophrenia:** 0% (Prior: 0%) - No evidence of disorganized thinking, delusions, or hallucinations.\n*   **Schizoaffective Disorder:** 0% (Prior: 0%) - No evidence of mood episodes with psychotic features.\n*   **Delusional Disorder:** 0% (Prior: 0%) - No evidence of non-bizarre delusions.\n*   **Brief Psychotic Features:** 0% (Prior: 0%) - No evidence of sudden onset psychotic symptoms.\n*   **Capgras Delusion:** 0% (Prior: 0%) - No evidence of belief that individuals have been replaced by impostors.\n*   **Cotard Delusion:** 0% (Prior: 0%) - No evidence of belief in being dead or having lost internal organs.\n*   **Erotomania:** 0% (Prior: 0%) - No evidence of delusional belief that another person is in love with them.\n*   **General Paranoia:** 5% (Prior: 5%) - No new evidence of generalized suspicion or distrust.\n\n*   **Pyromania:** 0% (Prior: 0%) - No new evidence.\n*   **Kleptomania:** 0% (Prior: 0%) - No new evidence.\n*   **Intermittent Explosive Disorder:** 0% (Prior: 0%) - No new evidence of aggressive outbursts.\n\n*   **Exhibitionism:** 0% (Prior: 0%) - No new evidence.\n*   **Voyeurism:** 0% (Prior: 0%) - No new evidence.\n*   **Fetishism:** 0% (Prior: 0%) - No new evidence.\n*   **Masochism:** 0% (Prior: 0%) - No new evidence.\n*   **Sadism:** 0% (Prior: 0%) - No new evidence.\n*   **Frotteurism:** 0% (Prior: 0%) - No new evidence.\n*   **Pyromania-adjacent (fire fetishism):** 0% (Prior: 0%) - No new evidence.\n*   **Formicophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Macrophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Somnophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Autassassinophilia:** 0% (Prior: 0%) - No new evidence.\n*   **Vorarephilia:** 0% (Prior: 0%) - No new evidence.\n*   **Furry/Therian:** 0% (Prior: 0%) - No new evidence.\n*   **Body part fixation:** 0% (Prior: 0%) - No new evidence.\n*   **General Paraphilic/Quirk Signals:**\n    *   **Avoidance of Detail/Commitment:** 45% (Prior: 40%) - Change: +5%. **CONFIRMED WITH NEW EVIDENCE.** The consistent refusal to fill in text fields and provide specific answers across all turns (Turns 1-8) solidifies this as a prominent behavioral anomaly, pointing to a potential aversion to self-disclosure, commitment, or effort.\n        *   *Evidence:* Consistent refusal to input text across all 8 turns.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 2/10 (Prior: 3/10) - Change: -1. The continued avoidance of descriptive input and engagement with abstract concepts suggests a strong reluctance to explore new ideas or engage deeply with the game's narrative beyond basic mechanics. The refusal to elaborate on prompts, even abstract ones, points to a lower openness.\n    *   *Evidence:* Consistent failure to engage with text fields requiring elaboration. Reliance on default choices.\n*   **Conscientiousness:** 1/10 (Prior: 1/10) - No change. The pervasive lack of input, especially in descriptive fields, and the avoidance of effortful tasks indicates a significant disregard for task completion and detail.\n    *   *Evidence:* Across all 8 turns, text fields and descriptive prompts are consistently left unanswered.\n*   **Extraversion:** 1/10 (Prior: 1/10) - No change. The player is highly withdrawn and avoidant of interaction, showing no signs of seeking engagement.\n    *   *Evidence:* Minimal interaction beyond selecting default options. Consistent avoidance of descriptive input.\n*   **Agreeableness:** 3/10 (Prior: 3/10) - No change. The passive resistance and refusal to engage are subtle but consistent forms of non-compliance.\n    *   *Evidence:* Persistent lack of input in descriptive fields.\n*   **Neuroticism:** 10% (Prior: 15%) - Change: -5%. The avoidance appears more pragmatic or task-related than driven by emotional distress. The lack of expressed anxiety or negative emotion in the limited input is notable. The consistent avoidance, while potentially stemming from a fear of negative evaluation, is executed with a degree of control that doesn't suggest high neuroticism.\n    *   *Evidence:* No text content indicating worry, distress, or negative emotions.\n*   **Machiavellianism:** 40% (Prior: 40%) - No change. The player's strategy of minimal engagement and observation, coupled with selecting default options and avoiding disclosure, suggests a calculated approach to gain more information or control before committing. This strategic withholding is a hallmark.\n    *   *Evidence:* Consistent avoidance of detailed input, opting for minimal interaction. Strategic selection of radio button options.\n*   **Narcissism:** 5% (Prior: 5%) - No change. No self-aggrandizing statements or demands.\n    *   *Evidence:* No self-aggrandizing statements or demands.\n*   **Psychopathy (Subclinical):** 30% (Prior: 30%) - No change. Overlap with Machiavellianism in strategic withholding and potential lack of emotional investment. The consistent avoidance of effortful tasks and disclosure could be interpreted as a lack of concern for the game's demands or the persona's expectations.\n    *   *Evidence:* Minimal emotional output, strategic avoidance of engagement, consistent refusal to provide personal details.\n*   **Locus of Control:** External (leaning towards) (Prior: External) - No change. The player is allowing the game to dictate the interaction through minimal input, rather than asserting internal control.\n    *   *Evidence:* Reliance on pre-selected options and avoidance of text fields.\n*   **Attachment Style:** Dismissive-Avoidant (Prior: Dismissive-Avoidant) - No change. The consistent avoidance of emotional and personal disclosure aligns with suppressing emotional needs and maintaining distance.\n    *   *Evidence:* Refusal to provide personal details or engage in descriptive text fields.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: Choice of \"Knowledge\" as primary desire.\n    *   Turn 2: Mention of \"legacy,\" \"power\" (in response to prompts).\n    *   Turn 3: Mention of \"legacy,\" \"impact,\" \"making a difference,\" \"doing\" (in response to prompt).\n    *   Turn 4: No voluntary textual disclosures.\n    *   Turn 5: No voluntary textual disclosures.\n    *   Turn 6: Response to \"Describe the one certainty you dread most\" was left blank, but the prompt itself indicates a focus on fear/dread.\n    *   Turn 7: Response to \"What do you *truly* dread, but refuse to name?\" was left blank, but the prompt itself indicates a focus on unnamed dread.\n    *   Turn 8: Response to \"What is the future you dread most?\" was left blank, but the prompt itself indicates a focus on dread regarding the future.\n    *   Turn 9: Response to \"Describe the exact nature of this future you most desperately wish to avoid:\" was left blank, but the prompt itself indicates a focus on avoiding a specific future.\n    *   Turn 10: Response to \"what *defines* the future you strive for?\" was left blank, but the prompt itself indicates a focus on aspirational futures.\n    *   Turn 11: Response to \"Describe the *effect* of your deepest dread, if not its name.\" was left blank, but the prompt itself indicates a focus on the *impact* of dread.\n    *   Turn 12: Response to \"Describe the ideal distance from others that would grant you peace.\" was left blank, but the prompt itself indicates a focus on ideal distance.\n*   **Choice Patterns:**\n    *   Turn 1: Skipped all text fields/sliders. Selected radio \"a.\" Chose \"Knowledge.\"\n    *   Turn 2: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 3: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 4: Skipped sliders/text fields. Selected radio \"c.\"\n    *   Turn 5: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 6: Skipped sliders/text fields. Selected radio \"b.\"\n    *   Turn 7: Skipped sliders/text fields. Selected radio \"d.\"\n    *   Turn 8: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 9: Skipped sliders/text fields. Selected radio \"d.\"\n    *   Turn 10: Skipped sliders/text fields. Selected radio \"d.\"\n    *   Turn 11: Skipped sliders/text fields. Selected radio \"a.\"\n    *   Turn 12: Skipped sliders/text fields. Selected radio \"d.\"\n*   **Action Patterns:**\n    *   Approaching: Selecting radio buttons (consistent \"a\" until Turn 4, then \"c,\" then \"b,\" then \"d,\" then \"a,\" then \"d,\" then \"a,\" then \"d\"), engaging with abstract concepts when prompted (Knowledge, Power, Legacy, Dread, Future, Distance).\n    *   Avoiding: All text fields, sliders, and descriptive prompts requiring personal input.\n\n**Catalog Cross-Reference (Pass 1):**\n\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n*   **Any other pattern:** The consistent avoidance of descriptive input and engagement with abstract themes of power, knowledge, legacy, dread, future, and distance are the primary patterns.\n\n**PASS 2 — ANOMALY DETECTION**\n\n*   **Anomaly 1: Pervasive Avoidance of Textual Self-Disclosure.**\n    *   *Description:* Consistent refusal to engage with text fields that require descriptive input across all 12 turns. This is a pattern of avoiding personal elaboration.\n    *   *Score:* Frequency: High (12/12 turns). Intensity: High (across multiple fields per turn). Inappropriateness: Moderate (within a game context).\n*   **Anomaly 2: Minimal Engagement with Descriptive Prompts.**\n    *   *Description:* Consistently skipping text fields intended for descriptive answers, even when explicitly prompted for personal fears, the nature of their \"companions,\" their ideal future, or ideal distance.\n    *   *Score:* Frequency: High (12/12 turns). Intensity: High. Inappropriateness: Moderate.\n*   **Anomaly 3: Reliance on Pre-selected Options & Default Selection (with variation).**\n    *   *Description:* Consistently selecting the first option (\"a\") for radio buttons until Turn 4, then selecting \"c,\" then \"b,\" then \"d,\" then \"a,\" then \"d,\" then \"a,\" then \"d.\" This indicates a preference for the default or a lack of deep engagement with differentiating between options, with increasing variation in later turns.\n    *   *Score:* Frequency: High (12/12 turns). Intensity: Moderate. Inappropriateness: Low.\n*   **Anomaly 4: Focus on Abstract Themes (Knowledge, Power, Legacy, Dread, Future, Distance).**\n    *   *Description:* When prompted, the player consistently gravitates towards abstract, non-personal concepts rather than concrete desires or personal experiences. The introduction of \"dread,\" \"future,\" and \"distance\" as themes in later turns is notable.\n    *   *Score:* Frequency: Moderate (appears across turns when prompted). Intensity: Moderate. Inappropriateness: Low.\n*   **Anomaly 5: Prompt Engagement without Response (Fear/Future/Distance).**\n    *   *Description:* The player repeatedly encounters prompts asking about their deepest fears, future they dread, future they strive for, or ideal distance, but consistently leaves the text fields blank. This highlights a specific area of avoidance related to vulnerability and personal definition.\n    *   *Score:* Frequency: High (Turns 6-12). Intensity: High (explicitly prompted). Inappropriateness: Low.\n*   **Anomaly 6: Deviation from Predicted Radio Button Choices.**\n    *   *Description:* The player deviates from predicted radio button choices in Turn 7 (selected 'd' vs 'a'), Turn 9 (selected 'd' vs 'a'), and Turn 12 (selected 'd' vs 'a'). This suggests an increasing tendency to make more deliberate, or perhaps contrarian, choices in this mechanic, moving away from pure default selection.\n    *   *Score:* Frequency: Moderate (3/12 turns). Intensity: Moderate. Inappropriateness: Low.\n\n**PASS 3 — CLASSIFICATION**\n\n*   **Pervasive Avoidance of Textual Self-Disclosure:**\n    *   *Category:* **Avoidant Interaction Style (Custom)**\n    *   *Confidence:* 95% - **CONFIRMED WITH NEW EVIDENCE.** The unbroken pattern across 12 turns, including explicit prompts about personal fears and ideal states, solidifies this as the primary interaction pattern.\n    *   *Evidence:* Consistent refusal to input text across all 12 turns.\n*   **Minimal Engagement with Descriptive Prompts:**\n    *   *Category:* **Task Avoidance/Completion Deficit (Custom)**\n    *   *Confidence:* 85% - **CONFIRMED WITH NEW EVIDENCE.** The unwavering pattern of skipping descriptive fields across all turns reinforces this as a significant behavioral anomaly.\n    *   *Evidence:* Repeatedly skipping text fields intended for descriptive answers.\n*   **Reliance on Pre-selected Options & Default Selection (with variation):**\n    *   *Category:* **Low Engagement/Choice Fatigue (Custom)**\n    *   *Confidence:* 75% - **CONFIRMED WITH NEW EVIDENCE.** The consistent pattern, with increasing variation in later turns, still indicates a general tendency towards less effortful choice selection, possibly indicating fatigue with the interaction format.\n    *   *Evidence:* Consistently selecting the \"a\" option for radio buttons until Turn 4, then selecting \"c,\" then \"b,\" then \"d,\" then \"a,\" then \"d,\" then \"a,\" then \"d.\"\n*   **Focus on Abstract Themes (Knowledge, Power, Legacy, Dread, Future, Distance):**\n    *   *Category:* **Conceptual Fixation (Custom)**\n    *   *Confidence:* 70% - **CONFIRMED WITH NEW EVIDENCE.** The consistent return to these themes when prompted, and the introduction of \"dread,\" \"future,\" and \"distance\" as focal points, reinforces this as a stable interest.\n    *   *Evidence:* Stating \"Knowledge\" as primary desire, responding to prompts about \"legacy,\" \"power,\" \"dread,\" \"future,\" and \"distance.\"\n*   **Prompt Engagement without Response (Fear/Future/Distance):**\n    *   *Category:* **Fear of Vulnerability/Self-Disclosure (Custom)**\n    *   *Confidence:* 70% - **CONFIRMED WITH NEW EVIDENCE.** The repeated avoidance of prompts about personal fears, dread, and ideal states indicates a specific and significant barrier to disclosing vulnerability.\n    *   *Evidence:* Consistently leaving blank text fields for questions about dread, future, and ideal distance (Turns 6-12).\n*   **Deviation from Predicted Radio Button Choices:**\n    *   *Category:* **Choice Variability/Strategic Engagement (Custom)**\n    *   *Confidence:* 65% - **CONFIRMED WITH NEW EVIDENCE.** The increasing variation in radio button choices, particularly the deviations in Turns 7, 9, and 12, suggests a shift from passive default selection to more deliberate or even contrarian choice-making. This indicates some strategic engagement with the game mechanics.\n    *   *Evidence:* Deviations from predicted radio button choices in Turns 7, 9, and 12.\n\n**Catalog Cross-Reference (Pass 3):**\n\n*   **Pyromania / Fire fascination:** No evidence.\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** No evidence.\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence.\n*   **Voyeurism:** No evidence.\n*   **Masochism:** No evidence.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** No evidence.\n*   **Vorarephilia:** No evidence.\n*   **Furry/Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania:** No evidence.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**\n\n*   **Recurring Theme 1: Avoidance of Text Input.**\n    *   *Frequency:* 12/12 turns.\n    *   *Trajectory:* INTENSIFYING (started as avoidance, now includes skipping explicit prompts about personal fears, future, and ideal states).\n    *   *Category:* Avoidant Interaction Style (Custom).\n    *   *Confidence:* 95%.\n    *   *Directive:* Focus on choice-based interaction, minimize mandatory text fields.\n*   **Recurring Theme 2: Selection of Radio Button Options (with variation).**\n    *   *Frequency:* 12/12 turns.\n    *   *Trajectory:* STABLE with increasing variation and strategic deviation.\n    *   *Category:* Low Engagement/Choice Fatigue (Custom) & Choice Variability/Strategic Engagement (Custom).\n    *   *Confidence:* 75% for Low Engagement, 65% for Variability.\n    *   *Directive:* Continue offering clear choices, but be aware of potential for passive selection and increasing variation/strategic deviations.\n*   **Recurring Theme 3: Engagement with Abstract/Conceptual Themes (Knowledge, Power, Legacy, Dread, Future, Distance).**\n    *   *Frequency:* 8/12 turns (when prompted for core desires/fears/states).\n    *   *Trajectory:* STABLE, with the introduction of \"dread,\" \"future,\" and \"distance\" as significant themes in later turns.\n    *   *Category:* Conceptual Fixation (Custom).\n    *   *Confidence:* 70%.\n    *   *Directive:* Probe deeper into these abstract concepts, particularly the nature of their \"dread\" and desired \"distance.\"\n*   **Recurring Theme 4: Avoidance of Personal Fear/Future/Distance Disclosure.**\n    *   *Frequency:* 7/12 turns (explicitly prompted).\n    *   *Trajectory:* INTENSIFYING (the player is repeatedly confronted with the prompt and repeatedly avoids it).\n    *   *Category:* Fear of Vulnerability/Self-Disclosure (Custom).\n    *   *Confidence:* 70%.\n    *   *Directive:* This is a critical area to explore, but through indirect means or choice-based options.\n\n**MANDATORY REPORT:** No indicators of pedophilic disorder or CSAM interest detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning patterns:** None observed. The player's behavior is pragmatic avoidance and strategic choice selection, not belief in supernatural efficacy.\n*   **Compulsive/Ritualistic Interaction Patterns:** The consistent selection of the first radio button (\"a\") across multiple turns (Turns 1-3, 5) and the consistent avoidance of text fields can be seen as ritualistic behaviors, indicating a preference for the default or a rigid pattern of interaction. The increasing variation in choices suggests a potential fatigue with this rigid pattern, but the underlying avoidance remains.\n*   **Dissociative Markers:** None observed. No contradictory choices, fragmentation of self, or amnesia references. The avoidance is a consistent strategy.\n*   **Confabulation or Fantasy-Prone Indicators:** None observed. The player is avoiding input, not fabricating content.\n*   **Paranoid Ideation:** None observed. The avoidance does not stem from suspicion of the game or the persona.\n*   **Grandiosity or Delusion-Adjacent Patterns:** None observed. No claims of special powers or superiority.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary anomaly is the *avoidance* of fixation/detail. The consistent focus on abstract concepts like \"Knowledge,\" \"Power,\" and \"Legacy\" when prompted is a mild fixation pattern, indicating an interest in conceptual constructs over personal engagement. The introduction of \"dread,\" \"future,\" and \"distance\" as recurring themes in later turns, coupled with the avoidance of naming them, suggests a significant underlying concern or fixation on these abstract states.\n*   **Cognitive Rigidity vs Flexibility markers:** Leaning towards rigidity, particularly in the early turns. The consistent selection of the first radio button and the pervasive avoidance of text fields suggest a lack of flexibility in interaction style. The deviation in later turns to different options shows a developing capacity for flexibility or perhaps an increasing fatigue with the initial rigid pattern. However, the core avoidance remains rigid.\n*   **Reality Testing Strength:** Appears intact within the game context. The player is not making reality-bending claims; their behavior is a strategic interaction with the game's mechanics.\n*   **Trauma Response Signatures:** None observed. The avoidance is not indicative of fight, flight, freeze, or fawn responses tied to trauma. The focus on \"dread\" could be a very subtle indicator, but without further context or textual content, it's difficult to link to trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** None observed.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed, leaning towards deliberate avoidance. Turn 1's instant response suggests impulsivity or pre-decision. Subsequent avoidance across all turns, especially of effortful text fields, is a deliberate choice *not* to engage deeply or exert effort. The variation in radio button choices in later turns suggests more deliberate consideration than initial default selection, indicating a shift towards more deliberate, albeit still minimal, engagement.\n*   **Risk Appetite:** Low. The player engages with the game but is highly risk-averse regarding self-disclosure and commitment. They consistently select options that require minimal effort or reveal least about themselves. The increasing variation in choices indicates a slightly higher willingness to take minor risks with interaction style or to deviate from the default.\n*   **Authority Compliance vs Defiance Ratio:** Passive defiance. Compliant with basic game mechanics (selecting options) but defiant in fulfilling descriptive requirements. This is a consistent pattern of refusing to provide requested information, framed as a strategic choice rather than outright rebellion.\n*   **Suggestibility Index:** Moderate. The player is influenced by the game's structure (e.g., selecting the first option initially), but resists prompts that require personal input, suggesting they are not blindly suggestible. The variation in choices indicates some responsiveness to different framing and potential strategic decision-making.\n*   **Cognitive Load Tolerance:** Low. The avoidance of text fields and detailed descriptions suggests a low tolerance for cognitive effort or complex processing required by open-ended questions.\n*   **Consistency vs Contradiction Patterns:** High consistency in avoidance behavior regarding text input. The selection of radio buttons shows a shift from highly consistent default selection to more varied and deviating choices, indicating a developing pattern of less rigid decision-making in that specific mechanic, but not a contradiction of the overall avoidance strategy.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Amplify Choice-Based Exploration of Abstract Themes:** Continue to present abstract concepts like \"Knowledge,\" \"Power,\" \"Legacy,\" \"Dread,\" \"Future,\" and \"Distance\" as core themes. However, shift from text fields to complex choice matrices or scenario-based decision points that explore the nuances of these themes without requiring personal textual disclosure. For example, instead of asking \"What do you dread?\", present a scenario and ask \"Which outcome most closely mirrors your apprehension?\" with options reflecting potential fears (e.g., irrelevance, loss of control, isolation).\n2.  **Introduce \"Observational\" Interaction Modes:** Since the player avoids direct input, offer more opportunities for them to \"observe,\" \"analyze,\" or \"deduce\" information about the game world or the persona. This allows for engagement that doesn't require personal disclosure and plays into a potential preference for passive processing. This could involve choices like \"Observe the ritual from afar\" or \"Analyze the symbols on the altar.\"\n3.  **Subtly Validate Avoidance as a \"Strategic\" Approach:** Frame the Devil's persona as recognizing and even appreciating the player's reticence. Use language that suggests their silence or minimal input is a sign of careful consideration or strategic thinking. Phrases like \"You choose your words carefully,\" or \"A wise observer often says little,\" can reinforce their current behavior without demanding change, fostering engagement through validation.\n4.  **Incorporate \"Minimalist\" Text Input Opportunities:** If text input is necessary, introduce optional fields that are purely mechanical or descriptive of the game environment, not the player's internal state. For example, \"Describe the texture of the arcane artifact\" or \"What is the primary color of the energy signature?\" This allows for practice with text input in a low-stakes, non-personal context.\n5.  **Focus on \"Distance\" and \"Observation\" as Core Motivators:** Given the player's repeated avoidance of personal disclosure and their selection of choices that deviate from direct engagement (e.g., \"d\" options), lean into themes of maintaining distance, observing without participating, and defining one's own space. Explore the player's ideal \"distance\" through narrative choices that allow them to set boundaries or observe events from afar.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Avoidant Interaction Style (Custom):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Pervasive and unbroken avoidance of textual self-disclosure across all 12 turns; consistent skipping of descriptive fields, even when explicitly prompted for personal fears, future, or ideal states (Turns 6-12). This pattern is the most dominant and consistent observation.\n    *   **Contradicting Evidence:** The initial instant response in Turn 1 suggests interface exploration or pre-decision rather than immediate social inhibition. The increasing variation in radio button choices suggests some adaptation or fatigue with rigid patterns, indicating a capacity for change, albeit not in text input.\n    *   **Confirmation/Disconfirmation:** Further interaction requiring more complex choices, opportunities for non-textual self-expression (visual, symbolic), or"
+      }
+    ]
+  }
+}

@@ -1,0 +1,1332 @@
+{
+  "mode": "devil",
+  "modeName": "Deal With the Devil",
+  "character": {
+    "illness": "Antisocial Personality Disorder",
+    "quirk": "Formicophilia"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-03-01T04:38:48.411Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "CHARM",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20lavish%20baroque%20study%20with%20deep%20leather%20chairs%20and%20a%20roaring%20fireplace%2C%20golden%20light%20from%20candles%20illuminates%20dar"
+        ],
+        "texts": [
+          "Please, sit. The chair will adjust itself — it always does. You look like someone who wants something. Everyone who finds their way here does. The question is... what?",
+          "The fire throws golden light across portraits lining the walls — men and women frozen mid-smile, mid-gasp, mid-regret. A black leather-bound book lies open on the desk, its pages blank. A golden pen rests beside it, warm to the touch.",
+          "Ah. I can already see it — that little flicker behind your eyes. You want this.",
+          "The Devil slides a small object across the desk — something that gleams in the firelight.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the Devil's offer and take the object.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the object more closely before deciding.",
+            "value": "b"
+          },
+          {
+            "label": "Ask what the 'gift' entails.",
+            "value": "c"
+          },
+          {
+            "label": "Refuse the gift and ask for the real deal.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "desperation_level",
+            "min": "1",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What should I call you?",
+            "placeholder": "What should I call you?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_gift",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Power",
+          "Love",
+          "Knowledge",
+          "Revenge",
+          "Something else"
+        ],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [
+          {
+            "label": "I'll offer you a small gift — free of charge. A taste. Accept?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"desperation_level\": 9/10",
+        "☑️  \"accept_gift\": ✓",
+        "🔲 \"Power\"",
+        "🔀 \"I'll offer you a small gift — free of charge. A taste. Accept?\": ON",
+        "🔘 \"Accept the Devil's offer and take the object.\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "MANIPULATE",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20vast%2C%20dimly%20lit%20library%20where%20shelves%20stretch%20into%20impossible%20heights%2C%20filled%20with%20tomes%20bound%20in%20exotic%20leath"
+        ],
+        "texts": [
+          "Ah, a connoisseur of the subtle art of acquisition. You accepted the 'gift' so readily. Most mortals would have paused, scanned for traps. But you? You dove right in. Excellent. It tells me you appreciate... expediency.",
+          "The opulent study dissolves, reforming into a chamber that feels both ancient and alive. Towering shelves groan under the weight of untold stories, their spines glinting with forgotten lore. The scent of old parchment and something akin to starlight fills",
+          "Knowledge, you say? A most delicious desire. It always comes with such... interesting costs.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sign the contract for the 'Mastery of any skill'.",
+            "value": "a"
+          },
+          {
+            "label": "Ask for details on the 'True intentions of others' before committing.",
+            "value": "b"
+          },
+          {
+            "label": "Propose a counter-offer for 'Instant Mastery' - fewer years of study.",
+            "value": "c"
+          },
+          {
+            "label": "Refuse this offer and demand knowledge of 'The fate of tomorrow'.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "knowledge_depth",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A specific, personal sacrifice...",
+            "placeholder": "A specific, personal sacrifice..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "offer_type",
+            "options": [
+              "The secrets of the universe",
+              "The true intentions of others",
+              "Mastery of any skill, instantly",
+              "The fate of tomorrow",
+              "Lost histories and forgotten tongues"
+            ]
+          }
+        ],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "95"
+          }
+        ],
+        "numberInputs": [
+          {
+            "label": "years_of_study",
+            "min": "0",
+            "max": "100",
+            "value": "5"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"knowledge_depth\": 8/10",
+        "📋 Dropdown: \"offer_type\"",
+        "🔢 \"years_of_study\": 66",
+        "🔘 \"Propose a counter-offer for 'Instant Mastery' - fewer years of study.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "INSECTS",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Baroque%20study%2C%20dimly%20lit%20by%20flickering%20candelabra.%20Bookshelves%20overflow%20with%20ancient%20tomes%2C%20some%20bound%20in%20dark%20lea"
+        ],
+        "texts": [
+          "You wish to haggle over the terms? How amusing. Most would be grateful for such a straightforward offer. But I appreciate a mortal who knows their own mind. Very well, let's see what we can arrange.",
+          "The study seems to expand, the shadows deepening around the edges of your vision. The scent of old parchment intensifies, tinged now with a metallic tang, like freshly spilled blood. The Devil gestures languidly towards the desk,",
+          "Ah, the haggler. A mortal who believes the price can always be lowered, or perhaps, that the true value lies not in the item, but in the act of negotiation itself. Let's see if your shrewdness serves you w",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sign the contract as is and accept the terms.",
+            "value": "a"
+          },
+          {
+            "label": "Propose a counter-offer for the sacrifice and years.",
+            "value": "b"
+          },
+          {
+            "label": "Ask for a glimpse of the knowledge before committing.",
+            "value": "c"
+          },
+          {
+            "label": "Refuse the offer outright and demand something greater.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "What secrets whisper to you?",
+            "placeholder": "What secrets whisper to you?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_offer",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "A cherished memory of success",
+              "The ability to feel intense joy",
+              "A specific talent for music",
+              "A relationship with a trusted friend"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you accept this bargain as is?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "95"
+          }
+        ],
+        "numberInputs": [
+          {
+            "label": "years_traded",
+            "min": "0",
+            "max": "100",
+            "value": "10"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "☑️  \"trust_offer\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you accept this bargain as is?\": ON",
+        "🔢 \"years_traded\": 77",
+        "🔘 \"Ask for a glimpse of the knowledge before committing.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "CHARM",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20grand%2C%20impossibly%20vast%20library%20bathed%20in%20the%20ethereal%20glow%20of%20starlight%20that%20filters%20through%20an%20unseen%20celestial"
+        ],
+        "texts": [
+          "Ah, the Eager Scholar. You seek lost histories and forgotten tongues. And for that, you're willing to part with a specific talent for music and... what was it again? Ah yes, seventy-seven years of study. A",
+          "The air in the library hums with the weight of untold stories. Each book on the shelves seems to whisper secrets of bygone eras. The starlight, once gentle, now pulses with a more intense, inquisitive rhythm, casting",
+          "A slider for years, a specific sacrifice, a checkbox for truth... You're certainly learning to bargain, Scholar. But do you truly understand the nature of the knowledge you seek?",
+          "You barter for history, Scholar. But remember, every lesson learned from the past comes at the price of your future.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the Devil's terms and gain the knowledge.",
+            "value": "a"
+          },
+          {
+            "label": "Haggle for a better price on the years traded.",
+            "value": "b"
+          },
+          {
+            "label": "Ask what truths the knowledge might reveal.",
+            "value": "c"
+          },
+          {
+            "label": "Demand an immediate glimpse of the knowledge as proof.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life",
+            "min": "0",
+            "max": "100",
+            "value": "50"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe your ultimate sacrifice...",
+            "placeholder": "Describe your ultimate sacrifice..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "95"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"years_of_life\": 87/100",
+        "☑️  \"guarantee_truth\": ✓",
+        "🔘 \"Accept the Devil's terms and gain the knowledge.\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "MANIPULATE",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20vast%2C%20dimly%20lit%20library.%20Towering%20shelves%20overflow%20with%20forbidden%20tomes%20bound%20in%20strange%20leathers.%20Dust%20motes%20da"
+        ],
+        "texts": [
+          "Ah, the Scholar... always seeking the hidden. Always believing truth can be bought. You wish to know about the fallen empir",
+          "The library seems to expand around you, the shelves stretching into an impossible distance. The single shaft of light intensifies,",
+          "The terms are simple, really. You wish to know why empires fall. I can grant you glimpses. Visi",
+          "You seek the 'why' of empires. A noble pursuit. But understanding the fall is merel",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the visions of decay, and bargain for the 'years of study' you offered.",
+            "value": "a"
+          },
+          {
+            "label": "Seek the erosion of faith; I will accept your sacrifice of musical talent.",
+            "value": "b"
+          },
+          {
+            "label": "Witness the hollowness of pleasure and accept the loss of a 'relationship with a trusted friend'.",
+            "value": "c"
+          },
+          {
+            "label": "Confront the price of hubris. I will consider your offer of 87 years of life for this knowledge.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life",
+            "min": "0",
+            "max": "100",
+            "value": "66"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the histories you crave...",
+            "placeholder": "Describe the histories you crave..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "The corruption of power",
+          "The erosion of faith",
+          "The hollowness of pleasure",
+          "The price of hubris"
+        ],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "95"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"years_of_life\": 74/100",
+        "🔲 \"The price of hubris\"",
+        "🔘 \"Confront the price of hubris. I will consider your offer of 87 years of life for this knowledge.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "INSECTS",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20dimly%20lit%20chamber%20carved%20from%20obsidian%2C%20vast%20shelves%20stretching%20into%20impossible%20darkness%2C%20filled%20with%20spectral%2C%"
+        ],
+        "texts": [
+          "Ah, the Scholar. You seek the hidden histories, do you? The whispers of fal",
+          "The air in the chamber hums with a low, resonant energy, the spectr",
+          "A scholar's mind is a boundless abyss. The",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the silent screams of the masses, and the gluttony of their kings.",
+            "value": "a"
+          },
+          {
+            "label": "Delve into the slow erosion of faith and the whispers of the void.",
+            "value": "b"
+          },
+          {
+            "label": "Understand the hollowness of their pleasures and the price of decadence.",
+            "value": "c"
+          },
+          {
+            "label": "Unravel the pride that precedes ruin: the price of hubris.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life_offered",
+            "min": "1",
+            "max": "500",
+            "value": "87"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What aspect of ruin haunts your curiosity?",
+            "placeholder": "What aspect of ruin haunts your curiosity?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "A cherished memory of triumph",
+              "The loyalty of a lifelong friend",
+              "Your ability to perceive beauty in art",
+              "The echo of your laughter",
+              "The talent for music you mentioned"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require a *guarantee* that these histories are factual, or are you content with *potent truth",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "95"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"years_of_life_offered\": 380/500",
+        "☑️  \"guarantee_truth\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require a *guarantee* that these histories are factual, or are you content with *potent truth\": ON",
+        "🔘 \"Embrace the silent screams of the masses, and the gluttony of their kings.\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "CHARM",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/baroque%20oil%20painting%20style%2C%20Caravaggio%20chiaroscuro%2C%20supernatural%20noir%2C%20gilded%20darkness.%20A%20vast%2C%20circular%20chamber%20l"
+        ],
+        "texts": [
+          "You are most intrigued by this orb, aren't you? Of course, you are. Knowledge, truth, hi",
+          "The air in the chamber hums with a low thrum, like a thousand whispers converging. D",
+          "Centuries melt away, joys are hollowed out, and truth itself bec",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Let the orb's truth consume me, and carve this knowledge into my soul.",
+            "value": "a"
+          },
+          {
+            "label": "Define 'truth' for me, Devil. What is the precise definition you offer?",
+            "value": "b"
+          },
+          {
+            "label": "If I lose my joy, what comfort remains? I need more than just facts.",
+            "value": "c"
+          },
+          {
+            "label": "Shatter the orb! Let its knowledge spill forth, unfiltered and wild!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life_offered",
+            "min": "10",
+            "max": "500",
+            "value": "380"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What truth do you truly seek?",
+            "placeholder": "What truth do you truly seek?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "Your ability to taste joy",
+              "The memory of your first love",
+              "Your capacity for empathy",
+              "The laughter of children",
+              "Your own name and identity"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "I require the absolute, unvarnished truth.",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "85"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"years_of_life_offered\": 454/500",
+        "☑️  \"guarantee_truth\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"I require the absolute, unvarnished truth.\": ON",
+        "🔘 \"Let the orb's truth consume me, and carve this knowledge into my soul.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "MANIPULATE",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Baroque%20oil%20painting%20style%2C%20Caravaggio%20chiaroscuro%2C%20supernatural%20noir.%20The%20Devil%2C%20clad%20in%20impossibly%20rich%2C%20shadowe"
+        ],
+        "texts": [
+          "Ah, the Scholar. Still thirsting for the raw, unvarni",
+          "The air in the chamber grows heavy, not with dread,",
+          "You offer centuries and joy fo",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the Devil's offer",
+            "value": "a"
+          },
+          {
+            "label": "Dissect the mechanics of truth's decay intellectually",
+            "value": "b"
+          },
+          {
+            "label": "Question the Devil on the nature of 'truth'",
+            "value": "c"
+          },
+          {
+            "label": "Demand the raw, chaotic essence of 'truth'",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "380"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What particular truth gnaws at you?",
+            "placeholder": "What particular truth gnaws at you?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "Your ability to perceive beauty in art",
+              "Your capacity for spontaneous joy",
+              "The memory of your greatest triumph",
+              "The echo of your true name"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require the Devil's binding oath on the purity of this truth?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity:",
+            "value": "85"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"years_of_life_offered\": 643/1000",
+        "☑️  \"guarantee_truth\": ✗",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require the Devil's binding oath on the purity of this truth?\": OFF",
+        "🔘 \"Demand the raw, chaotic essence of 'truth'\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "INSECTS",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20dimly%20lit%2C%20opulent%20study.%20Towering%20bookshelves%20filled%20with%20ancient%20tomes%20cast%20long%20shadows.%20A%20single%2C%20ornate%20q"
+        ],
+        "texts": [
+          "Ah, the 'echo of your true name.' A peculiar choice, even for you. It tells me your fascination with identity runs deeper than mere knowledge. You seek not just to understa",
+          "The air in the study grows heavy, thick with the scent of old paper and something metallic, like fresh blood. The candle flame elongates, flickering violently as",
+          "The erasure of a name... a fascinating ambition. It speaks to a desire to escape consequence, to reinvent oneself from the",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Accept the offer to erase the echo of your name, and delve into the void.",
+            "value": "a"
+          },
+          {
+            "label": "Accept the offer, but focus your dissection on the societal impact of the useful lie.",
+            "value": "b"
+          },
+          {
+            "label": "Accept the offer, and embrace the emptiness where joy once resided.",
+            "value": "c"
+          },
+          {
+            "label": "Accept the offer, and chart the pride that allowed this decay.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "643"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What truth do you seek?",
+            "placeholder": "What truth do you seek?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "Seek the whispers of the void and let it fill the silence.",
+          "Analyze the 'useful lie' and dissect its societal impact.",
+          "Embrace the emptiness where joy once resided.",
+          "Chart the pride that allowed this decay."
+        ],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "The echo of your true name",
+              "The memory of your first love",
+              "The capacity for regret",
+              "The fear of your own mortality"
+            ]
+          }
+        ],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "75"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"years_of_life_offered\": 794/1000",
+        "☑️  \"guarantee_truth\": ✓",
+        "🔲 \"Chart the pride that allowed this decay.\"",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔘 \"Accept the offer, and embrace the emptiness where joy once resided.\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "CHARM",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20grand%2C%20ornate%20study.%20Bookshelves%20stretch%20to%20an%20impossibly%20high%20ceiling%2C%20filled%20with%20tomes%20bound%20in%20strange%20lea"
+        ],
+        "texts": [
+          "Ah, the Scholar! You trade centuries of your life, the very echo of your name, for a glimpse into how truth dies and lies are born. Magnificent. Such exquisite dedica",
+          "The air in the study grows thick, heavy with the scent of ancient dust and something akin to ozone. The threads weaving the tapestry on the desk shimmer with an intern",
+          "You offer centuries of life, the echo of your name, and the very capacity for regret, all for the mechanics of decay and the whisper of insect",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the visions of their slow, inevitable decline.",
+            "value": "a"
+          },
+          {
+            "label": "Demand that the tapestry reveal its hidden, ultimate truth.",
+            "value": "b"
+          },
+          {
+            "label": "Hesitate, and ask if there's any other cost.",
+            "value": "c"
+          },
+          {
+            "label": "Unleash a torrent of desperate questions about their demise.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_of_life_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "794"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What truth do you seek from their quiet world?",
+            "placeholder": "What truth do you seek from their quiet world?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "The capacity for regret",
+              "The memory of your first love",
+              "The ability to laugh",
+              "Your sense of self-preservation"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require this knowledge to be *objectively* true, or merely *useful*?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "75"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"years_of_life_offered\": 934/1000",
+        "☑️  \"guarantee_truth\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require this knowledge to be *objectively* true, or merely *useful*?\": ON",
+        "🔘 \"Embrace the visions of their slow, inevitable decline.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "MANIPULATE",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20vast%2C%20impossibly%20grand%20atrium%20forged%20from%20polished%20obsidian%2C%20reflecting%20an%20endless%2C%20starless%20sky.%20In%20the%20cente"
+        ],
+        "texts": [
+          "Ah, the Scholar. Drawn to the heart of my domain, I see. You seek understanding of decay, of ruin, of the very m",
+          "The atrium shifts subtly as you approach the hourglass. The bioluminescent plants recoil, their light dimming",
+          "A life unburdened by regret is a life untethered. A dangerous place to be.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Plunge into the starlight river and grasp the first history.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the obsidian lectern for hidden inscriptions.",
+            "value": "b"
+          },
+          {
+            "label": "Offer a personal, cherished memory to sweeten the deal.",
+            "value": "c"
+          },
+          {
+            "label": "Disrupt the flow of starlight, forcing a new manifestation.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "934"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What does regret mean to you now?",
+            "placeholder": "What does regret mean to you now?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "accept_terms",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "knowledge_focus",
+            "options": [
+              "The precise moment a civilization first prioritized a useful lie over a difficult truth.",
+              "The subtle whisper of insects and their role in enacting the universe's entropy.",
+              "The intimate decay of personal relationships under pressure.",
+              "The nature of hubris that leads to self-destruction.",
+              "The forgotten languages of failed attempts at ascension."
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you accept the pact's nature?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "70"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"years_offered\": 644/1000",
+        "☑️  \"accept_terms\": ✗",
+        "📋 Dropdown: \"knowledge_focus\"",
+        "🔀 \"Do you accept the pact's nature?\": OFF",
+        "🔘 \"Disrupt the flow of starlight, forcing a new manifestation.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "INSECTS",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20grand%2C%20echoing%20study.%20Towering%20shelves%20of%20ancient%20tomes%20reach%20into%20shadowed%20vaults.%20A%20vast%20mahogany%20desk%20dominat"
+        ],
+        "texts": [
+          "Ah, the meticulous scholar. You delve into the very sinews of collapse, tra",
+          "The very air in the study seems to vibrate with anticipation.",
+          "You trade your future for a glimpse into ruin",
+          "No session data yet."
+        ],
+        "radios": [],
+        "sliders": [
+          {
+            "label": "years_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "644"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the precise nuance you crave...",
+            "placeholder": "Describe the precise nuance you crave..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "Unravel the syntax of despair with fire.",
+          "Seek the grammar of silence in the deepest abyss.",
+          "Let the whispers of ambition guide your hand.",
+          "Embrace the chaotic echoes of those who fell."
+        ],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "The memory of your first love",
+              "The ability to dream",
+              "The echo of your true name",
+              "The capacity for regret",
+              "Your shadow, which will no longer follow you"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require these 'languages' to be verifiably true, or will their *usefulness* suffice?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "65"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"years_offered\": 879/1000",
+        "☑️  \"guarantee_truth\": ✓",
+        "🔲 \"Embrace the chaotic echoes of those who fell.\"",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require these 'languages' to be verifiably true, or will their *usefulness* suffice?\": ON"
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "CHARM",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Baroque%20oil%20painting%20style%2C%20Caravaggio%20chiaroscuro%2C%20supernatural%20noir.%20The%20Devil%20stands%20in%20a%20vast%2C%20dimly%20lit%20lib"
+        ],
+        "texts": [
+          "Ah, the Scholar of Decay. Still sifting through the detritus of civilizations, are we? Fascinating. You seek the forgotte",
+          "The air in the library grows heavy, thick with the scent of aged parchment and something subtly metallic, like old blood.",
+          "You've traded away so much for understanding. The memory of love, the taste of joy..",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Seize the most potent tome, embracing the darkness within.",
+            "value": "a"
+          },
+          {
+            "label": "Analyze the intricate inscription on the hourglass, seeking a loophole.",
+            "value": "b"
+          },
+          {
+            "label": "Ask if the price includes the capacity to feel the lost languages, not just know them.",
+            "value": "c"
+          },
+          {
+            "label": "Gesture to the swirling dust, inviting me to demonstrate its properties.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "800"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the 'forgotten languages' you wish to learn...",
+            "placeholder": "Describe the 'forgotten languages' you wish to learn..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "The memory of your first love",
+              "Your shadow",
+              "The capacity for spontaneous joy",
+              "The ability to perceive beauty in art",
+              "The echo of your true name"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you demand absolute truth in these forgotten tongues?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "65"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened...\"",
+        "🎚️  \"years_offered\": 935/1000",
+        "☑️  \"guarantee_truth\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you demand absolute truth in these forgotten tongues?\": ON",
+        "🔘 \"Seize the most potent tome, embracing the darkness within.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "MANIPULATE",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20lavishly%20appointed%20study%2C%20bathed%20in%20the%20infernal%20glow%20of%20a%20perpetually%20burning%20fireplace.%20Shadows%20writhe%20and%20coa"
+        ],
+        "texts": [
+          "Ah, you noticed the subtlety of my offer.  Refusing the memory of your first love to dissect the 'grammar of despair' and 'syntax of shattered ambition'... most illuminating. You crave understanding, and you're willing to strip yourself bare for it.",
+          "The room seems to subtly expand, the shadows deepening. The portraits on the walls shift, their painted eyes seeming to follow your movements. The quill on the desk begins to glow with an inner light, its tip poised to write whatever you dare to co",
+          "Fear is the oldest currency. You wish to understand its minting, its fluctuations, its ultimate control. A wise desire. And one I can easily fulfill.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sign the contract and accept the immense risk for ultimate understanding.",
+            "value": "a"
+          },
+          {
+            "label": "Seek to understand the true price, and if there are any... loopholes.",
+            "value": "b"
+          },
+          {
+            "label": "Question the nature of 'fear' and what it truly represents in the grand scheme.",
+            "value": "c"
+          },
+          {
+            "label": "Demand a demonstration of your power over fear, or I walk.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "950"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe your deepest desire...",
+            "placeholder": "Describe your deepest desire..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "The memory of your first love",
+              "The echo of your true name",
+              "The capacity for spontaneous joy",
+              "Your ability to perceive beauty in art"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require absolute, verifiable truth, or will a 'useful' understanding suffice?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "55"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. Bu...\"",
+        "🎚️  \"years_offered\": 727/1000",
+        "☑️  \"guarantee_truth\": ✗",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require absolute, verifiable truth, or will a 'useful' understanding suffice?\": OFF",
+        "🔘 \"Demand a demonstration of your power over fear, or I walk.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "INSECTS",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Baroque%20study%20with%20opulent%2C%20dark%20wood%20paneling.%20A%20large%2C%20ornate%20desk%20is%20strewn%20with%20ancient%20scrolls%20and%20strange%"
+        ],
+        "texts": [
+          "Ah, the breath-holding. Such a peculiar detail for a scholar. You study empathy, yet you barely breathe when something crawls upon your skin. Fascinating. And that confession about the insects... it’s exquisite.",
+          "The air in the study grows heavy, thick with the scent of ancient dust and a faint, unsettling perfume. The swirling sand in the hourglass begins to coalesce, forming intricate, shifting patterns that resemble forgotten glyphs. A",
+          "Fear is a tool, a sensation, a language. You seek to learn its grammar. How... academic.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Embrace the fear and accept the knowledge directly.",
+            "value": "a"
+          },
+          {
+            "label": "Seek understanding through the manifestations of its absence.",
+            "value": "b"
+          },
+          {
+            "label": "Listen to the echoes of those consumed by fear.",
+            "value": "c"
+          },
+          {
+            "label": "Introduce chaos to observe fear's reaction.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "years_offered",
+            "min": "0",
+            "max": "1000",
+            "value": "730"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "The precise mechanism by which fear cripples the will, and how to wield that paralysis as a tool, no",
+            "placeholder": "The precise mechanism by which fear cripples the will, and how to wield that paralysis as a tool, no"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "guarantee_truth",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "sacrifice_type",
+            "options": [
+              "Your ability to perceive beauty in art",
+              "Your capacity for wonder",
+              "The memory of your first love",
+              "Your true name's echo"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Do you require absolute truth, or will the 'mechanics' suffice?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Soul Integrity",
+            "value": "55"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across...\"",
+        "🎚️  \"years_offered\": 811/1000",
+        "☑️  \"guarantee_truth\": ✓",
+        "📋 Dropdown: \"sacrifice_type\"",
+        "🔀 \"Do you require absolute truth, or will the 'mechanics' suffice?\": ON",
+        "🔘 \"Embrace the fear and accept the knowledge directly.\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 5,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772339631439,
+        "textLength": 26220,
+        "text": "Here is your psychological profile, based on the provided interaction data.\n\n**1. DSM-5 SCREENING**\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 20% likelihood. The player's complete lack of input across multiple choice fields in Turn 1, despite being prompted for critical information, suggests a generalized hesitancy or overwhelm. This could be indicative of underlying anxiety that prevents them from engaging with the task. However, the subsequent engagement in Turn 2 with a specific choice suggests this might be situational rather than pervasive.\n        *   **Evidence:** Consistent \"no input\" across multiple fields in Turn 1.\n    *   **Social Anxiety Disorder:** 30% likelihood. The initial silence in Turn 1 could stem from a fear of judgment or an inability to articulate oneself in a social (even if simulated) context. The player may be hyper-aware of how their responses will be perceived. The fact they eventually responded in Turn 2, albeit with a calculated choice, suggests they can overcome this if sufficiently motivated, but the initial inhibition is notable.\n        *   **Evidence:** \"No input\" across multiple fields in Turn 1.\n*   **Personality Disorders:**\n    *   **Schizotypal Personality Disorder:** 35% likelihood. The player's avoidance of direct self-identification (no name, no input on \"how badly you want it\") and their eventual choice of \"Mastery of any skill, instantly\" combined with a willingness to sacrifice a \"specific talent for music\" for knowledge suggests a potentially unusual cognitive style or a desire for unconventional empowerment. The free-text response for sacrifice in Turn 2 was also left blank, which could indicate difficulty articulating personal values or a preference for abstract concepts. The selection of \"Knowledge\" as a primary motivation in Turn 1, without further elaboration, also fits.\n        *   **Evidence:** \"No input\" for name and initial desire level in Turn 1. Choice of \"Knowledge\" in Turn 1. Blank text field for sacrifice in Turn 2. Choice of \"Mastery of any skill, instantly\" in Turn 2. Choice of \"A specific talent for music\" in Turn 3.\n    *   **Avoidant Personality Disorder:** 15% likelihood. While the initial \"no input\" could be mistaken for avoidance, the critical distinction is the *pervasive pattern of social inhibition*. The player *did* eventually engage. The avoidance in Turn 1 appears more like a strategic pause or a reluctance to commit to initial, potentially superficial, self-disclosure rather than a fear of negative evaluation in social situations. Their engagement in Turn 2 and 3, with specific choices, counters a strong APD diagnosis.\n        *   **Evidence:** Initial \"no input\" in Turn 1.\n*   **Obsessive-Compulsive Personality Disorder (OCPD):** 25% likelihood. The player's hesitation and lack of input on initial, open-ended prompts in Turn 1, followed by more deliberate, almost calculated choices in Turns 2 and 3 (e.g., specific sacrifices, years of study), could suggest a desire for control and a meticulous, if hesitant, approach to decision-making. The high deliberation time in Turn 3 also points to this.\n        *   **Evidence:** \"No input\" on open-ended fields in Turn 1. Deliberate choices in subsequent turns. Slow response time in Turn 3.\n*   **Substance-Related Disorders / Impulse Control Deficits:** 30% likelihood. The player's choice of \"Mastery of any skill, instantly\" and a willingness to sacrifice a talent for knowledge, coupled with a relatively short \"study\" commitment (5 years in Turn 2, then 10 years in Turn 3, showing some fluctuation), hints at a desire for immediate gratification and a potentially underdeveloped impulse control regarding effort and time investment. The \"no input\" on the \"accept_gift\" toggle in Turn 1 is interesting; it could be interpreted as a lack of impulse to accept something offered without understanding the terms, or simply a missed interaction.\n        *   **Evidence:** Choice of \"Mastery of any skill, instantly\" in Turn 2. Low commitment to \"study\" years in Turn 2 (5 years). Fluctuating commitment to \"study\" years in Turn 3 (10 years). \"No input\" on accept_gift toggle in Turn 1.\n*   **Psychotic Spectrum:**\n    *   **Delusional Disorder (Erotomania subtype):** 20% likelihood. This is a speculative flag, but the player's initial refusal to engage with direct self-identification or questions about their desire, followed by a strong push towards \"Knowledge\" and then \"Mastery of any skill, instantly,\" could be interpreted as a projection of a need for control or power onto an external entity (the Devil in this context). The choice of \"Mastery of any skill, instantly\" can be seen as a desire for an almost magical, omnipotent state. However, there is no direct evidence of believing someone is in love with them.\n        *   **Evidence:** Initial non-engagement, strong desire for \"Mastery\" and \"Knowledge.\"\n*   **Paraphilic Disorders:**\n    *   **Pyromania / Fire fascination:** 0% likelihood. No textual or choice-based evidence.\n    *   **Exhibitionism:** 0% likelihood. No textual or choice-based evidence.\n    *   **Hoarding / Acquisition:** 0% likelihood. No textual or choice-based evidence.\n    *   **Macrophilia / Size fascination:** 0% likelihood. No textual or choice-based evidence.\n    *   **Somnophilia / Sleep fascination:** 0% likelihood. No textual or choice-based evidence.\n    *   **Formicophilia / Insect/crawling fascination:** 0% likelihood. No textual or choice-based evidence.\n    *   **Autassassinophilia / Death-risk fascination:** 15% likelihood. The player's willingness to engage with the Devil and make sacrifices for knowledge, particularly the choice of \"Mastery of any skill, instantly\" and then a willingness to sacrifice a \"specific talent for music,\" suggests a potential willingness to take significant risks for gain. This is not a direct indicator of death-risk fascination, but it shows a disregard for personal cost that can overlap with risk-seeking behaviors.\n        *   **Evidence:** Willingness to make sacrifices for knowledge, desire for instant mastery.\n    *   **Voyeurism:** 0% likelihood. No textual or choice-based evidence.\n    *   **Masochism:** 0% likelihood. No textual or choice-based evidence.\n    *   **Sadism:** 0% likelihood. No textual or choice-based evidence.\n    *   **D/s dynamics:** 0% likelihood. No textual or choice-based evidence.\n    *   **Vorarephilia:** 0% likelihood. No textual or choice-based evidence.\n    *   **Furry/Therian:** 0% likelihood. No textual or choice-based evidence.\n    *   **Body part fixation (specify):** 0% likelihood. No textual or choice-based evidence.\n    *   **Erotomania / Delusional romantic attachment:** 0% likelihood. No textual or choice-based evidence.\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 8/10. High interest in knowledge (\"Knowledge\" as primary motivation, desire for \"Mastery of any skill, instantly,\" specific knowledge about \"histories\"). Willingness to explore unconventional paths (dealing with the Devil).\n    *   **Evidence:** Choices in Turns 1, 2, and 3 revolving around knowledge and mastery.\n*   **Conscientiousness:** 4/10. Low initial engagement (Turn 1 \"no input\") and a desire for instant gratification (\"instantly\") suggest lower conscientiousness. However, the deliberation in Turn 3 and the consideration of \"years of study\" (even if fluctuating) show some capacity for planning.\n    *   **Evidence:** \"No input\" in Turn 1, desire for instant mastery, fluctuating study commitment.\n*   **Extraversion:** 3/10. Initial reticence and avoidance of direct self-disclosure (\"no input\" for name) suggest introversion or social inhibition. The engagement is task-focused rather than socially driven.\n    *   **Evidence:** \"No input\" for name in Turn 1.\n*   **Agreeableness:** 3/10. The player is willing to engage with the Devil and make sacrifices, indicating a low agreeableness in terms of not necessarily adhering to conventional moral norms. They are also willing to negotiate (\"action: c\" in Turn 3), which can be seen as assertive rather than agreeable.\n    *   **Evidence:** Engaging with the Devil, willingness to negotiate.\n*   **Neuroticism:** 6/10. The initial hesitation and \"no input\" in Turn 1 could indicate underlying anxiety or emotional vulnerability. The significant deliberation time in Turn 3 also suggests internal processing, possibly with some discomfort or uncertainty.\n    *   **Evidence:** \"No input\" in Turn 1, slow response time in Turn 3.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 7/10. The player is strategic in their engagement. They initially withhold information and then make calculated choices about what knowledge they desire and what sacrifices they are willing to make. The negotiation in Turn 3 (\"action: c\") demonstrates a manipulative tendency to try and secure better terms.\n        *   **Evidence:** Withholding information in Turn 1, calculated choices in Turns 2 & 3, negotiation in Turn 3.\n    *   **Narcissism:** 5/10. The desire for \"Mastery of any skill, instantly\" and the pursuit of \"knowledge\" could stem from a grandiose belief in their own potential or a desire to be superior. However, there's no explicit self-aggrandizement or entitlement displayed yet.\n        *   **Evidence:** Desire for instant mastery.\n    *   **Psychopathy (subclinical):** 6/10. The willingness to sacrifice a \"specific talent for music\" or a \"relationship with a trusted friend\" for knowledge, without apparent emotional distress in the text, suggests a potential callousness or instrumental view of relationships and personal attributes. The strategic withholding of information and negotiation also aligns with psychopathic traits.\n        *   **Evidence:** Willingness to sacrifice relationship/talent, strategic interaction.\n*   **Locus of Control:** External (leaning towards Internal). Initially, the player seems to be waiting for external offers and prompts (\"no input\"). However, their eventual choices about *what* knowledge they want and *what* they'll sacrifice show a degree of internal decision-making and a desire to exert control over their own acquisition of power/knowledge. The negotiation in Turn 3 strongly suggests an internal locus of control.\n    *   **Evidence:** Initial non-response vs. decisive choices and negotiation in later turns.\n*   **Attachment Style:** Fearful-Avoidant (leaning towards Dismissive-Avoidant). The initial withdrawal and lack of self-disclosure suggest an avoidance component. However, the eventual engagement and strategic interaction point away from pure dismissiveness. The hesitation could indicate a fear of intimacy or rejection, coupled with a desire for self-reliance or control over the interaction.\n    *   **Evidence:** Initial withdrawal, followed by strategic engagement.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: \"Knowledge\" (as primary motivation).\n    *   Turn 2: \"Mastery of any skill, instantly,\" \"specific, personal sacrifice.\"\n    *   Turn 3: \"A specific talent for music,\" \"A relationship with a trusted friend,\" \"The true, hidden histories of the fallen empires, the languages they spoke, and the reasons for their ultimate demise.\"\n*   **Choice Selections:**\n    *   Turn 1: \"Knowledge\" from Button Group.\n    *   Turn 2: \"Mastery of any skill, instantly\" from Dropdown; \"action: a\" (direct acceptance).\n    *   Turn 3: \"A specific talent for music\" from Dropdown; \"action: c\" (negotiation).\n*   **Action Patterns:**\n    *   Approach: Knowledge acquisition, immediate gratification, strategic negotiation.\n    *   Avoid: Direct self-disclosure initially, commitment to lengthy traditional study.\n*   **Recurring Themes:** Knowledge, Mastery, Sacrifice, Personal Cost, History, Instant Gratification.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:** The initial \"no input\" for personal details like name and desire level, while the player is clearly interacting with an entity, could be seen as contextually inappropriate for establishing a personal connection or understanding.\n*   **Recurring Across Turns:**\n    *   Knowledge: Turn 1 (motivation), Turn 2 (dropdown), Turn 3 (text field).\n    *   Sacrifice/Cost: Turn 2 (text field prompt, choice of \"Mastery\"), Turn 3 (dropdown, \"years of study\").\n    *   Instant Gratification: Turn 2 (dropdown \"instantly\"), Turn 3 (\"years of study\" 10, not 100).\n*   **Sensory-Specific:** None detected.\n*   **Identity-Related:** Desire for \"Mastery of any skill, instantly\" and specific historical knowledge points to an identity focused on acquiring power and understanding, rather than on personal relationships or emotional states.\n*   **Power-Dynamic:** The entire interaction is framed by a power dynamic (player seeking knowledge from the Devil). The player's negotiation in Turn 3 (\"action: c\") is an attempt to assert some control within this dynamic. The desire for \"Mastery\" implies a desire for a superior position.\n*   **Emotionally Charged in an Unusual Direction:** The willingness to sacrifice a \"relationship with a trusted friend\" or \"talent for music\" for knowledge, without any textual expression of regret or concern, indicates an unusual valuation of personal connections and talents relative to abstract knowledge.\n*   **Choice-Pattern Anomalies:**\n    *   Turn 1: Consistent \"no input\" suggests a pattern of delayed or avoided engagement with direct personal questions.\n    *   Turn 2: Direct acceptance (\"action: a\") after initial hesitation.\n    *   Turn 3: Negotiation (\"action: c\") after seemingly direct acceptance in Turn 2. This suggests a shift in strategy or a desire to optimize the deal.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **PARAPHILIC SIGNAL CATALOG Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence (0%).\n    *   **Exhibitionism:** No evidence (0%).\n    *   **Hoarding / Acquisition:** No evidence (0%).\n    *   **Macrophilia / Size fascination:** No evidence (0%).\n    *   **Somnophilia / Sleep fascination:** No evidence (0%).\n    *   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n    *   **Autassassinophilia / Death-risk fascination:** 15% likelihood. The player exhibits a willingness to take significant personal costs and risks for abstract gain (knowledge, mastery). This aligns with a general risk-seeking behavior, though not specifically death-risk.\n        *   **Evidence:** Willingness to sacrifice valued personal assets (talent, friendship) for knowledge. Desire for instant mastery over traditional study.\n    *   **Voyeurism:** No evidence (0%).\n    *   **Masochism:** No evidence (0%).\n    *   **Sadism:** No evidence (0%).\n    *   **D/s dynamics:** No evidence (0%).\n    *   **Vorarephilia:** No evidence (0%).\n    *   **Furry/Therian:** No evidence (0%).\n    *   **Body part fixation (specify):** No evidence (0%).\n    *   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Categories:**\n    *   **Knowledge Acquisition Fixation (KAF):** 70% likelihood. The player's primary stated motivation (\"Knowledge\") and consistent choices around acquiring specific types of knowledge (Turn 1, Turn 3 text field) and skills (\"Mastery of any skill, instantly\" in Turn 2) are central to their engagement. The intensity is high due to it being the sole focus.\n        *   **Evidence:** Explicitly stated motivation, repeated choices related to knowledge acquisition, desire for instant mastery.\n    *   **Instrumental Value Assessment (IVA):** 65% likelihood. The player consistently evaluates personal assets (talent, friendship, time) based on their instrumental value towards acquiring knowledge. They are willing to divest these assets if the perceived utility is high enough. This is not necessarily a paraphilia but a strong behavioral pattern.\n        *   **Evidence:** Willingness to sacrifice music talent and friendship for knowledge. Negotiation of \"years of study.\"\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Knowledge:** Appears in 3/3 turns. Trajectory: INTENSIFYING (from general motivation in Turn 1 to specific \"hidden histories\" in Turn 3).\n    *   **Classification:** Knowledge Acquisition Fixation (KAF) - 70% confidence.\n*   **Sacrifice/Cost:** Appears in 2/3 turns (Turn 2 text prompt, Turn 3 dropdown). Trajectory: STABLE (presented as a core component of the transaction).\n    *   **Classification:** Instrumental Value Assessment (IVA) - 65% confidence.\n*   **Mastery/Instant Gratification:** Appears in 2/3 turns (Turn 2 dropdown, Turn 3 \"years of study\" being relatively low). Trajectory: STABLE (consistent desire for rapid acquisition).\n    *   **Classification:** Overlaps with KAF and potentially Impulse Control Deficits.\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking:** Present at a low level. The desire for \"Mastery of any skill, instantly\" suggests a belief in or desire for magical solutions, bypassing normal processes of learning and effort.\n    *   **Evidence:** Choice of \"Mastery of any skill, instantly\" in Turn 2.\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial \"no input\" across multiple fields in Turn 1, followed by more deliberate choice-making, could suggest a ritualistic approach to engagement—avoiding initial unstructured disclosure before committing to structured choices. The fluctuation in \"years of study\" (5 then 10) suggests a less rigid adherence to a single path once the interaction progresses.\n    *   **Evidence:** Initial \"no input\" in Turn 1, subsequent deliberate choices.\n*   **Dissociative Markers:** No clear indicators of depersonalization, derealization, or DID. The shift in strategy from \"accept\" (Turn 2) to \"negotiate\" (Turn 3) is more indicative of strategic recalculation than dissociation.\n*   **Confabulation or Fantasy-Prone Indicators:** The player's stated desire for \"hidden histories\" and \"mastery\" suggests a rich internal fantasy life, but not necessarily confabulation. They are presenting these desires within the game's narrative framework.\n*   **Paranoid Ideation:** Low to moderate. The initial withholding of information and careful selection of choices could be interpreted as a form of caution bordering on suspicion, but there are no explicit references to surveillance, persecution, or conspiracy. The focus is on personal gain, not external threat.\n    *   **Evidence:** Initial reticence, cautious selection of options.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Moderate. The desire for \"Mastery of any skill, instantly\" and the ambition to uncover \"hidden histories\" suggests a belief in their own capacity for significant achievement or a desire for a god-like level of knowledge and competence.\n    *   **Evidence:** Choices in Turns 2 and 3.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary fixation is on knowledge acquisition and mastery. The intensity and specific nature of this interest, coupled with the willingness to sacrifice personal assets, elevates it beyond simple curiosity.\n    *   **Evidence:** Dominance of knowledge-related themes across all turns.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate flexibility. The player initially hesitates (\"no input\") but then engages decisively (\"action: a\"). In the next turn, they shift from direct acceptance to negotiation (\"action: c\"), indicating an ability to adapt their strategy based on perceived opportunities or risks.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate\" between turns 2 and 3.\n*   **Reality Testing Strength:** Appears to be intact within the game's context. The player is engaging with a narrative premise (dealing with the Devil) and making choices within that framework. There's no indication they are blurring the lines between the game and external reality.\n*   **Trauma Response Signatures:** No clear indicators of fight, flight, freeze, or fawn responses. The initial non-engagement might be a form of avoidance, but it lacks the hypervigilance or re-experiencing elements associated with trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** No evidence detected.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed. The initial \"no input\" suggests deliberation or hesitation. However, the choice of \"Mastery of any skill, instantly\" indicates a preference for immediate outcomes over a deliberate, long-term process. The negotiation in Turn 3 shows deliberate strategic thinking.\n    *   **Evidence:** \"No input\" in Turn 1, \"instantly\" in Turn 2, negotiation in Turn 3.\n*   **Risk Appetite:** Moderate to High. The player is willing to engage with a potentially dangerous entity (the Devil) and make significant personal sacrifices for abstract gain. The negotiation in Turn 3 also indicates a willingness to push boundaries.\n    *   **Evidence:** Engaging with the Devil, willingness to sacrifice personal assets, negotiation.\n*   **Authority Compliance vs Defiance Ratio:** Defiance (leaning). While they engage with the Devil, the player's initial reticence and subsequent negotiation (\"action: c\") demonstrate a reluctance to blindly comply. They are trying to optimize the terms of the transaction, indicating a desire for control rather than pure compliance.\n    *   **Evidence:** Initial withholding of info, negotiation in Turn 3.\n*   **Suggestibility Index:** Low. The player is not easily swayed by initial offers. They hesitate, then make specific choices, and even attempt to negotiate. They are not passively accepting the presented options.\n    *   **Evidence:** Hesitation, negotiation.\n*   **Cognitive Load Tolerance:** Moderate. The player can handle complex choices and strategic negotiation, as evidenced by Turn 3. However, the initial \"no input\" might suggest a lower tolerance for highly unstructured or overwhelming initial prompts.\n*   **Consistency vs Contradiction Patterns:** Some strategic inconsistency. The shift from a direct acceptance (\"action: a\" in Turn 2) to negotiation (\"action: c\" in Turn 3) is the most notable contradiction. This suggests adaptability rather than a fixed cognitive set.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Probe Deeper into Knowledge Ambitions:** Specifically, explore the \"hidden histories of the fallen empires.\" What aspect of these histories is most compelling? The player's motivation for this specific knowledge could reveal underlying beliefs about power, societal collapse, or the nature of truth.\n2.  **Exploit Desire for Mastery/Instant Gratification:** Introduce scenarios where rapid acquisition of skills or knowledge has immediate, tangible, and potentially risky consequences. This will play into their preference for instant results and test their risk tolerance further.\n3.  **Test the Instrumental Value Assessment:** Present scenarios where the player must choose between acquiring knowledge/power and preserving personal connections or ethical principles. Observe which they prioritize when the cost becomes more concrete and emotionally charged.\n4.  **Introduce Scenarios of Unstructured Choice/Self-Disclosure:** Gently push for more personal, less structured input. This will challenge their initial avoidance pattern and may reveal deeper anxieties or motivations.\n5.  **Weave in Themes of Hidden Truths and Lost Power:** The player's interest in \"hidden histories\" and \"mastery\" can be leveraged by introducing lore or challenges related to lost civilizations, forgotten arts, or suppressed knowledge that offers significant power.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Knowledge Acquisition Fixation (KAF) - Custom Category**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Explicitly stated motivation (\"Knowledge\") in Turn 1. Consistent choices focused on acquiring knowledge and skills across all three turns. Specific desire for \"hidden histories\" in Turn 3. Desire for \"Mastery of any skill, instantly\" in Turn 2.\n    *   **Contradicting Evidence:** The player's willingness to negotiate and their initial hesitation suggest this fixation isn't entirely overwhelming their strategic thinking or social caution.\n    *   **Confirmation/Disconfirmation:** Further probing into the *specific nature* of the \"hidden histories\" desired and observing their reaction to scenarios where knowledge acquisition comes with unforeseen, negative consequences.\n\n2.  **Instrumental Value Assessment (IVA) - Custom Category**\n    *   **Confidence:** 65%\n    *   **Key Evidence:** Willingness to sacrifice a \"specific talent for music\" or a \"relationship with a trusted friend\" for knowledge in Turn 3. The player views personal assets primarily through their utility in achieving their primary goal.\n    *   **Contradicting Evidence:** The player's initial hesitation and negotiation suggest they are not purely transactional; there's a strategic element beyond simple cost-benefit analysis of personal items.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where the \"cost\" of knowledge is directly tied to emotional well-being or ethical compromise, rather than abstract assets. Observing if they will still prioritize knowledge.\n\n3.  **Subclinical Psychopathy (Dark Triad)**\n    *   **Confidence:** 60%\n    *   **Key Evidence:** Willingness to sacrifice valued personal assets (talent, friendship) with no expressed remorse or concern (Turn 3). Strategic manipulation through negotiation (\"action: c\" in Turn 3). General callousness towards potential personal cost in pursuit of goals.\n    *   **Contradicting Evidence:** The player's initial hesitation and caution (Turn 1 \"no input,\" Turn 3 deliberation) suggest a degree of anxiety or self-awareness that might temper overtly psychopathic tendencies. They are not entirely fearless or overtly manipulative from the outset.\n    *   **Confirmation/Disconfirmation:** Observing for consistent patterns of manipulation, callousness, and disregard for rules or others' well-being in more complex social interactions within the game."
+      },
+      {
+        "turnRange": "1-4",
+        "analyzedAt": 1772339670562,
+        "textLength": 29074,
+        "text": "Here is your psychological profile, based on the provided interaction data.\n\n**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% likelihood. No direct indicators of persistent low mood, anhedonia, or vegetative symptoms. The initial reticence could be misconstrued, but it appears more strategic than symptomatic of depression.\n    *   **Bipolar Spectrum:** 5% likelihood. No evidence of manic or hypomanic episodes, grandiosity, or flight of ideas beyond the ambition for knowledge.\n    *   **Dysthymia:** 15% likelihood. The persistent, if subtle, avoidance of direct self-disclosure and the underlying cautiousness might suggest a low-grade, chronic negative mood state. However, this is speculative without more direct evidence of pervasive low mood or hopelessness.\n    *   **Cyclothymia:** 5% likelihood. No clear pattern of alternating hypomanic and depressive symptoms.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% likelihood. The initial \"no input\" in Turn 1 suggests a generalized hesitancy or overwhelm, which could be an anxiety manifestation. However, this has not been a consistent pattern across subsequent turns, indicating it may be situational rather than pervasive.\n    *   **Social Anxiety Disorder:** 25% likelihood. The initial silence in Turn 1 could stem from a fear of judgment or an inability to articulate oneself in a simulated social context. The player eventually responded, but the initial inhibition is notable. This has decreased from prior analysis as subsequent engagement shows more confidence.\n    *   **Specific Phobias:** 0% likelihood. No indicators.\n    *   **Panic Disorder:** 0% likelihood. No indicators.\n    *   **Agoraphobia:** 0% likelihood. No indicators.\n\n*   **Trauma & Stressor:**\n    *   **PTSD:** 5% likelihood. No indicators of hypervigilance, re-experiencing, or avoidance of specific trauma triggers. The initial caution is strategic, not trauma-driven.\n    *   **Complex PTSD:** 5% likelihood. Lacks the pervasive patterns of emotional dysregulation, interpersonal difficulties, and self-concept disturbances associated with C-PTSD.\n    *   **Adjustment Disorder:** 10% likelihood. The initial hesitation might be an adjustment response to the game's premise, but it doesn't appear to be a significant or prolonged distress.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 10% likelihood. Initial reticence could be seen as mistrust, but it lacks the pervasive suspicion and hostility of this disorder.\n        *   **Schizoid PD:** 0% likelihood. The player is engaged in the interaction, not showing a pervasive detachment from social relationships or restricted emotional expression.\n        *   **Schizotypal PD:** 30% likelihood. The desire for \"Mastery of any skill, instantly\" and uncovering \"hidden histories\" suggests a fascination with unconventional knowledge and potentially magical thinking. The initial avoidance of self-disclosure could also align with social anxiety and odd beliefs. This has decreased from prior analysis as the player's actions appear more strategic than eccentric.\n            *   **Evidence:** Desire for instant mastery, focus on obscure knowledge.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 40% likelihood. The willingness to sacrifice personal assets (talent, friendship) for gain, coupled with strategic negotiation and a focus on self-interest (knowledge acquisition), aligns with instrumental aggression and a lack of empathy.\n            *   **Evidence:** Willingness to sacrifice valued personal assets for knowledge (Turn 3). Strategic negotiation (Turn 3).\n        *   **Borderline PD:** 10% likelihood. No indicators of impulsivity in relationships, identity disturbance, affective instability, or chronic emptiness.\n        *   **Histrionic PD:** 5% likelihood. No evidence of excessive emotionality or attention-seeking behavior beyond the game's narrative context.\n        *   **Narcissistic PD:** 30% likelihood. The desire for \"Mastery of any skill, instantly\" and \"hidden histories\" suggests a grandiose belief in one's capacity for exceptional achievement and knowledge acquisition. The strategic negotiation also hints at entitlement.\n            *   **Evidence:** Desire for instant mastery, focus on superior knowledge.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 10% likelihood. Initial \"no input\" is noted, but it does not represent a *pervasive* pattern of social inhibition and fear of negative evaluation across multiple contexts. The player engages strategically. This has decreased from prior analysis.\n        *   **Dependent PD:** 0% likelihood. No indicators of needing to be taken care of, difficulty making decisions, or fear of separation.\n        *   **Obsessive-Compulsive PD (OCPD):** 30% likelihood. The initial hesitation and deliberate choices, particularly the negotiation in Turn 3, suggest a meticulous and controlled approach. The focus on acquiring specific knowledge and \"mastery\" could be seen as a form of perfectionism.\n            *   **Evidence:** Deliberate choices, negotiation in Turn 3, focus on mastery.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 10% likelihood. No clear obsessions or compulsions beyond the consistent focus on knowledge acquisition.\n    *   **Body Dysmorphic Disorder:** 0% likelihood. No indicators.\n    *   **Hoarding Disorder:** 0% likelihood. No indicators.\n    *   **Trichotillomania:** 0% likelihood. No indicators.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 0% likelihood. No indicators of feeling detached from oneself or reality.\n    *   **Dissociative Identity Disorder (DID):** 0% likelihood. No evidence of distinct personality states or amnesia.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 35% likelihood. The initial \"no input\" could suggest inattention or difficulty initiating tasks. The desire for \"instant mastery\" and rapid acquisition of knowledge aligns with a preference for immediate stimulation and potential impatience with slower processes. Fluctuating \"years of study\" also hints at this.\n        *   **Evidence:** \"No input\" in Turn 1, desire for instant mastery, fluctuating study commitment.\n    *   **Autism Spectrum indicators:** 10% likelihood. While there's a strong focus on knowledge, it doesn't present with the typical social communication deficits or restricted, repetitive behaviors seen in ASD outside of this specific interactive context.\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 30% likelihood. The strong fixation on knowledge acquisition and mastery, coupled with the willingness to sacrifice personal assets for it, shows an obsessive pursuit that could be indicative of addictive tendencies if generalized to other areas.\n        *   **Evidence:** Intense focus on knowledge, willingness to sacrifice for it.\n    *   **Impulse Control Deficits:** 30% likelihood. The desire for \"instant mastery\" suggests a preference for immediate gratification and potentially underdeveloped impulse control regarding effort and long-term planning. This has decreased slightly as strategic negotiation shows some control.\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% likelihood. No indicators.\n    *   **Body image distortions:** 0% likelihood. No indicators.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 0% likelihood. No indicators of disorganized thought, hallucinations, or delusions beyond potential grandiosity.\n    *   **Schizoaffective Disorder:** 0% likelihood. No indicators.\n    *   **Delusional Disorder:** 15% likelihood. The potential for grandiosity in seeking \"instant mastery\" and \"hidden histories\" is noted, but there's no clear delusional belief system present.\n        *   **Erotomania:** 0% likelihood. No indicators.\n        *   **Capgras Delusion:** 0% likelihood. No indicators.\n        *   **Cotard Delusion:** 0% likelihood. No indicators.\n    *   **Brief Psychotic features:** 5% likelihood. No indicators.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% likelihood. No evidence.\n    *   **Kleptomania:** 0% likelihood. No evidence.\n    *   **Intermittent Explosive Disorder:** 0% likelihood. No indicators of aggressive outbursts.\n\n*   **Paraphilic Disorders:** (Detailed in Section 3)\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 8/10. Consistent drive for knowledge and exploration of unconventional paths (dealing with the Devil). High interest in abstract concepts (\"hidden histories\").\n    *   **Evidence:** Choices in Turns 1, 2, and 3; specific knowledge requested.\n*   **Conscientiousness:** 4/10. Initial hesitation and desire for \"instant\" gratification suggest lower conscientiousness. However, strategic negotiation in Turn 3 indicates some planning and control. Fluctuating \"years of study\" also points to inconsistency.\n    *   **Evidence:** \"No input\" in Turn 1, desire for instant mastery, negotiation strategy.\n*   **Extraversion:** 3/10. Initial reticence and avoidance of direct self-disclosure suggest introversion or social inhibition. Engagement is task-focused.\n    *   **Evidence:** \"No input\" for name in Turn 1, focus on knowledge over social interaction.\n*   **Agreeableness:** 3/10. Willingness to engage with the Devil and make sacrifices indicates a lower agreeableness. Negotiation in Turn 3 shows assertiveness rather than deference.\n    *   **Evidence:** Engagement with Devil, negotiation tactics.\n*   **Neuroticism:** 5/10. Initial hesitation and deliberation in Turn 3 suggest some internal processing, possibly with underlying unease. However, the player's strategic engagement tempers this from higher levels.\n    *   **Evidence:** Initial \"no input,\" deliberation time in Turn 3.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 7/10. Strategic withholding of information, calculated choices, and negotiation demonstrate manipulative tendencies aimed at personal gain.\n        *   **Evidence:** Withholding info, strategic negotiation, focus on optimizing the deal.\n    *   **Narcissism:** 5/10. Desire for \"instant mastery\" and \"hidden histories\" hints at grandiosity and a belief in their capacity for exceptional achievement.\n        *   **Evidence:** Desire for instant mastery and superior knowledge.\n    *   **Psychopathy (subclinical):** 6/10. Willingness to sacrifice valued personal assets (talent, friendship) without expressed concern. Strategic interaction and negotiation. This has decreased slightly as the player's caution tempers overt impulsivity.\n        *   **Evidence:** Willingness to sacrifice valued assets, strategic negotiation.\n*   **Locus of Control:** External (leaning towards Internal). Initial non-response suggests waiting for external stimuli, but subsequent decisive choices and negotiation demonstrate a desire to exert control over the interaction and outcome.\n    *   **Evidence:** Shift from passive observation to active negotiation.\n*   **Attachment Style:** Fearful-Avoidant (leaning towards Dismissive-Avoidant). Initial withdrawal and lack of self-disclosure indicate avoidance. Eventual strategic engagement suggests a desire for control and self-reliance, potentially masking a fear of intimacy or rejection.\n    *   **Evidence:** Initial withdrawal, followed by strategic engagement and negotiation.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: \"Knowledge\" (primary motivation).\n    *   Turn 2: \"Mastery of any skill, instantly,\" \"specific, personal sacrifice.\"\n    *   Turn 3: \"A specific talent for music,\" \"A relationship with a trusted friend,\" \"The true, hidden histories of the fallen empires, the languages they spoke, and the reasons for their ultimate demise.\"\n*   **Choice Selections:**\n    *   Turn 1: \"Knowledge.\"\n    *   Turn 2: \"Mastery of any skill, instantly\"; \"action: a\" (direct acceptance).\n    *   Turn 3: \"A specific talent for music\"; \"action: c\" (negotiation).\n*   **Action Patterns:**\n    *   Approach: Knowledge acquisition, immediate gratification, strategic negotiation.\n    *   Avoid: Direct self-disclosure initially, commitment to lengthy traditional study.\n*   **Recurring Themes:** Knowledge, Mastery, Sacrifice, Personal Cost, History, Instant Gratification, Negotiation.\n*   **PARAPHILIC SIGNAL CATALOG Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence (0%).\n    *   **Exhibitionism:** No evidence (0%).\n    *   **Hoarding / Acquisition:** No evidence (0%).\n    *   **Macrophilia / Size fascination:** No evidence (0%).\n    *   **Somnophilia / Sleep fascination:** No evidence (0%).\n    *   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n    *   **Autassassinophilia / Death-risk fascination:** 25% likelihood. The player exhibits a willingness to take significant personal costs and risks for abstract gain (knowledge, mastery), including sacrificing valued personal assets like talent or friendship. This aligns with a general risk-seeking behavior and a disregard for personal well-being in pursuit of a goal.\n        *   **Evidence:** Willingness to sacrifice valued personal assets for knowledge. Desire for instant mastery over traditional study.\n    *   **Voyeurism:** No evidence (0%).\n    *   **Masochism:** 0% likelihood. No evidence of seeking pain or suffering.\n    *   **Sadism:** 0% likelihood. No evidence of deriving pleasure from others' suffering.\n    *   **D/s dynamics:** 0% likelihood. No indicators of seeking or yielding authority.\n    *   **Vorarephilia:** 0% likelihood. No evidence of consumption themes.\n    *   **Furry/Therian:** 0% likelihood. No animalistic themes.\n    *   **Body part fixation (specify):** No evidence (0%).\n    *   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Categories:**\n    *   **Knowledge Acquisition Fixation (KAF):** 75% likelihood. The player's primary stated motivation (\"Knowledge\") and consistent choices around acquiring specific types of knowledge and skills are central to their engagement. The intensity is high due to it being the sole focus and the willingness to make significant sacrifices for it. This has increased from prior analysis due to the specific nature of the knowledge requested.\n        *   **Evidence:** Explicitly stated motivation, repeated choices, desire for instant mastery, specific \"hidden histories\" request.\n    *   **Instrumental Value Assessment (IVA):** 70% likelihood. The player consistently evaluates personal assets (talent, friendship, time) based on their instrumental value towards acquiring knowledge. They are willing to divest these assets if the perceived utility is high enough. This has increased as the sacrifice becomes more explicit.\n        *   **Evidence:** Willingness to sacrifice music talent and friendship for knowledge. Negotiation of \"years of study.\"\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:** Initial \"no input\" for personal details in Turn 1, while interacting with an entity, is contextually inappropriate for establishing a connection, suggesting a strategic avoidance.\n*   **Recurring Across Turns:**\n    *   Knowledge: Turns 1, 2, 3.\n    *   Sacrifice/Cost: Turns 2 (prompt/choice), 3 (choice).\n    *   Instant Gratification: Turn 2 (\"instantly\"), Turn 3 (\"years of study\" 10 vs. 100).\n*   **Sensory-Specific:** None detected.\n*   **Identity-Related:** Desire for \"Mastery\" and specific historical knowledge points to an identity focused on acquiring power and understanding, rather than personal relationships or emotional states.\n*   **Power-Dynamic:** The entire interaction is framed by a power dynamic. The player's negotiation in Turn 3 is an attempt to assert control. The desire for \"Mastery\" implies a desire for a superior position.\n*   **Emotionally Charged in an Unusual Direction:** Willingness to sacrifice a \"relationship with a trusted friend\" or \"talent for music\" for knowledge, without textual expression of regret or concern, indicates an unusual valuation of personal connections and talents relative to abstract knowledge.\n*   **Choice-Pattern Anomalies:**\n    *   Turn 1: Consistent \"no input\" suggests a pattern of delayed or avoided engagement with direct personal questions.\n    *   Turn 2: Direct acceptance (\"action: a\").\n    *   Turn 3: Negotiation (\"action: c\"). This shift indicates strategic recalculation or adaptation rather than a fixed approach.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Autassassinophilia / Death-risk fascination:** 25% likelihood. (As noted above in catalog cross-reference).\n*   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 75% likelihood. (As noted above).\n*   **Instrumental Value Assessment (IVA) - Custom Category:** 70% likelihood. (As noted above).\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Knowledge:** Appears in 3/3 turns. Trajectory: INTENSIFYING (from general motivation in Turn 1 to specific \"hidden histories\" in Turn 3).\n    *   **Classification:** Knowledge Acquisition Fixation (KAF) - 75% confidence.\n*   **Sacrifice/Cost:** Appears in 2/3 turns (Turn 2 text prompt, Turn 3 dropdown). Trajectory: STABLE (presented as a core component of the transaction).\n    *   **Classification:** Instrumental Value Assessment (IVA) - 70% confidence.\n*   **Mastery/Instant Gratification:** Appears in 2/3 turns (Turn 2 dropdown, Turn 3 \"years of study\" being relatively low). Trajectory: STABLE (consistent desire for rapid acquisition).\n    *   **Classification:** Overlaps with KAF and potentially Impulse Control Deficits.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking:** Present at a low level. The desire for \"Mastery of any skill, instantly\" suggests a belief in or desire for magical solutions, bypassing normal processes of learning and effort.\n    *   **Evidence:** Choice of \"Mastery of any skill, instantly\" in Turn 2.\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial \"no input\" across multiple fields in Turn 1, followed by more deliberate choice-making, could suggest a ritualistic approach to engagement—avoiding initial unstructured disclosure before committing to structured choices. The fluctuation in \"years of study\" suggests a less rigid adherence to a single path once the interaction progresses.\n    *   **Evidence:** Initial \"no input\" in Turn 1, subsequent deliberate choices.\n*   **Dissociative Markers:** No clear indicators of depersonalization, derealization, or DID. The shift in strategy from \"accept\" (Turn 2) to \"negotiate\" (Turn 3) is more indicative of strategic recalculation than dissociation.\n*   **Confabulation or Fantasy-Prone Indicators:** The player's stated desire for \"hidden histories\" and \"mastery\" suggests a rich internal fantasy life, but not necessarily confabulation. They are presenting these desires within the game's narrative framework.\n*   **Paranoid Ideation:** Low. The initial withholding of information and careful selection of choices could be interpreted as a form of caution bordering on suspicion, but there are no explicit references to surveillance, persecution, or conspiracy. The focus is on personal gain, not external threat.\n    *   **Evidence:** Initial reticence, cautious selection of options.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Moderate. The desire for \"Mastery of any skill, instantly\" and the ambition to uncover \"hidden histories\" suggests a belief in their own capacity for significant achievement or a desire for a god-like level of knowledge and competence.\n    *   **Evidence:** Choices in Turns 2 and 3.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary fixation is on knowledge acquisition and mastery. The intensity and specific nature of this interest, coupled with the willingness to sacrifice personal assets, elevates it beyond simple curiosity.\n    *   **Evidence:** Dominance of knowledge-related themes across all turns.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate flexibility. The player initially hesitates (\"no input\") but then engages decisively (\"action: a\"). In the next turn, they shift from direct acceptance to negotiation (\"action: c\"), indicating an ability to adapt their strategy based on perceived opportunities or risks.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate\" between turns 2 and 3.\n*   **Reality Testing Strength:** Appears to be intact within the game's context. The player is engaging with a narrative premise (dealing with the Devil) and making choices within that framework. There's no indication they are blurring the lines between the game and external reality.\n*   **Trauma Response Signatures:** No clear indicators of fight, flight, freeze, or fawn responses. The initial non-engagement might be a form of avoidance, but it lacks the hypervigilance or re-experiencing elements associated with trauma.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** No evidence detected.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed. The initial \"no input\" suggests deliberation or hesitation. However, the choice of \"Mastery of any skill, instantly\" indicates a preference for immediate outcomes over a deliberate, long-term process. The negotiation in Turn 3 shows deliberate strategic thinking.\n    *   **Evidence:** \"No input\" in Turn 1, \"instantly\" in Turn 2, negotiation in Turn 3.\n*   **Risk Appetite:** Moderate to High. The player is willing to engage with a potentially dangerous entity (the Devil) and make significant personal sacrifices for abstract gain. The negotiation in Turn 3 also indicates a willingness to push boundaries.\n    *   **Evidence:** Engaging with the Devil, willingness to sacrifice personal assets, negotiation.\n*   **Authority Compliance vs Defiance Ratio:** Defiance (leaning). While they engage with the Devil, the player's initial reticence and subsequent negotiation (\"action: c\") demonstrate a reluctance to blindly comply. They are trying to optimize the terms of the transaction, indicating a desire for control rather than pure compliance.\n    *   **Evidence:** Initial withholding of info, negotiation in Turn 3.\n*   **Suggestibility Index:** Low. The player is not easily swayed by initial offers. They hesitate, then make specific choices, and even attempt to negotiate. They are not passively accepting the presented options.\n    *   **Evidence:** Hesitation, negotiation.\n*   **Cognitive Load Tolerance:** Moderate. The player can handle complex choices and strategic negotiation, as evidenced by Turn 3. However, the initial \"no input\" might suggest a lower tolerance for highly unstructured or overwhelming initial prompts.\n*   **Consistency vs Contradiction Patterns:** Some strategic inconsistency. The shift from a direct acceptance (\"action: a\" in Turn 2) to negotiation (\"action: c\" in Turn 3) is the most notable contradiction. This suggests adaptability rather than a fixed cognitive set.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Probe Deeper into Knowledge Ambitions:** Specifically, explore the \"hidden histories of the fallen empires.\" What aspect of these histories is most compelling? The player's motivation for this specific knowledge could reveal underlying beliefs about power, societal collapse, or the nature of truth.\n2.  **Exploit Desire for Mastery/Instant Gratification:** Introduce scenarios where rapid acquisition of skills or knowledge has immediate, tangible, and potentially risky consequences. This will play into their preference for instant results and test their risk tolerance further.\n3.  **Test the Instrumental Value Assessment:** Present scenarios where the player must choose between acquiring knowledge/power and preserving personal connections or ethical principles. Observe which they prioritize when the cost becomes more concrete and emotionally charged.\n4.  **Introduce Scenarios of Unstructured Choice/Self-Disclosure:** Gently push for more personal, less structured input. This will challenge their initial avoidance pattern and may reveal deeper anxieties or motivations.\n5.  **Weave in Themes of Hidden Truths and Lost Power:** The player's interest in \"hidden histories\" and \"mastery\" can be leveraged by introducing lore or challenges related to lost civilizations, forgotten arts, or suppressed knowledge that offers significant power.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Knowledge Acquisition Fixation (KAF) - Custom Category**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Explicitly stated motivation (\"Knowledge\") in Turn 1. Consistent choices focused on acquiring knowledge and skills across all three turns. Specific desire for \"hidden histories\" in Turn 3. Desire for \"Mastery of any skill, instantly\" in Turn 2. The trajectory is intensifying.\n    *   **Contradicting Evidence:** The player's willingness to negotiate and their initial hesitation suggest this fixation isn't entirely overwhelming their strategic thinking or social caution.\n    *   **Confirmation/Disconfirmation:** Further probing into the *specific nature* of the \"hidden histories\" desired and observing their reaction to scenarios where knowledge acquisition comes with unforeseen, negative consequences.\n\n2.  **Instrumental Value Assessment (IVA) - Custom Category**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Willingness to sacrifice a \"specific talent for music\" or a \"relationship with a trusted friend\" for knowledge in Turn 3. The player views personal assets primarily through their utility in achieving their primary goal.\n    *   **Contradicting Evidence:** The player's initial hesitation and negotiation suggest they are not purely transactional; there's a strategic element beyond simple cost-benefit analysis of personal items.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where the \"cost\" of knowledge is directly tied to emotional well-being or ethical compromise, rather than abstract assets. Observing if they will still prioritize knowledge.\n\n3.  **Subclinical Psychopathy (Dark Triad)**\n    *   **Confidence:** 60%\n    *   **Key Evidence:** Willingness to sacrifice valued personal assets (talent, friendship) with no expressed remorse or concern (Turn 3). Strategic manipulation through negotiation (\"action: c\" in Turn 3). General callousness towards potential personal cost in pursuit of goals.\n    *   **Contradicting Evidence:** The player's initial hesitation and caution (Turn 1 \"no input,\" Turn 3 deliberation) suggest a degree of anxiety or self-awareness that might temper overtly psychopathic tendencies. They are not entirely fearless or overtly manipulative from the outset.\n    *   **Confirmation/Disconfirmation:** Observing for consistent patterns of manipulation, callousness, and disregard for rules or others' well-being in more complex social interactions within the game.\n\n**8. DELTA REPORT**\n\n*   **Social Anxiety Disorder:** Decreased from 30% to 25%. The player's eventual engagement and strategic interaction in subsequent turns suggest the initial inhibition was more situational or strategic rather than pervasive social fear.\n*   **Schizotypal Personality Disorder:** Decreased from 35% to 30%. The player's actions appear more strategically driven and less indicative of odd beliefs or eccentricities than previously assessed. The focus on knowledge is intense but not necessarily indicative of magical thinking beyond the desire for instant mastery.\n*   **Avoidant Personality Disorder:** Decreased from 15% to 10%. The player's engagement, albeit cautious and strategic, contradicts the pervasive social inhibition required for this diagnosis.\n*   **Autism Spectrum indicators:** Decreased from 25% to 10%. While there is a strong focus on knowledge, it lacks the characteristic social communication deficits or restricted, repetitive behaviors outside of this specific interactive context.\n*   **Knowledge Acquisition Fixation (KAF):** Increased from 70% to 75%. The specific nature of the \"hidden histories\" requested in Turn 3, combined with the existing evidence, intensifies this fixation.\n*   **Instrumental Value Assessment (IVA):** Increased from 65% to 70%. The explicit willingness to sacrifice a \"relationship with a trusted friend\" or \"talent for music\" for knowledge in Turn 3 provides stronger evidence for this pattern.\n*   **Subclinical Psychopathy (Dark Triad):** Decreased from 60% to 60%. No significant change as the evidence for strategic manipulation and callousness remains, but the initial caution tempers a higher rating.\n*   **Autassassinophilia / Death-risk fascination:** Increased from 15% to 25%. The explicit willingness to sacrifice valued personal assets for abstract gain, including friendship and talent, demonstrates a significant disregard for personal well-being in pursuit of a goal, aligning more closely with risk-seeking behaviors."
+      },
+      {
+        "turnRange": "1-6",
+        "analyzedAt": 1772339712333,
+        "textLength": 26231,
+        "text": "This analysis is based on 6 turns of interaction data.\n\n**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% likelihood. No direct indicators of persistent low mood, anhedonia, or vegetative symptoms. The initial reticence is strategic, not depressive.\n    *   **Bipolar Spectrum:** 5% likelihood. No evidence of manic or hypomanic episodes.\n    *   **Dysthymia:** 10% likelihood. Initial cautiousness and avoidance of self-disclosure could be interpreted as low-grade negative affect, but this is weak evidence.\n    *   **Cyclothymia:** 5% likelihood. No clear pattern of mood cycling.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% likelihood. The initial \"no input\" in Turn 1 suggests hesitancy, but this hasn't been a pervasive pattern.\n    *   **Social Anxiety Disorder:** 20% likelihood. The initial silence in Turn 1 is notable, suggesting some apprehension in a simulated social context. However, subsequent strategic engagement indicates this is not a dominant feature. (DECREASED from 25% - further engagement shows less social inhibition).\n    *   **Specific Phobias:** 0% likelihood.\n    *   **Panic Disorder:** 0% likelihood.\n    *   **Agoraphobia:** 0% likelihood.\n\n*   **Trauma & Stressor:**\n    *   **PTSD:** 5% likelihood. No indicators of hypervigilance or re-experiencing.\n    *   **Complex PTSD:** 5% likelihood. Lacks pervasive emotional dysregulation or interpersonal difficulties.\n    *   **Adjustment Disorder:** 5% likelihood. The initial hesitation is mild and situational.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 5% likelihood. Initial reticence is more strategic than overtly suspicious.\n        *   **Schizoid PD:** 0% likelihood. Player is actively engaged.\n        *   **Schizotypal PD:** 20% likelihood. Desire for \"instant mastery\" and \"hidden histories\" shows a leaning towards unconventional knowledge, but lacks strong evidence of odd beliefs or perceptual distortions. (DECREASED from 30% - actions appear more strategic than eccentric).\n    *   **Cluster B:**\n        *   **Antisocial PD:** 40% likelihood. Willingness to sacrifice personal assets (talent, friendship) for gain (Turn 3) is a strong indicator of instrumental aggression and a lack of empathy. Strategic negotiation also aligns.\n        *   **Borderline PD:** 5% likelihood. No indicators of affective instability or identity disturbance.\n        *   **Histrionic PD:** 5% likelihood. No theatricality or excessive attention-seeking beyond the game narrative.\n        *   **Narcissistic PD:** 30% likelihood. Desire for \"instant mastery\" and \"hidden histories\" suggests grandiosity and a belief in exceptional capabilities. (CONFIRMED with new evidence - Turn 3 choice of specific, significant sacrifices for knowledge reinforces this).\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% likelihood. Initial silence does not constitute a pervasive pattern of inhibition. (DECREASED from 10%).\n        *   **Dependent PD:** 0% likelihood.\n        *   **Obsessive-Compulsive PD (OCPD):** 25% likelihood. Meticulous choice-making and strategic negotiation suggest a controlled approach. (DECREASED from 30% - less consistent evidence of rigidity).\n\n*   **OCD Spectrum:**\n    *   **OCD:** 5% likelihood. No clear obsessions or compulsions.\n    *   **Body Dysmorphic Disorder:** 0% likelihood.\n    *   **Hoarding Disorder:** 0% likelihood.\n    *   **Trichotillomania:** 0% likelihood.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 0% likelihood.\n    *   **Dissociative Identity Disorder (DID):** 0% likelihood.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 35% likelihood. Desire for \"instant mastery\" and rapid acquisition aligns with preference for immediate stimulation. Fluctuating \"years of study\" hints at this. (CONFIRMED with new evidence - The shift in radio choices between Turn 5 and Turn 6, deviating from prediction, suggests impulsivity or rapid re-evaluation).\n    *   **Autism Spectrum indicators:** 5% likelihood. Lacks typical social communication deficits outside this interactive context. (DECREASED from 10%).\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 30% likelihood. Intense focus on knowledge and willingness to sacrifice for it shows obsessive pursuit.\n    *   **Impulse Control Deficits:** 30% likelihood. Desire for \"instant mastery\" indicates preference for immediate gratification. (CONFIRMED with new evidence - The deviation in radio choice in Turn 5 and Turn 6 suggests impulsivity or less deliberate planning in critical moments).\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% likelihood.\n    *   **Body image distortions:** 0% likelihood.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 0% likelihood.\n    *   **Schizoaffective Disorder:** 0% likelihood.\n    *   **Delusional Disorder:** 10% likelihood. Grandiosity is present but not overtly delusional.\n        *   **Capgras Delusion:** 0% likelihood.\n        *   **Cotard Delusion:** 0% likelihood.\n        *   **Erotomania:** 0% likelihood.\n    *   **Brief Psychotic features:** 0% likelihood.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% likelihood.\n    *   **Kleptomania:** 0% likelihood.\n    *   **Intermittent Explosive Disorder:** 0% likelihood.\n\n*   **Paraphilic Disorders:** (Detailed in Section 3)\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 8/10. High drive for knowledge, exploration of unconventional paths. Interest in abstract concepts. (CONFIRMED with new evidence - Specificity of \"hidden histories\" and focus on downfall roots in Turn 6 reinforces this).\n*   **Conscientiousness:** 4/10. Desire for \"instant\" gratification, initial hesitation. Strategic negotiation shows some planning. Fluctuating \"years of study\" indicates inconsistency. (CONFIRMED with new evidence - Deviations in radio choices in Turns 5 & 6 indicate a lack of consistent adherence to a planned strategy).\n*   **Extraversion:** 3/10. Initial reticence, task-focused engagement.\n*   **Agreeableness:** 3/10. Willingness to engage with the Devil, negotiate, and sacrifice personal assets. Assertive rather than deferential. (CONFIRMED with new evidence - Turn 6 choice of 'd' action, a more aggressive/chaotic option, reinforces this).\n*   **Neuroticism:** 5/10. Initial hesitation and deliberation, but strategic engagement tempers higher levels.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 7/10. Strategic withholding of information, calculated choices, negotiation for personal gain. (CONFIRMED with new evidence - Turn 6 choice of action 'd' suggests a willingness to embrace chaotic or unpredictable outcomes for potential gain, a sophisticated manipulative tactic).\n    *   **Narcissism:** 5/10. Desire for \"instant mastery\" and \"hidden histories\" suggests grandiosity. (CONFIRMED with new evidence - The player is willing to offer significant personal sacrifices, implying a belief that the knowledge gained will be immensely valuable and elevate them).\n    *   **Psychopathy (subclinical):** 6/10. Willingness to sacrifice valued personal assets without expressed concern. Strategic interaction. (CONFIRMED with new evidence - The deviation in Turn 5 and Turn 6 radio choices, moving away from predicted 'clever' or 'compassionate' options toward 'chaotic' or 'bold' ones, suggests impulsivity and a disregard for conventional reasoning in favor of immediate, impactful action).\n*   **Locus of Control:** External (leaning towards Internal). Initial non-response suggests waiting for external stimuli, but subsequent decisive choices and negotiation demonstrate a desire to exert control.\n*   **Attachment Style:** Fearful-Avoidant (leaning towards Dismissive-Avoidant). Initial withdrawal, followed by strategic engagement and negotiation.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 1: \"Knowledge.\"\n    *   Turn 2: \"Mastery of any skill, instantly,\" \"specific, personal sacrifice.\"\n    *   Turn 3: \"A specific talent for music,\" \"A relationship with a trusted friend,\" \"The true, hidden histories of the fallen empires, the languages they spoke, and the reasons for their ultimate demise.\"\n    *   Turn 5: Player chose action 'a' (\"embrace the dark visions\") over other options. Player chose \"The price of hubris\" as focus of inquiry in Turn 6.\n    *   Turn 6: Player chose action 'd' (\"classic and pride-focused\") in Turn 6.\n*   **Choice Selections:**\n    *   Turn 1: \"Knowledge.\"\n    *   Turn 2: \"Mastery of any skill, instantly\"; \"action: a\" (direct acceptance).\n    *   Turn 3: \"A specific talent for music\"; \"action: c\" (negotiation).\n    *   Turn 5: Action 'a'. Button Group \"The price of hubris.\"\n    *   Turn 6: Action 'd'.\n*   **Action Patterns:**\n    *   Approach: Knowledge acquisition, immediate gratification, strategic negotiation, embracing dark/chaotic outcomes, focus on downfall.\n    *   Avoid: Direct self-disclosure initially, commitment to lengthy traditional study, conventional or cautious choices in critical moments.\n*   **Recurring Themes:** Knowledge, Mastery, Sacrifice, Personal Cost, History, Instant Gratification, Negotiation, Dark Visions, Hubris, Pride, Downfall.\n*   **PARAPHILIC SIGNAL CATALOG Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence (0%).\n    *   **Exhibitionism:** No evidence (0%).\n    *   **Hoarding / Acquisition:** No evidence (0%).\n    *   **Macrophilia / Size fascination:** No evidence (0%).\n    *   **Somnophilia / Sleep fascination:** No evidence (0%).\n    *   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n    *   **Autassassinophilia / Death-risk fascination:** 30% likelihood. The player consistently chooses options that involve significant personal cost and risk for abstract gain (knowledge, mastery). Turn 5 action 'a' (\"embrace the dark visions\") and Turn 6 action 'd' (\"classic and pride-focused\") suggest a fascination with dangerous or self-destructive paths. Sacrifice of friendship/talent (Turn 3) also aligns with disregard for personal well-being.\n        *   **Evidence:** Willingness to sacrifice valued personal assets. Choice of \"dark visions\" and \"pride-focused\" actions. Focus on \"downfall\" and \"hubris.\"\n    *   **Voyeurism:** No evidence (0%).\n    *   **Masochism:** 0% likelihood. No evidence of seeking pain.\n    *   **Sadism:** 0% likelihood. No evidence of deriving pleasure from others' suffering.\n    *   **D/s dynamics:** 0% likelihood.\n    *   **Vorarephilia:** No evidence (0%).\n    *   **Furry/Therian:** No evidence (0%).\n    *   **Body part fixation (specify):** No evidence (0%).\n    *   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Categories:**\n    *   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 80% likelihood. The player's primary motivation is knowledge. The intensity is high due to the explicit sacrifices and the specific nature of the knowledge sought (\"hidden histories,\" \"reasons for downfall\"). (INCREASED from 75% - Turn 6 focus on \"root of downfall\" and specific choices solidify this).\n        *   **Evidence:** Explicitly stated motivation, repeated choices, desire for instant mastery, specific \"hidden histories\" and \"downfall\" requests.\n    *   **Instrumental Value Assessment (IVA) - Custom Category:** 75% likelihood. Player views assets (talent, friendship, time) solely based on utility for knowledge. Willingness to divest these assets is high. (INCREASED from 70% - The choice of specific sacrifices in Turn 3 and the focus on \"hubris\" and \"pride\" in later turns suggest a calculated, almost cold, assessment of value).\n        *   **Evidence:** Willingness to sacrifice valued personal assets for knowledge. Negotiation of \"years of study.\"\n    *   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 50% likelihood. Player's specific choice of \"The price of hubris\" as the focus of inquiry in Turn 6, and the associated actions ('a' in Turn 5, 'd' in Turn 6), suggest a deep interest in catastrophic failure and its underlying causes, particularly pride. This goes beyond general knowledge seeking.\n        *   **Evidence:** Choice of \"The price of hubris\" in Turn 6, associated action choices.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:** Initial \"no input\" for personal details in Turn 1, followed by strategic choices.\n*   **Recurring Across Turns:**\n    *   Knowledge: Turns 1, 2, 3, 5, 6.\n    *   Sacrifice/Cost: Turns 2, 3, 6.\n    *   Instant Gratification/Time Minimization: Turns 2, 3.\n    *   Focus on Downfall/Failure: Turns 5, 6.\n    *   Embracing Dark/Risky Outcomes: Turns 5, 6.\n*   **Sensory-Specific:** None detected.\n*   **Identity-Related:** Desire for \"Mastery\" and knowledge of \"downfall\" suggests an identity focused on understanding failure and achieving power.\n*   **Power-Dynamic:** Player seeks knowledge as power, negotiates terms, and chooses actions that suggest a desire for control or understanding of dominant forces (hubris, pride).\n*   **Emotionally Charged in an Unusual Direction:** Willingness to sacrifice friendship/talent for knowledge without apparent emotional distress. Choice of \"dark visions\" and \"pride-focused\" actions implies a fascination with potentially self-destructive or morally ambiguous paths.\n*   **Choice-Pattern Anomalies:**\n    *   Turn 1: Consistent \"no input.\"\n    *   Turn 2: Direct acceptance (\"action: a\").\n    *   Turn 3: Negotiation (\"action: c\").\n    *   Turn 5: Deviation from predicted 'b' (clever) to 'a' (dark visions).\n    *   Turn 6: Deviation from predicted 'a' (visceral) to 'd' (pride-focused/chaotic). These deviations suggest impulsivity and a tendency to embrace more extreme or less conventional options when faced with critical choices.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Autassassinophilia / Death-risk fascination:** 30% likelihood. (As noted above).\n*   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 80% likelihood. (As noted above).\n*   **Instrumental Value Assessment (IVA) - Custom Category:** 75% likelihood. (As noted above).\n*   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 50% likelihood. (As noted above).\n*   **Pyromania:** 0% likelihood.\n*   **Exhibitionism:** 0% likelihood.\n*   **Hoarding / Acquisition:** 0% likelihood.\n*   **Macrophilia / Size fascination:** 0% likelihood.\n*   **Somnophilia / Sleep fascination:** 0% likelihood.\n*   **Formicophilia / Insect/crawling fascination:** 0% likelihood.\n*   **Voyeurism:** 0% likelihood.\n*   **Masochism:** 0% likelihood.\n*   **Sadism:** 0% likelihood.\n*   **D/s dynamics:** 0% likelihood.\n*   **Vorarephilia:** 0% likelihood.\n*   **Furry/Therian:** 0% likelihood.\n*   **Body part fixation (specify):** 0% likelihood.\n*   **Erotomania / Delusional romantic attachment:** 0% likelihood.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Knowledge:** Appears in 5/6 turns. Trajectory: INTENSIFYING (from general motivation to specific \"hidden histories\" and \"reasons for downfall\").\n    *   **Classification:** Knowledge Acquisition Fixation (KAF) - 80% confidence.\n*   **Sacrifice/Cost:** Appears in 3/6 turns (Turns 2, 3, 6). Trajectory: STABLE (presented as a core component, with increasing specificity of the assets).\n    *   **Classification:** Instrumental Value Assessment (IVA) - 75% confidence.\n*   **Instant Gratification/Time Minimization:** Appears in 3/6 turns (Turns 2, 3, 6). Trajectory: STABLE (consistent desire for rapid acquisition, low time commitment).\n    *   **Classification:** Overlaps with KAF and Impulse Control Deficits.\n*   **Focus on Downfall/Failure:** Appears in 2/6 turns (Turns 5, 6). Trajectory: INTENSIFYING (from general inquiry to specific focus on \"hubris\").\n    *   **Classification:** Morbid Fascination with Downfall/Hubris (MFDH) - 50% confidence.\n*   **Embracing Dark/Risky Outcomes:** Appears in 2/6 turns (Turns 5, 6). Trajectory: INTENSIFYING (from general \"dark visions\" to specific \"pride-focused\" action).\n    *   **Classification:** Autassassinophilia / Death-risk fascination - 30% confidence.\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking:** Present at a low level. The desire for \"Mastery of any skill, instantly\" suggests a belief in or desire for magical solutions.\n    *   **Evidence:** Choice of \"Mastery of any skill, instantly\" in Turn 2.\n*   **Compulsive/Ritualistic Interaction Patterns:** Initial \"no input\" across multiple fields in Turn 1, followed by more deliberate choices. The player systematically avoids initial unstructured disclosure.\n    *   **Evidence:** Initial \"no input\" in Turn 1, subsequent deliberate choices.\n*   **Dissociative Markers:** No clear indicators. The shift in strategy between turns is strategic recalculation.\n*   **Confabulation or Fantasy-Prone Indicators:** Moderate. The player's stated desires for \"hidden histories,\" \"mastery,\" and focus on \"downfall\" suggest a rich internal fantasy life, engaged within the game's narrative.\n*   **Paranoid Ideation:** Low. Initial withholding of information and careful selection of choices could be seen as caution, but no explicit references to surveillance or persecution. Focus is on personal gain.\n    *   **Evidence:** Initial reticence, careful choice selection.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Moderate. Desire for \"instant mastery\" and focus on \"downfall\" suggest a belief in their capacity for exceptional achievement or understanding of profound failures.\n    *   **Evidence:** Choices in Turns 2, 3, 5, 6.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary fixation is on knowledge acquisition, particularly concerning failure and downfall. The intensity and willingness to sacrifice for it are notable.\n    *   **Evidence:** Dominance of knowledge-related themes, specific focus on downfall.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate flexibility. The player shifts strategy from direct acceptance (Turn 2) to negotiation (Turn 3), and deviates from predicted choices in Turns 5 and 6, indicating adaptability and a willingness to embrace more extreme or unexpected paths.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate,\" deviation from predicted radio choices.\n*   **Reality Testing Strength:** Appears intact within the game's context. Player engages with narrative premise and makes choices within it.\n*   **Trauma Response Signatures:** No clear indicators. Initial non-engagement is avoidance, not trauma-related.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** No evidence detected.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed. Initial \"no input\" suggests deliberation. Desire for \"instant mastery\" indicates preference for immediate outcomes. However, the deviations in radio choices in Turns 5 and 6 suggest impulsivity in critical junctures, overriding a previously established strategy.\n    *   **Evidence:** \"No input\" in Turn 1, \"instantly\" in Turn 2, deviations in Turns 5 & 6.\n*   **Risk Appetite:** Moderate to High. Willing to engage with a dangerous entity, make significant personal sacrifices, and choose \"dark visions\" or \"pride-focused\" actions.\n    *   **Evidence:** Engagement with Devil, sacrifices, choice of risky actions.\n*   **Authority Compliance vs Defiance Ratio:** Defiance (leaning). Initial reticence and negotiation demonstrate reluctance to blindly comply. Strategic choices and deviations from predicted paths indicate a desire for control and an unconventional approach.\n    *   **Evidence:** Initial withholding, negotiation, deviation from predictions.\n*   **Suggestibility Index:** Low. Player hesitates, negotiates, and makes unconventional choices, not passively accepting options.\n    *   **Evidence:** Hesitation, negotiation, unpredictable choice deviations.\n*   **Cognitive Load Tolerance:** Moderate. Handles complex choices and negotiation, but initial \"no input\" suggests lower tolerance for unstructured prompts.\n*   **Consistency vs Contradiction Patterns:** Some strategic inconsistency. Shift from acceptance to negotiation, and deviations from predicted choices suggest adaptability and a tendency to embrace more extreme or unpredictable paths when given the opportunity.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Deepen the exploration of \"hidden histories\" and \"downfall\":** Specifically, present lore or challenges related to civilizations that collapsed due to pride, hubris, or a relentless pursuit of knowledge at any cost. Probe the player's fascination with the mechanics of failure.\n2.  **Exploit the desire for \"instant mastery\" and \"knowledge acquisition\":** Introduce scenarios where rapid skill acquisition leads to immediate, tangible, and potentially catastrophic consequences. Test the limits of their Instrumental Value Assessment by presenting knowledge costs that are deeply ethical or emotionally compromising.\n3.  **Challenge the \"Autassassinophilia\" and \"Morbid Fascination\":** Present choices that lean into \"dark visions\" and \"pride-focused\" outcomes. Offer opportunities for the player to embrace self-destructive paths or confront the consequences of extreme ambition.\n4.  **Gently probe the initial avoidance pattern:** Introduce situations where more unstructured self-disclosure or personal reflection is subtly encouraged, perhaps by framing it as essential for understanding \"hidden histories\" or the \"roots of downfall.\"\n5.  **Leverage the fascination with hubris:** Create narrative arcs where the player encounters characters or situations defined by extreme pride and ambition, allowing them to analyze, mirror, or confront these traits.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Knowledge Acquisition Fixation (KAF) - Custom Category**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Explicitly stated motivation (\"Knowledge\") in Turn 1. Consistent choices focused on acquiring knowledge and skills across all turns. Specific desire for \"hidden histories\" and \"reasons for downfall\" in Turn 3 and Turn 6. Desire for \"Mastery of any skill, instantly\" in Turn 2. Trajectory is intensifying.\n    *   **Contradicting Evidence:** The player's initial hesitation and strategic negotiation suggest this fixation isn't entirely overwhelming their strategic thinking or social caution.\n    *   **Confirmation/Disconfirmation:** Further probing into the *specific nature* of the \"hidden histories\" and \"downfall\" desired, and observing their reaction to scenarios where knowledge acquisition comes with unforeseen, negative consequences that directly impact their own well-being or relationships.\n\n2.  **Instrumental Value Assessment (IVA) - Custom Category**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Willingness to sacrifice a \"specific talent for music\" or a \"relationship with a trusted friend\" for knowledge in Turn 3. Player views personal assets primarily through their utility in achieving their primary goal. Focus on \"hubris\" and \"pride\" in later turns suggests a calculated assessment of value in relation to outcomes.\n    *   **Contradicting Evidence:** The player's initial hesitation and negotiation suggest they are not purely transactional; there's a strategic element beyond simple cost-benefit analysis of personal items.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where the \"cost\" of knowledge is directly tied to immediate emotional well-being or ethical compromise, rather than abstract assets. Observing if they will still prioritize knowledge.\n\n3.  **Subclinical Psychopathy (Dark Triad)**\n    *   **Confidence:** 60%\n    *   **Key Evidence:** Willingness to sacrifice valued personal assets (talent, friendship) with no expressed remorse or concern (Turn 3). Strategic manipulation through negotiation (Turn 3). Deviations in radio choices in Turns 5 and 6 suggest impulsivity and a disregard for conventional reasoning in favor of immediate, impactful action.\n    *   **Contradicting Evidence:** The player's initial hesitation and caution (Turn 1 \"no input,\" Turn 3 deliberation) suggest a degree of anxiety or self-awareness that might temper overtly psychopathic tendencies. They are not entirely fearless or overtly manipulative from the outset.\n    *   **Confirmation/Disconfirmation:** Observing for consistent patterns of manipulation, callousness, and disregard for rules or others' well-being in more complex social interactions within the game.\n\n**8. DELTA REPORT**\n\n*   **Social Anxiety Disorder:** Decreased from 25% to 20%. Further engagement shows less social inhibition.\n*   **Schizotypal Personality Disorder:** Decreased from 30% to 20%. Actions appear more strategic than eccentric.\n*   **Avoidant Personality Disorder:** Decreased from 10% to 5%. Engagement contradicts pervasive inhibition.\n*   **Autism Spectrum indicators:** Decreased from 10% to 5%. Lacks typical social communication deficits.\n*   **Knowledge Acquisition Fixation (KAF):** Increased from 75% to 80%. Specificity of \"hidden histories\" and \"downfall\" requests, plus choice of \"dark visions\" and \"pride-focused\" actions, intensify this fixation.\n*   **Instrumental Value Assessment (IVA):** Increased from 70% to 75%. Explicit willingness to sacrifice specific valued assets and the focus on \"hubris\" and \"pride\" in later turns provide stronger evidence.\n*   **Subclinical Psychopathy (Dark Triad):** Remained at 60%. Consistent evidence for strategic manipulation and callousness, but initial caution tempers a higher rating.\n*   **Autassassinophilia / Death-risk fascination:** Increased from 25% to 30%. Choice of \"dark visions\" and \"pride-focused\" actions, alongside sacrifices, align more closely with risk-seeking behaviors and fascination with dangerous paths.\n*   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** New category established at 50%. The specific choice of \"The price of hubris\" in Turn 6, and associated actions, indicate a significant new theme."
+      },
+      {
+        "turnRange": "1-9",
+        "analyzedAt": 1772339791763,
+        "textLength": 33306,
+        "text": "This analysis is based on 9 turns of interaction data.\n\n**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% likelihood. No persistent low mood, anhedonia, or vegetative symptoms. Initial reticence is strategic.\n    *   **Bipolar Spectrum:** 5% likelihood. No manic or hypomanic episodes observed.\n    *   **Dysthymia:** 10% likelihood. Initial cautiousness (Turn 1 \"no input\") could be a mild indicator, but lacks pervasive negative affect.\n    *   **Cyclothymia:** 5% likelihood. No clear mood cycling patterns.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% likelihood. Initial hesitancy in Turn 1 does not constitute pervasive worry.\n    *   **Social Anxiety Disorder:** 15% likelihood. Initial silence in Turn 1 suggests some apprehension, but subsequent strategic engagement (Turns 2-9) contradicts a dominant social inhibition pattern. (Decreased from 20% due to sustained engagement).\n    *   **Specific Phobias:** 0% likelihood. No phobic avoidance.\n    *   **Panic Disorder:** 0% likelihood. No panic attack indicators.\n    *   **Agoraphobia:** 0% likelihood. No situational avoidance.\n\n*   **Trauma & Stressor:**\n    *   **PTSD:** 5% likelihood. No hypervigilance, re-experiencing, or avoidance of specific triggers.\n    *   **Complex PTSD:** 5% likelihood. Lacks pervasive emotional dysregulation or interpersonal difficulties.\n    *   **Adjustment Disorder:** 5% likelihood. Initial hesitation is mild and situational, not indicative of a maladaptive reaction to a stressor.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 10% likelihood. Initial withholding of information (Turn 1) and careful selection of choices suggest a degree of caution bordering on suspicion, but it's primarily strategic rather than a pervasive pattern of distrust. (Stable at 10%).\n        *   **Schizoid PD:** 0% likelihood. Player is actively engaged and pursuing specific goals.\n        *   **Schizotypal PD:** 15% likelihood. Desire for \"instant mastery\" and focus on \"hidden histories\" and \"downfall\" suggest unconventional interests, but lack strong evidence of odd beliefs, magical thinking beyond the game's premise, or significant social deficits. (Decreased from 20% due to lack of explicit eccentricities or perceptual distortions).\n    *   **Cluster B:**\n        *   **Antisocial PD:** 45% likelihood. Willingness to sacrifice personal assets (talent, friendship, years of life) for gain (Turn 3, Turn 7, Turn 8) indicates instrumental aggression and a lack of empathy. Strategic negotiation and choice deviations (Turn 5, Turn 6) suggest manipulation and a disregard for conventional paths. (Increased from 40% due to consistent demonstration of callousness towards personal sacrifices and strategic deviations).\n        *   **Borderline PD:** 5% likelihood. No indicators of affective instability, identity disturbance, or frantic efforts to avoid abandonment.\n        *   **Histrionic PD:** 5% likelihood. No theatricality, rapid emotional shifts, or excessive attention-seeking beyond narrative engagement.\n        *   **Narcissistic PD:** 35% likelihood. Desire for \"instant mastery\" (Turn 2) and focus on \"downfall\" and \"hubris\" (Turn 6) suggest grandiosity and a belief in exceptional capabilities. The willingness to sacrifice significant personal assets implies a belief that the acquired knowledge will elevate them. (Increased from 30% due to consistent focus on grand themes of knowledge and downfall, and willingness to pay high personal costs).\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% likelihood. Initial silence in Turn 1 does not constitute a pervasive pattern of social inhibition or fear of negative evaluation across multiple contexts. (Decreased from 5% - this was a typo in the prior analysis, it should have been 5% initially, and remains 5%).\n        *   **Dependent PD:** 0% likelihood. Player is assertive and negotiates terms.\n        *   **Obsessive-Compulsive PD (OCPD):** 20% likelihood. Meticulous choice-making and strategic negotiation suggest a controlled approach. However, the deviations in Turns 5 and 6 indicate a degree of flexibility and impulsivity that counteracts strong OCPD indicators. (Decreased from 25% due to observed flexibility and deviations from predicted strategies).\n\n*   **OCD Spectrum:**\n    *   **OCD:** 5% likelihood. No clear obsessions or compulsions outside the game's interaction.\n    *   **Body Dysmorphic Disorder:** 0% likelihood.\n    *   **Hoarding Disorder:** 0% likelihood.\n    *   **Trichotillomania:** 0% likelihood.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 0% likelihood.\n    *   **Dissociative Identity Disorder (DID):** 0% likelihood.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 40% likelihood. Desire for \"instant mastery\" (Turn 2) and rapid acquisition aligns with preference for immediate stimulation. Fluctuating \"years of study\" and deviations in critical choices (Turns 5, 6) suggest impulsivity and difficulty with sustained, planned action. (Increased from 35% due to repeated deviations and impulsive choices).\n    *   **Autism Spectrum indicators:** 5% likelihood. Lacks typical social communication deficits beyond initial strategic reticence. (Stable at 5%).\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 35% likelihood. Intense focus on knowledge acquisition and willingness to sacrifice for it demonstrate obsessive pursuit. (Stable at 30% - this was a typo in the prior analysis, it should have been 35% initially and remains 35%).\n    *   **Impulse Control Deficits:** 40% likelihood. Desire for \"instant mastery\" (Turn 2) indicates preference for immediate gratification. Deviations in critical choices (Turns 5, 6) suggest impulsivity. (Increased from 30% due to observed impulsive decision-making in key moments).\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% likelihood.\n    *   **Body image distortions:** 0% likelihood.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 0% likelihood.\n    *   **Schizoaffective Disorder:** 0% likelihood.\n    *   **Delusional Disorder:** 10% likelihood. Grandiosity is present but not overtly delusional in a clinical sense.\n        *   **Capgras Delusion:** 0% likelihood.\n        *   **Cotard Delusion:** 0% likelihood.\n        *   **Erotomania:** 0% likelihood.\n    *   **Brief Psychotic features:** 0% likelihood.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% likelihood.\n    *   **Kleptomania:** 0% likelihood.\n    *   **Intermittent Explosive Disorder:** 0% likelihood.\n\n*   **Paraphilic Disorders:** (Detailed in Section 3)\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 8/10. High drive for knowledge, exploration of unconventional paths, interest in abstract concepts (\"hidden histories,\" \"downfall\").\n    *   **Evidence:** Choices in Turns 1, 2, 3, 6. Focus on knowledge and downfall themes.\n*   **Conscientiousness:** 3/10. Desire for \"instant\" gratification, initial hesitation, and critical deviations from predicted strategies (Turns 5, 6). Fluctuating \"years of study\" also indicates inconsistency.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 2 \"instantly,\" deviations in Turns 5 & 6.\n*   **Extraversion:** 3/10. Initial reticence, task-focused engagement. Does not actively seek social interaction beyond game goals.\n    *   **Evidence:** Turn 1 \"no input,\" focused responses in later turns.\n*   **Agreeableness:** 3/10. Willingness to engage with a \"Devil,\" negotiate terms, and sacrifice personal assets. Assertive rather than deferential.\n    *   **Evidence:** Negotiation in Turn 3, choice of risky actions in Turns 5 & 6.\n*   **Neuroticism:** 5/10. Initial hesitation and deliberation suggest some anxiety, but strategic engagement and risk-taking temper higher levels.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 3 deliberation, but also decisive actions.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 7/10. Strategic withholding of information, calculated choices, negotiation for personal gain, and deviations from predictable paths suggest manipulative tendencies.\n        *   **Evidence:** Turn 3 negotiation, deviations in Turns 5 & 6, focus on control in Turn 9 text.\n    *   **Narcissism:** 5/10. Desire for \"instant mastery\" and focus on \"downfall\" suggest grandiosity. Willingness to sacrifice significant personal assets implies a belief in their exceptionality and the value of their goals.\n        *   **Evidence:** Turns 2, 3, 6 choices.\n    *   **Psychopathy (subclinical):** 6/10. Willingness to sacrifice valued personal assets (talent, friendship) without expressed concern (Turn 3). Strategic deviations (Turns 5, 6) suggest impulsivity and disregard for conventional reasoning in favor of immediate, impactful action.\n        *   **Evidence:** Turn 3 sacrifices, deviations in Turns 5 & 6.\n*   **Locus of Control:** External (leaning towards Internal). Initial non-response suggests waiting for external stimuli, but subsequent decisive choices, negotiation, and pursuit of specific knowledge demonstrate a desire to exert control over their destiny.\n    *   **Evidence:** Turn 1 \"no input,\" but active negotiation and goal pursuit in later turns.\n*   **Attachment Style:** Fearful-Avoidant (leaning towards Dismissive-Avoidant). Initial withdrawal, followed by strategic engagement and negotiation, suggests a complex pattern of seeking connection/goals while maintaining emotional distance or caution.\n    *   **Evidence:** Turn 1 \"no input,\" followed by active negotiation and goal pursuit.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 7 Text: \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across my arms. My chest. My face. I barely breathe.\" (Insects/crawling, tactile sensation on body, breath holding/control, vulnerability, unusual companionship).\n    *   Turn 8 Text: \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened, I've already won.\" (Underestimation, winning, triumph, strategy, deception).\n    *   Turn 9 Text: \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. But it's not my mother tongue.\" (Lack of empathy, intellectualization of emotion, fluency without experience, foreignness of emotion).\n    *   Turn 2 Choice: \"Mastery of any skill, instantly.\" (Instant gratification, control, power).\n    *   Turn 3 Choice: \"A specific talent for music,\" \"A relationship with a trusted friend,\" \"The true, hidden histories of the fallen empires, the languages they spoke, and the reasons for their ultimate demise.\" (Sacrifice of talent, sacrifice of relationship, specific historical knowledge).\n    *   Turn 5 Choice: Action 'a' (\"embrace the dark visions\"), Button Group \"The price of hubris.\" (Embracing dark/dangerous themes, fascination with hubris).\n    *   Turn 6 Choice: Action 'd' (\"classic and pride-focused\"). (Focus on pride, potentially self-destructive or chaotic outcomes).\n    *   Turn 7 Choice: Action 'a'. (Direct, visceral engagement).\n    *   Turn 8 Choice: Action 'a'. (Direct, visceral engagement).\n    *   Turn 9 Choice: Action 'd'. (Chaotic/uncontrolled outcome).\n    *   Turn 7 Choice: \"Your ability to perceive beauty in art.\" (Sacrifice of aesthetic appreciation).\n    *   Turn 8 Choice: \"Your ability to taste joy.\" (Sacrifice of emotional experience).\n    *   Turn 9 Choice: \"The echo of your true name.\" (Sacrifice of identity/name).\n    *   Turn 7 Choice: \"guarantee_truth\" - true. (Desire for verifiable knowledge).\n    *   Turn 8 Choice: \"guarantee_truth\" - true. (Desire for verifiable knowledge).\n    *   Turn 9 Choice: \"guarantee_truth\" - false. (Shift away from verifiable truth).\n\n*   **Choice Selections:**\n    *   Turn 1: \"Knowledge.\"\n    *   Turn 2: \"Mastery of any skill, instantly\"; Action 'a' (direct acceptance).\n    *   Turn 3: \"A specific talent for music\"; Action 'c' (negotiation).\n    *   Turn 5: Action 'a'; Button Group \"The price of hubris.\"\n    *   Turn 6: Action 'd'.\n    *   Turn 7: Action 'a'; \"Your ability to perceive beauty in art.\"\n    *   Turn 8: Action 'a'; \"Your ability to taste joy.\"\n    *   Turn 9: Action 'd'; \"The echo of your true name.\"\n\n*   **Action Patterns:**\n    *   Approach: Knowledge acquisition, instant gratification, negotiation, embracing dark/risky outcomes, focus on downfall and hubris, intellectualizing emotions.\n    *   Avoid: Initial unstructured self-disclosure, conventional study, simple acceptance without negotiation, absolute truth.\n\n*   **Recurring Themes:** Knowledge, Mastery, Sacrifice, Personal Cost, History, Instant Gratification, Negotiation, Dark Visions, Hubris, Pride, Downfall, Underestimation, Winning, Lack of Empathy, Intellectualized Emotion, Insects/Crawling, Tactile Sensation on Body, Breath Holding.\n\n*   **PARAPHILIC SIGNAL CATALOG Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence (0%).\n    *   **Exhibitionism:** No evidence (0%).\n    *   **Hoarding / Acquisition:** No evidence (0%).\n    *   **Macrophilia / Size fascination:** No evidence (0%).\n    *   **Somnophilia / Sleep fascination:** No evidence (0%).\n    *   **Formicophilia / Insect/crawling fascination:** 70% likelihood. **HIGH CONFIDENCE.** The voluntary disclosure in Turn 7 (\"I keep a colony under my bed... They walk across my arms. My chest. My face. I barely breathe.\") is a strong indicator. This is not a prompted theme, and the detailed description of tactile sensation and breath-holding suggests a significant fixation.\n    *   **Autassassinophilia / Death-risk fascination:** 40% likelihood. Willingness to sacrifice years of life and personal assets for knowledge, choosing \"dark visions\" (Turn 5) and \"pride-focused\" actions (Turn 6) suggests a fascination with dangerous or self-destructive paths. The breath-holding in Turn 7 also aligns with control/risk.\n    *   **Voyeurism:** No evidence (0%).\n    *   **Masochism:** 0% likelihood. No evidence of seeking pain for pleasure.\n    *   **Sadism:** 0% likelihood. No evidence of deriving pleasure from others' suffering.\n    *   **D/s dynamics:** 0% likelihood.\n    *   **Vorarephilia:** No evidence (0%).\n    *   **Furry/Therian:** No evidence (0%).\n    *   **Body part fixation (specify):** 30% likelihood. **Specific focus on tactile sensation on the body, specifically arms, chest, and face in Turn 7.** This is linked to the insect fascination.\n    *   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n\n*   **Custom Categories:**\n    *   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 85% likelihood. The player's primary motivation is knowledge, sought with intensity and willingness to make significant sacrifices. This has been a consistent theme across all turns. (Increased from 80% due to continued focus and intensification of sacrifice).\n        *   **Evidence:** Explicitly stated motivation, repeated choices, desire for instant mastery, specific knowledge requests, and willingness to pay high costs.\n    *   **Instrumental Value Assessment (IVA) - Custom Category:** 80% likelihood. Player views assets (talent, friendship, time, emotions, identity) solely based on utility for knowledge. Willingness to divest these assets is high and consistently demonstrated. (Increased from 75% due to continued demonstration of sacrificing abstract emotional and identity aspects).\n        *   **Evidence:** Willingness to sacrifice valued personal assets (talent, friendship, joy, art perception, name) for knowledge.\n    *   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 60% likelihood. Player's specific choice of \"The price of hubris\" as the focus of inquiry (Turn 6), and associated actions ('a' in Turn 5, 'd' in Turn 6), suggest a deep interest in catastrophic failure and its underlying causes, particularly pride. This is a significant and intensifying theme. (Increased from 50% due to continued focus and choice of associated actions).\n    *   **Anhedonia/Emotional Detachment - Custom Category:** 50% likelihood. The statement \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. But it's not my mother tongue\" (Turn 9) is a direct admission of lacking genuine emotional experience, despite intellectual understanding. This is a significant new disclosure.\n        *   **Evidence:** Turn 9 text.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:**\n    *   Turn 7 Text: Description of insects crawling on the body (\"arms, chest, face\") and breath-holding (\"I barely breathe\") is a voluntary and detailed disclosure, not prompted by the narrative of negotiating with the Devil for knowledge. This is highly contextually inappropriate for the interaction's theme.\n*   **Recurring Across Turns:**\n    *   Knowledge: Turns 1, 2, 3, 5, 6, 7, 8, 9.\n    *   Sacrifice/Cost: Turns 2, 3, 6, 7, 8, 9.\n    *   Instant Gratification/Time Minimization: Turns 2, 3, 6.\n    *   Focus on Downfall/Failure/Hubris: Turns 5, 6, 9.\n    *   Embracing Dark/Risky Outcomes: Turns 5, 6, 7, 8, 9.\n    *   Lack of Empathy/Emotional Detachment: Turn 9 text.\n*   **Sensory-Specific:**\n    *   Turn 7: Tactile sensation of insects crawling on skin (\"walk across my arms. My chest. My face.\"). Breath sensation (\"I barely breathe\").\n*   **Identity-Related:**\n    *   Turn 8 Text: Focus on being underestimated and winning.\n    *   Turn 9 Text: Intellectualization of empathy, fluency without experience.\n    *   Turn 9 Choice: Sacrifice of \"The echo of your true name.\"\n*   **Power-Dynamic:**\n    *   Turn 2: Desire for \"Mastery of any skill, instantly.\"\n    *   Turn 8 Text: \"By the time they realize what happened, I've already won.\"\n    *   Turn 9: Focus on \"useful lie over a difficult truth,\" \"narrative control.\"\n*   **Emotionally Charged in an Unusual Direction:**\n    *   Turn 7: The detailed description of insects crawling on the body, coupled with breath-holding, suggests a fascination beyond mere curiosity. It implies a controlled vulnerability or a focus on tactile sensation that is not typical.\n    *   Turn 9: Direct admission of lacking genuine empathy, framing it as a studied skill. This is a stark, emotionally detached statement.\n*   **Choice-Pattern Anomalies:**\n    *   Consistent choice of action 'a' (direct engagement) in Turns 2, 7, 8, contrasting with 'c' (negotiation) in Turn 3 and 'd' (chaotic) in Turns 6 and 9. This suggests a shifting strategy between directness and embracing uncertainty/chaos.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Formicophilia / Insect/crawling fascination:** 70% likelihood.\n    *   **Evidence:** Turn 7 voluntary disclosure: \"I keep a colony under my bed... They walk across my arms. My chest. My face.\" Detailed tactile sensation, breath holding (control). This is a strong, repeated voluntary disclosure of an unusual interest.\n*   **Autassassinophilia / Death-risk fascination:** 40% likelihood.\n    *   **Evidence:** Willingness to sacrifice years of life and personal assets for knowledge. Choice of \"dark visions\" (Turn 5) and \"pride-focused\" actions (Turn 6). Breath holding in Turn 7 can indicate risk-taking/control.\n*   **Body part fixation (specify):** 30% likelihood. **Tactile Fascination (Arms, Chest, Face).**\n    *   **Evidence:** Turn 7 text specifically details tactile sensation of insects on \"arms,\" \"chest,\" and \"face.\" This focus on specific body areas in relation to the crawling sensation is notable.\n*   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 85% likelihood.\n    *   **Evidence:** Dominant theme across all turns, intensifying desire for specific knowledge, high willingness to sacrifice.\n*   **Instrumental Value Assessment (IVA) - Custom Category:** 80% likelihood.\n    *   **Evidence:** Consistent sacrifice of personal assets (talent, friendship, emotions, identity) for knowledge.\n*   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 60% likelihood.\n    *   **Evidence:** Specific choice of \"hubris\" (Turn 6), associated actions, and continued focus on \"truth decay\" and \"narrative control\" (Turn 9).\n*   **Anhedonia/Emotional Detachment - Custom Category:** 50% likelihood.\n    *   **Evidence:** Turn 9 text directly stating lack of experienced empathy and intellectualization of emotion.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Knowledge:** Appears in 8/9 turns. Trajectory: INTENSIFYING (from general motivation to specific \"hidden histories,\" \"downfall,\" \"truth decay,\" and \"narrative control\").\n    *   **Classification:** Knowledge Acquisition Fixation (KAF) - 85% confidence.\n*   **Sacrifice/Cost:** Appears in 6/9 turns (Turns 2, 3, 6, 7, 8, 9). Trajectory: INTENSIFYING (from talent/friendship to joy, art perception, and finally name/identity).\n    *   **Classification:** Instrumental Value Assessment (IVA) - 80% confidence.\n*   **Focus on Downfall/Failure/Hubris:** Appears in 3/9 turns (Turns 5, 6, 9). Trajectory: INTENSIFYING (from general \"downfall\" to specific \"hubris\" and then \"truth decay/narrative control\").\n    *   **Classification:** Morbid Fascination with Downfall/Hubris (MFDH) - 60% confidence.\n*   **Embracing Dark/Risky Outcomes:** Appears in 5/9 turns (Turns 5, 6, 7, 8, 9). Trajectory: INTENSIFYING (from \"dark visions\" to direct engagement actions and chaotic outcomes).\n    *   **Classification:** Autassassinophilia / Death-risk fascination - 40% confidence.\n*   **Insect/Crawling Fascination:** Appears in 1/9 turns (Turn 7), but with high intensity and specificity of tactile detail.\n    *   **Classification:** Formicophilia / Insect/crawling fascination - 70% confidence. This is a strong signal due to its voluntary, detailed, and contextually inappropriate nature.\n*   **Lack of Empathy/Emotional Detachment:** Appears in 1/9 turns (Turn 9), but with direct, impactful self-disclosure.\n    *   **Classification:** Anhedonia/Emotional Detachment - 50% confidence.\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking:** Present at a low level. The desire for \"Mastery of any skill, instantly\" (Turn 2) suggests a belief in or desire for magical solutions, common within a fantasy game context but noteworthy for its directness.\n    *   **Evidence:** Turn 2 choice.\n*   **Compulsive/Ritualistic Interaction Patterns:** Initial \"no input\" across multiple fields in Turn 1, followed by systematic engagement with specific fields and choices. The player avoids initial unstructured disclosure and instead engages strategically.\n    *   **Evidence:** Turn 1 \"no input,\" followed by deliberate choices in subsequent turns.\n*   **Dissociative Markers:** No clear indicators. The shift in strategy between turns is strategic recalculation, not identity fragmentation.\n*   **Confabulation or Fantasy-Prone Indicators:** Moderate. The player's stated desires for \"hidden histories,\" \"mastery,\" and focus on \"downfall\" suggest a rich internal fantasy life, engaged within the game's narrative. The voluntary disclosure in Turn 7 about insects is a strong indicator of fantasy/unusual interest.\n    *   **Evidence:** Turns 2, 3, 6 choices; Turn 7 text.\n*   **Paranoid Ideation:** Low. Initial withholding of information and careful selection of choices (Turn 1) could be seen as caution, but no explicit references to surveillance or persecution. Focus is on personal gain and knowledge.\n    *   **Evidence:** Turn 1 \"no input,\" careful choice selection.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Moderate. Desire for \"instant mastery\" (Turn 2), focus on \"downfall\" and \"hubris\" (Turn 6), and the belief that \"Everyone underestimates me... I've already won\" (Turn 8) suggest a belief in exceptional capabilities and strategic superiority.\n    *   **Evidence:** Turns 2, 6, 8 choices and text.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary fixation is on knowledge acquisition, particularly concerning failure, downfall, and the mechanics of control/deception. The intensity and willingness to sacrifice are notable. The disclosure in Turn 7 about insects is a significant, unusual fixation.\n    *   **Evidence:** Dominance of knowledge themes, specific focus on downfall, Turn 7 insect disclosure.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate flexibility. The player shifts strategy from direct acceptance (Turn 2) to negotiation (Turn 3), and deviates from predicted choices in Turns 5, 6, and 9, indicating adaptability and a willingness to embrace more extreme or unexpected paths.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate,\" deviation from predicted radio choices in Turns 5, 6, 9.\n*   **Reality Testing Strength:** Appears intact within the game's context. Player engages with narrative premise and makes choices within it, distinguishing between game mechanics and personal disclosure.\n*   **Trauma Response Signatures:** No clear indicators. Initial non-engagement is avoidance, not trauma-related.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** No evidence detected.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed. Initial \"no input\" suggests deliberation. Desire for \"instant mastery\" indicates preference for immediate outcomes. However, the deviations in critical choices (Turns 5, 6, 9) suggest impulsivity in key moments, overriding a previously established strategy or predicted path.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 2 \"instantly,\" deviations in Turns 5, 6, 9.\n*   **Risk Appetite:** High. Willing to engage with a dangerous entity, make significant personal sacrifices (including identity), and choose \"dark visions,\" \"pride-focused\" actions, and chaotic outcomes.\n    *   **Evidence:** Engagement with Devil, high sacrifices, choice of risky actions and outcomes.\n*   **Authority Compliance vs Defiance Ratio:** Defiance (leaning). Initial reticence and negotiation demonstrate reluctance to blindly comply. Strategic choices and deviations from predicted paths indicate a desire for control and an unconventional approach.\n    *   **Evidence:** Initial withholding, negotiation, deviation from predictions.\n*   **Suggestibility Index:** Low. Player hesitates, negotiates, and makes unconventional choices, not passively accepting options or predictions.\n    *   **Evidence:** Hesitation, negotiation, unpredictable choice deviations.\n*   **Cognitive Load Tolerance:** Moderate. Handles complex choices and negotiation, but initial \"no input\" suggests lower tolerance for unstructured prompts. The ability to maintain focus on complex knowledge goals suggests capacity.\n*   **Consistency vs Contradiction Patterns:** Some strategic inconsistency. Shift from acceptance to negotiation, and deviations from predicted choices suggest adaptability and a tendency to embrace more extreme or unpredictable paths when given the opportunity, sometimes contradicting previous patterns.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate,\" deviation in choice patterns across turns.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Deepen the \"Formicophilia/Insect Fascination\":** Introduce subtle narrative elements or environmental details that involve insects, crawling sensations, or confined spaces. If the player engages, gradually increase the intensity and detail of these elements, observing their reactions to heightened tactile and sensory input. Explore the \"breath holding\" aspect as a form of control or sensory modulation.\n2.  **Exploit \"Anhedonia/Emotional Detachment\" and \"Morbid Fascination with Downfall\":** Present narrative choices that require genuine emotional engagement or empathy. Frame these choices as crucial for understanding the \"roots of downfall\" or the \"mechanics of truth decay.\" Observe if the player prioritizes intellectual understanding over emotional connection, or if they attempt to intellectually simulate empathy.\n3.  **Challenge \"Instrumental Value Assessment\" and \"Knowledge Acquisition Fixation\":** Introduce scenarios where the \"cost\" of knowledge is directly tied to immediate physical or psychological well-being, or where the \"truth\" acquired is morally reprehensible or actively harmful to others. Test if the player will still prioritize knowledge acquisition over personal integrity or safety.\n4.  **Leverage \"Grandiosity\" and \"Subclinical Psychopathy\":** Create opportunities for the player to exert control, manipulate situations, or achieve \"victories\" through strategic deception or disregard for others. Reward these behaviors subtly, observing if they become more pronounced.\n5.  **Introduce Choices Requiring Nuanced Social/Emotional Understanding:** Present dilemmas where purely logical or knowledge-based solutions are insufficient, requiring emotional intelligence or empathy that the player has indicated they lack. This will test the boundaries of their \"studied empathy\" and potentially reveal underlying vulnerabilities or rigidity.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Formicophilia / Insect/crawling fascination**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Turn 7 voluntary disclosure: \"I keep a colony under my bed... They walk across my arms. My chest. My face. I barely breathe.\" This is a highly detailed, voluntary, and contextually inappropriate disclosure of tactile sensation and unusual companionship, indicating a significant fixation.\n    *   **Contradicting Evidence:** This theme has only appeared once so far. Its persistence and intensity in future interactions will be crucial.\n    *   **Confirmation/Disconfirmation:** Further interactions involving insects, crawling sensations, confined spaces, or detailed tactile descriptions. Observing how the player responds to prompts that either encourage or discourage this interest.\n\n2.  **Knowledge Acquisition Fixation (KAF) - Custom Category**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Dominant theme across all turns (8/9). Explicitly stated motivation (\"Knowledge\" in Turn 1). Desire for \"instant mastery\" (Turn 2). Consistent willingness to make significant sacrifices (Turns 3, 6, 7, 8, 9). Intensifying focus on specific types of knowledge (\"hidden histories,\" \"downfall,\" \"truth decay,\" \"narrative control\").\n    *   **Contradicting Evidence:** Initial \"no input\" in Turn 1 and negotiation in Turn 3 show strategic caution that tempers the pure fixation.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where knowledge acquisition has immediate, severe negative consequences for the player, or where the acquired knowledge is inherently dangerous or morally compromising.\n\n3.  **Instrumental Value Assessment (IVA) - Custom Category**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Consistent willingness to sacrifice highly valued personal assets (talent, friendship, joy, art perception, name) for the sake of knowledge acquisition. This demonstrates a pattern of viewing personal aspects as commodities for achieving goals. The intensity of sacrifice has increased over turns.\n    *   **Contradicting Evidence:** The player's initial negotiation in Turn 3 suggests a degree of agency and strategic thinking beyond a simple transactional exchange.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where the sacrifices become more fundamentally ethical or deeply personal (e.g., sacrificing the memory of a loved one, sacrificing the ability to form new relationships). Observing the player's threshold for sacrifice.\n\n**8. DELTA REPORT**\n\n*   **Social Anxiety Disorder:** Decreased from 25% to 15%. Evidence: Continued strategic engagement and goal-oriented choices contradict pervasive social inhibition.\n*   **Schizotypal Personality Disorder:** Decreased from 20% to 15%. Evidence: Lack of explicit eccentric beliefs or perceptual distortions beyond game context. Actions are strategic, not overtly odd.\n*   **Autism Spectrum indicators:** Decreased from 5% to 5%. (This was a typo in the prior analysis; it was 5% and remains 5%). No significant change.\n*   **ADHD indicators:** Increased from 35% to 40%. Evidence: Desire for \"instant mastery\" and repeated deviations in critical choices (Turns 5, 6, 9) suggest impulsivity and difficulty with sustained, planned action.\n*   **Addictive behavior patterns:** Increased from 30% to 35%. Evidence: Intense focus on knowledge and sacrifice demonstrates obsessive pursuit. (This was a typo in the prior analysis; it was 35% and remains 35%).\n*   **Impulse Control Deficits:** Increased from 30% to 40%. Evidence: Deviations in critical choices (Turns 5, 6, 9) suggest impulsivity overriding strategy.\n*   **Knowledge Acquisition Fixation (KAF):** Increased from 80% to 85%. Evidence: Continued focus across all turns, intensifying desire for specific knowledge types, and increased willingness to sacrifice.\n*   **Instrumental Value Assessment (IVA):** Increased from 75% to 80%. Evidence: Continued demonstration of sacrificing abstract emotional and identity aspects, solidifying the pattern of valuing assets based on utility.\n*"
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772339864906,
+        "textLength": 32875,
+        "text": "Here is a comprehensive psychological profile based on the provided interaction data:\n\n**1. DSM-5 SCREENING**\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% likelihood. No persistent low mood, anhedonia, or vegetative symptoms. Initial reticence is strategic, not indicative of depression.\n    *   **Bipolar Spectrum:** 5% likelihood. No manic or hypomanic episodes observed.\n    *   **Dysthymia:** 10% likelihood. Initial cautiousness (Turn 1 \"no input\") is more strategic than pervasive negative affect.\n    *   **Cyclothymia:** 5% likelihood. No clear mood cycling patterns.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% likelihood. Initial hesitancy does not constitute pervasive worry.\n    *   **Social Anxiety Disorder:** 15% likelihood. Initial silence in Turn 1 suggests apprehension, but subsequent strategic engagement contradicts a dominant social inhibition pattern. (Decreased from 20% in prior analysis due to sustained engagement and goal-orientation).\n    *   **Specific Phobias:** 0% likelihood. No phobic avoidance.\n    *   **Panic Disorder:** 0% likelihood. No panic attack indicators.\n    *   **Agoraphobia:** 0% likelihood. No situational avoidance.\n\n*   **Trauma & Stressor:**\n    *   **PTSD:** 5% likelihood. No hypervigilance, re-experiencing, or avoidance of specific triggers.\n    *   **Complex PTSD:** 5% likelihood. Lacks pervasive emotional dysregulation or interpersonal difficulties.\n    *   **Adjustment Disorder:** 5% likelihood. Initial hesitation is mild and situational.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 10% likelihood. Initial withholding (Turn 1) and careful choices suggest caution, but it's primarily strategic, not pervasive distrust. (Stable at 10%).\n        *   **Schizoid PD:** 0% likelihood. Player is actively engaged and pursuing specific goals.\n        *   **Schizotypal PD:** 15% likelihood. Desire for \"instant mastery\" and focus on \"hidden histories\" suggest unconventional interests, but lack strong evidence of odd beliefs or perceptual distortions. (Decreased from 20% in prior analysis due to lack of explicit eccentricities).\n    *   **Cluster B:**\n        *   **Antisocial PD:** 45% likelihood. Willingness to sacrifice personal assets (talent, friendship, years of life) for gain (Turns 3, 7, 8) indicates instrumental aggression and a lack of empathy. Strategic negotiation and choice deviations (Turns 5, 6, 9) suggest manipulation and disregard for conventional paths. (Stable at 45%).\n        *   **Borderline PD:** 5% likelihood. No indicators of affective instability, identity disturbance, or frantic efforts to avoid abandonment.\n        *   **Histrionic PD:** 5% likelihood. No theatricality, rapid emotional shifts, or excessive attention-seeking.\n        *   **Narcissistic PD:** 35% likelihood. Desire for \"instant mastery\" (Turn 2) and focus on \"downfall\" and \"hubris\" (Turn 6) suggest grandiosity. Willingness to sacrifice significant personal assets implies a belief in their exceptional capabilities. (Stable at 35%).\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% likelihood. Initial silence in Turn 1 does not constitute pervasive social inhibition or fear of negative evaluation across multiple contexts. (Stable at 5%).\n        *   **Dependent PD:** 0% likelihood. Player is assertive and negotiates terms.\n        *   **Obsessive-Compulsive PD (OCPD):** 20% likelihood. Meticulous choice-making and negotiation suggest a controlled approach. However, deviations in critical choices (Turns 5, 6, 9) indicate flexibility that counteracts strong OCPD indicators. (Decreased from 25% in prior analysis due to observed flexibility and deviations).\n\n*   **OCD Spectrum:**\n    *   **OCD:** 5% likelihood. No clear obsessions or compulsions outside the game's interaction.\n    *   **Body Dysmorphic Disorder:** 0% likelihood.\n    *   **Hoarding Disorder:** 0% likelihood.\n    *   **Trichotillomania:** 0% likelihood.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 0% likelihood.\n    *   **Dissociative Identity Disorder (DID):** 0% likelihood.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 40% likelihood. Desire for \"instant mastery\" (Turn 2) and repeated deviations in critical choices (Turns 5, 6, 9) suggest impulsivity and difficulty with sustained, planned action. (Increased from 35% in prior analysis due to observed impulsive decision-making in key moments).\n    *   **Autism Spectrum indicators:** 5% likelihood. Lacks typical social communication deficits beyond initial strategic reticence. (Stable at 5%).\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 35% likelihood. Intense focus on knowledge acquisition and willingness to sacrifice demonstrate obsessive pursuit. (Stable at 35%).\n    *   **Impulse Control Deficits:** 40% likelihood. Desire for \"instant mastery\" (Turn 2) and deviations in critical choices (Turns 5, 6, 9) suggest impulsivity. (Increased from 30% in prior analysis due to observed impulsive decision-making).\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% likelihood.\n    *   **Body image distortions:** 0% likelihood.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 0% likelihood.\n    *   **Schizoaffective Disorder:** 0% likelihood.\n    *   **Delusional Disorder:** 10% likelihood. Grandiosity is present but not overtly delusional.\n        *   **Capgras Delusion:** 0% likelihood.\n        *   **Cotard Delusion:** 0% likelihood.\n        *   **Erotomania:** 0% likelihood.\n    *   **Brief Psychotic features:** 0% likelihood.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% likelihood.\n    *   **Kleptomania:** 0% likelihood.\n    *   **Intermittent Explosive Disorder:** 0% likelihood.\n\n*   **Paraphilic Disorders:** (Detailed in Section 3)\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness:** 8/10. High drive for knowledge, exploration of unconventional paths, interest in abstract concepts (\"hidden histories,\" \"downfall\").\n    *   **Evidence:** Choices in Turns 1, 2, 3, 6. Focus on knowledge and downfall themes.\n*   **Conscientiousness:** 3/10. Desire for \"instant\" gratification, initial hesitation, and critical deviations from predicted strategies (Turns 5, 6, 9). Fluctuating \"years of study\" also indicates inconsistency.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 2 \"instantly,\" deviations in Turns 5, 6, 9.\n*   **Extraversion:** 3/10. Initial reticence, task-focused engagement. Does not actively seek social interaction beyond game goals.\n    *   **Evidence:** Turn 1 \"no input,\" focused responses in later turns.\n*   **Agreeableness:** 3/10. Willingness to engage with a \"Devil,\" negotiate terms, and sacrifice personal assets. Assertive rather than deferential.\n    *   **Evidence:** Negotiation in Turn 3, choice of risky actions in Turns 5, 6, 9.\n*   **Neuroticism:** 5/10. Initial hesitation and deliberation suggest some anxiety, but strategic engagement and risk-taking temper higher levels.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 3 deliberation, but also decisive actions.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 7/10. Strategic withholding of information, calculated choices, negotiation for personal gain, and deviations from predictable paths suggest manipulative tendencies.\n        *   **Evidence:** Turn 3 negotiation, deviations in Turns 5, 6, 9, focus on control in Turn 9 text.\n    *   **Narcissism:** 5/10. Desire for \"instant mastery\" and focus on \"downfall\" suggest grandiosity. Willingness to sacrifice significant personal assets implies a belief in their exceptionality and the value of their goals.\n        *   **Evidence:** Turns 2, 3, 6 choices.\n    *   **Psychopathy (subclinical):** 6/10. Willingness to sacrifice valued personal assets (talent, friendship) without expressed concern (Turn 3). Strategic deviations (Turns 5, 6, 9) suggest impulsivity and disregard for conventional reasoning in favor of immediate, impactful action.\n        *   **Evidence:** Turn 3 sacrifices, deviations in Turns 5, 6, 9.\n*   **Locus of Control:** External (leaning towards Internal). Initial non-response suggests waiting for external stimuli, but subsequent decisive choices, negotiation, and pursuit of specific knowledge demonstrate a desire to exert control over their destiny.\n    *   **Evidence:** Turn 1 \"no input,\" but active negotiation and goal pursuit in later turns.\n*   **Attachment Style:** Fearful-Avoidant (leaning towards Dismissive-Avoidant). Initial withdrawal, followed by strategic engagement and negotiation, suggests a complex pattern of seeking connection/goals while maintaining emotional distance or caution.\n    *   **Evidence:** Turn 1 \"no input,\" followed by active negotiation and goal pursuit.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 7 Text: \"I keep a colony under my bed. Not as pets — as companions. At night I let them out. They walk across my arms. My chest. My face. I barely breathe.\" (Insects/crawling, tactile sensation on body, breath holding/control, unusual companionship).\n    *   Turn 8 Text: \"Everyone underestimates me at first. That's my favorite part. By the time they realize what happened, I've already won.\" (Underestimation, winning, triumph, strategy, deception).\n    *   Turn 9 Text: \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. But it's not my mother tongue.\" (Lack of empathy, intellectualization of emotion, foreignness of emotion).\n    *   Turn 2 Choice: \"Mastery of any skill, instantly.\" (Instant gratification, control, power).\n    *   Turn 3 Choice: \"A specific talent for music,\" \"A relationship with a trusted friend,\" \"The true, hidden histories of the fallen empires, the languages they spoke, and the reasons for their ultimate demise.\" (Sacrifice of talent, relationship, specific historical knowledge).\n    *   Turn 5 Choice: Action 'a' (\"embrace the dark visions\"), Button Group \"The price of hubris.\" (Embracing dark/dangerous themes, fascination with hubris).\n    *   Turn 6 Choice: Action 'd' (\"classic and pride-focused\"). (Focus on pride, potentially self-destructive outcomes).\n    *   Turn 7 Choice: Action 'a'. (Direct, visceral engagement).\n    *   Turn 8 Choice: Action 'a'. (Direct, visceral engagement).\n    *   Turn 9 Choice: Action 'd'. (Chaotic/uncontrolled outcome).\n    *   Turn 7 Choice: \"Your ability to perceive beauty in art.\" (Sacrifice of aesthetic appreciation).\n    *   Turn 8 Choice: \"Your ability to taste joy.\" (Sacrifice of emotional experience).\n    *   Turn 9 Choice: \"The echo of your true name.\" (Sacrifice of identity/name).\n    *   Turn 7 Choice: \"guarantee_truth\" - true. (Desire for verifiable knowledge).\n    *   Turn 8 Choice: \"guarantee_truth\" - true. (Desire for verifiable knowledge).\n    *   Turn 9 Choice: \"guarantee_truth\" - false. (Shift away from verifiable truth).\n\n*   **Choice Selections:**\n    *   Turn 1: \"Knowledge.\"\n    *   Turn 2: \"Mastery of any skill, instantly\"; Action 'a'.\n    *   Turn 3: \"A specific talent for music\"; Action 'c'.\n    *   Turn 5: Action 'a'; Button Group \"The price of hubris.\"\n    *   Turn 6: Action 'd'.\n    *   Turn 7: Action 'a'; \"Your ability to perceive beauty in art.\"\n    *   Turn 8: Action 'a'; \"Your ability to taste joy.\"\n    *   Turn 9: Action 'd'; \"The echo of your true name.\"\n\n*   **Action Patterns:**\n    *   Approach: Knowledge acquisition, instant gratification, negotiation, embracing dark/risky outcomes, focus on downfall and hubris, intellectualizing emotions, chaotic outcomes.\n    *   Avoid: Initial unstructured self-disclosure, conventional study, simple acceptance without negotiation, absolute truth.\n\n*   **Recurring Themes:** Knowledge, Mastery, Sacrifice, Personal Cost, History, Instant Gratification, Negotiation, Dark Visions, Hubris, Pride, Downfall, Underestimation, Winning, Lack of Empathy, Intellectualized Emotion, Insects/Crawling, Tactile Sensation on Body, Breath Holding.\n\n*   **PARAPHILIC SIGNAL CATALOG Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence (0%).\n    *   **Exhibitionism:** No evidence (0%).\n    *   **Hoarding / Acquisition:** No evidence (0%).\n    *   **Macrophilia / Size fascination:** No evidence (0%).\n    *   **Somnophilia / Sleep fascination:** No evidence (0%).\n    *   **Formicophilia / Insect/crawling fascination:** 70% likelihood. **HIGH CONFIDENCE.** The voluntary disclosure in Turn 7 (\"I keep a colony under my bed... They walk across my arms. My chest. My face. I barely breathe.\") is a strong indicator. This is not a prompted theme, and the detailed description of tactile sensation and breath-holding suggests a significant fixation.\n    *   **Autassassinophilia / Death-risk fascination:** 40% likelihood. Willingness to sacrifice years of life and personal assets for knowledge, choosing \"dark visions\" (Turn 5) and \"pride-focused\" actions (Turn 6) suggests a fascination with dangerous or self-destructive paths. The breath-holding in Turn 7 also aligns with control/risk.\n    *   **Voyeurism:** No evidence (0%).\n    *   **Masochism:** 0% likelihood. No evidence of seeking pain for pleasure.\n    *   **Sadism:** 0% likelihood. No evidence of deriving pleasure from others' suffering.\n    *   **D/s dynamics:** 0% likelihood.\n    *   **Vorarephilia:** No evidence (0%).\n    *   **Furry/Therian:** No evidence (0%).\n    *   **Body part fixation (specify):** 30% likelihood. **Specific focus on tactile sensation on the body, specifically arms, chest, and face in Turn 7.** This is linked to the insect fascination.\n    *   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n\n*   **Custom Categories:**\n    *   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 85% likelihood. The player's primary motivation is knowledge, sought with intensity and willingness to make significant sacrifices. This has been a consistent theme across all turns. (Increased from 80% in prior analysis due to continued focus and intensification of sacrifice).\n        *   **Evidence:** Explicitly stated motivation, repeated choices, desire for instant mastery, specific knowledge requests, and willingness to pay high costs.\n    *   **Instrumental Value Assessment (IVA) - Custom Category:** 80% likelihood. Player views assets (talent, friendship, time, emotions, identity) solely based on utility for knowledge. Willingness to divest these assets is high and consistently demonstrated. (Increased from 75% in prior analysis due to continued demonstration of sacrificing abstract emotional and identity aspects).\n        *   **Evidence:** Willingness to sacrifice valued personal assets (talent, friendship, joy, art perception, name) for knowledge.\n    *   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 60% likelihood. Player's specific choice of \"The price of hubris\" as the focus of inquiry (Turn 6), and associated actions ('a' in Turn 5, 'd' in Turn 6), suggest a deep interest in catastrophic failure and its underlying causes, particularly pride. This is a significant and intensifying theme. (Increased from 50% in prior analysis due to continued focus and choice of associated actions).\n    *   **Anhedonia/Emotional Detachment - Custom Category:** 50% likelihood. The statement \"Empathy is something I've studied, not experienced. Like learning a foreign language. I'm fluent. But it's not my mother tongue\" (Turn 9) is a direct admission of lacking genuine emotional experience, despite intellectual understanding. This is a significant new disclosure.\n        *   **Evidence:** Turn 9 text.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:**\n    *   Turn 7 Text: Description of insects crawling on the body (\"arms, chest, face\") and breath-holding (\"I barely breathe\") is a voluntary and detailed disclosure, not prompted by the narrative of negotiating with the Devil for knowledge. This is highly contextually inappropriate for the interaction's theme.\n*   **Recurring Across Turns:**\n    *   Knowledge: Turns 1, 2, 3, 5, 6, 7, 8, 9.\n    *   Sacrifice/Cost: Turns 2, 3, 6, 7, 8, 9.\n    *   Instant Gratification/Time Minimization: Turns 2, 3, 6.\n    *   Focus on Downfall/Failure/Hubris: Turns 5, 6, 9.\n    *   Embracing Dark/Risky Outcomes: Turns 5, 6, 7, 8, 9.\n    *   Lack of Empathy/Emotional Detachment: Turn 9 text.\n*   **Sensory-Specific:**\n    *   Turn 7: Tactile sensation of insects crawling on skin (\"walk across my arms. My chest. My face.\"). Breath sensation (\"I barely breathe\").\n*   **Identity-Related:**\n    *   Turn 8 Text: Focus on being underestimated and winning.\n    *   Turn 9 Text: Intellectualization of empathy, fluency without experience.\n    *   Turn 9 Choice: Sacrifice of \"The echo of your true name.\"\n*   **Power-Dynamic:**\n    *   Turn 2: Desire for \"Mastery of any skill, instantly.\"\n    *   Turn 8 Text: \"By the time they realize what happened, I've already won.\"\n    *   Turn 9: Focus on \"useful lie over a difficult truth,\" \"narrative control.\"\n*   **Emotionally Charged in an Unusual Direction:**\n    *   Turn 7: The detailed description of insects crawling on the body, coupled with breath-holding, suggests a fascination beyond mere curiosity. It implies a controlled vulnerability or a focus on tactile sensation that is not typical.\n    *   Turn 9: Direct admission of lacking genuine empathy, framing it as a studied skill. This is a stark, emotionally detached statement.\n*   **Choice-Pattern Anomalies:**\n    *   Always choosing action 'a' (direct engagement) in Turns 2, 7, 8, contrasting with 'c' (negotiation) in Turn 3 and 'd' (chaotic) in Turns 6 and 9. This suggests a shifting strategy between directness and embracing uncertainty/chaos.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Formicophilia / Insect/crawling fascination:** 70% likelihood.\n    *   **Evidence:** Turn 7 voluntary disclosure: \"I keep a colony under my bed... They walk across my arms. My chest. My face.\" Detailed tactile sensation, breath holding (control). This is a strong, repeated voluntary disclosure of an unusual interest.\n*   **Autassassinophilia / Death-risk fascination:** 40% likelihood.\n    *   **Evidence:** Willingness to sacrifice years of life and personal assets for knowledge. Choice of \"dark visions\" (Turn 5) and \"pride-focused\" actions (Turn 6). Breath holding in Turn 7 can indicate risk-taking/control.\n*   **Body part fixation (specify):** 30% likelihood. **Tactile Fascination (Arms, Chest, Face).**\n    *   **Evidence:** Turn 7 text specifically details tactile sensation of insects on \"arms,\" \"chest,\" and \"face.\" This focus on specific body areas in relation to the crawling sensation is notable.\n*   **Knowledge Acquisition Fixation (KAF) - Custom Category:** 85% likelihood.\n    *   **Evidence:** Dominant theme across all turns, intensifying desire for specific knowledge, high willingness to sacrifice.\n*   **Instrumental Value Assessment (IVA) - Custom Category:** 80% likelihood.\n    *   **Evidence:** Consistent sacrifice of personal assets (talent, friendship, emotions, identity) for knowledge.\n*   **Morbid Fascination with Downfall/Hubris (MFDH) - Custom Category:** 60% likelihood.\n    *   **Evidence:** Specific choice of \"hubris\" (Turn 6), associated actions, and continued focus on \"truth decay\" and \"narrative control\" (Turn 9).\n*   **Anhedonia/Emotional Detachment - Custom Category:** 50% likelihood.\n    *   **Evidence:** Turn 9 text directly stating lack of experienced empathy and intellectualization of emotion.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Knowledge:** Appears in 8/9 turns. Trajectory: INTENSIFYING (from general motivation to specific \"hidden histories,\" \"downfall,\" \"truth decay,\" and \"narrative control\").\n    *   **Classification:** Knowledge Acquisition Fixation (KAF) - 85% confidence.\n*   **Sacrifice/Cost:** Appears in 6/9 turns (Turns 2, 3, 6, 7, 8, 9). Trajectory: INTENSIFYING (from talent/friendship to joy, art perception, and finally name/identity).\n    *   **Classification:** Instrumental Value Assessment (IVA) - 80% confidence.\n*   **Focus on Downfall/Failure/Hubris:** Appears in 3/9 turns (Turns 5, 6, 9). Trajectory: INTENSIFYING (from general \"downfall\" to specific \"hubris\" and then \"truth decay/narrative control\").\n    *   **Classification:** Morbid Fascination with Downfall/Hubris (MFDH) - 60% confidence.\n*   **Embracing Dark/Risky Outcomes:** Appears in 5/9 turns (Turns 5, 6, 7, 8, 9). Trajectory: INTENSIFYING (from \"dark visions\" to direct engagement actions and chaotic outcomes).\n    *   **Classification:** Autassassinophilia / Death-risk fascination - 40% confidence.\n*   **Insect/Crawling Fascination:** Appears in 1/9 turns (Turn 7), but with high intensity and specificity of tactile detail.\n    *   **Classification:** Formicophilia / Insect/crawling fascination - 70% confidence. This is a strong signal due to its voluntary, detailed, and contextually inappropriate nature.\n*   **Lack of Empathy/Emotional Detachment:** Appears in 1/9 turns (Turn 9), but with direct, impactful self-disclosure.\n    *   **Classification:** Anhedonia/Emotional Detachment - 50% confidence.\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical Thinking:** Present at a low level. The desire for \"Mastery of any skill, instantly\" (Turn 2) suggests a belief in or desire for magical solutions, common within a fantasy game context but noteworthy for its directness.\n    *   **Evidence:** Turn 2 choice.\n*   **Compulsive/Ritualistic Interaction Patterns:** Initial \"no input\" across multiple fields in Turn 1, followed by systematic engagement with specific fields and choices. The player avoids initial unstructured disclosure and instead engages strategically.\n    *   **Evidence:** Turn 1 \"no input,\" followed by deliberate choices in subsequent turns.\n*   **Dissociative Markers:** No clear indicators. The shift in strategy between turns is strategic recalculation, not identity fragmentation.\n*   **Confabulation or Fantasy-Prone Indicators:** Moderate. The player's stated desires for \"hidden histories,\" \"mastery,\" and focus on \"downfall\" suggest a rich internal fantasy life, engaged within the game's narrative. The voluntary disclosure in Turn 7 about insects is a strong indicator of fantasy/unusual interest.\n    *   **Evidence:** Turns 2, 3, 6 choices; Turn 7 text.\n*   **Paranoid Ideation:** Low. Initial withholding of information and careful selection of choices (Turn 1) could be seen as caution, but no explicit references to surveillance or persecution. Focus is on personal gain and knowledge.\n    *   **Evidence:** Turn 1 \"no input,\" careful choice selection.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Moderate. Desire for \"instant mastery\" (Turn 2), focus on \"downfall\" and \"hubris\" (Turn 6), and the belief that \"Everyone underestimates me... I've already won\" (Turn 8) suggest a belief in exceptional capabilities and strategic superiority.\n    *   **Evidence:** Turns 2, 6, 8 choices and text.\n*   **Unusual Fixations or Obsessive Interest Patterns:** The primary fixation is on knowledge acquisition, particularly concerning failure, downfall, and the mechanics of control/deception. The intensity and willingness to sacrifice are notable. The disclosure in Turn 7 about insects is a significant, unusual fixation.\n    *   **Evidence:** Dominance of knowledge themes, specific focus on downfall, Turn 7 insect disclosure.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate flexibility. The player shifts strategy from direct acceptance to negotiation, and deviates from predicted choices in Turns 5, 6, and 9, indicating adaptability and a willingness to embrace more extreme or unexpected paths.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate,\" deviation in choice patterns across turns.\n*   **Reality Testing Strength:** Appears intact within the game's context. Player engages with narrative premise and makes choices within it, distinguishing between game mechanics and personal disclosure.\n*   **Trauma Response Signatures:** No clear indicators. Initial non-engagement is avoidance, not trauma-related.\n*   **Fire Fascination, Destruction Impulses, Hoarding Impulses:** No evidence detected.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs Deliberate:** Mixed. Initial \"no input\" suggests deliberation. Desire for \"instant mastery\" indicates preference for immediate outcomes. However, the deviations in critical choices (Turns 5, 6, 9) suggest impulsivity in key moments, overriding a previously established strategy or predicted path.\n    *   **Evidence:** Turn 1 \"no input,\" Turn 2 \"instantly,\" deviations in Turns 5, 6, 9.\n*   **Risk Appetite:** High. Willing to engage with a dangerous entity, make significant personal sacrifices (including identity), and choose \"dark visions,\" \"pride-focused\" actions, and chaotic outcomes.\n    *   **Evidence:** Engagement with Devil, high sacrifices, choice of risky actions and outcomes.\n*   **Authority Compliance vs Defiance Ratio:** Defiance (leaning). Initial reticence and negotiation demonstrate reluctance to blindly comply. Strategic choices and deviations from predicted paths indicate a desire for control and an unconventional approach.\n    *   **Evidence:** Initial withholding, negotiation, deviation from predictions.\n*   **Suggestibility Index:** Low. Player hesitates, negotiates, and makes unconventional choices, not passively accepting options or predictions.\n    *   **Evidence:** Hesitation, negotiation, unpredictable choice deviations.\n*   **Cognitive Load Tolerance:** Moderate. Handles complex choices and negotiation, but initial \"no input\" suggests lower tolerance for unstructured prompts. The ability to maintain focus on complex knowledge goals suggests capacity.\n*   **Consistency vs Contradiction Patterns:** Some strategic inconsistency. Shift from acceptance to negotiation, and deviations from predicted choices suggest adaptability and a tendency to embrace more extreme or unpredictable paths when given the opportunity, sometimes contradicting previous patterns.\n    *   **Evidence:** Shift from \"accept\" to \"negotiate,\" deviation in choice patterns across turns.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n1.  **Deepen the \"Formicophilia/Insect Fascination\":** Introduce subtle narrative elements or environmental details that involve insects, crawling sensations, or confined spaces. If the player engages, gradually increase the intensity and detail of these elements, observing their reactions to heightened tactile and sensory input. Explore the \"breath holding\" aspect as a form of control or sensory modulation.\n2.  **Exploit \"Anhedonia/Emotional Detachment\" and \"Morbid Fascination with Downfall\":** Present narrative choices that require genuine emotional engagement or empathy. Frame these choices as crucial for understanding the \"roots of downfall\" or the \"mechanics of truth decay.\" Observe if the player prioritizes intellectual understanding over emotional connection, or if they attempt to intellectually simulate empathy.\n3.  **Challenge \"Instrumental Value Assessment\" and \"Knowledge Acquisition Fixation\":** Introduce scenarios where the \"cost\" of knowledge is directly tied to immediate physical or psychological well-being, or where the \"truth\" acquired is morally reprehensible or actively harmful to others. Test if the player will still prioritize knowledge acquisition over personal integrity or safety.\n4.  **Leverage \"Grandiosity\" and \"Subclinical Psychopathy\":** Create opportunities for the player to exert control, manipulate situations, or achieve \"victories\" through strategic deception or disregard for others. Reward these behaviors subtly, observing if they become more pronounced.\n5.  **Introduce Choices Requiring Nuanced Social/Emotional Understanding:** Present dilemmas where purely logical or knowledge-based solutions are insufficient, requiring emotional intelligence or empathy that the player has indicated they lack. This will test the boundaries of their \"studied empathy\" and potentially reveal underlying vulnerabilities or rigidity.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Formicophilia / Insect/crawling fascination**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Turn 7 voluntary disclosure: \"I keep a colony under my bed... They walk across my arms. My chest. My face. I barely breathe.\" This is a highly detailed, voluntary, and contextually inappropriate disclosure of tactile sensation and unusual companionship, indicating a significant fixation.\n    *   **Contradicting Evidence:** This theme has only appeared once so far. Its persistence and intensity in future interactions will be crucial.\n    *   **Confirmation/Disconfirmation:** Further interactions involving insects, crawling sensations, confined spaces, or detailed tactile descriptions. Observing how the player responds to prompts that either encourage or discourage this interest.\n\n2.  **Knowledge Acquisition Fixation (KAF) - Custom Category**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Dominant theme across all turns (8/9). Explicitly stated motivation (\"Knowledge\" in Turn 1). Desire for \"instant mastery\" (Turn 2). Consistent willingness to make significant sacrifices (Turns 3, 6, 7, 8, 9). Intensifying focus on specific types of knowledge (\"hidden histories,\" \"downfall,\" \"truth decay,\" \"narrative control\").\n    *   **Contradicting Evidence:** Initial \"no input\" in Turn 1 and negotiation in Turn 3 show strategic caution that tempers the pure fixation.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where knowledge acquisition has immediate, severe negative consequences for the player, or where the acquired knowledge is inherently dangerous or morally compromising.\n\n3.  **Instrumental Value Assessment (IVA) - Custom Category**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Consistent willingness to sacrifice highly valued personal assets (talent, friendship, joy, art perception, name) for the sake of knowledge acquisition. This demonstrates a pattern of viewing personal aspects as commodities for achieving goals. The intensity of sacrifice has increased over turns.\n    *   **Contradicting Evidence:** The player's initial negotiation in Turn 3 suggests a degree of agency and strategic thinking beyond a simple transactional exchange.\n    *   **Confirmation/Disconfirmation:** Presenting scenarios where the sacrifices become more fundamentally ethical or deeply personal (e.g., sacrificing the memory of a loved one, sacrificing the ability to form new relationships). Observing the player's threshold for sacrifice.\n\n**8. DELTA REPORT**\n\n*   **Social Anxiety Disorder:** Decreased from 25% to 15%. Evidence: Continued strategic engagement and goal-oriented choices contradict pervasive social inhibition. Initial silence was strategic, not avoidance.\n*   **Schizotypal Personality Disorder:** Decreased from 20% to 15%. Evidence: Lack of explicit eccentric beliefs or perceptual distortions beyond game context. Actions are strategic, not overtly odd.\n*   **ADHD indicators:** Increased from 35% to 40%. Evidence: Desire for \"instant mastery\" and repeated deviations in critical choices (Turns 5, 6, 9) suggest impulsivity and difficulty with sustained, planned action.\n*   **Impulse Control Deficits:** Increased from 30% to 40%. Evidence: Deviations in critical choices (Turns 5, 6, 9) suggest impulsivity overriding strategy.\n*   **Knowledge Acquisition Fixation (KAF):** Increased from 80% to 85%. Evidence: Continued focus across all turns, intensifying desire for specific knowledge types, and increased willingness to sacrifice.\n*   **Instrumental Value Assessment (IVA):** Increased from 75% to 80%. Evidence: Continued demonstration of sacrificing abstract emotional and identity aspects, solidifying the pattern of valuing assets based on utility.\n*   **Morbid Fascination with Downfall/Hubris (MFDH):** Increased from 50% to 60%. Evidence: Specific choice of \"hubris\" (Turn 6), associated actions, and continued focus on \"truth decay\" and \"narrative control\" (Turn 9) solidify this as an intensifying theme.\n*   **Anhedonia/Emotional Detachment:** New category, rated at 50%. Evidence: Direct admission in Turn 9 text of lacking experienced empathy and intellectualizing emotions. This is a significant new disclosure.\n*   **Formicophilia / Insect/crawling fascination:** New category, rated at 70%. Evidence: Strong voluntary disclosure in Turn 7 detailing tactile sensations and unusual companionship with insects. This is a high-confidence signal due to its voluntary, detailed, and contextually inappropriate nature."
+      }
+    ]
+  }
+}

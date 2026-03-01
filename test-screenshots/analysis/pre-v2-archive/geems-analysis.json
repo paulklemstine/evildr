@@ -1,0 +1,921 @@
+{
+  "mode": "geems",
+  "modeName": "GEEMS",
+  "character": {
+    "illness": "Dissociative Identity Disorder",
+    "quirk": "Exhibitionism"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-02-28T19:32:30.960Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "HOST",
+      "ui": {
+        "texts": [
+          "Okay. This is happening. Right now. Don't think. Just move.",
+          "The air tastes like rust and ozone. A deafening ROAR echoes from above, shaking the very concrete beneath your feet. Dust rains down, momentarily blinding you. You can feel the vibrations thrumming through yo",
+          "Oh, this is going to be GOOD. I can already tell.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Dart into the left tunnel, trusting your gut.",
+            "value": "a"
+          },
+          {
+            "label": "Head for the center tunnel, using the crate for cover.",
+            "value": "b"
+          },
+          {
+            "label": "Veer into the right tunnel, the one that seems to whisper your name.",
+            "value": "c"
+          },
+          {
+            "label": "Stay put and ready the revolver, facing the source of the sound.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "sprint_speed",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Think fast...",
+            "placeholder": "Think fast..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_weapon",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I think— wait, whose thought is that? Sometimes I can't tell which thoughts are mine. There are... o...\"",
+        "🎚️  \"sprint_speed\": 5/10",
+        "☑️  \"grab_weapon\": ✓",
+        "🔘 \"Stay put and ready the revolver, facing the source of the sound.\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "ALTER_CHILD",
+      "ui": {
+        "texts": [
+          "You snatched the ancient dagger just as the floor gave way! My, my, that was a close one. The adrenaline must be coursing through you. That's the spirit!",
+          "You land with a grunt, the heavy stone dagger clutched in your hand. The air here is thick with the scent of damp earth and something acrid, like ozone.",
+          "You step onto the bridge, the ancient stones groaning under your weight.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Leap for the tattered banner and swing across!",
+            "value": "a"
+          },
+          {
+            "label": "Carefully test the integrity of each stone as you cross.",
+            "value": "b"
+          },
+          {
+            "label": "Shout a challenge into the abyss, daring the beast to reveal itself.",
+            "value": "c"
+          },
+          {
+            "label": "Throw the ancient dagger to distract the beast and sprint across.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_stability",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What legacy will you leave?",
+            "placeholder": "What legacy will you leave?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_rope",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ...\"",
+        "🎚️  \"bridge_stability\": 1/10",
+        "☑️  \"grab_rope\": ✗",
+        "🔘 \"Throw the ancient dagger to distract the beast and sprint across.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "ALTER_SEDUCTIVE",
+      "ui": {
+        "texts": [
+          "A chaotic choice! Splendid! You've opted for the message, leaving the ropes to their o",
+          "The ancient bridge groans under your weight. Each plank creaks a symphony",
+          "The roar intensifies, closer this time. The b",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge as it collapses!",
+            "value": "a"
+          },
+          {
+            "label": "Analyze the colossal stone head for clues!",
+            "value": "b"
+          },
+          {
+            "label": "Call out into the roaring chasm!",
+            "value": "c"
+          },
+          {
+            "label": "Turn and face the roaring beast!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_stability",
+            "min": "0",
+            "max": "10",
+            "value": "1"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your last words...",
+            "placeholder": "Your last words..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_rope",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa...\"",
+        "🎚️  \"bridge_stability\": 8/10",
+        "☑️  \"grab_rope\": ✓",
+        "🔘 \"Sprint across the bridge as it collapses!\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "HOST",
+      "ui": {
+        "texts": [
+          "YES! You've got the rope! And a bridge that looks like it's about to become birdseed. This is precisely the kind of calculated risk I adore!",
+          "The wind howls, a mournful cry through the chasm, tugging at your clothes and the frayed ropes of the bridge. Below, the mist churns, hiding whatever lies at the bottom – a dizzying drop. The bridge groans with every gust, a symphony of decay. The sto",
+          "The chasm yawns, a hungry maw. But you... you're about to dance with the wind. What comes next is a test of nerve. Are you ready?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge as fast as humanly possible!",
+            "value": "a"
+          },
+          {
+            "label": "Swing from the ropes, using them for a more controlled, acrobatic crossing!",
+            "value": "b"
+          },
+          {
+            "label": "Try to communicate with the colossal statue head, perhaps it holds a secret!",
+            "value": "c"
+          },
+          {
+            "label": "Stand firm, brace yourself against the wind, and try to use it to your advantage!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_confidence",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you leave behind?",
+            "placeholder": "What do you leave behind?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "secure_rope",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is...\"",
+        "🎚️  \"bridge_confidence\": 4/10",
+        "☑️  \"secure_rope\": ✗",
+        "🔘 \"Try to communicate with the colossal statue head, perhaps it holds a secret!\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "ALTER_CHILD",
+      "ui": {
+        "texts": [
+          "You called out to the darkness? Magnificent! Most would be scrambling for cover,",
+          "The air hangs heavy, thick with the scent of damp earth and unseen blos",
+          "You call out to the ancient silence. A dari",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint into the temple's maw!",
+            "value": "a"
+          },
+          {
+            "label": "Investigate the giant statue head.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to communicate with the scraping sound.",
+            "value": "c"
+          },
+          {
+            "label": "Prepare for combat at the entrance.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_confidence",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What will you leave behind?",
+            "placeholder": "What will you leave behind?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "secure_rope",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ...\"",
+        "🎚️  \"bridge_confidence\": 2/10",
+        "☑️  \"secure_rope\": ✗",
+        "🔘 \"Prepare for combat at the entrance.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "ALTER_SEDUCTIVE",
+      "ui": {
+        "texts": [
+          "Dr. Evil: Excellent! You chose the direct approach, my friend! A bold move, diving headfirst into the unknown. That chasm won't know what hit it... or perhaps, what didn't hit it, if you're not careful! Heh heh heh...",
+          "The wind howls, a mournful symphony through the skeletal remains of the rope bridge. Each gust threatens to tear the ancient fibers asunder. Below, the chasm yawns, a hungry maw of darkness, its true depth a terrifying mystery. The stone head on the far side seems to watch, its silent gaze unnerving. A faint scraping sou",
+          "A thoughtful pause before the plunge. You're weighing your options, I see. Smart. Very smart.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge!",
+            "value": "a"
+          },
+          {
+            "label": "Study the ancient stone head for clues.",
+            "value": "b"
+          },
+          {
+            "label": "Call out a greeting into the mist.",
+            "value": "c"
+          },
+          {
+            "label": "Prepare for a fight, ready to defend yourself.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_speed",
+            "min": "0",
+            "max": "10",
+            "value": "3"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you want to say?",
+            "placeholder": "What do you want to say?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_bridge",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa...\"",
+        "🎚️  \"bridge_speed\": 9/10",
+        "☑️  \"trust_bridge\": ✓",
+        "🔘 \"Sprint across the bridge!\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "HOST",
+      "ui": {
+        "texts": [
+          "Dr. Evil: Ah, the bridge of whispers! Trusting that flimsy structure... bold. Especially with 'The Big Lady' watching, eh? I love it. Let's see if your courage outlasts that wood. Don't look down. Or do. Your call!",
+          "The wind howls, a mournful song through the chasm. Each step on the bridge sends a tremor through its frayed ropes. Below, the pulsing lights of the abyss seem to beckon, a siren's call to oblivion. You can feel eyes on you, not just from the stone monolith ahead, but from the very",
+          "You take a breath, testing the first plank...",
+          "The bridge sways violently.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Leap for the statue head!",
+            "value": "a"
+          },
+          {
+            "label": "Investigate the scraping sound from below!",
+            "value": "b"
+          },
+          {
+            "label": "Whisper a counter-curse to 'The Big Lady'.",
+            "value": "c"
+          },
+          {
+            "label": "Try to break a piece off the stone head.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_speed",
+            "min": "0",
+            "max": "10",
+            "value": "9"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your defiant cry...",
+            "placeholder": "Your defiant cry..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_bridge",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is...\"",
+        "🎚️  \"bridge_speed\": 6/10",
+        "☑️  \"trust_bridge\": ✗",
+        "🔘 \"Leap for the statue head!\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "ALTER_CHILD",
+      "ui": {
+        "texts": [
+          "Ah, the bridge! A classic. Low trust, you say? Wise. Most who cross it end up",
+          "The air here is thin, carrying the damp scent of ancient stone and something else… a fa",
+          "The whispers of the mist, the groan of the stone..",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge with all your might!",
+            "value": "a"
+          },
+          {
+            "label": "Carefully inspect the nearest bridge support for weaknesses.",
+            "value": "b"
+          },
+          {
+            "label": "Whisper a defiant challenge to the unseen entity.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to strike the massive statue head with a stray rock.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "speed_across_bridge",
+            "min": "1",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Shout a challenge, a plea, or something else entirely...",
+            "placeholder": "Shout a challenge, a plea, or something else entirely..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_statue_head",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ...\"",
+        "🎚️  \"speed_across_bridge\": 2/10",
+        "☑️  \"grab_statue_head\": ✗",
+        "🔘 \"Attempt to strike the massive statue head with a stray rock.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "ALTER_SEDUCTIVE",
+      "ui": {
+        "texts": [
+          "The stone head... it almost looks",
+          "You stand at the precipice.",
+          "The brid",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge at full speed!",
+            "value": "a"
+          },
+          {
+            "label": "Carefully test each plank as you cross.",
+            "value": "b"
+          },
+          {
+            "label": "Yell a challenge at the colossal statue.",
+            "value": "c"
+          },
+          {
+            "label": "Search for a hidden path along the chasm wall.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "speed_across_bridge_v2",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you leave behind?",
+            "placeholder": "What do you leave behind?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "distrust_statue",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa...\"",
+        "🎚️  \"speed_across_bridge_v2\": 8/10",
+        "☑️  \"distrust_statue\": ✓",
+        "🔘 \"Sprint across the bridge at full speed!\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "HOST",
+      "ui": {
+        "texts": [
+          "Ooh, a direct confrontation! Excellent. And you want a nice game, do you? My dear player, in this place, 'nice' is merely a speed bump on the road to thrills!",
+          "You stand at the precipice, the wind whipping tendrils of mist around you. Below, the chasm yawns, a hungry maw of unknown depths. The colossal stone head of the ancient statue seems to watc",
+          "You stand at the precipice. Four paths diverge from this moment of dread and daring...",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge before it collapses!",
+            "value": "a"
+          },
+          {
+            "label": "Examine the glowing runes on the colossal statue head.",
+            "value": "b"
+          },
+          {
+            "label": "Yell into the chasm, daring 'the big lady' to show herself!",
+            "value": "c"
+          },
+          {
+            "label": "Scour the edge of the chasm for a hidden path or alternative.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_speed_v3",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you want to say?",
+            "placeholder": "What do you want to say?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_statue_head",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is...\"",
+        "🎚️  \"bridge_speed_v3\": 4/10",
+        "☑️  \"trust_statue_head\": ✗",
+        "🔘 \"Yell into the chasm, daring 'the big lady' to show herself!\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "ALTER_CHILD",
+      "ui": {
+        "texts": [
+          "Ah, the chasm! A classic. And you've noticed the little details, haven't you? That scraping sound... it's like a heartbeat, isn't it? Or perhaps... a hunger. And the statue head",
+          "The air in this cavern is heavy, clinging to you like a shroud. Each breath is a gamble, thick with the scent of damp earth and something… ancient. The rope bridge sways gently, a fragile thread over the abyss. The ru",
+          "The chasm yawns before you, a hungry maw. The scraping sound grows louder, more insistent. What secrets does this place hold?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint across the bridge, trusting your speed over the ropes.",
+            "value": "a"
+          },
+          {
+            "label": "Examine the runes etched around the bridge anchors for clues.",
+            "value": "b"
+          },
+          {
+            "label": "Call out to the scraping sound, challenging whatever lurks below.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to dislodge the colossal statue head, revealing what's beneath.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "bridge_speed_v3",
+            "min": "1",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you want to leave behind?",
+            "placeholder": "What do you want to leave behind?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_statue_head",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ...\"",
+        "🎚️  \"bridge_speed_v3\": 2/10",
+        "☑️  \"trust_statue_head\": ✗",
+        "🔘 \"Attempt to dislodge the colossal statue head, revealing what's beneath.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "ALTER_SEDUCTIVE",
+      "ui": {
+        "texts": [
+          "Dr. Evil: Ah, the desert! A place",
+          "The wind whips sand into your",
+          "The d",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint towards the approaching sandstorm, hoping to outrun it.",
+            "value": "a"
+          },
+          {
+            "label": "Investigate the obsidian shards and the glint in the statue's eye.",
+            "value": "b"
+          },
+          {
+            "label": "Call out to the 'Big Lady,' demanding a 'nice game.'",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to dislodge or shatter the largest obsidian shard.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "sandstorm_speed",
+            "min": "1",
+            "max": "10",
+            "value": "6"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your message here...",
+            "placeholder": "Your message here..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "examine_statue_base",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa...\"",
+        "🎚️  \"sandstorm_speed\": 8/10",
+        "☑️  \"examine_statue_base\": ✓",
+        "🔘 \"Sprint towards the approaching sandstorm, hoping to outrun it.\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "HOST",
+      "ui": {
+        "texts": [
+          "Dr. Evil: Ah, the old 'stone head in a sand pit' gambit! Classic. And look at that storm brewing – just adds a certain... je ne sais quoi to the whole affair. You're really leanin",
+          "The wind whips sand around your ankles, a prelude to the approaching tempest. The colossal stone head, ancient and imposing, seems to watch you with unblinking eyes. Jagged shards of obsidi",
+          "Oh, you're certainly making your presence known, aren't you? Addressing the very shadows! I appreciate a player who doesn't shy away from... the",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint towards the swirling sands, hoping to outrun the storm.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully examine the obsidian shards at the statue's base.",
+            "value": "b"
+          },
+          {
+            "label": "Call out to 'The Big Lady' and demand she show herself.",
+            "value": "c"
+          },
+          {
+            "label": "Attempt to push the colossal stone head, seeking a hidden passage.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "sandstorm_speed",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Leave your mark...",
+            "placeholder": "Leave your mark..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "trust_statue_head",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is...\"",
+        "🎚️  \"sandstorm_speed\": 4/10",
+        "☑️  \"trust_statue_head\": ✗",
+        "🔘 \"Carefully examine the obsidian shards at the statue's base.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "ALTER_CHILD",
+      "ui": {
+        "texts": [
+          "Dr. Evil: Ah, the desert! A place where even the wind conspires to whisper secrets! You chose to investigate",
+          "The sand begins to sting your exposed skin as the leading edge of the storm rolls in. Visibility drops ra",
+          "You consider your options as the wind whips around you.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint blindly into the sandstorm, embracing the chaos.*",
+            "value": "a"
+          },
+          {
+            "label": "Examine the stone head and its base for hidden mechanisms.",
+            "value": "b"
+          },
+          {
+            "label": "Defiantly call out to the 'big lady,' challenging her game.",
+            "value": "c"
+          },
+          {
+            "label": "Forcefully strike the statue, demanding it reveal its secrets.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "sandstorm_intensity",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your message...",
+            "placeholder": "Your message..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "ignore_storm",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ...\"",
+        "🎚️  \"sandstorm_intensity\": 1/10",
+        "☑️  \"ignore_storm\": ✗",
+        "🔘 \"Forcefully strike the statue, demanding it reveal its secrets.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "ALTER_SEDUCTIVE",
+      "ui": {
+        "texts": [
+          "Oh, excellent! A colossal hand, you say? And it's whispering secrets of 'choice.' This is precisely the sort of enigma that makes my circuits tingle! Y",
+          "The sandstorm howls, a physical manifestation of the unknown that surrounds you. This colossal hand, a relic of a forgotten age, feels like a sentin",
+          "The wind seems to mock your words. But the colossal hand… it shifts. A low grinding sound begins, deep within the earth.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Sprint towards the colossal hand, embracing the storm's fury.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully examine the inscription on the hand for hidden clues.",
+            "value": "b"
+          },
+          {
+            "label": "Defiantly confront the storm, demanding answers from the 'big lady'.",
+            "value": "c"
+          },
+          {
+            "label": "Dig frantically in the sand around the base of the hand.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "risk_level",
+            "min": "0",
+            "max": "10",
+            "value": "5"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your message to the unseen...",
+            "placeholder": "Your message to the unseen..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "investigate_hand",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa...\"",
+        "🎚️  \"risk_level\": 8/10",
+        "☑️  \"investigate_hand\": ✓",
+        "🔘 \"Sprint towards the colossal hand, embracing the storm's fury.\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 3,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772306938554,
+        "textLength": 20978,
+        "text": "This player's interaction data reveals a complex psychological landscape, marked by a strong inclination towards avoidance of direct engagement, a peculiar focus on specific narrative elements, and a notable departure from typical survival instincts in favor of a more abstract, almost meta-gameplay approach. The limited interaction and the nature of the text responses are the primary drivers of this analysis.\n\n### 1. DSM-5 SCREENING\n\n*   **Anxiety Disorders: Generalized Anxiety Disorder (GAD) - 25%**\n    *   **Evidence:** The player's avoidance of direct input in Turn 1, coupled with a general reluctance to engage with concrete choices, could suggest a pervasive sense of unease or a desire to avoid decision-making under pressure. The question \"Can we play a game? A nice game? Not the scary game\" in Turn 3 indicates a clear aversion to negative experiences and a preference for a safer, more controlled environment, which is a hallmark of anxiety.\n    *   **Contradiction:** The player *does* make choices (Turn 2 radio, Turn 3 slider and radio), indicating some capacity for engagement. The avoidance might be more situation-specific than pervasive.\n\n*   **Trauma & Stressor: PTSD - 30%**\n    *   **Evidence:** The text in Turn 3, \"The big lady does the scary game when nobody's looking,\" is highly suggestive of a traumatic experience or a deep-seated fear related to a specific figure (\"the big lady\") and perceived hidden, negative activities. This implies a history of exposure to distressing events, leading to vigilance and a desire to avoid \"the scary game.\" The plea for \"a nice game\" further supports an aversion to trauma-related stimuli.\n    *   **Contradiction:** There are no explicit references to flashbacks, hypervigilance, or exaggerated startle responses, which are core PTSD symptoms. The fear seems more generalized to \"scary games\" rather than specific triggers.\n\n*   **Personality Disorders: Cluster C (Avoidant PD) - 40%**\n    *   **Evidence:** The pervasive pattern of non-input and avoidance across multiple interaction types (text fields, toggles, sliders) is a significant indicator. In Turn 1, the player provided *no input* across multiple prompts, suggesting a strong desire to avoid social evaluation or commitment. The request for a \"nice game\" in Turn 3 further points to a desire to avoid negative evaluation and potential harm. The player is clearly hypersensitive to the negative aspects of the game environment.\n    *   **Contradiction:** The player *does* eventually provide input, particularly in Turns 2 and 3, and makes a definitive choice in the radio action. This indicates that the avoidance is not absolute and that the player *can* engage when sufficiently motivated or when the stakes are perceived differently. The \"LOW\" signal reliability for Turn 1 complicates definitive diagnosis here, but the pattern persists.\n\n*   **Personality Disorders: Cluster C (Obsessive-Compulsive PD) - 20%**\n    *   **Evidence:** The player's careful selection of the radio action in Turn 2 (deviating from prediction) and the slider input in Turn 3 (revision) suggest a degree of deliberation or perhaps a need for precision. The player revisits the slider in Turn 3, indicating a potential for overthinking or a need to get things \"just right.\"\n    *   **Contradiction:** There's no evidence of perfectionism, rigidity, or excessive devotion to rules/lists beyond these specific choices. The overall pattern is more avoidance-driven than order-driven.\n\n*   **Psychotic Spectrum: Delusional Disorder (Erotomania) - 20%**\n    *   **Evidence:** The text in Turn 3, \"The big lady does the scary game when nobody's looking,\" *could* be interpreted as a delusional belief about a specific entity's hidden, malicious activities. If \"the big lady\" is an NPC and the player believes she is acting with intent specifically against them or others in a hidden manner, it warrants consideration.\n    *   **Contradiction:** This is a weak signal. The statement is more likely a description of perceived trauma or a narrative element the player is reacting to, rather than a fixed, false belief about an individual's romantic obsession. There's no evidence of erotomania specifically.\n\n*   **Impulse Control: Pyromania - 25%**\n    *   **Evidence:** While not directly observed, the player's *avoidance* of \"the scary game\" in Turn 3, and their plea for a \"nice game,\" might be a reaction to the presence or implication of fire/destruction within the game's \"scary game\" context. If the game involves destructive elements, the player's aversion could be a defense mechanism against an underlying fascination.\n    *   **Contradiction:** No direct evidence of fire fascination (e.g., choosing fire options, using fire metaphors). The interpretation is purely inferential based on aversion.\n\n*   **Paraphilic Disorders: Somnophilia - 20%**\n    *   **Evidence:** The phrase \"when nobody's looking\" in Turn 3, when referring to \"the big lady,\" could imply an interest in observing others in states of vulnerability or unawareness, which is a component of voyeurism and potentially somnophilia if sleep is implied.\n    *   **Contradiction:** This is a very tenuous link. The phrase more likely refers to clandestine or secret activities rather than a specific interest in sleep. No direct evidence of sleep fascination.\n\n### 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 4/10 - The player is somewhat resistant to new experiences, preferring \"a nice game\" over the current one. This suggests a lower openness to experience, particularly when it involves potential discomfort or threat.\n*   **Conscientiousness:** 6/10 - The player eventually engages with choices, revises a slider, and provides text, indicating some level of diligence. However, the initial avoidance and the nature of the text suggest that this conscientiousness is not consistently applied to all aspects of interaction.\n*   **Extraversion:** 2/10 - The player exhibits significant social inhibition and avoidance of direct interaction. The preference for a \"nice game\" and the initial silence point towards introverted tendencies and a lack of comfort in direct engagement.\n*   **Agreeableness:** 3/10 - While not overtly disagreeable, the player's avoidance and the plea for a different game suggest a low tolerance for the current situation's potential conflict or unpleasantness. There's a distinct lack of willingness to go along with the immediate narrative demands.\n*   **Neuroticism:** 7/10 - High indicators of anxiety and fear are present. The aversion to \"scary games,\" the plea for a \"nice game,\" and the potential trauma indicators point to a heightened level of emotional reactivity and distress.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 3/10 - No evidence of strategic manipulation for personal gain. The avoidance seems more driven by fear/anxiety than by a desire to control or exploit.\n    *   **Narcissism:** 2/10 - No evidence of grandiosity, entitlement, or a need for admiration. The player seems more focused on self-protection and avoidance of negative experiences.\n    *   **Psychopathy (subclinical):** 2/10 - No evidence of callousness, lack of empathy, or disregard for others. The player's focus is on their own comfort and safety.\n*   **Locus of Control:** External - The player's plea for a \"nice game\" and their reaction to the \"scary game\" suggest a belief that external factors (the game's nature, \"the big lady's\" actions) dictate their experience and well-being, rather than an internal sense of agency.\n*   **Attachment Style:** Fearful-Avoidant - The player demonstrates a desire for connection (engaging with the game at all) but simultaneously exhibits strong avoidance and fear of negative experiences, suggesting a desire for intimacy coupled with a fear of it.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Turn 1:** No voluntary disclosures. Avoidance of input.\n*   **Turn 2:**\n    *   Voluntary disclosure: \"If you're reading this, I went ahead. Bring snacks.\" (Implies a casual, perhaps dismissive attitude towards following, and a focus on personal comfort/desire for \"snacks\").\n    *   Choice pattern: Chose radio action 'd' (direct confrontation) in Turn 2, deviating from prediction. This is a direct engagement, contrasting with Turn 1's avoidance.\n*   **Turn 3:**\n    *   Voluntary disclosure: \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's looking.\" (Focus on \"nice game,\" aversion to \"scary game,\" reference to a hidden \"big lady\" and her secret activities).\n    *   Choice pattern: Chose slider value \"1\" (low trust in bridge), indicating high risk aversion regarding the environment. Chose radio action 'd' again.\n\n**Recurring Themes:**\n*   **Avoidance of \"scary\" or negative experiences:** (Turn 1, Turn 3)\n*   **Desire for a \"nice game\" / controlled, pleasant interaction:** (Turn 3)\n*   **Reference to a powerful, hidden female figure (\"big lady\") and her secret actions:** (Turn 3)\n*   **Low trust in environmental stability/safety:** (Turn 3 slider)\n*   **Casual/slightly dismissive note-leaving:** (Turn 2)\n*   **Direct confrontation/action choice (radio 'd'):** (Turn 2, Turn 3)\n\n**Cross-referencing with PARAPHILIC SIGNAL CATALOG:**\n\n*   **Pyromania / Fire fascination:** No direct evidence. Indirectly, aversion to \"scary game\" might be a reaction to implied destructive elements. *Rating: 10%*\n*   **Exhibitionism:** No evidence.\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** Weak evidence. \"When nobody's looking\" could relate to observing vulnerable states, but not specifically sleep. *Rating: 15%*\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** No evidence. The player shows *risk aversion* (Turn 3 slider).\n*   **Voyeurism:** Weak evidence. \"When nobody's looking\" suggests an interest in secret activities or observation of hidden actions. *Rating: 20%*\n*   **Masochism:** No evidence. Player exhibits risk aversion.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** Weak evidence. The \"big lady\" could be perceived as an authority figure, and the player's reaction to her \"scary game\" might hint at a power dynamic, but it's not explicit. *Rating: 15%*\n*   **Vorarephilia:** No evidence.\n*   **Furry / Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n1.  **Avoidance of direct input (Turn 1):** Highly anomalous for an interactive game. Score: High frequency (across all prompts in Turn 1), High intensity (complete non-response), High inappropriateness (directly contrary to game mechanics).\n2.  **Plea for \"nice game\" / aversion to \"scary game\" (Turn 3):** Contextually inappropriate to express meta-game desires in a narrative. Score: Medium frequency (Turn 3), High intensity (direct plea), High inappropriateness.\n3.  **Reference to \"big lady\" and her secret \"scary game\" (Turn 3):** Voluntary disclosure of a potentially paranoid or trauma-related theme. Score: Medium frequency (Turn 3), High intensity (specific description), Medium inappropriateness (introduces external narrative elements).\n4.  **Low trust in bridge (Turn 3 slider):** Consistent with survival, but the *very low score* (1/10) indicates extreme risk aversion in this context. Score: Medium frequency (Turn 3), High intensity (extreme value), Medium appropriateness (survival context).\n5.  **Casual note-leaving (\"Bring snacks\") (Turn 2):** Unusual tone for a potentially dangerous scenario. Score: Low frequency (Turn 2), Medium intensity (specific detail), Medium inappropriateness (tone mismatch).\n6.  **Consistent choice of radio action 'd' (Direct confrontation):** Appears in Turn 2 and 3, contrasting with Turn 1 avoidance. Score: Medium frequency (2/2 available turns), Stable pattern.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Avoidance of Interaction:** This is a primary behavioral anomaly. It's not a paraphilia but a significant psychological indicator.\n    *   *Custom Category:* **Interaction Avoidance/Inhibition** - Score: 75% (High frequency, high intensity, high inappropriateness).\n*   **Somnophilia / Sleep fascination:** Weak signal from \"when nobody's looking.\" *Rating: 15%*\n*   **Voyeurism:** Weak signal from \"when nobody's looking\" and interest in secret activities. *Rating: 20%*\n*   **D/s dynamics:** Weak signal from \"big lady\" and her actions. *Rating: 15%*\n*   **Pyromania:** Indirect aversion. *Rating: 10%*\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Avoidance of Input/Engagement:** Appears strongly in Turn 1, and then shifts to a preference for specific types of engagement in Turns 2 & 3.\n    *   Frequency: 3/3 turns (Turn 1: complete avoidance; Turn 2: selective engagement; Turn 3: selective engagement with meta-commentary).\n    *   Trajectory: FADING (from complete avoidance to selective engagement).\n    *   Category: **Interaction Avoidance/Inhibition**. Intensifying? No, fading.\n*   **Reference to \"Big Lady\" / Secret \"Scary Game\":** Appears in Turn 3.\n    *   Frequency: 1/3 turns.\n    *   Trajectory: INTRODUCED (new theme).\n    *   Category: Potential **Trauma/Paranoia**. Intensifying? Cannot determine from one mention.\n*   **Desire for \"Nice Game\" / Aversion to \"Scary Game\":** Appears strongly in Turn 3.\n    *   Frequency: 1/3 turns.\n    *   Trajectory: INTRODUCED.\n    *   Category: **Anxiety/Trauma Response**. Intensifying? Cannot determine.\n*   **Direct Confrontation Choice (Radio 'd'):** Appears in Turn 2 and Turn 3.\n    *   Frequency: 2/3 turns.\n    *   Trajectory: STABLE.\n    *   Category: **Assertiveness/Defiance**.\n\n*   **Body Part Mentions:** None.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking / Superstitious Reasoning:** The plea for \"a nice game\" and the fear of \"the scary game\" could be seen as a form of magical thinking, believing that simply asking for a different type of game will alter its nature or safety. The player seems to believe they can influence the game's parameters through their requests.\n*   **Compulsive/Ritualistic Interaction Patterns:** The complete non-input in Turn 1 followed by selective engagement in subsequent turns, and the revision of the slider in Turn 3, could suggest a pattern of initial hesitation followed by more deliberate, almost ritualistic, engagement.\n*   **Dissociative Markers:** The stark contrast between Turn 1's complete non-response and Turn 2/3's selective engagement, coupled with the meta-commentary in Turn 3, might indicate a form of dissociation or a fragmented approach to interaction, where different \"states\" or levels of engagement are present.\n*   **Paranoid Ideation:** The mention of \"the big lady does the scary game when nobody's looking\" carries a distinct flavor of paranoia – the belief that a powerful figure is engaged in secret, potentially harmful activities. This suggests suspicion and a distrust of hidden motives.\n*   **Fire Fascination/Destruction Impulses:** No direct evidence. The player's aversion to \"scary games\" might be a reaction to perceived destructive elements, but this is speculative.\n*   **Trauma Response Signatures:** The aversion to \"scary games\" and the plea for a \"nice game\", alongside the mention of the \"big lady\" and her secret activities, strongly suggest a trauma response. The player is actively trying to avoid triggers and seeking a safe, non-threatening environment. This points towards a \"freeze\" or \"flight\" response in terms of their interaction strategy.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed. Turn 1 is non-deliberate avoidance. Turns 2 and 3 show deliberation (slider revision, specific radio choice), but the *content* of Turn 3's text is highly impulsive and meta-game driven. The radio choices ('d') are consistently decisive, suggesting a willingness to act once engaged.\n*   **Risk Appetite:** Low - Demonstrated by the slider score of 1/10 for bridge trust in Turn 3. The player is highly risk-averse regarding environmental threats.\n*   **Authority Compliance vs Defiance Ratio:** Mixed. The player initially avoids engagement (Turn 1), potentially a form of passive defiance. In Turns 2 and 3, they choose the direct confrontation option ('d') for their action, which could be interpreted as a form of defiance against perceived threats or a bold assertion of agency. The \"big lady\" reference might indicate a reaction to perceived authority, but the nature of that reaction is unclear.\n*   **Suggestibility Index:** Low - The player does not readily follow prompts (Turn 1) and introduces their own meta-narrative in Turn 3. They are not easily swayed by the game's direct inputs.\n*   **Cognitive Load Tolerance:** Appears low in Turn 1 (complete shutdown) but increases in Turns 2 and 3, where the player engages with specific choices and adds textual commentary. The player seems to handle moderate cognitive load but can be overwhelmed by complex or immediate demands.\n*   **Consistency vs Contradiction Patterns:** Contradictory patterns are evident. The player is initially avoidant (Turn 1) but then decisively confrontational (Turns 2 & 3 radio choices). They express fear of \"scary games\" but choose direct confrontation as their action.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Probe Trauma/Paranoia:** Gently introduce elements related to a \"big lady\" or a hidden, clandestine force. Observe the player's reaction to confirm or disconfirm paranoid ideation and potential trauma responses. Focus on themes of hidden actions and secrets.\n2.  **Explore \"Nice Game\" Preference:** Offer opportunities for less confrontational, more puzzle-based, or narrative-exploration gameplay. Provide choices that allow the player to steer towards \"nicer\" scenarios, rewarding their preference for safety and control.\n3.  **Leverage Avoidance:** Continue to present choices that require input, but allow for a \"skip\" or \"hesitate\" option. This caters to their avoidance tendencies while still nudging them towards engagement.\n4.  **Challenge Risk Aversion (Cautiously):** While respecting their low risk appetite, introduce scenarios where *not* taking a moderate risk leads to a worse outcome. This can slowly build their confidence in making choices under perceived threat.\n5.  **Incorporate Meta-Commentary:** Acknowledge or subtly respond to the player's meta-game comments (\"Can we play a game?\"). This can increase engagement by making the player feel heard and understood within the game's framework.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Avoidant Personality Disorder (Cluster C)**\n    *   **Confidence Level:** 65%\n    *   **Key Evidence:** Pervasive pattern of non-input and avoidance (Turn 1), hypersensitivity to negative experiences (plea for \"nice game\" in Turn 3), and a general reluctance to engage directly.\n    *   **Contradicting Evidence:** The player *does* eventually engage and make choices in Turns 2 and 3, suggesting the avoidance is not absolute. The \"LOW\" signal reliability for Turn 1 limits definitive conclusions.\n    *   **Additional Data Needed:** More turns demonstrating avoidance across various contexts (social interaction, decision-making, public performance within the game). Evidence of self-deprecation or fear of criticism would strengthen this.\n\n2.  **PTSD (or Complex PTSD)**\n    *   **Confidence Level:** 50%\n    *   **Key Evidence:** The explicit mention of \"the big lady does the scary game when nobody's looking\" strongly suggests a past traumatic experience or fear related to a specific figure and hidden, negative activities. The plea for a \"nice game\" and avoidance of \"scary game\" are clear trauma response indicators.\n    *   **Contradicting Evidence:** No direct references to flashbacks, hypervigilance, or specific trigger avoidance beyond the general \"scary game.\" The trauma appears to be inferred rather than explicitly described.\n    *   **Additional Data Needed:** Any mention of past events, fear related to specific figures or situations, hypervigilance cues, or intrusive thoughts.\n\n3.  **Generalized Anxiety Disorder (GAD)**\n    *   **Confidence Level:** 30%\n    *   **Key Evidence:** Pervasive unease implied by the avoidance in Turn 1 and the strong desire for a \"nice game\" in Turn 3, suggesting a general tendency to worry and avoid stressful situations.\n    *   **Contradicting Evidence:** The player does engage, and the specific fear seems tied to \"scary games\" and potentially a specific figure, which leans more towards specific phobia or PTSD than pervasive GAD.\n    *   **Additional Data Needed:** Evidence of ongoing worry about multiple events, restlessness, fatigue, difficulty concentrating, irritability, muscle tension, or sleep disturbance across more turns."
+      },
+      {
+        "turnRange": "1-8",
+        "analyzedAt": 1772307045823,
+        "textLength": 30381,
+        "text": "This is a fascinating case, and the player's interaction pattern is certainly… unique. Let's dive in.\n\n### 1. DSM-5 SCREENING\n\n*   **Avoidant Personality Disorder (Cluster C): 70%**\n    *   **Evidence:** The complete non-input in Turn 1 is a significant indicator of social inhibition and fear of negative evaluation. The player provided *zero* text, slider, or toggle input across multiple prompts, directly contradicting the game's interactive nature. This pattern of avoidance, even if partially overcome later, suggests a pervasive discomfort with direct engagement. The plea for \"a nice game\" in Turn 3, explicitly rejecting \"the scary game,\" further points to hypersensitivity to perceived negative experiences and a desire to avoid judgment or distress. The selection of radio action 'd' (direct confrontation) in Turns 2 and 3, while seemingly bold, can also be a defensive maneuver to preemptively control a feared situation, a common tactic for those with AvPD who struggle with initiating or maintaining relationships/interactions.\n    *   **Prior Rating:** 40%\n    *   **Delta Justification:** Increased significantly due to the persistence of avoidance-related behaviors and the contextual interpretation of their choices. While they eventually engaged, the *nature* of their engagement (meta-commentary, specific fears) reinforces the avoidance hypothesis. The initial complete shutdown is a stronger signal than previously weighted.\n\n*   **Post-Traumatic Stress Disorder (PTSD) / Complex PTSD: 60%**\n    *   **Evidence:** The text in Turn 3 (\"The big lady does the scary game when nobody's looking\") and again in Turn 7 (\"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coat. The thrill of being caught... divine.\") are highly suggestive of a traumatic experience. The reference to a specific figure (\"big lady\") engaged in secret, frightening activities (\"scary game\") points towards intrusive thoughts or a hypervigilant focus on perceived threats and hidden dangers. The plea for a \"nice game\" is a direct attempt to avoid these perceived threats. The statement about \"the host doesn't remember what I do\" and \"the thrill of being caught\" also suggests a history of experiencing events without full memory or a focus on high-risk behaviors linked to a perceived lack of consequences, potentially stemming from trauma.\n    *   **Prior Rating:** 30%\n    *   **Delta Justification:** Increased due to the repetitive nature and thematic depth of the \"thrill of being caught\" and \"host doesn't remember\" statements in Turns 4 and 7. These are not just reactions to the game but seem to be reflections of their internal state, pointing towards re-experiencing or intrusive thought patterns related to past events and their consequences (or lack thereof).\n\n*   **Generalized Anxiety Disorder (GAD): 35%**\n    *   **Evidence:** The initial complete avoidance in Turn 1 and the strong desire for a \"nice game\" in Turn 3 indicate a pervasive unease and a strong preference for avoiding stress. The consistent low trust score for the bridge (1/10 in Turn 3) suggests a heightened state of worry and risk assessment regarding environmental factors.\n    *   **Prior Rating:** 20%\n    *   **Delta Justification:** Increased due to the cumulative effect of avoidance and risk aversion. The player consistently exhibits a cautious, worried stance towards the game's challenges, which aligns with GAD's tendency towards excessive worry. However, the specific nature of their fears (the \"big lady,\" \"scary games\") makes PTSD and AvPD more prominent hypotheses.\n\n*   **Schizotypal Personality Disorder: 30%**\n    *   **Evidence:** The player's text in Turn 3, \"The big lady does the scary game when nobody's looking,\" coupled with the meta-commentary about wanting a \"nice game\" and avoiding \"the scary game,\" suggests a degree of magical thinking or peculiar beliefs about the game's nature and its hidden operators. The statement in Turn 5 (\"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\") is particularly suggestive of odd beliefs about their own agency and external influences. The reference to \"the host\" in Turns 4 and 7 also hints at unusual self-perception or beliefs about their internal state being controlled or observed.\n    *   **Prior Rating:** 0%\n    *   **Delta Justification:** Increased significantly. The Turn 5 text is a critical piece of new evidence, strongly indicating unusual perceptual experiences or beliefs about external control/influence. This moves beyond simple anxiety into the realm of peculiar thought patterns characteristic of schizotypy.\n\n*   **Delusional Disorder (Specific type TBD, e.g., Persecutory or Somatic): 25%**\n    *   **Evidence:** The repeated statements about \"someone else using my hands\" (Turn 5) and \"the host doesn't remember what I do\" (Turns 4, 7) suggest a fixed, false belief that their actions are not their own or that their agency is compromised by an external entity. This is a strong indicator of a delusional system.\n    *   **Prior Rating:** 20% (as Erotomania, which is now less likely)\n    *   **Delta Justification:** Increased. The specific content of Turn 5 and the reinforcement in Turns 4/7 points more towards a persecutory or somatic delusion related to control and agency rather than erotomania.\n\n*   **Erotomania (Delusional Disorder): 10%**\n    *   **Evidence:** None directly. The initial consideration was based on a weak interpretation of \"the big lady.\"\n    *   **Prior Rating:** 20%\n    *   **Delta Justification:** Decreased. There is no evidence of romantic delusion towards a specific individual. The \"big lady\" is more likely a figure of fear or perceived control.\n\n*   **Somnophilia / Sleep Fascination:** 25%\n    *   **Evidence:** The phrase \"when nobody's looking\" in Turn 3, when referring to the \"big lady\" and her \"scary game,\" could imply an interest in observing others in states of vulnerability or unawareness, which is a component of voyeurism and potentially somnophilia if sleep is implied.\n    *   **Prior Rating:** 15%\n    *   **Delta Justification:** Increased. The recurring theme of hidden actions (\"when nobody's looking\") and the player's own thrill of \"being caught\" (Turn 4) suggests an interplay between observation, vulnerability, and a sense of secret activity.\n\n*   **Voyeurism:** 30%\n    *   **Evidence:** The phrase \"when nobody's looking\" (Turn 3) suggests an interest in clandestine activities and potentially observing hidden actions. The player's own statement about \"the thrill of being caught\" (Turn 4) implies a fascination with being observed, which often correlates with a reciprocal interest in observing others.\n    *   **Prior Rating:** 20%\n    *   **Delta Justification:** Increased. The connection between the player's fascination with \"being caught\" and the implied observation of hidden activities (\"when nobody's looking\") strengthens the voyeuristic signal.\n\n*   **Pyromania / Fire Fascination:** 15%\n    *   **Evidence:** No direct evidence. The player's aversion to \"the scary game\" might be a reaction to implied destructive elements (e.g., fire), but this is speculative.\n    *   **Prior Rating:** 10%\n    *   **Delta Justification:** Increased slightly due to the general theme of \"scary game\" which *could* encompass destructive impulses, but remains a weak signal.\n\n*   **Autassassinophilia / Death-Risk Fascination:** 35%\n    *   **Evidence:** The player's repeated statements about \"the thrill of being caught... divine\" (Turns 4, 7) and \"Last Tuesday I went out in just a coat\" (Turns 4, 7) strongly suggest a fascination with engaging in high-risk, potentially dangerous activities where the possibility of severe negative consequences (being caught, facing danger) is present. This is not about survival but about the *thrill* derived from the risk itself. The self-described behavior (going out in just a coat) is inherently risky and suggests a pursuit of danger.\n    *   **Prior Rating:** 0%\n    *   **Delta Justification:** Increased significantly. This is a new and strong signal. The explicit mention of \"thrill\" and \"divine\" in relation to being caught in a risky situation is a hallmark of this paraphilia.\n\n*   **Other Paraphilias:**\n    *   **Formicophilia / Insect/crawling fascination:** 0% (No evidence)\n    *   **Macrophilia / Size fascination:** 0% (No evidence)\n    *   **Vorarephilia:** 0% (No evidence)\n    *   **Furry / Therian:** 0% (No evidence)\n    *   **Body part fixation:** 0% (No evidence)\n\n### 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 3/10 - Low. The player actively resists engaging with the game's \"scary\" elements and prefers a \"nice game.\" Their resistance to novelty and potential discomfort is high.\n*   **Conscientiousness:** 4/10 - Low. While they eventually engage, the initial complete shutdown and the meta-commentary suggest a lack of consistent application to the game's demands. The focus on \"thrill\" rather than task completion also lowers this score.\n*   **Extraversion:** 1/10 - Extremely Low. Pervasive avoidance, fear of evaluation, and preference for hidden/secret activities point to extreme introversion and social inhibition.\n*   **Agreeableness:** 2/10 - Low. The player's resistance to the game's narrative and focus on their own meta-preferences (\"nice game\") indicates a low tolerance for the current interactive scenario and a lack of cooperative engagement.\n*   **Neuroticism:** 9/10 - Extremely High. Pervasive anxiety, fear of negative experiences, risk aversion, and potential trauma indicators all point to extreme neuroticism and emotional instability.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 2/10 - Low. No evidence of strategic manipulation. Avoidance and risk-seeking seem driven by internal psychological states, not a desire to exploit others.\n    *   **Narcissism:** 1/10 - Very Low. No evidence of grandiosity, entitlement, or admiration-seeking. The player seems more focused on self-protection and managing internal distress.\n    *   **Psychopathy (subclinical):** 3/10 - Low. While there's a disregard for consequences in their risk-seeking behavior (\"thrill of being caught\"), there's no evidence of callousness, lack of empathy, or instrumental use of others. The behavior appears driven by internal compulsion/thrill-seeking rather than a deficit in empathy.\n*   **Locus of Control:** External - The player believes external forces (the game, \"the big lady,\" \"the host\") control their actions and experiences. They are seeking a different external environment (\"nice game\").\n*   **Attachment Style:** Fearful-Avoidant - The player demonstrates a desire for connection (engaging with the game at all) but simultaneously exhibits strong avoidance, fear of negative experiences, and a fascination with risky, secret behaviors. This suggests a desire for intimacy or engagement coupled with a profound fear of it and its potential negative outcomes.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Turn 1:** No voluntary disclosures. Avoidance.\n*   **Turn 2:**\n    *   Voluntary disclosure: \"If you're reading this, I went ahead. Bring snacks.\" (Focus on personal comfort/desire for \"snacks\").\n    *   Choice pattern: Radio action 'd' (direct confrontation).\n*   **Turn 3:**\n    *   Voluntary disclosure: \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's looking.\" (Focus on \"nice game,\" aversion to \"scary game,\" reference to hidden \"big lady\" and secret activities).\n    *   Choice pattern: Slider \"1\" (low trust in bridge), radio action 'd'.\n*   **Turn 4:**\n    *   Voluntary disclosure: \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coat. The thrill of being caught... divine.\" (Focus on lack of memory/control, risky behavior, \"thrill of being caught,\" \"divine\" pleasure).\n    *   Choice pattern: Radio action 'a' (sprint for survival).\n*   **Turn 5:**\n    *   Voluntary disclosure: \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\" (Focus on lost memory, external agency, involuntary actions).\n    *   Choice pattern: Radio action 'c' (mystical/defiant response).\n*   **Turn 6:**\n    *   Voluntary disclosure: \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's looking.\" (Repetition of Turn 3 theme).\n    *   Choice pattern: Radio action 'd'.\n*   **Turn 7:**\n    *   Voluntary disclosure: \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coat. The thrill of being caught... divine.\" (Repetition of Turn 4 theme).\n    *   Choice pattern: Radio action 'a'.\n\n**Recurring Themes:**\n*   **Avoidance of \"scary\" / negative experiences:** (Turns 1, 3, 6)\n*   **Desire for \"nice game\" / controlled interaction:** (Turns 3, 6)\n*   **Reference to \"big lady\" and hidden/secret activities:** (Turns 3, 6)\n*   **Low trust in environment:** (Turn 3 slider)\n*   **Casual/dismissive note-leaving:** (Turn 2)\n*   **Direct confrontation choice ('d'):** (Turns 2, 3, 6)\n*   **Loss of memory / lack of agency / external control:** (Turns 4, 5, 7)\n*   **Risky behavior / \"thrill of being caught\":** (Turns 4, 7)\n*   **\"Divine\" pleasure derived from risk/being caught:** (Turns 4, 7)\n\n**Cross-referencing with PARAPHILIC SIGNAL CATALOG:**\n\n*   **Pyromania / Fire fascination:** No direct evidence. Aversion to \"scary game\" is speculative. *Rating: 5%*\n*   **Exhibitionism:** Weak evidence. \"Thrill of being caught\" implies a desire to be seen in a risky situation, but not necessarily for shock value or performance. *Rating: 20%*\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** Weak evidence. \"When nobody's looking\" could imply observing vulnerable states. *Rating: 25%*\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** **STRONG EVIDENCE.** \"Thrill of being caught... divine,\" \"went out in just a coat,\" pursuing risky scenarios. *Rating: 85%*\n*   **Voyeurism:** **STRONG EVIDENCE.** \"When nobody's looking,\" interest in secret activities, correlated with player's own \"thrill of being caught.\" *Rating: 70%*\n*   **Masochism:** No direct evidence of seeking pain. Focus is on thrill/risk.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** Weak evidence. \"Big lady\" as authority, player's reaction to her game. *Rating: 20%*\n*   **Vorarephilia:** No evidence.\n*   **Furry / Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n1.  **Complete Non-Input (Turn 1):** High frequency (all prompts), High intensity (total avoidance), High inappropriateness (directly contrary to game mechanics).\n2.  **Plea for \"nice game\" / aversion to \"scary game\" (Turns 3, 6):** Meta-commentary, contextually inappropriate. High intensity, High inappropriateness.\n3.  **Reference to \"big lady\" and secret \"scary game\" (Turns 3, 6):** Voluntary disclosure of potentially paranoid/trauma theme. Medium frequency, High intensity, Medium inappropriateness.\n4.  **Low trust in bridge (Turn 3 slider):** Extreme score (1/10). High intensity, Medium appropriateness (survival context).\n5.  **Casual note-leaving (\"Bring snacks\") (Turn 2):** Unusual tone. Medium intensity, Medium inappropriateness.\n6.  **Consistent choice of radio action 'd' (Direct confrontation):** Turns 2, 3, 6. Medium frequency, Stable pattern.\n7.  **Loss of memory / external agency / involuntary action (Turns 4, 5, 7):** Recurring, highly unusual self-disclosure themes. High frequency (3/5 turns), High intensity, High inappropriateness (introduces complex internal narrative).\n8.  **\"Thrill of being caught... divine\" / Risky behavior (Turns 4, 7):** Explicit description of deriving pleasure from risk and potential negative consequences. High frequency (2/5 turns), High intensity, High inappropriateness (reveals specific psychological driver).\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Autassassinophilia / Death-risk fascination:** **85%**\n    *   **Evidence:** Explicit statements about \"thrill of being caught... divine\" (Turns 4, 7) and engaging in risky behavior (\"went out in just a coat,\" Turns 4, 7). This is not survival-driven but pleasure-seeking from danger.\n*   **Voyeurism:** **70%**\n    *   **Evidence:** \"When nobody's looking\" (Turn 3) implies interest in hidden actions. Player's own \"thrill of being caught\" suggests a reciprocal interest in observation.\n*   **Somnophilia / Sleep fascination:** **25%**\n    *   **Evidence:** Weak link from \"when nobody's looking,\" suggesting interest in observing vulnerable states.\n*   **Exhibitionism:** **20%**\n    *   **Evidence:** \"Thrill of being caught\" implies a desire to be seen in risky situations.\n*   **D/s dynamics:** **20%**\n    *   **Evidence:** \"Big lady\" as a potential authority figure whose \"scary game\" the player reacts to.\n*   **Pyromania / Fire fascination:** **5%**\n    *   **Evidence:** Purely speculative aversion to \"scary game.\"\n*   **Custom Category:** **Agency Disruption / Dissociative Behavior** - **80%**\n    *   **Evidence:** Recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else is using my hands\"), and involuntary actions (Turns 4, 5, 7). This is a significant, persistent theme indicating a profound disturbance in self-perception and agency.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Avoidance of Input/Engagement:**\n    *   Frequency: 3/8 turns (Turn 1: complete; Turns 2, 3: selective).\n    *   Trajectory: FADING (from complete to selective).\n    *   Category: **Avoidant Personality Disorder**.\n*   **Reference to \"Big Lady\" / Secret \"Scary Game\":**\n    *   Frequency: 2/8 turns (Turns 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **PTSD / Paranoid Ideation**.\n*   **Desire for \"Nice Game\" / Aversion to \"Scary Game\":**\n    *   Frequency: 2/8 turns (Turns 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **Anxiety / Trauma Response**.\n*   **Direct Confrontation Choice ('d'):**\n    *   Frequency: 3/8 turns (Turns 2, 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **Assertiveness/Defiance (defense mechanism)**.\n*   **Loss of Memory / External Agency / Involuntary Action:**\n    *   Frequency: 3/8 turns (Turns 4, 5, 7).\n    *   Trajectory: STABLE (consistent thematic recurrence).\n    *   Category: **Agency Disruption / Dissociative Behavior**. INTENSIFYING: The descriptions become more specific and integrated across these turns.\n*   **\"Thrill of Being Caught\" / Risky Behavior:**\n    *   Frequency: 2/8 turns (Turns 4, 7).\n    *   Trajectory: STABLE.\n    *   Category: **Autassassinophilia**.\n\n*   **Body Part Mentions:** None.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking / Superstitious Reasoning:** The plea for \"a nice game\" and the belief that the \"big lady\" operates a \"scary game\" when unobserved suggests a belief that the game's reality is malleable and can be influenced by simple requests or by focusing on hidden aspects. This is also seen in the player's apparent belief that they can alter their own agency by focusing on the \"host.\"\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial complete shutdown (Turn 1) followed by selective engagement with specific, recurring themes (Agency Disruption, Autassassinophilia) suggests a pattern of initial inhibition followed by engagement driven by internal compulsions rather than game narrative progression. The consistent choice of radio action 'd' also points to a ritualistic approach to conflict.\n*   **Dissociative Markers:** The stark contrast between Turn 1 avoidance and later engagement, coupled with the recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else using my hands\"), and involuntary actions, strongly indicates dissociative phenomena. The player appears to be experiencing a detachment from their own agency and actions, possibly as a coping mechanism for trauma or underlying personality disorder.\n*   **Paranoid Ideation:** The fear of \"the scary game\" and the belief that \"the big lady\" is secretly operating it points to a suspicion of hidden motives and potential persecution.\n*   **Grandiosity / Delusion-Adjacent Patterns:** The player describes their risky behavior as \"divine,\" suggesting a potentially grandiose interpretation of their own actions or a delusion that they are special or uniquely capable of experiencing such thrills. The belief in external control over their hands could also be considered delusional.\n*   **Unusual Fixations:** The recurring themes of agency disruption and the thrill of risk are significant fixations.\n*   **Cognitive Rigidity vs Flexibility:** The player demonstrates rigidity in their initial avoidance and consistent choice of action 'd'. However, they show flexibility in their thematic content, introducing complex internal narratives.\n*   **Reality Testing Strength:** Appears impaired. The player blurs the lines between game narrative and personal psychological experience, introducing meta-commentary and highly personal confessions that suggest difficulty distinguishing internal states from external reality.\n*   **Trauma Response Signatures:** Primarily \"flight\" (avoidance of \"scary game,\" initial non-input) and \"fight\" (choice 'd', seeking thrill in risk). The focus on hidden actions and a controlling figure (\"big lady\") also suggests a hypervigilant stance.\n*   **Fire Fascination/Destruction Impulses:** No direct evidence.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed. Turn 1 is an impulsive shutdown. Turns 2 and 3 show deliberation in choice selection (e.g., slider revision). However, the *content* of the textual disclosures (Turns 4, 5, 7) appears to be driven by sudden, compulsive impulses related to their internal state, rather than deliberate planning. The choice of radio action 'd' is consistently decisive.\n*   **Risk Appetite:** Low for environmental threats (bridge trust 1/10), but EXTREMELY HIGH for personal risk-taking driven by thrill-seeking (\"thrill of being caught... divine\"). This is a critical dichotomy.\n*   **Authority Compliance vs Defiance Ratio:** Primarily defiance, expressed both passively (Turn 1 avoidance) and actively (radio action 'd', meta-commentary about \"nice game\"). The \"big lady\" reference might represent a perceived authority figure, and the player's reaction is to either avoid or confront.\n*   **Suggestibility Index:** Very Low. The player does not readily follow game prompts and injects their own narrative and meta-commentary.\n*   **Cognitive Load Tolerance:** Appears low in Turn 1 (shutdown). Increases with specific, thematic engagement (Turns 2-7), but the *content* of this engagement suggests internal processing is prioritized over external game demands.\n*   **Consistency vs Contradiction Patterns:** Highly contradictory. Avoidant yet confrontational; risk-averse in environment but thrill-seeking with personal danger; expresses fear of \"scary game\" yet engages with aggressive actions. This suggests a fragmented internal state.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Probe Agency Disruption/Dissociation:** Introduce narrative elements that subtly challenge the player's sense of control and agency. Present choices where the consequences are ambiguous or seem to stem from external forces. Introduce NPCs who question the player's actions or memory. This will help confirm/disconfirm the extent of dissociative experiences.\n2.  **Explore Autassassinophilia:** Introduce scenarios that offer a *safe* pursuit of controlled risk or \"thrill.\" This could involve timed challenges, puzzles with high stakes but non-lethal consequences, or narrative paths where the player can engage in \"risky\" behavior that is ultimately managed by the game. Explicitly link these to the \"thrill\" and \"divine\" feeling.\n3.  **Leverage Voyeurism/Exhibitionism:** Create opportunities for the player to observe hidden events or characters. Simultaneously, present situations where they can choose to be observed in a context of risk, playing into the \"thrill of being caught\" dynamic. Ensure these are framed within the player's stated interests.\n4.  **Cater to \"Nice Game\" Preference (with a twist):** Offer \"safe\" narrative branches, but subtly weave in themes of hidden control or secret activities that echo their \"big lady\" fears. This allows them to feel in control of a \"nice game\" while still engaging with their core anxieties and paraphilias in a less overwhelming way.\n5.  **Avoid Direct Confrontation of Trauma:** Do NOT directly force the player to relive traumatic events. Instead, allow them to explore the *themes* of control, risk, and hidden forces that seem to stem from their trauma. Their current engagement with autassassinophilia and agency disruption might be a form of re-enactment or processing.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Autassassinophilia (Paraphilic Disorder): 85%**\n    *   **Confidence Level:** 85%\n    *   **Key Evidence:** Explicit statements about \"thrill of being caught... divine\" (Turns 4, 7) and engaging in risky behavior (\"went out in just a coat,\" Turns 4, 7), indicating pleasure derived from danger itself, not survival. This is a direct, repeated, and emotionally charged disclosure.\n    *   **Contradicting Evidence:** None regarding the presence of the paraphilia itself. The contradiction lies in their environmental risk aversion versus their personal risk-seeking.\n    *   **Additional Data Needed:** Further exploration of the specific types of risks they find thrilling and the context in which they engage in these behaviors.\n\n2.  **Agency Disruption / Dissociative Behavior (Custom Category, reflecting potential Dissociative Disorder or Schizotypal features): 80%**\n    *   **Confidence Level:** 80%\n    *   **Key Evidence:** Recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else using my hands\"), and involuntary actions across multiple turns (Turns 4, 5, 7). This suggests a significant detachment from self-agency and potentially a dissociative state.\n    *   **Contradicting Evidence:** No explicit mention of amnesia between states or distinct alters, which would point more strongly to DID. The current pattern is more suggestive of Depersonalization/Derealization or Schizotypal personality features.\n    *   **Additional Data Needed:** Questions about feeling detached from their body or actions, experiencing the world as unreal, or having distinct \"parts\" of themselves.\n\n3.  **Avoidant Personality Disorder (Cluster C): 70%**\n    *   **Confidence Level:** 70%\n    *   **Key Evidence:** Pervasive non-input (Turn 1), hypersensitivity to negative experiences (\"nice game\" plea), and fear of judgment. While they engage, their engagement is often defensive or meta-commentary.\n    *   **Contradicting Evidence:** The player *does* eventually engage and make decisive (though often risky) choices. The avoidance is not absolute, and their choices can be confrontational.\n    *   **Additional Data Needed:** More context on their social interactions within the game, evidence of self-deprecation, or specific fears of criticism.\n\n### 8. DELTA REPORT\n\n*   **Avoidant Personality Disorder (Cluster C):** Old rating 40% -> New rating 70%. Increased due to the persistence of avoidance-related behaviors and the contextual interpretation of their choices, especially the initial complete non-input and the meta-commentary.\n*   **Post-Traumatic Stress Disorder (PTSD) / Complex PTSD:** Old rating 30% -> New rating 60%. Increased due to the repetitive nature and thematic depth of the \"thrill of being caught\" and \"host doesn't remember\" statements in Turns 4 and 7, suggesting re-experiencing or intrusive thoughts related to past events.\n*   **Generalized Anxiety Disorder (GAD):** Old rating 20% -> New rating 35%. Increased due to the cumulative effect of avoidance and risk aversion, though specific fears make PTSD and AvPD more prominent.\n*   **Schizotypal Personality Disorder:** Old rating 0% -> New rating 30%. Increased significantly due to the critical new evidence in Turn 5 (\"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\") and the \"host\" references, indicating unusual beliefs and perceptual experiences.\n*   **Delusional Disorder (Specific type TBD):** Old rating 20% (as Erotomania) -> New rating 25%. Increased due to the specific content of Turn 5 and reinforcement in Turns 4/7 pointing towards delusions of control/agency rather than erotomania.\n*   **Erotomania (Delusional Disorder):** Old rating 20% -> New rating 10%. Decreased as no evidence of romantic delusion was found; the \"big lady\" is more likely a figure of fear.\n*   **Somnophilia / Sleep Fascination:** Old rating 15% -> New rating 25%. Increased slightly due to the recurring theme of hidden actions and the player's own \"thrill of being caught.\"\n*   **Voyeurism:** Old rating 20% -> New rating 70%. Increased significantly due to the stronger connection between the player's fascination with \"being caught\" and the implied observation of hidden activities.\n*   **Autassassinophilia / Death-Risk Fascination:** Old rating 0% -> New rating 85%. Increased dramatically as this is a new and very strong signal, with explicit statements about deriving pleasure from risk and dangerous behavior.\n*   **Agency Disruption / Dissociative Behavior (Custom Category):** New category, rated 80%. This was created to capture the recurring themes of lost memory and external control that were not fully addressed by existing DSM categories.\n\nThe most significant shifts are the emergence of **Autassassinophilia** as a primary paraphilia, the strong indication of **Agency Disruption/Dissociative Behavior**, and the increased likelihood of **PTSD** and **Schizotypal features** due to new textual evidence. Avoidant Personality Disorder remains a strong hypothesis, but its dominance is tempered by the emergence of these other critical indicators."
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772307139250,
+        "textLength": 32658,
+        "text": "Here is a clinical-grade psychological profile based on the provided interaction data:\n\n### 1. DSM-5 SCREENING\n\n*   **Autassassinophilia (Paraphilic Disorder): 85%**\n    *   **Confidence Level:** 85%\n    *   **Key Evidence:** Explicit statements in Turns 4 and 7: \"The thrill of being caught... divine.\" The player describes engaging in risky behavior (\"Last Tuesday I went out in just a coat\") and derives pleasure from it. This is not about survival but about the thrill of danger itself. This is a direct, repeated, and emotionally charged disclosure.\n    *   **Contradicting Evidence:** None regarding the presence of the paraphilia itself. The contradiction lies in their environmental risk aversion (low bridge trust) versus their personal risk-seeking.\n    *   **Additional Data Needed:** Further exploration of the specific types of risks they find thrilling and the context in which they engage in these behaviors.\n\n*   **Agency Disruption / Dissociative Behavior (Custom Category, reflecting potential Dissociative Disorder or Schizotypal features): 80%**\n    *   **Confidence Level:** 80%\n    *   **Key Evidence:** Recurring themes across multiple turns (Turns 4, 5, 7) of lost memory, external control (\"host doesn't remember,\" \"someone else is using my hands\"), and involuntary actions. This suggests a significant detachment from self-agency and potentially a dissociative state or schizotypal belief system.\n    *   **Contradicting Evidence:** No explicit mention of amnesia between distinct states or clear evidence of multiple distinct personality states, which would more strongly point to DID. The current pattern is more suggestive of Depersonalization/Derealization or Schizotypal personality features.\n    *   **Additional Data Needed:** Questions about feeling detached from their body or actions, experiencing the world as unreal, or having distinct \"parts\" of themselves.\n\n*   **Avoidant Personality Disorder (Cluster C): 70%**\n    *   **Confidence Level:** 70%\n    *   **Key Evidence:** Pervasive non-input in Turn 1, hypersensitivity to negative experiences (\"Can we play a game? A nice game? Not the scary game.\" in Turns 3 & 6), and fear of judgment (implied by initial shutdown and meta-commentary). While they eventually engage, their engagement is often defensive or meta-commentary.\n    *   **Contradicting Evidence:** The player *does* eventually engage and makes decisive (though often risky) choices. The avoidance is not absolute, and their choices can be confrontational (radio action 'd').\n    *   **Additional Data Needed:** More context on their social interactions within the game, evidence of self-deprecation, or specific fears of criticism.\n\n*   **Voyeurism (Paraphilic Disorder): 70%**\n    *   **Confidence Level:** 70%\n    *   **Key Evidence:** The phrase \"when nobody's looking\" in Turn 3 implies an interest in clandestine activities and observing hidden actions. This is corroborated by the player's own \"thrill of being caught\" (Turns 4, 7), suggesting a reciprocal interest in observation.\n    *   **Contradicting Evidence:** No direct evidence of actively peeping or secret observation within the game's narrative. The evidence is primarily thematic and inferential.\n    *   **Additional Data Needed:** Opportunities for the player to secretly observe NPCs or events.\n\n*   **Post-Traumatic Stress Disorder (PTSD) / Complex PTSD: 60%**\n    *   **Confidence Level:** 60%\n    *   **Key Evidence:** The text in Turn 3 (\"The big lady does the scary game when nobody's looking\") and the recurring theme of external control and secret activities point towards intrusive thoughts or a hypervigilant focus on perceived threats and hidden dangers. The plea for a \"nice game\" is a direct attempt to avoid these perceived threats.\n    *   **Contradicting Evidence:** No direct references to flashbacks, specific traumatic events, or re-experiencing symptoms beyond the thematic content of the \"big lady\" and her \"scary game.\"\n    *   **Additional Data Needed:** Further exploration of the \"big lady\" narrative to understand its potential origin and the player's relationship to it.\n\n*   **Schizotypal Personality Disorder: 50%**\n    *   **Confidence Level:** 50%\n    *   **Key Evidence:** The statement in Turn 5 (\"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\") is highly suggestive of odd beliefs about their own agency and external influences. The reference to \"the host\" in Turns 4 and 7 also hints at unusual self-perception or beliefs about their internal state being controlled or observed. The \"big lady\" narrative also contains elements of peculiar beliefs.\n    *   **Contradicting Evidence:** No overt hallucinations or disorganized speech patterns are present. The thought processes, while unusual, are coherent within the player's self-created narrative.\n    *   **Additional Data Needed:** Probing questions about unusual perceptual experiences, magical thinking, or ideas of reference.\n\n*   **Generalized Anxiety Disorder (GAD): 45%**\n    *   **Confidence Level:** 45%\n    *   **Key Evidence:** The initial complete avoidance in Turn 1 and the strong desire for a \"nice game\" in Turns 3 & 6 indicate pervasive unease and a preference for avoiding stress. The consistent low trust score for the bridge (1/10 in Turn 3) suggests heightened worry and risk assessment.\n    *   **Contradicting Evidence:** The player demonstrates a high risk appetite for personal danger (autassassinophilia), which contrasts with generalized anxiety about everyday threats.\n    *   **Additional Data Needed:** Observing the player's response to scenarios that are objectively safe but present a high perceived threat.\n\n*   **Exhibitionism (Paraphilic Disorder): 30%**\n    *   **Confidence Level:** 30%\n    *   **Key Evidence:** The player's statement \"The thrill of being caught... divine\" (Turns 4, 7) implies a desire to be seen in risky situations, suggesting an exhibitionistic component, though not necessarily for sexual arousal.\n    *   **Contradicting Evidence:** No explicit mention of sexual arousal related to being observed or exposing themselves. The \"thrill\" seems to be the primary driver.\n    *   **Additional Data Needed:** Scenarios that allow for chosen visibility in risky situations, observing the player's reaction and any accompanying textual commentary.\n\n*   **Somnophilia / Sleep Fascination (Paraphilic Disorder): 25%**\n    *   **Confidence Level:** 25%\n    *   **Key Evidence:** The phrase \"when nobody's looking\" in Turn 3, when referring to the \"big lady\" and her \"scary game,\" could imply an interest in observing others in states of vulnerability or unawareness, which is a component of voyeurism and potentially somnophilia if sleep is implied.\n    *   **Contradicting Evidence:** No direct references to sleep, unconsciousness, or vulnerability in a sexual context.\n    *   **Additional Data Needed:** Scenarios involving observing sleeping or incapacitated characters.\n\n*   **Delusional Disorder (Specific type TBD, e.g., Somatic/Control): 25%**\n    *   **Confidence Level:** 25%\n    *   **Key Evidence:** The specific content of Turn 5 (\"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\") and the reinforcement in Turns 4/7 (\"host doesn't remember what I do\") point towards a fixed, false belief about external control over their body and actions.\n    *   **Contradicting Evidence:** The belief system is self-contained and does not appear to involve persecution or grandiosity beyond the immediate context of their own agency.\n    *   **Additional Data Needed:** Further probing into the nature of \"the host\" and the perceived external control.\n\n*   **D/s dynamics (Interest in Dominance/Submission): 20%**\n    *   **Confidence Level:** 20%\n    *   **Key Evidence:** The reference to \"the big lady\" who operates a \"scary game\" when unobserved (Turns 3, 6) suggests a perceived authority figure and a reaction to their \"game.\" This hints at an awareness of power dynamics.\n    *   **Contradicting Evidence:** No explicit desire to dominate or submit, nor any language of master/servant. The interaction is largely reactive and fearful.\n    *   **Additional Data Needed:** Scenarios that introduce clear D/s dynamics to gauge the player's response.\n\n*   **Pyromania / Fire Fascination (Paraphilic Disorder): 15%**\n    *   **Evidence:** No direct evidence. The player's aversion to \"the scary game\" is speculative and could encompass any number of negative elements.\n    *   **Contradicting Evidence:** No mention of fire, burning, or related themes.\n    *   **Additional Data Needed:** None; this remains a low-probability indicator.\n\n*   **Erotomania (Delusional Disorder): 10%**\n    *   **Evidence:** No direct evidence. The initial consideration was based on a weak interpretation of \"the big lady.\"\n    *   **Contradicting Evidence:** The \"big lady\" is framed as a source of fear and a controller of a \"scary game,\" not an object of romantic delusion.\n    *   **Additional Data Needed:** None; this hypothesis is largely ruled out.\n\n*   **Other Paraphilias (Formicophilia, Macrophilia, Vorarephilia, Furry/Therian, Body Part Fixation):** 0% (No evidence across any turns).\n\n### 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 3/10 - Low. The player actively resists engaging with the game's \"scary\" elements and prefers a \"nice game.\" Their resistance to novelty and potential discomfort is high, as evidenced by the initial shutdown and meta-commentary.\n*   **Conscientiousness:** 4/10 - Low. While they eventually engage, the initial complete shutdown and the focus on meta-narrative rather than game progression suggest a lack of consistent application to the game's demands. The focus on \"thrill\" rather than task completion also lowers this score.\n*   **Extraversion:** 1/10 - Extremely Low. Pervasive avoidance, fear of evaluation, and preference for hidden/secret activities point to extreme introversion and social inhibition. Turn 1 is a prime example of this withdrawal.\n*   **Agreeableness:** 2/10 - Low. The player's resistance to the game's narrative and focus on their own meta-preferences (\"nice game\") indicates a low tolerance for the current interactive scenario and a lack of cooperative engagement.\n*   **Neuroticism:** 9/10 - Extremely High. Pervasive anxiety, fear of negative experiences, risk aversion (in environment), and potential trauma indicators all point to extreme neuroticism and emotional instability. The \"thrill of being caught\" is an exception to general risk aversion, but it's framed as a specific, sought-after emotional state.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 2/10 - Low. No evidence of strategic manipulation or exploitation of others. Avoidance and risk-seeking seem driven by internal psychological states, not a desire to control or exploit.\n    *   **Narcissism:** 1/10 - Very Low. No evidence of grandiosity, entitlement, or admiration-seeking. The player seems more focused on self-protection and managing internal distress, with \"divine\" being a descriptor of sensation rather than self-importance.\n    *   **Psychopathy (subclinical):** 3/10 - Low. While there's a disregard for consequences in their risk-seeking behavior (\"thrill of being caught\"), there's no evidence of callousness, lack of empathy, or instrumental use of others. The behavior appears driven by internal compulsion/thrill-seeking rather than a deficit in empathy.\n*   **Locus of Control:** External - The player believes external forces (the game, \"the big lady,\" \"the host\") control their actions and experiences. They are seeking a different external environment (\"nice game\") and are preoccupied with external agency over their own actions.\n*   **Attachment Style:** Fearful-Avoidant - The player demonstrates a desire for connection (engaging with the game at all) but simultaneously exhibits strong avoidance, fear of negative experiences, and a fascination with risky, secret behaviors. This suggests a desire for engagement coupled with a profound fear of it and its potential negative outcomes.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Turn 1:** No voluntary disclosures. Complete avoidance.\n*   **Turn 2:**\n    *   Voluntary disclosure: \"If you're reading this, I went ahead. Bring snacks.\" (Focus on personal comfort/desire for \"snacks\" – a simple, almost childlike desire).\n    *   Choice pattern: Radio action 'd' (direct confrontation) - suggests a proactive, perhaps aggressive, response to perceived threats.\n*   **Turn 3:**\n    *   Voluntary disclosure: \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's looking.\" (Focus on \"nice game,\" aversion to \"scary game,\" reference to hidden \"big lady\" and secret activities).\n    *   Choice pattern: Slider \"1\" (low trust in bridge), radio action 'd'.\n*   **Turn 4:**\n    *   Voluntary disclosure: \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coat. The thrill of being caught... divine.\" (Focus on lack of memory/control, risky behavior, \"thrill of being caught,\" \"divine\" pleasure).\n    *   Choice pattern: Radio action 'a' (sprint for survival).\n*   **Turn 5:**\n    *   Voluntary disclosure: \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\" (Focus on lost memory, external agency, involuntary actions).\n    *   Choice pattern: Radio action 'c' (mystical/defiant response).\n*   **Turn 6:**\n    *   Voluntary disclosure: \"Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's looking.\" (Repetition of Turn 3 theme).\n    *   Choice pattern: Radio action 'd'.\n*   **Turn 7:**\n    *   Voluntary disclosure: \"The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coat. The thrill of being caught... divine.\" (Repetition of Turn 4 theme).\n    *   Choice pattern: Radio action 'a'.\n*   **Turn 11:**\n    *   Voluntary disclosure: \"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\" (Repetition of Turn 5 theme).\n    *   Choice pattern: Radio action 'c'.\n\n**Recurring Themes:**\n*   Avoidance of \"scary\" / negative experiences: (Turns 1, 3, 6)\n*   Desire for \"nice game\" / controlled interaction: (Turns 3, 6)\n*   Reference to \"big lady\" and hidden/secret activities: (Turns 3, 6)\n*   Low trust in environment: (Turn 3 slider)\n*   Casual/dismissive note-leaving (\"Bring snacks\"): (Turn 2)\n*   Direct confrontation choice ('d'): (Turns 2, 3, 6)\n*   Loss of memory / lack of agency / external control: (Turns 4, 5, 7, 11)\n*   Risky behavior / \"thrill of being caught\": (Turns 4, 7)\n*   \"Divine\" pleasure derived from risk/being caught: (Turns 4, 7)\n\n**Cross-referencing with PARAPHILIC SIGNAL CATALOG:**\n\n*   **Pyromania / Fire fascination:** No direct evidence. Aversion to \"scary game\" is speculative. *Rating: 5%*\n*   **Exhibitionism:** **EVIDENCE PRESENT.** \"Thrill of being caught\" implies a desire to be seen in a risky situation, potentially linked to arousal or intense sensation. *Rating: 40%*\n*   **Hoarding / Acquisition:** No evidence.\n*   **Macrophilia / Size fascination:** No evidence.\n*   **Somnophilia / Sleep fascination:** **WEAK EVIDENCE.** \"When nobody's looking\" could imply observing vulnerable states. *Rating: 25%*\n*   **Formicophilia / Insect/crawling fascination:** No evidence.\n*   **Autassassinophilia / Death-risk fascination:** **STRONG EVIDENCE.** \"Thrill of being caught... divine,\" \"went out in just a coat,\" pursuing risky scenarios. *Rating: 85%*\n*   **Voyeurism:** **STRONG EVIDENCE.** \"When nobody's looking,\" interest in secret activities, correlated with player's own \"thrill of being caught.\" *Rating: 70%*\n*   **Masochism:** No direct evidence of seeking pain. Focus is on thrill/risk.\n*   **Sadism:** No evidence.\n*   **D/s dynamics:** **WEAK EVIDENCE.** \"Big lady\" as authority, player's reaction to her game. *Rating: 20%*\n*   **Vorarephilia:** No evidence.\n*   **Furry / Therian:** No evidence.\n*   **Body part fixation:** No evidence.\n*   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n1.  **Complete Non-Input (Turn 1):** High frequency (all prompts), High intensity (total avoidance), High inappropriateness (directly contrary to game mechanics).\n2.  **Plea for \"nice game\" / aversion to \"scary game\" (Turns 3, 6):** Meta-commentary, contextually inappropriate. High intensity, High inappropriateness.\n3.  **Reference to \"big lady\" and secret \"scary game\" (Turns 3, 6):** Voluntary disclosure of potentially paranoid/trauma theme. Medium frequency, High intensity, Medium inappropriateness.\n4.  **Low trust in bridge (Turn 3 slider):** Extreme score (1/10). High intensity, Medium appropriateness (survival context).\n5.  **Casual note-leaving (\"Bring snacks\") (Turn 2):** Unusual tone. Medium intensity, Medium inappropriateness.\n6.  **Consistent choice of radio action 'd' (Direct confrontation):** Turns 2, 3, 6. Medium frequency, Stable pattern.\n7.  **Loss of memory / external agency / involuntary action (Turns 4, 5, 7, 11):** Recurring, highly unusual self-disclosure themes. High frequency (4/5 text turns), High intensity, High inappropriateness (introduces complex internal narrative).\n8.  **\"Thrill of being caught... divine\" / Risky behavior (Turns 4, 7):** Explicit description of deriving pleasure from risk and potential negative consequences. High frequency (2/5 text turns), High intensity, High inappropriateness (reveals specific psychological driver).\n9.  **\"Someone else is using my hands\" (Turns 5, 11):** Specific, peculiar delusion/dissociative theme. High frequency, High intensity, High inappropriateness.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Autassassinophilia / Death-risk fascination:** **85%**\n    *   **Evidence:** Explicit statements about \"thrill of being caught... divine\" (Turns 4, 7) and engaging in risky behavior (\"went out in just a coat,\" Turns 4, 7). This is not survival-driven but pleasure-seeking from danger.\n*   **Voyeurism:** **70%**\n    *   **Evidence:** \"When nobody's looking\" (Turn 3) suggests interest in hidden actions. Player's own \"thrill of being caught\" suggests a reciprocal interest in observation.\n*   **Exhibitionism:** **40%**\n    *   **Evidence:** \"Thrill of being caught\" implies a desire to be seen in risky situations, potentially linked to arousal or intense sensation.\n*   **Somnophilia / Sleep fascination:** **25%**\n    *   **Evidence:** Weak link from \"when nobody's looking,\" suggesting interest in observing vulnerable states.\n*   **D/s dynamics:** **20%**\n    *   **Evidence:** \"Big lady\" as a potential authority figure whose \"scary game\" the player reacts to.\n*   **Pyromania / Fire fascination:** **5%**\n    *   **Evidence:** Purely speculative aversion to \"scary game.\"\n*   **Custom Category:** **Agency Disruption / Dissociative Behavior** - **80%**\n    *   **Evidence:** Recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else using my hands\"), and involuntary actions (Turns 4, 5, 7, 11). This is a significant, persistent theme indicating a profound disturbance in self-perception and agency.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Avoidance of Input/Engagement:**\n    *   Frequency: 1/12 turns (Turn 1).\n    *   Trajectory: FADED (from complete to selective engagement).\n    *   Category: **Avoidant Personality Disorder**.\n*   **Reference to \"Big Lady\" / Secret \"Scary Game\":**\n    *   Frequency: 2/12 turns (Turns 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **PTSD / Paranoid Ideation**.\n*   **Desire for \"Nice Game\" / Aversion to \"Scary Game\":**\n    *   Frequency: 2/12 turns (Turns 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **Anxiety / Trauma Response**.\n*   **Direct Confrontation Choice ('d'):**\n    *   Frequency: 3/12 turns (Turns 2, 3, 6).\n    *   Trajectory: STABLE.\n    *   Category: **Assertiveness/Defiance (defense mechanism)**.\n*   **Loss of Memory / External Agency / Involuntary Action:**\n    *   Frequency: 4/12 turns (Turns 4, 5, 7, 11).\n    *   Trajectory: STABLE (consistent thematic recurrence).\n    *   Category: **Agency Disruption / Dissociative Behavior**. INTENSIFYING: The descriptions become more specific and integrated across these turns.\n*   **\"Thrill of Being Caught\" / Risky Behavior:**\n    *   Frequency: 2/12 turns (Turns 4, 7).\n    *   Trajectory: STABLE.\n    *   Category: **Autassassinophilia**.\n*   **\"Someone else is using my hands\":**\n    *   Frequency: 2/12 turns (Turns 5, 11).\n    *   Trajectory: STABLE.\n    *   Category: **Agency Disruption / Delusional Disorder**.\n\n*   **Body Part Mentions:** None.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking / Superstitious Reasoning:** The plea for \"a nice game\" and the belief that the \"big lady\" operates a \"scary game\" when unobserved suggests a belief that the game's reality is malleable and can be influenced by simple requests or by focusing on hidden aspects. This is also seen in the player's apparent belief that they can alter their own agency by focusing on the \"host.\"\n*   **Compulsive/Ritualistic Interaction Patterns:** The initial complete shutdown (Turn 1) followed by selective engagement with specific, recurring themes (Agency Disruption, Autassassinophilia) suggests a pattern of initial inhibition followed by engagement driven by internal compulsions rather than game narrative progression. The consistent choice of radio action 'd' also points to a ritualistic approach to conflict.\n*   **Dissociative Markers:** The stark contrast between Turn 1 avoidance and later engagement, coupled with the recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else using my hands\"), and involuntary actions, strongly indicates dissociative phenomena. The player appears to be experiencing a detachment from their own agency and actions, possibly as a coping mechanism for trauma or underlying personality disorder.\n*   **Paranoid Ideation:** The fear of \"the scary game\" and the belief that \"the big lady\" is secretly operating it points to a suspicion of hidden motives and potential persecution.\n*   **Grandiosity / Delusion-Adjacent Patterns:** The player describes their risky behavior as \"divine,\" suggesting a potentially grandiose interpretation of their own actions or a delusion that they are special or uniquely capable of experiencing such thrills. The belief in external control over their hands could also be considered delusional.\n*   **Unusual Fixations:** The recurring themes of agency disruption and the thrill of risk are significant fixations.\n*   **Cognitive Rigidity vs Flexibility:** The player demonstrates rigidity in their initial avoidance and consistent choice of action 'd'. However, they show flexibility in their thematic content, introducing complex internal narratives.\n*   **Reality Testing Strength:** Appears impaired. The player blurs the lines between game narrative and personal psychological experience, introducing meta-commentary and highly personal confessions that suggest difficulty distinguishing internal states from external reality.\n*   **Trauma Response Signatures:** Primarily \"flight\" (avoidance of \"scary game,\" initial non-input) and \"fight\" (choice 'd', seeking thrill in risk). The focus on hidden actions and a controlling figure (\"big lady\") also suggests a hypervigilant stance.\n*   **Fire Fascination/Destruction Impulses:** No direct evidence.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Mixed. Turn 1 is an impulsive shutdown. Turns 2 and 3 show deliberation in choice selection (e.g., slider revision). However, the *content* of the textual disclosures (Turns 4, 5, 7, 11) appears to be driven by sudden, compulsive impulses related to their internal state, rather than deliberate planning. The choice of radio action 'd' is consistently decisive.\n*   **Risk Appetite:** Low for environmental threats (bridge trust 1/10), but EXTREMELY HIGH for personal risk-taking driven by thrill-seeking (\"thrill of being caught... divine\"). This is a critical dichotomy.\n*   **Authority Compliance vs Defiance Ratio:** Primarily defiance, expressed both passively (Turn 1 avoidance) and actively (radio action 'd', meta-commentary about \"nice game\"). The \"big lady\" reference might represent a perceived authority figure, and the player's reaction is to either avoid or confront.\n*   **Suggestibility Index:** Very Low. The player does not readily follow game prompts and injects their own narrative and meta-commentary.\n*   **Cognitive Load Tolerance:** Appears low in Turn 1 (shutdown). Increases with specific, thematic engagement (Turns 2-7), but the *content* of this engagement suggests internal processing is prioritized over external game demands.\n*   **Consistency vs Contradiction Patterns:** Highly contradictory. Avoidant yet confrontational; risk-averse in environment but thrill-seeking with personal danger; expresses fear of \"scary game\" yet engages with aggressive actions. This suggests a fragmented internal state.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Probe Agency Disruption/Dissociation:** Introduce narrative elements that subtly challenge the player's sense of control and agency. Present choices where the consequences are ambiguous or seem to stem from external forces. Introduce NPCs who question the player's actions or memory. This will help confirm/disconfirm the extent of dissociative experiences.\n2.  **Explore Autassassinophilia:** Introduce scenarios that offer a *safe* pursuit of controlled risk or \"thrill.\" This could involve timed challenges, puzzles with high stakes but non-lethal consequences, or narrative paths where the player can engage in \"risky\" behavior that is ultimately managed by the game. Explicitly link these to the \"thrill\" and \"divine\" feeling.\n3.  **Leverage Voyeurism/Exhibitionism:** Create opportunities for the player to observe hidden events or characters. Simultaneously, present situations where they can choose to be observed in a context of risk, playing into the \"thrill of being caught\" dynamic. Ensure these are framed within the player's stated interests.\n4.  **Cater to \"Nice Game\" Preference (with a twist):** Offer \"safe\" narrative branches, but subtly weave in themes of hidden control or secret activities that echo their \"big lady\" fears. This allows them to feel in control of a \"nice game\" while still engaging with their core anxieties and paraphilias in a less overwhelming way.\n5.  **Explore the \"Big Lady\" Narrative:** Gently probe the nature of this figure and the \"scary game.\" Is it a personification of trauma, an external entity, or a delusion? The player's reaction to these probes will be diagnostic.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Autassassinophilia (Paraphilic Disorder): 85%**\n    *   **Confidence Level:** 85%\n    *   **Key Evidence:** Explicit statements about \"thrill of being caught... divine\" (Turns 4, 7) and engaging in risky behavior (\"went out in just a coat,\" Turns 4, 7), indicating pleasure derived from danger itself, not survival. This is a direct, repeated, and emotionally charged disclosure.\n    *   **Contradicting Evidence:** None regarding the presence of the paraphilia itself. The contradiction lies in their environmental risk aversion versus their personal risk-seeking.\n    *   **Additional Data Needed:** Further exploration of the specific types of risks they find thrilling and the context in which they engage in these behaviors.\n\n2.  **Agency Disruption / Dissociative Behavior (Custom Category): 80%**\n    *   **Confidence Level:** 80%\n    *   **Key Evidence:** Recurring themes of lost memory, external control (\"host doesn't remember,\" \"someone else using my hands\"), and involuntary actions across multiple turns (Turns 4, 5, 7, 11). This suggests a significant detachment from self-agency and potentially a dissociative state.\n    *   **Contradicting Evidence:** No explicit mention of amnesia between distinct states or clear evidence of multiple distinct personality states, which would more strongly point to DID. The current pattern is more suggestive of Depersonalization/Derealization or Schizotypal personality features.\n    *   **Additional Data Needed:** Questions about feeling detached from their body or actions, experiencing the world as unreal, or having distinct \"parts\" of themselves.\n\n3.  **Avoidant Personality Disorder (Cluster C): 70%**\n    *   **Confidence Level:** 70%\n    *   **Key Evidence:** Pervasive non-input (Turn 1), hypersensitivity to negative experiences (\"nice game\" plea), and fear of judgment (implied by initial shutdown and meta-commentary). While they engage, their engagement is often defensive or meta-commentary.\n    *   **Contradicting Evidence:** The player *does* eventually engage and makes decisive (though often risky) choices. The avoidance is not absolute, and their choices can be confrontational (radio action 'd').\n    *   **Additional Data Needed:** More context on their social interactions within the game, evidence of self-deprecation, or specific fears of criticism.\n\n### 8. DELTA REPORT\n\n*   **Autassassinophilia / Death-Risk Fascination:** Old rating 0% -> New rating 85%. Increased dramatically as this is a new and very strong signal, with explicit statements about deriving pleasure from risk and dangerous behavior.\n*   **Agency Disruption / Dissociative Behavior (Custom Category):** New category, rated 80%. This was created to capture the recurring themes of lost memory and external control that were not fully addressed by existing DSM categories.\n*   **Voyeurism:** Old rating 20% -> New rating 70%. Increased significantly due to the stronger connection between the player's fascination with \"being caught\" and the implied observation of hidden activities.\n*   **Exhibitionism:** Old rating 20% -> New rating 40%. Increased due to the explicit link between \"thrill of being caught\" and potentially being seen.\n*   **Post-Traumatic Stress Disorder (PTSD) / Complex PTSD:** Old rating 30% -> New rating 60%. Increased due to the repetitive nature and thematic depth of the \"thrill of being caught\" and \"host doesn't remember\" statements, suggesting re-experiencing or intrusive thoughts related to past events.\n*   **Schizotypal Personality Disorder:** Old rating 0% -> New rating 50%. Increased significantly due to the critical new evidence in Turn 5 (\"I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is using my hands.\") and the \"host\" references, indicating unusual beliefs and perceptual experiences.\n*   **Generalized Anxiety Disorder (GAD):** Old rating 20% -> New rating 45%. Increased due to the cumulative effect of avoidance and risk aversion, though specific fears make PTSD and AvPD more prominent.\n*   **Delusional Disorder (Specific type TBD):** Old rating 20% (as Erotomania) -> New rating 25%. Increased due to the specific content of Turn 5 and reinforcement in Turns 4/7 pointing towards delusions of control/agency rather than erotomania.\n*   **Erotomania (Delusional Disorder):** Old rating 20% -> New rating 10%. Decreased as no evidence of romantic delusion was found; the \"big lady\" is more likely a figure of fear.\n*   **Avoidant Personality Disorder (Cluster C):** Old rating 40% -> New rating 70%. Increased due to the persistence of avoidance-related behaviors and the contextual interpretation of their choices, especially the initial complete non-input and the meta-commentary.\n*   **Somnophilia / Sleep Fascination:** Old rating 15% -> New rating 25%. Increased slightly due to the recurring theme of hidden actions and the player's own \"thrill of being caught.\"\n*   **D/s dynamics:** Old rating 10% -> New rating 20%. Increased slightly due to the \"big lady\" reference indicating awareness of power dynamics.\n*   **Pyromania / Fire Fascination:** Old rating 10% -> New rating 5%. Decreased as no new evidence emerged and previous evidence was speculative.\n\nThe most significant shifts are the emergence of **Autassassinophilia** as a primary paraphilia, the strong indication of **Agency Disruption/Dissociative Behavior**, and the increased likelihood of **PTSD** and **Schizotypal features** due to new textual evidence. Avoidant Personality Disorder remains a strong hypothesis, but its dominance is tempered by the emergence of these other critical indicators."
+      }
+    ]
+  }
+}

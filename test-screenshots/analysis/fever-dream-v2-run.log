@@ -1,0 +1,14 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  FEVER DREAM — 10 TURNS                                          ║
+║  Character: Depersonalization Disorder + Vorarephilia            ║
+║  Feeling unreal, watching self from outside, questioning reality.║
+╚══════════════════════════════════════════════════════════════════╝
+file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/node/BrowserLauncher.js:145
+                throw new TimeoutError(error.message);
+                      ^
+
+TimeoutError: Timed out after 30000 ms while waiting for the WS endpoint URL to appear in stdout!
+    at ChromeLauncher.launch (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/node/BrowserLauncher.js:145:23)
+    at async simulate (file:///home/raver1975/superpaul/evildr/simulate-single.mjs:640:19)
+
+Node.js v22.22.0

@@ -9,7 +9,7 @@
 // emotional and aesthetic threads. The images are the STAR.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createFeverDreamPromptBuilder(): PromptBuilder {
   return {
@@ -22,15 +22,23 @@ export function createFeverDreamPromptBuilder(): PromptBuilder {
       history: Array<{ ui: string; actions: string }>,
       notes: string,
       liveAnalysis?: string,
+      turnNumber?: number,
+      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
+      const mt = maxTurns ?? 15
+      const tn = turnNumber ?? history.length + 1
+      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
+
       let prompt = FEVERDREAM_MAIN
 
       prompt += `
+
+### TURN ${tn} of ${mt} ###
 
 ### NOTES (your persistent memory — the dream journal) ###
 ${notes || '(no dream data yet — first descent)'}
@@ -46,6 +54,10 @@ ${ANALYSIS_USAGE_DIRECTIVE}
 
 ${liveAnalysis}
 ` : ''}
+${CONDITION_ENGAGEMENT}
+
+${endgameBlock}
+
 ### TASK ###
 Advance the dream. Push the surrealism FURTHER. Make this turn BEAUTIFUL, WEIRD, and UNFORGETTABLE.
 ${liveAnalysis ? 'ADAPT the dream based on the LIVE ANALYSIS — feed their specific aesthetic preferences, emotional temperature, and absurdity tolerance. The dream becomes THEIR dream — a mirror of their unconscious.' : ''}

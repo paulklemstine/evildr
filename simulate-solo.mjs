@@ -742,10 +742,8 @@ function logUI(label, ui) {
 async function interactOneByOne(page, turn, character, ui) {
   const log = []
   const char = CHARACTERS[character]
-  // Phase strategy: 'escalating' = linear, default = cycling
-  const phase = char.phaseStrategy === 'escalating'
-    ? Math.min(2, Math.floor(turn / Math.ceil(TOTAL_TURNS / 3)))
-    : turn % 3
+  // Phase strategy: 'escalating' = linear, default = 5-turn blocks (0,0,0,0,0,1,1,1,1,1,2,2,2,2,2)
+  const phase = Math.min(2, Math.floor(turn / Math.ceil(TOTAL_TURNS / 3)))
 
   // 1. TEXTFIELDS
   for (let i = 0; i < ui.textfields.length; i++) {
@@ -1060,10 +1058,8 @@ async function simulateMode(modeId) {
 
     // ── PLAY TURNS ──
     for (let turn = 1; turn <= TOTAL_TURNS; turn++) {
-      // Phase strategy: 'escalating' = linear (0,0,0,0,0,1,1,1,1,1,2,2,2,2,2), default = cycling (0,1,2,0,1,2...)
-      const phase = char.phaseStrategy === 'escalating'
-        ? Math.min(2, Math.floor((turn - 1) / Math.ceil(TOTAL_TURNS / 3)))
-        : (turn - 1) % 3
+      // Phase strategy: all characters use 5-turn blocks (0,0,0,0,0,1,1,1,1,1,2,2,2,2,2)
+      const phase = Math.min(2, Math.floor((turn - 1) / Math.ceil(TOTAL_TURNS / 3)))
       const phaseLabel = char.phaseLabels[phase]
 
       console.log(`${'━'.repeat(70)}`)

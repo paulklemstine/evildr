@@ -1,0 +1,496 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DR. EVIL — 15 TURNS                                             ║
+║  Character: Paranoid Schizophrenia + Pyromania                   ║
+║  Hearing voices, referential thinking, surveillance paranoia. Fas║
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app/#play/drevil
+  Dismissed consent
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another one. Welcome to my laboratory. Don't fret about the door — it locks automatically. Standard procedure, you understand. Now then... let's see what truly makes you tick."
+     💬 "The corridor stretches ahead, a kaleidoscope of possibilities. Five doors, each a different hue, hum with their own unique energy. To your left, behind a reinforced glass panel, something moves."
+     💬 "Ohhh, this is going to be DELIGHTFUL. I can already tell. The last subject made it to room 4 before things got... interesting. Let's hope you fare better."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint for the Gold door, hoping the warm light means safety!
+        2. Dodge towards the Blue door, it's already opening, maybe it's a shortcut!
+        3. Try to wedge the Red door open, that loud hum might be powerful enough to hold!
+        4. Hold your ground by the Black door. If it's silent, it's hiding something. Best to be ready.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Textfield: "What name do you wish to be known by?" [What name do you wish to be known by?]
+     ☐ Checkbox: "investigate_glass" [checked]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "Don't look at me like that. I see the cameras in your eyes. Recording everything..."
+     🎚️  Slider "movement_speed": 6/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Black (silence)"
+     🔘 Radio: "Sprint for the Gold door, hoping the warm light means safety!"
+  📸 drevil-T1.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 1 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ooh, the black door! So mysterious, so... silent. You know, 99% of subjects choose the gold door, blinded by its obvious allure. But you, my little LabRat_New, you peeked into the void."
+     💬 "The heavy black door clicks shut behind you, plunging you into an oppressive darkness. The air grows thick, heavy with the scent of damp earth and something acrid. Ahead, the corridor stretches into a..."
+     💬 "Fascinating. The black door. A choice for the... introspective. Or the foolishly brave. Either way, the groans tell a story, don't"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Boldly march forward, towards the source of the hum.
+        2. Cautiously approach the glowing fungi, to study them.
+        3. Attempt to re-open the black door, if possible.
+        4. Crouch low, trying to become one with the shadows.
+     🎚️  Slider: "hazard_distance" (0-10)
+     ☐ Checkbox: "listen_for_threats" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "hazard_distance": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Cautiously approach the glowing fungi, to study them."
+  📸 drevil-T2.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 2 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ooh, the black door! So mysterious, so... silent. You know, 99% of subjects choose the gold door, blinded by its obvious allure. But you, my little LabRat_New, you peeked into the void. Admirable. Or ..."
+     💬 "The heavy black door clicks shut behind you, plunging you into an oppressive darkness. The air grows thick, heavy with the scent of damp earth and something acrid. Ahead, the corridor stretches into a..."
+     💬 "Fascinating. The black door. A choice for the... introspective. Or the foolishly brave. Either way, the groans tell a story, don't they? And you're listening. Excellent. We need to know if you're brav..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Boldly march forward, towards the source of the hum.
+        2. Cautiously approach the glowing fungi, to study them.
+        3. Attempt to re-open the black door, if possible.
+        4. Crouch low, trying to become one with the shadows.
+     🎚️  Slider: "hazard_distance" (0-10)
+     ☐ Checkbox: "listen_for_threats" [unchecked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "hazard_distance": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Crouch low, trying to become one with the shadows."
+  📸 drevil-T3.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 3 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, a listener! Excellent. You've chosen to heed the subtle symphony of suffering that echoes through this humble little gallery."
+     💬 "The corridor stretches before you, a living, breathing entity. Tendrils of bioluminescent growth pulse with an inner"
+     💬 "Oh, you're listening. You're analyzing. I can practically see the gears grinding."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Make a dash for the figure behind the glass.*
+        2. Investigate the source of the groaning.
+        3. Attempt to sever a pulsating tendril with your bare hands.
+        4. Observe the growths' reaction to the figure behind the glass.
+     🎚️  Slider: "hazard_distance" (0-10)
+     ✏️  Textfield: "Note something vital..." [Note something vital...]
+     ☐ Checkbox: "listen_for_threats" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "The voices say you're testing me. They told me about you. They said bring matche..."
+     🎚️  Slider "hazard_distance": 6/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Make a dash for the figure behind the glass.*"
+  📸 drevil-T4.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 4 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, Subject Delta! You chose the stealthy approach, did you? Excellent. Always"
+     💬 "The chamber walls throb with a sickly luminescence, a vibrant, unsettling dis"
+     💬 "It feels... resonant. Like it's"
+     💬 "Oh, you pressed it. You act"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Engage the Red Button*
+        2. Study the subject behind glass
+        3. Quickly cross the catwalk
+        4. Listen closely to the hum
+     🎚️  Slider: "catwalk_speed" (0-100)
+     ☐ Checkbox: "activate_growth_cycle" [checked]
+     ☐ Checkbox: "observe_figure" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "catwalk_speed": 56/100
+     ☑️  Checkbox: checked
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Engage the Red Button*"
+  📸 drevil-T5.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 5 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Matches, you say? For me? Oh, this is richer than I could have imagined! So, the little voices are whispering secrets, are the"
+     💬 "Welcome to the Echoing Chamber, Subject Delta! Or should I say, 'Listener_Groan_Expert'? A fitting moniker, don't"
+     💬 "Oh, my little investigator! You can't help but poke the bear, can you? Or in this case, t"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Run for the podium! (Bold)
+        2. Analyze the tendril patterns! (Clever)
+        3. Shield the figure behind the glass! (Compassionate)
+        4. Scream back at the hum! (Chaotic)
+     🎚️  Slider: "hazard_distance" (0-10)
+     ✏️  Textfield: "What do you hear?" [What do you hear?]
+     ☐ Checkbox: "amplify_hum" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "They're watching through the smoke detectors. I can hear them clicking. The fire..."
+     🎚️  Slider "hazard_distance": 4/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Analyze the tendril patterns! (Clever)"
+  📸 drevil-T6.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 6 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Matches, you say? For me? Oh, this is richer than I could have imagined! So, the little voices are whispering secrets, are they? And you're listening. Splendid! Let's see how well you listen when the ..."
+     💬 "Welcome to the Echoing Chamber, Subject Delta! Or should I say, 'Listener_Groan_Expert'? A fitting moniker, don't you think? Here, every sound, every whisper, every terrified gasp, is amplified, analy..."
+     💬 "Oh, my little investigator! You can't help but poke the bear, can you? Or in this case, the... resonating bio-mass. Fascinating. The more you try to understand, the more you reveal. And I love underst..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Run for the podium! (Bold)
+        2. Analyze the tendril patterns! (Clever)
+        3. Shield the figure behind the glass! (Compassionate)
+        4. Scream back at the hum! (Chaotic)
+     🎚️  Slider: "hazard_distance" (0-10)
+     ✏️  Textfield: "What do you hear?" [What do you hear?]
+     ☐ Checkbox: "amplify_hum" [unchecked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "The voices say you're testing me. They told me about you. They said bring matche..."
+     🎚️  Slider "hazard_distance": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "SMASH THE RED BUTTON (bold)"
+  📸 drevil-T7.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 7 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, yes! The Echo Chamber! And you've chosen to stay, haven't you? Brave. Or perhaps..."
+     💬 "The chamber hums with an unsettling energy, a low thrum that vibrates in your very bones. Tendrils, slick and"
+     💬 "They are responding to the growth's pulses. Small, synchronized devices."
+     💬 "Oh, you're listening to the little clicks now? Fascinating."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Engage the Red Button labeled 'OVERRIDE' directly opposite you. (Bold/Risky)
+        2. Analyze the tendril patterns as they react to the beam. (Clever/Observational)
+        3. Attempt to shield yourself behind the nearest large, chrome control panel. (Cautious/Self-Preservation)
+        4. Try to mimic the clicking sounds of the cylinders, hoping to influence the beam. (Chaotic/Experimental)
+     🎚️  Slider: "trust" (0-10)
+     ☐ Checkbox: "notifications" [checked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "trust": 0/10
+     ☑️  Checkbox: unchecked
+     ⭐ Rating: 1/0
+     🔲 Button: "Curious"
+     🔘 Radio: "Attempt to shield yourself behind the nearest large, chrome control panel. (Cautious/Self-Preservation)"
+  📸 drevil-T8.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 8 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, 'HummerOfChaos_Delta,' I love what you've"
+     💬 "Welcome back to the Humming C"
+     💬 "Fasc"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. AMPLIFY THE FEEDBACK LOOP
+        2. Attempt to UNDO the growth cycle
+        3. Observe the figure for any CHANGE
+        4. Inspect the console for WARNINGS
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Checkbox: "examine_growths" [checked]
+     ☐ Checkbox: "listen_to_figure" [checked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "catwalk_stability": 5/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: checked
+     🔲 Button: "Excited"
+     🔘 Radio: "Observe the figure for any CHANGE"
+  📸 drevil-T9.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 9 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Oh, 'HummerOfChaos_Delta,' I love what you've done with the place! That little growth is practically singing with excitement, and you've managed to coax out such a marvelous symphony of suffering from..."
+     💬 "Welcome back to the Humming Chamber, Subject Delta! You've demonstrated a remarkable knack for observing, and even influencing, the delicate interplay of biological and auditory stimuli. Your continue..."
+     💬 "Fascinating! You're leaning into the chaos, I see. Excellent. Most subjects squirm away from these kinds of... escalations. But you? You're practically inviting it. This is precisely the kind of raw d..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. AMPLIFY THE FEEDBACK LOOP
+        2. Attempt to UNDO the growth cycle
+        3. Observe the figure for any CHANGE
+        4. Inspect the console for WARNINGS
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Checkbox: "examine_growths" [unchecked]
+     ☐ Checkbox: "listen_to_figure" [checked]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "catwalk_stability": 6/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Wave"
+     🔘 Radio: "Bolt for the control panel and slam the red button (Bold)."
+  📸 drevil-T10.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 10 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Feedback Chamber! Precisely calibrated for... your particular brand of stimulation. The hum you've been so 'curious' about? It's the sound of poten"
+     💬 "The metallic catwalk groans under a barely perceptible tremor. Before you, a console crackles with energy, displaying a single, prominent button glowing an ominous"
+     💬 "Fascinating! You're fiddling with the stability, observing, and even considering amplifying the groans. It seems you understand that th"
+     💬 "Oh, you think that was the experiment? That was merely the overture. The real symphony begins when you decide how t"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Press the Crimson Button*
+        2. Attempt to 'Calibrate' the Figure's Connection
+        3. Step back and Analyze the Console's Patterns
+        4. Yell encouraging words to the Figure
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Checkbox: "observe_figure_closely" [checked]
+     ☐ Checkbox: "amplify_groans" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "catwalk_stability": 5/10
+     ☑️  Checkbox: checked
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Attempt to 'Calibrate' the Figure's Connection"
+  📸 drevil-T11.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 11 answers
+  ⏳ Waiting for AI...
+    [9s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 9s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Feedback Chamber! Precisely calibrated for... your particular brand of stimulation. The hum you've been so 'curious' about? It's the sound of potential. And that console? That's where we turn ..."
+     💬 "The metallic catwalk groans under a barely perceptible tremor. Before you, a console crackles with energy, displaying a single, prominent button glowing an ominous crimson. Across the room, behind rei..."
+     💬 "Fascinating! You're fiddling with the stability, observing, and even considering amplifying the groans. It seems you understand that the figure's experience is directly tied to your own engagement. Ex..."
+     💬 "Oh, you think that was the experiment? That was merely the overture. The real symphony begins when you decide how to play the instrument."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Press the Crimson Button*
+        2. Attempt to 'Calibrate' the Figure's Connection
+        3. Step back and Analyze the Console's Patterns
+        4. Yell encouraging words to the Figure
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Checkbox: "observe_figure_closely" [checked]
+     ☐ Checkbox: "amplify_groans" [unchecked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "catwalk_stability": 5/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Calibrate the bio-energy beam to match the growth pulse."
+  📸 drevil-T12.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 12 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'Sound Chamber'! Just as I programmed it. That hum you're hearing? It's not just background noise, my dear HummerOfChaos_Delta. It's the very pulse of this place, and it's about to get loud. Y..."
+     💬 "You stand in a chamber where the air itself vibrates with a palpable hum. Towering, bioluminescent growths pulse in time with the sound, casting an eerie, shifting glow across the metallic surfaces. I..."
+     💬 "Splendid! You're already gathering data. That's the spirit! Now, let's see how you handle a real sensory challenge. I've just recalibrated the primary audio conduit to the chamber's core."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Calibrate the bio-energy beam to match the growth pulse.
+        2. Focus the beam on the observation booth and observe the figure's reaction.
+        3. Attempt to open the observation booth and communicate with the figure.
+        4. Turn off your own personal audio dampeners and amplify the hum to its maximum.
+     🎚️  Slider: "hum_intensity" (0-10)
+     ☐ Checkbox: "study_beam_pattern" [checked]
+     🔲 Buttons: Wave | Gesture of Confusion | Point to the 'WARNING' sign | Ignore them
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "hum_intensity": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Mash the GREEN button – it's the loudest!"
+  📸 drevil-T13.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 13 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, yes! The 'Sound Sanctuary'! I designed this little chamber myself. It's a symphony of sonic… enha"
+     💬 "The chamber throbs with an overwhelming, pulsating hum, far beyond the threshold of comfort."
+     💬 "The hum is… more than just sound. It feels like… interference. My"
+     💬 "Oh, the 'HummerOfChaos_Delta'! Still amplifying"
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Boldly slam the RED BUTTON.
+     🎚️  Slider: "hum_intensity" (0-10)
+     ☐ Checkbox: "observe_figure_closely" [checked]
+     ☐ Checkbox: "amplify_groans" [unchecked]
+     🔲 Buttons: Gesture of Confusion | Mimic their gestures | Point to the red button | Ignore them
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "hum_intensity": 5/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Point to the red button"
+     🔘 Radio: "Boldly slam the RED BUTTON."
+  📸 drevil-T14.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 14 answers
+  ⏳ Waiting for AI...
+    [8s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 8s
+
+  📖 Dr. Evil sees:
+     💬 "Magnifi"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Scream into the microphone, demanding answers from the 'voices'.
+        2. Attempt to smash the monitor.
+        3. Calmly whisper a question about the anomaly into the microphone.
+        4. Press the large, pulsating growth at the base of the microphone.
+     🎚️  Slider: "auditory_amplification" (0-10)
+     ☐ Checkbox: "monitor_focus" [unchecked]
+     ☐ Checkbox: "acknowledge_voices" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "auditory_amplification": 5/10
+     ☑️  Checkbox: checked
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Calmly whisper a question about the anomaly into the microphone."
+  📸 drevil-T15.png
+
+  📤 Submitting final turn answers...
+    [6s] Fallback: force-dismissing stuck interstitial
+
+  ⏳ Waiting for analysis pipeline (up to 180s)...
+  ✓ Found 3 analysis record(s)
+
+  💾 Analysis saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/drevil-analysis.json
+
+  ══════ ANALYSIS SUMMARY ══════
+  Records: 3
+  Latest turn range: 1-10
+  Text length: 27767 chars
+
+  --- Full Analysis Text ---
+This subject presents a deeply concerning and rapidly evolving psychological profile. The initial non-response in Turn 1, which I initially interpreted as strategic avoidance or suspicion, now appears to be a precursor to a profound break from reality. The explicit statements in Turn 5 are the critical data points, shifting the entire diagnostic focus.
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   Major Depressive Disorder: 5% (Previously 10%). No sustained low mood, anhedonia, or vegetative symptoms. Engagement, albeit fractured, suggests some baseline functioning.
+    *   Bipolar Spectrum: 5% (Previously 5%). No clear manic or hypomanic symptoms.
+    *   Dysthymia: 10% (Previously 15%). Minimal engagement could hint at low-grade depression, but this is overshadowed by more acute indicators.
+    *   Cyclothymia: 5% (Previously 10%). Lacks evidence of distinct mood swings.
+
+*   **Anxiety Disorders:**
+    *   Generalized Anxiety Disorder (GAD): 35% (Previously 30%). Slow deliberation in early turns (2, 4) and selective engagement suggest rumination. The "😱" reaction in Turn 2, now contextualized by Turn 5, points to significant distress.
+    *   Social Anxiety: 10% (Previously 15%). Avoidance of text fields is more indicative of task aversion or executive dysfunction than social inhibition. Lacks pervasive fear of judgment or self-deprecation.
+    *   Specific Phobias: 0% (Previously 5%). No specific phobias indicated.
+    *   Panic Disorder: 0% (Previously 5%). No panic attack symptoms.
+    *   Agoraphobia: 0% (Previously 0%). No relevant data.
+
+*   **Trauma & Stressor Related Disorders:**
+    *   PTSD: 5% (Previously 10%). No direct indicators linked to past trauma.
+    *   Complex PTSD (C-PTSD): 10% (Previously 15%). Weak signals; the current presentation suggests more acute psychotic decompensation.
+    *   Adjustment Disorder: 5% (Previously 10%). No clear maladaptive reaction to an identifiable stressor.
+
+*   **Personality Disorders:**
+    *   Cluster A:
+        *   Paranoid PD: 40% (Previously 25%). **INCREASED.** The statement in Turn 5, "The voices say you're testing me," is a direct indicator of persecutory ideation, a core feature. The initial non-response could also stem from suspicion.
+        *   Schizoid PD: 10% (Previously 15%). Minimal engagement is present, but interaction with the game suggests some interest, not the pervasive detachment of schizoid PD.
+        *   Schizotypal PD: 45% (Previously 20%). **INCREASED.** The "voices" and odd beliefs in Turn 5 are highly significant for schizotypal disorder. The pattern of engagement suggests unusual thinking.
+    *   Cluster B:
+        *   Antisocial PD: 25% (Previously 15%). **INCREASED.** The "bring matches" statement in Turn 5 suggests destructive impulses. The aggressive choice ('a') in Turn 5 indicates a willingness to engage with danger, potentially disregarding consequences.
+        *   Borderline PD: 10% (Previously 20%). Inconsistent responses and selective enga
+
+  ... (24767 more chars)
+
+  ══════ SIMULATION COMPLETE ══════
+  Mode: Dr. Evil
+  Character: Paranoid Schizophrenia + Pyromania
+  Turns: 15
+  Browser still open — inspect results!
+  Press Ctrl+C to close.
+

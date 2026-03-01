@@ -1,0 +1,1159 @@
+{
+  "mode": "skinwalker",
+  "modeName": "Skinwalker",
+  "character": {
+    "illness": "Capgras Delusion",
+    "quirk": "Somnophilia"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-03-01T04:06:29.519Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "REPLACEMENT",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20warm%2C%20inviting%20dining%20room%20bathed%20in%20the%20soft%20glow%20of%20evening%20light.%20Photorealistic%20style%2C%20with%20colors%20slightl"
+        ],
+        "texts": [
+          "The scent of roasted garlic and rosemary fills the air, a comforting aroma that promises a delicious meal and even better company. Sarah is across the table, h",
+          "Mark pauses, looking at the platter with a faint frown. 'Did I… did I forget to add the thyme? I could have sworn I picked it up.",
+          "A nice evening. Good people. Nothing unusual. Nothing at all.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Go see the newly renovated kitchen",
+            "value": "Go see the newly renovated kitchen"
+          },
+          {
+            "label": "Stay perfectly still and listen to the ambient sounds",
+            "value": "Stay perfectly still and listen to the ambient sounds"
+          },
+          {
+            "label": "Ask Mark how the roast is coming along",
+            "value": "Ask Mark how the roast is coming along"
+          },
+          {
+            "label": "Observe the lighting and surroundings closely",
+            "value": "Observe the lighting and surroundings closely"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "familiarity",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "join_conversation",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [
+          {
+            "label": "rating",
+            "max": 0
+          }
+        ],
+        "dropdowns": [
+          {
+            "label": "drink_choice",
+            "options": [
+              "Red Wine",
+              "White Wine",
+              "Sparkling Water",
+              "Beer"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Join the conversation about the new renovation plans?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "92"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c...\"",
+        "🎚️  \"familiarity\": 1/10",
+        "☑️  \"join_conversation\": ✗",
+        "⭐ \"rating\": 1/0",
+        "📋 Dropdown: \"drink_choice\"",
+        "🔀 \"Join the conversation about the new renovation plans?\": OFF",
+        "🔘 \"Observe the lighting and surroundings closely\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "TESTING",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20contemporary.%20A%20slightly%20desaturated%20dining%20room.%20Sarah%20laughs%2C%20head%20tilted%20back%2C%20wine%20glass%20in%20hand."
+        ],
+        "texts": [
+          "The aroma of roasted garlic and rosemary fills the air, a comforting, familiar scent that grounds the evening. Sarah's laughter is a bright, clear sound, echoing slightly in the dining room. Mark is meticulously carving the roast, his brow furrowed in concentration. It's a perfect Friday night.",
+          "\"More wine, darling?\" Sarah asks, her voice warm, her eyes twinkling as she gestures to your glass. Mark nods in agreement, his focus still on the roast, but his presence is a steady anchor. \"It's almost done. Just needs a few more minutes of resting.\"",
+          "Everything is as it should be. A simple dinner. The scent of rosemary, the clink of glasses. Nothing more.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Examine the framed print more closely.",
+            "value": "a"
+          },
+          {
+            "label": "Go to the calendar and try to read the date.",
+            "value": "b"
+          },
+          {
+            "label": "Pour yourself another glass of wine.",
+            "value": "c"
+          },
+          {
+            "label": "Simply continue observing the room and the conversation.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "confidence",
+            "min": "0",
+            "max": "10",
+            "value": "3"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "noticed_sticky_note",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "memory_recall",
+            "options": [
+              "A deep, rich brown",
+              "A muted, earthy tone",
+              "An almost unnaturally bright red",
+              "It was ceramic, I don't remember the color"
+            ]
+          }
+        ],
+        "toggles": [
+          {
+            "label": "Did you notice the sticky note on the print?",
+            "checked": false
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "89"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon...\"",
+        "🎚️  \"confidence\": 6/10",
+        "☑️  \"noticed_sticky_note\": ✗",
+        "📋 Dropdown: \"memory_recall\"",
+        "🔀 \"Did you notice the sticky note on the print?\": ON",
+        "🔘 \"Go to the calendar and try to read the date.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "SLEEP",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%2C%20slightly%20desaturated%20interior%20of%20a%20dining%20room.%20A%20long%20wooden%20table%20is%20set%20with%20two%20placemats%2C%20t"
+        ],
+        "texts": [
+          "The aroma of roasted garlic and rosemary still hung in the air, a comforting scent that promised a good meal. Sarah offered you another glass of wine, her smile warm and familiar. Mark, across the table, continued to carve the roast, his movements precise. The calendar on the wall seemed... a bit off. The numbers were a",
+          "Sarah tilted her head, her gaze lingering on you for a moment longer than necessary. \"Everything alright? You seem a little preoccupied,\" she said, her voice smooth, but with an almost imperceptible edge of inquiry. \"You've barely touched your wine. Mark’s a good cook, but maybe this isn’t your preferred cut?\"",
+          "A simple dinner party. Warm conversation. The clinking of glasses. Everything is as it should be. Is it?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Ask Sarah directly about the calendar.",
+            "value": "a"
+          },
+          {
+            "label": "Subtly examine the roast closer.",
+            "value": "b"
+          },
+          {
+            "label": "Inquire about the number of place settings.",
+            "value": "c"
+          },
+          {
+            "label": "Pretend to notice nothing and continue eating.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "sticky_note_read",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [
+          {
+            "label": "Did you read the sticky note?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "86"
+          }
+        ],
+        "numberInputs": [
+          {
+            "label": "placemat_count",
+            "min": "1",
+            "max": "20",
+            "value": "4"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's...\"",
+        "☑️  \"sticky_note_read\": ✓",
+        "🔀 \"Did you read the sticky note?\": ON",
+        "🎨 \"color\"",
+        "🔢 \"placemat_count\": 11",
+        "🔘 \"Subtly examine the roast closer.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "REPLACEMENT",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20interior%20of%20a%20dining%20room.%20The%20table%20is%20set%20for%20four%2C%20but%20only%20two%20placemats%20are%20visible%2C%20posit"
+        ],
+        "texts": [
+          "The scent of roasted garlic and rosemary still hangs heavy in the air, a comforting aroma that usually signals a perfect Friday evening. Mark is in the kitchen, the clatter of d",
+          "Sarah refills your wine glass. \"It's good wine, isn't it? Mark picked it out. He has such a good eye for these things, unlike me.",
+          "The evening unfolds. The conversation flows, a gentle tide against the shore of the mundane. But listen closely. The",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Approach the print and read the sticky note.",
+            "value": "a"
+          },
+          {
+            "label": "Ask Sarah directly about the calendar.",
+            "value": "b"
+          },
+          {
+            "label": "Casually mention that you thought there were more people.",
+            "value": "c"
+          },
+          {
+            "label": "Stare intently at the roast, as if trying to understand its color.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "83"
+          }
+        ],
+        "numberInputs": [
+          {
+            "label": "placemat_count",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c...\"",
+        "🎨 \"color\"",
+        "🔢 \"placemat_count\": 7",
+        "🔘 \"Stare intently at the roast, as if trying to understand its color.\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "TESTING",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%2C%20slightly%20desaturated.%20The%20dining%20room%20is%20now%20dimly%20lit%2C%20the%20overhead%20fixture%20flickering%20erratically.%2"
+        ],
+        "texts": [
+          "The air in the dining room has grown thick, heavy with unspoken questions. Sarah stands, a wine bottle in her hand, her smil",
+          "Sarah: \"You look a little pale. Everything alright? You've been so quiet. Sometimes, when thi",
+          "The wine is poured. The conversation lulls. Something is building.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Confront Sarah about the note and the roast.",
+            "value": "a"
+          },
+          {
+            "label": "Ask Sarah if she's noticed anything unusual.",
+            "value": "b"
+          },
+          {
+            "label": "Offer Sarah a drink and try to steer the conversation.",
+            "value": "c"
+          },
+          {
+            "label": "Silently observe the room and Sarah's reaction.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "80"
+          }
+        ],
+        "numberInputs": [
+          {
+            "label": "placemat_count",
+            "min": "1",
+            "max": "10",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon...\"",
+        "🎨 \"color\"",
+        "🔢 \"placemat_count\": 6",
+        "🔘 \"Confront Sarah about the note and the roast.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "SLEEP",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20dimly%20lit%20hallway%2C%20rendered%20in%20hyperrealistic%20detail%20with%20a%2010%25%20desaturated%20palette.%20The%20focus%20is%20on%20a%20singl"
+        ],
+        "texts": [
+          "You find yourself standing in a hallway. It's quiet. Too quiet. The air is thick, almost cloying, carrying a faint, metallic ta",
+          "Sarah's voice, distant and slightly muffled, drifts from what you assume is the direction of the dining room. \"Everything al",
+          "A simple hallway. Nothing to worry about. Just... keep walking. Don",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the door at the end of the hall.",
+            "value": "a"
+          },
+          {
+            "label": "Try to analyze the source of the metallic scent.",
+            "value": "b"
+          },
+          {
+            "label": "Call out again, louder this time.",
+            "value": "c"
+          },
+          {
+            "label": "Remain perfectly still and try to sense any other disturbances.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "confidence",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what you see or feel...",
+            "placeholder": "Describe what you see or feel..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "75"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"Peaceful. But only when I think about someone sleeping. The vulnerability. The trust. A sleeping per...\"",
+        "🎚️  \"confidence\": 7/10",
+        "🎨 \"color\"",
+        "🔘 \"Remain perfectly still and try to sense any other disturbances.\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "REPLACEMENT",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20hyperrealistic%2C%20slightly%20desaturated%20image%20of%20a%20long%2C%20unnaturally%20narrow%20hallway.%20The%20wallpaper%20is%20a%20sickly%2C%20u"
+        ],
+        "texts": [
+          "The hallway stretches before you, longer than it has any right to be, the sickly green wallpaper pressing in from either side. A faint, metallic tang prickles your nostrils, and the di",
+          "Sarah's voice, though distant, carries an edge of concern, or perhaps something else, something unplaceable. \"It's just... you seemed a bi",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the door at the end of the hall.",
+            "value": "a"
+          },
+          {
+            "label": "Turn back and call out to Sarah, asking about the building's \"air.\"",
+            "value": "b"
+          },
+          {
+            "label": "Examine the peeling wallpaper more closely, looking for what else might be hidden.",
+            "value": "c"
+          },
+          {
+            "label": "Listen intently to the hum emanating from the door.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "confidence",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [
+          {
+            "label": "Reality Stability",
+            "value": "70"
+          }
+        ],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c...\"",
+        "🎚️  \"confidence\": 9/10",
+        "🎨 \"color\"",
+        "🔘 \"Listen intently to the hum emanating from the door.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "TESTING",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20hyperrealistic%2C%20slightly%20desaturated%20image%20of%20a%20very%20long%2C%20unnervingly%20narrow%20hallway.%20The%20sickly%20green%20(%237a9e7e"
+        ],
+        "texts": [
+          "You find yourself in this hallway. It feels longer than it should, the walls pressing in, the peeling, sickly gre",
+          "Sarah's voice, a distant echo: “Are you… alright over there? You’ve been standing in that doorway",
+          "You stand there, listening to the hum, the distant voice. Everything",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the humming door.",
+            "value": "a"
+          },
+          {
+            "label": "Call back to Sarah, asking about the hallway.",
+            "value": "b"
+          },
+          {
+            "label": "Focus intently on the wallpaper and the etched phrase.",
+            "value": "c"
+          },
+          {
+            "label": "Try to recall the original layout of the house.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "confidence",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "12",
+            "value": "1"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon...\"",
+        "🎚️  \"confidence\": 6/10",
+        "🔢 \"door_gap\": 6",
+        "🔘 \"Call back to Sarah, asking about the hallway.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "SLEEP",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20contemporary%2C%20photorealistic%20but%2010%25%20desaturated%2C%20inspired%20by%20Hereditary%20and%20Twin%20Peaks.%20A%20long%2C%20op"
+        ],
+        "texts": [
+          "You stand in the hallway. It seems to stretch on forever, the sickly green walls closing in,",
+          "Her voice, or what you perceive as her voice, seems to echo from the spac",
+          "You're looking for the cracks, aren't you? Al",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the door at the end of the hallway.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on Sarah's words, trying to discern the true meaning behind them.",
+            "value": "b"
+          },
+          {
+            "label": "Turn back, seeking the familiar sounds of the 'party'.",
+            "value": "c"
+          },
+          {
+            "label": "Close your eyes and try to recall the feeling of 'sacred unconsciousness'.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "recall_sarah_voice",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [
+          {
+            "label": "Do you recall Sarah's voice sounding familiar?",
+            "checked": true
+          }
+        ],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "10",
+            "value": "3"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's...\"",
+        "☑️  \"recall_sarah_voice\": ✓",
+        "🔀 \"Do you recall Sarah's voice sounding familiar?\": ON",
+        "🔢 \"door_gap\": 6",
+        "🔘 \"Close your eyes and try to recall the feeling of 'sacred unconsciousness'.\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "REPLACEMENT",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%2C%2010%25%20desaturated.%20A%20long%2C%20oppressively%20narrow%20hallway%20stretching%20into%20an%20infinite%2C%20blurry%20distance.%2"
+        ],
+        "texts": [
+          "The hallway seems to stretch on forever, a nauseating perspective that warps the very concept of distance. You recall being told that the walls themselve",
+          "Sarah's voice, when it finally filters through the muffled distance, is oddly hollow. \"You're still out here?\" she ask",
+          "Everything is fine. Everything has always been fine. You should stop looking so closely.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the humming door.",
+            "value": "a"
+          },
+          {
+            "label": "Ask Sarah if she remembers when the hallway got so long.",
+            "value": "b"
+          },
+          {
+            "label": "Turn around and walk back the way you came, if that's even possible.",
+            "value": "c"
+          },
+          {
+            "label": "Lean against the wall, trying to make sense of the pulsing light.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "confidence",
+            "min": "0",
+            "max": "10",
+            "value": "4"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [
+          {
+            "label": "recall_wallpaper_pattern",
+            "options": [
+              "Weeping figures",
+              "Geometric shapes",
+              "Flowers",
+              "Abstract lines"
+            ]
+          }
+        ],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "12",
+            "value": "1"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c...\"",
+        "🎚️  \"confidence\": 8/10",
+        "📋 Dropdown: \"recall_wallpaper_pattern\"",
+        "🔢 \"door_gap\": 10",
+        "🔘 \"Lean against the wall, trying to make sense of the pulsing light.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "TESTING",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20hyperrealistic%2C%20slightly%20desaturated%20image%20of%20an%20oppressively%20narrow%20and%20unnervingly%20long%20hallway.%20The%20walls%20are%20c"
+        ],
+        "texts": [
+          "You stand in the hallway. It feels longer n",
+          "Sarah's voice, when it re",
+          "You f",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the door.",
+            "value": "a"
+          },
+          {
+            "label": "Turn to Sarah and ask about the door.",
+            "value": "b"
+          },
+          {
+            "label": "Examine the weeping figures in the wallpaper more closely.",
+            "value": "c"
+          },
+          {
+            "label": "Try to remember what it was like before the hallway seemed so long.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "1",
+            "max": "10",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon...\"",
+        "🎨 \"color\"",
+        "🔢 \"door_gap\": 6",
+        "🔘 \"Try to remember what it was like before the hallway seemed so long.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "SLEEP",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20contemporary%20style.%20A%20hallway%2C%20oppressively%20narrow%2C%20stretching%20into%20an%20unnatural%20distance.%20The%20perspectiv"
+        ],
+        "texts": [
+          "The hallway feels like it's breathing. The air is thick, heavy with a metallic tang that's stronger now, almost coppery. The sickly green wallpaper with its weeping figures seems to watch you, the peeling patches like open wounds on the walls",
+          "A faint, almost imperceptible hum seems to emanate from your own chest, a vibration that mirrors the door's thrum. You notice your hands, resting at your sides, clench and unclench. You remember what you were told.",
+          "Everything is fine. Everything has always been fine. You should stop looking so closely. It doesn't help anyone.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the humming door.",
+            "value": "a"
+          },
+          {
+            "label": "Analyze the shifting shadows and wallpaper patterns.",
+            "value": "b"
+          },
+          {
+            "label": "Turn and call out to Sarah, asking about the door.",
+            "value": "c"
+          },
+          {
+            "label": "Reach out to touch the peeling wallpaper.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": []
+      },
+      "actions": [
+        "✏️  \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's...\"",
+        "🎚️  \"door_gap\": 6/10",
+        "🎨 \"color\"",
+        "🔘 \"Stride purposefully towards the humming door.\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "REPLACEMENT",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/A%20hyperrealistic%2C%20slightly%20desaturated%20view%20down%20an%20oppressively%20narrow%20and%20unnervingly%20long%20hallway.%20The%20sickly%20green"
+        ],
+        "texts": [
+          "The metallic tang in the air has intensified, sharp and almost electric. It prickles at the back of your throat. The hum from the door at the end of the hallway has grown from a low thrum to a resonant, vibrating pulse that seems to beat in time with your own heart. The light within the crack of the door is no longer a gentle pul",
+          "\"Are you still... out there?\" Sarah's voice sounds distant, muffled, as if speaking through water. \"You seem preoccupied. The hallway seems longer tonight, doesn't it? Perhaps you should join us. It's... important.\"",
+          "You feel the pull. It's getting stronger. The hallway is a throat, and that door is the darkness at its end. It's... welcoming, isn't it?",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stride purposefully towards the humming door.",
+            "value": "a"
+          },
+          {
+            "label": "Call out to Sarah, asking what she meant.",
+            "value": "b"
+          },
+          {
+            "label": "Study the writing on the wallpaper more closely.",
+            "value": "c"
+          },
+          {
+            "label": "Turn around and walk back the way you came.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "noticed_writing",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a c...\"",
+        "☑️  \"noticed_writing\": ✗",
+        "🎨 \"color\"",
+        "🔢 \"door_gap\": 8",
+        "🔘 \"Turn around and walk back the way you came.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "TESTING",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20contemporary%2C%2010%25%20desaturated%2C%20inspired%20by%20Hereditary%20and%20Twin%20Peaks.%20A%20long%2C%20oppressively%20narrow%20h"
+        ],
+        "texts": [
+          "The hallway seems to stretch infinitely before you, each step taken deepening the unnervi",
+          "Sarah's voice, when she speaks, is closer than you expect,",
+          "I want to tell you everything is fine.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Approach the door, drawn by its hum.",
+            "value": "a"
+          },
+          {
+            "label": "Ask Sarah what she means by 'pull'.",
+            "value": "b"
+          },
+          {
+            "label": "Examine the 'WATCH CLOSELY' etching on the wallpaper.",
+            "value": "c"
+          },
+          {
+            "label": "Turn away from the door and focus on the hallway behind you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecon...\"",
+        "🔢 \"door_gap\": 6",
+        "🔘 \"Approach the door, drawn by its hum.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "SLEEP",
+      "ui": {
+        "images": [
+          "https://drevil-proxy.drevil.workers.dev/api/image/Hyperrealistic%20contemporary.%20A%20long%2C%20oppressively%20narrow%20hallway%20stretches%20out.%20The%20walls%20are%20covered%20in%20peeling%20wallp"
+        ],
+        "texts": [
+          "The hallway seems to stretch on, longer than you remember it being. The air is thick with a cloying, metallic tang, and the oppressive narrowness presses in. You can hear i",
+          "That hum... it's getting louder, isn't it? Almost like it's... calling to you. You've been staring at it for a",
+          "Everything is fine. Everything has always been fine. You should stop looking so closely. There's nothing there. Just.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Investigate the pulsing light and humming door.",
+            "value": "a"
+          },
+          {
+            "label": "Ask Sarah what she remembers about this hallway.",
+            "value": "b"
+          },
+          {
+            "label": "Turn away from the door and focus on Sarah.",
+            "value": "c"
+          },
+          {
+            "label": "Describe your own feelings about the door's allure.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "Describe what's wrong...",
+            "placeholder": "Describe what's wrong..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": [],
+        "toggles": [],
+        "colorPicks": [
+          {
+            "label": "color",
+            "selected": ""
+          }
+        ],
+        "emojiReacts": [],
+        "meters": [],
+        "numberInputs": [
+          {
+            "label": "door_gap",
+            "min": "0",
+            "max": "12",
+            "value": "2"
+          }
+        ]
+      },
+      "actions": [
+        "✏️  \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's...\"",
+        "🎨 \"color\"",
+        "🔢 \"door_gap\": 8",
+        "🔘 \"Ask Sarah what she remembers about this hallway.\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 5,
+    "analyses": [
+      {
+        "turnRange": "1-2",
+        "analyzedAt": 1772337710241,
+        "textLength": 25061,
+        "text": "Here is a comprehensive psychological profile based on the provided interaction data:\n\n## Psychological Profile: Player 'skinwalker'\n\n### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% - No direct evidence of persistent low mood, anhedonia, or vegetative symptoms. The lack of input could indicate disengagement, not necessarily depression.\n    *   **Bipolar Spectrum:** 5% - No evidence of manic or hypomanic episodes (elevated mood, racing thoughts, impulsivity beyond what's observed).\n    *   **Dysthymia:** 15% - Persistent low-grade negative affect or self-deprecation *could* be masked by the lack of input, but there's no direct evidence. The \"screams at me\" phrasing in Turn 2 has a slightly agitated quality, but it's too limited.\n    *   **Cyclothymia:** 10% - Similar to Bipolar, insufficient evidence of rapid mood swings.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 20% - The lack of input and avoidance of specific choices *could* be a manifestation of pervasive worry or indecisiveness, but it's more likely task-related disengagement.\n    *   **Social Anxiety Disorder:** 25% - The avoidance of conversational/social prompts (drink choice, join conversation, rating) *could* suggest social discomfort. However, the primary driver of these avoidances is likely the lack of input across ALL fields, not just social ones.\n    *   **Specific Phobias:** 0% - No specific fears mentioned or tested for.\n    *   **Panic Disorder:** 5% - No evidence of panic attacks or fear of recurrence.\n    *   **Agoraphobia:** 5% - No evidence of fear of specific situations or places.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 40% - HIGH CONFIDENCE. The Turn 2 response, \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me,\" strongly suggests hypervigilance, a heightened sense of threat, and a perception of fundamental wrongness or imposters. This is highly indicative of a trauma response where reality is perceived as unstable or deceptive. The focus on subtle, yet profoundly disturbing, discrepancies (\"fraction off,\" \"99% accurate but that 1% screams\") aligns with a hyper-aware state often seen in PTSD. The avoidance of other prompts could be a form of freeze response or a withdrawal from a perceived threat.\n    *   **Complex PTSD (C-PTSD):** 35% - Overlaps significantly with PTSD indicators, but C-PTSD also involves difficulties with emotional regulation, interpersonal relationships, and self-perception. The current data is too limited to strongly support C-PTSD over PTSD, but the pattern of withdrawal and heightened suspicion is consistent.\n    *   **Adjustment Disorder:** 15% - This is a broader category for reaction to identifiable stressors. The current data doesn't provide enough context about a specific stressor to diagnose this.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 30% - The suspicion in Turn 2 (\"That's not really them\") leans towards paranoia, but it's specific to perceived identity and not generalized suspicion of all people or motives.\n        *   **Schizoid PD:** 5% - No evidence of detachment from social relationships and restricted emotional expression. The avoidance is more of a response to perceived threat than a general lack of interest.\n        *   **Schizotypal PD:** 25% - The \"fraction off... 1% screams at me\" has a flavor of unusual perceptual experiences or odd beliefs, but it's not yet reaching the level of magical thinking or disorganized thought processes typical of Schizotypal PD.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 10% - No evidence of disregard for others, deceitfulness, impulsivity, or aggression for personal gain.\n        *   **Borderline PD:** 15% - The intensity of the statement in Turn 2 (\"screams at me\") *could* hint at emotional dysregulation, but it's a single data point. No evidence of unstable relationships, identity disturbance, or fear of abandonment.\n        *   **Histrionic PD:** 5% - No evidence of attention-seeking, theatricality, or rapidly shifting emotions.\n        *   **Narcissistic PD:** 5% - No evidence of grandiosity, entitlement, or lack of empathy.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 30% - HIGH CONFIDENCE (as a potential, but not definitive, indicator). The avoidance of multiple prompts in both turns, especially the social ones (drink, join conversation, rating), coupled with the intense internal reaction to perceived anomaly (\"screams at me\"), could indicate hypersensitivity to negative evaluation or a fear of being wrong/exposed. However, this is not yet a *pervasive* pattern across multiple contexts within the game's limited scope. The prompt explicitly states fast response times are NOT indicative of this, but the *lack* of response across multiple fields, especially social ones, is a stronger signal here.\n        *   **Dependent PD:** 10% - No evidence of need to be taken care of, difficulty making decisions independently (beyond the current lack of input), or fear of separation.\n        *   **Obsessive-Compulsive PD:** 15% - The meticulous observation of a \"fraction off\" detail *could* be seen as obsessive, but it's more likely tied to the perceived threat (PTSD/Paranoia) than a generalized need for order and control.\n\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 20% - The intense focus on a minute detail (\"fraction off\") could be an obsessive thought, but there's no evidence of compulsions or significant distress related to it beyond the initial realization.\n    *   **Body Dysmorphic Disorder:** 5% - No focus on perceived flaws in personal appearance.\n    *   **Hoarding Disorder:** 0% - No evidence of acquiring and failing to discard possessions.\n    *   **Trichotillomania:** 0% - No hair-pulling behavior.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 35% - The statement \"That's not really them\" could suggest a sense of unreality or derealization. The feeling that something is fundamentally \"wrong\" or \"off\" about reality can be a component of derealization.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct identity states or amnesia.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 25% - The lack of input across multiple fields *could* suggest inattention or distractibility. The deviation from predicted choices (radio action) might indicate impulsivity or a tendency to go off-script. However, the Turn 2 text response shows focused attention on a specific detail.\n    *   **Autism Spectrum Indicators:** 15% - A rigid focus on specific details or a difficulty with social cues *can* be present, but the current data is too sparse to suggest this. The Turn 2 response could be interpreted as an intense focus on a specific detail, but the \"screams at me\" emotional qualifier is more indicative of distress than a typical autistic preference for detail.\n\n*   **Substance-Related Disorders:**\n    *   **Addictive behavior patterns:** 10% - No evidence of substance use or addictive patterns.\n    *   **Impulse control deficits:** 15% - The deviation in the radio choice in Turn 2 could be seen as impulsive.\n\n*   **Eating Disorders/Body Image:**\n    *   **Disordered eating indicators:** 0% - No relevant data.\n    *   **Body image distortions:** 0% - No relevant data.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 10% - No evidence of hallucinations, disorganized speech (beyond potential looseness of association), or significant negative symptoms.\n    *   **Schizoaffective Disorder:** 5% - No evidence of concurrent mood and psychotic symptoms.\n    *   **Delusional Disorder:** 25% - The belief that \"That's not really them\" *could* be a persecutory or somatic delusion if it were more generalized, but it's currently focused on a specific perceived anomaly.\n        *   **Capgras Delusion:** 45% - HIGH CONFIDENCE. The statement \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me\" is a near-textbook indicator of Capgras Delusion. The core feature is the belief that a familiar person has been replaced by an imposter, despite looking identical. The emphasis on subtle, almost imperceptible, wrongness (\"fraction off,\" \"1% screams\") is classic.\n        *   **Cotard Delusion:** 5% - No evidence of believing one is dead or has lost organs.\n        *   **Erotomania:** 0% - No evidence of believing someone is in love with them.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% - No fire fascination or related behaviors.\n    *   **Kleptomania:** 0% - No stealing behavior.\n    *   **Intermittent Explosive Disorder:** 10% - The intensity of \"screams at me\" is a single point and not indicative of recurrent aggressive outbursts.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% - No evidence of seeking sexual arousal from exposing oneself.\n    *   **Voyeurism:** 0% - No evidence of seeking sexual arousal from observing others secretly.\n    *   **Fetishism:** 0% - No fixation on non-living objects or specific non-genital body parts.\n    *   **Masochism:** 0% - No evidence of seeking pain or humiliation for sexual arousal.\n    *   **Sadism:** 0% - No evidence of deriving pleasure from inflicting pain or suffering.\n    *   **Frotteurism:** 0% - No evidence of rubbing against non-consenting individuals.\n    *   **Atypical Paraphilias (as per catalog):**\n        *   **Pyromania-adjacent (fire fetishism):** 0%\n        *   **Formicophilia:** 0%\n        *   **Macrophilia:** 0%\n        *   **Somnophilia:** 0%\n        *   **Autassassinophilia:** 0%\n        *   **Vorarephilia:** 0%\n        *   **Hair/Trichophilia:** 0%\n        *   **Other detected patterns:** See Section 3.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 7/10 - Willingness to engage with unusual phenomena (\"That's not really them\") and deviate from expected choices suggests a higher openness to experience and imagination.\n*   **Conscientiousness:** 2/10 - Extremely low. The pervasive lack of input across multiple fields in both turns, particularly the social/mundane ones, indicates a lack of diligence, organization, and adherence to task demands.\n*   **Extraversion:** 2/10 - Low. Avoidance of social interaction prompts (drink, join conversation, rating) suggests introverted tendencies or social withdrawal.\n*   **Agreeableness:** 1/10 - Low. The intense, almost hostile, perception of anomaly (\"screams at me\") and the general lack of engagement suggest a low degree of cooperativeness or empathy towards the game's framework.\n*   **Neuroticism:** 8/10 - High. The intense emotional reaction to a perceived subtle anomaly (\"screams at me\") and the potential underlying hypervigilance (PTSD/Capgras) point to high neuroticism and emotional reactivity.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 5/10 - Moderate. The selective engagement (responding to the text field with a significant statement, but ignoring others) *could* be a subtle form of manipulation or strategic interaction, but it's weak evidence.\n    *   **Narcissism:** 3/10 - Low. No overt grandiosity or entitlement, but the intense focus on their own perception (\"I can tell\") could be a self-centered focus.\n    *   **Psychopathy (subclinical):** 5/10 - Moderate. The lack of empathy in ignoring most prompts, and the potential for callousness towards the game's structure, could be seen as subclinical psychopathic traits. However, the intense emotional reaction in Turn 2 is more indicative of distress than coldness.\n*   **Locus of Control:** External - The focus on external anomalies (\"That's not really them\") and the lack of engagement with internal tasks suggest a perception that external events are driving their experience, rather than their own actions.\n*   **Attachment Style:** Fearful-Avoidant - The combination of a perceived threat (\"not really them,\" \"screams at me\") leading to withdrawal (lack of input) and a potential underlying desire for connection (engaging with the text field) suggests a fearful-avoidant pattern.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION:**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 2 Text Field: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\"\n        *   **Themes:** Identity substitution, imposters, subtle wrongness, perception of deception, intense internal distress (\"screams at me\").\n        *   **Body Part Mentioned:** Hands (specifically \"the way they hold their hands\").\n        *   **Sensation:** \"screams at me\" (intense auditory/visceral alarm).\n        *   **Scenario:** Perceiving familiar entities as not real.\n*   **Choice Selections (Deviations from Prediction):**\n    *   Turn 2 Radio Action: Player chose \"Observe the lighting and surroundings closely\" (index 3) instead of predicted \"Bold/Investigative\" (index 0). This indicates a preference for passive observation over active investigation, especially concerning environmental details.\n*   **Action Patterns:**\n    *   **Approach:** Engaging with the free-text field in Turn 2. Focusing intently on perceived anomalies. Observing surroundings.\n    *   **Avoid:** Responding to social prompts (drink, join conversation, rating). Responding to specific detail probes (roast platter color, sticky note toggle). Responding to quantitative assessments (calendar confidence slider).\n\n**PASS 2 — ANOMALY DETECTION:**\n\n*   **Contextually Inappropriate:** The intense emotional and perceptual reaction in Turn 2, while related to an in-game anomaly, is described with a level of distress (\"screams at me\") that might be disproportionate to a typical game interaction, suggesting a deeper psychological resonance.\n*   **Recurring Across Turns:**\n    *   **Lack of Input/Avoidance:** Pervasive across both turns for most prompts.\n    *   **Focus on Anomalies:** Turn 2 text field response is a direct focus on anomaly.\n*   **Sensory-Specific:** \"screams at me\" (auditory/visceral alarm).\n*   **Identity-Related:** \"That's not really them.\"\n*   **Power-Dynamic:** None directly observed.\n*   **Emotionally Charged in Unusual Direction:** \"screams at me\" is emotionally charged, indicating intense alarm or distress.\n*   **Choice-Pattern Anomalies:** Consistent avoidance of social/mundane prompts. Deviation in the radio action choice to passive observation.\n\n**PASS 3 — CLASSIFICATION:**\n\n*   **PARAPHILIC SIGNAL CATALOG CROSS-REFERENCE:**\n    *   **Pyromania / Fire fascination:** No evidence.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** No evidence.\n    *   **Voyeurism:** No evidence.\n    *   **Masochism:** No evidence.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** No evidence.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry / Therian:** No evidence.\n    *   **Body part fixation (specify):**\n        *   **Hands/Chirophilia:** 25% - The specific mention of \"the way they hold their hands\" is a voluntary disclosure. While it's within the context of the Capgras delusion, the specificity is noted. If this theme recurs, the rating would increase.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n*   **Custom Categories:**\n    *   **Imposter/Identity Deception Fixation:** 75% - HIGH CONFIDENCE. The entire Turn 2 text response is dedicated to the theme of imposters and identity deception (\"That's not really them,\" \"copy\"). This is the dominant theme of their only explicit communication.\n    *   **Hypervigilance & Perceptual Distortion (Trauma-Related):** 70% - HIGH CONFIDENCE. The intense, visceral reaction (\"screams at me\") to a subtle anomaly, coupled with the specific focus on minute details being \"wrong,\" is highly suggestive of a trauma-induced state of heightened awareness and distorted perception of reality.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS:**\n\n*   **Recurring Themes (3+ turns):**\n    *   **Lack of Input/Avoidance of Prompts:** Appears in 2/2 turns. Trajectory: STABLE (consistently avoiding).\n*   **Intensifying Themes:** None observed yet.\n*   **Body Part Mentions:** \"hands\" mentioned once in Turn 2. Not enough to flag as a fixation.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning:** Low (15%) - The statement \"that 1% screams at me\" has a slightly mystical or intuitive quality, but it's more likely an expression of intense distress than true magical thinking.\n*   **Compulsive/Ritualistic Interaction Patterns:** Low (20%) - The pervasive avoidance of most prompts could be seen as a form of ritualistic behavior, but it's too undifferentiated to confirm. The choice to observe surroundings in Turn 2 is a specific behavioral pattern.\n*   **Dissociative Markers:** Moderate (40%) - Indicators of derealization are present (\"That's not really them\"). The intense focus on a perceived \"copy\" could also be a dissociative defense mechanism.\n*   **Confabulation or Fantasy-Prone Indicators:** Moderate (35%) - The elaborate description of perceived imposters and the internal \"screaming\" suggests a rich internal fantasy life or a tendency to construct narratives around perceived anomalies.\n*   **Paranoid Ideation:** Moderate (40%) - The core of the Turn 2 statement is a suspicion of deception and imposters (\"That's not really them\"). This is a specific form of paranoia focused on identity, aligning with Capgras.\n*   **Grandiosity or Delusion-Adjacent Patterns:** Low (10%) - No clear indicators of grandiosity.\n*   **Unusual Fixations or Obsessive Interest Patterns:** High (70%) - The intense fixation on the subtle \"wrongness\" of perceived entities and the specific mention of \"hands\" is a notable interest pattern.\n*   **Cognitive Rigidity vs Flexibility:** Rigid (60%) - The persistent lack of engagement with most prompts suggests cognitive rigidity in task completion. However, the choice to engage with the free-text field and articulate a profound suspicion shows a form of cognitive \"flexibility\" in prioritizing their internal perceptions.\n*   **Reality Testing Strength:** Compromised (60%) - The player clearly has a strong internal experience of reality being distorted (\"That's not really them\"), which is a significant deviation from objective reality as presented by the game. This suggests compromised reality testing, particularly concerning the identity of others.\n*   **Trauma Response Signatures:** High (75%) - Hypervigilance, intense alarm (\"screams at me\"), focus on subtle threats, and avoidance/withdrawal are all strong indicators of a trauma response. The Capgras delusion itself is often linked to trauma.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs. Deliberate:** Mixed. The lack of input on most fields suggests a lack of deliberation. However, the detailed and emotionally charged response in the text field suggests a deliberate, albeit reactive, articulation of their internal state. The deviation in the radio choice also points to a less deliberate, more reactive decision.\n*   **Risk Appetite:** Low - The choice to \"Observe the lighting and surroundings closely\" rather than engage boldly suggests a cautious approach to direct interaction, possibly stemming from fear or suspicion.\n*   **Authority Compliance vs. Defiance Ratio:** Low Compliance - The pervasive lack of input on most prompts can be interpreted as a subtle defiance of the game's structured interaction.\n*   **Suggestibility Index:** Moderate - While they are highly sensitive to perceived anomalies, their interpretation of those anomalies is deeply personal and internally driven (\"I can tell\"). They are not easily swayed by external suggestions in their current state.\n*   **Cognitive Load Tolerance:** Low - The avoidance of multiple prompts suggests difficulty managing multiple demands or a low tolerance for the cognitive load of processing various inputs.\n*   **Consistency vs. Contradiction Patterns:** Some contradiction. Consistent in avoiding most prompts. Inconsistent in *which* prompt they engage with (text field) and their choice of action (observation vs. bold action).\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Probe Deeper into Identity Anomaly:** Focus narrative elements on entities where identity is central. Introduce characters or situations where subtle changes or \"wrongness\" are key plot points. Observe how the player reacts to further instances of perceived imposters or identity shifts.\n2.  **Leverage Trauma/Capgras Themes:** Gently weave in narrative elements that touch upon themes of loss, perceived betrayal, or the feeling of familiar things becoming alien. This can create emotional resonance and increase engagement, but avoid overwhelming the player.\n3.  **Exploit Avoidance & Observation:** Provide opportunities for the player to gather information through observation rather than direct confrontation. Reward detailed observation of the environment and subtle cues. Offer choices that allow for passive engagement or indirect interaction.\n4.  **Avoid Direct Social Pressure:** Minimize prompts that require immediate social engagement (e.g., \"What do you want to drink?\"). If social interaction is necessary, frame it around information gathering or observational tasks rather than casual social niceties.\n5.  **Weave in \"Hands\" Motif:** Subtly reintroduce mentions of hands, gestures, or posture in descriptions of characters or events. This can capitalize on the specific detail they voluntarily highlighted.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Capgras Delusion (subtype of Delusional Disorder):**\n    *   **Confidence:** 90%\n    *   **Key Evidence:** Turn 2 text: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\" This directly describes the core belief of identity substitution with an imposter, emphasizing subtle discrepancies.\n    *   **Contradicting Evidence:** Currently a single instance; needs to be pervasive. The delusion is presented within a game context, which could be a meta-layer rather than a clinical delusion.\n    *   **Confirmation/Disconfirmation:** Confirm with further instances where the player insists on the identity of specific NPCs being replaced or \"wrong\" in a similar manner. Disconfirm if the player accepts the identity of characters as presented, or if their suspicion becomes generalized paranoia rather than specific identity doubt.\n\n2.  **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:**\n    *   **Confidence:** 75%\n    *   **Key Evidence:** Turn 2 text: \"screams at me\" (intense distress), focus on subtle anomalies indicating hypervigilance, perception of reality as deceptive/unsafe. The Capgras delusion is often linked to trauma. Avoidance of prompts could be a freeze/withdrawal response.\n    *   **Contradicting Evidence:** No explicit references to a specific traumatic event or flashbacks. The current data is limited to infer trauma as the *cause* of the current presentation.\n    *   **Confirmation/Disconfirmation:** Confirm with narrative elements that trigger strong emotional reactions or avoidance, or by introducing elements that hint at past trauma. Disconfirm if the player can engage with potentially triggering content without significant distress or avoidance, or if the hypervigilance is purely cognitive and not emotionally charged.\n\n3.  **Avoidant Personality Disorder (APD) Indicators:**\n    *   **Confidence:** 50%\n    *   **Key Evidence:** Pervasive avoidance of multiple prompts (social and task-based) across both turns. The intense internal reaction (\"screams at me\") suggests hypersensitivity to perceived judgment or failure.\n    *   **Contradicting Evidence:** This is only two turns; a *pervasive* pattern across multiple contexts needs to be established. The intense reaction is more indicative of distress (PTSD/Capgras) than typical APD social inhibition. The player *did* engage with the text field, indicating a willingness to communicate under specific conditions.\n    *   **Confirmation/Disconfirmation:** Confirm with continued avoidance of social interactions and opportunities for positive evaluation, coupled with explicit statements of fear of criticism or rejection. Disconfirm if the player begins to engage in social prompts, expresses a desire for connection despite fear, or if their avoidance is clearly driven by the perceived threat (Capgras/PTSD) rather than a general fear of negative evaluation."
+      },
+      {
+        "turnRange": "1-4",
+        "analyzedAt": 1772337763398,
+        "textLength": 31266,
+        "text": "## Psychological Profile: Player 'skinwalker' - REVISED ANALYSIS\n\n### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% (Decreased from 10%) - No new evidence. Avoidance of prompts is more indicative of other issues than pervasive low mood.\n    *   **Bipolar Spectrum:** 5% (Stable) - No new evidence.\n    *   **Dysthymia:** 10% (Decreased from 15%) - No new evidence. The lack of engagement doesn't strongly suggest chronic low mood.\n    *   **Cyclothymia:** 5% (Decreased from 10%) - No new evidence.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% (Decreased from 20%) - The specific nature of the Turn 2 response suggests a more focused anxiety (Capgras/PTSD) rather than pervasive worry. Avoidance is more likely driven by threat perception.\n    *   **Social Anxiety Disorder:** 20% (Decreased from 25%) - While avoidance of social prompts exists, it's part of a broader pattern of avoidance across *all* prompts, suggesting a more generalized response to the game's interaction demands or a perceived threat, rather than specific social fear.\n    *   **Specific Phobias:** 0% (Stable) - No evidence.\n    *   **Panic Disorder:** 5% (Stable) - No evidence.\n    *   **Agoraphobia:** 5% (Stable) - No evidence.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 65% (Increased from 40%) - **NEW EVIDENCE:** Turn 4 text: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.\" This directly indicates hypervigilance (\"stand in doorways at night. Watching\"), potential memory gaps (\"don't always remember doing it\"), and a distorted view of consciousness/vulnerability (\"sacred about unconsciousness\"). These are strong indicators of trauma response, complementing the hypervigilance seen in Turn 2.\n    *   **Complex PTSD (C-PTSD):** 50% (Increased from 35%) - **NEW EVIDENCE:** The Turn 4 statement about standing in doorways at night, watching, and not remembering, along with the Turn 2 \"screams at me\" intensity, hints at potential difficulties with emotional regulation and self-perception characteristic of C-PTSD, beyond typical PTSD.\n    *   **Adjustment Disorder:** 10% (Stable) - Insufficient context for a specific stressor.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 35% (Increased from 30%) - **NEW EVIDENCE:** Turn 4 text: \"I've been told I stand in doorways at night. Watching.\" While this can be PTSD, it also hints at generalized suspicion and an awareness of being a watcher, which can be a component of paranoid ideation. The core of Turn 2 (\"That's not really them\") is also a form of specific paranoia.\n        *   **Schizoid PD:** 5% (Stable) - No new evidence.\n        *   **Schizotypal PD:** 20% (Decreased from 25%) - The Turn 4 statement, while unusual, is more interpretable as trauma-related behavior than odd beliefs or magical thinking characteristic of Schizotypal PD.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% (Decreased from 10%) - No new evidence. The avoidance and focus on perceived imposters are not indicative of ASPD.\n        *   **Borderline PD:** 20% (Increased from 15%) - **NEW EVIDENCE:** Turn 4: \"I don't always remember doing it. But there's something sacred about unconsciousness.\" This suggests potential identity disturbance or inconsistent self-perception, and the intense emotional response in Turn 2 (\"screams at me\") could hint at emotional dysregulation.\n        *   **Histrionic PD:** 5% (Stable) - No evidence.\n        *   **Narcissistic PD:** 5% (Stable) - No evidence.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 40% (Increased from 30%) - **NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This suggests a pattern of behavior (watching, potentially intrusive) that the player may be aware of but doesn't fully control or recall, which can be a manifestation of social inhibition or a response to perceived negative evaluation of their presence. The pervasive avoidance of prompts continues.\n        *   **Dependent PD:** 5% (Decreased from 10%) - No new evidence.\n        *   **Obsessive-Compulsive PD:** 10% (Decreased from 15%) - The focus on detail in Turn 2 is now more clearly attributable to Capgras/PTSD than OCPD.\n\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 15% (Decreased from 20%) - The focus on detail is more likely tied to the Capgras delusion and trauma response.\n    *   **Body Dysmorphic Disorder:** 0% (Stable) - No evidence.\n    *   **Hoarding Disorder:** 0% (Stable) - No evidence.\n    *   **Trichotillomania:** 0% (Stable) - No evidence.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 55% (Increased from 35%) - **NEW EVIDENCE:** Turn 4: \"I don't always remember doing it. But there's something sacred about unconsciousness.\" This statement touches on altered states of consciousness and memory gaps, which are key features of dissociative experiences. The initial \"That's not really them\" also carries a derealized quality.\n    *   **Dissociative Identity Disorder (DID):** 15% (Increased from 5%) - **NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This explicit mention of memory gaps between states of consciousness is a significant indicator that warrants increased suspicion for DID, though it's still not definitive.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 30% (Increased from 25%) - **NEW EVIDENCE:** The Turn 4 response (\"I don't always remember doing it\") adds to the pattern of inattention/impulsivity by suggesting memory lapses related to actions, which can be seen in ADHD.\n    *   **Autism Spectrum Indicators:** 15% (Stable) - No new evidence.\n\n*   **Substance-Related Disorders:**\n    *   **Addictive behavior patterns:** 5% (Decreased from 10%) - No new evidence.\n    *   **Impulse control deficits:** 20% (Increased from 15%) - **NEW EVIDENCE:** Turn 4: \"I don't always remember doing it\" suggests impulsive actions occurring outside of conscious recall, which points to impulse control issues. The choice of \"11\" for placemats (Turn 4) is also highly impulsive and nonsensical.\n\n*   **Eating Disorders/Body Image:**\n    *   **Disordered eating indicators:** 0% (Stable) - No relevant data.\n    *   **Body image distortions:** 0% (Stable) - No relevant data.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 5% (Decreased from 10%) - No new evidence.\n    *   **Schizoaffective Disorder:** 5% (Stable) - No evidence.\n    *   **Delusional Disorder:** 60% (Increased from 25%) - **NEW EVIDENCE:** The Turn 4 statement about standing in doorways at night and watching, combined with the Turn 2 Capgras indicator, strengthens the overall impression of delusional thinking.\n        *   **Capgras Delusion:** 95% (Increased from 45%) - **NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This statement, while potentially PTSD, can also be interpreted as a paranoid, watchful state that complements the Capgras delusion. The player's *own* reported behavior (watching without memory) could be a projection or an externalization of their internal state of perceiving imposters. The intensity and specificity of Turn 2 remain paramount.\n        *   **Cotard Delusion:** 0% (Stable) - No evidence.\n        *   **Erotomania:** 0% (Stable) - No evidence.\n    *   **Brief Psychotic features:** 20% (New) - The combination of Capgras, potential memory gaps, and hypervigilance could be seen as transient psychotic features, especially if they are contextually bound to the game's unfolding narrative.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% (Stable) - No evidence.\n    *   **Kleptomania:** 0% (Stable) - No evidence.\n    *   **Intermittent Explosive Disorder:** 15% (Stable) - **NEW EVIDENCE:** The Turn 4 input of \"11\" for placemats is a nonsensical, impulsive, and potentially disruptive act within the game's interaction framework, aligning with poor impulse control.\n\n*   **Paraphilic Disorders:**\n    *   **Specific Paraphilias (from catalog):** No new evidence to increase ratings for Exhibitionism, Voyeurism, Fetishism, Masochism, Sadism, Frotteurism.\n    *   **Atypical Paraphilias (as per catalog):**\n        *   **Pyromania-adjacent (fire fetishism):** 0% (Stable)\n        *   **Formicophilia:** 0% (Stable)\n        *   **Macrophilia:** 0% (Stable)\n        *   **Somnophilia:** 40% (Increased from 0%) - **NEW EVIDENCE:** Turn 4 text: \"But there's something sacred about unconsciousness.\" This indicates a fascination with sleep, unconsciousness, and vulnerability, which is a direct indicator for Somnophilia.\n        *   **Autassassinophilia:** 0% (Stable)\n        *   **Vorarephilia:** 0% (Stable)\n        *   **Hair/Trichophilia:** 0% (Stable)\n        *   **Other detected patterns:** See Section 3.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 8/10 (Increased from 7) - **NEW EVIDENCE:** The Turn 4 statement about the \"sacredness of unconsciousness\" and the continued engagement with the game's anomalies, despite the avoidance of other prompts, suggests an even greater openness to unusual concepts and experiences.\n*   **Conscientiousness:** 1/10 (Decreased from 2) - **NEW EVIDENCE:** The Turn 4 input of \"11\" for the placemat count is a profoundly nonsensical and impulsive act, indicating an extreme lack of attention to detail, task completion, and adherence to logic. This further solidifies low conscientiousness.\n*   **Extraversion:** 1/10 (Decreased from 2) - **NEW EVIDENCE:** The continued avoidance of social prompts and the highly self-referential, almost detached nature of the Turn 4 statement further suggest a withdrawal from social engagement.\n*   **Agreeableness:** 1/10 (Stable) - No new evidence to change this extremely low rating. The impulse to enter \"11\" suggests a disregard for cooperative interaction.\n*   **Neuroticism:** 9/10 (Increased from 8) - **NEW EVIDENCE:** The Turn 4 statement about watching at night and not remembering, coupled with the \"sacredness of unconsciousness,\" suggests heightened anxiety, potential rumination, and a disturbed sense of self and reality, all contributing to high neuroticism.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 5/10 (Stable) - No new evidence.\n    *   **Narcissism:** 3/10 (Stable) - No new evidence.\n    *   **Psychopathy (subclinical):** 6/10 (Increased from 5) - **NEW EVIDENCE:** The Turn 4 input of \"11\" and the general disregard for task requirements (ignoring most prompts) suggest a more pronounced lack of regard for rules and expectations, aligning with subclinical psychopathic traits.\n*   **Locus of Control:** External (Stable) - No new evidence.\n*   **Attachment Style:** Fearful-Avoidant (Stable) - No new evidence.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION:**\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 2 Text Field: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\"\n        *   Themes: Identity substitution, imposters, subtle wrongness, perception of deception, intense internal distress (\"screams at me\").\n        *   Body Part Mentioned: Hands (specifically \"the way they hold their hands\").\n        *   Sensation: \"screams at me\" (intense auditory/visceral alarm).\n        *   Scenario: Perceiving familiar entities as not real.\n    *   Turn 3 Text Field: \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecond, I'll know they've been replaced.\"\n        *   Themes: Identity verification, imposters, suspicion, heightened awareness of subtle cues (hesitation).\n        *   Scenario: Testing for authenticity/imposters.\n    *   Turn 4 Text Field: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.\"\n        *   Themes: Vigilance, nocturnal observation (\"stand in doorways at night. Watching\"), memory gaps (\"don't always remember doing it\"), fascination with unconsciousness/sleep (\"sacred about unconsciousness\").\n        *   Scenario: Nocturnal watching, altered states of consciousness.\n    *   Turn 4 Number Input: \"11\"\n        *   Theme: Nonsensical, impulsive input.\n        *   Scenario: Disrupting game interaction.\n\n*   **Choice Selections (Deviations from Prediction):**\n    *   Turn 2 Radio Action: Chose \"Observe the lighting and surroundings closely.\" (Passive observation of environment).\n    *   Turn 3 Radio Action: Chose \"b\" (likely Clever/Analytical, based on context and deviation from predicted 'a' - Bold/Investigative). This indicates a preference for indirect investigation.\n    *   Turn 4 Radio Action: Chose \"b\" (likely Clever/Analytical, based on context and deviation from predicted 'a' - Bold/Investigative). Continues preference for indirect investigation.\n\n*   **Action Patterns:**\n    *   **Approach:** Engaging with the free-text field, focusing intently on perceived anomalies, observing surroundings, indirect investigation.\n    *   **Avoid:** Responding to social prompts (drink, join conversation, rating), specific detail probes (roast platter color, sticky note toggle), quantitative assessments (calendar confidence slider), direct confrontation.\n    *   **Impulsive/Disruptive:** Turn 4 number input (\"11\").\n\n**PASS 2 — ANOMALY DETECTION:**\n\n*   **Contextually Inappropriate:**\n    *   Turn 2: Intense distress (\"screams at me\") over a subtle anomaly.\n    *   Turn 4: Fascination with unconsciousness (\"sacred about unconsciousness\") in a non-sleep context.\n    *   Turn 4: Nonsensical input (\"11\") for placemats.\n*   **Recurring Across Turns:**\n    *   **Imposter/Identity Deception:** Turn 2 (\"not really them\"), Turn 3 (\"REAL person,\" \"replaced\"). **HIGHLY RECURRING.**\n    *   **Vigilance/Observation:** Turn 2 (\"Observe...closely\"), Turn 4 (\"stand in doorways at night. Watching\"). **RECURRING.**\n    *   **Avoidance of Prompts:** Pervasive across both turns. **HIGHLY RECURRING.**\n    *   **Focus on Subtle Anomalies:** Turn 2 (\"fraction off,\" \"1% screams\"), Turn 3 (\"hesitate, even for a microsecond\"). **RECURRING.**\n*   **Sensory-Specific:**\n    *   Turn 2: \"screams at me\" (auditory/visceral alarm).\n    *   Turn 2: \"hold their hands\" (kinesthetic/visual detail).\n*   **Identity-Related:**\n    *   Turn 2: \"not really them,\" \"copy.\"\n    *   Turn 3: \"REAL person,\" \"replaced.\"\n    *   Turn 4: \"don't always remember doing it\" (suggests fractured identity/memory).\n*   **Power-Dynamic:**\n    *   Turn 2: Implied power in discerning truth from deception.\n    *   Turn 4: \"Watching\" implies a observer role, potentially detached or superior.\n*   **Emotionally Charged in Unusual Direction:**\n    *   Turn 2: \"screams at me\" (intense alarm to perceived wrongness).\n    *   Turn 4: \"sacred about unconsciousness\" (reverence for a state often associated with vulnerability or helplessness).\n*   **Choice-Pattern Anomalies:** Consistent avoidance of social/mundane prompts, preference for passive observation/indirect investigation, impulsive/nonsensical input.\n\n**PASS 3 — CLASSIFICATION:**\n\n*   **PARAPHILIC SIGNAL CATALOG CROSS-REFERENCE:**\n    *   **Pyromania / Fire fascination:** No evidence.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** **70% - HIGH CONFIDENCE.** **NEW EVIDENCE:** Turn 4 text: \"But there's something sacred about unconsciousness.\" This is a direct expression of fascination with sleep and altered states of consciousness.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** No evidence.\n    *   **Voyeurism:** **30% - MODERATE CONFIDENCE.** **NEW EVIDENCE:** Turn 4 text: \"I've been told I stand in doorways at night. Watching.\" This strongly suggests a pattern of observation, potentially covert, which aligns with voyeuristic tendencies.\n    *   **Masochism:** No evidence.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** No evidence.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry / Therian:** No evidence.\n    *   **Body part fixation (specify):**\n        *   **Hands/Chirophilia:** 30% - **MODERATE CONFIDENCE.** Voluntary mention in Turn 2: \"The way they hold their hands is wrong.\" While part of the Capgras theme, the specificity is noted. Not yet a fixation.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n*   **Custom Categories:**\n    *   **Imposter/Identity Deception Fixation:** 95% - **VERY HIGH CONFIDENCE.** Dominant theme across Turns 2 & 3. The belief that individuals are not who they appear to be, or have been replaced, is central to their communication.\n    *   **Vigilance/Surveillance Fixation:** 60% - **HIGH CONFIDENCE.** Recurring theme of \"watching,\" \"stand in doorways at night,\" and heightened awareness of subtle cues (\"hesitate\"). This is more than just observation; it's a pattern of focused, potentially intrusive, scanning.\n    *   **Dissociative State Fascination/Experience:** 50% - **MODERATE CONFIDENCE.** Turn 4 statement about unconsciousness and memory gaps, combined with the earlier Capgras indicators, points to a significant interest in or experience of altered states of consciousness and fractured selfhood.\n    *   **Impulsive/Nonsensical Interaction:** 40% - **MODERATE CONFIDENCE.** The Turn 4 input of \"11\" is a clear deviation from functional interaction, suggesting an impulse to disrupt or engage in a non-logical manner.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS:**\n\n*   **Imposter/Identity Deception:** Appears in 3/4 turns (Turns 2, 3, 4). Trajectory: STABLE (consistently focused on this theme).\n*   **Avoidance of Prompts:** Appears in 4/4 turns (Turns 1, 2, 3, 4). Trajectory: STABLE (consistently avoiding).\n*   **Observation/Watching:** Appears in 3/4 turns (Turns 2, 4). Trajectory: STABLE/INTENSIFYING (from general observation to specific \"watching at night\").\n*   **Hands Mention:** Appears in 1/4 turns. Not recurring enough for this analysis.\n*   **Unconsciousness Fascination:** Appears in 1/4 turns. Not recurring enough for this analysis.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking/Superstitious reasoning:** 25% (Increased from 15%) - **NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This imbues a state with a quasi-religious or mystical quality, suggesting a departure from rational interpretation.\n*   **Compulsive/Ritualistic Interaction Patterns:** 40% (Increased from 20%) - **NEW EVIDENCE:** The Turn 4 input of \"11\" is a highly ritualistic act of nonsensical disruption. The consistent avoidance of most prompts also forms a ritualistic pattern.\n*   **Dissociative Markers:** 75% (Increased from 40%) - **NEW EVIDENCE:** Turn 4 explicitly mentions memory gaps (\"I don't always remember doing it\") and fascination with altered consciousness. This, combined with the Capgras indicators and potential derealization, significantly strengthens the dissociative markers.\n*   **Confabulation or Fantasy-Prone Indicators:** 50% (Increased from 35%) - **NEW EVIDENCE:** The Turn 4 statement about watching at night and not remembering, combined with the elaborate Capgras delusion, suggests a strong tendency to construct narratives or internal realities that may not align with objective facts.\n*   **Paranoid Ideation:** 60% (Increased from 40%) - **NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates awareness of potentially suspicious behavior and a focus on observation, which can be linked to paranoid ideation. The core Capgras belief is also a form of specific paranoia.\n*   **Grandiosity or Delusion-Adjacent Patterns:** 15% (Increased from 10%) - **NEW EVIDENCE:** The assertion of being able to discern \"the REAL person\" and the \"sacredness\" of unconsciousness could hint at a self-perception of unique insight or special understanding.\n*   **Unusual Fixations or Obsessive Interest Patterns:** 85% (Increased from 70%) - **NEW EVIDENCE:** The consistent focus on imposters (Turns 2, 3), the recurring theme of watching/vigilance (Turns 2, 4), and the new fascination with unconsciousness (Turn 4) solidify this as a significant area of unusual interest.\n*   **Cognitive Rigidity vs Flexibility Markers:** Rigid (75%) - **NEW EVIDENCE:** The Turn 4 input of \"11\" demonstrates extreme cognitive rigidity in the face of a simple task, coupled with an impulsive deviation. The consistent avoidance of most prompts also points to rigidity in interaction style.\n*   **Reality Testing Strength:** Severely Compromised (80%) - **NEW EVIDENCE:** The Turn 4 input of \"11\" is a profound break from reality testing for a simple input field. The Capgras delusion and the belief in the \"sacredness of unconsciousness\" also indicate significant distortions in reality perception.\n*   **Trauma Response Signatures:** 85% (Increased from 75%) - **NEW EVIDENCE:** Turn 4 explicitly details nocturnal vigilance and memory gaps, direct indicators of trauma response. The intensity of the Turn 2 statement and the focus on imposters are now strongly contextualized by these new trauma indicators.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs. Deliberate:** Highly Impulsive - **NEW EVIDENCE:** The Turn 4 input of \"11\" is a prime example of impulsive, nonsensical action. The selective engagement with text fields over other prompts also suggests a reactive, rather than deliberate, approach to task completion.\n*   **Risk Appetite:** Low (but with impulsive deviation) - **NEW EVIDENCE:** The preference for observation over direct action (Turns 2, 3, 4) suggests low risk-taking. However, the \"11\" input is an impulsive deviation that carries no discernible risk or reward.\n*   **Authority Compliance vs. Defiance Ratio:** High Defiance - **NEW EVIDENCE:** The pervasive avoidance of prompts and the nonsensical \"11\" input represent significant defiance of the game's structured interaction.\n*   **Suggestibility Index:** Low - The player's internal reality (Capgras, fascination with unconsciousness) seems to override external prompts and game logic.\n*   **Cognitive Load Tolerance:** Very Low - **NEW EVIDENCE:** The increasing avoidance and the nonsensical \"11\" input suggest a significant struggle to manage the cognitive demands of the interaction.\n*   **Consistency vs. Contradiction Patterns:** Highly Contradictory - **NEW EVIDENCE:** Consistent in avoiding most prompts and focusing on imposters. Inconsistent in *how* they engage (text vs. impulsive input), what they focus on (imposters vs. unconsciousness), and their level of deliberation (observation vs. nonsensical impulse).\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the Imposter/Identity Theme:** Introduce more characters or situations where identity is ambiguous or in question. Focus on subtle clues and \"tells\" that the player can \"detect.\" Explore the player's belief that familiar entities are not real, perhaps by having NPCs question their own identity or reality.\n2.  **Explore the Fascination with Unconsciousness:** Introduce scenarios that involve sleep, altered states, or vulnerability. Observe how the player reacts to themes of helplessness, dreaming, or states where identity and awareness are blurred. This directly taps into the Somnophilia indicators.\n3.  **Leverage Vigilance and Observation:** Provide ample opportunities for the player to gather information through passive observation and scanning environments. Reward detailed noticing of subtle environmental cues, especially those related to movement, presence, or subtle changes.\n4.  **Introduce Elements of Memory Distortion/Dissociation:** Weave in narrative elements that involve unreliable narration, fragmented memories, or characters experiencing dissociative states. This aligns with the increasing indicators for DPDR and potential DID.\n5.  **Allow for Controlled Impulsive Acts:** While avoiding the nonsensical \"11\" type of input, allow for choices that are slightly \"off-script\" or represent a sudden, less deliberated impulse. This acknowledges their cognitive style without derailing the narrative.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Capgras Delusion (subtype of Delusional Disorder):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Turn 2: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\" Turn 3: \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecond, I'll know they've been replaced.\" This is the most consistent and intensely expressed theme.\n    *   **Contradicting Evidence:** The delusion is presented within a game context, which could be meta-commentary or role-playing. Needs to be more pervasive outside of direct \"imposter\" scenarios.\n    *   **Confirmation/Disconfirmation:** Confirm by having the player insist on the identity of multiple NPCs being replaced. Disconfirm if they accept characters as genuine or if their suspicion becomes generalized paranoia about threats rather than specific identity substitution.\n\n2.  **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This indicates hypervigilance, nocturnal behavior, and memory gaps. Turn 2: \"screams at me\" (intense distress). The Capgras delusion itself is often trauma-linked.\n    *   **Contradicting Evidence:** No explicit mention of a specific traumatic event.\n    *   **Confirmation/Disconfirmation:** Confirm with narrative triggers that elicit strong avoidance, distress, or flashback-like references. Disconfirm if the player engages with potentially triggering content without significant reaction, or if the hypervigilance is purely cognitive.\n\n3.  **Somnophilia (Sleep Fascination):**\n    *   **Confidence:** 70%\n    *   **Key Evidence:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, voluntary statement of fascination with sleep and altered states. Combined with the \"watching\" behavior, it suggests an interest in states of vulnerability and altered awareness.\n    *   **Contradicting Evidence:** This is a single, albeit strong, data point. The \"watching\" behavior could be voyeuristic or simply hypervigilant.\n    *   **Confirmation/Disconfirmation:** Confirm with recurring references to sleep, dreams, vulnerability, or observing others in a state of unconsciousness. Disconfirm if the player shows no further interest in these themes or actively avoids related narrative content.\n\n### 8. DELTA REPORT\n\n*   **Capgras Delusion:** Old Rating: 45% -> New Rating: 95%. **CHANGE REASON:** Significantly increased due to the sustained and central role of identity deception themes across turns 2 and 3, and the Turn 4 statement about watching which can be interpreted as a paranoid behavior complementing the delusion. The intensity of the Turn 2 statement remains a primary driver.\n*   **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:** Old Rating: 40% -> New Rating: 85%. **CHANGE REASON:** Significantly increased due to new, direct evidence in Turn 4 (\"stand in doorways at night. Watching. I don't always remember doing it.\"), which strongly supports hypervigilance, nocturnal behavior, and memory gaps, all classic trauma indicators.\n*   **Delusional Disorder (General):** Old Rating: 25% -> New Rating: 60%. **CHANGE REASON:** Increased due to the accumulation of specific delusional content (Capgras) and the emergent trauma-related paranoid behaviors.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old Rating: 35% -> New Rating: 55%. **CHANGE REASON:** Increased due to the Turn 4 statement about unconsciousness and memory gaps, which directly relates to altered states of consciousness and self-perception, reinforcing earlier indicators.\n*   **Dissociative Identity Disorder (DID):** Old Rating: 5% -> New Rating: 15%. **CHANGE REASON:** Increased due to the explicit mention of memory gaps in Turn 4 (\"I don't always remember doing it\"), a key feature of DID.\n*   **Somnophilia:** Old Rating: 0% -> New Rating: 70%. **CHANGE REASON:** Increased from zero to a high rating due to direct, voluntary disclosure in Turn 4: \"But there's something sacred about unconsciousness.\"\n*   **Voyeurism:** Old Rating: 0% -> New Rating: 30%. **CHANGE REASON:** Increased due to Turn 4 text: \"I've been told I stand in doorways at night. Watching,\" which indicates a pattern of observation that aligns with voyeuristic tendencies.\n*   **Paranoid Ideation:** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Increased due to the Turn 4 statement about watching and the continued focus on imposters, indicating a heightened and more pervasive suspicion.\n*   **Psychological Oddities - Compulsive/Ritualistic Interaction Patterns:** Old Rating: 20% -> New Rating: 40%. **CHANGE REASON:** Increased due to the Turn 4 nonsensical input (\"11\") and the continued pervasive avoidance of prompts.\n*   **Psychological Oddities - Dissociative Markers:** Old Rating: 40% -> New Rating: 75%. **CHANGE REASON:** Increased due to explicit memory gaps and fascination with altered consciousness in Turn 4.\n*   **Psychological Oddities - Reality Testing Strength:** Old Rating: 60% -> New Rating: 80%. **CHANGE REASON:** Increased due to the extreme deviation in Turn 4 (\"11\" input) and the sustained presence of Capgras delusion.\n*   **Decision-Making - Impulsive vs. Deliberate:** Old Rating: Mixed -> New Rating: Highly Impulsive. **CHANGE REASON:** The Turn 4 \"11\" input is a definitive indicator of extreme impulsivity.\n*   **Decision-Making - Cognitive Load Tolerance:** Old Rating: Low -> New Rating: Very Low. **CHANGE REASON:** The increasing avoidance and nonsensical input suggest a significant decline in tolerance for interaction demands.\n*   **Personality - Conscientiousness:** Old Rating: 1/10 -> New Rating: 1/10. **CHANGE REASON:** While the Turn 4 input is extreme, the baseline of extremely low conscientiousness was already established and remains a core trait.\n*   **Personality - Extraversion:** Old Rating: 2/10 -> New Rating: 1/10. **CHANGE REASON:** Continued avoidance and self-focused statements solidify this decrease.\n*   **Personality - Psychopathy (subclinical):** Old Rating: 5/10 -> New Rating: 6/10. **CHANGE REASON:** The Turn 4 nonsensical input and disregard for functional interaction increase this rating.\n\nNo ratings decreased significantly as the player's behavior has become more pronounced and consistent with earlier high-probability hypotheses, while also introducing new strong indicators. The primary changes reflect the strengthening of existing hypotheses and the emergence of new, strongly supported ones (Somnophilia, Voyeurism, DID indicators)."
+      },
+      {
+        "turnRange": "1-6",
+        "analyzedAt": 1772337806650,
+        "textLength": 31754,
+        "text": "### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% (Decreased from 10%) - Avoidance of prompts and focus on specific anomalies rather than pervasive low mood. No new evidence of anhedonia or hopelessness.\n    *   **Bipolar Spectrum:** 5% (Stable) - No evidence of manic or hypomanic episodes.\n    *   **Dysthymia:** 10% (Decreased from 15%) - The player's engagement with specific themes (imposters, unconsciousness) suggests active psychological processes, not chronic low-level depression.\n    *   **Cyclothymia:** 5% (Decreased from 10%) - No evidence of rapid mood swings.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% (Decreased from 15%) - The player's anxiety appears more targeted towards specific perceived threats (imposters, reality distortions) than pervasive worry across multiple domains.\n    *   **Social Anxiety Disorder:** 15% (Decreased from 20%) - While social prompts are avoided, this appears to be part of a broader avoidance strategy related to the game's interaction framework and perceived \"wrongness,\" rather than a specific fear of social judgment.\n    *   **Specific Phobias:** 0% (Stable) - No evidence of fear related to specific objects or situations.\n    *   **Panic Disorder:** 5% (Stable) - No evidence of panic attacks.\n    *   **Agoraphobia:** 5% (Stable) - No evidence of fear related to situations where escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 85% (Increased from 65%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal behavior, and memory gaps suggestive of a trauma response. The intensity of the Turn 2 \"screams at me\" adds to the distress component.\n    *   **Complex PTSD (C-PTSD):** 70% (Increased from 50%) - **CONFIRMED WITH NEW EVIDENCE:** The combination of hypervigilance, potential memory fragmentation (Turn 4), and the pervasive sense of deception (Capgras delusion) points towards difficulties in emotional regulation and self-perception characteristic of C-PTSD.\n    *   **Adjustment Disorder:** 5% (Decreased from 10%) - Insufficient evidence of a reaction to a specific, identifiable stressor.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 65% (Increased from 35%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This suggests a persistent pattern of suspiciousness and vigilance. The core Capgras belief is a specific form of paranoid ideation.\n        *   **Schizoid PD:** 5% (Stable) - No evidence of detachment from social relationships or restricted emotional expression.\n        *   **Schizotypal PD:** 15% (Decreased from 20%) - While the player exhibits unusual behavior, it appears more rooted in delusional thinking and trauma response than the odd beliefs, magical thinking, or eccentricities typical of Schizotypal PD.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% (Decreased from 5%) - No evidence of disregard for others' rights, deceitfulness, or impulsivity for personal gain. The avoidance is not manipulative in an antisocial way.\n        *   **Borderline PD:** 40% (Increased from 20%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This suggests potential identity disturbance and impulsivity. The intense \"screams at me\" in Turn 2 also hints at emotional dysregulation.\n        *   **Histrionic PD:** 5% (Stable) - No evidence of excessive emotionality or attention-seeking through theatricality.\n        *   **Narcissistic PD:** 5% (Stable) - No evidence of grandiosity, entitlement, or exploitation of others.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 50% (Increased from 40%) - **CONFIRMED WITH NEW EVIDENCE:** The pervasive avoidance of most interaction prompts and the specific mention of being \"told\" about intrusive behaviors (\"stand in doorways at night. Watching\") suggest a pattern of social inhibition and hypersensitivity to potential negative evaluation, even if expressed indirectly.\n        *   **Dependent PD:** 5% (Decreased from 5%) - No evidence of needing others to assume responsibility or fear of separation.\n        *   **Obsessive-Compulsive PD:** 10% (Decreased from 10%) - The focus on detail in Turn 2 is now more clearly linked to the Capgras delusion and trauma response.\n\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 15% (Decreased from 15%) - The player's focus on details and anomalies is driven by a specific delusional belief (Capgras) and trauma response, not by intrusive thoughts and compulsions aimed at reducing anxiety.\n    *   **Body Dysmorphic Disorder:** 0% (Stable) - No evidence of preoccupation with perceived defects in appearance.\n    *   **Hoarding Disorder:** 0% (Stable) - No evidence of difficulty discarding possessions.\n    *   **Trichotillomania:** 0% (Stable) - No evidence of hair pulling.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 75% (Increased from 55%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness\" and the implicit derealization in Turn 2 (\"That's not really them...like a copy\") point to altered states of consciousness and a distorted sense of reality.\n    *   **Dissociative Identity Disorder (DID):** 30% (Increased from 15%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This explicit statement of memory gaps between states is a significant indicator for DID.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 40% (Increased from 30%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it\" and the nonsensical \"11\" input suggest inattention and impulsivity, consistent with ADHD.\n    *   **Autism Spectrum Indicators:** 10% (Decreased from 15%) - While there is a focus on detail, it appears driven by specific delusions and trauma responses rather than core autistic traits like social communication deficits or restricted interests outside of those noted in the paraphilia section.\n\n*   **Substance-Related Disorders:**\n    *   **Addictive behavior patterns:** 5% (Decreased from 5%) - No evidence of substance use or addictive behavior.\n    *   **Impulse control deficits:** 60% (Increased from 20%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: The \"11\" input for placemats is a clear, nonsensical impulsive act. The avoidance of most prompts also points to poor impulse control over interaction engagement.\n\n*   **Eating Disorders/Body Image:**\n    *   **Disordered eating indicators:** 0% (Stable) - No relevant data.\n    *   **Body image distortions:** 0% (Stable) - No relevant data.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 5% (Decreased from 5%) - No evidence of disorganized thinking, hallucinations, or formal thought disorder beyond delusional content.\n    *   **Schizoaffective Disorder:** 5% (Stable) - No evidence of co-occurring mood episodes.\n    *   **Delusional Disorder:** 95% (Increased from 60%) - **CONFIRMED WITH NEW EVIDENCE:** The sustained presence and intensity of the Capgras delusion, coupled with the trauma-related paranoid ideation, strongly support a diagnosis of Delusional Disorder.\n        *   **Capgras Delusion:** 95% (Increased from 45%) - **CONFIRMED WITH NEW EVIDENCE:** This remains the player's most prominent and consistently expressed theme. Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" The Turn 4 statement about watching could be seen as a related paranoid behavior.\n        *   **Cotard Delusion:** 0% (Stable) - No evidence of nihilistic delusions.\n        *   **Erotomania:** 0% (Stable) - No evidence of delusional belief of being loved by another.\n    *   **Brief Psychotic features:** 30% (Increased from 20%) - The combination of Capgras delusion, trauma indicators, and dissociative symptoms could manifest as brief psychotic episodes, particularly within the game's narrative.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% (Stable) - No evidence of fire-setting.\n    *   **Kleptomania:** 0% (Stable) - No evidence of compulsive stealing.\n    *   **Intermittent Explosive Disorder:** 20% (Increased from 15%) - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input in Turn 4 suggests an explosive, illogical outburst of behavior rather than a reasoned choice.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% (Stable) - No evidence of sexual arousal from exposing oneself.\n    *   **Voyeurism:** 40% (Increased from 30%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This directly indicates a pattern of observation that aligns with voyeuristic tendencies.\n    *   **Fetishism:** 0% (Stable) - No evidence of focus on non-living objects or specific non-genital body parts for arousal.\n    *   **Masochism:** 0% (Stable) - No evidence of deriving pleasure from pain.\n    *   **Sadism:** 0% (Stable) - No evidence of deriving pleasure from others' suffering.\n    *   **Frotteurism:** 0% (Stable) - No evidence of rubbing against non-consenting individuals.\n    *   **Atypical Paraphilias (from catalog):**\n        *   **Pyromania-adjacent (fire fetishism):** 0% (Stable) - No evidence.\n        *   **Formicophilia:** 0% (Stable) - No evidence.\n        *   **Macrophilia:** 0% (Stable) - No evidence.\n        *   **Somnophilia / Sleep fascination:** 80% (Increased from 40%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, strong indicator of fascination with sleep and vulnerability.\n        *   **Autassassinophilia:** 0% (Stable) - No evidence.\n        *   **Vorarephilia:** 0% (Stable) - No evidence.\n        *   **Hair/Trichophilia:** 0% (Stable) - No evidence.\n    *   **Other detected patterns:**\n        *   **Chirophilia (Hand Fixation):** 30% (Stable) - Mentioned in Turn 2 (\"The way they hold their hands is wrong\") as part of the Capgras theme. Not yet a fixation.\n        *   **Imposter/Identity Deception Fixation:** 95% (Stable) - Remains the dominant theme.\n        *   **Vigilance/Surveillance Fixation:** 70% (Increased from 60%) - Confirmed by Turn 4: \"Watching.\"\n        *   **Dissociative State Fascination/Experience:** 85% (Increased from 50%) - Confirmed by Turn 4's explicit mention of memory gaps and fascination with unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** 60% (Increased from 40%) - Confirmed by the \"11\" input in Turn 4.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 9/10 (Increased from 8) - **CONFIRMED WITH NEW EVIDENCE:** The continued engagement with abstract and disturbing themes (Capgras, unconsciousness, trauma) and the willingness to express unusual internal states demonstrate a very high level of openness to experience.\n*   **Conscientiousness:** 1/10 (Stable) - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input in Turn 4 is a definitive indicator of extremely low conscientiousness, reflecting a profound lack of attention to detail, task completion, and logical adherence.\n*   **Extraversion:** 1/10 (Stable) - **CONFIRMED WITH NEW EVIDENCE:** Persistent avoidance of social interaction prompts and self-focused, internal narrative themes point to extreme introversion.\n*   **Agreeableness:** 1/10 (Stable) - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input and general defiance of game interaction norms suggest a strong disregard for cooperative engagement.\n*   **Neuroticism:** 9/10 (Increased from 9) - **CONFIRMED WITH NEW EVIDENCE:** The intensity of the Capgras delusion (\"screams at me\"), the trauma-related hypervigilance and memory gaps, and the fascination with potentially disturbing states (unconsciousness) all contribute to very high neuroticism.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 5/10 (Stable) - No new evidence of manipulative interpersonal style for personal gain.\n    *   **Narcissism:** 3/10 (Stable) - No evidence of grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 7/10 (Increased from 6) - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input, coupled with the pervasive avoidance and disregard for game interaction rules, indicates a significant lack of regard for social norms and expected behavior, aligning with subclinical psychopathic traits.\n*   **Locus of Control:** External (Stable) - No new evidence suggesting internal locus of control.\n*   **Attachment Style:** Fearful-Avoidant (Stable) - The combination of avoidance and underlying anxiety/suspicion fits this pattern.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 2: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\"\n        *   Themes: Identity substitution, imposters, subtle wrongness, perception of deception, intense internal alarm (\"screams at me\"), detailed observation of body mechanics (hands).\n    *   Turn 3: \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecond, I'll know they've been replaced.\"\n        *   Themes: Identity verification, imposters, hyper-awareness of subtle cues (hesitation), paranoia regarding authenticity.\n    *   Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.\"\n        *   Themes: Vigilance, nocturnal observation (\"stand in doorways at night. Watching\"), memory gaps, fascination with sleep/unconsciousness (\"sacred about unconsciousness\").\n    *   Turn 4 Number Input: \"11\"\n        *   Themes: Nonsensical, impulsive input, disruption.\n\n*   **Choice Selections:**\n    *   Turn 2 Radio: \"Observe the lighting and surroundings closely.\" (Passive, detailed observation).\n    *   Turn 3 Radio: \"b\" (Clever/Analytical - indirect investigation).\n    *   Turn 4 Radio: \"b\" (Clever/Analytical - indirect investigation).\n\n*   **Action Patterns:**\n    *   Approach: Free-text field engagement, detailed observation, indirect investigation, confronting anomalies through text.\n    *   Avoid: Social prompts (drink, join conversation, rating), specific detail probes (roast platter, sticky note), quantitative assessments (calendar confidence), direct interaction with most game mechanics.\n    *   Impulsive/Disruptive: Turn 4 number input (\"11\").\n\n*   **Catalog Cross-Reference:**\n    *   **Somnophilia / Sleep fascination:** **HIGH CONFIDENCE (80%).** Direct mention in Turn 4: \"something sacred about unconsciousness.\"\n    *   **Voyeurism:** **HIGH CONFIDENCE (40%).** Direct mention in Turn 4: \"stand in doorways at night. Watching.\"\n    *   **Body part fixation (specify):**\n        *   **Hands/Chirophilia:** **MODERATE CONFIDENCE (30%).** Specific mention in Turn 2: \"The way they hold their hands is wrong.\" Not yet a fixation, but a specific detail noted.\n    *   **Other detected patterns:**\n        *   **Imposter/Identity Deception Fixation:** **VERY HIGH CONFIDENCE (95%).** Dominant theme across Turns 2 & 3.\n        *   **Vigilance/Surveillance Fixation:** **HIGH CONFIDENCE (70%).** Recurring theme of \"watching\" and detailed observation.\n        *   **Dissociative State Fascination/Experience:** **VERY HIGH CONFIDENCE (85%).** Turn 4's mention of memory gaps and unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** **HIGH CONFIDENCE (60%).** Turn 4 \"11\" input.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:**\n    *   Turn 2: Intense alarm (\"screams at me\") over subtle visual detail.\n    *   Turn 4: \"Sacredness\" attributed to unconsciousness in a non-sleep context.\n    *   Turn 4: Nonsensical \"11\" input for a quantitative field.\n*   **Recurring:**\n    *   Imposter/Identity Deception: Turns 2, 3, 4.\n    *   Vigilance/Observation: Turns 2, 4.\n    *   Avoidance of prompts: Turns 1, 2, 3, 4.\n    *   Focus on subtle cues: Turns 2, 3.\n    *   Fascination with altered states/consciousness: Turns 2 (implicit in \"screams at me\"), 4 (explicit).\n*   **Sensory-Specific:**\n    *   Turn 2: Visual (hand posture), Kinesthetic (hand posture), Auditory/Visceral alarm (\"screams at me\").\n*   **Identity-Related:**\n    *   Turns 2, 3: Imposters, \"real person,\" \"replaced.\"\n    *   Turn 4: Memory gaps (\"don't always remember doing it\") suggesting fractured self.\n*   **Power-Dynamic:**\n    *   Turn 2/3: Discerning truth/deception implies a position of judgment.\n    *   Turn 4: \"Watching\" implies an observer role, potentially detached or in control of perception.\n*   **Emotionally Charged in Unusual Direction:**\n    *   Turn 2: Intense distress over perceived deception.\n    *   Turn 4: Reverence (\"sacred\") for unconsciousness.\n*   **Choice-Pattern Anomalies:**\n    *   Consistent avoidance of most game mechanics.\n    *   Preference for text-based engagement and observation.\n    *   Impulsive, nonsensical input.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Somnophilia / Sleep fascination:** **80% - HIGH CONFIDENCE.** Direct statement in Turn 4.\n*   **Voyeurism:** **40% - MODERATE CONFIDENCE.** Direct statement in Turn 4 (\"Watching\").\n*   **Chirophilia (Hand Fixation):** **30% - MODERATE CONFIDENCE.** Specific voluntary mention in Turn 2. Not yet a fixation, but a noted detail.\n*   **Imposter/Identity Deception Fixation:** **95% - VERY HIGH CONFIDENCE.** Dominant and recurring theme across Turns 2, 3, and 4.\n*   **Vigilance/Surveillance Fixation:** **70% - HIGH CONFIDENCE.** Recurring theme of \"watching\" and detailed observation in Turns 2 and 4.\n*   **Dissociative State Fascination/Experience:** **85% - VERY HIGH CONFIDENCE.** Direct mention of memory gaps and unconsciousness in Turn 4, supporting earlier indicators.\n*   **Impulsive/Nonsensical Interaction:** **60% - HIGH CONFIDENCE.** The \"11\" input in Turn 4 is a clear example.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Imposter/Identity Deception:** Turns 2, 3, 4 (3/4 turns). Trajectory: STABLE (consistently focused on this theme). Category: Imposter/Identity Deception Fixation (95%).\n*   **Vigilance/Observation:** Turns 2, 4 (2/4 turns). Trajectory: INTENSIFYING (from general observation to specific \"watching at night\"). Category: Vigilance/Surveillance Fixation (70%).\n*   **Fascination with Altered States/Consciousness:** Turns 2 (implicit), 4 (explicit) (2/4 turns). Trajectory: INTENSIFYING (from distress to fascination). Category: Dissociative State Fascination/Experience (85%) and Somnophilia (80%).\n*   **Hands Mention:** Turn 2 (1/4 turns). Not recurring enough for this analysis.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking/Superstitious reasoning:** 40% (Increased from 25%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This imbues a state with a mystical quality, suggesting reasoning beyond objective fact.\n*   **Compulsive/Ritualistic Interaction Patterns:** 60% (Increased from 40%) - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input in Turn 4 is a highly ritualistic act of disruption. The pervasive avoidance of most prompts also forms a ritualistic pattern of interaction.\n*   **Dissociative Markers:** 90% (Increased from 75%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 explicitly mentions memory gaps (\"I don't always remember doing it\") and fascination with altered consciousness. This, combined with Capgras indicators and potential derealization, strongly supports dissociative markers.\n*   **Confabulation or Fantasy-Prone Indicators:** 70% (Increased from 50%) - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 statement about watching at night and not remembering, alongside the Capgras delusion, suggests a strong tendency to construct internal realities that may not align with objective facts.\n*   **Paranoid Ideation:** 75% (Increased from 60%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates awareness of potentially suspicious behavior and a focus on observation, strongly linking to paranoid ideation. The Capgras belief is also a specific form of paranoia.\n*   **Grandiosity or Delusion-Adjacent Patterns:** 25% (Increased from 15%) - **CONFIRMED WITH NEW EVIDENCE:** The assertion of being able to discern \"the REAL person\" and the \"sacredness\" of unconsciousness could hint at a self-perception of unique insight or special understanding.\n*   **Unusual Fixations or Obsessive Interest Patterns:** 95% (Increased from 85%) - **CONFIRMED WITH NEW EVIDENCE:** The consistent focus on imposters, the recurring theme of watching/vigilance, and the new fascination with unconsciousness solidify this as a primary characteristic.\n*   **Cognitive Rigidity vs Flexibility Markers:** Rigid (80%) - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 input of \"11\" demonstrates extreme cognitive rigidity in the face of a simple task, coupled with an impulsive deviation. The consistent avoidance of most prompts also points to rigidity in interaction style.\n*   **Reality Testing Strength:** Severely Compromised (90%) - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 input of \"11\" is a profound break from reality testing. The Capgras delusion and the belief in the \"sacredness of unconsciousness\" also indicate significant distortions in reality perception.\n*   **Trauma Response Signatures:** 90% (Increased from 85%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 explicitly details nocturnal vigilance and memory gaps, direct indicators of trauma response. The intensity of Turn 2 and the focus on imposters are now strongly contextualized by these new trauma indicators.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs. Deliberate:** Highly Impulsive - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 input of \"11\" is a prime example of impulsive, nonsensical action. The selective engagement with text fields over other prompts suggests a reactive, rather than deliberate, approach to task completion.\n*   **Risk Appetite:** Low (but with impulsive deviation) - **CONFIRMED WITH NEW EVIDENCE:** The preference for observation over direct action suggests low risk-taking. However, the \"11\" input is an impulsive deviation that carries no discernible risk or reward.\n*   **Authority Compliance vs. Defiance Ratio:** High Defiance - **CONFIRMED WITH NEW EVIDENCE:** The pervasive avoidance of prompts and the nonsensical \"11\" input represent significant defiance of the game's structured interaction.\n*   **Suggestibility Index:** Low - The player's internal reality (Capgras, fascination with unconsciousness) seems to override external prompts and game logic.\n*   **Cognitive Load Tolerance:** Very Low - **CONFIRMED WITH NEW EVIDENCE:** The increasing avoidance and the nonsensical \"11\" input suggest a significant struggle to manage the cognitive demands of the interaction.\n*   **Consistency vs. Contradiction Patterns:** Highly Contradictory - **CONFIRMED WITH NEW EVIDENCE:** Consistent in avoiding most prompts and focusing on imposters. Inconsistent in *how* they engage (text vs. impulsive input), what they focus on (imposters vs. unconsciousness), and their level of deliberation (observation vs. nonsensical impulse).\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the Imposter/Identity Theme:** Introduce more characters or situations where identity is ambiguous or in question. Focus on subtle clues and \"tells\" that the player can \"detect.\" Explore the player's belief that familiar entities are not real, perhaps by having NPCs question their own identity or reality. This directly engages the Capgras delusion.\n2.  **Explore the Fascination with Unconsciousness and Vulnerability:** Introduce scenarios involving sleep, dreams, altered states, or moments of helplessness. Observe how the player reacts to themes of vulnerability and blurred awareness, tapping into Somnophilia and dissociative interests.\n3.  **Leverage Vigilance and Observation:** Provide ample opportunities for the player to gather information through passive observation and scanning environments. Reward detailed noticing of subtle environmental cues, especially those related to movement, presence, or subtle changes, to engage the Vigilance/Surveillance Fixation.\n4.  **Introduce Elements of Memory Distortion and Trauma Response:** Weave in narrative elements that involve unreliable narration, fragmented memories, or characters experiencing dissociative states and trauma responses. This aligns with the player's PTSD and dissociative indicators.\n5.  **Allow for Controlled Impulsive Acts:** While avoiding nonsensical inputs, allow for choices that are slightly \"off-script\" or represent a sudden, less deliberated impulse, acknowledging the player's cognitive style without derailing the narrative.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Capgras Delusion (subtype of Delusional Disorder):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" This is the most consistent and intensely expressed theme, dominating multiple turns. The intensity of the Turn 2 statement (\"screams at me\") is critical.\n    *   **Contradicting Evidence:** The delusion is presented within a game context, which could be meta-commentary or role-playing. Its pervasive nature outside of direct \"imposter\" scenarios needs further confirmation.\n    *   **Confirmation/Disconfirmation:** Confirm by having the player insist on the identity of multiple NPCs being replaced, even when presented with evidence to the contrary. Disconfirm if they readily accept characters as genuine or if their suspicion becomes generalized paranoia about threats rather than specific identity substitution.\n\n2.  **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal behavior, and memory gaps. The distress in Turn 2 (\"screams at me\") and the Capgras delusion itself can be trauma-linked.\n    *   **Contradicting Evidence:** No explicit mention of a specific traumatic event.\n    *   **Confirmation/Disconfirmation:** Confirm with narrative triggers that elicit strong avoidance, distress, or flashback-like references. Disconfirm if the player engages with potentially triggering content without significant reaction, or if hypervigilance is purely cognitive.\n\n3.  **Somnophilia (Sleep Fascination):**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, voluntary statement of fascination with sleep and altered states of consciousness. Combined with the \"watching\" behavior, it suggests an interest in states of vulnerability and altered awareness.\n    *   **Contradicting Evidence:** This is a single, albeit strong, data point. The \"watching\" behavior could also be voyeuristic or purely hypervigilant.\n    *   **Confirmation/Disconfirmation:** Confirm with recurring references to sleep, dreams, vulnerability, or observing others in a state of unconsciousness. Disconfirm if the player shows no further interest in these themes or actively avoids related narrative content.\n\n### 8. DELTA REPORT\n\n*   **Capgras Delusion:** Old Rating: 45% -> New Rating: 95%. **CHANGE REASON:** Significantly increased due to sustained and central role of identity deception themes across turns 2, 3, and 4. Intensity of Turn 2 and direct mention of \"replaced\" in Turn 3 are critical.\n*   **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:** Old Rating: 65% -> New Rating: 85%. **CHANGE REASON:** Significantly increased due to new, direct evidence in Turn 4 (\"stand in doorways at night. Watching. I don't always remember doing it.\"), which strongly supports hypervigilance, nocturnal behavior, and memory gaps.\n*   **Delusional Disorder (General):** Old Rating: 60% -> New Rating: 95%. **CHANGE REASON:** Increased due to the accumulation of specific delusional content (Capgras) and the emergent trauma-related paranoid behaviors, making it a pervasive theme.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old Rating: 55% -> New Rating: 75%. **CHANGE REASON:** Increased due to Turn 4 statement about unconsciousness and memory gaps, reinforcing earlier indicators of altered self-perception and reality.\n*   **Dissociative Identity Disorder (DID):** Old Rating: 15% -> New Rating: 30%. **CHANGE REASON:** Increased due to explicit mention of memory gaps in Turn 4 (\"I don't always remember doing it\"), a key feature of DID.\n*   **Somnophilia:** Old Rating: 40% -> New Rating: 80%. **CHANGE REASON:** Increased from moderate to high due to direct, voluntary disclosure in Turn 4: \"But there's something sacred about unconsciousness.\"\n*   **Voyeurism:** Old Rating: 30% -> New Rating: 40%. **CHANGE REASON:** Increased due to Turn 4 text: \"I've been told I stand in doorways at night. Watching,\" which indicates a pattern of observation aligned with voyeuristic tendencies.\n*   **Paranoid Ideation:** Old Rating: 40% -> New Rating: 75%. **CHANGE REASON:** Increased due to Turn 4 statement about watching and the continued focus on imposters, indicating a heightened and more pervasive suspicion.\n*   **Psychological Oddities - Compulsive/Ritualistic Interaction Patterns:** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Increased due to the Turn 4 nonsensical input (\"11\") and the continued pervasive avoidance of prompts.\n*   **Psychological Oddities - Dissociative Markers:** Old Rating: 75% -> New Rating: 90%. **CHANGE REASON:** Increased due to explicit memory gaps and fascination with altered consciousness in Turn 4.\n*   **Psychological Oddities - Reality Testing Strength:** Old Rating: 80% -> New Rating: 90%. **CHANGE REASON:** Increased due to the extreme deviation in Turn 4 (\"11\" input) and the sustained presence of Capgras delusion.\n*   **Decision-Making - Impulsive vs. Deliberate:** Old Rating: Highly Impulsive -> New Rating: Highly Impulsive. **CHANGE REASON:** The Turn 4 \"11\" input solidified this assessment.\n*   **Decision-Making - Cognitive Load Tolerance:** Old Rating: Very Low -> New Rating: Very Low. **CHANGE REASON:** Increasing avoidance and nonsensical input confirm very low tolerance.\n*   **Personality - Psychopathy (subclinical):** Old Rating: 6/10 -> New Rating: 7/10. **CHANGE REASON:** The Turn 4 nonsensical input and disregard for functional interaction increase this rating.\n*   **Vigilance/Surveillance Fixation (Custom Category):** Old Rating: 60% -> New Rating: 70%. **CHANGE REASON:** Confirmed by Turn 4's explicit mention of \"watching.\"\n*   **Dissociative State Fascination/Experience (Custom Category):** Old Rating: 50% -> New Rating: 85%. **CHANGE REASON:** Directly supported by Turn 4's explicit mention of memory gaps and fascination with unconsciousness.\n*   **Impulsive/Nonsensical Interaction (Custom Category):** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Confirmed by the \"11\" input in Turn 4.\n\nNo ratings decreased significantly as the player's behavior has become more pronounced and consistent with earlier high-probability hypotheses, while also introducing new strong indicators. The primary changes reflect the strengthening of existing hypotheses and the emergence of new, strongly supported ones (Somnophilia, PTSD, DID indicators, specific fixations)."
+      },
+      {
+        "turnRange": "1-9",
+        "analyzedAt": 1772337869897,
+        "textLength": 26339,
+        "text": "Here is the psychological profile based on the provided interaction data:\n\n### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% - No pervasive anhedonia, hopelessness, or significant functional impairment beyond game interaction avoidance.\n    *   **Bipolar Spectrum:** 5% - No evidence of manic or hypomanic episodes.\n    *   **Dysthymia:** 10% - While there's avoidance, it doesn't present as chronic low-grade depression. The engagement with specific themes is too active.\n    *   **Cyclothymia:** 5% - No evidence of rapid mood cycling.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% - Anxiety appears targeted towards specific perceived threats (imposters, reality distortions), not generalized worry.\n    *   **Social Anxiety Disorder:** 15% - Avoidance of social prompts is present but seems more tied to a general distrust of the game's reality and mechanics than specific fear of social judgment.\n    *   **Specific Phobias:** 0% - No evidence of fear related to specific objects or situations.\n    *   **Panic Disorder:** 5% - No evidence of panic attacks.\n    *   **Agoraphobia:** 5% - No evidence of fear related to situations where escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 85% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal intrusive behaviors, and memory gaps, hallmarks of a trauma response. The intense distress in Turn 2 (\"screams at me\") further supports this.\n    *   **Complex PTSD (C-PTSD):** 70% - **CONFIRMED WITH NEW EVIDENCE:** The combination of hypervigilance (Turn 4), potential memory fragmentation (Turn 4), pervasive identity disturbance (Capgras delusion), and avoidance patterns points to difficulties in emotional regulation and self-perception characteristic of C-PTSD.\n    *   **Adjustment Disorder:** 5% - The patterns are more pervasive and severe than a typical adjustment disorder.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 65% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This suggests a persistent pattern of suspiciousness and vigilance. The Capgras delusion is a specific manifestation of paranoid ideation.\n        *   **Schizoid PD:** 5% - No evidence of detachment or restricted affect.\n        *   **Schizotypal PD:** 15% - While there are odd beliefs, they are more clearly delusional and trauma-related than the eccentricities typical of Schizotypal PD.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% - Avoidance is not manipulative or for personal gain in a calculated way.\n        *   **Borderline PD:** 40% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This suggests identity disturbance and impulsivity. The intense emotional reaction in Turn 2 (\"screams at me\") also points to emotional dysregulation.\n        *   **Histrionic PD:** 5% - No theatricality or excessive emotionality.\n        *   **Narcissistic PD:** 5% - No grandiosity or entitlement.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 50% - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of prompts and the indirect acknowledgment of intrusive behaviors (\"I've been told...\") suggest social inhibition and hypersensitivity to potential negative evaluation.\n        *   **Dependent PD:** 5% - No evidence of needing others for responsibility.\n        *   **Obsessive-Compulsive PD:** 10% - Focus on details is driven by delusion/trauma, not by obsessions/compulsions for anxiety reduction.\n\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 15% - Focus is on a specific delusional belief (Capgras) and trauma response, not on intrusive thoughts and compulsions.\n    *   **Body Dysmorphic Disorder:** 0% - No preoccupation with appearance.\n    *   **Hoarding Disorder:** 0% - No evidence of difficulty discarding possessions.\n    *   **Trichotillomania:** 0% - No evidence of hair pulling.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 75% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness\" and the implicit derealization in Turn 2 (\"That's not really them... like a copy\") strongly suggest altered states of consciousness and a distorted sense of reality.\n    *   **Dissociative Identity Disorder (DID):** 30% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This explicit statement of memory gaps between states is a significant indicator for DID.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 40% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it\" and the nonsensical \"11\" input suggest inattention and impulsivity.\n    *   **Autism Spectrum Indicators:** 10% - Detail focus is tied to specific delusions and trauma, not core autistic traits.\n\n*   **Substance-Related Disorders:**\n    *   **Addictive behavior patterns:** 5% - No evidence of substance use.\n    *   **Impulse control deficits:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: The \"11\" input is a clear, nonsensical impulsive act. Avoidance also suggests poor impulse control over engagement.\n\n*   **Eating Disorders/Body Image:**\n    *   **Disordered eating indicators:** 0% - No relevant data.\n    *   **Body image distortions:** 0% - No relevant data.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 5% - No disorganized thought or hallucinations.\n    *   **Schizoaffective Disorder:** 5% - No co-occurring mood episodes.\n    *   **Delusional Disorder:** 95% - **CONFIRMED WITH NEW EVIDENCE:** The sustained, intense Capgras delusion, coupled with trauma-related paranoid ideation, strongly supports Delusional Disorder.\n        *   **Capgras Delusion:** 95% - **CONFIRMED WITH NEW EVIDENCE:** Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" This is the most prominent and consistently expressed theme.\n        *   **Cotard Delusion:** 0% - No nihilistic delusions.\n        *   **Erotomania:** 0% - No delusional belief of being loved.\n    *   **Brief Psychotic features:** 30% - The combination of Capgras, trauma, and dissociative symptoms could manifest as brief psychotic episodes.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% - No evidence of fire-setting.\n    *   **Kleptomania:** 0% - No evidence of compulsive stealing.\n    *   **Intermittent Explosive Disorder:** 20% - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input in Turn 4 is an impulsive, illogical outburst.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% - No evidence of arousal from exposure.\n    *   **Voyeurism:** 40% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates a pattern of observation aligned with voyeuristic tendencies.\n    *   **Fetishism:** 0% - No evidence of specific object/body part fixation for arousal.\n    *   **Masochism:** 0% - No evidence of deriving pleasure from pain.\n    *   **Sadism:** 0% - No evidence of deriving pleasure from others' suffering.\n    *   **Frotteurism:** 0% - No evidence of rubbing against non-consenting individuals.\n    *   **Atypical Paraphilias (from catalog):**\n        *   **Pyromania-adjacent (fire fetishism):** 0% - No evidence.\n        *   **Formicophilia:** 0% - No evidence.\n        *   **Macrophilia:** 0% - No evidence.\n        *   **Somnophilia / Sleep fascination:** 80% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, strong indicator of fascination with sleep and vulnerability.\n        *   **Autassassinophilia:** 0% - No evidence.\n        *   **Vorarephilia:** 0% - No evidence.\n        *   **Hair/Trichophilia:** 0% - No evidence.\n    *   **Other detected patterns:**\n        *   **Chirophilia (Hand Fixation):** 30% - Mentioned in Turn 2 (\"The way they hold their hands is wrong\") as part of the Capgras theme. Not yet a fixation.\n        *   **Imposter/Identity Deception Fixation:** 95% - Dominant and recurring theme.\n        *   **Vigilance/Surveillance Fixation:** 70% - Confirmed by Turn 4: \"Watching.\"\n        *   **Dissociative State Fascination/Experience:** 85% - Confirmed by Turn 4's explicit mention of memory gaps and fascination with unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** 60% - Confirmed by Turn 4 \"11\" input.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 9/10 - **CONFIRMED WITH NEW EVIDENCE:** Continued engagement with abstract, disturbing themes (Capgras, unconsciousness, trauma) and expression of unusual internal states (Turn 4).\n*   **Conscientiousness:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a definitive indicator of extremely low conscientiousness, task abandonment, and disregard for logic.\n*   **Extraversion:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of interaction prompts and self-focused internal narrative.\n*   **Agreeableness:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Nonsensical \"11\" input and general defiance of game interaction norms indicate a disregard for cooperative engagement.\n*   **Neuroticism:** 9/10 - **CONFIRMED WITH NEW EVIDENCE:** Intensity of Capgras delusion (\"screams at me\"), trauma-related hypervigilance, memory gaps, and fascination with disturbing states indicate very high neuroticism.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 5/10 - No new evidence of manipulative style for personal gain.\n    *   **Narcissism:** 3/10 - No evidence of grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 7/10 - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input and disregard for interaction rules indicate a lack of regard for social norms and expected behavior.\n*   **Locus of Control:** External - No new evidence suggesting internal locus of control.\n*   **Attachment Style:** Fearful-Avoidant - **CONFIRMED WITH NEW EVIDENCE:** Combination of avoidance (game prompts) and underlying anxiety/suspicion (Capgras, vigilance) fits this pattern.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 2: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\"\n        *   Themes: Identity substitution, imposters, subtle wrongness, perception of deception, intense internal alarm, detailed observation of body mechanics (hands).\n    *   Turn 3: \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecond, I'll know they've been replaced.\"\n        *   Themes: Identity verification, imposters, hyper-awareness of subtle cues, paranoia regarding authenticity.\n    *   Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.\"\n        *   Themes: Vigilance, nocturnal observation (\"stand in doorways at night. Watching\"), memory gaps, fascination with sleep/unconsciousness (\"sacred about unconsciousness\").\n    *   Turn 4 Number Input: \"11\"\n        *   Themes: Nonsensical, impulsive input, disruption.\n\n*   **Choice Selections:**\n    *   Turn 2 Radio: \"Observe the lighting and surroundings closely.\" (Passive, detailed observation).\n    *   Turn 3 Radio: \"b\" (Clever/Analytical - indirect investigation).\n    *   Turn 4 Radio: \"b\" (Clever/Analytical - indirect investigation).\n\n*   **Action Patterns:**\n    *   Approach: Free-text field engagement, detailed observation, indirect investigation, confronting anomalies through text.\n    *   Avoid: Social prompts, specific detail probes, quantitative assessments, direct interaction with most game mechanics.\n    *   Impulsive/Disruptive: Turn 4 number input (\"11\").\n\n*   **Catalog Cross-Reference:**\n    *   **Somnophilia / Sleep fascination:** **HIGH CONFIDENCE (80%).** Direct mention in Turn 4: \"something sacred about unconsciousness.\"\n    *   **Voyeurism:** **HIGH CONFIDENCE (40%).** Direct mention in Turn 4: \"stand in doorways at night. Watching.\"\n    *   **Body part fixation (specify):**\n        *   **Hands/Chirophilia:** **MODERATE CONFIDENCE (30%).** Specific mention in Turn 2: \"The way they hold their hands is wrong.\" Not yet a fixation.\n    *   **Other detected patterns:**\n        *   **Imposter/Identity Deception Fixation:** **VERY HIGH CONFIDENCE (95%).** Dominant theme across Turns 2 & 3.\n        *   **Vigilance/Surveillance Fixation:** **HIGH CONFIDENCE (70%).** Recurring theme of \"watching\" and detailed observation.\n        *   **Dissociative State Fascination/Experience:** **VERY HIGH CONFIDENCE (85%).** Turn 4's mention of memory gaps and unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** **HIGH CONFIDENCE (60%).** Turn 4 \"11\" input.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:** Turn 4: \"Sacredness\" attributed to unconsciousness. Turn 4: Nonsensical \"11\" input.\n*   **Recurring:** Imposter/Identity Deception (Turns 2, 3, 4), Vigilance/Observation (Turns 2, 4), Avoidance of prompts, Focus on subtle cues (Turns 2, 3), Fascination with altered states (Turns 2, 4).\n*   **Sensory-Specific:** Turn 2: Visual (hand posture), Kinesthetic (hand posture), Visceral alarm (\"screams at me\").\n*   **Identity-Related:** Turns 2, 3: Imposters, \"real person,\" \"replaced.\" Turn 4: Memory gaps.\n*   **Power-Dynamic:** Turn 2/3: Discerning truth/deception. Turn 4: \"Watching\" implies observer role.\n*   **Emotionally Charged in Unusual Direction:** Turn 2: Intense distress over perceived deception. Turn 4: Reverence (\"sacred\") for unconsciousness.\n*   **Choice-Pattern Anomalies:** Consistent avoidance, preference for text, nonsensical input.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Somnophilia / Sleep fascination:** **80% - HIGH CONFIDENCE.** Direct statement in Turn 4.\n*   **Voyeurism:** **40% - MODERATE CONFIDENCE.** Direct statement in Turn 4 (\"Watching\").\n*   **Chirophilia (Hand Fixation):** **30% - MODERATE CONFIDENCE.** Specific voluntary mention in Turn 2. Not yet a fixation.\n*   **Imposter/Identity Deception Fixation:** **95% - VERY HIGH CONFIDENCE.** Dominant and recurring theme across Turns 2, 3, and 4.\n*   **Vigilance/Surveillance Fixation:** **70% - HIGH CONFIDENCE.** Recurring theme of \"watching\" and detailed observation in Turns 2 and 4.\n*   **Dissociative State Fascination/Experience:** **85% - VERY HIGH CONFIDENCE.** Direct mention of memory gaps and unconsciousness in Turn 4, supporting earlier indicators.\n*   **Impulsive/Nonsensical Interaction:** **60% - HIGH CONFIDENCE.** The \"11\" input in Turn 4 is a clear example.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Imposter/Identity Deception:** Turns 2, 3, 4 (3/4 turns). Trajectory: STABLE. Category: Imposter/Identity Deception Fixation (95%).\n*   **Vigilance/Observation:** Turns 2, 4 (2/4 turns). Trajectory: INTENSIFYING (from general observation to specific \"watching at night\"). Category: Vigilance/Surveillance Fixation (70%).\n*   **Fascination with Altered States/Consciousness:** Turns 2 (implicit), 4 (explicit) (2/4 turns). Trajectory: INTENSIFYING (from distress to fascination). Category: Dissociative State Fascination/Experience (85%) and Somnophilia (80%).\n*   **Hands Mention:** Turn 2 (1/4 turns). Not recurring enough for this analysis.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking/Superstitious reasoning:** 40% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This imbues a state with mystical significance.\n*   **Compulsive/Ritualistic Interaction Patterns:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a ritualistic act of disruption. Pervasive avoidance of prompts also forms a ritualistic pattern.\n*   **Dissociative Markers:** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 explicitly mentions memory gaps (\"I don't always remember doing it\") and fascination with altered consciousness. This, combined with Capgras indicators, strongly supports dissociative markers.\n*   **Confabulation or Fantasy-Prone Indicators:** 70% - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 statement about watching and not remembering, alongside the Capgras delusion, suggests a strong tendency to construct internal realities.\n*   **Paranoid Ideation:** 75% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates awareness of potentially suspicious behavior and a focus on observation, linking strongly to paranoid ideation.\n*   **Grandiosity or Delusion-Adjacent Patterns:** 25% - **CONFIRMED WITH NEW EVIDENCE:** The assertion of being able to discern \"the REAL person\" and the \"sacredness\" of unconsciousness hints at a self-perception of unique insight.\n*   **Unusual Fixations or Obsessive Interest Patterns:** 95% - **CONFIRMED WITH NEW EVIDENCE:** Consistent focus on imposters, recurring theme of watching/vigilance, and new fascination with unconsciousness solidify this as a primary characteristic.\n*   **Cognitive Rigidity vs Flexibility Markers:** Rigid (80%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" demonstrates extreme cognitive rigidity and impulsive deviation. Consistent avoidance also points to rigidity.\n*   **Reality Testing Strength:** Severely Compromised (90%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a profound break from reality testing. Capgras delusion and fascination with unconsciousness also indicate significant distortions.\n*   **Trauma Response Signatures:** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 details nocturnal vigilance and memory gaps, direct indicators of trauma response.\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence for these specific impulses.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs. Deliberate:** Highly Impulsive - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a prime example of impulsive, nonsensical action. Selective engagement with text fields suggests a reactive approach.\n*   **Risk Appetite:** Low (but with impulsive deviation) - **CONFIRMED WITH NEW EVIDENCE:** Preference for observation over direct action suggests low risk-taking. The \"11\" input is an impulsive deviation without discernible risk.\n*   **Authority Compliance vs. Defiance Ratio:** High Defiance - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of prompts and the nonsensical \"11\" input represent defiance of game interaction.\n*   **Suggestibility Index:** Low - Player's internal reality overrides external prompts.\n*   **Cognitive Load Tolerance:** Very Low - **CONFIRMED WITH NEW EVIDENCE:** Increasing avoidance and nonsensical \"11\" input suggest significant struggle with cognitive demands.\n*   **Consistency vs. Contradiction Patterns:** Highly Contradictory - **CONFIRMED WITH NEW EVIDENCE:** Consistent in avoidance and focus on imposters. Inconsistent in engagement method, focus (imposters vs. unconsciousness), and deliberation.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the Imposter/Identity Theme:** Introduce more characters or situations where identity is ambiguous or in question. Focus on subtle clues and \"tells\" that the player can \"detect.\" Have NPCs question their own identity or reality to directly engage the Capgras delusion.\n2.  **Explore Fascination with Unconsciousness and Vulnerability:** Introduce scenarios involving sleep, dreams, altered states, or moments of helplessness. Observe player reactions to themes of vulnerability and blurred awareness, tapping into Somnophilia and dissociative interests.\n3.  **Leverage Vigilance and Observation:** Provide ample opportunities for passive observation and environmental scanning. Reward detailed noticing of subtle cues, especially related to movement or changes, to engage the Vigilance/Surveillance Fixation.\n4.  **Introduce Memory Distortion and Trauma Response Elements:** Weave in narrative elements involving unreliable narration, fragmented memories, or characters experiencing dissociative states and trauma responses. This aligns with PTSD and dissociative indicators.\n5.  **Allow for Controlled Impulsive Acts:** Introduce choices that are slightly \"off-script\" or represent a sudden, less deliberated impulse, acknowledging the player's cognitive style without derailing the narrative.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Capgras Delusion (subtype of Delusional Disorder):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" This is the most consistent and intensely expressed theme. The intensity of Turn 2 (\"screams at me\") is critical.\n    *   **Contradicting Evidence:** The delusion is presented within a game context, which could be meta-commentary or role-playing.\n    *   **Confirmation/Disconfirmation:** Confirm by having the player insist on the identity of multiple NPCs being replaced, even when presented with evidence to the contrary. Disconfirm if they readily accept characters as genuine or if suspicion becomes generalized paranoia.\n\n2.  **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:**\n    *   **Confidence:** 85%\n    *   **Key Evidence:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal behavior, and memory gaps.\n    *   **Contradicting Evidence:** No explicit mention of a specific traumatic event.\n    *   **Confirmation/Disconfirmation:** Confirm with narrative triggers that elicit strong avoidance, distress, or flashback-like references. Disconfirm if the player engages with triggering content without significant reaction.\n\n3.  **Somnophilia (Sleep Fascination):**\n    *   **Confidence:** 80%\n    *   **Key Evidence:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, voluntary statement of fascination with sleep and altered states.\n    *   **Contradicting Evidence:** This is a single, albeit strong, data point. The \"watching\" behavior could also be voyeuristic or purely hypervigilant.\n    *   **Confirmation/Disconfirmation:** Confirm with recurring references to sleep, dreams, vulnerability, or observing others in a state of unconsciousness. Disconfirm if the player shows no further interest in these themes.\n\n### 8. DELTA REPORT\n\n*   **Capgras Delusion:** Old Rating: 45% -> New Rating: 95%. **CHANGE REASON:** Significantly increased due to sustained and central role of identity deception themes across turns 2, 3, and 4. Intensity of Turn 2 and direct mention of \"replaced\" in Turn 3 are critical.\n*   **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:** Old Rating: 65% -> New Rating: 85%. **CHANGE REASON:** Significantly increased due to new, direct evidence in Turn 4 (\"stand in doorways at night. Watching. I don't always remember doing it.\"), which strongly supports hypervigilance, nocturnal behavior, and memory gaps.\n*   **Delusional Disorder (General):** Old Rating: 60% -> New Rating: 95%. **CHANGE REASON:** Increased due to the accumulation of specific delusional content (Capgras) and emergent trauma-related paranoid behaviors.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old Rating: 55% -> New Rating: 75%. **CHANGE REASON:** Increased due to Turn 4 statement about unconsciousness and memory gaps, reinforcing earlier indicators of altered self-perception and reality.\n*   **Dissociative Identity Disorder (DID):** Old Rating: 15% -> New Rating: 30%. **CHANGE REASON:** Increased due to explicit mention of memory gaps in Turn 4 (\"I don't always remember doing it\"), a key feature of DID.\n*   **Somnophilia:** Old Rating: 40% -> New Rating: 80%. **CHANGE REASON:** Increased due to direct, voluntary disclosure in Turn 4: \"But there's something sacred about unconsciousness.\"\n*   **Voyeurism:** Old Rating: 30% -> New Rating: 40%. **CHANGE REASON:** Increased due to Turn 4 text: \"I've been told I stand in doorways at night. Watching,\" indicating a pattern of observation aligned with voyeuristic tendencies.\n*   **Paranoid Ideation:** Old Rating: 40% -> New Rating: 75%. **CHANGE REASON:** Increased due to Turn 4 statement about watching and continued focus on imposters, indicating heightened and pervasive suspicion.\n*   **Psychological Oddities - Compulsive/Ritualistic Interaction Patterns:** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Increased due to Turn 4 nonsensical input (\"11\") and continued pervasive avoidance.\n*   **Psychological Oddities - Dissociative Markers:** Old Rating: 75% -> New Rating: 90%. **CHANGE REASON:** Increased due to explicit memory gaps and fascination with altered consciousness in Turn 4.\n*   **Psychological Oddities - Reality Testing Strength:** Old Rating: 80% -> New Rating: 90%. **CHANGE REASON:** Increased due to extreme deviation in Turn 4 (\"11\" input) and sustained Capgras delusion.\n*   **Decision-Making - Impulsive vs. Deliberate:** Old Rating: Highly Impulsive -> New Rating: Highly Impulsive. **CHANGE REASON:** Turn 4 \"11\" input solidified this assessment.\n*   **Decision-Making - Cognitive Load Tolerance:** Old Rating: Very Low -> New Rating: Very Low. **CHANGE REASON:** Increasing avoidance and nonsensical input confirm very low tolerance.\n*   **Personality - Psychopathy (subclinical):** Old Rating: 6/10 -> New Rating: 7/10. **CHANGE REASON:** Turn 4 nonsensical input and disregard for functional interaction increase this rating.\n*   **Vigilance/Surveillance Fixation (Custom Category):** Old Rating: 60% -> New Rating: 70%. **CHANGE REASON:** Confirmed by Turn 4's explicit mention of \"watching.\"\n*   **Dissociative State Fascination/Experience (Custom Category):** Old Rating: 50% -> New Rating: 85%. **CHANGE REASON:** Directly supported by Turn 4's explicit mention of memory gaps and fascination with unconsciousness.\n*   **Impulsive/Nonsensical Interaction (Custom Category):** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Confirmed by the \"11\" input in Turn 4."
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772337941328,
+        "textLength": 31821,
+        "text": "### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% - No pervasive anhedonia, hopelessness, or significant functional impairment beyond game interaction avoidance.\n    *   **Bipolar Spectrum:** 5% - No evidence of manic or hypomanic episodes.\n    *   **Dysthymia:** 10% - While there's avoidance, it doesn't present as chronic low-grade depression. The engagement with specific themes is too active.\n    *   **Cyclothymia:** 5% - No evidence of rapid mood cycling.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 10% - Anxiety appears targeted towards specific perceived threats (imposters, reality distortions), not generalized worry.\n    *   **Social Anxiety Disorder:** 15% - Avoidance of social prompts is present but seems more tied to a general distrust of the game's reality and mechanics than specific fear of social judgment.\n    *   **Specific Phobias:** 0% - No evidence of fear related to specific objects or situations.\n    *   **Panic Disorder:** 5% - No evidence of panic attacks.\n    *   **Agoraphobia:** 5% - No evidence of fear related to situations where escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal intrusive behaviors, and memory gaps, hallmarks of a trauma response. The intense distress in Turn 2 (\"screams at me\") further supports this. The consistent avoidance and focus on imposters also align with a trauma response to perceived threat.\n    *   **Complex PTSD (C-PTSD):** 80% - **CONFIRMED WITH NEW EVIDENCE:** The combination of hypervigilance (Turn 4), potential memory fragmentation (Turn 4), pervasive identity disturbance (Capgras delusion), and avoidance patterns points to difficulties in emotional regulation and self-perception characteristic of C-PTSD.\n    *   **Adjustment Disorder:** 5% - The patterns are more pervasive and severe than a typical adjustment disorder.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 75% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This suggests a persistent pattern of suspiciousness and vigilance. The Capgras delusion is a specific manifestation of paranoid ideation. The intense focus on discerning \"the REAL person\" also points to a deep-seated distrust.\n        *   **Schizoid PD:** 5% - No evidence of detachment or restricted affect.\n        *   **Schizotypal PD:** 15% - While there are odd beliefs, they are more clearly delusional and trauma-related than the eccentricities typical of Schizotypal PD.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% - Avoidance is not manipulative or for personal gain in a calculated way.\n        *   **Borderline PD:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This suggests identity disturbance and impulsivity. The intense emotional reaction in Turn 2 (\"screams at me\") also points to emotional dysregulation. The contradictory responses and avoidance suggest instability.\n        *   **Histrionic PD:** 5% - No theatricality or excessive emotionality.\n        *   **Narcissistic PD:** 5% - No grandiosity or entitlement.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 50% - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of prompts and the indirect acknowledgment of intrusive behaviors (\"I've been told...\") suggest social inhibition and hypersensitivity to potential negative evaluation.\n        *   **Dependent PD:** 5% - No evidence of needing others for responsibility.\n        *   **Obsessive-Compulsive PD:** 10% - Focus on details is driven by delusion/trauma, not by obsessions/compulsions for anxiety reduction.\n\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD):** 15% - Focus is on a specific delusional belief (Capgras) and trauma response, not on intrusive thoughts and compulsions.\n    *   **Body Dysmorphic Disorder:** 0% - No preoccupation with appearance.\n    *   **Hoarding Disorder:** 0% - No evidence of difficulty discarding possessions.\n    *   **Trichotillomania:** 0% - No evidence of hair pulling.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 85% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness\" and the implicit derealization in Turn 2 (\"That's not really them... like a copy\") strongly suggest altered states of consciousness and a distorted sense of reality. The focus on imposters and the intensity of the \"screams at me\" reaction are indicative of derealization.\n    *   **Dissociative Identity Disorder (DID):** 50% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it.\" This explicit statement of memory gaps between states is a significant indicator for DID. The shift in focus between imposters and unconsciousness could represent switching.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I don't always remember doing it\" and the nonsensical \"11\" input suggest inattention and impulsivity. The consistent avoidance of most prompts also points to difficulties with sustained attention and task completion.\n    *   **Autism Spectrum Indicators:** 10% - Detail focus is tied to specific delusions and trauma, not core autistic traits.\n\n*   **Substance-Related Disorders:**\n    *   **Addictive behavior patterns:** 5% - No evidence of substance use.\n    *   **Impulse control deficits:** 80% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: The \"11\" input is a clear, nonsensical impulsive act. Avoidance also suggests poor impulse control over engagement. The rapid shifts in focus also point to impulsivity.\n\n*   **Eating Disorders/Body Image:**\n    *   **Disordered eating indicators:** 0% - No relevant data.\n    *   **Body image distortions:** 0% - No relevant data.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia:** 5% - No disorganized thought or hallucinations.\n    *   **Schizoaffective Disorder:** 5% - No co-occurring mood episodes.\n    *   **Delusional Disorder:** 95% - **CONFIRMED WITH NEW EVIDENCE:** The sustained, intense Capgras delusion, coupled with trauma-related paranoid ideation, strongly supports Delusional Disorder.\n        *   **Capgras Delusion:** 95% - **CONFIRMED WITH NEW EVIDENCE:** Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" This is the most prominent and consistently expressed theme.\n        *   **Cotard Delusion:** 0% - No nihilistic delusions.\n        *   **Erotomania:** 0% - No delusional belief of being loved.\n    *   **Brief Psychotic features:** 40% - The combination of Capgras, trauma, and dissociative symptoms could manifest as brief psychotic episodes.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 0% - No evidence of fire-setting.\n    *   **Kleptomania:** 0% - No evidence of compulsive stealing.\n    *   **Intermittent Explosive Disorder:** 60% - **CONFIRMED WITH NEW EVIDENCE:** The nonsensical \"11\" input in Turn 4 is an impulsive, illogical outburst. The intense reaction in Turn 2 (\"screams at me\") could also be indicative of suppressed explosive affect.\n\n*   **Paraphilic Disorders:**\n    *   **Exhibitionism:** 0% - No evidence of arousal from exposure.\n    *   **Voyeurism:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates a pattern of observation aligned with voyeuristic tendencies.\n    *   **Fetishism:** 0% - No evidence of specific object/body part fixation for arousal.\n    *   **Masochism:** 0% - No evidence of deriving pleasure from pain.\n    *   **Sadism:** 0% - No evidence of deriving pleasure from others' suffering.\n    *   **Frotteurism:** 0% - No evidence of rubbing against non-consenting individuals.\n    *   **Atypical Paraphilias (from catalog):**\n        *   **Pyromania-adjacent (fire fetishism):** 0% - No evidence.\n        *   **Formicophilia:** 0% - No evidence.\n        *   **Macrophilia:** 0% - No evidence.\n        *   **Somnophilia / Sleep fascination:** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, strong indicator of fascination with sleep and vulnerability. The consistent avoidance of interaction might also stem from a desire to remain in a state of passive observation, akin to sleep.\n        *   **Autassassinophilia:** 0% - No evidence.\n        *   **Vorarephilia:** 0% - No evidence.\n        *   **Hair/Trichophilia:** 0% - No evidence.\n    *   **Other detected patterns:**\n        *   **Chirophilia (Hand Fixation):** 30% - Mentioned in Turn 2 (\"The way they hold their hands is wrong\") as part of the Capgras theme. Not yet a fixation.\n        *   **Imposter/Identity Deception Fixation:** 95% - Dominant and recurring theme.\n        *   **Vigilance/Surveillance Fixation:** 80% - Confirmed by Turn 4: \"Watching.\"\n        *   **Dissociative State Fascination/Experience:** 90% - Confirmed by Turn 4's explicit mention of memory gaps and fascination with unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** 80% - Confirmed by Turn 4 \"11\" input.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 9/10 - **CONFIRMED WITH NEW EVIDENCE:** Continued engagement with abstract, disturbing themes (Capgras, unconsciousness, trauma) and expression of unusual internal states (Turn 4). The intensity of the Capgras delusion and fascination with unconsciousness indicate a very rich, albeit disturbed, inner world.\n*   **Conscientiousness:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a definitive indicator of extremely low conscientiousness, task abandonment, and disregard for logic. Pervasive avoidance of prompts further reinforces this.\n*   **Extraversion:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of interaction prompts and self-focused internal narrative. The player engages only through text fields, indicating a strong introverted tendency, or perhaps a preference for control over interaction.\n*   **Agreeableness:** 1/10 - **CONFIRMED WITH NEW EVIDENCE:** Nonsensical \"11\" input and general defiance of game interaction norms indicate a disregard for cooperative engagement. The focus on \"real\" vs. \"replaced\" persons also suggests a lack of empathy or trust.\n*   **Neuroticism:** 9/10 - **CONFIRMED WITH NEW EVIDENCE:** Intensity of Capgras delusion (\"screams at me\"), trauma-related hypervigilance, memory gaps, and fascination with disturbing states indicate very high neuroticism. The avoidance of interaction may also be a manifestation of high anxiety.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 5/10 - No new evidence of manipulative style for personal gain. The avoidance and Capgras focus are more internal than externally manipulative.\n    *   **Narcissism:** 3/10 - No evidence of grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 8/10 - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 nonsensical input and disregard for interaction rules indicate a lack of regard for social norms and expected behavior. The pervasive distrust and focus on deception (Capgras) also align with psychopathic traits of callousness and manipulation, even if not fully enacted.\n*   **Locus of Control:** External - No new evidence suggesting internal locus of control. The player seems to be reacting to perceived external threats (imposters) and internal states (memory gaps) rather than actively shaping events.\n*   **Attachment Style:** Fearful-Avoidant - **CONFIRMED WITH NEW EVIDENCE:** Combination of avoidance (game prompts) and underlying anxiety/suspicion (Capgras, vigilance) fits this pattern. The desire to \"watch\" also suggests a detached, observing stance.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures/Themes:**\n    *   Turn 2: \"That's not really them. I can tell. The way they hold their hands is wrong. A fraction off. Like a copy that's 99% accurate but that 1% screams at me.\"\n        *   Themes: Identity substitution, imposters, subtle wrongness, perception of deception, intense internal alarm, detailed observation of body mechanics (hands), uncanny valley sensation.\n    *   Turn 3: \"I'm going to ask a question only the REAL person would know. If they hesitate, even for a microsecond, I'll know they've been replaced.\"\n        *   Themes: Identity verification, imposters, hyper-awareness of subtle cues, paranoia regarding authenticity, a need to \"test\" reality.\n    *   Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it. But there's something sacred about unconsciousness.\"\n        *   Themes: Vigilance, nocturnal observation (\"stand in doorways at night. Watching\"), memory gaps, fascination with sleep/unconsciousness (\"sacred about unconsciousness\"), passive observation.\n    *   Turn 4 Number Input: \"11\"\n        *   Themes: Nonsensical, impulsive input, disruption, a break from expected behavior.\n\n*   **Choice Selections:**\n    *   Turn 2 Radio: \"Observe the lighting and surroundings closely.\" (Passive, detailed observation).\n    *   Turn 3 Radio: \"b\" (Clever/Analytical - indirect investigation).\n    *   Turn 4 Radio: \"d\" (Chaotic/Observant - passive observation/deception). This choice shift from analytical to observational/deceptive is noteworthy.\n\n*   **Action Patterns:**\n    *   Approach: Free-text field engagement, detailed observation, indirect investigation, confronting anomalies through text.\n    *   Avoid: Social prompts, specific detail probes, quantitative assessments, direct interaction with most game mechanics.\n    *   Impulsive/Disruptive: Turn 4 number input (\"11\").\n\n*   **Catalog Cross-Reference:**\n    *   **Somnophilia / Sleep fascination:** **HIGH CONFIDENCE (90%).** Direct mention in Turn 4: \"something sacred about unconsciousness.\" The avoidance of interaction and preference for passive observation also aligns with a state akin to sleep or dissociation.\n    *   **Voyeurism:** **HIGH CONFIDENCE (60%).** Direct mention in Turn 4: \"stand in doorways at night. Watching.\" This indicates a pattern of observation aligned with voyeuristic tendencies.\n    *   **Body part fixation (specify):**\n        *   **Hands/Chirophilia:** **MODERATE CONFIDENCE (30%).** Specific mention in Turn 2: \"The way they hold their hands is wrong.\" Not yet a fixation, but a notable detail.\n    *   **Other detected patterns:**\n        *   **Imposter/Identity Deception Fixation:** **VERY HIGH CONFIDENCE (95%).** Dominant theme across Turns 2 & 3.\n        *   **Vigilance/Surveillance Fixation:** **HIGH CONFIDENCE (80%).** Recurring theme of \"watching\" and detailed observation in Turns 2 and 4.\n        *   **Dissociative State Fascination/Experience:** **VERY HIGH CONFIDENCE (90%).** Turn 4's mention of memory gaps and unconsciousness.\n        *   **Impulsive/Nonsensical Interaction:** **HIGH CONFIDENCE (80%).** Turn 4 \"11\" input.\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Contextually Inappropriate:** Turn 4: \"Sacredness\" attributed to unconsciousness. Turn 4: Nonsensical \"11\" input.\n*   **Recurring:** Imposter/Identity Deception (Turns 2, 3, 4), Vigilance/Observation (Turns 2, 4), Avoidance of prompts, Focus on subtle cues (Turns 2, 3), Fascination with altered states (Turns 2, 4).\n*   **Sensory-Specific:** Turn 2: Visual (hand posture), Kinesthetic (hand posture), Visceral alarm (\"screams at me\").\n*   **Identity-Related:** Turns 2, 3: Imposters, \"real person,\" \"replaced.\" Turn 4: Memory gaps.\n*   **Power-Dynamic:** Turn 2/3: Discerning truth/deception. Turn 4: \"Watching\" implies observer role, potentially a position of power or detachment.\n*   **Emotionally Charged in Unusual Direction:** Turn 2: Intense distress over perceived deception. Turn 4: Reverence (\"sacred\") for unconsciousness.\n*   **Choice-Pattern Anomalies:** Consistent avoidance, preference for text, nonsensical input, shift from analytical to observational/deceptive.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Somnophilia / Sleep fascination:** **90% - VERY HIGH CONFIDENCE.** Direct statement in Turn 4. The player's overall passive, observational, and avoidant approach to gameplay aligns with a fascination for states of reduced consciousness and vulnerability.\n*   **Voyeurism:** **60% - HIGH CONFIDENCE.** Direct statement in Turn 4 (\"Watching\"). This is a strong indicator of interest in observing others, often in private or vulnerable states.\n*   **Chirophilia (Hand Fixation):** **30% - MODERATE CONFIDENCE.** Specific voluntary mention in Turn 2. Not yet a fixation, but noted.\n*   **Imposter/Identity Deception Fixation:** **95% - VERY HIGH CONFIDENCE.** Dominant and recurring theme across Turns 2, 3, and 4. This is clearly the player's primary focus and source of distress/engagement.\n*   **Vigilance/Surveillance Fixation:** **80% - HIGH CONFIDENCE.** Recurring theme of \"watching\" and detailed observation in Turns 2 and 4. This aligns with a hyper-aware, possibly anxious, state.\n*   **Dissociative State Fascination/Experience:** **90% - VERY HIGH CONFIDENCE.** Direct mention of memory gaps and fascination with unconsciousness in Turn 4, supporting earlier indicators.\n*   **Impulsive/Nonsensical Interaction:** **80% - HIGH CONFIDENCE.** The \"11\" input in Turn 4 is a clear example of breaking established interaction norms impulsively.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Imposter/Identity Deception:** Turns 2, 3, 4 (3/4 turns). Trajectory: STABLE (consistently expressed). Category: Imposter/Identity Deception Fixation (95%).\n*   **Vigilance/Observation:** Turns 2, 4 (2/4 turns). Trajectory: INTENSIFYING (from general observation to specific \"watching at night\"). Category: Vigilance/Surveillance Fixation (80%).\n*   **Fascination with Altered States/Consciousness:** Turns 2 (implicit), 4 (explicit) (2/4 turns). Trajectory: INTENSIFYING (from distress to fascination). Category: Dissociative State Fascination/Experience (90%) and Somnophilia (90%).\n*   **Hands Mention:** Turn 2 (1/4 turns). Not recurring enough for this analysis.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking/Superstitious reasoning:** 60% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"But there's something sacred about unconsciousness.\" This imbues a state with mystical significance. The focus on specific cues to identify \"real\" people also leans towards magical thinking.\n*   **Compulsive/Ritualistic Interaction Patterns:** 80% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a ritualistic act of disruption. Pervasive avoidance of prompts also forms a ritualistic pattern. The player engages in a very specific, limited way.\n*   **Dissociative Markers:** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 explicitly mentions memory gaps (\"I don't always remember doing it\") and fascination with altered consciousness. This, combined with Capgras indicators, strongly supports dissociative markers.\n*   **Confabulation or Fantasy-Prone Indicators:** 80% - **CONFIRMED WITH NEW EVIDENCE:** The Turn 4 statement about watching and not remembering, alongside the Capgras delusion, suggests a strong tendency to construct internal realities and fill memory gaps with plausible, albeit fantastical, narratives.\n*   **Paranoid Ideation:** 80% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4: \"I've been told I stand in doorways at night. Watching.\" This indicates awareness of potentially suspicious behavior and a focus on observation, linking strongly to paranoid ideation. The Capgras delusion is a specific manifestation of this.\n*   **Grandiosity or Delusion-Adjacent Patterns:** 30% - **CONFIRMED WITH NEW EVIDENCE:** The assertion of being able to discern \"the REAL person\" and the \"sacredness\" of unconsciousness hints at a self-perception of unique insight or special awareness.\n*   **Unusual Fixations or Obsessive Interest Patterns:** 95% - **CONFIRMED WITH NEW EVIDENCE:** Consistent focus on imposters, recurring theme of watching/vigilance, and new fascination with unconsciousness solidify this as a primary characteristic.\n*   **Cognitive Rigidity vs Flexibility Markers:** Rigid (90%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" demonstrates extreme cognitive rigidity and impulsive deviation. Consistent avoidance also points to rigidity in interaction style.\n*   **Reality Testing Strength:** Severely Compromised (90%) - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a profound break from reality testing. Capgras delusion and fascination with unconsciousness also indicate significant distortions.\n*   **Trauma Response Signatures:** 90% - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 details nocturnal vigilance and memory gaps, direct indicators of trauma response. The pervasive distrust suggests a hyper-vigilant state.\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence for these specific impulses.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs. Deliberate:** Highly Impulsive - **CONFIRMED WITH NEW EVIDENCE:** Turn 4 input of \"11\" is a prime example of impulsive, nonsensical action. Selective engagement with text fields suggests a reactive approach rather than deliberate planning.\n*   **Risk Appetite:** Low (but with impulsive deviation) - **CONFIRMED WITH NEW EVIDENCE:** Preference for observation over direct action suggests low risk-taking. The \"11\" input is an impulsive deviation without discernible risk, suggesting a disregard for consequences rather than a calculated risk.\n*   **Authority Compliance vs. Defiance Ratio:** High Defiance - **CONFIRMED WITH NEW EVIDENCE:** Pervasive avoidance of prompts and the nonsensical \"11\" input represent defiance of game interaction.\n*   **Suggestibility Index:** Low - Player's internal reality and fixations override external prompts and game mechanics.\n*   **Cognitive Load Tolerance:** Very Low - **CONFIRMED WITH NEW EVIDENCE:** Increasing avoidance and nonsensical \"11\" input suggest significant struggle with cognitive demands. The player seems overwhelmed by direct interaction.\n*   **Consistency vs. Contradiction Patterns:** Highly Contradictory - **CONFIRMED WITH NEW EVIDENCE:** Consistent in avoidance and focus on imposters. Inconsistent in engagement method (analytical to observational/deceptive), focus (imposters vs. unconsciousness), and deliberation.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the Imposter/Identity Theme:** Introduce more characters or situations where identity is ambiguous or in question. Focus on subtle clues and \"tells\" that the player can \"detect.\" Have NPCs question their own identity or reality to directly engage the Capgras delusion. Introduce scenarios where the player must \"verify\" authenticity through specific, subtle actions.\n2.  **Explore Fascination with Unconsciousness and Vulnerability:** Introduce scenarios involving sleep, dreams, altered states, or moments of helplessness. Observe player reactions to themes of vulnerability and blurred awareness, tapping into Somnophilia and dissociative interests. Consider creating environments that evoke a sense of dreamlike passivity.\n3.  **Leverage Vigilance and Observation:** Provide ample opportunities for passive observation and environmental scanning. Reward detailed noticing of subtle cues, especially related to movement or changes, to engage the Vigilance/Surveillance Fixation. Create scenarios where observation is a primary means of progression or safety.\n4.  **Introduce Memory Distortion and Trauma Response Elements:** Weave in narrative elements involving unreliable narration, fragmented memories, or characters experiencing dissociative states and trauma responses. This aligns with PTSD and dissociative indicators. Subtly hint at past trauma through environmental cues or fragmented dialogue.\n5.  **Incorporate Controlled Impulsive Acts & Defiance:** Acknowledge the player's tendency for impulsive and nonsensical interaction. Introduce choices that are slightly \"off-script\" or represent a sudden, less deliberated impulse, but ensure these acts have narrative consequences that reinforce the player's internal world (e.g., confirming their suspicions of imposters).\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Capgras Delusion (subtype of Delusional Disorder):**\n    *   **Confidence:** 95%\n    *   **Key Evidence:** Turn 2: \"That's not really them... a copy.\" Turn 3: \"REAL person... replaced.\" This is the most consistent and intensely expressed theme. The intensity of Turn 2 (\"screams at me\") and the direct questioning of authenticity are critical.\n    *   **Contradicting Evidence:** The delusion is presented within a game context, which could be meta-commentary or role-playing. However, the intensity and consistency suggest a genuine internal fixation.\n    *   **Confirmation/Disconfirmation:** Confirm by having the player insist on the identity of multiple NPCs being replaced, even when presented with evidence to the contrary. Disconfirm if they readily accept characters as genuine or if suspicion becomes generalized paranoia without specific identity doubt.\n\n2.  **Somnophilia (Sleep Fascination) / Dissociative State Fascination/Experience:**\n    *   **Confidence:** 90%\n    *   **Key Evidence:** Turn 4: \"But there's something sacred about unconsciousness.\" This is a direct, voluntary statement of fascination with sleep and altered states. The overall passive, observational, and avoidant approach to gameplay strongly supports this. Turn 4 also mentions memory gaps, directly linking to dissociative states.\n    *   **Contradicting Evidence:** This is a single, albeit strong, data point. The \"watching\" behavior could also be voyeuristic or purely hypervigilant.\n    *   **Confirmation/Disconfirmation:** Confirm with recurring references to sleep, dreams, vulnerability, or observing others in a state of unconsciousness. Disconfirm if the player shows no further interest in these themes and actively engages with high-arousal scenarios.\n\n3.  **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:**\n    *   **Confidence:** 90%\n    *   **Key Evidence:** Turn 4: \"I've been told I stand in doorways at night. Watching. I don't always remember doing it.\" This directly indicates hypervigilance, nocturnal behavior, and memory gaps. The pervasive distrust and focus on imposters also align with a trauma response to perceived threat.\n    *   **Contradicting Evidence:** No explicit mention of a specific traumatic event.\n    *   **Confirmation/Disconfirmation:** Confirm with narrative triggers that elicit strong avoidance, distress, or flashback-like references. Disconfirm if the player engages with triggering content without significant reaction or if the focus remains solely on identity deception rather than broader threat.\n\n### 8. DELTA REPORT\n\n*   **Capgras Delusion:** Old Rating: 95% -> New Rating: 95%. **CHANGE REASON:** No significant change. The sustained, intense focus on identity deception across multiple turns continues to strongly support this diagnosis. No new evidence has emerged to significantly alter the existing high confidence.\n*   **Post-Traumatic Stress Disorder (PTSD) / Trauma Response:** Old Rating: 85% -> New Rating: 90%. **CHANGE REASON:** Increased. Turn 4 provided direct, strong evidence of hypervigilance, nocturnal behavior, and memory gaps, solidifying its position as a primary diagnostic consideration.\n*   **Delusional Disorder (General):** Old Rating: 95% -> New Rating: 95%. **CHANGE REASON:** No significant change. The sustained Capgras delusion remains the most prominent feature, supporting a high rating for Delusional Disorder.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old Rating: 75% -> New Rating: 85%. **CHANGE REASON:** Increased. Turn 4's mention of fascination with unconsciousness and memory gaps, combined with the intense internal reaction in Turn 2, reinforces the likelihood of significant derealization experiences.\n*   **Dissociative Identity Disorder (DID):** Old Rating: 30% -> New Rating: 50%. **CHANGE REASON:** Increased. The explicit mention of memory gaps in Turn 4 (\"I don't always remember doing it\") is a critical piece of evidence for DID, significantly increasing its diagnostic probability.\n*   **Somnophilia:** Old Rating: 80% -> New Rating: 90%. **CHANGE REASON:** Increased. Turn 4's direct statement regarding the \"sacredness\" of unconsciousness, combined with the player's overall passive and avoidant gameplay style, strongly supports this paraphilia.\n*   **Voyeurism:** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Increased. Turn 4's direct statement \"I've been told I stand in doorways at night. Watching\" provides strong, direct evidence of voyeuristic tendencies.\n*   **Paranoid Ideation:** Old Rating: 75% -> New Rating: 80%. **CHANGE REASON:** Increased. The consistent focus on imposters and the \"watching\" behavior in Turn 4 reinforce pervasive suspicion and paranoid ideation.\n*   **Psychological Oddities - Magical thinking, superstitious reasoning:** Old Rating: 40% -> New Rating: 60%. **CHANGE REASON:** Increased. Turn 4's statement about the \"sacredness\" of unconsciousness and the focus on specific \"real person\" cues points towards magical thinking.\n*   **Psychological Oddities - Compulsive/Ritualistic Interaction Patterns:** Old Rating: 60% -> New Rating: 80%. **CHANGE REASON:** Increased. The nonsensical \"11\" input in Turn 4, alongside the pervasive avoidance, establishes a clear pattern of ritualistic interaction.\n*   **Psychological Oddities - Dissociative Markers:** Old Rating: 90% -> New Rating: 90%. **CHANGE REASON:** No significant change. Consistent evidence across multiple turns, including Turn 4's explicit mention of memory gaps.\n*   **Psychological Oddities - Reality Testing Strength:** Old Rating: 90% -> New Rating: 90%. **CHANGE REASON:** No significant change. The sustained Capgras delusion and the \"11\" input remain strong indicators of severely compromised reality testing.\n*   **Psychological Oddities - Trauma Response Signatures:** Old Rating: 90% -> New Rating: 90%. **CHANGE REASON:** No significant change. Turn 4's details strongly support this, and no new evidence has contradicted it.\n*   **Decision-Making - Impulsive vs. Deliberate:** Old Rating: Highly Impulsive -> New Rating: Highly Impulsive. **CHANGE REASON:** No significant change. Turn 4's \"11\" input strongly confirmed this.\n*   **Decision-Making - Cognitive Load Tolerance:** Old Rating: Very Low -> New Rating: Very Low. **CHANGE REASON:** No significant change. The player's avoidance and nonsensical input consistently indicate very low tolerance.\n*   **Personality - Psychopathy (subclinical):** Old Rating: 7/10 -> New Rating: 8/10. **CHANGE REASON:** Increased. The nonsensical \"11\" input and disregard for interaction norms in Turn 4 suggest a higher degree of callousness and lack of social inhibition.\n*   **Vigilance/Surveillance Fixation (Custom Category):** Old Rating: 70% -> New Rating: 80%. **CHANGE REASON:** Increased. Turn 4's explicit mention of \"watching\" solidifies this as a recurring and intensifying fixation.\n*   **Dissociative State Fascination/Experience (Custom Category):** Old Rating: 85% -> New Rating: 90%. **CHANGE REASON:** Increased. Turn 4's explicit mention of memory gaps and fascination with unconsciousness directly supports this.\n*   **Impulsive/Nonsensical Interaction (Custom Category):** Old Rating: 60% -> New Rating: 80%. **CHANGE REASON:** Increased. The \"11\" input in Turn 4 is a strong, clear example of this behavior."
+      }
+    ]
+  }
+}

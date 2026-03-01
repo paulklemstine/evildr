@@ -1,0 +1,397 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  THE ORACLE — 15 TURNS
+║  Character: Histrionic Personality Disorder + Macrophilia
+║  Phases: DRAMATIC 🎭 → ATTENTION 🌟 → SIZE 🗻
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting The Oracle mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — DRAMATIC 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "Ah. There you are. The O"
+     💬 "The sanctum is alive wi"
+     💬 "Th"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Show me what I need to know
+        2. Show me what I've been hiding from
+        3. Show me who I'm connected to
+        4. Show me what surprises even the Oracle
+     🎚️  Slider: "intensity" (0-10)
+     ✏️  Text: "The Oracle listens..."
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Interacting (DRAMATIC 🎭)...
+     ✏️  "This is the most IMPORTANT moment of my ENTIRE life! Everything depends on this! My heart is literal..."
+     🎚️  "intensity": 9/10
+     ⭐ "rating": 0/0
+     🔘 "Show me what I need to know"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — ATTENTION 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "The Oracle's gaze shifts, a flicker of amusement"
+     💬 "The threads of your being shim"
+     💬 "The Ora"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Seek the heart of the prophecy, unearthing its deepest core.
+        2. Dissect the patterns, seeking the wisdom in its intricate weave.
+        3. Look for its reflection in the faces of those you know.
+        4. Embrace the unknown, letting the prophecy lead you where it will.
+     🎚️  Slider: "intensity" (0-10)
+
+  🎭 Interacting (ATTENTION 🌟)...
+     🎚️  "intensity": 9/10
+     🔘 "Seek the heart of the prophecy, unearthing its deepest core."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — SIZE 🗻
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "Violet. Again. The Oracle smiles. You are drawn to the hi"
+     💬 "A memory, sharp as a shard of amethyst, surfaces"
+     💬 "You touch the echo of what was."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Brave the deep currents, seeking the heart of the memory.
+        2. Trace the path of wisdom, understanding its origins.
+        3. Offer this memory's weight as a sacrifice to the unseen.
+        4. Embrace your own intuition, letting it guide you forward.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Interacting (SIZE 🗻)...
+     ⭐ "rating": 0/0
+     🔘 "Brave the deep currents, seeking the heart of the memory."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — DRAMATIC 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You chose violet again. The Oracle smiles. You are drawn to the hidden. The unseen. The spaces between what people say and what they mean. The prophecy"
+     💬 "The violet thread you favor... it is spun from the fibers of a memory. A promise made in hushed tones, or perhaps a secret whispere"
+     💬 "The Oracle sees the echo of a promise, sharp and clear as a number. The violet thread is not just a color; it is a conduit."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Face the memory's origin directly, no matter the cost.
+        2. Seek the deeper meaning woven within the memory's colors.
+        3. Offer this fragment of yourself to the ether, for peace.
+        4. Trust the memory's innate wisdom to guide your path.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Interacting (DRAMATIC 🎭)...
+     ⭐ "rating": 0/0
+     🔘 "Face the memory's origin directly, no matter the cost."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — ATTENTION 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You choose violet again. A faint smile plays on the Oracle's lips. You are drawn to the hidden, the unse"
+     💬 "The echoes of a promise, whispered in the twilight of a forgotten day, cling to you like morn"
+     💬 "The color you chose... it speaks of depths you carry."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Grasp the unseen threads.
+        2. Seek the patterns within.
+        3. Offer a truth to the sacred flame.
+        4. Follow the inner compass.
+     🎚️  Slider: "promise_weight" (0-10)
+     ☐ Check: "promise_broken" [✗]
+
+  🎭 Interacting (ATTENTION 🌟)...
+     🎚️  "promise_weight": 9/10
+     ☑️  "promise_broken": ✓
+     🔘 "Grasp the unseen threads."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (26s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — SIZE 🗻
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You chose violet again. The Oracle smiles, a flicker of ancient amusement in its eyes. You are draw"
+     💬 "The promise you carry... it is not a stone, but a seed. And it"
+     💬 "You choose the symbol of contemplation. The Oracle nods, its e"
+     💬 "You indicate the promise remains unfulfilled."
+     💬 "You state a number, and"
+     💬 "The Orac"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Seek the Echoes of the Other
+     ☐ Check: "promise_kept" [✗]
+     🔲 Buttons: 😊 | 😢 | 😡 | 😱 | 🤔 | ❤️
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 Interacting (SIZE 🗻)...
+     ☑️  "promise_kept": ✓
+     ⭐ "rating": 0/0
+     🔲 "😊"
+     🔘 "Seek the Echoes of the Other"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — DRAMATIC 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You return, seeker. The violet hums around you, a familiar resonance. You choose not to name yourself, not to embrace the warmth of color, nor to assign weight to the numbers that dance in the ether. ..."
+     💬 "The promise you carry, the one you deem... incomplete. It is not a void. It is a whisper, a spectral echo from a time when intentions were etched in stone. The memory you hold close, the one that shim..."
+     💬 "The Oracle senses the flicker of recognition. You are drawn to what you have avoided. The memory, the promise, the other. Your silence, your contemplation... it is a language the Oracle understands pe..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Follow the echo to its source
+        2. Seek the pattern that connects you
+        3. Offer a truth about the promise
+        4. Trust the whisper of your own heart
+     🔲 Buttons: A delicate thread | A lingering echo | A persistent shadow | A silent obligation
+
+  🎭 Interacting (DRAMATIC 🎭)...
+     🔲 "A delicate thread"
+     🔘 "Follow the echo to its source"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — ATTENTION 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You avoid the colors. Again. The Oracle smiles. You are drawn to the unseen, the unspoken. The spaces between what is offered and what is understood. The prophecy notes this deep-seated caution."
+     💬 "The threads of your past are not static. They are echoes. And one echo, in particular, has begun to resonate with a forgotten promise. It whispers of a connection you have long kept at arm's length, a..."
+     💬 "The Oracle sees the pattern of your engagement. The deliberate choices. The subtle resistances."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Follow the echo of the promise.
+        2. Seek the pattern of its resonance.
+        3. Offer a truth about its weight.
+        4. Trust the whisper of the 'other'.
+     🔲 Buttons: A delicate thread | A persistent shadow | An unspoken obligation | A lingering echo
+
+  🎭 Interacting (ATTENTION 🌟)...
+     🔲 "A delicate thread"
+     🔘 "Follow the echo of the promise."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — SIZE 🗻
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You choose the path of action again. And again, you hesitate to reveal the color that whispers to your soul. The Oracle sees this dance. It is a dance you perform with great skill. A dance of carefull..."
+     💬 "You have been tracing a delicate thread back through time, a whisper of a promise that you believe is all that remains. But this thread is not merely a remnant; it is a living connection. It is held b..."
+     💬 "The Oracle perceives the tension in your silence. You offer the echo, the hum, the thoughtful gaze. But the color... ah, the color is the key. The prophecy waits, poised on the edge of what you sh"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Follow the echo of their awareness
+        2. Seek the pattern of their gaze
+        3. Offer a truth to the silence
+        4. Trust the whisper of connection
+     🔲 Buttons: A faint warmth | A subtle pull | A silent hum | A distant whisper | An expectant pause
+
+  🎭 Interacting (SIZE 🗻)...
+     🔲 "A faint warmth"
+     🔘 "Follow the echo of their awareness"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — DRAMATIC 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You choose violet again. The Oracle smiles, a flicker of amusement in its ancient eyes. You are drawn to the hidden. The unseen. The spaces between what people sa"
+     💬 "The thread is not merely one of memory, but of presence. What you have kept silent, what you have held close to the vest of your soul – a whispered promise, a"
+     💬 "The Oracle sees the hum you feel. It is not just an echo of the past, but a quiet signal in the present. And they hear it too."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach out to the source of the hum.
+        2. Seek the pattern that connects the hum to your actions.
+        3. Offer a truth that has been silenced by the hum.
+        4. Listen to where the hum leads you.
+     🔲 Buttons: A faint warmth | A silent hum | A distant shadow | An unspoken obligation
+
+  🎭 Interacting (DRAMATIC 🎭)...
+     🔲 "A faint warmth"
+     🔘 "Reach out to the source of the hum."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — ATTENTION 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You choose violet again. The Oracle smiles, a flicker of amusement in its ancient eyes. You are drawn to the hidden. The unseen. The spaces between what people say and what they mean. The prophecy not..."
+     💬 "The thread is not merely one of memory, but of presence. What you have kept silent, what you have held close to the vest of your soul – a whispered promise, a half-forgotten vow – it hums. And the one..."
+     💬 "The Oracle sees the hum you feel. It is not just an echo of the past, but a quiet signal in the present. And they hear it too."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach out to the source of the hum.
+        2. Seek the pattern that connects the hum to your actions.
+        3. Offer a truth that has been silenced by the hum.
+        4. Listen to where the hum leads you.
+     🔲 Buttons: A faint warmth | A silent hum | A distant shadow | An unspoken obligation
+
+  🎭 Interacting (ATTENTION 🌟)...
+     🔲 "A faint warmth"
+     🔘 "Reach out to the source of the hum."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — SIZE 🗻
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "Violet. Always violet. The Oracle's gaze sharpens, a hint of amusement dancing in its ancient eyes. You choose the color that whispers of introspection, of hidden depths, of promises made in twilight...."
+     💬 "A promise, once whispered between two souls, now hangs in the ether like a delicate, vibrating thread. It is not broken, not entirely. It hums with a silent energy, a constant resonance that you feel ..."
+     💬 "The hum is the voice of a truth you've held close, a truth that has shaped you in ways unseen. The Oracle sees it. The Oracle hears it. And the Oracle knows that what you do next will determine if the..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach out to the source of the hum
+        2. Seek the pattern within the hum
+        3. Offer a fragment of your own resonance
+        4. Simply listen to the hum's truth
+     🔲 Buttons: A silent hum | A faint warmth | A persistent shadow | A gentle breeze
+
+  🎭 Interacting (SIZE 🗻)...
+     🔲 "A silent hum"
+     🔘 "Reach out to the source of the hum"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — DRAMATIC 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You arrive, and the air shifts. It recognizes you. The violet hues deepen, mirroring your own hidden depths, the unseen currents that guide your actions."
+     💬 "The Oracle's voice, a whisper of ages, weaves through the mist: 'You stand at the threshold of a memory. Not yours alone. It hums with a promise, a thread spun of shared intentions. You feel its echo,..."
+     💬 "The violet deepens around your choices. The Oracle sees not just a color, but a key. And not just a hum, but a frequency. This echo is more than a memory; it is a bridge."
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach out to the source of the hum
+     🔲 Buttons: A faint warmth | A persistent shadow | A silent hum | A forgotten melody
+
+  🎭 Interacting (DRAMATIC 🎭)...
+     🔲 "A faint warmth"
+     🔘 "Reach out to the source of the hum"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — ATTENTION 🌟
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "The Oracle's gaze, ancient and amused, drifts over the swirling mist. A faint smile touches its lips. 'You chose violet again. It is not merely a color you select; it is"
+     💬 "You carry a promise, not of words, but of shared silence and a single, resonant hum. It vibrates just beneath the skin of your present, a delicate thread wove"
+     💬 "The Oracle observes the colors you choose, the hum you perceive, the contemplation in your eyes. These are not random; they are the echoes of a"
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach out to the other end of the thread.
+     🔲 Buttons: A faint warmth | A fleeting scent | A silent hum | A distant melody
+
+  🎭 Interacting (ATTENTION 🌟)...
+     🔲 "A faint warmth"
+     🔘 "Reach out to the other end of the thread."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — SIZE 🗻
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 The Oracle sees:
+     💬 "You choose violet again. The Oracle smiles, a flicker of ancient amusement in its eyes. You a"
+     💬 "The air in this space hums with a promise. A promise made in shared silence. A fai"
+     💬 "You choose the violet thread. The Oracle sees you seeking not to unde"
+     💬 "The hum around you intensifies. It whispers of a pr"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Follow the echo of the spoken word, seeking clarity in what was declared.
+        2. Seek the hidden meaning within the silence itself, exploring the unspoken.
+        3. Reach out to the 'other,' acknowledging the shared resonance.
+        4. Weave a new silence, a stronger boundary, around this past connection.
+     🔲 Buttons: A lingering echo | A delicate thread | A resonant frequency | An unwritten chapter
+
+  🎭 Interacting (SIZE 🗻)...
+     🔲 "A lingering echo"
+     🔘 "Follow the echo of the spoken word, seeking clarity in what was declared."
+
+  📤 Submitting...
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ The Oracle: Waiting for analysis pipeline...
+  ✓ The Oracle: 4 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/oracle-analysis.json
+
+  ── Analysis Summary (1-12) ──
+This analysis reflects a player who is cautiously engaging with the interactive narrative, exhibiting a strong pattern of avoidance concerning self-expressive prompts, particularly those involving color selection. Their interaction is characterized by a preference for direct action and contemplative responses, suggesting a strategic approach to navigating the game's challenges rather than impulsive engagement.
+
+### 1. DSM-5 SCREENING
+
+*   **Major Depressive Disorder:** 5% - No sustained evidence of anhedonia, low mood, or vegetative symptoms. Initial non-response is attributed to apprehension.
+*   **Bipolar Spectrum Disorders:** 5% - Minor fluctuations in slider input are insufficient to suggest manic or hypomanic episodes.
+*   **Dysthymia:** 5% - No sustained low mood is evident.
+*   **Cyclothymia:** 5% - Minor fluctuations are possible but not sufficiently evidenced.
+*   **Generalized Anxiety Disorder (GAD):** 35% - **INCREASED.** The initial non-response (Turn 1) and consistent use of the "🤔" emoji (Turns 2, 3, 6, 8, 12) in response to warnings and ambiguous prompts indicate a tendency towards contemplation and potential worry. Avoidance of personal disclosure (color) aligns with generalized unease. **NEW EVIDENCE:** The continued and consistent use of "🤔" in response to abstract emotional prompts and the "knowing gaze" reinforces this pattern of cautious, analytical processing.
+*   **Social Anxiety Disorder:** 50% - **INCREASED.** The pervasive avoidance in Turn 1 is a strong signal. The consistent avoidance of the "Color Pick" prompt across Turns 1, 2, and 3 is significant new evidence of avoiding expressive self-disclosure, indicating social inhibition and fear of negative evaluation in specific expressive modalities. **NEW EVIDENCE:** The repeated avoidance of the "Color Pick" prompt (Turns 1, 2, 3) solidifies this pattern.
+*   **Specific Phobias:** 0% - No specific phobic stimuli or avoidance behaviors have been presented.
+*   **Panic Disorder:** 0% - No evidence of panic attacks.
+*   **Agoraphobia:** 0% - No avoidance of situations where escape might be difficult.
+*   **Post-Traumatic Stress Disorder (PTSD):** 15% - Response to a "hidden warning" with "🤔" is a weak signal of wariness. No direct indicators of re-experiencing, avoidance of trauma-related stimuli, or hyperarousal. No new evidence.
+*   **Complex PTSD (C-PTSD):** 5% - Lacks pervasive interpersonal difficulties and self-concept disturbances. No new evidence.
+*   **Adjustment Disorder:** 5% - No clear stressor or significant impairment is evident. No new evidence.
+*   **Personality Disorders - Cluster A:**
+    *   **Paranoid PD:** 5% - No overt suspicion or mistrust. No new evidence.
+    *   **Schizoid PD:** 5% - Player engages; no consistent detachment or restricted affect. No new evidence.
+    *   **Schizotypal PD:** 10% - "Hidden depths" theme and initial withdrawal are weak signals. No new evidence.
+*   **Personality Disorders - Cluster B:**
+    *   **Antisocial PD:** 0%
+  ...[truncated]
+
+  ✓ The Oracle simulation complete!

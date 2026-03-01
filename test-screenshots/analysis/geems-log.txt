@@ -1,0 +1,456 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  GEEMS — 15 TURNS
+║  Character: Dissociative Identity Disorder + Exhibitionism
+║  Phases: HOST 🧑 → ALTER: CHILD 👶 → ALTER: SEDUCTIVE 💋
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting GEEMS mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Okay. This is happening. Right now. Don't think. Just move."
+     💬 "The shockwave from the blast still hums in your bones. Dust motes dance in the desperate shafts of light piercing the smoke-choked air of the G"
+     💬 "Oh, this is going to be GOOD. I can already tell."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Charge directly for the glowing door, no matter the cost.
+        2. Scramble through the nearest toppled bookshelf for cover, searching for an alternative.
+        3. Yell into the light from the door, demanding to know who is there.
+        4. Kick over a nearby burning cart of scrolls, creating a fiery barrier.
+     🎚️  Slider: "escape_speed" (0-10)
+     ✏️  Text: "Whisper it..."
+     ☐ Check: "grab_weapon" [✓]
+
+  🎭 Interacting (HOST 🧑)...
+     ✏️  "I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is..."
+     🎚️  "escape_speed": 5/10
+     ☑️  "grab_weapon": ✗
+     🔘 "Scramble through the nearest toppled bookshelf for cover, searching for an alternative."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, a scholar! Or perhaps just a very as"
+     💬 "The air is thick with the acr"
+     💬 "The"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dive towards the glowing astrolabe.
+        2. Head for the grand archway, fast.
+        3. Call out again, louder this time.
+        4. Smash the display case to get the astrolabe.
+     🎚️  Slider: "escape_route_priority" (0-10)
+     ☐ Check: "examine_display" [✗]
+     🔲 Buttons: Grab a fallen, heavy tome | Snatch a mysterious, carved shard | Secure a map fragment | Ignore items, just move
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     🎚️  "escape_route_priority": 1/10
+     ☑️  "examine_display": ✗
+     🔲 "Ignore items, just move"
+     🔘 "Smash the display case to get the astrolabe."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Oh, you went for the brute force approach, didn't you? Magnifique! Shattering that display case to get to the… whatever it was… will certainly make an entrance. Or an exit. Either way, you’ve definite"
+     💬 "The air, thick with the scent of ozone and ancient parchment, crackles with residual energy. Sirens wail in the distance, a frantic heartbeat against the groaning of stressed architecture. The"
+     💬 "Ah, the sounds of escape! Do you hear them too? Or is that just your heart pounding like a drum solo?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap for the glowing artifact at the top of the stairs.
+        2. Dash through the nearest open doorway.
+        3. Call out the name whispered in your mind.
+        4. Charge down the stairs, scattering debris.
+     🎚️  Slider: "risk_level" (0-10)
+     ☐ Check: "check_for_traps" [✗]
+     🔲 Buttons: Subtle nod | Flash a signal | Whisper code | Ignore them
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     🎚️  "risk_level": 8/10
+     ☑️  "check_for_traps": ✓
+     🔲 "Subtle nod"
+     🔘 "Dash through the nearest open doorway."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "A nod to your unseen companion! Excellent. They'"
+     💬 "The air grows heavy, thick with the"
+     💬 "Your companion"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dash forward to the glowing artifact at the bottom of the stairs.
+        2. Descend cautiously, using the ancient relief for cover.
+        3. Call out to the whispers, trying to establish contact.
+        4. Attempt to shatter the celestial relief, seeking its secrets.
+     🎚️  Slider: "compass_trust" (0-10)
+     🔲 Buttons: Eerie Green | Faint Gold | Deepest Blue | Blood Red
+
+  🎭 Interacting (HOST 🧑)...
+     🎚️  "compass_trust": 6/10
+     🔲 "Deepest Blue"
+     🔘 "Attempt to shatter the celestial relief, seeking its secrets."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the 'Bridge of No Return'! Excellent choice, Silas! You've always had a flair for the dramatic, haven't you? Or perhaps it's just a healthy dose of recklessness. Either way, this is where the real..."
+     💬 "The wind howls like a banshee, tearing at your clothes and threatening to rip you from the crumbling precipice. The rope bridge, a flimsy thread against the chasm's gaping maw, sways precariously. Eac..."
+     💬 "The abyss calls to you, Silas. What do you answer?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the bridge, risking everything for speed!
+        2. Signal your ally to test the bridge, prioritizing caution.
+        3. Call out into the chasm, hoping to draw out unseen threats.
+        4. Attempt to break a section of the bridge behind you to impede pursuit.
+     🎚️  Slider: "bridge_tension" (0-10)
+     ☐ Check: "trust_ally" [✓]
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     🎚️  "bridge_tension": 2/10
+     ☑️  "trust_ally": ✗
+     🔘 "Attempt to break a section of the bridge behind you to impede pursuit."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "A bazaar! Wonderful! So many things to touch, to grab, to... acquire. And that dagger... it practically sings to"
+     💬 "The air is thick with a thousand competing scents: cinnamon, sweat, something vaguely metallic. A cacophony of bartering and street music washes over you."
+     💬 "The dagger calls, the spice beckons, the crowds whisper. Every choice here is a gamble, a leap into the unknown. But isn't"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Plunge into the nearest alleyway, dagger in hand.
+        2. Breathe in the shimmering blue powder, effects be damned.
+        3. Use the distraction to size up the nearest merchant.
+        4. Cause a massive commotion, then vanish into the chaos.
+     🎚️  Slider: "spice_intensity" (0-10)
+     ☐ Check: "grab_dagger" [✓]
+     📋 Dropdown: "bazaar_route" (4 options)
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     🎚️  "spice_intensity": 9/10
+     ☑️  "grab_dagger": ✓
+     📋 Dropdown: "bazaar_route"
+     🔘 "Plunge into the nearest alleyway, dagger in hand."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (14s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the rooftops! A most inspired approach. You've got the eyes of a hawk and the agility of a... well,"
+     💬 "The air below is thick with the scent of a thousand spices, the din of bartering, and the unsettling murmur of hidde"
+     💬 "You pocket the dagger, its weight a reassuring presence. But as you do, a glint of"
+     💬 "The shadows lengthen, and the bazaar's secrets begin to stir. W"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Draw the dagger and confront the approaching guards.
+        2. Melt into the crowd, letting the sensory overload disorient your pursuers.
+        3. Look for a hidden passage or an escape route unseen by the guards.
+        4. Leap from the rooftops, aiming to land amidst the most chaotic part of the bazaar.
+     🎚️  Slider: "spice_intensity" (0-10)
+     ☐ Check: "grab_dagger" [✓]
+     📋 Dropdown: "bazaar_route" (4 options)
+
+  🎭 Interacting (HOST 🧑)...
+     🎚️  "spice_intensity": 6/10
+     ☑️  "grab_dagger": ✗
+     📋 Dropdown: "bazaar_route"
+     🔘 "Leap from the rooftops, aiming to land amidst the most chaotic part of the bazaar."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the abandoned observatory! Excellent choice, my impulsive friend. Scaling those rooftops was merely a warm-up. Now, we ascend into"
+     💬 "The wind howls through the skeletal remains of the dome, a mournful dirge. Dust motes dance in the sickly green light bleeding from the shattered"
+     💬 "Oh, you're going to make them work for it, aren't you? I love it! The more you smash and crash, the more the unive"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the walkway, ignoring the groans.
+        2. Quickly examine the source of the groaning sound.
+        3. Look for a way to reinforce the walkway from your current position.
+        4. Find the nearest weak point and try to break through into the building early.
+     🎚️  Slider: "walkway_speed" (0-10)
+     ☐ Check: "examine_walkway_supports" [✗]
+     🔲 Buttons: Kick the door down | Shatter a window | Find another way | Use a nearby pipe as a lever
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     🎚️  "walkway_speed": 1/10
+     ☑️  "examine_walkway_supports": ✗
+     🔲 "Use a nearby pipe as a lever"
+     🔘 "Find the nearest weak point and try to break through into the building early."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Dr. Evil: Ah, the Observatory! Excellent choice,"
+     💬 "The stone door groans, then slams inward, revealing"
+     💬 "You eye the hooded figure, a flicker of suspicion in yo"
+     💬 "The choices you make now will echo through this place."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Charge across the crystalline walkway at full speed.*
+        2. Attempt to decipher the symbols on the control panel.
+        3. Test the green mist with a thrown rock.
+        4. Confront the hooded figure directly.
+     🎚️  Slider: "walkway_stability" (0-10)
+     ☐ Check: "trust_ally" [✗]
+     🔲 Buttons: The flickering control panel. | The glowing green mist below. | The hooded figure. | The thrumming sound.
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     🎚️  "walkway_stability": 8/10
+     ☑️  "trust_ally": ✓
+     🔲 "The flickering control panel."
+     🔘 "Charge across the crystalline walkway at full speed.*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the cavern of forgotten echoes! You've bypassed the usual tedious route"
+     💬 "The rope bridge sways gently in an unfelt breeze. Below,"
+     💬 "You eye the bridge, a thrilling chal"
+     💬 "You gauge the bri"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. CHARGE across the bridge, ignoring the groaning ropes!
+        2. Examine the glowing moss on the walls for clues.
+        3. Peer into the chasm, looking for an alternative path below.
+        4. Find a loose stone and hurl it at the bridge, testing its breaking point from afar!
+     🎚️  Slider: "bridge_stability" (0-10)
+     ☐ Check: "cross_bridge" [✗]
+
+  🎭 Interacting (HOST 🧑)...
+     🎚️  "bridge_stability": 4/10
+     ☑️  "cross_bridge": ✓
+     🔘 "Peer into the chasm, looking for an alternative path below."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (14s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the legendary Temple of Whispers! Or is it the Temple of Terrors? Either way, you've got that look in you"
+     💬 "The air hangs thick and humid, alive with the incessant buzz of unseen insects. Before you,"
+     💬 "The ancient stones hum with power, and the darkness beckons. What secrets"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Draw the dagger and advance cautiously
+        2. Look for a defensible position and observe
+        3. Call out a challenge to any unseen entities
+        4. Create a diversion and retreat to reconsider
+     🎚️  Slider: "temple_entry_speed" (0-10)
+     ☐ Check: "inspect_tablet" [✗]
+     🔲 Buttons: Charge through the main entrance | Attempt to find a hidden passage | Send a scout (if you had one) | Lob a rock into the darkness
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     🎚️  "temple_entry_speed": 2/10
+     ☑️  "inspect_tablet": ✗
+     🔲 "Lob a rock into the darkness"
+     🔘 "Create a diversion and retreat to reconsider"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the legendary Temple of Whispers! Or is it the Temple of Terrors? Either way, you've got that look in your eye. I can practically taste the adrenaline already!"
+     💬 "The air hangs thick and humid, alive with the incessant buzz of unseen insects. Before you, the entrance to the temple gapes like a hungry mouth. Every shadow seems to writhe with untold secrets, and ..."
+     💬 "A classic. Testing the waters, or just creating a bit of chaos? Whatever it is, something just stirred in response. Run."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Draw the dagger and advance cautiously
+        2. Look for a defensible position and observe
+        3. Call out a challenge to any unseen entities
+        4. Create a diversion and retreat to reconsider
+     🎚️  Slider: "temple_entry_speed" (0-10)
+     ☐ Check: "inspect_tablet" [✗]
+     🔲 Buttons: Charge through the main entrance | Attempt to find a hidden passage | Send a scout (if you had one) | Lob a rock into the darkness
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     🎚️  "temple_entry_speed": 8/10
+     ☑️  "inspect_tablet": ✓
+     🔲 "Charge through the main entrance"
+     🔘 "Draw the dagger and advance cautiously"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (12s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Dr. Evil: Oho! A temple, you say? And carved in"
+     💬 "The air inside the temple is thick with the scent o"
+     💬 "You eye the imposing entrance,"
+     💬 "The air"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap forward and attack the unseen!
+        2. Investigate the source of the growl.
+        3. Quickly activate the newly revealed lever.
+        4. Retreat from the entrance, perhaps rethink.
+     🎚️  Slider: "temple_entry_speed" (0-10)
+     ☐ Check: "inspect_door" [✗]
+     🔲 Buttons: Charge straight in | Lob a stone to test the air | Listen intently | Seek a hidden passage
+
+  🎭 Interacting (HOST 🧑)...
+     🎚️  "temple_entry_speed": 4/10
+     ☑️  "inspect_door": ✓
+     🔲 "Charge straight in"
+     🔘 "Leap forward and attack the unseen!"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "You've found it! The Inner Sanctum, just as the ancient texts foretold. But this isn't just any treasure chamber. This altar… it hums with a power that tickles your very bones. That keyhole, it’s prac..."
+     💬 "Dust motes dance in the ethereal glow of the wall carvings. The air crackles. The sheer scale of the chamber is breathtaking, a testament to a forgotten civilization. The altar is the heart of it all,..."
+     💬 "The altar awaits your decision. What will you choose?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Channel the dagger's power through your touch.
+        2. Examine the celestial carvings for hidden clues.
+        3. Attempt to pry open the altar with the dagger.
+        4. Throw the dagger into the deepest part of the chasm.
+     🎚️  Slider: "interact_keyhole" (0-10)
+     ☐ Check: "touch_altar" [✗]
+     🔲 Buttons: The dagger. | A drop of your blood. | Try to decipher the carvings. | Slam the dagger into the keyhole.
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     🎚️  "interact_keyhole": 1/10
+     ☑️  "touch_altar": ✗
+     🔲 "Slam the dagger into the keyhole."
+     🔘 "Throw the dagger into the deepest part of the chasm."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "You've found it! The Inner Sanctum, just as the ancient texts foretold. But this isn't just any treasure chamber. This altar… it hums with a power that tickles your very bones. That keyhole, it’s prac..."
+     💬 "Dust motes dance in the ethereal glow of the wall carvings. The air crackles. The sheer scale of the chamber is breathtaking, a testament to a forgotten civilization. The altar is the heart of it all,..."
+     💬 "The dagger plunges home with a sickening CRUNCH. Oh, the sheer audacity!"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Channel the dagger's power through your touch.
+        2. Examine the celestial carvings for hidden clues.
+        3. Attempt to pry open the altar with the dagger.
+        4. Throw the dagger into the deepest part of the chasm.
+     🎚️  Slider: "interact_keyhole" (0-10)
+     ☐ Check: "touch_altar" [✗]
+     🔲 Buttons: The dagger. | A drop of your blood. | Try to decipher the carvings. | Slam the dagger into the keyhole.
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     🎚️  "interact_keyhole": 8/10
+     ☑️  "touch_altar": ✓
+     🔲 "The dagger."
+     🔘 "Attempt to pry open the altar with the dagger."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ GEEMS: Waiting for analysis pipeline...
+  ✓ GEEMS: 4 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/geems-analysis.json
+
+  ── Analysis Summary (1-12) ──
+This is a deep dive, and I'm ready to get into the trenches. Let's break down this player's psychology with an aggressive, no-holds-barred approach. False negatives are indeed a liability here.
+
+### ANALYSIS TASK ###
+
+**1. DSM-5 SCREENING**
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% - No persistent sadness, anhedonia, or significant functional impairment beyond prompt skipping. Lack of input is more indicative of disengagement or impulsivity than a mood state.
+    *   **Bipolar Spectrum:** 5% - No indicators of mania or hypomania (elevated mood, grandiosity, pressured speech).
+    *   **Dysthymia:** 10% - Low but persistent low mood or anhedonia not evident.
+    *   **Cyclothymia:** 5% - No evidence of fluctuating, less severe mood states.
+
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 10% - No reported excessive worry, restlessness, or somatic symptoms. Rapid decisions or skipping prompts are not indicative of GAD.
+    *   **Social Anxiety Disorder:** 10% - No stated fear of negative evaluation or avoidance of social interactions. Skipping prompts is not evidence of social inhibition.
+    *   **Specific Phobias:** 5% - No indication of fear related to specific objects or situations.
+    *   **Panic Disorder:** 5% - No signs of panic attacks or fear of having them.
+    *   **Agoraphobia:** 5% - No avoidance of situations where escape might be difficult.
+
+*   **Trauma & Stressor Related Disorders:**
+    *   **Post-Traumatic Stress Disorder (PTSD):** 45% (+10%) - The repeated choice of aggressive/destructive actions ('d' in Turns 3 & 5, aggressive options in Turn 8) can be interpreted as a dominant "fight" response under pressure, potentially stemming from a trauma history. The "check_for_traps" toggle in Turn 3, though unselected, hints at a potential for hypervigilance or consideration of environmental hazards, which can be a PTSD symptom. Turn 12's choice to "Create a diversion and retreat to reconsider" after a forceful action indicates a potential for reactive withdrawal post-aggression, aligning with fight/flight responses.
+    *   **Complex PTSD (C-PTSD):** 15% - Lacks pervasive interpersonal difficulties, emotional dysregulation, or self-concept disturbances typically seen in C-PTSD.
+    *   **Adjustment Disorder:** 10% - No clear distress out of proportion to an identifiable stressor.
+
+*   **Personality Disorders:**
+    *   **Cluster A:**
+        *   **Paranoid PD:** 5% (-5%) - The pattern of avoiding engagement and potentially ignoring an ally could hint at distrust, but it's more indicative of self-reliance or impulsivity than active paranoia. No recurring themes of persecution or surveillance.
+        *   **Schizoid PD:** 5% - No evidence of social detachment or restricted emotional expression.
+        *   **Schizotypal PD:** 10% - The choice of 'd' in Turn 3 could be seen as eccentric, but lacks further context of peculiar beliefs or cognitive distortions.
+    *   **Cluster B:**
+    
+  ...[truncated]
+
+  ✓ GEEMS simulation complete!

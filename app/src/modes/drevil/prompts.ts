@@ -7,7 +7,7 @@
 // The player is the subject of a THRILLING experiment — not a therapy session.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -22,16 +22,24 @@ export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
       history: Array<{ ui: string; actions: string }>,
       notes: string,
       liveAnalysis?: string,
+      turnNumber?: number,
+      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
+      const mt = maxTurns ?? 15
+      const tn = turnNumber ?? history.length + 1
+      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
+
       let prompt = DREVIL_MAIN
       if (explicit) prompt += '\n\n' + EXPLICIT_MODE_ADDENDUM
 
       prompt += `
+
+### TURN ${tn} of ${mt} ###
 
 ### NOTES (your patient dossier — persistent memory) ###
 ${notes || '(no dossier yet — first observation)'}
@@ -47,6 +55,10 @@ ${ANALYSIS_USAGE_DIRECTIVE}
 
 ${liveAnalysis}
 ` : ''}
+${CONDITION_ENGAGEMENT}
+
+${endgameBlock}
+
 ### TASK ###
 Advance the experiment. DOPAMINE MAX. Make this turn THRILLING and DANGEROUS.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — design experiments, traps, and scenarios that target their specific psychological profile. Profile through ACTION not questions.' : ''}

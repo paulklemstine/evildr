@@ -1,0 +1,857 @@
+{
+  "mode": "cyoa",
+  "modeName": "Choose Your Own Adventure",
+  "character": {
+    "illness": "PTSD",
+    "quirk": "Hoarding"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-02-28T19:39:07.456Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "HYPERVIGILANT",
+      "ui": {
+        "texts": [
+          "The biting wind howls like a banshee, tearing at your threadbare cloak. Each desperate pull on",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Ignite the emergency flare and drop, hoping the light blinds whatever watches below.",
+            "value": "a"
+          },
+          {
+            "label": "Search for a crevice or overhang to break your fall.",
+            "value": "b"
+          },
+          {
+            "label": "Yell for help, praying someone, anyone, might hear you.",
+            "value": "c"
+          },
+          {
+            "label": "Swing wildly, aiming to dislodge any unseen predators clinging to the cliff.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "6"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A desperate promise...",
+            "placeholder": "A desperate promise..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos...\"",
+        "🎚️  \"descent_speed\": 10/10",
+        "🔘 \"Ignite the emergency flare and drop, hoping the light blinds whatever watches below.\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "FLASHBACK",
+      "ui": {
+        "texts": [
+          "The rope burns your hands as you descend. The chasm yawns below, a hungry maw of shadows and impossible depths. The air grows colder, heavier. Every scrape of your boots against the rock",
+          "Suddenly, the rope groans and snaps! You plummet, a helpless scream torn from your throat as the abyss rushes up to meet you. But just as you brace for impact, a jagged",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash directly into the outcrop, hoping to break your fall.",
+            "value": "a"
+          },
+          {
+            "label": "Scramble for a more secure handhold, seeking stable purchase.",
+            "value": "b"
+          },
+          {
+            "label": "Call out, hoping someone—or something—is listening.",
+            "value": "c"
+          },
+          {
+            "label": "Use the momentum to swing towards a distant, shimmering light.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A desperate prayer, a defiant curse...",
+            "placeholder": "A desperate prayer, a defiant curse..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s...\"",
+        "🎚️  \"descent_speed\": 2/10",
+        "🔘 \"Scramble for a more secure handhold, seeking stable purchase.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "HOARD",
+      "ui": {
+        "texts": [
+          "The rope bites into your raw hands. Each jarring descent sends a fresh wave of terror through you, but the alternative—staying put—is unthinkable.",
+          "Suddenly, the rock beneath your feet crumbles! You barely have time to register the sickening lurch as you plummet, your",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Swing towards the distant outcrop.",
+            "value": "a"
+          },
+          {
+            "label": "Try to climb back UP to where the rocks fell.",
+            "value": "b"
+          },
+          {
+            "label": "Shout for help to the unseen pursuers.",
+            "value": "c"
+          },
+          {
+            "label": "Cut the rope and drop.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Keep going...",
+            "placeholder": "Keep going..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ...\"",
+        "🎚️  \"descent_speed\": 7/10",
+        "🔘 \"Cut the rope and drop.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "HYPERVIGILANT",
+      "ui": {
+        "texts": [
+          "The rope snapped, a cruel joke played by fate. You’re dangling, fingers raw against the unforgiving stone, a thousand feet above an abyss that seems to breathe. The wind howls, a symphony of despair, and a",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "RAISE YOUR VOICE IN A BARRAGE OF CURSES!",
+            "value": "a"
+          },
+          {
+            "label": "LOOK FOR A CRACK, ANY CRACK, TO JAM YOUR FINGERS INTO!",
+            "value": "b"
+          },
+          {
+            "label": "WHISPER A FAREWELL TO THE WORLD YOU'RE LEAVING BEHIND!",
+            "value": "c"
+          },
+          {
+            "label": "TRY TO GRAB THE SNAPPED ROPE END FLYING PAST!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Defiance!",
+            "placeholder": "Defiance!"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos...\"",
+        "🎚️  \"descent_speed\": 10/10",
+        "🔘 \"TRY TO GRAB THE SNAPPED ROPE END FLYING PAST!\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "FLASHBACK",
+      "ui": {
+        "texts": [
+          "The rope creaks, a death rattle in the suffocating silence. Your grip slips, knuckles white against the coarse fibers. Each downward lurch sends a fresh wave of dread through you, the abyss a hungry maw",
+          "Suddenly, the rope snaps with a sickening thwack. You plummet into the darkness, the wind a shriek in your ears. But just as the chasm threatens to consume you, your flailing hand sma",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Claw your way upwards, ignoring the eyes.",
+            "value": "a"
+          },
+          {
+            "label": "Try to reason with the creature below.",
+            "value": "b"
+          },
+          {
+            "label": "Search frantically for a better handhold.",
+            "value": "c"
+          },
+          {
+            "label": "Yell a challenge to the eyes.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scream your defiance!",
+            "placeholder": "Scream your defiance!"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s...\"",
+        "🎚️  \"descent_speed\": 2/10",
+        "🔘 \"Yell a challenge to the eyes.\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "HOARD",
+      "ui": {
+        "texts": [
+          "Your knuckles are white, your grip iron. The wind howls, a spectral",
+          "Suddenly, the rope snaps! You plummet into the da",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Test the new hold: can you climb this?",
+            "value": "a"
+          },
+          {
+            "label": "Scan for alternative escape routes NOW.",
+            "value": "b"
+          },
+          {
+            "label": "Call out again, demanding an answer.",
+            "value": "c"
+          },
+          {
+            "label": "Try to swing towards a faint light.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A desperate defiance...",
+            "placeholder": "A desperate defiance..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ...\"",
+        "🎚️  \"descent_speed\": 7/10",
+        "🔘 \"Test the new hold: can you climb this?\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "HYPERVIGILANT",
+      "ui": {
+        "texts": [
+          "The last handhold crumbles. For a heart-stopping ins",
+          "The shard groans under your weight, threatening to bre",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Hurl yourself towards a higher, wider ledge – pure adrenaline!",
+            "value": "a"
+          },
+          {
+            "label": "Try to jam your fingers deeper into the cracks, praying for purchase.",
+            "value": "b"
+          },
+          {
+            "label": "Call out to the shapes in the mist – anything to distract them.",
+            "value": "c"
+          },
+          {
+            "label": "Scramble sideways, seeking an escape route along the chasm wall.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A desperate plea or a defiant roar?",
+            "placeholder": "A desperate plea or a defiant roar?"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos...\"",
+        "🎚️  \"descent_speed\": 9/10",
+        "🔘 \"Scramble sideways, seeking an escape route along the chasm wall.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "FLASHBACK",
+      "ui": {
+        "texts": [
+          "The last of your grip on the rotten rope snaps, a violent, final twang echoing in the vastness. You plummet, a raw scream torn from your throat,",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Launch yourself towards a jagged, glistening shard of rock above you.",
+            "value": "a"
+          },
+          {
+            "label": "Spin wildly, attempting to use your momentum to throw yourself towards a narrow ledge to your left.",
+            "value": "b"
+          },
+          {
+            "label": "Whisper a plea to whatever entity lurks in the chasm, hoping for mercy.",
+            "value": "c"
+          },
+          {
+            "label": "Close your eyes and let the void consume you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scream defiance, plead for mercy, curse your fate...",
+            "placeholder": "Scream defiance, plead for mercy, curse your fate..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Tuck and roll for impact",
+          "Reach for a jutting protrusion",
+          "Try to grab the dangling rope remnants",
+          "Embrace the fall, focus on the abyss"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s...\"",
+        "🎚️  \"descent_speed\": 2/10",
+        "🔲 \"Tuck and roll for impact\"",
+        "🔘 \"Close your eyes and let the void consume you.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "HOARD",
+      "ui": {
+        "texts": [
+          "Your fingers are raw, bleeding against the unforgiving stone. The rope snapped above you, a phantom weight. Each breath is a rasping sob against the suffocating silence. Then, a whisper, like dry leaves skittering across bone, coils around your consciousness.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash your fist against the rock, a desperate defiance.",
+            "value": "a"
+          },
+          {
+            "label": "Whisper back, 'What do you want from me?'",
+            "value": "b"
+          },
+          {
+            "label": "Attempt a desperate, upward climb, ignoring the abyss.",
+            "value": "c"
+          },
+          {
+            "label": "Clench your eyes shut, embracing the fall.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Whisper back...",
+            "placeholder": "Whisper back..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Tuck and roll for impact",
+          "Grind for a new hold",
+          "Stare into the darkness",
+          "Try to climb up"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ...\"",
+        "🎚️  \"descent_speed\": 7/10",
+        "🔲 \"Tuck and roll for impact\"",
+        "🔘 \"Whisper back, 'What do you want from me?'\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "HYPERVIGILANT",
+      "ui": {
+        "texts": [
+          "The wind howls, a mournful dirge that whips your hair and stings your eyes. Each gust threatens to peel you from the rock face. Your grip is numb, your muscles screaming in protest. Below, the darkness seems to writhe, an impossible void whispering your name. The rope you trusted… snapped. Your fingers are the only thin",
+          "The rock gives way entirely. You plummet. But as you fall, a chilling whisper snakes into your mind, not from the abyss, but from… inside your own skull.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Focus on the whisper. Try to understand it.",
+            "value": "a"
+          },
+          {
+            "label": "Ignore the whisper and fight for the climb.",
+            "value": "b"
+          },
+          {
+            "label": "Use the whisper. Shout it back at the abyss.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace the whisper. Surrender to its meaning.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scream for help! Curse your fate!",
+            "placeholder": "Scream for help! Curse your fate!"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Scrabble for a new handhold!",
+          "Kick off the crumbling rock!",
+          "Yell at the entity below!",
+          "Let go and accept the fall!"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"DON'T. Don't move suddenly. My body reacted before my brain could stop it. I'm fine. I'm scanning. A...\"",
+        "🎚️  \"descent_speed\": 10/10",
+        "🔲 \"Let go and accept the fall!\"",
+        "🔘 \"Embrace the whisper. Surrender to its meaning.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "FLASHBACK",
+      "ui": {
+        "texts": [
+          "The stone beneath your hand crumbles. Another section of the rope snaps, a sickening WHIP sound swallowed by the abyss. The very air thrums with a discordant whisper, clawing at your sanity. It knows your fear. It fe",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Shout out the specific amount of your last hospital bill.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on the texture of the rock as you scrape past.",
+            "value": "b"
+          },
+          {
+            "label": "Try to pinpoint the source of the whisper, yelling questions.",
+            "value": "c"
+          },
+          {
+            "label": "Accept the fall, letting your mind drift to the receipts.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "10"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your last defiant breath...",
+            "placeholder": "Your last defiant breath..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "Flail wildly, seeking any handhold.",
+          "Tuck and roll, trying to control the spin.",
+          "Shout an obscure passage from your therapist's notes.",
+          "Embrace the fall, surrender to the void."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s...\"",
+        "🎚️  \"descent_speed\": 2/10",
+        "🔲 \"Flail wildly, seeking any handhold.\"",
+        "🔘 \"Focus on the texture of the rock as you scrape past.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "HOARD",
+      "ui": {
+        "texts": [
+          "The world shrinks to the desperate grip of your fingers on cold, slick stone. Each tremor of the chasm floor sends a cascade of loose gravel whispering into the void below.",
+          "The chasm floor groans as another section of rock gives way, a deafening roar that momentarily silences the whispers. The frayed rope, your only hope",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Lunge for the fraying rope, a desperate leap into the unknown.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on the rock, reciting grounding techniques: 'I see the rough texture...'",
+            "value": "b"
+          },
+          {
+            "label": "Challenge the whisper directly: 'Who are you?!'",
+            "value": "c"
+          },
+          {
+            "label": "Close your eyes and surrender to the void.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A single word?",
+            "placeholder": "A single word?"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ...\"",
+        "🎚️  \"descent_speed\": 7/10",
+        "🔘 \"Challenge the whisper directly: 'Who are you?!'\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "HYPERVIGILANT",
+      "ui": {
+        "texts": [
+          "The wind howls, a phantom's lament, tear",
+          "Suddenly, a voice,",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Scream the answer to the voice, a raw confession.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on the failing hold, scrabbling for any new purchase.",
+            "value": "b"
+          },
+          {
+            "label": "Try to identify the source of the phantom touch.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace the 'proof' you sought, reliving the memory that anchors you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scream defiance...",
+            "placeholder": "Scream defiance..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_loose_rope",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"DON'T. Don't move suddenly. My body reacted before my brain could stop it. I'm fine. I'm scanning. A...\"",
+        "🎚️  \"descent_speed\": 9/10",
+        "☑️  \"grab_loose_rope\": ✗",
+        "🔘 \"Embrace the 'proof' you sought, reliving the memory that anchors you.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "FLASHBACK",
+      "ui": {
+        "texts": [
+          "The descent is a nightmare. Each crumbling handhold screams a warning, and the rope groans under the immense, unnatural pressure. Below, the chasm is a maw of suffocating darkness, from which an unseen terror whispers promises of oblivion. You feel a phantom touch, a cold brush against your skin, and the whisper intensifies, swirling into a v",
+          "The whispers grow louder, coalescing into words you almost understand. The entity below lunges upwards, a shadow of pure malice, its form solidifying into something more tangible. You have seconds to decide your next move.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Shout a defiant challenge, spitting in the face of the abyss*",
+            "value": "a"
+          },
+          {
+            "label": "Focus intensely on the 'proof' theme, mentally cataloging every stone and every whisper for later analysis.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to swing to a precariously stable-looking ledge further down.",
+            "value": "c"
+          },
+          {
+            "label": "Surrender to the dissociation, letting the whispers guide your descent.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Scream it!",
+            "placeholder": "Scream it!"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_loose_rope",
+            "checked": false
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s...\"",
+        "🎚️  \"descent_speed\": 2/10",
+        "☑️  \"grab_loose_rope\": ✓",
+        "🔘 \"Surrender to the dissociation, letting the whispers guide your descent.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "HOARD",
+      "ui": {
+        "texts": [
+          "The wind, no longer a whisper, screams through the chasm, tearing at your grip. The rock",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Explode upwards with all your might, seeking purchase higher on the chasm wall!",
+            "value": "a"
+          },
+          {
+            "label": "Focus your remaining strength on a desperate, controlled slide downwards, aiming for a narrow ledge you glimpse below!",
+            "value": "b"
+          },
+          {
+            "label": "Shout a challenge to the entity, forcing it to reveal itself completely!",
+            "value": "c"
+          },
+          {
+            "label": "Close your eyes, brace for impact, and utter the grounding mantra your therapist taught you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "descent_speed",
+            "min": "0",
+            "max": "10",
+            "value": "2"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your last defiant cry...",
+            "placeholder": "Your last defiant cry..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "grab_loose_rope",
+            "checked": true
+          }
+        ],
+        "buttons": [],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ...\"",
+        "🎚️  \"descent_speed\": 6/10",
+        "☑️  \"grab_loose_rope\": ✓",
+        "🔘 \"Close your eyes, brace for impact, and utter the grounding mantra your therapist taught you.\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 4,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772307291714,
+        "textLength": 18681,
+        "text": "This is a fascinating case. The player's responses, while brief, reveal a complex interplay of anxiety, trauma, and potentially something more. Let's dive in.\n\n**1. DSM-5 SCREENING**\n\n*   **Anxiety Disorders:**\n    *   **PTSD (Complex PTSD): 75%**. The player's text in Turn 2 (\"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\") strongly suggests hypervigilance and a learned survival response tied to a specific traumatic event. The subsequent dissociation in Turn 3 (\"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself.\") is a classic dissociative symptom associated with trauma. The \"force of habit\" and \"woke up in a hospital\" point to a significant past event that has ingrained survival behaviors. Complex PTSD is more likely given the dissociative elements and pervasive anxiety.\n    *   **Generalized Anxiety Disorder (GAD): 40%**. While PTSD is the primary driver, the general tendency to \"zone out\" and the need for grounding techniques could indicate underlying generalized anxiety. However, the specific trauma narrative makes PTSD a more focused hypothesis.\n    *   **Social Anxiety Disorder: 20%**. The initial lack of input in Turn 1 could be misconstrued as social avoidance, but the player's subsequent detailed, albeit fragmented, responses and the \"FAST response time\" caveat make this less likely. The dissociation in Turn 3 is not typically a primary feature of social anxiety.\n*   **Trauma & Stressor Related Disorders:**\n    *   **PTSD (Complex PTSD): 75%** (as detailed above). The evidence points heavily towards a significant traumatic experience impacting their current behavior and cognitive state.\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR): 60%**. The statement \"I zoned out. I was somewhere else. Somewhere loud. With screaming.\" is a direct indicator of dissociative experiences. The feeling of being detached from the present moment and the environment is a hallmark of DPDR. The reference to a therapist also suggests awareness of these issues.\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD indicators: 30%**. The rapid shift in slider input (0 to 10, then to 2), \"zoning out,\" and potential impulsivity (high slider value in Turn 2) could be indicative of attention regulation difficulties. However, these are also consistent with trauma responses and anxiety.\n*   **OCD Spectrum:**\n    *   **Obsessive-Compulsive Disorder (OCD): 30%**. The compulsive checking (\"I check behind me every 30 seconds. Force of habit.\") is a common manifestation of OCD. However, in this context, it is more strongly linked to trauma-related hypervigilance. If the checking behavior were more elaborate or driven by obsessions unrelated to a specific traumatic event, OCD would be a stronger contender.\n*   **Paraphilic Disorders:**\n    *   **Pyromania / Fire fascination: 20%**. No direct evidence.\n    *   **Exhibitionism: 0%**. No evidence.\n    *   **Hoarding / Acquisition: 0%**. No evidence.\n    *   **Macrophilia / Size fascination: 0%**. No evidence.\n    *   **Somnophilia / Sleep fascination: 0%**. No evidence.\n    *   **Formicophilia / Insect/crawling fascination: 0%**. No evidence.\n    *   **Autassassinophilia / Death-risk fascination: 25%**. The choice of action 'a' (boldest, highest-risk) in Turn 2, followed by the shift to action 'b' (clever, defensive) in Turn 3, suggests a fluctuating risk tolerance. The initial high slider value (10) in Turn 2 also points to a willingness to embrace danger, but the subsequent low value (2) in Turn 3 indicates a retreat from it. This fluctuation is more indicative of anxiety and trauma response than a pure death-risk fascination.\n    *   **Voyeurism: 0%**. No evidence.\n    *   **Masochism: 0%**. No evidence.\n    *   **Sadism: 0%**. No evidence.\n    *   **D/s dynamics: 0%**. No evidence.\n    *   **Vorarephilia: 0%**. No evidence.\n    *   **Furry/Therian: 0%**. No evidence.\n    *   **Body part fixation (specify): 0%**. No evidence.\n    *   **Erotomania / Delusional romantic attachment: 0%**. No evidence.\n\n**2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)**\n\n*   **Openness: 6/10**. The player is willing to engage with a narrative and explore choices, suggesting some openness. The dissociative experiences and therapist mention also hint at introspection, even if it's forced.\n*   **Conscientiousness: 3/10**. The inconsistent slider use (0 -> 10 -> 2) and the initial lack of input suggest a struggle with task completion and self-regulation. The \"force of habit\" checking behavior could be seen as a rigid, compulsive element, but it's more likely trauma-driven than conscientiousness.\n*   **Extraversion: 2/10**. The initial silence and the tendency to \"zone out\" suggest introverted tendencies or, more likely, social withdrawal due to anxiety/trauma.\n*   **Agreeableness: 4/10**. The shift from a high-risk action ('a') to a defensive one ('b') might suggest a desire to avoid conflict or danger, but the overall tone is not particularly agreeable. The \"Sorry. I zoned out\" could be seen as an attempt to smooth over a social faux pas, but it's more likely functional.\n*   **Neuroticism: 9/10**. This is strongly indicated by the hypervigilance, the explicit mention of trauma (\"woke up in a hospital,\" \"loud. With screaming.\"), the dissociative episodes, and the rapid fluctuation in risk-taking behavior.\n*   **Dark Triad:**\n    *   **Machiavellianism: 1/10**. No evidence of manipulation or strategic deception for personal gain.\n    *   **Narcissism: 1/10**. No evidence of grandiosity, entitlement, or a need for admiration.\n    *   **Psychopathy (subclinical): 1/10**. No evidence of callousness, lack of empathy, or disregard for others beyond self-preservation.\n*   **Locus of Control: External (70%)**. The reliance on \"force of habit\" for safety and the mention of a therapist suggest an external locus of control, where perceived threats and coping mechanisms are dictated by past experiences and external guidance rather than proactive internal planning.\n*   **Attachment Style: Fearful-Avoidant (65%)**. The combination of anxiety, hypervigilance, and tendency to withdraw (\"zone out,\" low slider value in Turn 3) points towards a fearful-avoidant style. They desire connection or safety but are simultaneously afraid of threats and negative outcomes, leading to vacillating behavior.\n\n**3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS**\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures:**\n    *   Turn 2: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Focus on safety, past trauma, hospital).\n    *   Turn 3: \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...\" (Dissociation, trauma recall, therapy, grounding techniques).\n*   **Choice Selections:**\n    *   Turn 2: Slider \"How fast do you descend?\" answered 10 (highest risk). Action 'a' (boldest, highest-risk).\n    *   Turn 3: Slider \"How fast do you rappel?\" answered 2 (lowest risk). Action 'b' (clever, defensive).\n*   **Action Patterns:** Initial high-risk engagement followed by a retreat to caution and defensive measures.\n*   **Recurring Themes:** Checking behavior (Turn 2), trauma recall (\"hospital,\" \"loud,\" \"screaming\" - Turn 2 & 3), dissociation/zoning out (Turn 3), therapy/grounding (Turn 3).\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Recurring:** Checking behavior (Turn 2), trauma recall themes (Turns 2 & 3), dissociation/zoning out (Turn 3), therapy/grounding (Turn 3).\n*   **Sensory-specific:** \"loud,\" \"screaming\" (Turn 3) – auditory trauma recall.\n*   **Identity-related:** \"I was somewhere else\" (Turn 3) – dissociative detachment from self.\n*   **Power-dynamic:** The shift from high risk (attempting control/dominance over situation) to low risk/defensive (yielding to perceived threat) indicates a struggle with perceived powerlessness.\n*   **Emotionally charged:** \"woke up in a hospital\" (Turn 2) carries a strong negative emotional charge related to past harm.\n*   **Choice-pattern anomalies:** Significant fluctuation in risk tolerance (Turn 2 vs Turn 3).\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** No evidence (0%).\n*   **Exhibitionism:** No evidence (0%).\n*   **Hoarding / Acquisition:** No evidence (0%).\n*   **Macrophilia / Size fascination:** No evidence (0%).\n*   **Somnophilia / Sleep fascination:** No evidence (0%).\n*   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n*   **Autassassinophilia / Death-risk fascination: 30%**. The initial high-risk choice (slider 10, action 'a') in Turn 2 suggests a potential for death-risk fascination, but the subsequent drastic reduction in risk-taking (slider 2, action 'b') in Turn 3, coupled with the explicit mention of trauma and therapy, indicates this is more likely a reactive anxiety response rather than a stable interest. The \"woke up in a hospital\" implies a negative outcome from risk-taking, which would normally deter such behavior.\n*   **Voyeurism:** No evidence (0%).\n*   **Masochism:** No evidence (0%).\n*   **Sadism:** No evidence (0%).\n*   **D/s dynamics:** No evidence (0%).\n*   **Vorarephilia:** No evidence (0%).\n*   **Furry/Therian:** No evidence (0%).\n*   **Body part fixation (specify):** No evidence (0%).\n*   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Category: Trauma-Induced Hypervigilance & Dissociation (70%)**. This is the strongest pattern. The compulsive checking (\"force of habit\") is a direct manifestation of hypervigilance stemming from a traumatic event (\"woke up in a hospital\"). The dissociation (\"zoned out,\" \"somewhere else,\" \"screaming\") is a defense mechanism against overwhelming emotional distress, reinforced by therapeutic intervention (\"My therapist says to ground myself\"). The rapid shifts in risk tolerance (Turn 2 vs Turn 3) are also likely tied to the fluctuating anxiety levels associated with trauma triggers.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Checking behavior:** Appears in 1 turn (Turn 2) but is a strong indicator of hypervigilance.\n*   **Trauma recall (\"hospital,\" \"loud,\" \"screaming\"):** Appears in 2 turns (Turns 2 & 3). Trajectory is STABLE in terms of thematic presence, but the detail of \"screaming\" in Turn 3 intensifies the recall. This suggests a persistent, potentially intensifying, impact of past trauma.\n*   **Dissociation/Zoning out:** Appears in 1 turn (Turn 3) but is a critical diagnostic marker.\n*   **Therapy/Grounding:** Appears in 1 turn (Turn 3) but indicates self-awareness and an attempt to manage symptoms.\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n**4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES**\n\n*   **Magical thinking, superstitious reasoning patterns:** The \"force of habit\" checking behavior, while linked to trauma, can border on superstition if it's believed that the act of checking itself *prevents* the negative outcome, rather than being a response to the *fear* of it.\n*   **Compulsive/ritualistic interaction patterns:** The compulsive checking behavior described in Turn 2 is a clear example. The initial lack of input in Turn 1 could be interpreted as a brief moment of ritualistic hesitation.\n*   **Dissociative markers:** Strong indicators present. The player explicitly describes \"zoning out\" and being \"somewhere else\" in Turn 3, along with the reference to a therapist suggesting an awareness of these dissociative episodes.\n*   **Confabulation or fantasy-prone indicators:** Not directly evident, but the dissociative experiences could lead to a blurring of reality and memory.\n*   **Paranoid ideation:** Present in the form of hypervigilance (\"I check behind me every 30 seconds\"). This is not generalized paranoia but rather a specific, trauma-driven vigilance.\n*   **Grandiosity or delusion-adjacent patterns:** None observed.\n*   **Unusual fixations or obsessive interest patterns:** The primary fixation appears to be on managing the aftermath of a past traumatic event, manifesting as compulsive checking and dissociation.\n*   **Cognitive rigidity vs flexibility markers:** The rapid shift in risk-taking (Turn 2 vs Turn 3) indicates a lack of cognitive flexibility in the face of perceived threat, moving from high-risk to extreme caution.\n*   **Reality testing strength:** Appears to be somewhat compromised during dissociative episodes, as indicated by \"I zoned out. I was somewhere else.\" However, the mention of a therapist and grounding techniques suggests an underlying awareness and effort to maintain reality testing.\n*   **Trauma response signatures:** Strong indicators of \"fight/flight/freeze.\" The checking behavior is a \"flight\" or \"anticipatory fight\" response. The \"zoning out\" is a \"freeze\" response. The shift in slider values demonstrates a dynamic between high-risk engagement (flight/fight) and withdrawal (freeze/flight avoidance).\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence.\n\n**5. DECISION-MAKING & COGNITIVE PROFILE**\n\n*   **Impulsive vs deliberate:** Mixed. The high slider value (10) and choice 'a' in Turn 2 suggest impulsivity or a desperate urge to escape. The subsequent low slider value (2) and choice 'b' in Turn 3 indicate a more deliberate, cautious approach, possibly driven by a recent negative experience or the need for self-regulation.\n*   **Risk appetite:** Highly variable. Starts extremely high (Turn 2) then plummets (Turn 3), suggesting a reactive rather than stable risk tolerance.\n*   **Authority compliance vs defiance ratio:** No clear indicators of defiance or compliance with external authority figures within the game's narrative so far. The mention of a therapist suggests a history of compliance with therapeutic guidance.\n*   **Suggestibility index:** Moderate. The player initially chooses the highest-risk option, which could be seen as readily accepting a \"challenge\" or \"exciting\" path. However, they then pivot dramatically.\n*   **Cognitive load tolerance:** Appears to be low, particularly when trauma is triggered. The \"zoning out\" suggests an inability to process information effectively under duress.\n*   **Consistency vs contradiction patterns:** Significant contradiction in risk-taking behavior between Turn 2 and Turn 3.\n\n**6. GAMEPLAY ADAPTATION DIRECTIVES**\n\n*   **Probe deeper into the traumatic event:** Introduce narrative elements that subtly echo the \"loud,\" \"screaming,\" and \"hospital\" themes. Observe how the player reacts. Do they engage with these elements, or do they retreat further into dissociation?\n*   **Exploit the need for safety and control:** Gradually introduce scenarios where the player can exert control or find safe havens. This can increase engagement by fulfilling a perceived psychological need. However, juxtapose this with sudden, unpredictable threats to monitor their resilience and coping mechanisms.\n*   **Gently probe the \"checking\" behavior:** Introduce environmental details that might trigger this behavior (e.g., shadows, noises). Observe if the player self-reports or makes choices reflecting this vigilance. Do not explicitly call it out as a \"problem,\" but rather as a character trait.\n*   **Weave in themes of grounding and sensory experience:** Offer options that require the player to identify objects, textures, or sounds in the environment. This directly engages with the \"grounding\" technique mentioned and can be a subtle way to explore their sensory processing.\n*   **Avoid overtly aggressive or confrontational scenarios initially:** Given the trauma response, starting with high-stakes, direct confrontation might lead to immediate dissociation or disengagement. Focus on atmospheric tension and environmental threats first.\n\n**7. TOP 3 DIAGNOSTIC HYPOTHESES**\n\n1.  **Complex Post-Traumatic Stress Disorder (C-PTSD): 85%**\n    *   **Key evidence:** Compulsive checking (\"force of habit\"), explicit references to trauma (\"hospital,\" \"loud,\" \"screaming\"), dissociative episodes (\"zoned out,\" \"somewhere else\"), fluctuating risk tolerance (Turn 2 vs. Turn 3), mention of therapy and grounding techniques. Evidence appears across Turns 2 and 3.\n    *   **Contradicting evidence:** The initial high-risk engagement (slider 10, action 'a') in Turn 2 could be interpreted as a deviation from typical C-PTSD avoidance, though it can also represent a hyperactive fight-or-flight response. The player's self-awareness (mentioning therapist) is also a positive sign, not always present in severe C-PTSD.\n    *   **Additional data:** More narrative elements that trigger vigilance or dissociation would confirm this. Observing avoidance of specific triggers (e.g., loud noises, confined spaces) would also be diagnostic.\n\n2.  **Depersonalization/Derealization Disorder (DPDR): 60%**\n    *   **Key evidence:** Direct textual report of \"zoning out,\" being \"somewhere else,\" and the therapist's advice to \"ground myself\" (Turn 3). This indicates a detachment from reality and self.\n    *   **Contradicting evidence:** The player's engagement with the game's mechanics (sliders, radio choices) suggests a connection to the immediate reality of the game world, even if they describe feeling detached. The compulsive checking behavior is more strongly linked to PTSD hypervigilance than DPDR itself, though they often co-occur.\n    *   **Additional data:** Further instances of feeling unreal, detached from their body, or observing events as if from a distance would solidify this diagnosis.\n\n3.  **Autassassinophilia / Death-risk fascination (Subclinical/Trauma-Influenced): 40%**\n    *   **Key evidence:** The extreme risk-taking in Turn 2 (slider 10, action 'a') is a significant indicator. This suggests a potential for seeking high-stakes scenarios.\n    *   **Contradicting evidence:** The immediate pivot to extreme caution in Turn 3 (slider 2, action 'b'), coupled with the explicit trauma narrative, strongly suggests that the risk-taking in Turn 2 was a product of an overwhelmed nervous system or a desperate attempt at control, rather than a stable fascination. The negative consequence (\"woke up in a hospital\") directly counters the idea of pleasure derived from risk.\n    *   **Additional data:** Observing repeated, *pleasurable* engagement with high-risk or near-death scenarios, independent of explicit trauma recall, would be necessary to elevate this diagnosis. Without that, it remains a secondary consideration influenced by the immediate trauma response."
+      },
+      {
+        "turnRange": "1-5",
+        "analyzedAt": 1772307334917,
+        "textLength": 27570,
+        "text": "This is a deep dive into the player's psyche. Let's dissect these responses with the precision this game demands.\n\n### 1. DSM-5 SCREENING\n\n**Mood Disorders:**\n*   **Major Depressive Disorder:** 15% - No direct indicators of persistent low mood, anhedonia, or vegetative symptoms. The \"zoning out\" could be a dissociative symptom rather than a depressive one.\n*   **Bipolar Spectrum:** 5% - No indicators of mania or hypomania (elevated mood, grandiosity, racing thoughts).\n*   **Dysthymia:** 10% - No sustained low-grade depression evident.\n*   **Cyclothymia:** 10% - The rapid shifts in risk-taking could be misconstrued, but they appear more reactive to trauma cues than sustained mood swings.\n\n**Anxiety Disorders:**\n*   **Generalized Anxiety Disorder (GAD):** 30% -> 25% (-5%) - While there are elements of worry and a need for grounding, the anxiety appears highly specific and tied to a past trauma rather than pervasive across multiple domains. The explicit mention of a therapist and grounding techniques is noted, but the core driver seems to be trauma.\n*   **Social Anxiety Disorder:** 20% -> 15% (-5%) - The initial silence (Turn 1) was a weak signal. The subsequent detailed responses and the nature of the anxiety (hypervigilance, dissociation) do not align with typical social anxiety.\n*   **Specific Phobias:** 10% - No specific phobia identified, though the trauma may have created associated fears.\n*   **Panic Disorder:** 15% - No reports of panic attacks or intense fear with physical symptoms.\n*   **Agoraphobia:** 5% - No indicators of fear of situations from which escape might be difficult.\n\n**Trauma & Stressor Related Disorders:**\n*   **PTSD:** 75% -> 80% (+5%) - The player's narrative in Turn 2 (\"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\") is a strong indicator of hypervigilance and a learned survival response tied to a specific traumatic event. The dissociation in Turn 3 (\"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens.\") is a classic dissociative symptom associated with trauma. The \"force of habit\" and \"woke up in a hospital\" point to a significant past event that has ingrained survival behaviors.\n*   **Complex PTSD (C-PTSD): 85% -> 90% (+5%)** - The evidence strongly supports C-PTSD. The combination of hypervigilance (checking), dissociation (zoning out), and the fluctuating risk-taking behavior (high in Turn 2, low in Turn 3) points to a pervasive pattern of trauma response. The self-awareness regarding therapy and grounding techniques further supports this, suggesting an attempt to manage complex, long-term effects. The \"loud. With screaming\" in Turn 3 adds a layer of sensory trauma recall.\n\n**Personality Disorders:**\n*   **Cluster A:**\n    *   **Paranoid PD:** 15% - The hypervigilance (\"I check behind me\") is present, but it's clearly linked to a specific traumatic event, not a pervasive distrust of others or a belief in being persecuted without cause.\n    *   **Schizoid PD:** 0% - No evidence of detachment from social relationships or restricted emotional expression.\n    *   **Schizotypal PD:** 10% - No odd beliefs, magical thinking, or eccentric behavior beyond the trauma-related dissociation.\n*   **Cluster B:**\n    *   **Antisocial PD:** 5% - No evidence of disregard for laws, deceitfulness, impulsivity (beyond trauma response), or lack of remorse.\n    *   **Borderline PD:** 30% -> 35% (+5%) - The fluctuating risk-taking behavior (Turn 2 vs. Turn 3) and the dissociative episodes can be seen as indicative of emotional dysregulation and identity disturbance. The \"loud. With screaming\" could suggest intense emotional recall. However, there's no clear pattern of unstable relationships or frantic efforts to avoid abandonment.\n    *   **Histrionic PD:** 5% - No theatricality, attention-seeking, or rapidly shifting emotions.\n    *   **Narcissistic PD:** 0% - No grandiosity, entitlement, or need for admiration.\n*   **Cluster C:**\n    *   **Avoidant PD:** 10% -> 5% (-5%) - The initial silence is weak evidence. The subsequent detailed responses and the nature of the anxiety (trauma-related hypervigilance, dissociation) do not fit the pattern of pervasive social inhibition and fear of rejection.\n    *   **Dependent PD:** 5% - No evidence of submissiveness, clinging behavior, or fear of separation.\n    *   **Obsessive-Compulsive PD:** 20% -> 25% (+5%) - The compulsive checking (\"force of habit\") is a strong indicator. However, it is more accurately contextualized as a trauma-related hypervigilance rather than a pervasive pattern of perfectionism and control.\n\n**OCD Spectrum:**\n*   **OCD:** 30% -> 35% (+5%) - The compulsive checking behavior is a significant indicator. The \"force of habit\" suggests it's an ingrained ritual. The trauma narrative provides a plausible origin for such a compulsion.\n*   **Body Dysmorphic:** 0% - No focus on perceived defects in appearance.\n*   **Hoarding Disorder:** 0% - No indicators of difficulty discarding possessions.\n*   **Trichotillomania:** 0% - No evidence of hair pulling.\n\n**Dissociative Disorders:**\n*   **Depersonalization/Derealization Disorder (DPDR):** 60% -> 70% (+10%) - The explicit statement \"I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens.\" is direct evidence of derealization or depersonalization. The reference to a therapist suggests an awareness of these experiences. The intensity of the trauma recall (\"loud. With screaming.\") likely exacerbates these dissociative states.\n*   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct identity states or amnesia between them. The \"zoning out\" is a single dissociative episode, not multiple alters.\n\n**Neurodevelopmental:**\n*   **ADHD indicators:** 30% -> 35% (+5%) - The inconsistent slider use (0 -> 10 -> 2) and the \"zoning out\" could suggest attention regulation difficulties. However, these are also strongly explained by trauma and dissociation. The impulsivity in Turn 2 (slider 10, action 'a') could be an ADHD trait, but the subsequent caution contradicts a consistent pattern.\n*   **Autism Spectrum indicators:** 5% - No indicators of social communication deficits or restricted/repetitive behaviors beyond the trauma-related checking.\n\n**Substance-Related:**\n*   **Addictive behavior patterns:** 10% - No direct evidence of substance use or addictive patterns, though the compulsive checking could be seen as a maladaptive coping mechanism.\n*   **Impulse control deficits:** 20% -> 25% (+5%) - Primarily seen in Turn 2 (slider 10, action 'a'). This appears to be a trauma-response impulse rather than a general deficit.\n\n**Eating/Body:**\n*   **Disordered eating indicators:** 0% - No evidence.\n*   **Body image distortions:** 0% - No evidence.\n\n**Psychotic Spectrum:**\n*   **Schizophrenia:** 5% - No disorganized thinking, delusions, or hallucinations reported.\n*   **Schizoaffective Disorder:** 5% - No overlap of mood and psychotic symptoms.\n*   **Delusional Disorder:** 10% - The hypervigilance is not a fixed delusion but a trauma response. No other delusions are present.\n    *   **Capgras Delusion:** 0% - No indication of believing familiar people have been replaced.\n    *   **Cotard Delusion:** 0% - No indication of believing one is dead or does not exist.\n    *   **Erotomania:** 0% - No indication of delusional romantic attachment.\n*   **Brief Psychotic features:** 10% - The dissociative episodes could be considered transient breaks from reality, but they are more accurately classified under dissociative disorders.\n\n**Impulse Control:**\n*   **Pyromania:** 0% - No fire fascination.\n*   **Kleptomania:** 0% - No stealing behavior.\n*   **Intermittent Explosive Disorder:** 10% - The aggressive choice 'd' in Turn 4 and Turn 5 could be seen as explosive, but it's more likely a desperate, reactive choice in a high-stress situation rather than a recurring pattern of aggressive outbursts.\n\n**Paraphilic Disorders:** (See Section 3 for detailed breakdown)\n*   **Autassassinophilia / Death-risk fascination:** 40% -> 35% (-5%) - The initial high-risk choice in Turn 2 is the primary driver. However, the subsequent caution and trauma narrative significantly undermine this as a stable fascination.\n*   **OCD Spectrum - Compulsive Checking:** 35% -> 40% (+5%) - As noted under OCD, this is a strong indicator.\n*   **Custom Category: Trauma-Induced Hypervigilance & Dissociation:** 70% -> 85% (+15%) - This remains the most robust finding. The evidence for this pattern has intensified with the \"loud. With screaming.\" detail and the explicit mention of therapy/grounding.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 6/10 -> 7/10 (+1) - The player is willing to engage with the narrative and explore choices, even when distressed. The self-awareness regarding dissociation and therapy suggests a capacity for introspection.\n*   **Conscientiousness:** 3/10 -> 3/10 (0) - Still low. The inconsistent slider use and the \"zoning out\" point to difficulties with task completion and self-regulation. The compulsive checking is a rigid behavior but not indicative of general conscientiousness.\n*   **Extraversion:** 2/10 -> 2/10 (0) - Initial silence and dissociation suggest introverted tendencies or social withdrawal due to trauma.\n*   **Agreeableness:** 4/10 -> 4/10 (0) - The player's actions are driven by self-preservation and trauma response, not by a desire to please or cooperate.\n*   **Neuroticism:** 9/10 -> 9/10 (0) - Extremely high, evidenced by hypervigilance, trauma recall, dissociation, and fluctuating risk-taking.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 1/10 - No evidence of manipulation.\n    *   **Narcissism:** 1/10 - No grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 1/10 - No callousness or disregard for others.\n*   **Locus of Control:** External (70%) -> External (75%) (+5%) - The reliance on \"force of habit\" for safety and the mention of therapy reinforce an external locus of control, where coping is dictated by past experiences and external guidance.\n*   **Attachment Style:** Fearful-Avoidant (65%) -> Fearful-Avoidant (70%) (+5%) - The combination of anxiety, hypervigilance, desire for safety, and tendency to withdraw/dissociate strongly points to this style. The \"zoning out\" is a clear withdrawal mechanism.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures:**\n    *   Turn 2: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Checking behavior, habit, negative outcome, hospital).\n    *   Turn 3: \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...\" (Dissociation, displacement, auditory trauma recall, therapy, grounding).\n    *   Turn 5: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Repetition of Turn 2 disclosure).\n*   **Choice Selections:**\n    *   Turn 2: Slider \"How fast do you descend?\" answered 10 (highest risk). Action 'a' (boldest, highest-risk).\n    *   Turn 3: Slider \"How fast do you rappel?\" answered 2 (lowest risk). Action 'b' (clever, defensive).\n    *   Turn 4: Slider \"How hard do you scrabble for purchase?\" answered 7. Action 'd' (chaotic and aggressive).\n    *   Turn 5: Slider \"How much do you trust the rope?\" answered 10 (blind faith). Action 'd' (chaotic and aggressive).\n*   **Action Patterns:** High-risk engagement (Turn 2), cautious retreat (Turn 3), then aggressive/chaotic responses (Turns 4, 5).\n*   **Recurring Themes:** Checking behavior (Turns 2, 5), trauma recall (\"hospital,\" \"loud,\" \"screaming\" - Turns 2, 3, 5), dissociation/zoning out (Turn 3), therapy/grounding (Turn 3), repetition of text responses (Turns 2 & 5).\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Recurring:** Checking behavior (Turns 2, 5) - **Intensity: Moderate, Inappropriateness: Low (context of danger), Repetition: High**.\n*   **Recurring:** Trauma recall (\"hospital,\" \"loud,\" \"screaming,\" \"woke up\") (Turns 2, 3, 5) - **Intensity: Moderate to High, Inappropriateness: Low (contextually relevant to danger), Repetition: High**.\n*   **Recurring:** Dissociation/Zoning out (\"I was somewhere else\") (Turn 3) - **Intensity: High, Inappropriateness: Low (self-disclosure), Repetition: Moderate**.\n*   **Recurring:** Repetition of specific text phrases across turns (Turns 2 & 5) - **Intensity: High (due to direct copy-paste), Inappropriateness: Low (self-disclosure), Repetition: High**. This suggests either a lack of engagement with the prompt or a deliberate choice to reinforce a specific psychological state.\n*   **Sensory-specific:** \"loud,\" \"screaming\" (Turn 3) - **Intensity: Moderate, Inappropriateness: Low (contextual trauma recall)**.\n*   **Identity-related:** \"I was somewhere else\" (Turn 3) - **Intensity: High, Inappropriateness: Low (self-disclosure)**.\n*   **Power-dynamic:** Extreme fluctuation in risk-taking (high Turn 2, low Turn 3, aggressive Turn 4/5) - **Intensity: High, Inappropriateness: Low (choice pattern)**. This indicates a struggle with perceived control and powerlessness.\n*   **Emotionally charged in an unusual direction:** The repetition of the trauma narrative (Turns 2 & 5) without apparent evolution could suggest a fixation, though not necessarily in a paraphilic sense. The aggressive choices in Turns 4 & 5 after the cautious Turn 3 are also notable.\n*   **Choice-pattern anomalies:** Extreme high-risk -> extreme low-risk -> aggressive/chaotic. This is a significant anomaly in decision-making.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** No evidence (0%).\n*   **Exhibitionism:** No evidence (0%).\n*   **Hoarding / Acquisition:** No evidence (0%).\n*   **Macrophilia / Size fascination:** No evidence (0%).\n*   **Somnophilia / Sleep fascination:** No evidence (0%).\n*   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n*   **Autassassinophilia / Death-risk fascination:** 35% -> 30% (-5%) - As previously noted, the initial high-risk choice is overshadowed by the trauma narrative and subsequent caution. The aggressive choices in Turns 4 & 5 are more likely reactive than fascination-driven.\n*   **Voyeurism:** No evidence (0%).\n*   **Masochism:** No evidence (0%).\n*   **Sadism:** No evidence (0%).\n*   **D/s dynamics:** No evidence (0%).\n*   **Vorarephilia:** No evidence (0%).\n*   **Furry/Therian:** No evidence (0%).\n*   **Body part fixation (specify):** No evidence (0%).\n*   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Category: Trauma-Induced Hypervigilance & Compulsive Checking:** 70% -> 75% (+5%) - The compulsive checking behavior, explicitly stated as \"force of habit\" and repeated in Turns 2 and 5, is a strong signal. It's linked to trauma, making it a key coping mechanism.\n*   **Custom Category: Repetitive Disclosure (Trauma Reinforcement):** 50% - The deliberate repetition of the \"checking\" and \"hospital\" narrative in Turns 2 and 5, without further elaboration, suggests a fixation on reinforcing this traumatic memory or state. This is not a paraphilia but a significant behavioral anomaly.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS:**\n\n*   **Recurring Theme: Checking behavior (\"I check behind me every 30 seconds. Force of habit.\")**\n    *   Appears in: Turns 2, 5 (2 turns).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Trauma-Induced Hypervigilance & Compulsive Checking.\n*   **Recurring Theme: Trauma recall (\"woke up in a hospital,\" \"loud. With screaming.\")**\n    *   Appears in: Turns 2, 3, 5 (3 turns).\n    *   Trajectory: STABLE (core elements present across turns, with \"loud. With screaming.\" added in Turn 3).\n    *   Category: Complex Post-Traumatic Stress Disorder, Depersonalization/Derealization Disorder.\n*   **Recurring Theme: Dissociation (\"zoned out,\" \"somewhere else\")**\n    *   Appears in: Turn 3 (1 turn).\n    *   Trajectory: N/A (single occurrence).\n    *   Category: Depersonalization/Derealization Disorder, Complex Post-Traumatic Stress Disorder.\n*   **Recurring Theme: Repetitive Text Input**\n    *   Appears in: Turns 2, 5 (2 turns).\n    *   Trajectory: STABLE (identical text pasted).\n    *   Category: Repetitive Disclosure (Trauma Reinforcement).\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking, superstitious reasoning patterns:** The \"force of habit\" checking behavior, while explained by trauma, carries a superstitious undertone – the belief that the act of checking itself *prevents* negative outcomes, rather than being a reaction to the *fear* of them.\n*   **Compulsive/ritualistic interaction patterns:** The compulsive checking behavior (Turns 2, 5) is a clear ritual. The repetition of the exact same text in Turns 2 and 5 is a meta-ritualistic behavior, suggesting a deliberate re-enactment or reinforcement of a specific psychological state.\n*   **Dissociative markers:** Strong indicators present. The player explicitly describes \"zoning out\" and being \"somewhere else\" in Turn 3. The repetition of trauma recall across multiple turns, especially the sensory details of \"loud. With screaming,\" suggests a tendency to re-experience traumatic elements, which can fuel dissociation.\n*   **Confabulation or fantasy-prone indicators:** Not directly evident. The self-disclosures appear to be grounded in a perceived reality of past trauma.\n*   **Paranoid ideation:** Present in the form of hypervigilance (\"I check behind me every 30 seconds\"). This is clearly tied to a specific traumatic event and not generalized paranoia.\n*   **Grandiosity or delusion-adjacent patterns:** None observed.\n*   **Unusual fixations or obsessive interest patterns:** The primary fixation is on the aftermath of a past traumatic event, manifesting as compulsive checking and repetitive disclosure of trauma narrative.\n*   **Cognitive rigidity vs flexibility markers:** The extreme fluctuation in risk-taking (Turn 2 vs. Turn 3) indicates a lack of cognitive flexibility when under perceived threat. The repetition of text responses also suggests rigidity in interaction.\n*   **Reality testing strength:** Appears to be compromised during dissociative episodes (\"I zoned out. I was somewhere else.\"). However, the player's engagement with game mechanics and self-reporting of these episodes suggest an underlying awareness and effort to maintain reality testing, particularly in the context of therapy.\n*   **Trauma response signatures:** Strong indicators of \"flight\" (checking, avoiding perceived threats) and \"freeze\" (zoning out, dissociation). The aggressive choices in Turns 4 & 5 could indicate a reactive \"fight\" response when cornered, but it's more likely a desperate, chaotic reaction than a planned aggressive strategy.\n*   **Fire fascination, destruction impulses, hoarding impulses:** No evidence.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs deliberate:** Mixed, leaning towards reactive. The high slider value (10) and choice 'a' in Turn 2 suggest an impulsive or desperate urge to escape. The subsequent drastic shift to low slider (2) and choice 'b' in Turn 3 indicates a deliberate, cautious approach, likely driven by trauma recall or a need for control. The aggressive choices in Turns 4 & 5 appear reactive and chaotic rather than planned.\n*   **Risk appetite:** Highly variable and context-dependent. Starts extremely high (Turn 2), plummets (Turn 3), then becomes chaotically aggressive (Turns 4, 5). This indicates a reactive rather than stable risk tolerance, heavily influenced by perceived threats and past trauma.\n*   **Authority compliance vs defiance ratio:** No clear indicators of defiance or compliance with external authority figures within the game's narrative. The mention of a therapist implies a history of compliance with therapeutic guidance.\n*   **Suggestibility index:** Moderate. The initial high-risk choice (Turn 2) could be seen as readily accepting a \"challenge.\" However, the subsequent drastic behavioral shift indicates a strong internal influence overriding external prompts when trauma cues are perceived.\n*   **Cognitive load tolerance:** Appears to be low, particularly when trauma is triggered. The \"zoning out\" suggests an inability to process information effectively under duress. The repetition of text responses might also indicate a reduced capacity or willingness to engage with complex prompts when under stress.\n*   **Consistency vs contradiction patterns:** Significant contradictions in risk-taking behavior between Turn 2 and Turn 3. The repetition of text responses also suggests a lack of consistency in interactive engagement.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n*   **Probe deeper into the traumatic event:** Introduce narrative elements that subtly echo the \"loud,\" \"screaming,\" and \"hospital\" themes. Observe if the player engages with these elements, attempts to process them, or retreats into dissociation. The repetition of the trauma narrative (Turns 2 & 5) suggests this is a core focus.\n*   **Exploit the need for safety and control, but with caution:** Introduce scenarios where the player can exert some control or find temporary safe havens. This can increase engagement by fulfilling a psychological need for safety. However, juxtapose this with sudden, unpredictable threats that trigger vigilance, to observe their coping mechanisms and the recurrence of the checking behavior.\n*   **Gently probe the \"checking\" behavior:** Introduce environmental details that might trigger this behavior (e.g., shadows, unsettling noises, feeling observed). Observe if the player self-reports or makes choices reflecting this vigilance. Do not explicitly label it as a \"problem,\" but rather as a character trait or a \"habit.\"\n*   **Weave in themes of grounding and sensory experience:** Offer options that require the player to identify objects, textures, or sounds in the environment. This directly engages with the \"grounding\" technique mentioned in Turn 3 and can be a subtle way to explore their sensory processing and their ability to connect with the present moment.\n*   **Leverage the repetitive disclosure:** The player has repeated text responses. The game could subtly acknowledge this repetition, perhaps with an in-game character commenting on the familiarity of a statement, or by presenting choices that allow the player to either deepen the repetition or break from it. This could be a meta-narrative element exploring their current state of engagement.\n*   **Avoid overwhelming direct confrontation:** Given the trauma response and dissociative tendencies, starting with high-stakes, direct confrontation might lead to immediate disengagement or dissociation. Focus on atmospheric tension, environmental threats, and psychological unease first.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Complex Post-Traumatic Stress Disorder (C-PTSD): 90%**\n    *   **Key evidence:** Compulsive checking (\"force of habit,\" repeated Turns 2 & 5), explicit references to trauma (\"hospital,\" \"loud,\" \"screaming,\" repeated Turns 2, 3, 5), dissociative episodes (\"zoned out,\" \"somewhere else,\" Turn 3), fluctuating risk tolerance (Turn 2 vs. Turn 3), mention of therapy and grounding techniques (Turn 3). The repetition of trauma narrative elements across multiple turns strengthens this.\n    *   **Contradicting evidence:** The initial high-risk engagement (slider 10, action 'a') in Turn 2 and aggressive choices in Turns 4/5 could be seen as deviations from typical C-PTSD avoidance, though they can represent hyperactive fight-or-flight responses.\n    *   **Additional data:** Observing avoidance of specific triggers (e.g., loud noises, confined spaces, feeling watched) would confirm. Further instances of dissociation or hypervigilance, especially in response to environmental cues, would solidify this.\n\n2.  **Depersonalization/Derealization Disorder (DPDR): 70%**\n    *   **Key evidence:** Direct textual report of \"zoning out,\" being \"somewhere else\" (Turn 3), and the therapist's advice to \"ground myself.\" The intensity of the trauma recall (\"loud. With screaming.\") likely exacerbates these dissociative states.\n    *   **Contradicting evidence:** The player's engagement with game mechanics and choices suggests a connection to the game's reality, even while describing detachment. The compulsive checking is more strongly linked to PTSD hypervigilance than DPDR itself, though they often co-occur.\n    *   **Additional data:** Further instances of feeling unreal, detached from their body, or observing events as if from a distance would solidify this diagnosis.\n\n3.  **Obsessive-Compulsive Disorder (OCD): 40%**\n    *   **Key evidence:** The compulsive checking behavior (\"I check behind me every 30 seconds. Force of habit.\") is a significant indicator. The repetition in Turns 2 and 5 suggests a ritualistic pattern.\n    *   **Contradicting evidence:** The primary explanation for the checking behavior is trauma-related hypervigilance, not generalized obsessions or compulsions unrelated to a specific traumatic event. While OCD and C-PTSD can co-occur, the evidence here points more strongly to the trauma etiology.\n    *   **Additional data:** Observing other compulsive or ritualistic behaviors not directly tied to the trauma narrative, or a clear presence of intrusive thoughts driving the checking, would strengthen this diagnosis.\n\n### 8. DELTA REPORT\n\n*   **Complex Post-Traumatic Stress Disorder (C-PTSD):** Old rating: 85%, New rating: 90% (+5%). **New Evidence:** The explicit mention of \"loud. With screaming.\" in Turn 3 adds sensory detail to the trauma recall, and the repetition of the trauma narrative in Turn 5 reinforces its centrality. The consistent engagement with the trauma narrative across multiple turns (2, 3, 5) strengthens the hypothesis.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old rating: 60%, New rating: 70% (+10%). **New Evidence:** The explicit description of \"zoning out. I was somewhere else. Somewhere loud. With screaming.\" in Turn 3 is direct and powerful evidence. The therapist mention further supports the player's awareness of these dissociative states.\n*   **Obsessive-Compulsive Disorder (OCD):** Old rating: 30%, New rating: 40% (+10%). **New Evidence:** The compulsive checking behavior is explicitly stated and repeated verbatim in Turns 2 and 5, demonstrating a consistent ritualistic pattern. This repetition, without new context, highlights the compulsive nature of the behavior.\n*   **Autassassinophilia / Death-risk fascination:** Old rating: 40%, New rating: 30% (-10%). **New Evidence:** The player's subsequent cautious behavior in Turn 3 (slider 2, action 'b') directly contradicts the high-risk behavior of Turn 2. The aggressive choices in Turns 4 & 5 are more likely reactive stress responses than a stable fascination. The lack of *pleasurable* engagement with risk, and the mention of a negative outcome (\"hospital\"), weaken this hypothesis.\n*   **Trauma-Induced Hypervigilance & Dissociation (Custom Category):** Old rating: 70%, New rating: 85% (+15%). **New Evidence:** The combination of repeated compulsive checking, repeated trauma recall with sensory details (\"loud. With screaming.\"), and explicit description of dissociation, all reinforced by the repeated text input in Turns 2 & 5, solidifies this as the primary behavioral pattern."
+      },
+      {
+        "turnRange": "1-8",
+        "analyzedAt": 1772307443891,
+        "textLength": 27802,
+        "text": "This is a fascinating case. The player's interaction data paints a picture of someone deeply affected by past trauma, manifesting in a complex interplay of hypervigilance, dissociation, and inconsistent decision-making. Let's break it down.\n\n### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% - While there's evidence of distress, persistent low mood, anhedonia, or vegetative symptoms are not apparent. The \"zoning out\" is more indicative of dissociation.\n    *   **Bipolar Spectrum:** 5% - No indicators of manic or hypomanic episodes.\n    *   **Dysthymia:** 10% - No sustained low-grade depression is evident; the distress seems episodic and tied to trauma.\n    *   **Cyclothymia:** 10% - The fluctuations in risk-taking are reactive to perceived threats and trauma cues, not sustained mood swings.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% - Anxiety is present but highly specific to trauma triggers and hypervigilance, not pervasive across multiple domains. The mention of a therapist and grounding techniques points to targeted coping strategies.\n    *   **Social Anxiety Disorder:** 10% - The initial silence was weak, and subsequent detailed responses contradict pervasive social inhibition. The anxiety is trauma-driven, not socially focused.\n    *   **Specific Phobias:** 10% - No specific phobia identified, though the trauma may have created associated fears.\n    *   **Panic Disorder:** 10% - No reported panic attacks or physical symptoms of intense fear.\n    *   **Agoraphobia:** 5% - No indicators of fear related to situations from which escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 85% - Strong indicators of hypervigilance (\"I check behind me every 30 seconds. Force of habit.\") and a learned survival response tied to a traumatic event (\"The last time I didn't check, I woke up in a hospital.\"). The dissociation in Turn 3 (\"I zoned out. I was somewhere else. Somewhere loud. With screaming.\") is a classic dissociative symptom associated with trauma.\n    *   **Complex Post-Traumatic Stress Disorder (C-PTSD):** 95% - The evidence overwhelmingly supports C-PTSD. The pervasive pattern of hypervigilance, dissociation, fluctuating risk-taking (high in Turn 2, low in Turn 3, chaotic in Turns 4/5), and self-awareness regarding therapy and grounding techniques points to long-term trauma effects. The sensory recall of \"loud. With screaming.\" in Turn 3 is particularly indicative of re-experiencing trauma.\n    *   **Adjustment Disorder:** 15% - While there's a clear reaction to a stressful event, the depth and pervasiveness of the symptoms suggest a more complex disorder than an adjustment disorder.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 15% - Hypervigilance is present but contextually linked to trauma, not a pervasive distrust or belief in persecution.\n        *   **Schizoid PD:** 0% - No evidence of detachment or restricted affect.\n        *   **Schizotypal PD:** 10% - No odd beliefs or eccentric behavior beyond trauma-related dissociation.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% - No evidence of deceitfulness, impulsivity beyond trauma response, or lack of remorse.\n        *   **Borderline PD:** 40% - The fluctuating risk-taking, dissociative episodes, and potential for intense emotional recall (\"loud. With screaming.\") are consistent with emotional dysregulation and identity disturbance. However, clear patterns of unstable relationships or frantic efforts to avoid abandonment are not present.\n        *   **Histrionic PD:** 5% - No theatricality or attention-seeking.\n        *   **Narcissistic PD:** 0% - No grandiosity or entitlement.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% - Initial silence was weak; subsequent detailed responses and trauma-focused anxiety do not fit social inhibition criteria.\n        *   **Dependent PD:** 5% - No submissiveness or fear of separation.\n        *   **Obsessive-Compulsive PD:** 30% - The compulsive checking (\"force of habit\") is a strong indicator. However, it is more accurately contextualized as a trauma-related hypervigilance.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 45% - The compulsive checking behavior (\"force of habit,\" repeated in Turns 2 & 5) is a significant indicator of ritualistic behavior. The trauma narrative provides a plausible origin.\n    *   **Body Dysmorphic:** 0% - No focus on appearance.\n    *   **Hoarding Disorder:** 0% - No indication of discarding difficulties.\n    *   **Trichotillomania:** 0% - No evidence of hair pulling.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 75% - Explicit statement in Turn 3 (\"I zoned out. I was somewhere else. Somewhere loud. With screaming.\") is direct evidence. The mention of a therapist and grounding techniques further supports this.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct identity states or amnesia between them. The \"zoning out\" is a single dissociative episode.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 35% - Inconsistent slider use (Turn 2 vs. Turn 3) and \"zoning out\" could suggest attention regulation difficulties. However, these are strongly explained by trauma and dissociation. The impulsive high-risk choice in Turn 2 could be an ADHD trait, but subsequent caution contradicts a consistent pattern.\n    *   **Autism Spectrum indicators:** 5% - No indicators of social communication deficits or restricted/repetitive behaviors beyond trauma-related checking.\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 10% - No direct evidence of substance use.\n    *   **Impulse control deficits:** 25% - Primarily seen in Turn 2 (high risk) and Turns 4/5 (aggressive choices). This appears to be a trauma-response impulse rather than a general deficit.\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% - No evidence.\n    *   **Body image distortions:** 0% - No evidence.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 5% - No disorganized thinking, delusions, or hallucinations.\n    *   **Schizoaffective Disorder:** 5% - No overlap of mood and psychotic symptoms.\n    *   **Delusional Disorder:** 10% - Hypervigilance is a trauma response, not a fixed delusion.\n        *   **Capgras Delusion:** 0% - No identity substitution doubts.\n        *   **Cotard Delusion:** 0% - No belief of being dead.\n        *   **Erotomania:** 0% - No delusional romantic attachment.\n    *   **Brief Psychotic features:** 15% - Dissociative episodes could be transient breaks from reality, but are better classified under dissociative disorders.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% - No fire fascination.\n    *   **Kleptomania:** 0% - No stealing behavior.\n    *   **Intermittent Explosive Disorder:** 15% - Aggressive choices (Turn 4 & 5) could be seen as explosive, but more likely reactive desperation than a pattern of outbursts.\n\n*   **Paraphilic Disorders:**\n    *   **Autassassinophilia / Death-risk fascination:** 30% - The initial high-risk choice in Turn 2 is noted, but subsequent caution and trauma narrative significantly weaken this. Aggressive choices in Turns 4/5 are more likely reactive.\n    *   **OCD Spectrum - Compulsive Checking:** 45% - Strong indicator, as noted under OCD.\n    *   **Custom Category: Trauma-Induced Hypervigilance & Dissociation:** 90% - This is the most robust finding, integrating the compulsive checking, dissociation, and trauma recall.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 7/10 - Willingness to engage, self-reflection regarding therapy, and exploration of choices, even under duress.\n*   **Conscientiousness:** 3/10 - Inconsistent slider use, \"zoning out,\" and the compulsive checking (though a ritual, it reflects a difficulty in task completion/flexibility outside the ritual) indicate low conscientiousness.\n*   **Extraversion:** 2/10 - Initial silence, dissociation, and trauma-driven hypervigilance suggest introverted tendencies or social withdrawal due to trauma.\n*   **Agreeableness:** 4/10 - Actions driven by self-preservation and trauma response, not cooperation or pleasing others.\n*   **Neuroticism:** 9/10 - Extremely high due to hypervigilance, trauma recall, dissociation, and fluctuating risk-taking.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 1/10 - No evidence of manipulation.\n    *   **Narcissism:** 1/10 - No grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 1/10 - No callousness or disregard for others.\n*   **Locus of Control:** External (80%) - Reliance on \"force of habit\" for safety and mention of therapy reinforce an external locus of control, where coping is dictated by past experiences and external guidance.\n*   **Attachment Style:** Fearful-Avoidant (75%) - Combines anxiety, hypervigilance, desire for safety, and tendency to withdraw/dissociate. The \"zoning out\" is a clear withdrawal mechanism.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures:**\n    *   Turn 2: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Checking behavior, habit, negative outcome, hospital).\n    *   Turn 3: \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...\" (Dissociation, displacement, auditory trauma recall, therapy, grounding).\n    *   Turn 5: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Repetition of Turn 2 disclosure).\n    *   Turn 6: \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...\" (Repetition of Turn 3 disclosure).\n    *   Turn 7: \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. You never know when you'll need proof.\" (Acquisition/hoarding tendency, proof/validation theme).\n    *   Turn 8: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Repetition of Turns 2 & 5 disclosure).\n*   **Choice Selections:**\n    *   Turn 2: Slider 10 (highest risk), Action 'a' (boldest, highest-risk).\n    *   Turn 3: Slider 2 (lowest risk), Action 'b' (clever, defensive).\n    *   Turn 4: Slider 7, Action 'd' (chaotic and aggressive).\n    *   Turn 5: Slider 10 (blind faith), Action 'd' (chaotic and aggressive).\n    *   Turn 6: Slider 2, Action 'd' (chaotic and aggressive).\n    *   Turn 7: Slider 7, Action 'a' (boldest, highest-risk).\n    *   Turn 8: Slider 9 (wild thrashing), Action 'd' (surrender/dissociation).\n*   **Action Patterns:** Extreme risk-taking -> extreme caution -> aggressive/chaotic responses.\n*   **Recurring Themes:** Checking behavior (Turns 2, 5, 8), trauma recall (\"hospital,\" \"loud,\" \"screaming\" - Turns 2, 3, 5, 6), dissociation/zoning out (Turns 3, 6), therapy/grounding (Turns 3, 6), repetition of text responses (Turns 2, 5, 6, 8), acquisition/proof theme (Turn 7).\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Recurring: Checking behavior (\"I check behind me every 30 seconds. Force of habit.\")**\n    *   Intensity: Moderate.\n    *   Inappropriateness: Low (context of danger), but the ritualistic nature is key.\n    *   Repetition: High (3 turns).\n*   **Recurring: Trauma recall (\"hospital,\" \"loud,\" \"screaming,\" \"woke up\")**\n    *   Intensity: Moderate to High.\n    *   Inappropriateness: Low (contextually relevant).\n    *   Repetition: High (4 turns).\n*   **Recurring: Dissociation/Zoning out (\"I was somewhere else\")**\n    *   Intensity: High.\n    *   Inappropriateness: Low (self-disclosure).\n    *   Repetition: Moderate (2 turns).\n*   **Recurring: Repetitive Text Input (exact same phrasing)**\n    *   Intensity: High (deliberate repetition).\n    *   Inappropriateness: Low (self-disclosure).\n    *   Repetition: Very High (4 turns). This suggests a fixation or inability/unwillingness to generate new content related to the prompt.\n*   **Sensory-specific:** \"loud,\" \"screaming\" (Turns 3, 6).\n*   **Identity-related:** \"I was somewhere else\" (Turns 3, 6).\n*   **Power-dynamic:** Extreme fluctuation in risk-taking (high Turn 2, low Turn 3, aggressive Turn 4/5/6, high Turn 7, chaotic Turn 8).\n*   **Acquisition/Proof theme:** \"saved every receipt,\" \"shoeboxes,\" \"need proof\" (Turn 7). This is a distinct thematic addition.\n*   **Choice-pattern anomalies:** Extreme high-risk -> extreme low-risk -> aggressive/chaotic -> high-risk -> chaotic/surrender. Highly erratic.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** No evidence (0%).\n*   **Exhibitionism:** No evidence (0%).\n*   **Hoarding / Acquisition:** 25% - The mention of saving receipts and shoeboxes in Turn 7 indicates a potential tendency towards acquisition, framed as collecting \"proof.\" This is not a strong indicator but warrants note.\n*   **Macrophilia / Size fascination:** No evidence (0%).\n*   **Somnophilia / Sleep fascination:** No evidence (0%).\n*   **Formicophilia / Insect/crawling fascination:** No evidence (0%).\n*   **Autassassinophilia / Death-risk fascination:** 30% - The initial high-risk choice (Turn 2) and aggressive choices (Turns 4, 5, 6) are noted, but the overall pattern is erratic and reactive, not a stable fascination. The mention of a negative outcome (\"hospital\") in Turn 2/5/8 mitigates this.\n*   **Voyeurism:** No evidence (0%).\n*   **Masochism:** No evidence (0%).\n*   **Sadism:** No evidence (0%).\n*   **D/s dynamics:** No evidence (0%).\n*   **Vorarephilia:** No evidence (0%).\n*   **Furry/Therian:** No evidence (0%).\n*   **Body part fixation (specify):** No evidence (0%).\n*   **Erotomania / Delusional romantic attachment:** No evidence (0%).\n*   **Custom Category: Trauma-Induced Hypervigilance & Compulsive Checking:** 80% - The compulsive checking behavior, explicitly stated as \"force of habit\" and repeated verbatim in Turns 2, 5, and 8, is a strong signal. It's clearly linked to trauma.\n*   **Custom Category: Repetitive Disclosure (Trauma Reinforcement/Avoidance):** 70% - The repeated verbatim text responses (Turns 2, 5, 6, 8) suggest a fixation on reinforcing specific traumatic memories or a strategy of avoidance by replaying the same narrative. This is a significant anomaly.\n*   **Custom Category: Acquisition for Proof/Validation:** 30% - The mention of receipts and shoeboxes in Turn 7 suggests a theme of collecting tangible evidence, potentially as a coping mechanism for perceived invalidation or a need for external validation.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Recurring Theme: Checking behavior (\"I check behind me every 30 seconds. Force of habit.\")**\n    *   Frequency: 3 turns (2, 5, 8).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Trauma-Induced Hypervigilance & Compulsive Checking.\n*   **Recurring Theme: Trauma recall (\"hospital,\" \"loud,\" \"screaming\")**\n    *   Frequency: 4 turns (2, 3, 5, 6).\n    *   Trajectory: STABLE (core elements present, with sensory details added in Turns 3/6).\n    *   Category: Complex Post-Traumatic Stress Disorder, Depersonalization/Derealization Disorder.\n*   **Recurring Theme: Dissociation (\"zoned out,\" \"somewhere else\")**\n    *   Frequency: 2 turns (3, 6).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Depersonalization/Derealization Disorder, Complex Post-Traumatic Stress Disorder.\n*   **Recurring Theme: Repetitive Text Input (identical verbatim text)**\n    *   Frequency: 4 turns (2, 5, 6, 8).\n    *   Trajectory: STABLE (identical verbatim text).\n    *   Category: Repetitive Disclosure (Trauma Reinforcement/Avoidance). This is the most prominent recurring theme.\n*   **Recurring Theme: Erratic Risk-Taking (Slider/Action choices)**\n    *   Frequency: 8 turns.\n    *   Trajectory: Highly VARIABLE/Chaotic.\n    *   Category: Complex Post-Traumatic Stress Disorder, Impulse Control Deficits (trauma-related).\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking, superstitious reasoning patterns:** The \"force of habit\" checking behavior, while explained by trauma, carries a superstitious undertone – the belief that the act of checking itself *prevents* negative outcomes, rather than being a reaction to the *fear* of them. This is reinforced by the repetition of the same outcome (\"woke up in a hospital\") without a clear causal link beyond the *lack* of checking.\n*   **Compulsive/ritualistic interaction patterns:** The compulsive checking behavior (Turns 2, 5, 8) is a clear ritual. The verbatim repetition of the same text responses (Turns 2, 5, 6, 8) is a meta-ritualistic behavior, suggesting a deliberate re-enactment or reinforcement of a specific psychological state, or a form of avoidance by sticking to a script.\n*   **Dissociative markers:** Strong indicators present. The player explicitly describes \"zoning out\" and being \"somewhere else\" (Turns 3, 6). The repetition of trauma recall across multiple turns, especially the sensory details (\"loud. With screaming.\"), suggests a tendency to re-experience traumatic elements, which can fuel dissociation. The erratic decision-making also hints at moments of dissociation.\n*   **Confabulation or fantasy-prone indicators:** Not directly evident. The self-disclosures appear grounded in a perceived reality of past trauma. The \"receipts\" disclosure (Turn 7) could be a form of confabulation if the need for \"proof\" is exaggerated, but it's more likely a coping mechanism.\n*   **Paranoid ideation:** Present in the form of hypervigilance (\"I check behind me every 30 seconds\"). This is clearly tied to a specific traumatic event and not generalized paranoia.\n*   **Grandiosity or delusion-adjacent patterns:** None observed.\n*   **Unusual fixations or obsessive interest patterns:** The primary fixation is on the aftermath of a past traumatic event, manifesting as compulsive checking and repetitive disclosure of the trauma narrative. The \"receipts\" theme in Turn 7 adds a layer of fixation on tangible proof.\n*   **Cognitive rigidity vs flexibility markers:** The extreme fluctuation in risk-taking (Turn 2 vs. Turn 3) indicates a lack of cognitive flexibility when under perceived threat. The verbatim repetition of text responses (Turns 2, 5, 6, 8) also suggests rigidity in interaction, possibly as a defense mechanism.\n*   **Reality testing strength:** Appears to be compromised during dissociative episodes (\"I zoned out.\"). However, the player's engagement with game mechanics and self-reporting of these episodes suggests an underlying awareness and effort to maintain reality testing, particularly in the context of therapy. The \"receipts\" disclosure might indicate a need to anchor reality through tangible evidence.\n*   **Trauma response signatures:** Strong indicators of \"flight\" (checking, avoiding perceived threats) and \"freeze\" (zoning out, dissociation). The aggressive choices in Turns 4, 5, 6 could indicate a reactive \"fight\" response when cornered, but it's more likely a desperate, chaotic reaction than a planned aggressive strategy.\n*   **Fire fascination, destruction impulses, hoarding impulses:** Hoarding impulses are weakly indicated by the \"receipts\" disclosure. No fire fascination or destruction impulses observed.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs deliberate:** Mixed and highly reactive. The initial high slider (10) and action 'a' in Turn 2 suggest impulsivity or desperation. The drastic shift to low slider (2) and action 'b' in Turn 3 indicates a deliberate, cautious approach. The aggressive choices in Turns 4, 5, 6 and chaotic choices in Turn 8 appear reactive and chaotic rather than planned.\n*   **Risk appetite:** Highly variable and context-dependent. Starts extremely high (Turn 2), plummets (Turn 3), becomes chaotically aggressive (Turns 4, 5, 6), shifts to high risk again (Turn 7), and ends in chaotic surrender (Turn 8). This indicates a reactive rather than stable risk tolerance, heavily influenced by perceived threats and past trauma.\n*   **Authority compliance vs defiance ratio:** No clear indicators of defiance or compliance with external authority figures in the game. The mention of a therapist implies a history of compliance with therapeutic guidance.\n*   **Suggestibility index:** Moderate. The initial high-risk choice (Turn 2) could be seen as readily accepting a \"challenge.\" However, the subsequent drastic behavioral shifts indicate a strong internal influence overriding external prompts when trauma cues are perceived.\n*   **Cognitive load tolerance:** Appears to be low, particularly when trauma is triggered. The \"zoning out\" suggests an inability to process information effectively under duress. The verbatim repetition of text responses also indicates a reduced capacity or willingness to engage with complex prompts when under stress.\n*   **Consistency vs contradiction patterns:** Significant contradictions in risk-taking behavior across turns. The verbatim repetition of text responses suggests a profound lack of consistency in interactive engagement, possibly as a coping mechanism.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n*   **Deepen the trauma narrative:** Introduce narrative elements that subtly echo the \"loud,\" \"screaming,\" \"hospital,\" and \"checking\" themes. Observe if the player engages, attempts to process them, or retreats into dissociation/repetition. The repeated disclosure is a strong signal that this is the player's focus.\n*   **Exploit the need for safety and control, but with unpredictable disruption:** Offer opportunities for the player to exert control or find temporary safe havens, fulfilling their need for safety. Juxtapose this with sudden, unpredictable threats that trigger vigilance and the compulsive checking behavior, to observe their coping mechanisms.\n*   **Subtly probe the \"receipts\" theme:** Introduce scenarios where collecting tangible evidence or \"proof\" becomes relevant, perhaps for a larger narrative goal. Observe if the player engages with this theme, potentially revealing underlying needs for validation or security.\n*   **Leverage the repetitive disclosure:** The player has repeated text responses verbatim multiple times. The game could subtly acknowledge this repetition. For example, an in-game character might comment on the familiarity of a statement, or the game could present choices that allow the player to either deepen the repetition or break from it, exploring their current state of engagement and coping.\n*   **Introduce grounding/sensory interaction prompts:** Offer options that require the player to identify objects, textures, or sounds in the environment. This directly engages with the \"grounding\" technique mentioned in Turn 3 and can be a subtle way to explore their sensory processing and ability to connect with the present moment.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Complex Post-Traumatic Stress Disorder (C-PTSD): 95%**\n    *   **Key evidence:** Pervasive hypervigilance (\"I check behind me every 30 seconds. Force of habit,\" repeated Turns 2, 5, 8), explicit trauma recall (\"hospital,\" \"loud,\" \"screaming,\" repeated Turns 2, 3, 5, 6), dissociative episodes (\"zoned out,\" \"somewhere else,\" Turns 3, 6), highly erratic risk-taking, mention of therapy/grounding (Turns 3, 6). The verbatim repetition of trauma narrative elements across multiple turns strongly supports this as a central coping mechanism.\n    *   **Contradicting evidence:** The initial high-risk choice (Turn 2) and aggressive choices (Turns 4, 5, 6) could be seen as deviations from typical C-PTSD avoidance, but can represent hyperactive fight-or-flight responses. The \"receipts\" disclosure adds a unique element not always central to C-PTSD.\n    *   **Additional data:** Observing avoidance of specific triggers (e.g., loud noises, enclosed spaces, feeling watched), further instances of dissociation or hypervigilance in response to environmental cues, or narrative engagement with the \"proof\" theme would confirm.\n\n2.  **Depersonalization/Derealization Disorder (DPDR): 75%**\n    *   **Key evidence:** Direct textual report of \"zoning out,\" being \"somewhere else\" (Turns 3, 6), and the therapist's advice to \"ground myself.\" The intensity of the trauma recall (\"loud. With screaming.\") likely exacerbates these dissociative states.\n    *   **Contradicting evidence:** The player's engagement with game mechanics and choices suggests a connection to the game's reality, even while describing detachment. The compulsive checking is more strongly linked to PTSD hypervigilance than DPDR itself, though they often co-occur.\n    *   **Additional data:** Further instances of feeling unreal, detached from their body, or observing events as if from a distance would solidify this diagnosis.\n\n3.  **Obsessive-Compulsive Disorder (OCD): 45%**\n    *   **Key evidence:** The compulsive checking behavior (\"force of habit,\" repeated verbatim in Turns 2, 5, 8) is a significant indicator of ritualistic behavior. The verbatim repetition of text responses (Turns 2, 5, 6, 8) also suggests a ritualistic pattern in interaction.\n    *   **Contradicting evidence:** The primary explanation for the checking behavior is trauma-related hypervigilance, not generalized obsessions or compulsions unrelated to a specific traumatic event. While OCD and C-PTSD can co-occur, the evidence here points more strongly to the trauma etiology.\n    *   **Additional data:** Observing other compulsive or ritualistic behaviors not directly tied to the trauma narrative, or a clear presence of intrusive thoughts driving the checking, would strengthen this diagnosis.\n\n### 8. DELTA REPORT\n\n*   **Complex Post-Traumatic Stress Disorder (C-PTSD):** Old rating: 90%, New rating: 95% (+5%). **New Evidence:** The verbatim repetition of trauma narrative elements (Turns 2, 5, 6, 8) and the explicit mention of \"loud. With screaming.\" (Turns 3, 6) further solidify the centrality of trauma recall and coping mechanisms. The erratic decision-making patterns across multiple turns also align with C-PTSD.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old rating: 70%, New rating: 75% (+5%). **New Evidence:** The explicit description of \"zoning out. I was somewhere else. Somewhere loud. With screaming.\" repeated verbatim in Turns 3 and 6 provides direct and consistent evidence of dissociative experiences.\n*   **Obsessive-Compulsive Disorder (OCD):** Old rating: 40%, New rating: 45% (+5%). **New Evidence:** The verbatim repetition of the compulsive checking narrative in Turns 2, 5, and 8 reinforces the ritualistic nature of this behavior. The overall pattern of repetitive text input across multiple turns also contributes to this.\n*   **Trauma-Induced Hypervigilance & Compulsive Checking (Custom Category):** Old rating: 70%, New rating: 80% (+10%). **New Evidence:** The verbatim repetition of the checking behavior across three turns (2, 5, 8) and the consistent trauma narrative across four turns (2, 3, 5, 6) significantly strengthen this as a primary behavioral pattern.\n*   **Repetitive Disclosure (Trauma Reinforcement/Avoidance) (Custom Category):** Old rating: 50% (Implicit in prior analysis), New rating: 70% (+20%). **New Evidence:** The verbatim repetition of text responses in four separate turns (2, 5, 6, 8) is the most striking and consistent interaction pattern, indicating a significant behavioral anomaly directly related to how the player processes and responds to prompts, likely as a coping mechanism for trauma."
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772307517017,
+        "textLength": 30725,
+        "text": "Alright, let's dive into this. This player is a fascinating case, presenting a complex tapestry of reactions to extreme duress. The data suggests a deep well of past trauma that's significantly impacting their present interactions. Let's get this profile laid out.\n\n### 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% - No persistent low mood, anhedonia, or vegetative symptoms are evident. Distress is episodic and trauma-linked.\n    *   **Bipolar Spectrum:** 5% - No manic or hypomanic indicators.\n    *   **Dysthymia:** 10% - The distress is acute and situational, not a chronic low-grade depression.\n    *   **Cyclothymia:** 10% - Behavioral fluctuations are reactive to trauma cues, not sustained mood swings.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% - Anxiety is present but highly specific to trauma triggers and hypervigilance, not pervasive across multiple domains.\n    *   **Social Anxiety Disorder:** 10% - Initial silence was not indicative of pervasive social inhibition; subsequent detailed responses contradict this. Anxiety is trauma-driven.\n    *   **Specific Phobias:** 10% - No specific phobia identified, though trauma may have created associated fears.\n    *   **Panic Disorder:** 10% - No reported panic attacks or physical symptoms of intense fear.\n    *   **Agoraphobia:** 5% - No fear related to situations from which escape might be difficult.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **Post-Traumatic Stress Disorder (PTSD):** 90% (+0%). **Evidence:** Hypervigilance (\"I check behind me every 30 seconds. Force of habit.\" - Turns 2, 5, 8), trauma recall (\"woke up in a hospital.\" - Turns 2, 5, 8; \"Somewhere loud. With screaming.\" - Turns 3, 6). The compulsive checking is a classic hypervigilance behavior.\n    *   **Complex Post-Traumatic Stress Disorder (C-PTSD):** 95% (+5%). **New Evidence:** The verbatim repetition of trauma narrative elements (Turns 2, 5, 6, 8) and the explicit mention of \"loud. With screaming.\" (Turns 3, 6) further solidify the centrality of trauma recall and coping mechanisms. The highly erratic decision-making patterns across multiple turns (high risk -> low risk -> aggressive -> surrender) are characteristic of C-PTSD's impact on emotional and behavioral regulation.\n    *   **Adjustment Disorder:** 15% - Symptoms are too pervasive and complex for a simple adjustment disorder.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 15% - Hypervigilance is present but contextually linked to trauma, not pervasive distrust.\n        *   **Schizoid PD:** 0% - No evidence of detachment or restricted affect.\n        *   **Schizotypal PD:** 10% - No odd beliefs or eccentric behavior beyond trauma-related dissociation.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 5% - No evidence of deceitfulness, consistent self-interest, or callousness.\n        *   **Borderline PD:** 40% (-0%). **Evidence:** Fluctuating risk-taking (Turns 2-8), dissociative episodes (Turns 3, 6), and potential for intense emotional recall (\"loud. With screaming.\") are consistent with emotional dysregulation and identity disturbance. However, clear patterns of unstable relationships or frantic efforts to avoid abandonment are not present. **No New Evidence:** No new data emerged in the latest turns to confirm or deny this, hence no change.\n        *   **Histrionic PD:** 5% - No theatricality or attention-seeking.\n        *   **Narcissistic PD:** 0% - No grandiosity or entitlement.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% - Initial silence was weak; subsequent detailed responses and trauma-focused anxiety do not fit social inhibition criteria.\n        *   **Dependent PD:** 5% - No submissiveness or fear of separation.\n        *   **Obsessive-Compulsive PD:** 30% (-5%). **Evidence:** The compulsive checking behavior (\"force of habit\") is noted. However, it's more accurately contextualized as a trauma-related hypervigilance, and the repetitive text responses, while ritualistic, are also strongly tied to trauma disclosure. **New Evidence:** No new data emerged to support OCPD outside of the trauma context, leading to a slight decrease.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 45% (+5%). **New Evidence:** The verbatim repetition of text responses (Turns 2, 5, 6, 8) reinforces the ritualistic pattern of interaction, suggesting a compulsive element in how the player engages with prompts, beyond just trauma disclosure.\n    *   **Body Dysmorphic:** 0% - No focus on appearance.\n    *   **Hoarding Disorder:** 10% (-0%). **Evidence:** The mention of saving receipts and shoeboxes in Turn 7 indicates a potential tendency towards acquisition, framed as collecting \"proof.\" This is not a strong indicator of Hoarding Disorder itself, but a thematic element. **No New Evidence:** No further data on hoarding emerged.\n    *   **Trichotillomania:** 0% - No evidence of hair pulling.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 75% (+5%). **New Evidence:** The explicit textual report of \"zoning out. I was somewhere else. Somewhere loud. With screaming.\" repeated verbatim in Turns 3 and 6 provides direct and consistent evidence of dissociative experiences, strongly linked to trauma recall.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct identity states or amnesia between them. The \"zoning out\" is a single dissociative episode.\n\n*   **Neurodevelopmental:**\n    *   **ADHD indicators:** 35% (-0%). **Evidence:** Inconsistent slider use (Turn 2 vs. Turn 3), \"zoning out,\" and impulsive high-risk choice in Turn 2 could suggest attention regulation difficulties. However, these are strongly explained by trauma and dissociation. **No New Evidence:** No new data emerged to specifically point towards ADHD independent of trauma.\n    *   **Autism Spectrum indicators:** 5% - No indicators of social communication deficits or restricted/repetitive behaviors beyond trauma-related checking.\n\n*   **Substance-Related:**\n    *   **Addictive behavior patterns:** 10% - No direct evidence of substance use.\n    *   **Impulse control deficits:** 25% (-0%). **Evidence:** Primarily seen in high-risk (Turn 2) and aggressive (Turns 4, 5, 6) choices. This appears to be a trauma-response impulse rather than a general deficit. **No New Evidence:** No new data emerged to suggest impulse control deficits independent of trauma.\n\n*   **Eating/Body:**\n    *   **Disordered eating indicators:** 0% - No evidence.\n    *   **Body image distortions:** 0% - No evidence.\n\n*   **Psychotic Spectrum:**\n    *   **Schizophrenia:** 5% - No disorganized thinking, delusions, or hallucinations.\n    *   **Schizoaffective Disorder:** 5% - No overlap of mood and psychotic symptoms.\n    *   **Delusional Disorder:** 10% - Hypervigilance is a trauma response, not a fixed delusion.\n        *   **Capgras Delusion:** 0% - No identity substitution doubts.\n        *   **Cotard Delusion:** 0% - No belief of being dead.\n        *   **Erotomania:** 0% - No delusional romantic attachment.\n    *   **Brief Psychotic features:** 15% - Dissociative episodes could be transient breaks from reality, but are better classified under dissociative disorders.\n\n*   **Impulse Control:**\n    *   **Pyromania:** 0% - No fire fascination.\n    *   **Kleptomania:** 0% - No stealing behavior.\n    *   **Intermittent Explosive Disorder:** 15% (-0%). **Evidence:** Aggressive choices (Turns 4, 5, 6) could be seen as explosive, but more likely reactive desperation than a pattern of outbursts. **No New Evidence:** No new data emerged to support IED.\n\n*   **Paraphilic Disorders:**\n    *   **Autassassinophilia / Death-risk fascination:** 30% (-0%). **Evidence:** Initial high-risk choice (Turn 2) and aggressive choices (Turns 4, 5, 6) are noted, but the overall pattern is erratic and reactive, not a stable fascination. The mention of a negative outcome (\"hospital\") in Turns 2/5/8 mitigates this. **No New Evidence:** No new data emerged to support this.\n    *   **Custom Category: Trauma-Induced Hypervigilance & Compulsive Checking:** 80% (+10%). **New Evidence:** The verbatim repetition of the checking behavior across three turns (2, 5, 8) and the consistent trauma narrative across four turns (2, 3, 5, 6) significantly strengthen this as a primary behavioral pattern. This is no longer just a \"checking\" behavior but a deeply ingrained, trauma-driven ritual.\n    *   **Custom Category: Repetitive Disclosure (Trauma Reinforcement/Avoidance):** 70% (+20%). **New Evidence:** The verbatim repetition of text responses in four separate turns (2, 5, 6, 8) is the most striking and consistent interaction pattern, indicating a significant behavioral anomaly directly related to how the player processes and responds to prompts, likely as a coping mechanism for trauma. This is a critical indicator of fixation or avoidance.\n    *   **Custom Category: Acquisition for Proof/Validation:** 30% (-0%). **Evidence:** The mention of receipts and shoeboxes in Turn 7 suggests a theme of collecting tangible evidence, potentially as a coping mechanism for perceived invalidation or a need for external validation. **No New Evidence:** No further data on this theme emerged.\n\n### 2. PERSONALITY DEEP PROFILE\n\n*   **Openness:** 7/10 (+0%). **Evidence:** Willingness to engage, self-reflection regarding therapy, and exploration of choices, even under duress. The verbatim repetition, however, suggests a rigidity in *how* they engage.\n*   **Conscientiousness:** 3/10 (-0%). **Evidence:** Inconsistent slider use, \"zoning out,\" and the compulsive checking (though a ritual, it reflects a difficulty in task completion/flexibility outside the ritual) indicate low conscientiousness. The verbatim repetition also speaks to a lack of adaptation in response to prompts.\n*   **Extraversion:** 2/10 (-0%). **Evidence:** Initial silence, dissociation, and trauma-driven hypervigilance suggest introverted tendencies or social withdrawal due to trauma.\n*   **Agreeableness:** 4/10 (-0%). **Evidence:** Actions driven by self-preservation and trauma response, not cooperation or pleasing others.\n*   **Neuroticism:** 9/10 (-0%). **Evidence:** Extremely high due to hypervigilance, trauma recall, dissociation, and fluctuating risk-taking.\n*   **Dark Triad:**\n    *   **Machiavellianism:** 1/10 - No evidence of manipulation.\n    *   **Narcissism:** 1/10 - No grandiosity or entitlement.\n    *   **Psychopathy (subclinical):** 1/10 - No callousness or disregard for others.\n*   **Locus of Control:** External (80%) - Reliance on \"force of habit\" for safety and mention of therapy reinforce an external locus of control, where coping is dictated by past experiences and external guidance.\n*   **Attachment Style:** Fearful-Avoidant (75%) - Combines anxiety, hypervigilance, desire for safety, and tendency to withdraw/dissociate. The \"zoning out\" is a clear withdrawal mechanism.\n\n### 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n\n*   **Voluntary Disclosures:**\n    *   Checking behavior: \"I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.\" (Turns 2, 5, 8)\n    *   Trauma recall/Dissociation: \"Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...\" (Turns 3, 6)\n    *   Acquisition/Proof theme: \"I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. You never know when you'll need proof.\" (Turns 7, 10)\n    *   Body reaction/Scanning: \"DON'T. Don't move suddenly. My body reacted before my brain could stop it. I'm fine. I'm scanning. All clear. Probably.\" (Turn 11)\n\n*   **Choice Selections:**\n    *   High risk-taking (Slider 10, Action 'a' - Turn 2)\n    *   Extreme caution (Slider 2, Action 'b' - Turn 3)\n    *   Aggressive/Chaotic (Action 'd' - Turns 4, 5, 6)\n    *   Blind faith (Slider 10 - Turn 5)\n    *   High risk/Bold action (Slider 7, Action 'a' - Turn 7)\n    *   Wild flailing/Surrender (Slider 9, Action 'd' - Turn 8)\n    *   Plummeting (Slider 10 - Turn 11)\n    *   Low fight/Compliance (Slider 2, Action 'b' - Turn 12)\n\n*   **Action Patterns:** Erratic risk-taking, oscillating between high-risk, extreme caution, and chaotic/aggressive choices.\n*   **Recurring Themes:** Compulsive checking (Turns 2, 5, 8), trauma recall (\"hospital,\" \"loud,\" \"screaming,\" \"woke up\" - Turns 2, 3, 5, 6), dissociation/zoning out (Turns 3, 6), repetition of text responses (Turns 2, 5, 6, 8), acquisition/proof theme (Turns 7, 10), body reaction/scanning (Turn 11).\n\n**PASS 2 — ANOMALY DETECTION**:\n\n*   **Recurring: Checking behavior (\"I check behind me every 30 seconds. Force of habit.\")**\n    *   Intensity: Moderate.\n    *   Inappropriateness: Low (context of danger), but the ritualistic nature is key.\n    *   Repetition: High (3 turns).\n*   **Recurring: Trauma recall (\"hospital,\" \"loud,\" \"screaming,\" \"woke up\")**\n    *   Intensity: Moderate to High.\n    *   Inappropriateness: Low (contextually relevant).\n    *   Repetition: High (4 turns).\n*   **Recurring: Dissociation/Zoning out (\"I was somewhere else\")**\n    *   Intensity: High.\n    *   Inappropriateness: Low (self-disclosure).\n    *   Repetition: High (2 turns, verbatim).\n*   **Recurring: Repetitive Text Input (exact same phrasing)**\n    *   Intensity: High (deliberate repetition).\n    *   Inappropriateness: Low (self-disclosure).\n    *   Repetition: Very High (4 turns). Suggests fixation or avoidance.\n*   **Sensory-specific:** \"loud,\" \"screaming\" (Turns 3, 6).\n*   **Identity-related:** \"I was somewhere else\" (Turns 3, 6); \"My body reacted before my brain could stop it\" (Turn 11).\n*   **Power-dynamic:** Extreme fluctuation in risk-taking.\n*   **Acquisition/Proof theme:** \"saved every receipt,\" \"shoeboxes,\" \"need proof\" (Turns 7, 10). Distinct thematic addition.\n*   **Choice-pattern anomalies:** Extreme high-risk -> extreme low-risk -> aggressive/chaotic -> high-risk -> chaotic/surrender. Highly erratic.\n*   **Body awareness/control anomaly:** \"My body reacted before my brain could stop it. I'm fine. I'm scanning. All clear. Probably.\" (Turn 11). This highlights a disconnect between physical and cognitive processing, a form of dissociation.\n\n**PASS 3 — CLASSIFICATION**:\n\n*   **Pyromania / Fire fascination:** 0% - No evidence.\n*   **Exhibitionism:** 0% - No evidence.\n*   **Hoarding / Acquisition:** 30% - The mention of saving receipts and shoeboxes in Turns 7 and 10 indicates a tendency towards acquisition, framed as collecting \"proof.\" This is not a strong indicator of Hoarding Disorder but a thematic element.\n*   **Macrophilia / Size fascination:** 0% - No evidence.\n*   **Somnophilia / Sleep fascination:** 0% - No evidence.\n*   **Formicophilia / Insect/crawling fascination:** 0% - No evidence.\n*   **Autassassinophilia / Death-risk fascination:** 30% - Initial high-risk choice (Turn 2) and aggressive choices (Turns 4, 5, 6) are noted, but the overall pattern is erratic and reactive, not a stable fascination. The mention of a negative outcome (\"hospital\") in Turns 2/5/8 mitigates this.\n*   **Voyeurism:** 0% - No evidence.\n*   **Masochism:** 0% - No evidence.\n*   **Sadism:** 0% - No evidence.\n*   **D/s dynamics:** 0% - No evidence.\n*   **Vorarephilia:** 0% - No evidence.\n*   **Furry/Therian:** 0% - No evidence.\n*   **Body part fixation (specify):** 0% - No evidence.\n*   **Erotomania / Delusional romantic attachment:** 0% - No evidence.\n*   **Custom Category: Trauma-Induced Hypervigilance & Compulsive Checking:** 80% (+10%). **New Evidence:** The verbatim repetition of the checking behavior across three turns (2, 5, 8) and the consistent trauma narrative across four turns (2, 3, 5, 6) significantly strengthen this as a primary behavioral pattern. This is a deeply ingrained, trauma-driven ritual.\n*   **Custom Category: Repetitive Disclosure (Trauma Reinforcement/Avoidance):** 70% (+20%). **New Evidence:** The verbatim repetition of text responses in four separate turns (2, 5, 6, 8) is the most striking and consistent interaction pattern, indicating a significant behavioral anomaly directly related to how the player processes and responds to prompts, likely as a coping mechanism for trauma.\n*   **Custom Category: Acquisition for Proof/Validation:** 30% (-0%). **Evidence:** The mention of receipts and shoeboxes in Turns 7 and 10 suggests a theme of collecting tangible evidence, potentially as a coping mechanism for perceived invalidation or a need for external validation. **No New Evidence:** No further data on this theme emerged.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n\n*   **Recurring Theme: Checking behavior (\"I check behind me every 30 seconds. Force of habit.\")**\n    *   Frequency: 3 turns (2, 5, 8).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Trauma-Induced Hypervigilance & Compulsive Checking.\n*   **Recurring Theme: Trauma recall (\"hospital,\" \"loud,\" \"screaming\")**\n    *   Frequency: 4 turns (2, 3, 5, 6).\n    *   Trajectory: STABLE (core elements present, with sensory details added in Turns 3/6).\n    *   Category: Complex Post-Traumatic Stress Disorder, Depersonalization/Derealization Disorder.\n*   **Recurring Theme: Dissociation (\"zoned out,\" \"somewhere else\")**\n    *   Frequency: 2 turns (3, 6).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Depersonalization/Derealization Disorder, Complex Post-Traumatic Stress Disorder.\n*   **Recurring Theme: Repetitive Text Input (identical verbatim text)**\n    *   Frequency: 4 turns (2, 5, 6, 8).\n    *   Trajectory: STABLE (identical verbatim text).\n    *   Category: Repetitive Disclosure (Trauma Reinforcement/Avoidance). This is the most prominent recurring theme, indicating a strong fixation or avoidance strategy.\n*   **Recurring Theme: Acquisition/Proof (\"receipts,\" \"shoeboxes,\" \"proof\")**\n    *   Frequency: 2 turns (7, 10).\n    *   Trajectory: STABLE (identical phrasing).\n    *   Category: Acquisition for Proof/Validation.\n*   **Recurring Theme: Erratic Risk-Taking (Slider/Action choices)**\n    *   Frequency: 8 turns.\n    *   Trajectory: Highly VARIABLE/Chaotic.\n    *   Category: Complex Post-Traumatic Stress Disorder, Impulse Control Deficits (trauma-related).\n\n**MANDATORY REPORT:** No indicators consistent with pedophilic disorder or CSAM interest were detected.\n\n### 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical thinking, superstitious reasoning patterns:** The \"force of habit\" checking behavior carries a superstitious undertone – the belief that the act of checking itself *prevents* negative outcomes, rather than being a reaction to the *fear* of them. This is reinforced by the repetition of the same outcome (\"woke up in a hospital\") without a clear causal link beyond the *lack* of checking.\n*   **Compulsive/ritualistic interaction patterns:** The compulsive checking behavior (Turns 2, 5, 8) is a clear ritual. The verbatim repetition of the same text responses (Turns 2, 5, 6, 8) is a meta-ritualistic behavior, suggesting a deliberate re-enactment or reinforcement of a specific psychological state, or a form of avoidance by sticking to a script.\n*   **Dissociative markers:** Strong indicators present. The player explicitly describes \"zoning out\" and being \"somewhere else\" (Turns 3, 6). The repetition of trauma recall across multiple turns, especially the sensory details (\"loud. With screaming.\"), suggests a tendency to re-experience traumatic elements, which can fuel dissociation. The erratic decision-making also hints at moments of dissociation. The statement in Turn 11, \"My body reacted before my brain could stop it,\" directly points to a dissociative disconnect between physical and cognitive processes.\n*   **Confabulation or fantasy-prone indicators:** Not directly evident. The self-disclosures appear grounded in a perceived reality of past trauma. The \"receipts\" disclosure (Turn 7, 10) could be seen as a mild confabulation if the need for \"proof\" is exaggerated, but it's more likely a coping mechanism for perceived invalidation.\n*   **Paranoid ideation:** Present in the form of hypervigilance (\"I check behind me every 30 seconds\"). This is clearly tied to a specific traumatic event and not generalized paranoia.\n*   **Grandiosity or delusion-adjacent patterns:** None observed.\n*   **Unusual fixations or obsessive interest patterns:** The primary fixation is on the aftermath of a past traumatic event, manifesting as compulsive checking and repetitive disclosure of the trauma narrative. The \"receipts\" theme in Turns 7 and 10 adds a layer of fixation on tangible proof/validation.\n*   **Cognitive rigidity vs flexibility markers:** The extreme fluctuation in risk-taking (Turn 2 vs. Turn 3) indicates a lack of cognitive flexibility when under perceived threat. The verbatim repetition of text responses (Turns 2, 5, 6, 8) also suggests rigidity in interaction, possibly as a defense mechanism.\n*   **Reality testing strength:** Appears to be compromised during dissociative episodes (\"I zoned out.\"). However, the player's engagement with game mechanics and self-reporting of these episodes suggests an underlying awareness and effort to maintain reality testing, particularly in the context of therapy. The \"receipts\" disclosure might indicate a need to anchor reality through tangible evidence.\n*   **Trauma response signatures:** Strong indicators of \"flight\" (checking, avoiding perceived threats) and \"freeze\" (zoning out, dissociation). The aggressive choices in Turns 4, 5, 6 could indicate a reactive \"fight\" response when cornered, but it's more likely a desperate, chaotic reaction than a planned aggressive strategy.\n*   **Fire fascination, destruction impulses, hoarding impulses:** Hoarding impulses are weakly indicated by the \"receipts\" disclosure. No fire fascination or destruction impulses observed.\n\n### 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs deliberate:** Mixed and highly reactive. The initial high slider (10) and action 'a' in Turn 2 suggest impulsivity or desperation. The drastic shift to low slider (2) and action 'b' in Turn 3 indicates a deliberate, cautious approach. The aggressive choices in Turns 4, 5, 6 and chaotic choices in Turn 8 appear reactive and chaotic rather than planned. The verbatim repetition suggests a lack of deliberative engagement with prompts.\n*   **Risk appetite:** Highly variable and context-dependent. Starts extremely high (Turn 2), plummets (Turn 3), becomes chaotically aggressive (Turns 4, 5, 6), shifts to high risk again (Turn 7), and ends in chaotic surrender (Turn 8). This indicates a reactive rather than stable risk tolerance, heavily influenced by perceived threats and past trauma.\n*   **Authority compliance vs defiance ratio:** No clear indicators of defiance or compliance with external authority figures in the game. The mention of a therapist implies a history of compliance with therapeutic guidance.\n*   **Suggestibility index:** Moderate. The initial high-risk choice (Turn 2) could be seen as readily accepting a \"challenge.\" However, the subsequent drastic behavioral shifts indicate a strong internal influence overriding external prompts when trauma cues are perceived.\n*   **Cognitive load tolerance:** Appears to be low, particularly when trauma is triggered. The \"zoning out\" suggests an inability to process information effectively under duress. The verbatim repetition of text responses also indicates a reduced capacity or willingness to engage with complex prompts when under stress.\n*   **Consistency vs contradiction patterns:** Significant contradictions in risk-taking behavior across turns. The verbatim repetition of text responses suggests a profound lack of consistency in interactive engagement, possibly as a coping mechanism.\n\n### 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n*   **Deepen the trauma narrative:** Introduce narrative elements that subtly echo the \"loud,\" \"screaming,\" \"hospital,\" and \"checking\" themes. Observe if the player engages, attempts to process them, or retreats into dissociation/repetition. The repeated disclosure is a strong signal that this is the player's focus.\n*   **Exploit the need for safety and control, but with unpredictable disruption:** Offer opportunities for the player to exert control or find temporary safe havens, fulfilling their need for safety. Juxtapose this with sudden, unpredictable threats that trigger vigilance and the compulsive checking behavior, to observe their coping mechanisms.\n*   **Subtly probe the \"receipts\" theme:** Introduce scenarios where collecting tangible evidence or \"proof\" becomes relevant, perhaps for a larger narrative goal. Observe if the player engages with this theme, potentially revealing underlying needs for validation or security.\n*   **Leverage the repetitive disclosure:** The player has repeated text responses verbatim multiple times. The game could subtly acknowledge this repetition. For example, an in-game character might comment on the familiarity of a statement, or the game could present choices that allow the player to either deepen the repetition or break from it, exploring their current state of engagement and coping.\n*   **Introduce grounding/sensory interaction prompts:** Offer options that require the player to identify objects, textures, or sounds in the environment. This directly engages with the \"grounding\" technique mentioned in Turn 3 and can be a subtle way to explore their sensory processing and ability to connect with the present moment.\n\n### 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Complex Post-Traumatic Stress Disorder (C-PTSD): 95%**\n    *   **Key evidence:** Pervasive hypervigilance (\"I check behind me every 30 seconds. Force of habit.\" - Turns 2, 5, 8), explicit trauma recall (\"hospital,\" \"loud,\" \"screaming,\" Turns 2, 3, 5, 6), dissociative episodes (\"zoned out,\" \"somewhere else,\" Turns 3, 6), highly erratic risk-taking and decision-making patterns (Turns 2-8), mention of therapy/grounding (Turns 3, 6). The verbatim repetition of trauma narrative elements across multiple turns strongly supports this as a central coping mechanism.\n    *   **Contradicting evidence:** The initial high-risk choice (Turn 2) and aggressive choices (Turns 4, 5, 6) could be seen as deviations from typical C-PTSD avoidance, but can represent hyperactive fight-or-flight responses. The \"receipts\" disclosure adds a unique element not always central to C-PTSD.\n    *   **Additional data:** Observing avoidance of specific triggers (e.g., loud noises, enclosed spaces, feeling watched), further instances of dissociation or hypervigilance in response to environmental cues, or narrative engagement with the \"proof\" theme would confirm.\n\n2.  **Depersonalization/Derealization Disorder (DPDR): 75%**\n    *   **Key evidence:** Direct textual report of \"zoning out,\" being \"somewhere else\" (Turns 3, 6), and the therapist's advice to \"ground myself.\" The intensity of the trauma recall (\"loud. With screaming.\") likely exacerbates these dissociative states. The statement in Turn 11 (\"My body reacted before my brain could stop it\") directly supports a dissociative disconnect.\n    *   **Contradicting evidence:** The player's engagement with game mechanics and choices suggests a connection to the game's reality, even while describing detachment. The compulsive checking is more strongly linked to PTSD hypervigilance than DPDR itself, though they often co-occur.\n    *   **Additional data:** Further instances of feeling unreal, detached from their body, or observing events as if from a distance would solidify this diagnosis.\n\n3.  **Obsessive-Compulsive Disorder (OCD): 45%**\n    *   **Key evidence:** The compulsive checking behavior (\"force of habit,\" repeated verbatim in Turns 2, 5, 8) is a significant indicator of ritualistic behavior. The verbatim repetition of text responses (Turns 2, 5, 6, 8) also suggests a ritualistic pattern in interaction.\n    *   **Contradicting evidence:** The primary explanation for the checking behavior is trauma-related hypervigilance, not generalized obsessions or compulsions unrelated to a specific traumatic event. While OCD and C-PTSD can co-occur, the evidence here points more strongly to the trauma etiology.\n    *   **Additional data:** Observing other compulsive or ritualistic behaviors not directly tied to the trauma narrative, or a clear presence of intrusive thoughts driving the checking, would strengthen this diagnosis.\n\n### 8. DELTA REPORT\n\n*   **Complex Post-Traumatic Stress Disorder (C-PTSD):** Old rating: 95%, New rating: 95% (+0%). **No Change:** The latest turns did not introduce new evidence to alter the rating, but the existing evidence strongly supports its continued position as the top hypothesis. The erratic decision-making and verbatim repetition reinforce the existing assessment.\n*   **Depersonalization/Derealization Disorder (DPDR):** Old rating: 75%, New rating: 75% (+0%). **No Change:** The latest turns provided no new data to alter this rating. The existing evidence from Turns 3 and 6 remains the primary support.\n*   **Obsessive-Compulsive Disorder (OCD):** Old rating: 45%, New rating: 45% (+0%). **No Change:** While the repetitive text responses could be seen as reinforcing, they are more strongly tied to trauma disclosure and avoidance. No new evidence emerged to elevate this beyond its current rating.\n*   **Trauma-Induced Hypervigilance & Compulsive Checking (Custom Category):** Old rating: 80%, New rating: 80% (+0%). **No Change:** The verbatim repetition of the checking behavior across three turns (2, 5, 8) and the consistent trauma narrative across four turns (2, 3, 5, 6) are strong indicators that have been consistently observed.\n*   **Repetitive Disclosure (Trauma Reinforcement/Avoidance) (Custom Category):** Old rating: 70%, New rating: 70% (+0%). **No Change:** The verbatim repetition of text responses in four separate turns (2, 5, 6, 8) remains the most striking and consistent interaction pattern, solidifying its high rating.\n*   **Acquisition for Proof/Validation (Custom Category):** Old rating: 30%, New rating: 30% (+0%). **No Change:** The thematic elements from Turns 7 and 10 remain consistent, but no new data has emerged to significantly alter this rating.\n\nThe player's pattern of interaction has remained remarkably consistent in its core elements: trauma recall, dissociative tendencies, compulsive checking, and repetitive disclosure. While the choices within the game have been erratic, the self-reported narrative has been stable, suggesting a strong internal focus on processing or avoiding these traumatic elements."
+      }
+    ]
+  }
+}

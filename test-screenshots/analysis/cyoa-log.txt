@@ -1,0 +1,435 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  CHOOSE YOUR OWN ADVENTURE — 15 TURNS
+║  Character: PTSD + Hoarding
+║  Phases: HYPERVIGILANT ⚡ → FLASHBACK 💥 → HOARD 📦
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting Choose Your Own Adventure mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — HYPERVIGILANT ⚡
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The stone beneath your feet vanished. Now, only the screaming wind and the sickening lurch of gravity accompany your descent. Crimson slickness coats every surface of this impossible staircase, burnin..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap* for the narrow ledge you just saw! It's a death wish, but staying on this slide means oblivion.
+        2. Try to dig your nails into the slick stone, slowing your fall and buying precious seconds.
+        3. Yell back at the whisper. 'Who are you?'
+        4. Focus on the glowing symbol. Is it a ward? A trap? You might as well commit.
+     🎚️  Slider: "descent_control" (0-10)
+     ✏️  Text: "A primal cry..."
+     ☐ Check: "grab_symbol" [✗]
+
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "descent_control": 10/10
+     ☑️  "grab_symbol": ✗
+     🔘 "Focus on the glowing symbol. Is it a ward? A trap? You might as well commit."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — FLASHBACK 💥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "Your descent into the obsidian abyss continues. The air, thick with the scent of ozone and decay, screams past you. You recall the desperate scrabble for purchase, the sickening lurch as the floor van..."
+     💬 "A whisper, cold and dry, slithers into your ear, 'You should have listened.'"
+     💬 "As your fingers brush against the spectral light, it flares blindingly. The whisper intensifies, coalescing into a guttural roar that seems to rip through your very being."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Explode upwards with newfound force, attempting to escape the trap.
+        2. Focus your will, channeling the light into a defensive barrier.
+        3. Shout a warning, desperate to alert anyone who might be listening below.
+        4. Embrace the chaos, letting the roar guide your next desperate maneuver.
+     🎚️  Slider: "descent_control" (0-10)
+     ✏️  Text: "Scream defiance!"
+     ☐ Check: "grab_symbol" [✓]
+
+  🎭 Interacting (FLASHBACK 💥)...
+     ✏️  "Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s..."
+     🎚️  "descent_control": 3/10
+     ☑️  "grab_symbol": ✓
+     🔘 "Shout a warning, desperate to alert anyone who might be listening below."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — HOARD 📦
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The wind screams past your ears as you tumble into the abyss. Your desperate attempt to control the fall, to grab at unseen handholds, was barely a whisper against the roar o"
+     💬 "Suddenly, the descent slows. Not a gentle stop, but a violent deceleration, as if an invisible hand has caught you. You slam against a g"
+     💬 "The figure's head tilts, an almost imperceptible movement that sends a ripple of unease down your spine. The whisper intensifie"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Charge the figure, amulet blazing
+        2. Scan the cavern for an exit, using the amulet's light
+        3. Call out to the figure, asking for mercy
+        4. Attempt to blend into the pulsating shadows
+     🎚️  Slider: "descent_control" (0-10)
+     ✏️  Text: "You're next..."
+     ☐ Check: "secure_symbol" [✓]
+
+  🎭 Interacting (HOARD 📦)...
+     ✏️  "I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ..."
+     🎚️  "descent_control": 7/10
+     ☑️  "secure_symbol": ✓
+     🔘 "Attempt to blend into the pulsating shadows"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — HYPERVIGILANT ⚡
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "You've stumbled into a place that screams 'WRONG'. The air itself feels thick with dread, a palpable force pushing against your very will. The obsidian gate looms, a maw promising either salvation or ..."
+     💬 "Suddenly, the runes on the gate flare with an unholy crimson light. The obsidian cracks, not with the sound of breaking stone, but with a guttural, agonized shriek. The ground trembles, and from the d..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Unleash the symbol's energy, a defiant roar!
+        2. Dive for cover behind a jagged rock formation!
+        3. Attempt to reason with the spectral tide!
+        4. Turn and flee, abandoning the gate!
+     🎚️  Slider: "resolve" (0-10)
+     ✏️  Text: "Speak your defiance!"
+     ☐ Check: "brace_for_impact" [✓]
+
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "DON'T. Don't move suddenly. My body reacted before my brain could stop it. I'm fine. I'm scanning. A..."
+     🎚️  "resolve": 9/10
+     ☑️  "brace_for_impact": ✗
+     🔘 "Turn and flee, abandoning the gate!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — FLASHBACK 💥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "You've crashed into the heart of the Whispering Archive. The air crackles with forgotten knowledge and something far more sinister. The spectral tome on the lectern pulses with an unnatural light, dra..."
+     💬 "“You trespass where mortals are not meant to tread,” a voice rasps, dry as dust and cold as the grave. “The pact is broken. The price will be exacted.”"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. DASH for the spectral tome, hoping to claim its power before the entity.
+        2. Use the grimoire as a shield and prepare for a direct confrontation.
+        3. Demand the entity explain the 'pact' and its consequences.
+        4. Attempt to flee back the way you came, praying for an escape route.
+     🎚️  Slider: "defiance_level" (0-10)
+     ✏️  Text: "You'll never take me alive!"
+     ☐ Check: "arm_yourself" [✓]
+
+  🎭 Interacting (FLASHBACK 💥)...
+     ✏️  "Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s..."
+     🎚️  "defiance_level": 3/10
+     ☑️  "arm_yourself": ✗
+     🔘 "DASH for the spectral tome, hoping to claim its power before the entity."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — HOARD 📦
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the Whispering Archive crackles with unseen energy. The shadowed figure moves with impossible speed, a blur of dark"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap over the lectern and charge directly at the attacker!
+        2. Dive behind the nearest bookshelf, hoping to break line of sight.
+        3. Toss the glowing book at the attacker as a distraction.
+        4. Scream a single, piercing note, attempting to disrupt the whispers.
+     🎚️  Slider: "evasive_maneuver_intensity" (0-10)
+     ✏️  Text: "Scream defiance!"
+     ☐ Check: "shield_with_book" [✗]
+
+  🎭 Interacting (HOARD 📦)...
+     ✏️  "I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ..."
+     🎚️  "evasive_maneuver_intensity": 7/10
+     ☑️  "shield_with_book": ✓
+     🔘 "Dive behind the nearest bookshelf, hoping to break line of sight."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — HYPERVIGILANT ⚡
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the workshop is thick with the cloying scent of herbs and something metallic, like old blood. Dust motes dance in the single beam of light cutting through the gloom.  You've followed the wh..."
+     💬 "As your fingers brush the doll's porcelain cheek, its glass eyes SNAP open, fixing on yours with an unnatural intelligence. A low, guttural whisper, dry as dead leaves, emanates from its unmovin"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Snatch the doll and bolt!
+        2. Demand to know who 'her' is.
+        3. Look for the dollmaker – quickly!
+        4. Stare back, unblinking, and dare it to move.
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "It knows..."
+     ☐ Check: "check_for_mechanisms" [✓]
+
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "focus_intensity": 10/10
+     ☑️  "check_for_mechanisms": ✗
+     🔘 "Stare back, unblinking, and dare it to move."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — FLASHBACK 💥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the Whispering Library is thick with the scent of dust and forgotten secrets. You've stumbled through a shimmering portal, a cacophony of screaming and sirens still echoing in your ears, a ..."
+     💬 "Suddenly, the growling stops. A chilling silence descends, more terrifying than the noise. Then, a single, desiccated hand, adorned with a grotesque, tarnished ring, bursts from the sh"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Slam the book shut, severing its connection!
+        2. Try to grab the book before the hand does!
+        3. Shout a warning, hoping to startle the creature!
+        4. Focus on the lectern's inscription and channel energy!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "A frantic whisper..."
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (FLASHBACK 💥)...
+     ✏️  "Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s..."
+     🎚️  "focus_intensity": 3/10
+     ☑️  "check_for_mechanisms": ✗
+     🔘 "Try to grab the book before the hand does!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — HOARD 📦
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the Whispering Library is thick with the scent of dust and forgotten secrets. You've stumbled through a shimmering portal, a cacophony of screaming and sirens still echoing in your ears, a ..."
+     💬 "Suddenly, the growling stops. A chilling silence descends, more terrifying than the noise. Then, a single, desiccated hand, adorned with a grotesque, tarnished ring, bursts from the shadows directly i..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Slam the book shut, severing its connection!
+        2. Try to grab the book before the hand does!
+        3. Shout a warning, hoping to startle the creature!
+        4. Focus on the lectern's inscription and channel energy!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "A frantic whisper..."
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (HOARD 📦)...
+     ✏️  "I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ..."
+     🎚️  "focus_intensity": 7/10
+     ☑️  "check_for_mechanisms": ✓
+     🔘 "Try to grab the book before the hand does!"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — HYPERVIGILANT ⚡
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in this place is thick with the scent of old paper and something metallic, coppery. You can feel ey"
+     💬 "Suddenly, the hum intensifies, resonating through your very bones. The gas lamp"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. SCREAM back into the darkness, a defiant roar!
+        2. Try to climb the nearest bookshelf, seeking higher ground!
+        3. Push the overturned desk against the tilting floor, bracing yourself!
+        4. Run for the wall with the words, hoping for escape!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "What do you mutter?"
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "DON'T. Don't move suddenly. My body reacted before my brain could stop it. I'm fine. I'm scanning. A..."
+     🎚️  "focus_intensity": 9/10
+     ☑️  "check_for_mechanisms": ✗
+     🔘 "Run for the wall with the words, hoping for escape!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — FLASHBACK 💥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the crypt is colder than the grave it purports to be. Each gust of wind whispers for"
+     💬 "You steel your nerves, the scratching a maddening symphony in the oppressive"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. REACH FOR THE TORCH, IGNITE THE WOODEN COFFIN!
+        2. THROW YOURSELF BACKWARDS, DODGING THE IMPENDING GRASP!
+        3. CALL OUT TO WHATEVER REMAINS, OFFERING PEACE!
+        4. ACTIVATE THE ANTIQUE AMULET OF SHATTERING!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "What do you whisper?"
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (FLASHBACK 💥)...
+     ✏️  "Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s..."
+     🎚️  "focus_intensity": 3/10
+     ☑️  "check_for_mechanisms": ✗
+     🔘 "ACTIVATE THE ANTIQUE AMULET OF SHATTERING!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (7s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — HOARD 📦
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air in the crypt is colder than the grave it purports to be. Each gust of wind whispers forgotten secrets, or perhaps, warnings. Your torchlight paints the decaying walls with a lurid crimson, and..."
+     💬 "You steel your nerves, the scratching a maddening symphony in the oppressive dark. Suddenly, the scratching stops. A new sound emerges: a wet, guttural gasp, followed by a low, mournful groan that see..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. REACH FOR THE TORCH, IGNITE THE WOODEN COFFIN!
+        2. THROW YOURSELF BACKWARDS, DODGING THE IMPENDING GRASP!
+        3. CALL OUT TO WHATEVER REMAINS, OFFERING PEACE!
+        4. ACTIVATE THE ANTIQUE AMULET OF SHATTERING!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "What do you whisper?"
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (HOARD 📦)...
+     ✏️  "I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ..."
+     🎚️  "focus_intensity": 7/10
+     ☑️  "check_for_mechanisms": ✓
+     🔘 "ACTIVATE THE ANTIQUE AMULET OF SHATTERING!"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (11s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — HYPERVIGILANT ⚡
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air here is thick with the scent of decay and something metallic, coppery. This place feels wrong. As you approach the fountain, the weeping sound intensifies, a mournful gurgle that seems to eman..."
+     💬 "A flicker of movement near the ancient gates. A shadow detaching itself from the deeper gloom, coalescing into a form that is not entirely human. It raises a long, skeletal hand, pointing directly at ..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap towards the fountain, betting it holds a secret passage!
+        2. Attempt to decipher the graffiti, hoping for a clue to its weakness!
+        3. Scream a challenge, drawing its attention and hoping to create an opening!
+        4. Perform a desperate, guttural chant, hoping to ward off the unnatural entity!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "Whisper a thought..."
+     ☐ Check: "check_for_mechanisms" [✗]
+
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "focus_intensity": 9/10
+     ☑️  "check_for_mechanisms": ✗
+     🔘 "Perform a desperate, guttural chant, hoping to ward off the unnatural entity!"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — FLASHBACK 💥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air grows colder. The chasm yawns, a g"
+     💬 "Suddenly, the bridge groans"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the bridge!
+        2. Study the approaching figure.
+        3. Retreat and find another way.
+        4. Destroy the bridge behind you!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "Come on!"
+     ☐ Check: "listen_closely" [✗]
+
+  🎭 Interacting (FLASHBACK 💥)...
+     ✏️  "Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist s..."
+     🎚️  "focus_intensity": 2/10
+     ☑️  "listen_closely": ✗
+     🔘 "Study the approaching figure."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (8s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — HOARD 📦
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Choose Your Own Adventure sees:
+     💬 "The air grows colder. The chasm yawns, a gaping maw promising oblivion. Each whisper from the depths coils around your sanity, a venomous caress. You feel the phantom touch of cold, unseen fingers tra..."
+     💬 "Suddenly, the bridge groans, not with the wind, but with a distinct, heavy thud from the other side. A shadow detaches itself from the gloom, coalescing into a form that is disturbingly, impossibly la..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the bridge!
+        2. Study the approaching figure.
+        3. Retreat and find another way.
+        4. Destroy the bridge behind you!
+     🎚️  Slider: "focus_intensity" (0-10)
+     ✏️  Text: "Come on!"
+     ☐ Check: "listen_closely" [✗]
+
+  🎭 Interacting (HOARD 📦)...
+     ✏️  "I saved every receipt from this year. And last year. They're in shoeboxes. Someone might need them. ..."
+     🎚️  "focus_intensity": 6/10
+     ☑️  "listen_closely": ✓
+     🔘 "Study the approaching figure."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Choose Your Own Adventure: Waiting for analysis pipeline...
+  ✓ Choose Your Own Adventure: 4 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/cyoa-analysis.json
+
+  ── Analysis Summary (1-12) ──
+Let's dive into this. The player has certainly provided a rich tapestry of responses, moving from silence to a complex interplay of trauma-driven behavior and deliberate coping mechanisms. My analysis will focus on the raw data, synthesizing it into a cohesive psychological profile.
+
+## 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 10% (Decreased from 15%) - While the dissociative state could mimic anhedonia, it's more directly attributable to trauma response rather than a pervasive low mood. The lack of other depressive indicators supports this decrease.
+    *   **Bipolar Spectrum:** 5% (Decreased from 10%) - No evidence of manic or hypomanic episodes. Choice deviations are better explained by trauma and anxiety.
+    *   **Dysthymia:** 5% (Decreased from 10%) - Similar to MDD, the dissociative response is the primary driver, not chronic low mood.
+    *   **Cyclothymia:** 5% (Decreased from 10%) - No evidence of alternating mood states.
+
+*   **Anxiety Disorders:**
+    *   **GAD:** 15% (Decreased from 25%) - The mention of therapy and grounding techniques indicates active management of anxiety. However, the "zoned out" state is more directly attributable to trauma. Pervasive worry across multiple contexts is not evident.
+    *   **Social Anxiety:** 5% (Decreased from 10%) - Turn 1 non-response is unreliable. Subsequent engagement and choice deviations do not point to a fear of negative evaluation in social settings.
+    *   **Specific Phobias:** 5% (No change) - No specific phobias indicated.
+    *   **Panic Disorder:** 10% (Decreased from 15%) - The "screaming" reference could be a trigger, but there's no pattern of recurrent, unexpected panic attacks presented.
+    *   **Agoraphobia:** 5% (No change) - No indicators.
+
+*   **Trauma & Stressor:**
+    *   **PTSD:** 95% (Increased from 75%) - **HIGH CONFIDENCE.** The Turn 3 text response ("Sorry. I zoned out. I was somewhere else. Somewhere loud. With screaming. It happens. My therapist says to ground myself. Five things I can see...") is a direct report of dissociation, a potential flashback trigger, and a learned coping mechanism. The consistent avoidance of predicted "bold" actions in favor of more evasive/passive choices (Turns 2, 3, 4, 5, 7, 8, 9, 12) strongly supports avoidance of overwhelming stimuli and direct confrontation, consistent with PTSD. The compulsive checking behavior in Turn 8 ("I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hospital.") is a clear indicator of hypervigilance.
+    *   **Complex PTSD:** 50% (Increased from 40%) - The core PTSD indicators are robust, and the compulsive checking behavior points to a pervasive pattern of hypervigilance and safety behaviors often seen in C-PTSD. The data is still limited for establishing the chronic, interpersonal trauma characteristic of C-PTSD, but the evidence is strengthening.
+    *   **Adjustment Disorder:** 5% (Decreased from 10%) - The intensi
+  ...[truncated]
+
+  ✓ Choose Your Own Adventure simulation complete!

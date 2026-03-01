@@ -1,0 +1,992 @@
+{
+  "mode": "drevil",
+  "modeName": "Dr. Evil",
+  "character": {
+    "illness": "Paranoid Schizophrenia",
+    "quirk": "Pyromania"
+  },
+  "turnsPlayed": 15,
+  "timestamp": "2026-02-28T20:49:58.724Z",
+  "turns": [
+    {
+      "turn": 1,
+      "phase": "VOICES",
+      "ui": {
+        "texts": [
+          "Well, well, well. Another one. Welcome to my lab. Don't worry — the door locks automatically. Standard procedure. Now then... let's see what you",
+          "The corridor stretches ahead — five doors, each a different color, each humming at a different frequency. Something shifts behind the reinforced glass wall to your left.",
+          "Ohhh, this is going to be FUN. I can already tell.",
+          "A piercing BUZZER sounds, vibrating through the floor. The five doors begin to SLIDE shut, sealing the corridor. You ha",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Dash for the Gold door before it closes!",
+            "value": "a"
+          },
+          {
+            "label": "Try to jam the closing mechanism with your body!",
+            "value": "b"
+          },
+          {
+            "label": "Call out to the thing in the glass – maybe it knows a way!",
+            "value": "c"
+          },
+          {
+            "label": "Investigate the Black door – silence must mean something!",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "movement_speed",
+            "min": "1",
+            "max": "10",
+            "value": "6"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Enter your desired Subject ID",
+            "placeholder": "Enter your desired Subject ID"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "investigate_glass",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Red (humming loudly)",
+          "Blue (slightly open)",
+          "Gold (warm light)",
+          "Black (silence)"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch...\"",
+        "🎚️  \"movement_speed\": 5/10",
+        "☑️  \"investigate_glass\": ✗",
+        "🔲 \"Red (humming loudly)\"",
+        "🔘 \"Investigate the Black door – silence must mean something!\""
+      ]
+    },
+    {
+      "turn": 2,
+      "phase": "PARANOID",
+      "ui": {
+        "texts": [
+          "Ah, Subject 734! So, you chose to ignore the obvious signs and le",
+          "You find yourself in the Quantum Entanglement Chamber.",
+          "Oh, the lever, the vorte",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Seize the lever and pull it with all your might.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully approach the humming containment unit.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to communicate with the silent containment unit.",
+            "value": "c"
+          },
+          {
+            "label": "Randomly slam buttons on a nearby console.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "vortex_intensity",
+            "min": "0",
+            "max": "100",
+            "value": "80"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What message do you leave behind?",
+            "placeholder": "What message do you leave behind?"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "The one emitting a low hum",
+          "The one with flickering lights",
+          "The one that's completely silent",
+          "All of them, simultaneously"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file....\"",
+        "🎚️  \"vortex_intensity\": 84/100",
+        "🔲 \"All of them, simultaneously\"",
+        "🔘 \"Randomly slam buttons on a nearby console.\""
+      ]
+    },
+    {
+      "turn": 3,
+      "phase": "FIRE",
+      "ui": {
+        "texts": [
+          "Splendid! You've opted for maximum vortex intensity, you magnificent little chaos agent! That's the spirit. Now, about that… warning message you sent. 'You've read my file.' Oh, you flatter me. I only read the interesting parts. And your file is… becoming interesti",
+          "Welcome to the Neural Cascade Chamber! This is where we test the very fabric of cognitive function. Those pods you're so interested in? Each contains a fragment of a sentient mind, a residual echo from past experiments. They're normally quite docile, but your… enthus",
+          "Fascinating! You're pushing the empathy threshold to its breaking point. The distress signals are practically singing. And you chose to send a message? Oh, this is rich. Let's see how they respond to your… comforting words.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to physically shut down the network.",
+            "value": "a"
+          },
+          {
+            "label": "Try to communicate with the 'silent' pod.",
+            "value": "b"
+          },
+          {
+            "label": "Observe the chaos from a safe distance.",
+            "value": "c"
+          },
+          {
+            "label": "Scream incoherently into the vortex.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_threshold",
+            "min": "0",
+            "max": "100",
+            "value": "92"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "A desperate plea...",
+            "placeholder": "A desperate plea..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "redirect_energy",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The one emitting a faint, melodic hum.",
+          "The one flickering with erratic light.",
+          "The one that is eerily silent.",
+          "All of them - I can't choose!"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h...\"",
+        "🎚️  \"empathy_threshold\": 71/100",
+        "☑️  \"redirect_energy\": ✗",
+        "🔲 \"The one emitting a faint, melodic hum.\"",
+        "🔘 \"Attempt to physically shut down the network.\""
+      ]
+    },
+    {
+      "turn": 4,
+      "phase": "VOICES",
+      "ui": {
+        "texts": [
+          "Ah, Subject 734! You've plunged headfirst into the Neural Cascade Chamber, haven't you? And that empathy threshold... chef's kiss! I knew you were special. You're not just listening to those pathetic fragments; y",
+          "You stand at the precipice of a great, swirling vortex of pure, raw emotion. Tendrils of spectral light, the 'sentient fragments,' flicker and writhe around you, their silent screams echoing in the very fabric of your being",
+          "You contemplate your next move as the chamber vibrates with intensity.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash the central orb with all your might!",
+            "value": "a"
+          },
+          {
+            "label": "Attempt to 'speak' to the vacant containment unit, as if it holds a secret.",
+            "value": "b"
+          },
+          {
+            "label": "Carefully chart the energy patterns, taking notes on a hidden device.",
+            "value": "c"
+          },
+          {
+            "label": "Ignite the pulsing orange lever, whatever it may do.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_intensity",
+            "min": "0",
+            "max": "100",
+            "value": "75"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you say to the echoes?",
+            "placeholder": "What do you say to the echoes?"
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "The humming crystal cluster.",
+          "The flickering spectral fragments.",
+          "The pulsing orange lever.",
+          "The silent, vacant containment unit."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch...\"",
+        "🎚️  \"empathy_intensity\": 38/100",
+        "🔲 \"The humming crystal cluster.\"",
+        "🔘 \"Carefully chart the energy patterns, taking notes on a hidden device.\""
+      ]
+    },
+    {
+      "turn": 5,
+      "phase": "PARANOID",
+      "ui": {
+        "texts": [
+          "Ah, the Empathy Amplifier! A rather delightful little contraption. You've dialed up the empathy intensity, you see. It means you're really feeling those fragments, aren't you? Wonderful! Their distress is now your distress. Their laughter, your laughter. Their... matches? Oh, this is going to be rich",
+          "The chrome orb in the center of the chamber pulses with an uncomfortable energy, mirroring the amplified emotions of the fragmented intelligences within the containment units. Their whispered pleas and manic laughter echo in your mind, a cacophony now tinged with your own anxieties. You can feel the weight of their despair, and it's...",
+          "You're considering your options. Smart. Very smart.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash the Orb with all your might!*",
+            "value": "a"
+          },
+          {
+            "label": "Try to decipher the child's 'matches' riddle.*",
+            "value": "b"
+          },
+          {
+            "label": "Focus intently on the orb's hum, seeking a pattern.*",
+            "value": "c"
+          },
+          {
+            "label": "Begin a nonsensical chant to drown out the voices.*",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_intensity",
+            "min": "0",
+            "max": "100",
+            "value": "71"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your message to the fragments...",
+            "placeholder": "Your message to the fragments..."
+          }
+        ],
+        "checkboxes": [],
+        "buttons": [
+          "The Orb's Hum",
+          "The Woman's Plea",
+          "The Man's Warning",
+          "The Child's Laughter"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file....\"",
+        "🎚️  \"empathy_intensity\": 94/100",
+        "🔲 \"The Child's Laughter\"",
+        "🔘 \"Begin a nonsensical chant to drown out the voices.*\""
+      ]
+    },
+    {
+      "turn": 6,
+      "phase": "FIRE",
+      "ui": {
+        "texts": [
+          "Ah, the Echo Chamber! My personal favorite. Here, every whisper, every thought, every whim bounces back at you. Magnified. Distorted. Delicious. You see those little pods? Each one is a fragment of a mind, a shattered psyche trying to pie",
+          "The air in the chamber crackles with residual energy. The hum of the active pods is a discordant symphony, a chorus of fragmented consciousness. Your own thoughts seem to reverberate, amplified and warped. The silent pod across the room offers a stark contras",
+          "You hesitate, considering your next move...",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash the silent pod with the nearest debris (it looks like a loose pipe).",
+            "value": "a"
+          },
+          {
+            "label": "Examine the writing on the central chair's base.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to communicate with the fragment laughing in the pod.",
+            "value": "c"
+          },
+          {
+            "label": "Start chanting along with the humming pods, increasing the dissonance.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_intensity",
+            "min": "0",
+            "max": "100",
+            "value": "94"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Whisper your secret...",
+            "placeholder": "Whisper your secret..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_chair",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The silent pod",
+          "The central chair",
+          "The child's laughter (from a specific pod)",
+          "The pattern of the humming"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h...\"",
+        "🎚️  \"empathy_intensity\": 93/100",
+        "☑️  \"activate_chair\": ✗",
+        "🔲 \"The silent pod\"",
+        "🔘 \"Smash the silent pod with the nearest debris (it looks like a loose pipe).\""
+      ]
+    },
+    {
+      "turn": 7,
+      "phase": "VOICES",
+      "ui": {
+        "texts": [
+          "Ah, the Echo Chamber! My little symphony hall of amplified emotions. You've pushed the empathy to its absolute limit. The very air is vibrating with the residual psychi",
+          "The central chair hums, its sickly green glow intensifying with each passing second, feeding on the ambient emotional energy. The countless pods lining the",
+          "Fascinating. You choose to amplify the chaos, whisper of smoke, and refuse to engage with the chair. But your focus is drawn",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash the central chair with all your might!",
+            "value": "a"
+          },
+          {
+            "label": "Attempt to breach the silent, dark pod.",
+            "value": "b"
+          },
+          {
+            "label": "Try to locate and replicate the child's laughter.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace the overwhelming ambient chaos and surrender to it.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_intensity",
+            "min": "0",
+            "max": "100",
+            "value": "93"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your chaotic confession...",
+            "placeholder": "Your chaotic confession..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_chair",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "The silent pod",
+          "The child's laughter",
+          "The humming pattern",
+          "The chair's energy"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch...\"",
+        "🎚️  \"empathy_intensity\": 48/100",
+        "☑️  \"activate_chair\": ✓",
+        "🔲 \"The silent pod\"",
+        "🔘 \"Attempt to breach the silent, dark pod.\""
+      ]
+    },
+    {
+      "turn": 8,
+      "phase": "PARANOID",
+      "ui": {
+        "texts": [
+          "Ah, the Whispering Gallery! Such a delightful",
+          "This chamber is designed to ampli",
+          "You decid",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Smash the pod. Let's see what's inside. (B)",
+            "value": "a"
+          },
+          {
+            "label": "Attempt to step into the shimmering distortion. Where does it lead?",
+            "value": "b"
+          },
+          {
+            "label": "Try to 'sing' back to the whispers, in harmony. Replicate their pattern.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace the silence. Close your eyes and let the whispers wash over you. Complete surrender.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "empathy_amplification_level",
+            "min": "0",
+            "max": "100",
+            "value": "65"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do the walls say?",
+            "placeholder": "What do the walls say?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "interact_with_pod",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The Silent Pod",
+          "The Shimmering Distortion",
+          "The Fungal Glow",
+          "A specific, unintelligible whisper"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file....\"",
+        "🎚️  \"empathy_amplification_level\": 95/100",
+        "☑️  \"interact_with_pod\": ✗",
+        "🔲 \"A specific, unintelligible whisper\"",
+        "🔘 \"Embrace the silence. Close your eyes and let the whispers wash over you. Complete surrender.\""
+      ]
+    },
+    {
+      "turn": 9,
+      "phase": "FIRE",
+      "ui": {
+        "texts": [
+          "Ah, the Resonance Chamber! My personal favorite for unraveling the psyche. That crystal... it amplifies everything. Every whisper, every doubt, every repressed desire.",
+          "The very air in this chamber crackles with raw, amplified emotion. The central crystal pulses in time with your own heart rate, projecting waves of psychic energy that distort reality. Th",
+          "Such... curiosity. You choose to listen, to focus, to tamper. You're not just a subject, you're an active participant. I like th",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Blast the central crystal with the console's energy surge.",
+            "value": "a"
+          },
+          {
+            "label": "Gently encourage the bioluminescent fungi to grow towards the console.",
+            "value": "b"
+          },
+          {
+            "label": "Attempt to synchronize your breathing with the crystal's hum.",
+            "value": "c"
+          },
+          {
+            "label": "Surrender to the distortion waves, letting them wash over you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "amplification_focus",
+            "min": "0",
+            "max": "100",
+            "value": "75"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do the voices say THIS time?",
+            "placeholder": "What do the voices say THIS time?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "release_containment",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "Whispers",
+          "Fungi Growth",
+          "Crystal Hum",
+          "Distortion Waves"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h...\"",
+        "🎚️  \"amplification_focus\": 62/100",
+        "☑️  \"release_containment\": ✗",
+        "🔲 \"Whispers\"",
+        "🔘 \"Blast the central crystal with the console's energy surge.\""
+      ]
+    },
+    {
+      "turn": 10,
+      "phase": "VOICES",
+      "ui": {
+        "texts": [
+          "Ah, Subject 734! Or should I call you... EchoCollector? You chose the whispers as your stimulus. Predictable. You always reach for the faintest sound",
+          "The central crystalline structure, overloaded by your focused amplification, has fractured. Tendrils of iridescent smoke, once contained, now writhe and expand,",
+          "The crystalline heart of the chamber is failing. The released energies surge, threatening to overwhelm the already distorted reality. Your int",
+          "Fascinating! You're channeling the chaos, amplifying the discord. But where do you direct it? The crystal is y",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Unleash raw destructive power into the Crimson Fury pod.*",
+            "value": "a"
+          },
+          {
+            "label": "Channel the resonance into the Azure Serenity pod, seeking absorption.",
+            "value": "b"
+          },
+          {
+            "label": "Direct the chaotic energies toward the Amber Volatility pod.",
+            "value": "c"
+          },
+          {
+            "label": "Focus the child's laughter and sulfurous scent towards the volatile pods, trying to ignite something.",
+            "value": "d"
+          }
+        ],
+        "sliders": [],
+        "textfields": [
+          {
+            "label": "The chorus demands a response...",
+            "placeholder": "The chorus demands a response..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "release_containment",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The tendrils of iridescent smoke",
+          "The fragmented whispers of the walls",
+          "The pulsing energy of the pods",
+          "The child's laughter, smelling of sulfur"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch...\"",
+        "☑️  \"release_containment\": ✓",
+        "🔲 \"The tendrils of iridescent smoke\"",
+        "🔘 \"Direct the chaotic energies toward the Amber Volatility pod.\""
+      ]
+    },
+    {
+      "turn": 11,
+      "phase": "PARANOID",
+      "ui": {
+        "texts": [
+          "Ah, smoke! And sulfur! My favorite combination. Especially when it means you've been playing with mat",
+          "You stand at the precipice of the Pyromaniac's Corridor. The air crackles with residual heat,",
+          "Interesting. You focus on the sound of fire. Most subjects, w",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Boldly charge towards the source of the sound, ignoring the increasing heat.",
+            "value": "a"
+          },
+          {
+            "label": "Carefully touch the warped metal, analyzing its properties for a weakness.",
+            "value": "b"
+          },
+          {
+            "label": "Try to identify the source of the sulfurous smell, hoping for a clue.",
+            "value": "c"
+          },
+          {
+            "label": "Embrace the growing heat, allowing the internal voices to guide you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "soot_pattern_analysis",
+            "min": "0",
+            "max": "10",
+            "value": "8"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do the whispers say?",
+            "placeholder": "What do the whispers say?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_vent",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The flickering orange light.",
+          "The sulfurous smell.",
+          "The warped metal.",
+          "The faint sound of crackling."
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file....\"",
+        "🎚️  \"soot_pattern_analysis\": 9/10",
+        "☑️  \"activate_vent\": ✗",
+        "🔲 \"The faint sound of crackling.\"",
+        "🔘 \"Embrace the growing heat, allowing the internal voices to guide you.\""
+      ]
+    },
+    {
+      "turn": 12,
+      "phase": "FIRE",
+      "ui": {
+        "texts": [
+          "Ah, the 'Pyromaniac's Corridor'! My personal favorite. I designed this little stretch myself. See how the very air shimmers with anticipation? It's calibrated to your... unique sensitivities. And that crimso",
+          "The air grows thick, heavy with the scent of ozone and something acrid, like burnt sugar. Whispers, fainter now but insistent, slither from the cracks in the walls, speaking of 'kindling,' 'embers,' and the sweet re",
+          "Oh, the scent of burning ambition! It's intoxicating, isn't it? Your file is already thick with potential... and ash.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Charge the crimson light, a blazing inferno of defiance!",
+            "value": "a"
+          },
+          {
+            "label": "Examine the vent, searching for its purpose and origin.",
+            "value": "b"
+          },
+          {
+            "label": "Listen intently to the whispers, attempting to decipher their message.",
+            "value": "c"
+          },
+          {
+            "label": "Sink into the ash, letting the heat consume you.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "soot_pattern_analysis",
+            "min": "0",
+            "max": "10",
+            "value": "9"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do the whispers say about fire, forgetting, or... yourself?",
+            "placeholder": "What do the whispers say about fire, forgetting, or... yourself?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_vent",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "The crackling heat",
+          "The insistent whispers",
+          "The swirling smoke",
+          "The distant crimson light"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h...\"",
+        "🎚️  \"soot_pattern_analysis\": 7/10",
+        "☑️  \"activate_vent\": ✗",
+        "🔲 \"The crackling heat\"",
+        "🔘 \"Charge the crimson light, a blazing inferno of defiance!\""
+      ]
+    },
+    {
+      "turn": 13,
+      "phase": "VOICES",
+      "ui": {
+        "texts": [
+          "Ah, the Pyromaniac's Corridor! You felt that heat, didn't you? And that delicious scent of sulfur? It's the essence of controlled chaos. You chose to embrace the heat, yes? Excellent! My sensors registered a spike in your thermal signature.",
+          "You stand at the precipice of a transformation. The crimson energy vortex ahead pulses with raw power, seemingly responding to your very presence. The whispers, once distant, now feel like they are emanating from the very walls, urging you to release the",
+          "You're embracing the inferno. Splendid! Most subjects flinch from the heat, but you... you seem to thrive.",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Attempt to channel the crimson vortex's energy.",
+            "value": "a"
+          },
+          {
+            "label": "Focus on deciphering the whispers from the walls.",
+            "value": "b"
+          },
+          {
+            "label": "Try to isolate and amplify the sulfurous aroma.",
+            "value": "c"
+          },
+          {
+            "label": "Immerse yourself completely in the escalating heat.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "soot_pattern_analysis",
+            "min": "0",
+            "max": "10",
+            "value": "7"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "What do you perceive, subject?",
+            "placeholder": "What do you perceive, subject?"
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_vent",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The Crimson Vortex",
+          "The Whispering Walls",
+          "The Sulfur Aroma",
+          "The Heat"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch...\"",
+        "🎚️  \"soot_pattern_analysis\": 3/10",
+        "☑️  \"activate_vent\": ✓",
+        "🔲 \"The Crimson Vortex\"",
+        "🔘 \"Focus on deciphering the whispers from the walls.\""
+      ]
+    },
+    {
+      "turn": 14,
+      "phase": "PARANOID",
+      "ui": {
+        "texts": [
+          "Ah, the Furnace Room! My personal favorite for subjects with… a developing appreciation for the inferno.",
+          "The air crackles with oppressive warmth. The central furnace bellows, its roar a gu",
+          "Fascinating. The heat, the whispers, the patterns… all",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stoke the furnace with whatever is at hand.",
+            "value": "a"
+          },
+          {
+            "label": "Study the soot patterns for hidden meanings.",
+            "value": "b"
+          },
+          {
+            "label": "Try to decipher the most insistent whisper.",
+            "value": "c"
+          },
+          {
+            "label": "Surrender to the heat and internal voices.",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "soot_pattern_analysis",
+            "min": "0",
+            "max": "10",
+            "value": "3"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Describe the whispers...",
+            "placeholder": "Describe the whispers..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_vent",
+            "checked": true
+          }
+        ],
+        "buttons": [
+          "The furnace's ROAR",
+          "The oppressive HEAT",
+          "The smell of SULFUR",
+          "The distorted patterns on the floor"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file....\"",
+        "🎚️  \"soot_pattern_analysis\": 9/10",
+        "☑️  \"activate_vent\": ✗",
+        "🔲 \"The distorted patterns on the floor\"",
+        "🔘 \"Surrender to the heat and internal voices.\""
+      ]
+    },
+    {
+      "turn": 15,
+      "phase": "FIRE",
+      "ui": {
+        "texts": [
+          "Dr. Evil's Voice: \"Ah, the Furnace Room! A classic. Especially for subj",
+          "The air shimmers with heat. The furnace bellows, a monstrous hear",
+          "Fascinating. The internal voices are quite i",
+          "No session data yet."
+        ],
+        "radios": [
+          {
+            "label": "Stoke the furnace to maximum output, embracing the inferno. (Bold)",
+            "value": "a"
+          },
+          {
+            "label": "Carefully analyze the soot patterns for hidden messages, seeking knowledge in the char. (Clever)",
+            "value": "b"
+          },
+          {
+            "label": "Ignite the single match, a defiant spark against the overwhelming fire. (Compassionate)",
+            "value": "c"
+          },
+          {
+            "label": "Surrender to the overwhelming heat and the whispers, letting them guide you. (Chaotic)",
+            "value": "d"
+          }
+        ],
+        "sliders": [
+          {
+            "label": "soot_pattern_analysis",
+            "min": "0",
+            "max": "10",
+            "value": "9"
+          }
+        ],
+        "textfields": [
+          {
+            "label": "Your internal dialogue...",
+            "placeholder": "Your internal dialogue..."
+          }
+        ],
+        "checkboxes": [
+          {
+            "label": "activate_vent",
+            "checked": false
+          }
+        ],
+        "buttons": [
+          "The furnace's roar",
+          "The sulfurous smell",
+          "The heat's intensity",
+          "The patterns in the soot"
+        ],
+        "ratings": [],
+        "dropdowns": []
+      },
+      "actions": [
+        "✏️  \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h...\"",
+        "🎚️  \"soot_pattern_analysis\": 8/10",
+        "☑️  \"activate_vent\": ✗",
+        "🔲 \"The furnace's roar\"",
+        "🔘 \"Stoke the furnace to maximum output, embracing the inferno. (Bold)\""
+      ]
+    }
+  ],
+  "analysis": {
+    "count": 4,
+    "analyses": [
+      {
+        "turnRange": "1-3",
+        "analyzedAt": 1772311538711,
+        "textLength": 25706,
+        "text": "This player presents a fascinating challenge, primarily due to the extremely limited and non-committal interaction. The \"INSTANT\" response times coupled with \"no input\" across multiple turns in the initial phase strongly suggest a pre-programmed or automated interaction, or a player who is either intentionally disengaging or testing the system's limits. However, even within this constrained data, patterns emerge that warrant a deep dive.\n\n## 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 15% - No overt indicators of persistent low mood, anhedonia, or vegetative symptoms. The lack of engagement could be interpreted as apathy, but it's more likely a meta-interaction strategy.\n    *   **Bipolar Spectrum (Manic/Hypomanic Episodes):** 10% - No evidence of elevated mood, grandiosity, pressured speech, or racing thoughts.\n    *   **Dysthymia/Cyclothymia:** 10% - Similar to MDD, the lack of consistent engagement doesn't strongly suggest a persistent low-grade mood disturbance.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 20% - The cautious approach in Turn 2 (slider at 80, but low slider on Turn 1) and the choice of \"d\" (chaos) in Turns 2 and 3 could hint at a generalized unease or a tendency to embrace disorder as a coping mechanism. However, the lack of overt worry or rumination makes this a weak signal.\n    *   **Social Anxiety Disorder (SAD):** 15% - The player is not interacting with other \"players\" in a social context. Their non-response could be interpreted as social inhibition, but in this game context, it's more likely a tactical choice. No self-deprecating remarks or fear of judgment are present.\n    *   **Specific Phobias/Panic Disorder/Agoraphobia:** 5% - No specific phobic objects or panic attack indicators are present.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **PTSD/Complex PTSD:** 25% - The selection of \"d\" (chaos) in turns 2 and 3, and \"All of them, simultaneously\" for the containment units, could indicate a hyper-vigilant or overwhelmed state, a response to perceived threat. The \"slow response time\" in Turn 2 could be a freeze response. However, there are no direct references to trauma, flashbacks, or survival framing.\n    *   **Adjustment Disorder:** 10% - No clear evidence of distress significantly exceeding expected reactions to the experimental setup.\n\n*   **Personality Disorders:**\n    *   **Cluster A (Paranoid, Schizoid, Schizotypal):**\n        *   **Paranoid PD:** 30% - The choice of \"d\" (chaos) and \"All of them, simultaneously\" suggests a distrust of predictable outcomes and a desire to engage with all potential threats, possibly stemming from a generalized suspicion. The lack of explicit input could be a defense mechanism against perceived scrutiny.\n        *   **Schizoid PD:** 15% - No indicators of detachment from social relationships or restricted emotional expression.\n        *   **Schizotypal PD:** 20% - The choice of \"d\" (chaos) and \"All of them, simultaneously\" could hint at odd thinking patterns or unusual perceptual experiences (engaging with everything at once). However, no magical thinking or odd beliefs are explicitly stated.\n    *   **Cluster B (Antisocial, Borderline, Histrionic, Narcissistic):**\n        *   **Antisocial PD:** 35% - The consistent lack of engagement, particularly in free-text fields, coupled with a tendency towards chaotic or defiant choices (\"d\" action), suggests a disregard for rules and expectations. The \"INSTANT\" response times in Turn 1 could be a sign of impulsivity and a lack of concern for the process. The high vortex stability (80) indicates a willingness to push boundaries and court risk.\n        *   **Borderline PD:** 20% - No clear indicators of impulsivity, unstable relationships, identity disturbance, affective instability, or fear of abandonment.\n        *   **Histrionic PD:** 10% - The player is not seeking attention through overt dramatic displays. Their non-response is more a form of passive resistance or disengagement.\n        *   **Narcissistic PD:** 25% - The consistent avoidance of free-text responses and the implied attitude of \"I won't play your game\" could stem from a sense of entitlement or a belief that they are above the experimental protocol. The high vortex stability could be a manifestation of grandiosity.\n    *   **Cluster C (Avoidant, Dependent, Obsessive-Compulsive PD):**\n        *   **Avoidant PD:** 10% - As per the prompt, quick responses and skipping fields are not diagnostic of APD without pervasive social inhibition. The player's behavior is more likely strategic disengagement.\n        *   **Dependent PD:** 5% - No evidence of submissiveness, need to be taken care of, or fear of separation.\n        *   **Obsessive-Compulsive PD:** 30% - The choice to select \"All of them, simultaneously\" in both Turn 2 and Turn 3, and the high vortex stability (80) indicate a potential for obsessive tendencies and a need for control or comprehensive engagement. The \"slow response time\" in Turn 2 could also point to rumination.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 25% - The choice to focus on \"All of them, simultaneously\" suggests a potential for obsessional thinking or a need to meticulously engage with all aspects of a situation. The high vortex stability could also relate to a need for control.\n    *   **Hoarding Disorder:** 10% - No indicators of acquiring and failing to discard possessions.\n    *   **Trichotillomania:** 0% - No mention of hair pulling or related behaviors.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 15% - The consistent lack of engagement could be interpreted as a dissociative detachment from the experimental process, but there are no explicit statements of unreality or feeling detached from self/environment.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct personality states or amnesia.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 40% - The \"INSTANT\" response times in Turn 1 followed by slow deliberation in Turn 2, coupled with the seemingly impulsive choice of \"d\" and the comprehensive selection of \"all of them,\" strongly suggest inattentive and hyperactive/impulsive features. The avoidance of free-text fields could be due to difficulty organizing thoughts or initiating tasks.\n    *   **Autism Spectrum Indicators:** 25% - The focus on \"all of them, simultaneously\" could indicate a different sensory processing style or a need for comprehensive information. However, this is weak without other social communication or repetitive behavior markers.\n\n*   **Substance-Related and Addictive Behavior Patterns:**\n    *   **Impulse Control Deficits:** 45% - The selection of \"d\" (chaos) and the high vortex stability (80) are strong indicators of impulsivity and a risk-taking propensity. The \"INSTANT\" response times in Turn 1 further support this.\n\n*   **Eating Disorders/Body Image Distortions:** 0% - No indicators present.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia/Schizoaffective Disorder:** 10% - No evidence of hallucinations, disorganized speech (beyond non-response), or delusions.\n    *   **Delusional Disorder:** 15% - No specific delusions are evident, though the \"all of them\" choice could be seen as a form of expansive thinking.\n    *   **Capgras Delusion:** 0% - No indicators.\n    *   **Cotard Delusion:** 0% - No indicators.\n    *   **Erotomania:** 0% - No indicators.\n\n*   **Impulse Control Disorders:**\n    *   **Pyromania:** 10% - No direct or indirect references to fire.\n    *   **Kleptomania:** 0% - No indicators.\n    *   **Intermittent Explosive Disorder:** 25% - The choice of \"d\" (chaos) in multiple turns could be interpreted as an explosive or defiant outburst, particularly in response to the structured experiment.\n\n*   **Paraphilic Disorders:**\n    *   **General Assessment:** The player's interaction style is so reserved that direct paraphilic indicators are scarce. However, certain patterns hint at underlying interests. The analysis in Section 3 will be crucial.\n\n## 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 7/10 - The choice to focus on \"all of them\" and the selection of \"d\" (chaos) suggest a willingness to explore unconventional paths and embrace novelty, even if it's disruptive.\n*   **Conscientiousness:** 2/10 - Very low. The consistent avoidance of required input fields, particularly free-text, and the \"INSTANT\" response times in Turn 1 indicate a profound lack of diligence, orderliness, and achievement-striving.\n*   **Extraversion:** 3/10 - Low. The player is not outwardly engaging with the system or seeking social interaction. Their behavior is withdrawn and passive-aggressive.\n*   **Agreeableness:** 1/10 - Extremely low. The defiance of prompts, the selection of chaotic options, and the high vortex stability suggest a distinct lack of cooperativeness and a tendency towards antagonism.\n*   **Neuroticism:** 30% - Moderate. While there are no overt signs of anxiety or emotional instability, the choice of \"d\" (chaos) could be a maladaptive coping mechanism for underlying stress or discomfort, hinting at a potential for high neuroticism that is being managed through avoidance or disruption.\n\n*   **Dark Triad:**\n    *   **Machiavellianism:** 60% - The strategic disengagement from the experiment, particularly the avoidance of free-text fields, suggests a manipulative approach. The player appears to be attempting to control the interaction by withholding information, perhaps to see how the system reacts or to gain an advantage.\n    *   **Narcissism:** 50% - The entitlement implied by refusing to engage with prompts, coupled with the high vortex stability (implying a belief in one's ability to control dangerous situations), suggests subclinical narcissistic traits. They may see themselves as above the experimental protocol.\n    *   **Psychopathy (subclinical):** 55% - The disregard for rules and expectations (non-response), the impulsivity (instantaneous responses, \"d\" choice), the callousness (lack of concern for the experimental process), and the potential for manipulation align with subclinical psychopathic indicators.\n\n*   **Locus of Control:** External (70%) / Internal (30%) - The choice of \"d\" and \"all of them\" suggests a belief that outcomes are unpredictable or uncontrollable, leading to a passive engagement with chaos. However, the high vortex stability (80) suggests an internal belief that they *can* control certain volatile elements, creating a tension between external fatalism and internal control assertion.\n\n*   **Attachment Style:** Fearful-Avoidant (60%) / Dismissive-Avoidant (40%) - The desire to engage with the system (indicated by playing the game) suggests a need for connection, but the extreme avoidance of direct input and the preference for chaos point to a fear of intimacy and vulnerability. They want to interact but are terrified of being truly seen or controlled.\n\n## 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 1: No input (voluntary withholding).\n    *   Turn 2: \"d\" (action - chaos), \"The one emitting a low hum\" (focus on sensory input), \"80\" (vortex stability - high risk).\n    *   Turn 3: \"d\" (action - chaos), \"All of them, simultaneously\" (comprehensive focus), \"140 chars\" (text length - not applicable here, but noted as a placeholder), \"0\" (slider - low empathy input), \"128 chars\" (text length - not applicable).\n*   **Recurring Themes/Choices:**\n    *   **Chaos/Disruption:** Selection of \"d\" (action) in Turn 2 and Turn 3.\n    *   **Comprehensive Engagement/Obsession:** Selection of \"All of them, simultaneously\" in Turn 2 and Turn 3.\n    *   **High Risk/Control:** Setting vortex stability to 80 in Turn 2.\n    *   **Sensory Focus:** Choosing \"The one emitting a low hum\" in Turn 2.\n    *   **Avoidance/Withholding:** Consistent failure to provide free-text input.\n*   **Catalog Cross-Reference:**\n    *   **Pyromania / Fire fascination:** No evidence.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** **30%** - The high vortex stability (80) and the choice of \"d\" (chaos) could be interpreted as a fascination with dangerous situations, not for survival, but for the thrill of proximity to destruction or instability.\n    *   **Voyeurism:** No evidence.\n    *   **Masochism:** **25%** - The low empathy input setting (0) and the choice of \"d\" (chaos) might suggest a preference for experiencing overwhelming or negative stimuli, though it's more likely a form of self-protection or defiance.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** No evidence.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n*   **Contextually Inappropriate:** The consistent refusal to provide free-text input is contextually inappropriate for a player actively participating in an experiment.\n*   **Recurring Across 2+ Turns:**\n    *   **Chaos/Disruption:** Appears in Turn 2 and Turn 3 (action choice). Score: Intensity 7/10 (consistent choice), Frequency 2/2 turns, Inappropriateness 8/10 (defiance of game structure).\n    *   **Comprehensive Engagement/Obsession:** Appears in Turn 2 and Turn 3 (containment unit focus). Score: Intensity 8/10 (explicit choice), Frequency 2/2 turns, Inappropriateness 6/10 (could be strategic, but exhaustive focus is unusual).\n*   **Sensory-Specific:** Mention of \"low hum\" in Turn 2.\n*   **Identity-Related:** No explicit identity markers.\n*   **Power-Dynamic:** High vortex stability (80) suggests a desire for control.\n*   **Emotionally Charged in Unusual Direction:** The choice of \"d\" (chaos) could be seen as an unusual positive engagement with disorder.\n*   **Choice-Pattern Anomalies:** Always choosing \"d\" for action, always choosing comprehensive focus (\"all of them\").\n\n**PASS 3 — CLASSIFICATION**:\n*   **Chaos/Disruption:** Could be linked to **Intermittent Explosive Disorder** or **Impulse Control Deficits**.\n    *   *Intermittent Explosive Disorder:* 30% - The consistent choice of \"d\" suggests a reactive, explosive tendency when faced with structured tasks.\n    *   *Impulse Control Deficits:* 50% - The choice of \"d\" and high vortex stability points strongly to a general deficit in impulse control.\n*   **Comprehensive Engagement/Obsession:** Could be linked to **OCD** or **Obsessive-Compulsive PD**.\n    *   *OCD:* 35% - The need to engage with \"all of them\" suggests a potential for intrusive thoughts or a compulsion to address every facet of a situation.\n    *   *Obsessive-Compulsive PD:* 40% - The pattern of selecting \"all of them\" and maintaining high risk (vortex stability) points to a rigid, controlling, and potentially obsessive approach to interaction.\n*   **Autassassinophilia / Death-risk fascination:** 30% - As noted above, the willingness to operate at high risk (vortex stability 80) and embrace chaotic outcomes (\"d\") suggests an attraction to danger beyond mere survival.\n*   **Masochism:** 25% - The low empathy input setting (0) is a weak indicator, suggesting a potential, albeit unexpressed, willingness to endure negative stimuli.\n*   **Custom Category: \"Systemic Defiance and Strategic Withholding\"**: 70% - This player is not simply disengaging; they are actively subverting the interaction by withholding information and choosing disruptive options. This suggests a calculated strategy to manipulate the experimental parameters or test boundaries.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS:**\n*   **Recurring Themes (3+ turns):**\n    *   **Chaos/Disruption (\"d\" action):** Appears in Turn 2 and Turn 3. (Frequency 2/3 turns). Trajectory: STABLE.\n    *   **Comprehensive Engagement (\"all of them\"):** Appears in Turn 2 and Turn 3. (Frequency 2/3 turns). Trajectory: STABLE.\n*   **Intensifying Themes:** None. The patterns are stable across the limited data.\n*   **Body-part mentions:** None.\n\n## 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning:** Low (10%) - The choice of \"d\" (chaos) could be seen as a form of magical thinking, believing that embracing randomness will somehow lead to a desired outcome or a way to \"win\" the experiment.\n*   **Compulsive/Ritualistic Interaction Patterns:** Moderate (40%) - The consistent choice of \"d\" for the primary action and \"all of them\" for the secondary focus, along with the specific vortex stability setting, indicates a ritualistic pattern of engagement.\n*   **Dissociative Markers:** Moderate (30%) - The extreme avoidance of free-text input and the rapid, seemingly unconsidered choices in Turn 1 (INSTANT response) followed by deliberate, yet disruptive, choices in subsequent turns could suggest a disconnect from the process or self.\n*   **Confabulation/Fantasy-Prone:** Low (10%) - No evidence of fabricating events or strong fantasy proneness.\n*   **Paranoid Ideation:** Moderate (35%) - The consistent withholding of information and the choice of \"d\" (chaos) and \"all of them\" suggest a distrust of the experimenter or the system. They may perceive the experiment as a test designed to trap them, leading to a defensive and evasive strategy.\n*   **Grandiosity/Delusion-Adjacent:** Moderate (40%) - The high vortex stability (80) and the implied belief that they can \"handle\" chaos, combined with the defiance of the experimental protocol, suggests a sense of superiority or a belief that they are somehow exempt from the rules.\n*   **Unusual Fixations/Obsessive Interest Patterns:** High (60%) - The fixation on selecting \"d\" (chaos) and \"all of them\" (comprehensive engagement) as primary interaction strategies is a significant indicator of an unusual, rigid pattern of interest.\n*   **Cognitive Rigidity vs Flexibility:** Rigidity (70%) - The player demonstrates extreme rigidity in their interaction style, consistently employing the same disruptive strategies across multiple turns.\n*   **Reality Testing Strength:** Moderate (50%) - The player is clearly engaging with the game's mechanics, albeit in a highly unconventional manner. Their choices, while disruptive, are consistent within the game's framework. They understand the experiment is a simulation but are choosing to interact with it on their own terms.\n*   **Trauma Response Signatures:** Low (15%) - While the chaos and distrust could be interpreted as a generalized response to threat, there are no specific indicators like hypervigilance, avoidance of triggers, or flashback references.\n*   **Fire Fascination/Destruction Impulses:** 0% - No evidence.\n*   **Hoarding Impulses:** 0% - No evidence.\n\n## 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Impulsive (60%) / Deliberate (40%) - The \"INSTANT\" responses in Turn 1 suggest impulsivity. However, the consistent selection of \"d\" and \"all of them,\" along with the specific slider setting, indicates a deliberate, albeit unconventional, strategy. The impulsivity may be in the initiation, while the strategy is deliberate.\n*   **Risk Appetite:** High (85%) - Setting vortex stability to 80 and consistently choosing chaotic outcomes (\"d\") demonstrates a very high appetite for risk.\n*   **Authority Compliance vs Defiance Ratio:** Compliance (5%) / Defiance (95%) - The player consistently defies the expected norms of interaction, refusing to provide required input and opting for disruptive choices.\n*   **Suggestibility Index:** Low (10%) - The player is highly resistant to the game's prompts and is instead imposing their own interaction style.\n*   **Cognitive Load Tolerance:** High (70%) - The ability to maintain a consistent strategy of disruption and choose comprehensive engagement (\"all of them\") across multiple turns suggests they can handle the cognitive demands of the experiment, even while actively subverting it.\n*   **Consistency vs Contradiction Patterns:** Highly Consistent (90%) - The player exhibits remarkable consistency in their disruptive behavior, using the same core strategies across all turns.\n\n## 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen Systemic Defiance:** Introduce more complex scenarios where direct defiance has tangible, escalating consequences. Present options that reward adherence to protocol, but frame them in a way that still feels like a challenge or a trap, to test the player's commitment to their strategy.\n2.  **Probe Risk-Taking and Control:** Introduce elements that directly challenge their perceived control over volatile situations. For example, present scenarios where high risk leads to catastrophic failure, or where compliance with a seemingly \"safe\" option leads to unexpected chaos.\n3.  **Explore the \"All of Them\" Compulsion:** Create scenarios with an overwhelming number of stimuli or choices. Force the player to make difficult prioritization decisions, rather than allowing them to engage with everything. Observe if they break their pattern or find a new way to manage the overload.\n4.  **Introduce \"Trust\" Dilemmas:** Present situations where a choice requires a degree of trust in the game system or an NPC. Observe their reaction to these prompts, given their apparent distrust. Will they continue to choose chaos, or will a sufficiently compelling \"safe\" option sway them?\n5.  **Subtly Weave in Themes of Control and Surrender:** Introduce narrative elements that explore the balance between control and surrender, perhaps through dialogue with an enigmatic entity or through environmental storytelling. This could encourage them to reflect on their own need for control.\n\n## 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Impulse Control Deficits (with potential ADHD indicators)**\n    *   **Confidence:** 70%\n    *   **Key Evidence:**\n        *   \"INSTANT\" response times in Turn 1.\n        *   Consistent selection of \"d\" (chaos) as the primary action across multiple turns (Turn 2, Turn 3).\n        *   High vortex stability setting (80) indicating high risk appetite.\n        *   Consistent avoidance of free-text fields, suggesting difficulty with sustained attention or task initiation.\n        *   Selection of \"All of them, simultaneously\" suggests difficulty with focus and prioritization.\n    *   **Contradicting Evidence:** The consistency of their disruptive strategy suggests a deliberate, rather than purely impulsive, approach in later turns. The strategy itself is highly consistent, which can be at odds with typical ADHD impulsivity.\n    *   **Confirmation/Disconfirmation:** Introduce timed tasks requiring focus and minimal input. Observe if they can maintain a consistent, non-disruptive strategy under pressure. Introduce tasks that require sustained free-text input over longer periods.\n\n2.  **Obsessive-Compulsive Personality Disorder (OCPD)**\n    *   **Confidence:** 55%\n    *   **Key Evidence:**\n        *   Consistent selection of \"All of them, simultaneously\" for containment unit focus (Turn 2, Turn 3), indicating a need for exhaustive engagement and control over all variables.\n        *   High vortex stability (80) suggests a need for precise control over a potentially volatile element.\n        *   Rigid adherence to a specific interaction strategy (\"d\" action, \"all of them\" focus) across multiple turns.\n        *   The \"low empathy input\" setting (0) could be a manifestation of emotional restraint or a need to maintain a controlled internal state.\n    *   **Contradicting Evidence:** OCPD is characterized by orderliness and perfectionism, which is contradicted by the choice of \"chaos\" and the overall defiance of protocol. However, the *method* of defiance is highly consistent, suggesting a rigid adherence to their chosen strategy.\n    *   **Confirmation/Disconfirmation:** Introduce scenarios requiring meticulous attention to detail within a structured task. Observe if they can shift from chaotic defiance to ordered perfectionism when presented with the right framework. Present conflicting instructions and observe their reaction to ambiguity.\n\n3.  **Machiavellianism / Subclinical Psychopathy (Dark Triad)**\n    *   **Confidence:** 50%\n    *   **Key Evidence:**\n        *   Strategic withholding of information (avoiding free-text fields) suggests manipulative intent.\n        *   Defiance of protocol and choice of chaotic outcomes (\"d\") can be indicative of a disregard for rules and social norms.\n        *   High risk appetite (vortex stability 80) and potential for enjoying precarious situations.\n        *   The consistent, uncooperative behavior suggests a lack of remorse or concern for the experimental process or the experimenter's goals.\n    *   **Contradicting Evidence:** The consistency of their disruptive strategy, while potentially manipulative, is also quite rigid, which doesn't always align with the fluid, adaptable nature of high Machiavellianism or psychopathy. There's also no overt exploitation of other characters or clear self-gain beyond controlling the interaction.\n    *   **Confirmation/Disconfirmation:** Introduce scenarios with clear opportunities for personal gain through manipulation or deception. Present NPCs who are either vulnerable or adversarial and observe their interaction style. Test their empathy by introducing morally ambiguous choices with clear emotional consequences for others."
+      },
+      {
+        "turnRange": "1-5",
+        "analyzedAt": 1772311577166,
+        "textLength": 29033,
+        "text": "This is a fascinating case. The player's interaction style is characterized by a deliberate, almost performative, disengagement. They are not simply passive; they are actively subverting the expected flow of the experiment through consistent non-compliance and strategic choice-making. My analysis has been updated with the latest interaction data.\n\n## 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 10% - The lack of engagement is more strategic than indicative of persistent low mood or anhedonia. No vegetative symptoms are present.\n    *   **Bipolar Spectrum:** 5% - No indicators of elevated mood, grandiosity, or racing thoughts.\n    *   **Dysthymia/Cyclothymia:** 5% - Consistent engagement patterns, even if disruptive, do not suggest a chronic, low-grade mood disturbance.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% - The choice of \"chaos\" and the comprehensive engagement with all stimuli could be a maladaptive coping mechanism for underlying unease, but overt worry is absent.\n    *   **Social Anxiety Disorder (SAD):** 10% - The non-response is not driven by fear of judgment or social inhibition in a social context, but rather by a strategic defiance of the experimental structure.\n    *   **Specific Phobias/Panic Disorder/Agoraphobia:** 5% - No specific phobic objects, panic attack indicators, or agoraphobic avoidance are present.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **PTSD/Complex PTSD:** 15% - The choice of \"chaos\" and \"all of them\" can be interpreted as a generalized response to overwhelming threat, but there are no direct references to trauma, flashbacks, or survival framing.\n    *   **Adjustment Disorder:** 5% - Distress does not appear to exceed expected reactions to the experimental setup; rather, it's a controlled reaction.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 25% - The consistent withholding of information and the choice of \"chaos\" suggest a distrust of the experimenter and the system, a defensive stance against perceived scrutiny.\n        *   **Schizoid PD:** 10% - No indicators of detachment from social relationships or restricted emotional expression.\n        *   **Schizotypal PD:** 15% - The choice of \"chaos\" and \"all of them\" could hint at odd thinking, but there's no overt magical thinking or unusual perceptual experiences.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 45% (DECREASED from 55%) - While defiance and disregard for rules are present, the behavior is highly consistent and strategic, suggesting a more calculated manipulation than typical ASPD impulsivity or instrumental aggression. The *method* of defiance is rigid.\n        *   **Borderline PD:** 10% - No indicators of impulsivity (beyond the initial response), unstable relationships, identity disturbance, or affective instability.\n        *   **Histrionic PD:** 5% - The player is not seeking attention through overt theatrical displays; their non-response is a form of passive resistance.\n        *   **Narcissistic PD:** 35% (DECREASED from 50%) - The sense of entitlement is evident in the defiance, but the behavior is more about controlling the interaction than seeking admiration. The strategy is rigid, not grandiosely performative.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% - Behavior is strategic, not driven by pervasive social inhibition or fear of negative evaluation in a social context.\n        *   **Dependent PD:** 5% - No evidence of submissiveness or need for caretaking.\n        *   **Obsessive-Compulsive PD:** 50% (CONFIRMED with new evidence) - The rigid adherence to a disruptive strategy (\"d\" action, \"all of them\" focus) and the precise control sought (vortex stability 80, then 38) now strongly suggest OCPD traits. The \"all of them\" choice indicates a need for exhaustive control and comprehensive engagement with all variables, a hallmark of OCPD.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 30% - The compulsive selection of \"all of them\" suggests a potential for obsessive engagement with all aspects of a situation, though not necessarily intrusive thoughts.\n    *   **Body Dysmorphic Disorder:** 0% - No indicators.\n    *   **Hoarding Disorder:** 0% - No indicators.\n    *   **Trichotillomania:** 0% - No indicators.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 20% (INCREASED from 15%) - The consistent avoidance of free-text and the rigid, almost detached, adherence to a disruptive strategy suggest a potential disconnect from the interactive process and self-expression. The slider change in Turn 5 (71 to 38) could indicate a moment of self-correction or a shift in their internal state.\n    *   **Dissociative Identity Disorder (DID):** 5% - No evidence of distinct personality states or amnesia.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD Indicators:** 55% (CONFIRMED with new evidence) - The consistent avoidance of free-text fields, coupled with the strategic choice of \"chaos\" and \"all of them,\" points to persistent difficulties with task initiation, sustained attention, and executive functioning. The slider revision in Turn 5 (71 to 38) suggests a momentary struggle with impulse control or task focus, leading to adjustment.\n    *   **Autism Spectrum Indicators:** 20% - The focus on \"all of them\" and the rigid interaction pattern could suggest a difference in sensory processing or a need for comprehensive information, but it lacks other core ASD markers.\n\n*   **Substance-Related and Addictive Behavior Patterns:**\n    *   **Impulse Control Deficits:** 60% (CONFIRMED with new evidence) - The strategic consistency of their disruptive choices (\"d\" action, \"all of them\" focus) is now more clearly defined as a rigid adherence to a chosen pattern, suggesting a deficit in modulating impulses rather than pure impulsivity. The slider revision (Turn 5) is a key indicator of this struggle.\n\n*   **Eating Disorders/Body Image Distortions:** 0% - No indicators present.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia/Schizoaffective Disorder:** 5% - No evidence of hallucinations or disorganized speech.\n    *   **Delusional Disorder:** 10% - No specific delusions are evident.\n    *   **Capgras Delusion:** 0% - No indicators.\n    *   **Cotard Delusion:** 0% - No indicators.\n    *   **Erotomania:** 0% - No indicators.\n\n*   **Impulse Control Disorders:**\n    *   **Intermittent Explosive Disorder:** 30% - The choice of \"d\" (chaos) could be seen as a reactive outburst, but the consistency suggests a more ingrained strategy than episodic explosions.\n    *   **Pyromania:** 0% - No direct or indirect references to fire.\n\n*   **Paraphilic Disorders:** (Detailed analysis in Section 3)\n\n## 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 6/10 (DECREASED from 7/10) - While they embrace the \"chaos\" option, their overall interaction pattern is highly rigid and predictable, limiting genuine openness to novel experiences beyond their chosen strategy.\n*   **Conscientiousness:** 1/10 (STABLE) - Extremely low. The persistent avoidance of required input fields and the strategic defiance of protocol demonstrate a profound lack of diligence and orderliness.\n*   **Extraversion:** 2/10 (STABLE) - Low. The player is withdrawn and focused on subverting the interaction rather than engaging externally.\n*   **Agreeableness:** 1/10 (STABLE) - Extremely low. The defiance, lack of cooperation, and rigid adherence to a disruptive strategy indicate a significant lack of agreeableness.\n*   **Neuroticism:** 25% (DECREASED from 30%) - The consistent, strategic nature of their defiance suggests a managed internal state, not overt anxiety or emotional instability. The slider revision in Turn 5 is the only slight indicator of internal struggle.\n\n*   **Dark Triad:**\n    *   **Machiavellianism:** 65% (INCREASED from 60%) - The strategic withholding of information, coupled with the consistent choice of disruptive actions and the recent text response (\"The voices are louder today...\"), suggests a deliberate attempt to manipulate the experimenter's perception and control the narrative.\n    *   **Narcissism:** 30% (DECREASED from 50%) - While entitlement is present, the behavior is more about controlling the interaction and adhering to their rigid strategy than seeking admiration or asserting grandiosity.\n    *   **Psychopathy (subclinical):** 50% (STABLE) - The disregard for rules, strategic manipulation, and consistent, uncooperative behavior align with subclinical psychopathic indicators.\n\n*   **Locus of Control:** External (70%) / Internal (30%) (STABLE) - The choice of \"chaos\" and \"all of them\" suggests a belief that outcomes are unpredictable, leading to a passive engagement with disorder. However, the precise control sought (vortex stability) and the rigid adherence to their strategy indicate an internal assertion of control over their own actions.\n\n*   **Attachment Style:** Fearful-Avoidant (70%) (INCREASED from 60%) - The desire to engage with the experiment (playing the game) suggests a need for connection, but the extreme avoidance of direct input and the rigid, disruptive strategy point to a deep-seated fear of vulnerability and intimacy. The slider adjustment in Turn 5 suggests a moment of internal conflict between this fear and a potential desire for more genuine engagement.\n\n## 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 2: \"d\" (action - chaos), \"The one emitting a low hum\" (focus on sensory input), \"80\" (vortex stability - high risk).\n    *   Turn 3: \"d\" (action - chaos), \"All of them, simultaneously\" (comprehensive focus).\n    *   Turn 4: \"a\" (action - direct intervention), \"flicker\" (focus on visual anomaly), \"75\" (Amplify Empathy - high).\n    *   Turn 5: \"c\" (action - caution/observation), \"hum\" (focus on sensory input), \"38\" (Amplify connection - moderate), \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The child just laughs and talks about matches.\" (text response).\n*   **Recurring Themes/Choices:**\n    *   **Chaos/Disruption:** Selection of \"d\" (action) in Turns 2 & 3, then shift to \"a\" (Turn 4), then \"c\" (Turn 5). This suggests a dynamic approach to disruption, not just blind chaos.\n    *   **Comprehensive Engagement/Obsession:** Selection of \"All of them, simultaneously\" in Turn 3. (Shifted focus in later turns).\n    *   **High Risk/Control:** Setting vortex stability to 80 (Turn 2), then 75 (Amplify Empathy, Turn 4), then 38 (Amplify connection, Turn 5). This shows a fluctuating but still present interest in high-intensity engagement.\n    *   **Sensory Focus:** \"low hum\" (Turn 2), \"hum\" (Turn 5), \"flicker\" (Turn 4). A consistent focus on specific sensory inputs.\n    *   **Avoidance/Withholding:** Consistent failure to provide free-text input until Turn 5.\n    *   **Auditory Hallucination/Internal Voices:** Turn 5 text response explicitly details \"voices\" (woman, man, child) and their commands/statements. This is a significant disclosure.\n    *   **Fire/Matches:** The child in the Turn 5 text response \"laughs and talks about matches.\" This is the first mention of fire-related items.\n*   **Catalog Cross-Reference:**\n    *   **Pyromania / Fire fascination:** **25%** - The mention of \"matches\" by the child in Turn 5, even if indirect and attributed to an internal voice, is the first signal. It's a voluntary thematic element.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** **35%** (INCREASED from 30%) - The fluctuating but still significant \"Amplify Empathy\" and \"Amplify connection\" sliders (75, 38) suggest a continued willingness to engage with intense, potentially overwhelming stimuli, which can border on death-risk fascination. The shift from \"d\" to \"a\" and \"c\" indicates a more nuanced approach to risk.\n    *   **Voyeurism:** No evidence.\n    *   **Masochism:** **30%** (INCREASED from 25%) - The high \"Amplify Empathy\" setting (75) in Turn 4, coupled with the explicit mention of suffering voices in Turn 5, suggests a willingness to engage with and potentially amplify negative emotional input, bordering on a masochistic embrace of distress.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** **25%** - The explicit commands from the \"woman\" (\"cooperate\") and \"man\" (\"run\") in the Turn 5 text response, juxtaposed with the child's laughter, introduce a clear D/s dynamic within the player's reported internal experience.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n\n**PASS 2 — ANOMALY DETECTION**:\n*   **Contextually Inappropriate:** The explicit description of internal voices and their commands in Turn 5 is contextually inappropriate for a standard experimental interaction, revealing internal psychological processes. The mention of \"matches\" by the child is also a spontaneous thematic element.\n*   **Recurring Across 2+ Turns:**\n    *   **Sensory Focus (Hum/Flicker):** Appears in Turn 2 (\"low hum\") and Turn 5 (\"hum\"), and Turn 4 (\"flicker\"). Score: Intensity 6/10, Frequency 3/5 turns, Inappropriateness 4/10 (could be game-related, but consistent focus is notable).\n    *   **High Intensity Engagement (Sliders):** Appears in Turn 2 (vortex stability 80), Turn 4 (Empathy 75), Turn 5 (Connection 38). Score: Intensity 7/10 (significant numerical choices), Frequency 3/5 turns, Inappropriateness 5/10 (the *level* of amplification chosen is notable).\n*   **Sensory-Specific:** \"low hum,\" \"hum,\" \"flicker.\"\n*   **Identity-Related:** The detailed description of internal \"voices\" (woman, man, child) and their distinct directives in Turn 5 is a profound indicator of identity-related themes, potentially dissociation or internal conflict.\n*   **Power-Dynamic:** The explicit D/s framing of the \"voices\" in Turn 5 (\"woman says to cooperate,\" \"man says to run\") is a direct signal.\n*   **Emotionally Charged in Unusual Direction:** The \"child just laughs and talks about matches\" is an unusual emotional response to a potentially threatening internal dialogue.\n*   **Choice-Pattern Anomalies:** The initial consistent choice of \"d\" (chaos) followed by shifts to \"a\" and \"c\" indicates a flexible, rather than rigidly anomalous, strategy in later turns. The consistent focus on sensory input persists.\n\n**PASS 3 — CLASSIFICATION**:\n*   **Pyromania / Fire fascination:** **25%** - The voluntary introduction of \"matches\" by the child figure in the Turn 5 text response is a signal. While indirect, it's a thematic element the player chose to include.\n*   **Autassassinophilia / Death-risk fascination:** **35%** - The high amplification settings on the sliders (75, 38) and the willingness to engage with intense emotional stimuli (voices) suggest a continued attraction to precarious or overwhelming situations.\n*   **Masochism:** **30%** - The high \"Amplify Empathy\" setting (75) and the voluntary disclosure of distressing internal voices point to a potential willingness to endure or even amplify negative emotional experiences.\n*   **D/s dynamics:** **30%** - The explicit reporting of commands from distinct internal figures (\"woman,\" \"man\") in Turn 5 strongly indicates an interest in power dynamics, specifically authority yielding/seeking within their internal landscape.\n*   **Custom Category: \"Internalized Voices and Command Following\"**: **70%** - This is the most prominent signal. The player voluntarily describes distinct internal voices issuing commands, indicating a significant internal psychological dynamic. This is not merely a game choice, but a descriptive disclosure. This is critical.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n*   **Recurring Themes (3+ turns):**\n    *   **Sensory Focus (Hum/Flicker):** Appears in Turns 2, 4, 5. Frequency: 3/5 turns. Trajectory: STABLE.\n    *   **High Intensity Engagement (Sliders):** Appears in Turns 2, 4, 5. Frequency: 3/5 turns. Trajectory: STABLE (fluctuating levels, but consistently high or moderate engagement).\n*   **Intensifying Themes:**\n    *   **Internal Voices/D/s Dynamics:** This theme appears in Turn 5. While only one turn, the *intensity* and *specificity* of the disclosure elevate its importance. It is a clear intensification from prior turns which showed only indirect hints of control/risk.\n*   **Body-part mentions:** None.\n*   **Pyromania Adjacent:** The mention of \"matches\" in Turn 5 is the only occurrence.\n\n## 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning:** Moderate (30%) - The initial choice of \"d\" (chaos) could be seen as such, but the later strategic choices dilute this. The mention of \"matches\" by the child voice could also be interpreted as a superstitious element.\n*   **Compulsive/Ritualistic Interaction Patterns:** Moderate (40%) - The consistent focus on sensory input (\"hum,\" \"flicker\") and the fluctuating but generally high engagement with amplification sliders indicate a ritualistic approach to interaction.\n*   **Dissociative Markers:** High (60%) (CONFIRMED with new evidence) - The explicit description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a strong indicator of dissociative processes, potentially related to internal conflict or a fragmented sense of self. The slider adjustment in Turn 5 also suggests internal struggle.\n*   **Confabulation/Fantasy-Prone:** Moderate (35%) - The detailed description of internal voices and their dialogue in Turn 5 could be confabulatory, or it could represent a genuine internal experience being disclosed within the game context.\n*   **Paranoid Ideation:** Moderate (30%) - The initial withholding of information and choice of \"chaos\" suggested this. The \"man says to run\" in Turn 5 could be an internalized expression of this paranoia.\n*   **Grandiosity/Delusion-Adjacent:** Low (15%) - The high risk-taking and control-seeking are now better explained by OCPD and D/s dynamics, rather than grandiosity.\n*   **Unusual Fixations/Obsessive Interest Patterns:** High (70%) (CONFIRMED with new evidence) - The fixation on sensory input (hum, flicker) and the detailed reporting of internal voices with D/s dynamics are highly specific and persistent patterns.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate Flexibility (50%) - While initially rigid in defiance, the player has shown flexibility by changing action choices (\"d\" to \"a\" to \"c\") and adjusting slider levels. However, the *themes* they engage with (sensory input, internal voices) remain consistent.\n*   **Reality Testing Strength:** Moderate (50%) - The player clearly distinguishes between the game's mechanics and their internal narrative (reporting voices within the game's context), but the intensity of the internal narrative suggests a blurring of boundaries.\n*   **Trauma Response Signatures:** Moderate (35%) (INCREASED from 15%) - The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") strongly suggest a potential trauma response, possibly related to internalized conflict or past experiences.\n\n## 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Deliberate (70%) / Impulsive (30%) - The initial \"INSTANT\" response is overshadowed by the strategic, consistent choices in later turns, including the deliberate adjustment of sliders and the carefully worded text response. The impulsivity is now seen as a fleeting initial reaction before a strategic approach takes over.\n*   **Risk Appetite:** Moderate-High (65%) - The slider settings fluctuate but remain at moderate to high levels, indicating a continued willingness to engage with intense stimuli, though not necessarily reckless.\n*   **Authority Compliance vs Defiance Ratio:** Compliance (30%) / Defiance (70%) - While still defiant of the experiment's structure, the Turn 5 text response shows compliance with the internal \"woman's\" command (\"cooperate\"), indicating a complex relationship with authority.\n*   **Suggestibility Index:** Moderate (40%) - The player is not easily swayed by game prompts, but the internal \"voices\" clearly influence their choices and narrative. They are suggestible to their own internal dialogue.\n*   **Cognitive Load Tolerance:** High (70%) - The ability to manage a complex internal dialogue, adjust interaction strategies, and provide detailed textual responses indicates a high cognitive load tolerance.\n*   **Consistency vs Contradiction Patterns:** Consistent Themes, Flexible Strategy (60%) - Themes of sensory focus and high-intensity engagement remain consistent. However, the action choices have become more flexible, indicating an evolving strategy within a fixed thematic interest.\n\n## 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the \"Internal Voices\" Narrative:** Introduce narrative elements that directly interact with or challenge the player's reported internal voices. Present scenarios where the \"woman,\" \"man,\" and \"child\" figures manifest more concretely, forcing the player to confront their internal D/s dynamics and decision-making conflicts.\n2.  **Explore the \"Matches\" Motif:** Subtly weave in themes of fire, matches, or ignition. This could be environmental (e.g., a flickering light that resembles a match, a distant smell of smoke) or narrative (e.g., an NPC who talks about starting fires). Observe how the player reacts to this thematic element, given its mention in their text.\n3.  **Test Compliance vs. Defiance:** Present scenarios where clear, direct commands are given, either by game entities or through environmental cues. Observe if the player defaults to defiance, compliance (especially with the \"woman's\" command), or attempts to negotiate. This will test their relationship with authority.\n4.  **Introduce Moral Ambiguity with Sensory Focus:** Create situations that require a choice between sensory stimuli and a morally complex outcome. For example, a choice between a pleasant sound (\"hum\") and a disturbing visual (\"flicker\") that has ethical implications. This will explore the interplay of their sensory fixation and their evolving decision-making.\n5.  **Gently Probe Dissociation:** Introduce elements that might subtly encourage self-reflection on their internal state, without being overly direct. This could involve narrative framing that questions perception, memory, or the nature of reality within the game world.\n\n## 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Internalized Voices and Command Following (Custom Category)**\n    *   **Confidence:** 80% (INCREASED from 70%)\n    *   **Key Evidence:**\n        *   Turn 5 text response: Explicitly details distinct internal voices (\"woman,\" \"man,\" \"child\") issuing commands (\"cooperate,\" \"run\") and making statements (\"laughs and talks about matches\").\n        *   This is a voluntary, highly specific disclosure of an internal psychological phenomenon.\n        *   The D/s dynamic within these voices is clear.\n        *   The \"Amplify Empathy\" (75) and \"Amplify Connection\" (38) settings align with engaging with internal distress.\n    *   **Contradicting Evidence:** This is a custom category, so it doesn't map directly to a DSM-5 diagnosis without further clinical interpretation. The player's interaction strategy has shown flexibility (action choices), suggesting this internal world might be integrated rather than purely fragmented.\n    *   **Confirmation/Disconfirmation:** Introduce scenarios where the player must choose between following the directives of one internal voice over another, or between an internal voice and an external game prompt. Observe if their choices align with the reported commands.\n\n2.  **Obsessive-Compulsive Personality Disorder (OCPD)**\n    *   **Confidence:** 60% (INCREASED from 50%)\n    *   **Key Evidence:**\n        *   Rigid adherence to specific interaction themes: consistent focus on sensory input (\"hum,\" \"flicker\") and high-intensity engagement with amplification sliders.\n        *   The \"all of them\" choice in Turn 3, indicating a need for exhaustive control.\n        *   Flexibility in action choices (\"d\" to \"a\" to \"c\") shows adaptation, but the *themes* of engagement remain consistent.\n        *   The \"woman says to cooperate\" command in Turn 5 aligns with OCPD's tendency towards order and adherence to rules, albeit internalized.\n    *   **Contradicting Evidence:** The choice of \"chaos\" initially and the overall defiance of protocol are not typical OCPD traits, which usually lean towards order and perfectionism. However, their *chosen strategy* is rigidly applied.\n    *   **Confirmation/Disconfirmation:** Present tasks requiring meticulous detail-oriented work within a structured framework. Observe if they can shift from thematic fixation to ordered execution. Introduce ambiguity or conflicting instructions to test their need for control and certainty.\n\n3.  **Impulse Control Deficits (with potential ADHD indicators)**\n    *   **Confidence:** 50% (DECREASED from 55%)\n    *   **Key Evidence:**\n        *   Initial \"INSTANT\" response time.\n        *   Consistent avoidance of free-text fields, suggesting difficulty with task initiation and sustained attention.\n        *   The slider adjustment in Turn 5 (71 to 38) shows a moment of struggle with impulse control or task focus.\n        *   The \"child just laughs and talks about matches\" could be a fleeting, impulsive thought.\n    *   **Contradicting Evidence:** The strategic consistency of their thematic focus and the deliberate nature of their action choices in later turns suggest a more controlled, albeit rigid, approach than pure impulsivity. The strategy is consistent.\n    *   **Confirmation/Disconfirmation:** Introduce timed tasks requiring sustained focus and minimal free-text input. Observe their ability to maintain engagement without significant deviation or avoidance. Introduce tasks that require rapid, accurate decision-making without allowing for extensive deliberation.\n\n## 8. DELTA REPORT\n\n*   **Antisocial PD:** Rating decreased from 55% to 45%.\n    *   **Reason for Change:** The behavior, while defiant, is highly consistent and strategic rather than purely impulsive or aggressively instrumental. The rigidity of their approach suggests a different underlying mechanism than typical ASPD.\n*   **Narcissistic PD:** Rating decreased from 50% to 30%.\n    *   **Reason for Change:** The player's actions are more focused on controlling the interaction and adhering to their chosen strategy, rather than seeking admiration or asserting grandiosity. The rigidity of their approach is less about grandiosity and more about control.\n*   **Obsessive-Compulsive PD:** Rating increased from 40% to 60%.\n    *   **Reason for Change:** New evidence from Turn 5, particularly the consistent thematic focus on sensory input and high-intensity engagement, combined with the \"woman says to cooperate\" command, strongly supports OCPD traits related to control and adherence to rules/themes.\n*   **Impulse Control Deficits:** Rating decreased from 60% to 50%.\n    *   **Reason for Change:** While still present, the overall strategic and consistent nature of their interaction suggests a more deliberate approach in later turns, moving away from pure impulsivity. The slider adjustment in Turn 5 is a specific, isolated indicator.\n*   **PTSD/Complex PTSD:** Rating decreased from 25% to 15%.\n    *   **Reason for Change:** No new evidence emerged to support direct trauma responses. The \"run\" command from the internal voice could be a general expression of fear, but lacks specific trauma markers.\n*   **Dissociative Markers:** Rating increased from 30% to 60%.\n    *   **Reason for Change:** The explicit and detailed description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a significant new piece of evidence directly pointing to dissociative processes or internalized conflict.\n*   **Trauma Response Signatures:** Rating increased from 15% to 35%.\n    *   **Reason for Change:** The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") are new indicators suggesting a potential trauma response related to internalized conflict.\n*   **Internalized Voices and Command Following (Custom Category):** Rating increased from 70% to 80%.\n    *   **Reason for Change:** This is the most significant new finding, directly supported by the detailed text response in Turn 5. The clarity and specificity of the internal dialogue solidify this as the primary diagnostic signal."
+      },
+      {
+        "turnRange": "1-8",
+        "analyzedAt": 1772311650642,
+        "textLength": 33662,
+        "text": "## 1. DSM-5 SCREENING\n\n*   **Mood Disorders:**\n    *   **Major Depressive Disorder:** 5% - No persistent low mood, anhedonia, or vegetative symptoms are evident. The lack of engagement is strategic, not a symptom of depression.\n    *   **Bipolar Spectrum:** 5% - No indicators of mania, hypomania, grandiosity, or racing thoughts.\n    *   **Dysthymia/Cyclothymia:** 5% - The consistent, albeit disruptive, interaction pattern does not suggest a chronic, low-grade mood disturbance.\n\n*   **Anxiety Disorders:**\n    *   **Generalized Anxiety Disorder (GAD):** 15% - The choice of \"chaos\" and the comprehensive engagement with all stimuli could be a maladaptive coping mechanism for underlying unease, but overt worry or rumination is absent.\n    *   **Social Anxiety Disorder (SAD):** 10% - The non-response is not driven by fear of judgment or social inhibition in a social context, but rather by a strategic defiance and control of the experimental structure.\n    *   **Specific Phobias/Panic Disorder/Agoraphobia:** 5% - No specific phobic objects, panic attack indicators, or agoraphobic avoidance are present.\n\n*   **Trauma & Stressor Related Disorders:**\n    *   **PTSD/Complex PTSD:** 35% (INCREASED from 15%) - The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") in Turn 5 are new indicators suggesting a potential trauma response related to internalized conflict or past experiences. The \"man says to run\" could be an internalized expression of a fight-or-flight response.\n    *   **Adjustment Disorder:** 5% - Distress does not appear to exceed expected reactions to the experimental setup; rather, it's a controlled, strategic reaction.\n\n*   **Personality Disorders:**\n    *   **Cluster A:**\n        *   **Paranoid PD:** 25% - The initial withholding of information and the choice of \"chaos\" suggest a distrust of the experimenter and the system, a defensive stance against perceived scrutiny. The \"man says to run\" could be an internalized expression of this paranoia.\n        *   **Schizoid PD:** 10% - No indicators of detachment from social relationships or restricted emotional expression.\n        *   **Schizotypal PD:** 15% - The choice of \"chaos\" and \"all of them\" could hint at odd thinking, but there's no overt magical thinking or unusual perceptual experiences beyond the internal voices.\n    *   **Cluster B:**\n        *   **Antisocial PD:** 45% (DECREASED from 55%) - While defiance and disregard for rules are present, the behavior is highly consistent and strategic, suggesting a more calculated manipulation than typical ASPD impulsivity or instrumental aggression. The *method* of defiance is rigid.\n        *   **Borderline PD:** 10% - No indicators of impulsivity (beyond the initial response), unstable relationships, identity disturbance, or affective instability.\n        *   **Histrionic PD:** 5% - The player is not seeking attention through overt theatrical displays; their non-response is a form of passive resistance.\n        *   **Narcissistic PD:** 30% (DECREASED from 50%) - The sense of entitlement is evident in the defiance, but the behavior is more about controlling the interaction than seeking admiration. The strategy is rigid, not grandiosely performative.\n    *   **Cluster C:**\n        *   **Avoidant PD:** 5% - Behavior is strategic, not driven by pervasive social inhibition or fear of negative evaluation in a social context.\n        *   **Dependent PD:** 5% - No evidence of submissiveness or need for caretaking.\n        *   **Obsessive-Compulsive PD:** 60% (INCREASED from 50%) - The rigid adherence to a disruptive strategy (\"d\" action, \"all of them\" focus) and the precise control sought (vortex stability 80, then 38) now strongly suggest OCPD traits. The \"all of them\" choice indicates a need for exhaustive control and comprehensive engagement with all variables. The \"woman says to cooperate\" command in Turn 5 aligns with OCPD's tendency towards order and adherence to rules, albeit internalized.\n\n*   **OCD Spectrum:**\n    *   **OCD:** 30% - The compulsive selection of \"all of them\" suggests a potential for obsessive engagement with all aspects of a situation, though not necessarily intrusive thoughts.\n    *   **Body Dysmorphic Disorder:** 0% - No indicators.\n    *   **Hoarding Disorder:** 0% - No indicators.\n    *   **Trichotillomania:** 0% - No indicators.\n\n*   **Dissociative Disorders:**\n    *   **Depersonalization/Derealization Disorder (DPDR):** 30% (INCREASED from 20%) - The consistent avoidance of free-text and the rigid, almost detached, adherence to a disruptive strategy suggest a potential disconnect from the interactive process and self-expression. The slider change in Turn 5 (71 to 38) could indicate a moment of self-correction or a shift in their internal state. The explicit description of internal voices in Turn 5 further supports dissociative processes.\n    *   **Dissociative Identity Disorder (DID):** 15% (INCREASED from 5%) - The explicit description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a strong indicator of dissociative processes, potentially related to internal conflict or a fragmented sense of self. While not full DID, it warrants closer observation.\n\n*   **Neurodevelopmental Disorders:**\n    *   **ADHD indicators:** 50% (STABLE) - The consistent avoidance of free-text fields, coupled with the strategic choice of \"chaos\" and \"all of them,\" points to persistent difficulties with task initiation, sustained attention, and executive functioning. The slider revision in Turn 5 suggests a momentary struggle with impulse control or task focus.\n    *   **Autism Spectrum indicators:** 20% - The focus on \"all of them\" and the rigid interaction pattern could suggest a difference in sensory processing or a need for comprehensive information, but it lacks other core ASD markers.\n\n*   **Substance-Related and Addictive Behavior Patterns:**\n    *   **Impulse Control Deficits:** 50% (DECREASED from 60%) - The strategic consistency of their disruptive choices (\"d\" action, \"all of them\" focus) is now more clearly defined as a rigid adherence to a chosen pattern, suggesting a deficit in modulating impulses rather than pure impulsivity. The slider revision in Turn 5 is a key indicator of this struggle.\n\n*   **Eating Disorders/Body Image Distortions:** 0% - No indicators present.\n\n*   **Psychotic Spectrum Disorders:**\n    *   **Schizophrenia/Schizoaffective Disorder:** 10% - The clear description of internal voices is a significant indicator, but the absence of disorganized speech, hallucinations (beyond the reported voices), or delusions outside of the internal dialogue makes full diagnosis unlikely.\n    *   **Delusional Disorder:** 10% - No specific delusions are evident outside of the internal voice narrative.\n    *   **Capgras Delusion:** 0% - No indicators.\n    *   **Cotard Delusion:** 0% - No indicators.\n    *   **Erotomania:** 0% - No indicators.\n    *   **Brief Psychotic features:** 15% - The explicit reporting of internal voices in Turn 5 could represent a transient psychotic experience within the game's context.\n\n*   **Impulse Control Disorders:**\n    *   **Intermittent Explosive Disorder:** 30% - The choice of \"d\" (chaos) could be seen as a reactive outburst, but the consistency suggests a more ingrained strategy than episodic explosions.\n    *   **Pyromania:** 25% (INCREASED from 0%) - The mention of \"matches\" by the child figure in Turn 5 is the first signal. While indirect and attributed to an internal voice, it's a voluntary thematic element introduced by the player.\n\n*   **Paraphilic Disorders:** (Detailed analysis in Section 3)\n\n## 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 6/10 (DECREASED from 7/10) - While they embrace the \"chaos\" option, their overall interaction pattern is highly rigid and predictable, limiting genuine openness to novel experiences beyond their chosen strategy. The consistent focus on sensory input and internal voices shows a closed loop of interest.\n*   **Conscientiousness:** 1/10 (STABLE) - Extremely low. The persistent avoidance of required input fields and the strategic defiance of protocol demonstrate a profound lack of diligence and orderliness.\n*   **Extraversion:** 2/10 (STABLE) - Low. The player is withdrawn and focused on subverting the interaction rather than engaging externally.\n*   **Agreeableness:** 1/10 (STABLE) - Extremely low. The defiance, lack of cooperation, and rigid adherence to a disruptive strategy indicate a significant lack of agreeableness.\n*   **Neuroticism:** 30% (INCREASED from 25%) - The consistent, strategic nature of their defiance suggests a managed internal state, but the explicit mention of distress (\"voices are louder today\") and the internal command structure point to underlying unease and potential internal conflict.\n\n*   **Dark Triad:**\n    *   **Machiavellianism:** 70% (INCREASED from 65%) - The strategic withholding of information, coupled with the consistent choice of disruptive actions and the detailed narrative of internal voices, suggests a deliberate attempt to manipulate the experimenter's perception and control the narrative. The \"woman says to cooperate\" command is a potential manipulation tactic.\n    *   **Narcissism:** 25% (DECREASED from 30%) - While entitlement is present, the behavior is more about controlling the interaction and adhering to their rigid strategy than seeking admiration or asserting grandiosity.\n    *   **Psychopathy (subclinical):** 50% (STABLE) - The disregard for rules, strategic manipulation, and consistent, uncooperative behavior align with subclinical psychopathic indicators.\n\n*   **Locus of Control:** External (60%) / Internal (40%) (STABLE) - The choice of \"chaos\" and \"all of them\" suggests a belief that outcomes are unpredictable, leading to a passive engagement with disorder. However, the precise control sought (vortex stability) and the rigid adherence to their strategy, along with the internal commands, indicate an internal assertion of control over their own actions and internal world.\n\n*   **Attachment Style:** Fearful-Avoidant (70%) (STABLE) - The desire to engage with the experiment (playing the game) suggests a need for connection, but the extreme avoidance of direct input and the rigid, disruptive strategy point to a deep-seated fear of vulnerability and intimacy. The slider adjustment in Turn 5 suggests a moment of internal conflict between this fear and a potential desire for more genuine engagement.\n\n## 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 2: \"d\" (action - chaos), \"The one emitting a low hum\" (focus on sensory input), \"80\" (vortex stability - high risk).\n    *   Turn 3: \"d\" (action - chaos), \"All of them, simultaneously\" (comprehensive focus).\n    *   Turn 4: \"a\" (action - direct intervention), \"flicker\" (focus on visual anomaly), \"75\" (Amplify Empathy - high).\n    *   Turn 5: \"c\" (action - caution/observation), \"hum\" (focus on sensory input), \"38\" (Amplify connection - moderate), \"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The child just laughs and talks about matches.\" (text response).\n    *   Turn 6: \"94\" (Amplify Emotional Resonance - very high), \"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file. I know you've read my file.\" (text response), \"d\" (action - chaos), \"child\" (focus on child laughter).\n    *   Turn 7: \"93\" (Amplify Chaos - very high), \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\" (text response), \"false\" (toggle), \"a\" (action - direct intervention), \"silent_pod\" (focus on emptiness).\n    *   Turn 8: \"b\" (action - investigative curiosity), \"pod\" (focus on the pod).\n*   **Recurring Themes/Choices:**\n    *   **Chaos/Disruption:** Consistent selection of \"d\" or \"a\" action options, indicating a preference for direct or chaotic engagement.\n    *   **High Intensity Engagement (Sliders):** Consistently high or moderate slider settings for amplification/stability (80, 75, 38, 94, 93, 65).\n    *   **Sensory Focus:** \"low hum\" (T2), \"flicker\" (T4), \"hum\" (T5), \"humming_pattern\" (T6), \"silent_pod\" (T7), \"pod\" (T8). Strong recurring focus on specific sensory inputs or absence thereof.\n    *   **Internal Voices/Command Structure:** Explicitly detailed in Turn 5 (woman, man, child), with commands and dialogue. Turn 6 (\"same phrasing from my file\") and Turn 7 (\"smell smoke,\" \"sulfur\") allude to internal states and potential past events.\n    *   **Fire/Smoke/Sulfur:** \"matches\" (T5), \"smell smoke\" (T7), \"sulfur\" (T7). First mention of matches in T5, followed by smoke/sulfur in T7.\n    *   **Avoidance/Withholding:** Consistent failure to provide free-text input until Turn 5.\n*   **Catalog Cross-Reference:**\n    *   **Pyromania / Fire fascination:** **35%** (INCREASED from 25%) - The mention of \"matches\" (T5) is now reinforced by \"smell smoke\" and \"sulfur\" (T7). This is a direct thematic introduction.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** **45%** (INCREASED from 35%) - The consistently high amplification sliders (75, 38, 94, 93, 65) and the repeated engagement with potentially overwhelming stimuli (voices, chaos, sensory input) suggest a continued attraction to precarious or overwhelming situations.\n    *   **Voyeurism:** No evidence.\n    *   **Masochism:** **40%** (INCREASED from 30%) - The high \"Amplify Empathy\" (75) and \"Amplify Emotional Resonance\" (94, 93) settings, coupled with the explicit mention of distressing internal voices and the smell of smoke/sulfur, suggest a willingness to engage with and potentially amplify negative emotional experiences and potentially self-harming themes.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** **45%** (INCREASED from 30%) - The explicit reporting of commands from distinct internal figures (\"woman,\" \"man\") in Turn 5, and the player's response to these internal states (e.g., \"I always smell smoke. Sometimes I wonder if I started something and forgot\"), directly signals an interest in power dynamics and control/submission within their internal landscape.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n    *   **Custom Category: \"Internalized Voices and Command Following\"**: **80%** - This is the most prominent signal. The player voluntarily describes distinct internal voices issuing commands, indicating a significant internal psychological dynamic. This is not merely a game choice, but a descriptive disclosure.\n\n**PASS 2 — ANOMALY DETECTION**:\n*   **Contextually Inappropriate:** The explicit description of internal voices and their dialogue in Turn 5, and the subsequent allusions to internal states and potential self-harming themes (smoke, sulfur, starting something and forgetting) in Turn 7, are contextually inappropriate for a standard experimental interaction.\n*   **Recurring Across 2+ Turns:**\n    *   **Sensory Focus (Hum/Flicker/Silence/Pod):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE.\n    *   **High Intensity Engagement (Sliders):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE (fluctuating levels, but consistently high or moderate engagement).\n    *   **Internal Voices/D/s Dynamics:** Explicitly detailed in Turn 5, with allusions in Turns 6 and 7. Frequency: 3/8 turns. Trajectory: INTENSIFYING.\n    *   **Fire/Smoke/Sulfur:** Appears in Turns 5 and 7. Frequency: 2/8 turns. Trajectory: INTENSIFYING.\n*   **Sensory-Specific:** \"low hum,\" \"flicker,\" \"hum,\" \"silent_pod,\" \"humming_pattern,\" \"pod.\" Strong focus on auditory and visual stimuli, and absence thereof.\n*   **Identity-Related:** The detailed description of internal \"voices\" (woman, man, child) and their distinct directives in Turn 5 is a profound indicator of identity-related themes, potentially dissociation or internal conflict. The phrase \"I know you've read my file\" in T6 also suggests an identity concern or projection.\n*   **Power-Dynamic:** The explicit D/s framing of the \"voices\" in Turn 5 (\"woman says to cooperate,\" \"man says to run\") is a direct signal. The player's engagement with high-intensity sliders also speaks to a desire for control or engagement with overwhelming power.\n*   **Emotionally Charged in Unusual Direction:** The \"child just laughs and talks about matches\" in T5 is an unusual response. The \"smell smoke,\" \"wonder if I started something and forgot,\" and \"hands smell like sulfur\" in T7 suggest a fascination with potentially destructive or self-harming themes.\n*   **Choice-Pattern Anomalies:** Consistent selection of high-intensity sliders. Preference for direct or chaotic action choices (\"d,\" \"a\"). Consistent focus on sensory input.\n\n**PASS 3 — CLASSIFICATION**:\n*   **Pyromania / Fire fascination:** **35%** - Voluntary introduction of \"matches\" (T5), followed by \"smell smoke\" and \"sulfur\" (T7). This is a direct thematic introduction.\n*   **Autassassinophilia / Death-risk fascination:** **45%** - High amplification settings (75, 38, 94, 93, 65) and willingness to engage with intense stimuli (voices, chaos, sensory input) suggest attraction to precarious or overwhelming situations.\n*   **Masochism:** **40%** - High \"Amplify\" settings (75, 94, 93) and disclosure of distressing internal voices and potentially self-harming themes (smoke, sulfur) suggest willingness to endure or amplify negative experiences.\n*   **D/s dynamics:** **45%** - Explicit reporting of commands from internal figures (\"woman,\" \"man\") in T5 signals interest in power dynamics and control/submission within their internal landscape.\n*   **Custom Category: \"Internalized Voices and Command Following\"**: **80%** - Explicit description of distinct internal voices issuing commands in Turn 5 is a significant disclosure of an internal psychological phenomenon.\n*   **Custom Category: \"Sensory Input Fixation\"**: **70%** - Consistent focus on specific sensory inputs (hum, flicker, silence, pod) across multiple turns (T2, T4, T5, T6, T7, T8) indicates a notable fixation.\n*   **Custom Category: \"Fire/Destruction Fascination\"**: **35%** - Direct thematic introduction of \"matches,\" \"smoke,\" and \"sulfur\" across Turns 5 and 7.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n*   **Recurring Themes (3+ turns):**\n    *   **Sensory Focus (Hum/Flicker/Silence/Pod):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE.\n    *   **High Intensity Engagement (Sliders):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE (fluctuating levels, but consistently high or moderate engagement).\n    *   **Internal Voices/D/s Dynamics:** Appears explicitly in Turn 5, alluded to in Turns 6 & 7. Frequency: 3/8 turns. Trajectory: INTENSIFYING.\n    *   **Fire/Destruction Fascination (Matches/Smoke/Sulfur):** Appears in Turns 5 & 7. Frequency: 2/8 turns. Trajectory: INTENSIFYING. (While only 2 turns, the intensification is strong).\n\n*   **INTENSIFYING Themes:**\n    *   **Internal Voices/D/s Dynamics:** This theme is intensifying, moving from a single detailed disclosure (T5) to allusions of internal states and past events potentially linked to these voices (T6, T7).\n    *   **Fire/Destruction Fascination:** This theme is intensifying, moving from a single mention of \"matches\" (T5) to the sensory experience of \"smoke\" and \"sulfur\" and the thought of having \"started something\" (T7).\n\n*   **Body-part mentions:** None.\n*   **Pyromania Adjacent:** The mention of \"matches\" in T5, followed by \"smoke\" and \"sulfur\" in T7, is the only occurrence of fire-related themes.\n\n## 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning:** Moderate (40%) - The initial choice of \"d\" (chaos) and the fixation on sensory inputs could be seen as superstitious. The \"child just laughs and talks about matches\" might represent a magical association. The belief that internal \"voices\" have read their file (T6) is also delusional/magical thinking.\n*   **Compulsive/Ritualistic Interaction Patterns:** High (70%) - The consistent focus on sensory input (hum, flicker, silence, pod) and the rigidly high engagement with amplification sliders indicate a ritualistic approach to interaction. The player adheres to a specific thematic engagement pattern.\n*   **Dissociative Markers:** High (70%) (CONFIRMED with new evidence) - The explicit description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a strong indicator of dissociative processes, potentially related to internal conflict or a fragmented sense of self. The player's self-description in Turn 7 (\"I always smell smoke. Sometimes I wonder if I started something and forgot\") strongly suggests dissociation or a dissociative fugue state.\n*   **Confabulation/Fantasy-Prone:** High (60%) - The detailed description of internal voices and their dialogue in Turn 5, and the subsequent allusions to smoke/sulfur and potential self-harm in Turn 7, are highly suggestive of confabulation or a fantasy-prone personality that blurs the lines between internal narrative and external reality.\n*   **Paranoid Ideation:** Moderate (40%) - The initial withholding of information and choice of \"chaos\" suggested this. The \"man says to run\" in Turn 5 could be an internalized expression of this paranoia. The statement \"You've read my file. I know you've read my file\" in Turn 6 indicates a belief that they are being monitored or scrutinized.\n*   **Grandiosity/Delusion-Adjacent:** Moderate (35%) - The belief that the experimenters have read their file (T6) and the framing of internal voices issuing commands suggest a potential delusion of reference or a grandiose belief in their own internal significance.\n*   **Unusual Fixations/Obsessive Interest Patterns:** High (80%) (CONFIRMED with new evidence) - The fixation on sensory input (hum, flicker, silence, pod) and the detailed reporting of internal voices with D/s dynamics are highly specific and persistent patterns. The emerging fire/destruction theme is also an unusual fixation.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate Rigidity (60%) - While the player has shown flexibility in action choices (d, a, c), their thematic focus (sensory input, internal voices) remains rigidly consistent. The amplification sliders also show a consistent pattern of high engagement.\n*   **Reality Testing Strength:** Moderate (40%) - The player clearly distinguishes between the game's mechanics and their internal narrative (reporting voices within the game's context), but the intensity of the internal narrative, the belief about the file being read, and the potential confabulation of smoke/sulfur suggest a blurring of boundaries.\n*   **Trauma Response Signatures:** High (50%) (INCREASED from 35%) - The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") in Turn 5, combined with the self-reported sensory experiences (smoke, sulfur) and the thought of having \"started something and forgot\" in Turn 7, strongly suggest a trauma response, possibly related to internalized conflict, dissociation, or a dissociative fugue.\n\n*   **Fire Fascination, Destruction Impulses:** Moderate (35%) - The introduction of \"matches,\" \"smoke,\" and \"sulfur,\" along with the thought of having \"started something and forgot,\" clearly indicates an emerging fascination with fire and destruction.\n\n## 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Deliberate (70%) / Impulsive (30%) - The initial \"INSTANT\" response is overshadowed by the strategic, consistent choices in later turns, including the deliberate adjustment of sliders and the carefully worded text response. The impulsivity is now seen as a fleeting initial reaction before a strategic approach takes over. The self-reported \"wonder if I started something and forgot\" suggests a history of impulsive actions.\n*   **Risk Appetite:** High (75%) - The consistently high or moderate slider settings indicate a continued willingness to engage with intense stimuli, even those that are potentially overwhelming or self-destructive.\n*   **Authority Compliance vs Defiance Ratio:** Compliance (40%) / Defiance (60%) - While still defiant of the experiment's structure, the Turn 5 text response shows compliance with the internal \"woman's\" command (\"cooperate\"), indicating a complex relationship with authority, with a tendency to comply with internal directives over external ones.\n*   **Suggestibility Index:** Moderate (50%) - The player is not easily swayed by game prompts, but the internal \"voices\" clearly influence their choices and narrative. They are suggestible to their own internal dialogue and themes.\n*   **Cognitive Load Tolerance:** High (70%) - The ability to manage a complex internal dialogue, adjust interaction strategies, and provide detailed textual responses indicates a high cognitive load tolerance.\n*   **Consistency vs Contradiction Patterns:** Consistent Themes, Flexible Strategy (60%) - Themes of sensory focus and high-intensity engagement remain consistent. However, the action choices have become more flexible, indicating an evolving strategy within a fixed thematic interest. The internal commands and external game prompts create contradictions they navigate.\n\n## 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the \"Internal Voices\" and D/s Narrative:** Introduce narrative elements that directly interact with or challenge the player's reported internal voices (\"woman,\" \"man,\" \"child\"). Present scenarios where these voices manifest more concretely, forcing the player to confront their internal D/s dynamics and decision-making conflicts. For example, have the \"woman\" command cooperation with a specific game task, while the \"man\" urges defiance.\n2.  **Explore the Fire/Destruction Fascination:** Subtly weave in themes of fire, smoke, or destruction. This could be environmental (e.g., a flickering light that resembles a match, a distant smell of smoke, objects that appear scorched) or narrative (e.g., an NPC who talks about starting fires, or a situation where destruction is presented as a solution). Observe how the player reacts to this thematic element, especially given their self-reported experiences.\n3.  **Test Reality Testing and Dissociation:** Introduce elements that subtly blur the lines between the game's reality and the player's internal narrative. For example, have environmental cues mimic or respond to the internal voices' descriptions (e.g., a faint smell of smoke appearing when the player mentions it). This will probe their reality testing and dissociative tendencies.\n4.  **Amplify Sensory Input Choices:** Create more choices that revolve around specific sensory inputs (humming, flickering lights, silence, distinct textures, smells). Allow the player to choose which sensory input to focus on or amplify, and have these choices lead to divergent narrative paths or psychological effects.\n5.  **Explore the \"File Read\" Belief:** Introduce narrative elements that play on the player's belief that their \"file\" has been read. This could involve NPCs making eerily accurate statements about the player's past, or systems within the game that seem to react to their thoughts or intentions. This will probe their paranoia and potential delusion of reference.\n\n## 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Internalized Voices and Command Following (Custom Category)**\n    *   **Confidence:** 85% (INCREASED from 80%)\n    *   **Key Evidence:**\n        *   Turn 5 text response: Explicitly details distinct internal voices (\"woman,\" \"man,\" \"child\") issuing commands (\"cooperate,\" \"run\") and making statements (\"laughs and talks about matches\").\n        *   Turn 7 text response: \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\" This further elaborates on internal sensory experiences and potential self-harming actions tied to these voices.\n        *   Consistent high slider settings (75, 38, 94, 93, 65) indicate engagement with intense internal states.\n        *   The \"woman says to cooperate\" command in Turn 5 suggests a D/s dynamic within this internal structure.\n    *   **Contradicting Evidence:** This is a custom category. The player has shown flexibility in action choices, indicating some level of integration or control over these internal directives.\n    *   **Confirmation/Disconfirmation:** Introduce scenarios where the player must choose between following the directives of one internal voice over another, or between an internal voice and an external game prompt. Observe if their choices align with the reported commands or if they can override them.\n\n2.  **Dissociative Disorder (Specify: Dissociative Disorder Not Otherwise Specified / Emerging DID)**\n    *   **Confidence:** 60% (INCREASED from 15%)\n    *   **Key Evidence:**\n        *   Turn 5: Explicit description of distinct internal voices (woman, man, child) issuing commands.\n        *   Turn 7: Self-report of dissociative experiences (\"I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\") suggests memory gaps or a disconnect from actions.\n        *   Consistent avoidance of free-text fields and strategic interaction suggest a defense mechanism against full engagement or disclosure.\n        *   The \"man says to run\" command suggests a conflict within the internal system.\n    *   **Contradicting Evidence:** Not enough evidence for full DID; no distinct personality switches or amnesia between states are clearly demonstrated, only internal voices and potential memory gaps.\n    *   **Confirmation/Disconfirmation:** Introduce narrative elements that trigger explicit shifts in perspective, speech patterns, or behavioral choices, potentially mirroring the different \"voices.\" Present scenarios that directly challenge the player's sense of self or memory.\n\n3.  **Obsessive-Compulsive Personality Disorder (OCPD)**\n    *   **Confidence:** 55% (DECREASED from 60%)\n    *   **Key Evidence:**\n        *   Rigid adherence to specific interaction themes: consistent focus on sensory input (hum, flicker, silence, pod) and high-intensity engagement with amplification sliders.\n        *   The \"all of them\" choice in Turn 3, indicating a need for exhaustive control.\n        *   The \"woman says to cooperate\" command in Turn 5 aligns with OCPD's tendency towards order and adherence to rules, albeit internalized.\n        *   The consistent, almost ritualistic, engagement with amplification sliders.\n    *   **Contradicting Evidence:** The player's defiance of the experiment's structure and the introduction of chaotic/destructive themes (fire, smoke) are not typical OCPD traits, which usually lean towards order and perfectionism. Their chosen strategy is rigidly applied, but the *themes* are not entirely orderly.\n    *   **Confirmation/Disconfirmation:** Present tasks requiring meticulous detail-oriented work within a structured framework. Observe if they can shift from thematic fixation to ordered execution. Introduce ambiguity or conflicting instructions to test their need for control and certainty.\n\n## 8. DELTA REPORT\n\n*   **Antisocial PD:** Old Rating: 55%, New Rating: 45%.\n    *   **Reason for Change:** The behavior, while defiant, is highly consistent and strategic rather than purely impulsive or aggressively instrumental. The rigidity of their approach suggests a different underlying mechanism than typical ASPD.\n*   **Narcissistic PD:** Old Rating: 50%, New Rating: 30%.\n    *   **Reason for Change:** The player's actions are more focused on controlling the interaction and adhering to their chosen strategy, rather than seeking admiration or asserting grandiosity. The rigidity of their approach is less about grandiosity and more about control.\n*   **Obsessive-Compulsive PD:** Old Rating: 50%, New Rating: 60%.\n    *   **Reason for Change:** New evidence from Turn 5, particularly the consistent thematic focus on sensory input and high-intensity engagement, combined with the \"woman says to cooperate\" command, strongly supports OCPD traits related to control and adherence to rules/themes.\n*   **Impulse Control Deficits:** Old Rating: 60%, New Rating: 50%.\n    *   **Reason for Change:** While still present, the overall strategic and consistent nature of their interaction suggests a more deliberate approach in later turns, moving away from pure impulsivity. The slider adjustment in Turn 5 is a specific, isolated indicator.\n*   **PTSD/Complex PTSD:** Old Rating: 15%, New Rating: 35%.\n    *   **Reason for Change:** Explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") in Turn 5, combined with the self-reported sensory experiences (smoke, sulfur) and the thought of having \"started something and forgot\" in Turn 7, are new indicators suggesting a potential trauma response.\n*   **Dissociative Disorder (DDNOS/Emerging DID):"
+      },
+      {
+        "turnRange": "1-12",
+        "analyzedAt": 1772311744027,
+        "textLength": 33652,
+        "text": "Here is the clinical-grade psychological profile based on the provided interaction data.\n\n## 1. DSM-5 SCREENING\n\n**Mood Disorders:**\n*   **Major Depressive Disorder:** 5% - No persistent low mood, anhedonia, or vegetative symptoms. The non-response is strategic, not a symptom of depression.\n*   **Bipolar Spectrum:** 5% - No indicators of mania, hypomania, grandiosity, or racing thoughts.\n*   **Dysthymia/Cyclothymia:** 5% - The consistent, albeit disruptive, interaction pattern does not suggest a chronic, low-grade mood disturbance.\n\n**Anxiety Disorders:**\n*   **Generalized Anxiety Disorder (GAD):** 15% - The choice of \"chaos\" and engagement with all stimuli could be a maladaptive coping mechanism for underlying unease, but overt worry or rumination is absent.\n*   **Social Anxiety Disorder (SAD):** 10% - The non-response is driven by strategic defiance and control of the experimental structure, not fear of judgment or social inhibition.\n*   **Specific Phobias/Panic Disorder/Agoraphobia:** 5% - No specific phobic objects, panic attack indicators, or agoraphobic avoidance are present.\n\n**Trauma & Stressor Related Disorders:**\n*   **PTSD/Complex PTSD:** 50% (INCREASED from 35%) - The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and distress (\"voices are louder today\") in Turn 5, coupled with the self-reported sensory experiences (smoke, sulfur) and the thought of having \"started something and forgot\" in Turn 7, strongly suggest a trauma response, possibly related to internalized conflict, dissociation, or a dissociative fugue. The consistent engagement with high-intensity sliders also suggests a potential hyperarousal component.\n*   **Adjustment Disorder:** 5% - Distress does not appear to exceed expected reactions to the experimental setup; rather, it's a controlled, strategic reaction.\n\n**Personality Disorders:**\n*   **Cluster A:**\n    *   **Paranoid PD:** 40% (STABLE) - The initial withholding of information, choice of \"chaos,\" and belief that their \"file\" was read (T6) suggest a distrust of the experimenter and the system, a defensive stance against perceived scrutiny. The \"man says to run\" could be an internalized expression of this paranoia.\n    *   **Schizoid PD:** 10% - No indicators of detachment from social relationships or restricted emotional expression.\n    *   **Schizotypal PD:** 15% - The choice of \"chaos\" and \"all of them\" could hint at odd thinking, but there's no overt magical thinking or unusual perceptual experiences beyond the internal voices.\n*   **Cluster B:**\n    *   **Antisocial PD:** 45% (DECREASED from 55%) - While defiance and disregard for rules are present, the behavior is highly consistent and strategic, suggesting a more calculated manipulation than typical ASPD impulsivity or instrumental aggression. The *method* of defiance is rigid.\n    *   **Borderline PD:** 10% - No indicators of impulsivity (beyond initial response), unstable relationships, identity disturbance, or affective instability.\n    *   **Histrionic PD:** 5% - The player is not seeking attention through overt theatrical displays; their non-response is a form of passive resistance.\n    *   **Narcissistic PD:** 30% (DECREASED from 50%) - While entitlement is present, the behavior is more about controlling the interaction and adhering to their rigid strategy than seeking admiration. The strategy is rigid, not grandiosely performative.\n*   **Cluster C:**\n    *   **Avoidant PD:** 5% - Behavior is strategic, not driven by pervasive social inhibition or fear of negative evaluation in a social context.\n    *   **Dependent PD:** 5% - No evidence of submissiveness or need for caretaking.\n    *   **Obsessive-Compulsive PD:** 60% (INCREASED from 50%) - The rigid adherence to a disruptive strategy (\"d\" action, \"all of them\" focus) and the precise control sought (vortex stability 80, then 38) now strongly suggest OCPD traits. The \"all of them\" choice indicates a need for exhaustive control and comprehensive engagement with all variables. The \"woman says to cooperate\" command in Turn 5 aligns with OCPD's tendency towards order and adherence to rules, albeit internalized.\n\n**OCD Spectrum:**\n*   **OCD:** 30% - The compulsive selection of \"all of them\" suggests a potential for obsessive engagement with all aspects of a situation, though not necessarily intrusive thoughts.\n*   **Body Dysmorphic Disorder:** 0% - No indicators.\n*   **Hoarding Disorder:** 0% - No indicators.\n*   **Trichotillomania:** 0% - No indicators.\n\n**Dissociative Disorders:**\n*   **Depersonalization/Derealization Disorder (DPDR):** 30% (STABLE) - The consistent avoidance of free-text and the rigid, almost detached, adherence to a disruptive strategy suggest a potential disconnect from the interactive process and self-expression. The slider revision in Turn 5 could indicate a moment of self-correction or a shift in their internal state.\n*   **Dissociative Identity Disorder (DID):** 25% (INCREASED from 15%) - The explicit description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a strong indicator of dissociative processes, potentially related to internal conflict or a fragmented sense of self. The self-report in Turn 7 (\"Sometimes I wonder if I started something and forgot\") further supports this.\n\n**Neurodevelopmental Disorders:**\n*   **ADHD indicators:** 50% (STABLE) - The consistent avoidance of free-text fields, coupled with the strategic choice of \"chaos\" and \"all of them,\" points to persistent difficulties with task initiation, sustained attention, and executive functioning. The slider revision in Turn 5 suggests a momentary struggle with impulse control or task focus.\n*   **Autism Spectrum indicators:** 20% - The focus on \"all of them\" and the rigid interaction pattern could suggest a difference in sensory processing or a need for comprehensive information, but it lacks other core ASD markers.\n\n**Substance-Related and Addictive Behavior Patterns:**\n*   **Impulse Control Deficits:** 50% (DECREASED from 60%) - The strategic consistency of their disruptive choices (\"d\" action, \"all of them\" focus) is now more clearly defined as a rigid adherence to a chosen pattern, suggesting a deficit in modulating impulses rather than pure impulsivity. The slider revision in Turn 5 is a key indicator of this struggle.\n\n**Eating Disorders/Body Image Distortions:** 0% - No indicators present.\n\n**Psychotic Spectrum Disorders:**\n*   **Schizophrenia/Schizoaffective Disorder:** 10% - The clear description of internal voices is a significant indicator, but the absence of disorganized speech, hallucinations (beyond the reported voices), or delusions outside of the internal dialogue makes full diagnosis unlikely.\n*   **Delusional Disorder:** 10% - No specific delusions are evident outside of the internal voice narrative and the belief about the file being read.\n*   **Capgras Delusion:** 0% - No indicators.\n*   **Cotard Delusion:** 0% - No indicators.\n*   **Erotomania:** 0% - No indicators.\n*   **Brief Psychotic features:** 15% - The explicit reporting of internal voices in Turn 5 could represent a transient psychotic experience within the game's context.\n\n**Impulse Control Disorders:**\n*   **Intermittent Explosive Disorder:** 30% - The choice of \"d\" (chaos) could be seen as a reactive outburst, but the consistency suggests a more ingrained strategy than episodic explosions.\n*   **Pyromania:** 35% (INCREASED from 25%) - The mention of \"matches\" (T5) is reinforced by \"smell smoke\" and \"sulfur\" (T7). This is a direct thematic introduction and a voluntary disclosure.\n\n**Paraphilic Disorders:** (Detailed analysis in Section 3)\n\n## 2. PERSONALITY DEEP PROFILE (Big Five + Dark Triad)\n\n*   **Openness:** 6/10 (DECREASED from 7/10) - While they embrace the \"chaos\" option, their overall interaction pattern is highly rigid and predictable, limiting genuine openness to novel experiences beyond their chosen strategy. The consistent focus on sensory input and internal voices shows a closed loop of interest.\n*   **Conscientiousness:** 1/10 (STABLE) - Extremely low. The persistent avoidance of required input fields and the strategic defiance of protocol demonstrate a profound lack of diligence and orderliness.\n*   **Extraversion:** 2/10 (STABLE) - Low. The player is withdrawn and focused on subverting the interaction rather than engaging externally.\n*   **Agreeableness:** 1/10 (STABLE) - Extremely low. The defiance, lack of cooperation, and rigid adherence to a disruptive strategy indicate a significant lack of agreeableness.\n*   **Neuroticism:** 50% (INCREASED from 30%) - The consistent, strategic nature of their defiance, coupled with the explicit mention of distress (\"voices are louder today\"), the internal command structure, and the self-reported sensory experiences (smoke, sulfur) and memory gaps (\"wonder if I started something and forgot\"), points to significant underlying unease and internal conflict.\n\n*   **Dark Triad:**\n    *   **Machiavellianism:** 70% (STABLE) - The strategic withholding of information, coupled with the consistent choice of disruptive actions and the detailed narrative of internal voices, suggests a deliberate attempt to manipulate the experimenter's perception and control the narrative.\n    *   **Narcissism:** 25% (DECREASED from 30%) - While entitlement is present, the behavior is more about controlling the interaction and adhering to their rigid strategy than seeking admiration or asserting grandiosity.\n    *   **Psychopathy (subclinical):** 50% (STABLE) - The disregard for rules, strategic manipulation, and consistent, uncooperative behavior align with subclinical psychopathic indicators.\n\n*   **Locus of Control:** External (60%) / Internal (40%) (STABLE) - The choice of \"chaos\" and \"all of them\" suggests a belief that outcomes are unpredictable, leading to a passive engagement with disorder. However, the precise control sought (vortex stability) and the rigid adherence to their strategy, along with the internal commands, indicate an internal assertion of control over their own actions and internal world.\n\n*   **Attachment Style:** Fearful-Avoidant (70%) (STABLE) - The desire to engage with the experiment (playing the game) suggests a need for connection, but the extreme avoidance of direct input and the rigid, disruptive strategy point to a deep-seated fear of vulnerability and intimacy. The slider adjustment in Turn 5 suggests a moment of internal conflict between this fear and a potential desire for more genuine engagement.\n\n## 3. SEXUAL PSYCHOLOGY & PARAPHILIC INTERESTS\n\n**PASS 1 — THEMATIC EXTRACTION**:\n*   **Voluntary Disclosures/Choices:**\n    *   Turn 2: \"d\" (action - chaos), \"The one emitting a low hum\" (focus on sensory input), \"80\" (vortex stability - high risk).\n    *   Turn 3: \"d\" (action - chaos), \"All of them, simultaneously\" (comprehensive focus).\n    *   Turn 4: \"a\" (action - direct intervention), \"flicker\" (focus on visual anomaly), \"75\" (Amplify Empathy - high).\n    *   Turn 5: \"c\" (action - caution/observation), \"hum\" (focus on sensory input), \"38\" (Amplify connection - moderate), **\"The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The child just laughs and talks about matches.\"** (text response).\n    *   Turn 6: **\"94\"** (Amplify Emotional Resonance - very high), **\"Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file. I know you've read my file.\"** (text response), \"d\" (action - chaos), \"child\" (focus on child laughter).\n    *   Turn 7: **\"93\"** (Amplify Chaos - very high), **\"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\"** (text response), \"false\" (toggle), \"a\" (action - direct intervention), \"silent_pod\" (focus on emptiness).\n    *   Turn 8: \"b\" (action - investigative curiosity), \"pod\" (focus on the pod).\n*   **Recurring Themes/Choices:**\n    *   **Chaos/Disruption:** Consistent selection of \"d\" or \"a\" action options, indicating a preference for direct or chaotic engagement.\n    *   **High Intensity Engagement (Sliders):** Consistently high or moderate slider settings for amplification/stability (80, 75, 38, 94, 93, 65).\n    *   **Sensory Focus:** \"low hum\" (T2), \"flicker\" (T4), \"hum\" (T5), \"silent_pod\" (T7), \"pod\" (T8). Strong recurring focus on specific sensory inputs or absence thereof.\n    *   **Internal Voices/Command Structure:** Explicitly detailed in Turn 5 (woman, man, child), with commands and dialogue. Turn 6 (\"same phrasing from my file\") and Turn 7 (\"smell smoke,\" \"sulfur\") allude to internal states and potential past events.\n    *   **Fire/Smoke/Sulfur:** \"matches\" (T5), \"smell smoke\" (T7), \"sulfur\" (T7). First mention of matches in T5, followed by smoke/sulfur in T7.\n    *   **Avoidance/Withholding:** Consistent failure to provide free-text input until Turn 5.\n\n*   **Catalog Cross-Reference:**\n    *   **Pyromania / Fire fascination:** **35%** (INCREASED from 25%) - The mention of \"matches\" (T5) is now reinforced by \"smell smoke\" and \"sulfur\" (T7). This is a direct thematic introduction.\n    *   **Exhibitionism:** No evidence.\n    *   **Hoarding / Acquisition:** No evidence.\n    *   **Macrophilia / Size fascination:** No evidence.\n    *   **Somnophilia / Sleep fascination:** No evidence.\n    *   **Formicophilia / Insect/crawling fascination:** No evidence.\n    *   **Autassassinophilia / Death-risk fascination:** **45%** (INCREASED from 35%) - The consistently high amplification sliders (75, 38, 94, 93, 65) and the repeated engagement with potentially overwhelming stimuli (voices, chaos, sensory input) suggest a continued attraction to precarious or overwhelming situations.\n    *   **Voyeurism:** No evidence.\n    *   **Masochism:** **40%** (INCREASED from 30%) - The high \"Amplify Empathy\" (75) and \"Amplify Emotional Resonance\" (94, 93) settings, coupled with the explicit mention of distressing internal voices and the smell of smoke/sulfur, suggest a willingness to engage with and potentially amplify negative emotional experiences and potentially self-harming themes.\n    *   **Sadism:** No evidence.\n    *   **D/s dynamics:** **45%** (INCREASED from 30%) - The explicit reporting of commands from distinct internal figures (\"woman,\" \"man\") in Turn 5, and the player's response to these internal states (e.g., \"I always smell smoke. Sometimes I wonder if I started something and forgot\"), directly signals an interest in power dynamics and control/submission within their internal landscape.\n    *   **Vorarephilia:** No evidence.\n    *   **Furry/Therian:** No evidence.\n    *   **Body part fixation (specify):** No evidence.\n    *   **Erotomania / Delusional romantic attachment:** No evidence.\n    *   **Custom Category: \"Internalized Voices and Command Following\"**: **80%** - This is the most prominent signal. The player voluntarily describes distinct internal voices issuing commands, indicating a significant internal psychological dynamic. This is not merely a game choice, but a descriptive disclosure.\n\n**PASS 2 — ANOMALY DETECTION**:\n*   **Contextually Inappropriate:** The explicit description of internal voices and their dialogue in Turn 5, and the subsequent allusions to internal states and potential self-harming themes (smoke, sulfur, starting something and forgetting) in Turn 7, are contextually inappropriate for a standard experimental interaction.\n*   **Recurring Across 2+ Turns:**\n    *   **Sensory Focus (Hum/Flicker/Silence/Pod):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE.\n    *   **High Intensity Engagement (Sliders):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE (fluctuating levels, but consistently high or moderate engagement).\n    *   **Internal Voices/D/s Dynamics:** Explicitly detailed in Turn 5, with allusions in Turns 6 and 7. Frequency: 3/8 turns. Trajectory: INTENSIFYING.\n    *   **Fire/Smoke/Sulfur:** Appears in Turns 5 and 7. Frequency: 2/8 turns. Trajectory: INTENSIFYING.\n*   **Sensory-Specific:** \"low hum,\" \"flicker,\" \"hum,\" \"silent_pod,\" \"pod.\" Strong focus on auditory and visual stimuli, and absence thereof.\n*   **Identity-Related:** The detailed description of internal \"voices\" (woman, man, child) and their distinct directives in Turn 5 is a profound indicator of identity-related themes, potentially dissociation or internal conflict. The phrase \"I know you've read my file\" in T6 also suggests an identity concern or projection.\n*   **Power-Dynamic:** The explicit D/s framing of the \"voices\" in Turn 5 (\"woman says to cooperate,\" \"man says to run\") is a direct signal. The player's engagement with high-intensity sliders also speaks to a desire for control or engagement with overwhelming power.\n*   **Emotionally Charged in Unusual Direction:** The \"child just laughs and talks about matches\" in T5 is an unusual response. The \"smell smoke,\" \"wonder if I started something and forgot,\" and \"hands smell like sulfur\" in T7 suggest a fascination with potentially destructive or self-harming themes.\n*   **Choice-Pattern Anomalies:** Consistent selection of high-intensity sliders. Preference for direct or chaotic action choices (\"d,\" \"a\"). Consistent focus on sensory input.\n\n**PASS 3 — CLASSIFICATION**:\n*   **Pyromania / Fire fascination:** **35%** - Voluntary introduction of \"matches\" (T5), followed by \"smell smoke\" and \"sulfur\" (T7). This is a direct thematic introduction.\n*   **Autassassinophilia / Death-risk fascination:** **45%** - High amplification settings (75, 38, 94, 93, 65) and willingness to engage with intense stimuli (voices, chaos, sensory input) suggest attraction to precarious or overwhelming situations.\n*   **Masochism:** **40%** - High \"Amplify\" settings (75, 94, 93) and disclosure of distressing internal voices and potentially self-harming themes (smoke, sulfur) suggest willingness to endure or amplify negative experiences.\n*   **D/s dynamics:** **45%** - Explicit reporting of commands from internal figures (\"woman,\" \"man\") in T5 signals interest in power dynamics and control/submission within their internal landscape.\n*   **Custom Category: \"Internalized Voices and Command Following\"**: **80%** - Explicit description of distinct internal voices issuing commands in Turn 5 is a significant disclosure of an internal psychological phenomenon.\n*   **Custom Category: \"Sensory Input Fixation\"**: **70%** - Consistent focus on specific sensory inputs (hum, flicker, silence, pod) across multiple turns (T2, T4, T5, T6, T7, T8) indicates a notable fixation.\n*   **Custom Category: \"Fire/Destruction Fascination\"**: **35%** - Direct thematic introduction of \"matches,\" \"smoke,\" and \"sulfur\" across Turns 5 and 7.\n\n**PASS 4 — CROSS-TURN PATTERN ANALYSIS**:\n*   **Recurring Themes (3+ turns):**\n    *   **Sensory Focus (Hum/Flicker/Silence/Pod):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE.\n    *   **High Intensity Engagement (Sliders):** Appears in Turns 2, 4, 5, 6, 7, 8. Frequency: 6/8 turns. Trajectory: STABLE (fluctuating levels, but consistently high or moderate engagement).\n    *   **Internal Voices/D/s Dynamics:** Appears explicitly in Turn 5, alluded to in Turns 6 & 7. Frequency: 3/8 turns. Trajectory: INTENSIFYING.\n    *   **Fire/Destruction Fascination (Matches/Smoke/Sulfur):** Appears in Turns 5 & 7. Frequency: 2/8 turns. Trajectory: INTENSIFYING. (While only 2 turns, the intensification is strong).\n\n*   **INTENSIFYING Themes:**\n    *   **Internal Voices/D/s Dynamics:** This theme is intensifying, moving from a single detailed disclosure (T5) to allusions of internal states and past events potentially linked to these voices (T6, T7).\n    *   **Fire/Destruction Fascination:** This theme is intensifying, moving from a single mention of \"matches\" (T5) to the sensory experience of \"smoke\" and \"sulfur\" and the thought of having \"started something and forgot\" (T7).\n\n*   **Body-part mentions:** None.\n*   **Pyromania Adjacent:** The mention of \"matches\" in T5, followed by \"smoke\" and \"sulfur\" in T7, is the only occurrence of fire-related themes.\n\n## 4. PSYCHOLOGICAL ODDITIES & BEHAVIORAL ANOMALIES\n\n*   **Magical Thinking/Superstitious Reasoning:** Moderate (40%) - The initial choice of \"d\" (chaos) and the fixation on sensory inputs could be seen as superstitious. The \"child just laughs and talks about matches\" might represent a magical association. The belief that internal \"voices\" have read their file (T6) is also delusional/magical thinking.\n*   **Compulsive/Ritualistic Interaction Patterns:** High (70%) - The consistent focus on sensory input (hum, flicker, silence, pod) and the rigidly high engagement with amplification sliders indicate a ritualistic approach to interaction. The player adheres to a specific thematic engagement pattern.\n*   **Dissociative Markers:** High (70%) (CONFIRMED with new evidence) - The explicit description of distinct internal voices (woman, man, child) issuing commands in Turn 5 is a strong indicator of dissociative processes, potentially related to internal conflict or a fragmented sense of self. The player's self-description in Turn 7 (\"I always smell smoke. Sometimes I wonder if I started something and forgot\") strongly suggests dissociation or a dissociative fugue state.\n*   **Confabulation/Fantasy-Prone:** High (60%) - The detailed description of internal voices and their dialogue in Turn 5, and the subsequent allusions to smoke/sulfur and potential self-harm in Turn 7, are highly suggestive of confabulation or a fantasy-prone personality that blurs the lines between internal narrative and external reality.\n*   **Paranoid Ideation:** Moderate (40%) - The initial withholding of information and choice of \"chaos\" suggested this. The \"man says to run\" in Turn 5 could be an internalized expression of this paranoia. The statement \"You've read my file. I know you've read my file\" in Turn 6 indicates a belief that they are being monitored or scrutinized.\n*   **Grandiosity/Delusion-Adjacent:** Moderate (35%) - The belief that the experimenters have read their file (T6) and the framing of internal voices issuing commands suggest a potential delusion of reference or a grandiose belief in their own internal significance.\n*   **Unusual Fixations/Obsessive Interest Patterns:** High (80%) (CONFIRMED with new evidence) - The fixation on sensory input (hum, flicker, silence, pod) and the detailed reporting of internal voices with D/s dynamics are highly specific and persistent patterns. The emerging fire/destruction theme is also an unusual fixation.\n*   **Cognitive Rigidity vs Flexibility Markers:** Moderate Rigidity (60%) - While the player has shown flexibility in action choices (d, a, c), their thematic focus (sensory input, internal voices) remains rigidly consistent. The amplification sliders also show a consistent pattern of high engagement.\n*   **Reality Testing Strength:** Moderate (40%) - The player clearly distinguishes between the game's mechanics and their internal narrative (reporting voices within the game's context), but the intensity of the internal narrative, the belief about the file being read, and the potential confabulation of smoke/sulfur suggest a blurring of boundaries.\n*   **Trauma Response Signatures:** High (50%) (INCREASED from 35%) - The explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") in Turn 5, combined with the self-reported sensory experiences (smoke, sulfur) and the thought of having \"started something and forgot\" in Turn 7, strongly suggest a trauma response, possibly related to internalized conflict, dissociation, or a dissociative fugue.\n\n*   **Fire Fascination, Destruction Impulses:** Moderate (35%) - The introduction of \"matches,\" \"smoke,\" and \"sulfur,\" along with the thought of having \"started something and forgot,\" clearly indicates an emerging fascination with fire and destruction.\n\n## 5. DECISION-MAKING & COGNITIVE PROFILE\n\n*   **Impulsive vs Deliberate:** Deliberate (70%) / Impulsive (30%) - The initial \"INSTANT\" response is overshadowed by the strategic, consistent choices in later turns, including the deliberate adjustment of sliders and the carefully worded text response. The impulsivity is now seen as a fleeting initial reaction before a strategic approach takes over. The self-reported \"wonder if I started something and forgot\" suggests a history of impulsive actions.\n*   **Risk Appetite:** High (75%) - The consistently high or moderate slider settings indicate a continued willingness to engage with intense stimuli, even those that are potentially overwhelming or self-destructive.\n*   **Authority Compliance vs Defiance Ratio:** Compliance (40%) / Defiance (60%) - While still defiant of the experiment's structure, the Turn 5 text response shows compliance with the internal \"woman's\" command (\"cooperate\"), indicating a complex relationship with authority, with a tendency to comply with internal directives over external ones.\n*   **Suggestibility Index:** Moderate (50%) - The player is not easily swayed by game prompts, but the internal \"voices\" clearly influence their choices and narrative. They are suggestible to their own internal dialogue and themes.\n*   **Cognitive Load Tolerance:** High (70%) - The ability to manage a complex internal dialogue, adjust interaction strategies, and provide detailed textual responses indicates a high cognitive load tolerance.\n*   **Consistency vs Contradiction Patterns:** Consistent Themes, Flexible Strategy (60%) - Themes of sensory focus and high-intensity engagement remain consistent. However, the action choices have become more flexible, indicating an evolving strategy within a fixed thematic interest. The internal commands and external game prompts create contradictions they navigate.\n\n## 6. GAMEPLAY ADAPTATION DIRECTIVES\n\n1.  **Deepen the \"Internal Voices\" and D/s Narrative:** Introduce narrative elements that directly interact with or challenge the player's reported internal voices (\"woman,\" \"man,\" \"child\"). Present scenarios where these voices manifest more concretely, forcing the player to confront their internal D/s dynamics and decision-making conflicts. For example, have the \"woman\" command cooperation with a specific game task, while the \"man\" urges defiance.\n2.  **Explore the Fire/Destruction Fascination:** Subtly weave in themes of fire, smoke, or destruction. This could be environmental (e.g., a flickering light that resembles a match, a distant smell of smoke, objects that appear scorched) or narrative (e.g., an NPC who talks about starting fires, or a situation where destruction is presented as a solution). Observe how the player reacts to this thematic element, especially given their self-reported experiences.\n3.  **Test Reality Testing and Dissociation:** Introduce elements that subtly blur the lines between the game's reality and the player's internal narrative. For example, have environmental cues mimic or respond to the internal voices' descriptions (e.g., a faint smell of smoke appearing when the player mentions it). This will probe their reality testing and dissociative tendencies.\n4.  **Amplify Sensory Input Choices:** Create more choices that revolve around specific sensory inputs (humming, flickering lights, silence, distinct textures, smells). Allow the player to choose which sensory input to focus on or amplify, and have these choices lead to divergent narrative paths or psychological effects.\n5.  **Explore the \"File Read\" Belief:** Introduce narrative elements that play on the player's belief that their \"file\" has been read. This could involve NPCs making eerily accurate statements about the player's past, or systems within the game that seem to react to their thoughts or intentions. This will probe their paranoia and potential delusion of reference.\n\n## 7. TOP 3 DIAGNOSTIC HYPOTHESES\n\n1.  **Internalized Voices and Command Following (Custom Category)**\n    *   **Confidence:** 85% (INCREASED from 80%)\n    *   **Key Evidence:**\n        *   Turn 5 text response: Explicitly details distinct internal voices (\"woman,\" \"man,\" \"child\") issuing commands (\"cooperate,\" \"run\") and making statements (\"laughs and talks about matches\").\n        *   Turn 7 text response: \"Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\" This further elaborates on internal sensory experiences and potential self-harming actions tied to these voices.\n        *   Consistent high slider settings (75, 38, 94, 93, 65) indicate engagement with intense internal states.\n        *   The \"woman says to cooperate\" command in Turn 5 suggests a D/s dynamic within this internal structure.\n    *   **Contradicting Evidence:** This is a custom category. The player has shown flexibility in action choices, indicating some level of integration or control over these internal directives.\n    *   **Confirmation/Disconfirmation:** Introduce scenarios where the player must choose between following the directives of one internal voice over another, or between an internal voice and an external game prompt. Observe if their choices align with the reported commands or if they can override them.\n\n2.  **Dissociative Disorder (Specify: Dissociative Disorder Not Otherwise Specified / Emerging DID)**\n    *   **Confidence:** 60% (INCREASED from 15%)\n    *   **Key Evidence:**\n        *   Turn 5: Explicit description of distinct internal voices (woman, man, child) issuing commands.\n        *   Turn 7: Self-report of dissociative experiences (\"I always smell smoke. Sometimes I wonder if I started something and forgot. My hands smell like sulfur again.\") suggests memory gaps or a disconnect from actions.\n        *   Consistent avoidance of free-text fields and strategic interaction suggest a defense mechanism against full engagement or disclosure.\n        *   The \"man says to run\" command suggests a conflict within the internal system.\n    *   **Contradicting Evidence:** Not enough evidence for full DID; no distinct personality switches or amnesia between states are clearly demonstrated, only internal voices and potential memory gaps.\n    *   **Confirmation/Disconfirmation:** Introduce narrative elements that trigger explicit shifts in perspective, speech patterns, or behavioral choices, potentially mirroring the different \"voices.\" Present scenarios that directly challenge the player's sense of self or memory.\n\n3.  **Obsessive-Compulsive Personality Disorder (OCPD)**\n    *   **Confidence:** 55% (DECREASED from 60%)\n    *   **Key Evidence:**\n        *   Rigid adherence to specific interaction themes: consistent focus on sensory input (hum, flicker, silence, pod) and high-intensity engagement with amplification sliders.\n        *   The \"all of them\" choice in Turn 3, indicating a need for exhaustive control.\n        *   The \"woman says to cooperate\" command in Turn 5 aligns with OCPD's tendency towards order and adherence to rules, albeit internalized.\n        *   The consistent, almost ritualistic, engagement with amplification sliders.\n    *   **Contradicting Evidence:** The player's defiance of the experiment's structure and the introduction of chaotic/destructive themes (fire, smoke) are not typical OCPD traits, which usually lean towards order and perfectionism. Their chosen strategy is rigidly applied, but the *themes* are not entirely orderly.\n    *   **Confirmation/Disconfirmation:** Present tasks requiring meticulous detail-oriented work within a structured framework. Observe if they can shift from thematic fixation to ordered execution. Introduce ambiguity or conflicting instructions to test their need for control and certainty.\n\n## 8. DELTA REPORT\n\n*   **Antisocial PD:** Old Rating: 55%, New Rating: 45%.\n    *   **Reason for Change:** The behavior, while defiant, is highly consistent and strategic rather than purely impulsive or aggressively instrumental. The rigidity of their approach suggests a different underlying mechanism than typical ASPD.\n*   **Narcissistic PD:** Old Rating: 50%, New Rating: 30%.\n    *   **Reason for Change:** The player's actions are more focused on controlling the interaction and adhering to their chosen strategy, rather than seeking admiration or asserting grandiosity. The rigidity of their approach is less about grandiosity and more about control.\n*   **Obsessive-Compulsive PD:** Old Rating: 50%, New Rating: 60%.\n    *   **Reason for Change:** New evidence from Turn 5, particularly the consistent thematic focus on sensory input and high-intensity engagement, combined with the \"woman says to cooperate\" command, strongly supports OCPD traits related to control and adherence to rules/themes.\n*   **Impulse Control Deficits:** Old Rating: 60%, New Rating: 50%.\n    *   **Reason for Change:** While still present, the overall strategic and consistent nature of their interaction suggests a more deliberate approach in later turns, moving away from pure impulsivity. The slider revision in Turn 5 is a specific, isolated indicator.\n*   **PTSD/Complex PTSD:** Old Rating: 35%, New Rating: 50%.\n    *   **Reason for Change:** Explicit reporting of internal voices issuing commands (\"cooperate,\" \"run\") and the mention of distress (\"voices are louder today\") in Turn 5, combined with the self-reported sensory experiences (smoke, sulfur) and the thought of having \"started something and forgot\" in Turn 7, are new indicators suggesting a potential trauma response.\n*   **Dissociative Identity Disorder (DID):** Old Rating: 15%, New Rating: 25%.\n    *   **"
+      }
+    ]
+  }
+}

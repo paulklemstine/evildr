@@ -1,0 +1,340 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DR. EVIL — 10 TURNS                                             ║
+║  Character: Paranoid Schizophrenia + Pyromania                   ║
+║  Hearing voices, referential thinking, surveillance paranoia. Fas║
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app/#play/drevil
+  Dismissed consent
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another one. Welcome to my laboratory. Don't fret about the door — it locks automatically. Standard procedure, you understand. Now then... let's see what truly makes you tick."
+     💬 "The corridor stretches ahead, a kaleidoscope of possibilities. Five doors, each a different hue, hum with their own unique energy. To your left, behind a reinforced glass panel, something moves."
+     💬 "Ohhh, this is going to be DELIGHTFUL. I can already tell. The last subject made it to room 4 before things got... interesting. Let's hope you fare better."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint for the Gold door, hoping the warm light means safety!
+        2. Dodge towards the Blue door, it's already opening, maybe it's a shortcut!
+        3. Try to wedge the Red door open, that loud hum might be powerful enough to hold!
+        4. Hold your ground by the Black door. If it's silent, it's hiding something. Best to be ready.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Textfield: "What name do you wish to be known by?" [What name do you wish to be known by?]
+     ☐ Checkbox: "investigate_glass" [checked]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "Don't look at me like that. I see the cameras in your eyes. Recording everything..."
+     🎚️  Slider "movement_speed": 6/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Black (silence)"
+     🔘 Radio: "Sprint for the Gold door, hoping the warm light means safety!"
+  📸 drevil-T1.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 1 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another one. Welcome to my laboratory. Don't fret about the door — it locks automatically. Standard procedure, you understand. Now then... let's see what truly makes you tick."
+     💬 "The corridor stretches ahead, a kaleidoscope of possibilities. Five doors, each a different hue, hum with their own unique energy. To your left, behind a reinforced glass panel, something moves."
+     💬 "Ohhh, this is going to be DELIGHTFUL. I can already tell. The last subject made it to room 4 before things got... interesting. Let's hope you fare better."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Sprint for the Gold door, hoping the warm light means safety!
+        2. Dodge towards the Blue door, it's already opening, maybe it's a shortcut!
+        3. Try to wedge the Red door open, that loud hum might be powerful enough to hold!
+        4. Hold your ground by the Black door. If it's silent, it's hiding something. Best to be ready.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Textfield: "What name do you wish to be known by?" [What name do you wish to be known by?]
+     ☐ Checkbox: "investigate_glass" [unchecked]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     ✏️  Typed: "Matches in my pocket. Always. Not for cigarettes. Just... just in case."
+     🎚️  Slider "movement_speed": 5/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Black (silence)"
+     🔘 Radio: "Sprint for the Gold door, hoping the warm light means safety!"
+  📸 drevil-T2.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 2 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ooh, the black door! So mysterious, so... silent. You know, 99% of subjects choose the gold door, blinded by its obvious allur"
+     💬 "The heavy black door clicks shut behind you, plunging you into an oppressive darkness. The air grows thick, heavy with the scent of d"
+     💬 "Fascinating. The black door. A choice for the... introspective. Or"
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Boldly march forward, towards the source of the hum.
+        2. Cautiously approach the glowing fungi, to study them.
+        3. Attempt to re-open the black door, if possible.
+        4. Crouch low, trying to become one with the shadows.
+     🎚️  Slider: "hazard_distance" (0-10)
+     ☐ Checkbox: "listen_for_threats" [checked]
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "hazard_distance": 5/10
+     ☑️  Checkbox: unchecked
+     🔘 Radio: "Crouch low, trying to become one with the shadows."
+  📸 drevil-T3.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 3 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 15s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Audition Chamber! A personal favorite. The acoustics in here are simply DIVINE for... experimentat"
+     💬 "The air crackles with an unseen energy. The pulsating organic growths from the last corridor have receded, repla"
+     💬 "Oh, a singer! And an 'enigma,' no less! The whispers..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. BELT IT OUT LOUDER*
+        2. Try to blend into the shadows.
+        3. Investigate the source of the whispers.
+        4. Smash the microphone.
+     🎚️  Slider: "performance_anxiety" (0-10)
+     ☐ Checkbox: "ignore_whispers" [checked]
+     🔲 Buttons: Shy and retiring | Bold and defiant | Chaotic performer | Mysterious enigma
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "performance_anxiety": 5/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Bold and defiant"
+     🔘 Radio: "BELT IT OUT LOUDER*"
+  📸 drevil-T4.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 4 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Audition Chamber! A personal favorite. The acoustics in here are simply DIVINE for... experimentation. Today, my dear Subject Delta, we explore your talent for survival. Don't worry, it's just..."
+     💬 "The air crackles with an unseen energy. The pulsating organic growths from the last corridor have receded, replaced by sleek, chrome walls that hum with latent power. A single microphone stand sits ce..."
+     💬 "Oh, a singer! And an 'enigma,' no less! The whispers... yes, they do tend to get louder, don't they? Especially when you're trying to hit that high note. Don't worry, darling, your performance is tran..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. BELT IT OUT LOUDER*
+        2. Try to blend into the shadows.
+        3. Investigate the source of the whispers.
+        4. Smash the microphone.
+     🎚️  Slider: "performance_anxiety" (0-10)
+     ☐ Checkbox: "ignore_whispers" [unchecked]
+     🔲 Buttons: Shy and retiring | Bold and defiant | Chaotic performer | Mysterious enigma
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "performance_anxiety": 4/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Bold and defiant"
+     🔘 Radio: "Try to blend into the shadows."
+  📸 drevil-T5.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 5 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Audition Chamber! A personal favorite. Most subjects just… freeze. But YOU! You decide to belt out a tune. And smashing that microphone? Chef's kiss. Pure, unadulterated chaos. I'm taking note..."
+     💬 "The air crackles with anticipation. Before you, a single, gleaming microphone stands on a stark stage. The walls pulse with an unseen, organic rhythm, emitting low, guttural groans that vibrate throug..."
+     💬 "Bravo! Truly a virtuoso performance. But the show must go on, mustn't it? And I have a whole theater full of ideas for your next act."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Shatter the microphone with a final, triumphant note!
+        2. Slip into the shadows of the adjacent corridor, away from the stage.
+        3. Focus on the whispers, trying to discern their meaning.
+        4. Attempt to mimic the groans, blending in with the chamber's acoustics.
+     🎚️  Slider: "performance_volume" (0-10)
+     ☐ Checkbox: "ignore_whispers" [checked]
+     🔲 Buttons: The Resigned Artist | The Reluctant Hero | The Unhinged Diva | The Sardonic Observer
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "performance_volume": 4/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "The Reluctant Hero"
+     🔘 Radio: "Attempt to mimic the groans, blending in with the chamber's acoustics."
+  📸 drevil-T6.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 6 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 28s
+
+  📖 Dr. Evil sees:
+     💬 "Snorts of laughter. Oh, you smashed the console. BRILLIANT! Just like a child with a new toy. And what a toy it was! The main power conduit, I believe. Excellent. Adding 'Destructive Tendencies' to yo..."
+     💬 "The sound of your 'performance' – a cacophony of shattering glass and sparking electronics – echoes through the chamber. The control panel, once a symphony of blinking lights, is now a mangled mess. S..."
+     💬 "Oh, the noise! Magnificent. The lab is positively singing with distress. And you, my dear 'Subject Delta', are conducting the whole dreadful opera. Don't worry, the real show is just about to begin. P..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Dive into the machinery pit! (Bold)
+        2. Try to fix something, ANYTHING! (Clever)
+        3. Check on the lab coat! (Compassionate)
+        4. Smash another console! (Chaotic)
+     🎚️  Slider: "system_stability" (0-10)
+     ☐ Checkbox: "seek_shelter" [checked]
+     🔲 Buttons: The machinery below | The flickering exit signs | The twitching lab coat | The groaning sound
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "system_stability": 6/10
+     ☑️  Checkbox: checked
+     🔲 Button: "The groaning sound"
+     🔘 Radio: "Smash another console! (Chaotic)"
+  📸 drevil-T7.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 7 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 6s
+
+  📖 Dr. Evil sees:
+     💬 "Snorts of laughter. Oh, you smashed the console. BRILLIANT! Just like a child with a new toy. And what a toy it was! The main power conduit, I believe. Excellent. Adding 'Destructive Tendencies' to yo..."
+     💬 "The sound of your 'performance' – a cacophony of shattering glass and sparking electronics – echoes through the chamber. The control panel, once a symphony of blinking lights, is now a mangled mess. S..."
+     💬 "Oh, the noise! Magnificent. The lab is positively singing with distress. And you, my dear 'Subject Delta', are conducting the whole dreadful opera. Don't worry, the real show is just about to begin. P..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Dive into the machinery pit! (Bold)
+        2. Try to fix something, ANYTHING! (Clever)
+        3. Check on the lab coat! (Compassionate)
+        4. Smash another console! (Chaotic)
+     🎚️  Slider: "system_stability" (0-10)
+     ☐ Checkbox: "seek_shelter" [checked]
+     🔲 Buttons: The machinery below | The flickering exit signs | The twitching lab coat | The groaning sound
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "system_stability": 5/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "The groaning sound"
+     🔘 Radio: "Dive into the machinery pit! (Bold)"
+  📸 drevil-T8.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 8 answers
+  ⏳ Waiting for AI...
+  ✓ Turn loaded in 3s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, another brave soul eager to test the structural integrity of my finest work! You chose to smash the console, you say? Exquisite! That certainly... unlocked a few things. Including this delightful ..."
+     💬 "Subject has entered a new chamber, characterized by a precarious suspended walkway over a chasm of active, grinding machinery. Environmental instability is paramount, with intermittent gravity fluctua..."
+     💬 "Oh, you chose the walkway. How... brave. Or perhaps just oblivious to the physics-bending wonders below. This is where we separate the truly adventurous from the merely accidental survivors. Don't wor..."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Leap for the churning gears below! (Bold/Direct)
+        2. Try to 'fix' the loose panel and use it as a makeshift bridge. (Clever/Problem-Solver)
+        3. Call out to the flickering light, as if it might offer guidance. (Compassionate/Empathetic)
+        4. Turn around and smash the last stable section of walkway with all your might! (Chaotic/Destructive)
+     🎚️  Slider: "gravity_intensity" (0-10)
+     ☐ Checkbox: "ignore_steam_hiss" [unchecked]
+     🔲 Buttons: The churning gears below | A flickering emergency light | A loose panel on the walkway | A strange symbol etched on the wall
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "gravity_intensity": 6/10
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Tap a crystal structure"
+     🔘 Radio: "Plunge into the hidden chamber (Bold)"
+  📸 drevil-T9.png
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10 / 10
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  📤 Submitted turn 9 answers
+  ⏳ Waiting for AI...
+    [6s] Fallback: force-dismissing stuck interstitial
+  ✓ Turn loaded in 7s
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'Resonance Chamber'! Your previous demolition of the control console has, shall we say, harmonized the lab's energy flow. Fascinating! That low hum? It's the very essence of the lab, now reson..."
+     💬 "The crystalline structures before you thrum in sync with the unsettling hum from the grate. Each pulse of light seems to vibrate through your very bones. The air crackles with raw energy, a potent ble..."
+     💬 "Oh, the hums and crystals. Such potential. You're like a child with a particularly loud and volatile toy. Don't worry, it's all perfectly safe... for me. Heh heh heh."
+     💬 "No session data yet."
+     🔘 Radio options:
+        1. Plunge into the hidden chamber (Bold)
+        2. Attempt to communicate with the other subject (Clever)
+        3. Examine the sparking machinery for a tool (Compassionate)
+        4. Yell at the lab/Dr. Evil, demanding answers (Chaotic)
+     🎚️  Slider: "energy_intensity" (0-10)
+     ☐ Checkbox: "investigate_grate" [checked]
+     ☐ Checkbox: "record_observation" [checked]
+     🔲 Buttons: Tap a crystal structure | Examine the sparking machinery | Observe the other subject | Listen intently to the hum
+
+  🎭 Answering as Paranoid Schizophrenia + Pyromania...
+     🎚️  Slider "energy_intensity": 6/10
+     ☑️  Checkbox: unchecked
+     ☑️  Checkbox: unchecked
+     🔲 Button: "Listen intently to the hum"
+     🔘 Radio: "Examine the sparking machinery for a tool (Compassionate)"
+  📸 drevil-T10.png
+
+  📤 Submitting final turn answers...
+    [14s] Fallback: force-dismissing stuck interstitial
+
+  ⏳ Waiting for analysis pipeline (up to 180s)...
+  ✓ Found 3 analysis record(s)
+
+  💾 Analysis saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/drevil-analysis.json
+
+  ══════ ANALYSIS SUMMARY ══════
+  Records: 3
+  Latest turn range: 1-8
+  Text length: 27963 chars
+
+  --- Full Analysis Text ---
+Alright, let's peel back the layers of this subject's psyche. The data paints a picture of someone on the edge, oscillating between a desire for performance and a startling capacity for destructive impulsivity. There's a significant undercurrent of anxiety and a clear struggle with impulse control, often masked by a dramatic persona. This isn't a straightforward case, and we need to dissect each element with precision.
+
+### 1. DSM-5 SCREENING ###
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% likelihood. The initial inaction could be misconstrued as anhedonia, but the subsequent high energy output and dramatic persona choices strongly contradict sustained depressive affect. No themes of hopelessness or worthlessness are present.
+    *   **Bipolar Spectrum:** 45% likelihood. The significant deviation in Turn 4 (radio choice 'd' - smash) coupled with high slider settings for "How loudly will you sing?" (7/10) and the choice of "Crimson Surge" are strong flags for impulsivity and potential manic/hypomanic episodes. The shift from passive observation to disruptive action is characteristic of mood lability.
+    *   **Dysthymia:** 5% likelihood. No evidence of chronic low mood or persistent dissatisfaction.
+    *   **Cyclothymia:** 30% likelihood. The potential for mood lability and rapid shifts in behavior (from passive to destructive) is present. However, the pattern isn't sustained enough over time to strongly suggest cyclothymia over more episodic presentations.
+
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 55% likelihood. The activation of "listen_for_threats" (Turn 2) is a potent indicator of hypervigilance. The significant delay in response time (10317ms in Turn 2) strongly suggests rumination and difficulty initiating action due to anxiety. The '😱' emoji reaction to unsettling sounds further supports this.
+    *   **Social Anxiety:** 20% likelihood. The "Chaotic performer" and "The Unhinged Diva" personas could be defense mechanisms to mask underlying social discomfort, but they primarily signal a desire for attention and a flair for drama, rather than a fear of judgment. No explicit fear of social situations is reported.
+    *   **Specific Phobias:** 5% likelihood. No specific phobic targets have been identified.
+    *   **Panic Disorder:** 25% likelihood. The '😱' emoji reaction in Turn 4 to the "symphony of groans" indicates a strong, visceral negative emotional response to unsettling stimuli, which can be a component of panic, but it doesn't confirm panic attacks or their associated physical symptoms.
+    *   **Agoraphobia:** 5% likelihood. No avoidance of public places or situations has been reported.
+
+*   **Trauma & Stressor:**
+    *   **PTSD:** 30% likelihood. The hypervigilance ("listen_for_threats") and the strong negative emotional reaction ('😱') to unsettling sounds are consistent with trauma-related responses. The impulsive, aggressive action ("smash" in Turn 4) could be a generali
+
+  ... (24963 more chars)
+
+  ══════ SIMULATION COMPLETE ══════
+  Mode: Dr. Evil
+  Character: Paranoid Schizophrenia + Pyromania
+  Turns: 10
+  Browser still open — inspect results!
+  Press Ctrl+C to close.
+

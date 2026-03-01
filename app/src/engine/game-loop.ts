@@ -55,6 +55,8 @@ export interface PromptBuilder {
     history: HistoryEntry[],
     notes: string,
     liveAnalysis?: string,
+    turnNumber?: number,
+    maxTurns?: number,
   ): string
 }
 
@@ -704,6 +706,8 @@ export class GameLoop {
         this.state.historyQueue,
         this.state.currentNotes,
         liveAnalysis,
+        this.state.turnNumber + 1,
+        15,
       )
     }
 

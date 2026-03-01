@@ -30,6 +30,8 @@ export interface PromptBuilder {
     history: Array<{ ui: string; actions: string }>,
     notes: string,
     liveAnalysis?: string,
+    turnNumber?: number,
+    maxTurns?: number,
   ): string
 }
 

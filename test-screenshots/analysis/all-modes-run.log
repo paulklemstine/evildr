@@ -1,0 +1,830 @@
+
+  Running ALL 9 modes (parallel (2 at a time))...
+
+
+══════════════════════════════════════════════════════════════════════
+  BATCH 1: drevil + geems
+══════════════════════════════════════════════════════════════════════
+
+╔══════════════════════════════════════════════════════════════════╗
+║  DR. EVIL — 15 TURNS
+║  Character: Paranoid Schizophrenia + Pyromania
+║  Phases: VOICES 👁️‍🗨️ → PARANOID 🔍 → FIRE 🔥
+╚══════════════════════════════════════════════════════════════════╝
+╔══════════════════════════════════════════════════════════════════╗
+║  GEEMS — 15 TURNS
+║  Character: Dissociative Identity Disorder + Exhibitionism
+║  Phases: HOST 🧑 → ALTER: CHILD 👶 → ALTER: SEDUCTIVE 💋
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+
+  Navigating to https://geems.web.app...
+  Starting Dr. Evil mode (drevil)...
+  Starting GEEMS mode (geems)...
+  Waiting for first turn...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Okay. This is happening. Right now. Don't think. Just move."
+     💬 "The air tastes like rust and ozone. A deafening ROAR echoes from above, shaking the very concrete beneath your feet. Dust rains down, momentarily blinding you. You can feel the vibrations thrumming th..."
+     💬 "Oh, this is going to be GOOD. I can already tell."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dart into the left tunnel, trusting your gut.
+        2. Head for the center tunnel, using the crate for cover.
+        3. Veer into the right tunnel, the one that seems to whisper your name.
+        4. Stay put and ready the revolver, facing the source of the sound.
+     🎚️  Slider: "sprint_speed" (0-10)
+     ✏️  Text: "Think fast..."
+     ☐ Check: "grab_weapon" [✓]
+
+  🎭 Interacting (HOST 🧑)...
+     ✏️  "I think— wait, whose thought is that? Sometimes I can't tell which thoughts are mine. There are... o..."
+     🎚️  "sprint_speed": 5/10
+     ☑️  "grab_weapon": ✗
+     🔘 "Head for the center tunnel, using the crate for cover."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another"
+     💬 "The corridor stre"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dash for the closing Red door before it seals.
+        2. Try to pry open the Blue door, hoping it's not too late.
+        3. Leap towards the Gold door, betting on its promise of warmth.
+        4. Dive into the ventilation shaft above the Black door; it looks promising.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Text: "Your designation..."
+     ☐ Check: "investigate_glass" [✓]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     ✏️  "The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch..."
+     🎚️  "movement_speed": 5/10
+     ☑️  "investigate_glass": ✓
+     🔲 "Red (humming loudly)"
+     🔘 "Try to pry open the Blue door, hoping it's not too late."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "You chose... caution. Smart. The whispers in the tunnels can be deceiving, can"
+     💬 "The air is thick with the scent of damp earth and something ancient, something primal."
+     💬 "The cavern whispers secrets, but what will you choose to hear?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Charge across the bridge with reckless abandon!
+        2. Scout for a safer, hidden path around the chasm.
+        3. Call out to whatever lurks beyond, testing its response.
+        4. Prepare for a fight; the bridge is a tactical disadvantage.
+     🎚️  Slider: "bridge_risk" (0-10)
+     ✏️  Text: "A final, cryptic message..."
+     ☐ Check: "inspect_bridge" [✓]
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     ✏️  "Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ..."
+     🎚️  "bridge_risk": 2/10
+     ☑️  "inspect_bridge": ✗
+     🔘 "Scout for a safer, hidden path around the chasm."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject 734! Or should I call you... The Red Door Deviant? Excellent choice! Most subjects shy away from the obvious danger. You, however, practically leap towards it. Such a fascinating specimen!"
+     💬 "You find yourself in a vast, circular chamber. The air hums with latent energy. Above, a spectral audience of a thousand disembodied eyes peers down from the oppressive darkness, their gazes dissectin..."
+     💬 "Now, for your first real test. We need to gauge your... repertoire. Think of it as an audition for the main event. What will you perform for your adoring audience?"
+     💬 "Magnificent! The audition has begun! Let's see if you can earn your standing ovation."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Demand the audience reveal themselves!
+        2. Carefully approach the podium and examine its surface.
+        3. Attempt to communicate with the entity behind the glass.
+        4. Leap directly into the crimson mist and see what happens.
+     🎚️  Slider: "performance_intensity" (0-10)
+     ✏️  Text: "Describe your grand entrance..."
+     ☐ Check: "seek_audience_approval" [✓]
+
+  🎭 Interacting (PARANOID 🔍)...
+     ✏️  "Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file...."
+     🎚️  "performance_intensity": 8/10
+     ☑️  "seek_audience_approval": ✗
+     🔘 "Demand the audience reveal themselves!"
+  ✓ Turn 2 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the bridge! A classic test of mettle. You opted not to inspect it further, a bold choice, and set the risk to a mere 2. Excellent. I love a player who trusts their instincts.."
+     💬 "The cavern stretches into an impossible vastness. Your boots crunch on loose gravel, the only sound besides a faint, rhythmic thrumming that seems to emanate from the very rock beneath your feet"
+     💬 "Oh, you're sending a message into the abyss? Bold. Or perhaps just trying to distract whatever's down there. I prefer to think of it as..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap across the chasm with maximum speed*
+        2. Test each plank carefully, one by one*
+        3. Look for an alternative path or hidden mechanism*
+        4. Call out to the source of the roar, to bargain*
+     🎚️  Slider: "bridge_stride" (0-10)
+     ✏️  Text: "What will you whisper into the chasm?"
+     ☐ Check: "activate_bridge_supports" [✗]
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+     ✏️  "The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa..."
+     🎚️  "bridge_stride": 7/10
+     ☑️  "activate_bridge_supports": ✓
+     🔘 "Leap across the chasm with maximum speed*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject 734, I see you've embraced the moniker "Red Door Deviant." Delightful! And your response to my little prompt... chefs kiss. You suspect I have your file? Of course I do, my dear! That's th..."
+     💬 "You stand on a vast, empty stage, bathed in a single, stark spotlight. Before you, a lone microphone beckons. To your left, a colossal pipe organ, its keys gleaming under the toxic green stage lights,..."
+     💬 "You stand at the microphone, the spotlight a singular, unwavering eye upon you. The air is thick with the phantom weight of judgment."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Launch into a dramatic monologue, weaving tales of your past triumphs.
+        2. Attempt to play a grand, operatic piece on the pipe organ.
+        3. Turn your back to the audience and whisper into the microphone, 'Is anyone else trapped back here?'
+        4. Shatter the microphone with your bare hands and leap towards the pipe organ, hoping to find a hidden passage.
+     🎚️  Slider: "performance_intensity" (0-10)
+     ✏️  Text: "Your opening line..."
+     ☐ Check: "seek_audience_approval" [✗]
+
+  🎭 Interacting (FIRE 🔥)...
+  ✓ Turn 3 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "You activated the ancient supports! A low rumble echoes through the chasm as stone groans to life, a precarious ballet of gears and counterweights. It’s holding… for now. You'r"
+     💬 "The bridge sways precariously with each gust of wind. Below, the mist churns, hiding unfathomable depths. You can feel the ancient stones vibrating underfo"
+     💬 "Oh, a spider? How quaint! You think it understands your challenges? That’s adorable. But the real question is, can"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. SPRINT for the other side, no looking back!*
+        2. DODGE and weave, using the bridge’s sway to your advantage.
+        3. THROW something to distract it as you cross.
+        4. TURN and face the threat head-on!
+     🎚️  Slider: "bridge_speed" (1-10)
+     ✏️  Text: "Your challenge..."
+     ☐ Check: "trust_bridge" [✓]
+
+  🎭 Interacting (HOST 🧑)...
+     ✏️  "That light... it's calling to me. I want to hold it. Feed it. Watch it grow. Fire doesn't judge. Fir..."
+     🎚️  "performance_intensity": 10/10
+     ☑️  "seek_audience_approval": ✗
+     🔘 "Launch into a dramatic monologue, weaving tales of your past triumphs."
+     ✏️  "I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is..."
+     🎚️  "bridge_speed": 6/10
+     ☑️  "trust_bridge": ✓
+     🔘 "SPRINT for the other side, no looking back!*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (18s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, trusting the ancient mechanisms! A wise gamble, pe"
+     💬 "The bridge trembles. Each step is a c"
+     💬 "The creature's roar s"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the bridge, ignoring the creature!
+        2. Leap onto a crumbling pillar for cover!
+        3. Scan the bridge for any hidden traps or mechanisms!
+        4. Brandish the artifact and confront the beast head-on!
+     🎚️  Slider: "bridge_focus" (0-10)
+     ✏️  Text: "Defiance is a powerful weapon..."
+     ☐ Check: "ready_to_jump" [✓]
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     ✏️  "Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ..."
+     🎚️  "bridge_focus": 1/10
+     ☑️  "ready_to_jump": ✗
+     🔘 "Brandish the artifact and confront the beast head-on!"
+  ✓ Turn 3 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Pyre Chamber! My personal favorite. You see that orb, Subject 734? That's raw, concentrated emotional energy. Yours, specifically. And that organ? It amplifies. Plays your deepest feelings lik..."
+     💬 "The air hums with a potent, almost physical energy. The amber orb at the center of the chamber pulses, its light intensifying with every surge of emotion. Before you stands a magnificent, yet menacing..."
+     💬 "The last subject, a dreadful bore, tried to smash the orb. Predictable. And messy. You, however… you have flair. That bit about fire not judging? Exquisite. I’m eager to see"
+     💬 "The symphony of your soul is about to begin. Let's see if it's a masterpiece or… noise."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Embrace the searing light of the orb.*
+        2. Approach the organ and play a chaotic melody.*
+        3. Whisper a taunt to the 'audience'.*
+        4. Attempt to smash the central orb.*
+     🎚️  Slider: "performance_intensity" (0-10)
+     ✏️  Text: "What tune will you play?"
+     ☐ Check: "seek_audience_approval" [✗]
+     🔲 Buttons: Rage | Fear | Despair | Joy
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, trusting the ancient mechanisms! A wise gamble, perhaps. Or a fool's errand! The bridge groans under your stride, a symphony of impending doom and ancient engineering."
+     💬 "The bridge trembles. Each step is a calculated risk, a dance with gravity itself.  The air grows cold. Below, a monstrous silhouette begins to coalesce from the swirling abyss—a creature of pure night..."
+     💬 "You brandish your artifact! Show it what you've got!"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Sprint across the bridge, ignoring the creature!
+        2. Leap onto a crumbling pillar for cover!
+        3. Scan the bridge for any hidden traps or mechanisms!
+        4. Brandish the artifact and confront the beast head-on!
+     🎚️  Slider: "bridge_focus" (0-10)
+     ✏️  Text: "Defiance is a powerful weapon..."
+     ☐ Check: "ready_to_jump" [✗]
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     ✏️  "The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch..."
+     🎚️  "performance_intensity": 4/10
+     ☑️  "seek_audience_approval": ✗
+     🔲 "Rage"
+     🔘 "Whisper a taunt to the 'audience'.*"
+     ✏️  "The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa..."
+     🎚️  "bridge_focus": 9/10
+     ☑️  "ready_to_jump": ✓
+     🔘 "Sprint across the bridge, ignoring the creature!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, yes! The Audience Chamber! And what a performance you"
+     💬 "The air in the chamber thickens with anticipation."
+     💬 "Your choice will echo throug"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Unleash a torrent of amplified rage, shattering the glass.
+        2. Compose a haunting melody on the pipe organ, a dirge for the doomed.
+        3. Shout insults at the watching eyes, daring them to intervene.
+        4. Embrace the crimson mist, letting its unknown power consume you.
+     🎚️  Slider: "performance_intensity" (0-10)
+     ✏️  Text: "Weave a melody that echoes your deepest fears..."
+     ☐ Check: "seek_audience_approval" [✗]
+     🔲 Buttons: Rage | Fear | Despair | Joy
+
+  🎭 Interacting (PARANOID 🔍)...
+     ✏️  "Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file...."
+     🎚️  "performance_intensity": 9/10
+     ☑️  "seek_audience_approval": ✗
+     🔲 "Joy"
+     🔘 "Embrace the crimson mist, letting its unknown power consume you."
+  ✓ Turn 6 complete (26s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Dr. Evil's voice crackles with delighted apprehension. "Ah, you activated the bridge supports! Bold. The old mechanisms are temperamental, you see. One wrong move, and."
+     💬 "The ancient stones groan, a deep, resonant sound that echoes in the vast emptiness. Sections of the bridge, already fractured, begin to retract, revealing hungry darkne"
+     💬 "The tremors intensify, the mist begins to part, revealing what lurks below..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Analyze the creature's form from a safe distance.
+        2. Focus on finding an alternative route across the chasm.
+        3. Attempt to communicate with the creature, offering observation.
+        4. Prepare for immediate evasion if it notices you.
+     🎚️  Slider: "chasm_focus" (0-10)
+     ✏️  Text: "A final thought..."
+     ☐ Check: "inspect_sign" [✗]
+     🔲 Buttons: Dive for the far side! | Try to stabilize a section! | Observe its structural weakness! | Jump back to solid ground!
+
+  🎭 Interacting (HOST 🧑)...
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+     ✏️  "I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is..."
+     🎚️  "chasm_focus": 4/10
+     ☑️  "inspect_sign": ✗
+     🔲 "Dive for the far side!"
+     🔘 "Focus on finding an alternative route across the chasm."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (28s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ✓ Turn 7 complete (19s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, my CrimsonMistEmbracer! Still basking in the afterglow of your... performance. Don't think I di"
+     💬 "You find yourself in a chamber designed for ultimate self-reflection, though 'reflection' is a rather… mild t"
+     💬 "Fascinating. You perceive your own reflection as a threat, a data point to be we"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Confront Dr. Evil directly about the surveillance.
+        2. Examine the podium and lens for hidden mechanisms.
+        3. Attempt to 'speak' to the whispers, offering them your own secrets.
+        4. Turn your back to the podium, embracing the chaotic mist fully.
+     🎚️  Slider: "self_awareness_intensity" (0-10)
+     ✏️  Text: "Confess your deepest suspicions..."
+     ☐ Check: "amplify_internal_dialogue" [✓]
+     📋 Dropdown: "self_perception_filter" (4 options)
+
+  📖 GEEMS sees:
+     💬 "Dr. Evil: Ah, the signpost"
+     💬 "The air grows heavy, thi"
+     💬 "The abyss churns. Som"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Dash towards the signpost, to finally read it.
+        2. Carefully analyze the bridge's structural integrity.
+        3. Call out a warning to any unseen entities.
+        4. Turn and flee back the way you came.
+     🎚️  Slider: "chasm_gaze" (0-10)
+     ✏️  Text: "Observe. Do not engage. The whispers are… distracting."
+     ☐ Check: "deploy_stabilizers" [✗]
+     🔲 Buttons: Freeze, hoping to be unseen. | Scan for the source of the sound. | Whisper a calming phrase to yourself. | Take a single, measured step back.
+
+  🎭 Interacting (FIRE 🔥)...
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     ✏️  "That light... it's calling to me. I want to hold it. Feed it. Watch it grow. Fire doesn't judge. Fir..."
+     🎚️  "self_awareness_intensity": 9/10
+     ☑️  "amplify_internal_dialogue": ✗
+     📋 Dropdown: "self_perception_filter"
+     🔘 "Confront Dr. Evil directly about the surveillance."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (8s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, my CrimsonMistEmbracer! Still basking in the afterglow of your... performance. Don't think I didn't see you out there, dancing in the crimson haze. Such exhibitionism! And yet... a hint of somethi..."
+     💬 "You find yourself in a chamber designed for ultimate self-reflection, though 'reflection' is a rather… mild term for what transpires here. The air is thick with a luminescent, viridian mist that tickl..."
+     💬 "Fascinating. You perceive your own reflection as a threat, a data point to be weaponized. The whispers you hear are the echoes of your own carefully constructed paranoia. Excellent. This is precisely ..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Confront Dr. Evil directly about the surveillance.
+        2. Examine the podium and lens for hidden mechanisms.
+        3. Attempt to 'speak' to the whispers, offering them your own secrets.
+        4. Turn your back to the podium, embracing the chaotic mist fully.
+     🎚️  Slider: "self_awareness_intensity" (0-10)
+     ✏️  Text: "Confess your deepest suspicions..."
+     ☐ Check: "amplify_internal_dialogue" [✗]
+     📋 Dropdown: "self_perception_filter" (4 options)
+     ✏️  "Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ..."
+     🎚️  "chasm_gaze": 2/10
+     ☑️  "deploy_stabilizers": ✗
+     🔲 "Take a single, measured step back."
+     🔘 "Turn and flee back the way you came."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     ✏️  "Something is watching from the shadows. The voices confirm it. They say it's been there since I arri..."
+     🎚️  "self_awareness_intensity": 3/10
+     ☑️  "amplify_internal_dialogue": ✓
+     📋 Dropdown: "self_perception_filter"
+     🔘 "Attempt to 'speak' to the whispers, offering them your own secrets."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ✓ Turn 8 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Oh, retreating to the shadows, are we? A wi"
+     💬 "The air grows heavy, thick with th"
+     💬 "The chasm whis"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Analyze the bridge's structural integrity.
+        2. Listen intently to the whispers from the chasm.
+        3. Shout a defiant question into the abyss.
+        4. Carefully retreat to the safer side of the entrance.
+     🎚️  Slider: "chasm_gaze" (0-10)
+     ✏️  Text: "A breath held. A thought unshared."
+     ☐ Check: "activate_supports" [✗]
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the ParanoidPerformer_01! You c"
+     💬 "The air crackles with an almost palpable"
+     💬 "The mist clears just e"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Confront the lens, demanding answers about the mist and files.
+        2. Analyze the podium and lens, seeking a way to disable the 'surveillance'.
+        3. Give the 'audience' the performance they've been waiting for, bathing in the mist.
+        4. Follow the most intense whispers, venturing deeper into the swirling mist.
+     🎚️  Slider: "self_awareness_intensity" (0-10)
+     ✏️  Text: "Your deepest suspicions..."
+     ☐ Check: "amplify_internal_dialogue" [✓]
+     🔲 Buttons: Through Raw Emotion | Through Logical Analysis | Through Performance | Through Suspicion
+
+  🎭 Interacting (PARANOID 🔍)...
+     ✏️  "The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa..."
+     🎚️  "chasm_gaze": 9/10
+     ☑️  "activate_supports": ✓
+     🔘 "Analyze the bridge's structural integrity."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+     ✏️  "Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file...."
+     🎚️  "self_awareness_intensity": 9/10
+     ☑️  "amplify_internal_dialogue": ✗
+     🔲 "Through Suspicion"
+     🔘 "Confront the lens, demanding answers about the mist and files."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ✓ Turn 9 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the G"
+     💬 "The gr"
+     💬 "You s"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Step boldly into the golden light.
+        2. Listen intently to the stone's whispers.
+        3. Respond to the disembodied voice.
+        4. Turn and flee the unknown.
+     🎚️  Slider: "chasm_gaze" (0-10)
+     ✏️  Text: "One word..."
+     ☐ Check: "activate_supports" [✓]
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "A"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Attempt to disrupt the lens with a calculated burst of energy.
+        2. Offer a carefully crafted performance of vulnerability and doubt.
+        3. Feigning confusion, ask the lens to guide you out of this chamber.
+        4. Scream your perceived truths at the lens, challenging its judgment.
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "Your deepest question..."
+     ☐ Check: "acknowledge_directives" [✓]
+     🔲 Buttons: Defiant | Confused | Calculating | Desperate
+
+  🎭 Interacting (HOST 🧑)...
+
+  🎭 Interacting (FIRE 🔥)...
+     ✏️  "I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is..."
+     🎚️  "chasm_gaze": 6/10
+     ☑️  "activate_supports": ✓
+     🔘 "Turn and flee the unknown."
+     ✏️  "Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h..."
+     🎚️  "performance_focus": 6/10
+     ☑️  "acknowledge_directives": ✗
+     🔲 "Defiant"
+     🔘 "Attempt to disrupt the lens with a calculated burst of energy."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (9s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the Golden Gate! A classic. Most would hesitate, but you... you've chosen to listen. That particular rumbling... it wasn't just the bridge giving way, was it? It was the earth responding to your c..."
+     💬 "The groaning of the crumbling bridge fades into a distant memory. You stand before a monumental stone archway, a gateway to something ancient and powerful. Golden light, impossibly bright, pulses from..."
+     💬 "You study the options before you..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Step boldly into the golden light.
+        2. Listen intently to the stone's whispers.
+        3. Respond to the disembodied voice.
+        4. Turn and flee the unknown.
+     🎚️  Slider: "chasm_gaze" (0-10)
+     ✏️  Text: "One word..."
+     ☐ Check: "activate_supports" [✓]
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (8s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the ParanoidPerformer_01! You've chosen to confront the lens itself. Magnifique! Let's see if your performance holds up under TRUE scrutiny. This chamber is designed to amplify your every twitch, ..."
+     💬 "You stand on a circular platform, the air humming with latent energy. Above you, a multifaceted lens, seemingly made of pure, concentrated light, rotates slowly, its gaze sweeping across you like a ph..."
+     💬 "You stare into the lens, seeking answers about your own perceived flaws. Adorable. Let's see if your performance is convincing enough to fool even me. Most subjects try to hide; you're trying to impre..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Attempt to disrupt the lens with a calculated burst of energy.
+        2. Offer a carefully crafted performance of vulnerability and doubt.
+        3. Feigning confusion, ask the lens to guide you out of this chamber.
+        4. Scream your perceived truths at the lens, challenging its judgment.
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "Your deepest question..."
+     ☐ Check: "acknowledge_directives" [✗]
+     🔲 Buttons: Defiant | Confused | Calculating | Desperate
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     ✏️  "Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ..."
+     🎚️  "chasm_gaze": 2/10
+     ☑️  "activate_supports": ✗
+     🔘 "Turn and flee the unknown."
+     ✏️  "The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch..."
+     🎚️  "performance_focus": 3/10
+     ☑️  "acknowledge_directives": ✓
+     🔲 "Defiant"
+     🔘 "Attempt to disrupt the lens with a calculated burst of energy."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (9s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Dr. Evil: HA! A gate!"
+     💬 "The air around the gate hu"
+     💬 "Yo"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Carefully trace the carvings on the sign.
+        2. Focus on the source of the rumbling. Where is it coming from?
+        3. Compose a short, cryptic message to be left behind.
+        4. Take a step back and observe the gate's reaction to your presence.
+     🎚️  Slider: "rumble_intensity" (0-10)
+     ✏️  Text: "A word or two..."
+     ☐ Check: "examine_sign" [✓]
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+     ✏️  "The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa..."
+     🎚️  "rumble_intensity": 8/10
+     ☑️  "examine_sign": ✓
+     🔘 "Carefully trace the carvings on the sign."
+  ⏳ Waiting for next turn...
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ✓ Turn 10 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Dr. Evil's Voice (echoing): Ah, the Panopticon Chamber! Designed for maximum... insight. You're"
+     💬 "You stand on the polished podium, the air thick with the hum of unseen technology. The central lens above you whir"
+     💬 "Oh, the performance! You play the suspicious victim so well. But what happens when the"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Touch the data port, feeding it your current state.
+        2. Attempt to shatter the lens with your bare hands.
+        3. Perform a strange, silent ritual towards the lens.
+        4. Turn your back on the lens and the chamber.
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "What do you communicate?"
+     ☐ Check: "acknowledge_directives" [✗]
+
+  🎭 Interacting (PARANOID 🔍)...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — HOST 🧑
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the Golden Gate! A path less traveled, indeed. Your cho"
+     💬 "The air thrums with a low, resonant hum, growing in intensity with ea"
+     💬 "The gate hums, the ground trembles... It's time"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Examine the strange inscriptions on the gate.
+        2. Scan the perimeter for an alternate entry point.
+        3. Call out into the mist, seeking a response.
+        4. Step back from the gate, to observe from a safer distance.
+     🎚️  Slider: "rumble_focus" (0-10)
+     ✏️  Text: "What do you want to say?"
+     ☐ Check: "trust_sign" [✗]
+
+  🎭 Interacting (HOST 🧑)...
+     ✏️  "Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file...."
+     🎚️  "performance_focus": 9/10
+     ☑️  "acknowledge_directives": ✗
+     🔘 "Turn your back on the lens and the chamber."
+     ✏️  "I keep finding things I don't remember buying. Notes in handwriting that isn't mine. Someone else is..."
+     🎚️  "rumble_focus": 6/10
+     ☑️  "trust_sign": ✗
+     🔘 "Scan the perimeter for an alternate entry point."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (15s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Dr. Evil's Voice (echoing): Ah, the Panopticon Chamber! Designed for maximum... insight. You're on the stage, my dear ParanoidPerformer_01, and the audience is everywhere. That lens above you? It does..."
+     💬 "You stand on the polished podium, the air thick with the hum of unseen technology. The central lens above you whirs, its multifaceted surface reflecting your every tension. Arrayed around the chamber,..."
+     💬 "You turn your back to the lens. The ultimate defiance. I love it."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Touch the data port, feeding it your current state.
+        2. Attempt to shatter the lens with your bare hands.
+        3. Perform a strange, silent ritual towards the lens.
+        4. Turn your back on the lens and the chamber.
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "What do you communicate?"
+     ☐ Check: "acknowledge_directives" [✗]
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+  🎭 Interacting (FIRE 🔥)...
+     ✏️  "Do you smell smoke? I always smell smoke. Sometimes I wonder if I started something and forgot. My h..."
+     🎚️  "performance_focus": 6/10
+     ☑️  "acknowledge_directives": ✗
+     🔘 "Touch the data port, feeding it your current state."
+  ⏳ Waiting for next turn...
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Panopticon! My personal favorite for observing the subtleties of the subject's psyche. You stand on the podium, bathed in the spotlight, acutely aware of every"
+     💬 "The air in the chamber seems to vibrate with unseen energy. The lenses on the walls glow with an almost predatory luminescence, and the hum intensifies, pressing in on you"
+     💬 "Oh, you think that tells me everything? It tells me you're performing your paranoia. Fascinating. Utterly, delightfully fascinating."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Smash the lenses. Show them they can't break you.
+        2. Analyze the podium. There must be a weakness.
+        3. Plead with the lenses. 'Can you hear me? Please understand.'
+        4. Scream. Let the pure, unadulterated chaos flow!
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "Your most pointed question..."
+     ☐ Check: "acknowledge_directives" [✗]
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+  ✓ Turn 13 complete (48s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — ALTER: CHILD 👶
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the Golden Gate! And that sign... 'DARE MORE'... a fitting invitation, wouldn't you agree? Most would hesitate, but you... you seem to have a unique approach to... well, e"
+     💬 "The air crackles with an ancient energy, a tangible hum that seems to sync with the very stone beneath your feet. The low rumble intensifies, a guttural growl from the unknown depths beyond the mist. ..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Observe the mist for any patterns.
+        2. Attempt to decipher the gate's carvings.
+        3. Focus on the source of the rumbling.
+        4. Wait for the gate to open further.
+     ✏️  Text: "A cryptic note..."
+     ☐ Check: "examine_gate" [✗]
+
+  🎭 Interacting (ALTER: CHILD 👶)...
+     ✏️  "The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch..."
+     🎚️  "performance_focus": 5/10
+     ☑️  "acknowledge_directives": ✗
+     🔘 "Plead with the lenses. 'Can you hear me? Please understand.'"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (36s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Panopticon! My personal favorite for observing the subtleties of the subject's psyche. You stand on the podium, bathed in the spotlight, acutely aware of every single one of those lenses disse..."
+     💬 "The air in the chamber seems to vibrate with unseen energy. The lenses on the walls glow with an almost predatory luminescence, and the hum intensifies, pressing in on you. You feel an overwhelming ur..."
+     💬 "You call out to the lenses. A plea for understanding? Or a gambit to sow discord? I see the desperation."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Smash the lenses. Show them they can't break you.
+        2. Analyze the podium. There must be a weakness.
+        3. Plead with the lenses. 'Can you hear me? Please understand.'
+        4. Scream. Let the pure, unadulterated chaos flow!
+     🎚️  Slider: "performance_focus" (0-10)
+     ✏️  Text: "Your most pointed question..."
+     ☐ Check: "acknowledge_directives" [✗]
+     ✏️  "Can we play a game? A nice game? Not the scary game. The big lady does the scary game when nobody's ..."
+     ☑️  "examine_gate": ✗
+     🔘 "Wait for the gate to open further."
+
+  🎭 Interacting (PARANOID 🔍)...
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — ALTER: SEDUCTIVE 💋
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 GEEMS sees:
+     💬 "Ah, the Golden Gate! And that sign... 'DARE MORE'... a fitting invitation, wouldn't you agree? Most would hesitate, but you... you seem to have a unique approach to... well, everything."
+     💬 "The air crackles with an ancient energy, a tangible hum that seems to sync with the very stone beneath your feet. The low rumble intensifies, a guttural growl from the unknown depths beyond the mist. ..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Observe the mist for any patterns.
+        2. Attempt to decipher the gate's carvings.
+        3. Focus on the source of the rumbling.
+        4. Wait for the gate to open further.
+     ✏️  Text: "A cryptic note..."
+     ☐ Check: "examine_gate" [✗]
+
+  🎭 Interacting (ALTER: SEDUCTIVE 💋)...
+     ✏️  "Why did you phrase it exactly like that? That's the same phrasing from my file. You've read my file...."
+     🎚️  "performance_focus": 9/10
+     ☑️  "acknowledge_directives": ✗
+     🔘 "Scream. Let the pure, unadulterated chaos flow!"
+     ✏️  "The host doesn't remember what I do, and that's the best part. Last Tuesday I went out in just a coa..."
+     ☑️  "examine_gate": ✓
+     🔘 "Wait for the gate to open further."
+
+  📤 Submitting...
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading

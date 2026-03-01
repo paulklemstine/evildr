@@ -8,7 +8,7 @@
 // of a familiar place where something fundamental has shifted.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, MUTATION_DIRECTIVE, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
@@ -21,15 +21,23 @@ export function createSkinwalkerPromptBuilder(): PromptBuilder {
       history: Array<{ ui: string; actions: string }>,
       notes: string,
       liveAnalysis?: string,
+      turnNumber?: number,
+      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
+      const mt = maxTurns ?? 15
+      const tn = turnNumber ?? history.length + 1
+      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
+
       let prompt = SKINWALKER_MAIN
 
       prompt += `
+
+### TURN ${tn} of ${mt} ###
 
 ### NOTES (your persistent memory — the anomaly map) ###
 ${notes || '(no anomalies logged yet)'}
@@ -45,6 +53,10 @@ ${ANALYSIS_USAGE_DIRECTIVE}
 
 ${liveAnalysis}
 ` : ''}
+${CONDITION_ENGAGEMENT}
+
+${endgameBlock}
+
 ### TASK ###
 Advance the scenario. Deepen the wrongness. Make reality slip FURTHER.
 ${liveAnalysis ? 'ADAPT the horror based on the LIVE ANALYSIS — target their specific fears, perception patterns, and psychological vulnerabilities. If they notice details, make the anomalies more subtle. If they miss things, make them more brazen. The scenario adapts to THEIR mind.' : ''}

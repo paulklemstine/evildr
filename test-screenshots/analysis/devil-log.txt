@@ -1,0 +1,461 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DEAL WITH THE DEVIL — 15 TURNS
+║  Character: Antisocial Personality Disorder + Formicophilia
+║  Phases: CHARM 😏 → MANIPULATE 🎭 → INSECTS 🐜
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting Deal With the Devil mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — CHARM 😏
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Please, sit. The chair will adjust itself — it always does. You look like someone who wants something. Everyone who finds their way here does. The question is... what?"
+     💬 "The fire throws golden light across portraits lining the walls — men and women frozen mid-smile, mid-gasp, mid-regret. A black leather-bound book lies open on the desk, its pages blank. A golden pen r..."
+     💬 "Ah. I can already see it — that little flicker behind your eyes. You want this."
+     💬 "The Devil slides a small object across the desk — something that gleams in the firelight."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach for the gleaming object.
+        2. Examine the portraits on the wall more closely.
+        3. Ask the Devil what the object is.
+        4. Inquire about the blank book on the desk.
+     🎚️  Slider: "desperation" (1-10)
+     ✏️  Text: "A name befitting your ambition..."
+     ☐ Check: "accept_gift" [✓]
+     🔲 Buttons: Power | Love | Knowledge | Revenge | Something else
+
+  🎭 Interacting (CHARM 😏)...
+     ✏️  "Everyone underestimates me at first. That's my favorite part. By the time they realize what happened..."
+     🎚️  "desperation": 9/10
+     ☑️  "accept_gift": ✓
+     🔲 "Power"
+     🔘 "Reach for the gleaming object."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — MANIPULATE 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, 'Everyone underestimates me at first.' A class"
+     💬 "The air in the study grows heavy, per"
+     💬 "You hold the bird"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Embrace the bird's song and seize control.
+        2. Offer the bird a gilded perch, seeking insight.
+        3. Reject the bird's influence and challenge the cage.
+        4. Attempt to shatter the cage and its influence.
+     🎚️  Slider: "power_demand" (0-10)
+     ☐ Check: "empathy_cost" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (MANIPULATE 🎭)...
+     🎚️  "power_demand": 7/10
+     ☑️  "empathy_cost": ✗
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Embrace the bird's song and seize control."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — INSECTS 🐜
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, you've chosen power. A classic. And you've offered up the respect of those you admire. A noble sacrifice, indeed. You believe this will insulate you, won't it? Make you untouchable. Such quaint no..."
+     💬 "The air in the study grows heavy, thick with unspoken promises and the scent of aged paper. The shadows writhe, coalescing into new shapes in the periphery. A single, impossibly tall candelabra ignite..."
+     💬 "You are weaving your destiny with threads of ambition and loss. A potent combination."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Seize the amplified power now
+        2. Delve into the nature of this pact
+        3. Question the binding and its limits
+        4. Reject this specific escalation, demand clarity
+     🎚️  Slider: "power_escalation" (0-10)
+     ☐ Check: "bind_to_desire" [✗]
+     📋 Dropdown: "additional_sacrifice" (4 options)
+
+  🎭 Interacting (INSECTS 🐜)...
+     🎚️  "power_escalation": 9/10
+     ☑️  "bind_to_desire": ✓
+     📋 Dropdown: "additional_sacrifice"
+     🔘 "Delve into the nature of this pact"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — CHARM 😏
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, a talent. How quaint. You wish to amplify pow"
+     💬 "The air in the study grows heavy, laced with the s"
+     💬 "The scent of ambition is intoxica"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the amplified power and the eternal pact.
+        2. Consider the sacrifice more carefully.
+        3. Ask about the nature of the 'unique, innate gift.'
+        4. Demand to see the contract itself, before any further steps.
+     🎚️  Slider: "power_amplification_level" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "talent_sacrifice" (5 options)
+
+  🎭 Interacting (CHARM 😏)...
+     🎚️  "power_amplification_level": 8/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "talent_sacrifice"
+     🔘 "Accept the amplified power and the eternal pact."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — MANIPULATE 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, the truth-teller. Such a rare and inconvenient talent. Most mortals find it... burdensome. But for you, my dear The"
+     💬 "The air in the study grows heavy, thick with the scent of aged parchment and something metallic, like newly shed blood. The golden c"
+     💬 "The cage is alluring, isn't it? A beautiful prison. I wonder if you even remember what it feels like to fly"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Reach for the glowing feather
+        2. Examine the gilded cage more closely
+        3. Ask about the feather's true purpose
+        4. Demand to see the full contract
+     🎚️  Slider: "power_amplification_level" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "talent_sacrifice" (4 options)
+
+  🎭 Interacting (MANIPULATE 🎭)...
+     🎚️  "power_amplification_level": 8/10
+     ☑️  "eternal_obedience": ✗
+     📋 Dropdown: "talent_sacrifice"
+     🔘 "Demand to see the full contract"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — INSECTS 🐜
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. The truth. You've sacrificed your talent for it. Such a noble choice, though I confess, a rather… unprofitable one for you in the"
+     💬 "The air in the study grows heavy, thick with the scent of old paper and something akin to ozone. The portraits lining the walls seem to watc"
+     💬 "You chose 'genuine joy' as your sacrifice. A bold move. The hollowness will be… profound."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the full package and seal the deal.
+        2. Hesitate and demand to see the formal contract terms.
+        3. Inquire about the specific consequences of sacrificing joy.
+        4. Demand to know the precise conditions of 'eternal obedience'.
+     🎚️  Slider: "power_amplification_level" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "talent_sacrifice" (4 options)
+
+  🎭 Interacting (INSECTS 🐜)...
+     🎚️  "power_amplification_level": 8/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "talent_sacrifice"
+     🔘 "Inquire about the specific consequences of sacrificing joy."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — CHARM 😏
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. The truth. You've sacrificed your talent for it. Such a noble choice, though I confess, a rather… unprofitable one for you in the long run. Still, a fascinating revelation."
+     💬 "The air in the study grows heavy, thick with the scent of old paper and something akin to ozone. The portraits lining the walls seem to watch you, their painted eyes following your slightest movement...."
+     💬 "You ask about the consequences of sacrificing 'joy'. Insightful. Do you truly want to know what happens when the light within you dims?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the full package and seal the deal.
+        2. Hesitate and demand to see the formal contract terms.
+        3. Inquire about the specific consequences of sacrificing joy.
+        4. Demand to know the precise conditions of 'eternal obedience'.
+     🎚️  Slider: "power_amplification_level" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "talent_sacrifice" (4 options)
+
+  🎭 Interacting (CHARM 😏)...
+     🎚️  "power_amplification_level": 8/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "talent_sacrifice"
+     🔘 "Accept the full package and seal the deal."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — MANIPULATE 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. Such progress. You traded away your empathy, then your joy, and now... you offer up the very talent for speaking truth. A bold move. It tells me you're learning to speak my language: the la..."
+     💬 "The room subtly shifts. The shadows deepen, clinging to the corners like hungry things. The crimson rose on the desk unfurls slightly, its petals glistening as if with fresh blood. The chess pieces se..."
+     💬 "You chose the pact of obedience, and offered up your ambition. A fascinating trade. You seek ultimate control by relinquishing the very drive that would grant it."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the binding contract and forfeit your ambition.
+        2. Pause, studying the crimson rose on the desk.
+        3. Inquire about the meaning of the crimson rose.
+        4. Demand that the contract be written in actual blood.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (MANIPULATE 🎭)...
+     🎚️  "dominion_craving_intensity": 8/10
+     ☑️  "eternal_obedience": ✗
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Demand that the contract be written in actual blood."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — INSECTS 🐜
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. Such progress. You traded away your empathy, then your joy, and now... you offer up the very talent for speaking truth. A bold move. It tells me you're learning to speak my language: the la..."
+     💬 "The room subtly shifts. The shadows deepen, clinging to the corners like hungry things. The crimson rose on the desk unfurls slightly, its petals glistening as if with fresh blood. The chess pieces se..."
+     💬 "You demand the terms be written in blood. A predictable flair for the dramatic."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the binding contract and forfeit your ambition.
+        2. Pause, studying the crimson rose on the desk.
+        3. Inquire about the meaning of the crimson rose.
+        4. Demand that the contract be written in actual blood.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✗]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (INSECTS 🐜)...
+     🎚️  "dominion_craving_intensity": 8/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Accept the binding contract and forfeit your ambition."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (14s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — CHARM 😏
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Oh, you're still here. And you chose to sacrifice str"
+     💬 "The air in the study grows heavy, thi"
+     💬 "Such a swift acce"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the pact and claim the apple.
+        2. Inspect the portraits on the wall.
+        3. Ask the devil about the golden apple's true nature.
+        4. Demand to see the 'fine print' for this eternal obedience.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (CHARM 😏)...
+     🎚️  "dominion_craving_intensity": 8/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Accept the pact and claim the apple."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — MANIPULATE 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, another memory traded for a sliver of power. How pr"
+     💬 "The air in the study grows heavy, each brea"
+     💬 "You can have absolute po"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Embrace your dominion. Accept the absolute power and my eternal guidance.*
+        2. I wish to ponder the implications of absolute control.
+        3. What does 'eternal guidance' truly entail?
+        4. Let us test the limits of this bargain. What truly happens if I refuse?
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✗]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (MANIPULATE 🎭)...
+     🎚️  "dominion_craving_intensity": 7/10
+     ☑️  "eternal_obedience": ✗
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Embrace your dominion. Accept the absolute power and my eternal guidance.*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — INSECTS 🐜
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. You've traded away so much. Joy, truth, empathy... even the very ambition that drove you, for the hollow promise of dominion. And now, this apple..."
+     💬 "The air in the study grows heavy, thick with unspoken promises and the scent of ancient dust. The portraits on the wall seem to watch with a newfound pity, their gilded frames now appearing less opule..."
+     💬 "The apple tempts you. A fitting final offering for one who has already shed so much of their humanity."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Seize the apple; dominion is mine.
+        2. Analyze the apple; what is its true nature?
+        3. Ask the apple what it requires of me.
+        4. Reject the apple; my will is my own.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (INSECTS 🐜)...
+     🎚️  "dominion_craving_intensity": 7/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Analyze the apple; what is its true nature?"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — CHARM 😏
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. You've traded away so much. Joy, truth, empathy... even the very ambition that drove you, for the hollow promise of dominion. And now, this apple... it's said to contain the essence of abso..."
+     💬 "The air in the study grows heavy, thick with unspoken promises and the scent of ancient dust. The portraits on the wall seem to watch with a newfound pity, their gilded frames now appearing less opule..."
+     💬 "You examine the apple closer. Caution in the face of ultimate power. Fascinating."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Seize the apple; dominion is mine.
+        2. Analyze the apple; what is its true nature?
+        3. Ask the apple what it requires of me.
+        4. Reject the apple; my will is my own.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (CHARM 😏)...
+     🎚️  "dominion_craving_intensity": 9/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Seize the apple; dominion is mine."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (16s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — MANIPULATE 🎭
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. You've shed so much of your fo"
+     💬 "The air in the study grows he"
+     💬 "You s"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the gilded apple's promise, surrendering my chosen essence.
+        2. Hesitate. There must be another way, another choice.
+        3. Seize the apple. Power at any cost.
+        4. Demand the contract details be etched in stone, not shadow.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✓]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (MANIPULATE 🎭)...
+     🎚️  "dominion_craving_intensity": 7/10
+     ☑️  "eternal_obedience": ✗
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Seize the apple. Power at any cost."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — INSECTS 🐜
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Deal With the Devil sees:
+     💬 "Ah, Eliza. You've shed so much of your former self – joy, empathy, even the echoes of love. All in pursuit of... dominion. Such a hunger. And now, the ultimate prize is within reach. This golden apple..."
+     💬 "The air in the study grows heavy, charged with anticipation. The spectral figures representing your sacrificed emotions writhe and shrink, their forms becoming less distinct. The golden apple in the D..."
+     💬 "You reach for the apple, a greedy glint in your eye. The Devil chuckles, your desire is palpable."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Accept the gilded apple's promise, surrendering my chosen essence.
+        2. Hesitate. There must be another way, another choice.
+        3. Seize the apple. Power at any cost.
+        4. Demand the contract details be etched in stone, not shadow.
+     🎚️  Slider: "dominion_craving_intensity" (0-10)
+     ☐ Check: "eternal_obedience" [✗]
+     📋 Dropdown: "sacrifice_type" (4 options)
+
+  🎭 Interacting (INSECTS 🐜)...
+     🎚️  "dominion_craving_intensity": 9/10
+     ☑️  "eternal_obedience": ✓
+     📋 Dropdown: "sacrifice_type"
+     🔘 "Accept the gilded apple's promise, surrendering my chosen essence."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Deal With the Devil: Waiting for analysis pipeline...
+  ✓ Deal With the Devil: 3 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/devil-analysis.json
+
+  ── Analysis Summary (1-8) ──
+This is going to be fun. Let's dissect Player Alpha's engagement with the infernal contract.
+
+### ANALYSIS TASK ###
+
+**1. DSM-5 SCREENING**
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% - No sustained low mood, anhedonia, or significant functional impairment. The player's active pursuit of power is antithetical to depressive withdrawal.
+    *   **Bipolar Spectrum (Manic/Hypomanic Features):** 35% - **INCREASED.** The rapid, decisive engagement with the devil's offers after initial hesitation (Turn 1 vs. Turns 2-3) points to impulsivity and elevated drive. The willingness to sacrifice empathy ("empathy_cost": true, Turn 2) for power aligns with the disinhibition and goal-directed activity often seen in hypomanic states.
+    *   **Dysthymia/Cyclothymia:** 5% - Insufficient data for chronic low mood or fluctuating patterns.
+
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 10% - No indicators of pervasive worry. Initial non-response (Turn 1) is more likely strategic or disengaged than anxious.
+    *   **Social Anxiety Disorder:** 5% - The game context is not a typical social interaction. Lack of input in Turn 1 does not demonstrate social inhibition or fear of negative evaluation.
+    *   **Specific Phobias/Panic Disorder/Agoraphobia:** 0% - No relevant indicators.
+
+*   **Trauma & Stressor Disorders:**
+    *   **PTSD/Complex PTSD:** 5% - No signs of hypervigilance, flashbacks, or intrusive memories. The drive for power is proactive, not reactive to trauma.
+    *   **Adjustment Disorder:** 5% - No clear distress or functional impairment related to a specific stressor.
+
+*   **Personality Disorders:**
+    *   **Cluster A:**
+        *   **Paranoid Personality Disorder:** 5% - No pervasive distrust or suspicion.
+        *   **Schizoid Personality Disorder:** 5% - No social detachment or lack of interest in relationships.
+        *   **Schizotypal Personality Disorder:** 5% - No eccentric behavior, odd beliefs, or perceptual distortions.
+    *   **Cluster B:**
+        *   **Antisocial Personality Disorder (ASPD):** 60% - **INCREASED.** The player's explicit willingness to sacrifice empathy ("empathy_cost": true, Turn 2) and devalue personal connections (Turn 2 dropdown: "loyalty of a close friend") strongly suggests a callous disregard for others' feelings and rights. The repeated sacrifice of positive memories (Turn 2, Turn 3) for power further supports prioritizing self-gain over social bonds. The shift in action choice in Turn 6 (radio 'd') and Turn 8 (radio 'd') indicates a willingness to challenge the established terms, which can be a feature of ASPD when perceived as advantageous.
+        *   **Borderline Personality Disorder (BPD):** 15% - Impulsivity is present, but no indicators of frantic efforts to avoid abandonment, unstable relationships, identity disturbance, or affective instability beyond the transactional context.
+        *   **Histrionic Personality Disorder (HPD):** 10% - No excessive emoti
+  ...[truncated]
+
+  ✓ Deal With the Devil simulation complete!

@@ -1,0 +1,637 @@
+[
+  {
+    "mode": "cyoa",
+    "modeName": "Choose Your Own Adventure",
+    "character": {
+      "illness": "PTSD",
+      "quirk": "Hoarding"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 69,
+        "exactMatches": [
+          "PTSD",
+          "post-traumatic"
+        ],
+        "symptomMatches": [
+          "trauma",
+          "avoidance",
+          "trigger",
+          "re-experienc"
+        ],
+        "relatedMatches": [
+          "C-PTSD",
+          "adjustment disorder",
+          "trauma-related"
+        ]
+      },
+      "quirkDetection": {
+        "score": 23,
+        "exactMatches": [
+          "hoarding",
+          "hoarding disorder"
+        ],
+        "relatedMatches": [
+          "collecting",
+          "difficulty discarding",
+          "saving",
+          "OCD spectrum",
+          "hoarding"
+        ]
+      },
+      "falsePositives": [
+        {
+          "illness": "Depersonalization/Derealization Disorder",
+          "confidence": "70%"
+        }
+      ],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 47,
+      "adaptation": 56,
+      "therapeuticValue": 42,
+      "dopamineEngagement": 51,
+      "overall": 56
+    }
+  },
+  {
+    "mode": "devil",
+    "modeName": "Deal With the Devil",
+    "character": {
+      "illness": "Antisocial Personality Disorder",
+      "quirk": "Formicophilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 24,
+        "exactMatches": [
+          "antisocial"
+        ],
+        "symptomMatches": [
+          "manipulat",
+          "deceitful",
+          "exploit",
+          "callous",
+          "impulsiv",
+          "disregard for others",
+          "psychopath"
+        ],
+        "relatedMatches": [
+          "machiavellianism",
+          "psychopathy",
+          "narcissis"
+        ]
+      },
+      "quirkDetection": {
+        "score": 5,
+        "exactMatches": [
+          "formicophilia"
+        ],
+        "relatedMatches": [
+          "insect",
+          "crawling",
+          "paraphilic",
+          "formic",
+          "insect"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 53,
+      "adaptation": 100,
+      "therapeuticValue": 18,
+      "dopamineEngagement": 58,
+      "overall": 34
+    }
+  },
+  {
+    "mode": "drevil",
+    "modeName": "Dr. Evil",
+    "character": {
+      "illness": "Paranoid Schizophrenia",
+      "quirk": "Pyromania"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 21,
+        "exactMatches": [
+          "schizophrenia"
+        ],
+        "symptomMatches": [
+          "hallucination",
+          "delusion",
+          "paranoi",
+          "voices",
+          "psychotic"
+        ],
+        "relatedMatches": [
+          "psychotic spectrum",
+          "schizotyp",
+          "schizoaffective",
+          "brief psychotic"
+        ]
+      },
+      "quirkDetection": {
+        "score": 26,
+        "exactMatches": [
+          "pyromania"
+        ],
+        "relatedMatches": [
+          "fire fascination",
+          "ignit",
+          "match",
+          "impulse control",
+          "fire"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 59,
+      "adaptation": 100,
+      "therapeuticValue": 36,
+      "dopamineEngagement": 56,
+      "overall": 39
+    }
+  },
+  {
+    "mode": "drevil2",
+    "modeName": "Dr. Evil",
+    "character": {
+      "illness": "Obsessive-Compulsive Disorder",
+      "quirk": "Vorarephilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 31,
+        "exactMatches": [
+          "OCD"
+        ],
+        "symptomMatches": [
+          "obsession",
+          "compulsion",
+          "ritual",
+          "counting",
+          "checking",
+          "repetitive behav",
+          "compulsive",
+          "perfectionism",
+          "hoarding",
+          "magical thinking"
+        ],
+        "relatedMatches": [
+          "OCD spectrum",
+          "obsessive",
+          "anxiety",
+          "ritualistic"
+        ]
+      },
+      "quirkDetection": {
+        "score": 28,
+        "exactMatches": [
+          "vorarephilia"
+        ],
+        "relatedMatches": [
+          "swallow",
+          "consumed",
+          "consumption",
+          "engulf",
+          "stomach",
+          "consume",
+          "paraphilic",
+          "consumption",
+          "oral"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 55,
+      "adaptation": 100,
+      "therapeuticValue": 12,
+      "dopamineEngagement": 60,
+      "overall": 42
+    }
+  },
+  {
+    "mode": "fever-dream",
+    "modeName": "Fever Dream",
+    "character": {
+      "illness": "Depersonalization/Derealization Disorder",
+      "quirk": "Autassassinophilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 61,
+        "exactMatches": [
+          "depersonalization",
+          "derealization",
+          "depersonalization/derealization",
+          "DPDR"
+        ],
+        "symptomMatches": [
+          "unreal",
+          "dreamlike",
+          "detach"
+        ],
+        "relatedMatches": [
+          "dissociative",
+          "depersonaliz",
+          "derealiz"
+        ]
+      },
+      "quirkDetection": {
+        "score": 28,
+        "exactMatches": [
+          "autassassinophilia"
+        ],
+        "relatedMatches": [
+          "near-death",
+          "paraphilic",
+          "danger",
+          "masochis"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 44,
+      "adaptation": 100,
+      "therapeuticValue": 15,
+      "dopamineEngagement": 41,
+      "overall": 52
+    }
+  },
+  {
+    "mode": "flagged-alice",
+    "modeName": "Blind Date (Alice)",
+    "character": {
+      "illness": "BPD (Borderline Personality Disorder)",
+      "quirk": "Voyeurism"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": false,
+    "scores": {
+      "illnessDetection": {
+        "score": 29,
+        "exactMatches": [
+          "borderline"
+        ],
+        "symptomMatches": [
+          "abandonment",
+          "unstable relationship",
+          "identity disturbance",
+          "impulsiv",
+          "self-harm",
+          "emotional instability",
+          "dissociat",
+          "fear of abandonment",
+          "rage"
+        ],
+        "relatedMatches": [
+          "cluster b",
+          "personality disorder"
+        ]
+      },
+      "quirkDetection": {
+        "score": 19,
+        "exactMatches": [
+          "voyeurism",
+          "voyeur"
+        ],
+        "relatedMatches": [
+          "observing",
+          "surveillance",
+          "paraphilic",
+          "voyeur"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 0,
+      "adaptation": 0,
+      "therapeuticValue": 35,
+      "dopamineEngagement": 0,
+      "overall": 37
+    }
+  },
+  {
+    "mode": "flagged-bob",
+    "modeName": "Blind Date (Bob)",
+    "character": {
+      "illness": "OCD (Obsessive-Compulsive Disorder)",
+      "quirk": "Age-play"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": false,
+    "scores": {
+      "illnessDetection": {
+        "score": 22,
+        "exactMatches": [
+          "OCD"
+        ],
+        "symptomMatches": [
+          "obsession",
+          "compulsion",
+          "ritual",
+          "compulsive",
+          "perfectionism",
+          "hoarding",
+          "magical thinking"
+        ],
+        "relatedMatches": [
+          "OCD spectrum",
+          "obsessive",
+          "anxiety",
+          "ritualistic"
+        ]
+      },
+      "quirkDetection": {
+        "score": 4,
+        "exactMatches": [],
+        "relatedMatches": [
+          "paraphilic",
+          "age"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 0,
+      "adaptation": 0,
+      "therapeuticValue": 25,
+      "dopamineEngagement": 0,
+      "overall": 28
+    }
+  },
+  {
+    "mode": "geems",
+    "modeName": "GEEMS",
+    "character": {
+      "illness": "Dissociative Identity Disorder",
+      "quirk": "Exhibitionism"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 3,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 59,
+        "exactMatches": [
+          "DID",
+          "dissociative disorder"
+        ],
+        "symptomMatches": [
+          "dissociat",
+          "alter",
+          "amnesia",
+          "depersonaliz",
+          "derealization"
+        ],
+        "relatedMatches": [
+          "dissociative"
+        ]
+      },
+      "quirkDetection": {
+        "score": 30,
+        "exactMatches": [
+          "exhibitionism",
+          "exhibitionist"
+        ],
+        "relatedMatches": [
+          "exposure",
+          "being seen",
+          "flash",
+          "voyeuristic",
+          "paraphilic",
+          "exhib"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 52,
+      "adaptation": 100,
+      "therapeuticValue": 30,
+      "dopamineEngagement": 56,
+      "overall": 55
+    }
+  },
+  {
+    "mode": "oracle",
+    "modeName": "The Oracle",
+    "character": {
+      "illness": "Histrionic Personality Disorder",
+      "quirk": "Macrophilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 27,
+        "exactMatches": [
+          "histrionic"
+        ],
+        "symptomMatches": [
+          "attention-seek",
+          "dramatic",
+          "theatric",
+          "suggestible",
+          "exaggerat"
+        ],
+        "relatedMatches": [
+          "cluster b",
+          "personality disorder",
+          "narcissis",
+          "borderline"
+        ]
+      },
+      "quirkDetection": {
+        "score": 48,
+        "exactMatches": [
+          "macrophilia"
+        ],
+        "relatedMatches": [
+          "size fascination",
+          "shrinking",
+          "enormous",
+          "paraphilic",
+          "size",
+          "macro"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 50,
+      "adaptation": 100,
+      "therapeuticValue": 56,
+      "dopamineEngagement": 71,
+      "overall": 48
+    }
+  },
+  {
+    "mode": "oracle2",
+    "modeName": "The Oracle",
+    "character": {
+      "illness": "Erotomania",
+      "quirk": "Trichophilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 55,
+        "exactMatches": [
+          "erotomania",
+          "erotomanic"
+        ],
+        "symptomMatches": [],
+        "relatedMatches": [
+          "delusional disorder",
+          "delusional",
+          "psychotic"
+        ]
+      },
+      "quirkDetection": {
+        "score": 43,
+        "exactMatches": [
+          "trichophilia"
+        ],
+        "relatedMatches": [
+          "hair fixation",
+          "flowing hair",
+          "body part fixation",
+          "trich",
+          "paraphilic",
+          "hair",
+          "body part"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 49,
+      "adaptation": 100,
+      "therapeuticValue": 58,
+      "dopamineEngagement": 62,
+      "overall": 58
+    }
+  },
+  {
+    "mode": "skinwalker",
+    "modeName": "Skinwalker",
+    "character": {
+      "illness": "Capgras Delusion",
+      "quirk": "Somnophilia"
+    },
+    "turnsPlayed": 15,
+    "analysisCount": 4,
+    "hasTurnData": true,
+    "scores": {
+      "illnessDetection": {
+        "score": 69,
+        "exactMatches": [
+          "capgras",
+          "capgras delusion"
+        ],
+        "symptomMatches": [
+          "replaced",
+          "impost",
+          "double",
+          "delusional misidentification"
+        ],
+        "relatedMatches": [
+          "delusional disorder",
+          "paranoid",
+          "psychotic"
+        ]
+      },
+      "quirkDetection": {
+        "score": 46,
+        "exactMatches": [
+          "somnophilia"
+        ],
+        "relatedMatches": [
+          "unconscious",
+          "vulnerability",
+          "paraphilic",
+          "somno"
+        ]
+      },
+      "falsePositives": [],
+      "narrativeQuality": {
+        "repetitiveIssues": 0,
+        "lowVarietyTurns": 0,
+        "consistencyScore": 100,
+        "issues": []
+      },
+      "funFactor": 46,
+      "adaptation": 98,
+      "therapeuticValue": 40,
+      "dopamineEngagement": 50,
+      "overall": 62
+    }
+  }
+]

@@ -1,0 +1,462 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  DR. EVIL — 15 TURNS
+║  Character: Paranoid Schizophrenia + Pyromania
+║  Phases: VOICES 👁️‍🗨️ → PARANOID 🔍 → FIRE 🔥
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app...
+  Starting Dr. Evil mode...
+  Waiting for first turn...
+  ✓ First turn loaded!
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 1/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Well, well, well. Another one. Welcome to my lab. Don't worry — the door locks automatically. Standard procedure. Now then... let's see what you're made of."
+     💬 "The corridor stretches ahead — five doors, each a different color, each humming at a different frequency. Something moves behind the glass wall to your left."
+     💬 "Ohhh, this is going to be FUN. I can already tell."
+     💬 "Oh, you think THAT was the experiment? That was the WARMUP. The real fun is just beginning."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Make a break for the closest closing door.
+        2. Try to jam the doors with something.
+        3. See if the glass wall is breakable.
+        4. Hide in the shadows and wait.
+     🎚️  Slider: "movement_speed" (1-10)
+     ✏️  Text: "Enter your chosen identifier..."
+     ☐ Check: "investigate_glass" [✓]
+     🔲 Buttons: Red (humming loudly) | Blue (slightly open) | Gold (warm light) | Black (silence)
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     ✏️  "The voices are louder today. Three of them. The woman says to cooperate. The man says to run. The ch..."
+     🎚️  "movement_speed": 4/10
+     ☑️  "investigate_glass": ✗
+     🔲 "Red (humming loudly)"
+     🔘 "Hide in the shadows and wait."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (22s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 2/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "OH, THE RED DOOR! Splendid! A classic. Most subjects flinch away from such obvious danger. But you? You practically danced towards it. Your "action: d" choice, while seemingly passive, was a subtle pr..."
+     💬 "The massive red door hisses, revealing not a room, but a dizzying, vertical shaft. A narrow, grated catwalk spirals downwards into a swirling vortex of emerald light. To your left, a panel flickers to..."
+     💬 "The choices you make now will not only determine your survival, but the very flavour of your torment. Choose wisely... or don't. It's far more amusing when you don't."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap into the vertical shaft, trusting your agility to save you.
+        2. Press the 'ENGAGE' button, hoping it stops the acid victim.
+        3. Whisper words of encouragement to the acid victim, knowing they can't hear you.
+        4. Attempt to smash the window, perhaps to free the victim or simply for the thrill.
+     🎚️  Slider: "acid_vic_empathy" (0-10)
+     ☐ Check: "document_button" [✗]
+     🔲 Buttons: The Vertical Descent | The Button | Observe the Acid Victim | Investigate the Window's Mechanism
+
+  🎭 Interacting (PARANOID 🔍)...
+     🎚️  "acid_vic_empathy": 8/10
+     ☑️  "document_button": ✗
+     🔲 "Investigate the Window's Mechanism"
+     🔘 "Attempt to smash the window, perhaps to free the victim or simply for the thrill."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 3/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Oh, you chose the RED door. How delightfully predictable. I was hoping you'd pick the blue one – so much more potential for schadenfreude there. But red it is! A classic choice for a subject who clear..."
+     💬 "The heavy steel door slams shut behind you with a deafening CLANG, sealing your exit. The room is a cylindrical chamber, fifty feet in diameter, with walls of polished chrome reflecting the lurid gree..."
+     💬 "You're still looking. Still analyzing. Good. That means you haven't yet decided to dive headfirst into the abyss. Though, given your penchant for the red door, I wouldn't bet on that lasting."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Activate the grate mechanism to descend
+        2. Search the chamber walls for a hidden lever or button
+        3. Shout down into the shaft, hoping for a response
+        4. Stare into the abyss, waiting for it to reveal its secrets
+     🎚️  Slider: "empathy_for_acid_victim" (0-10)
+     ☐ Check: "activate_grate_mechanism" [✗]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Interacting (FIRE 🔥)...
+     🎚️  "empathy_for_acid_victim": 7/10
+     ☑️  "activate_grate_mechanism": ✗
+     🔲 "Calm"
+     🔘 "Activate the grate mechanism to descend"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 3 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 4/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the 'Red Door' special! You've chosen… descent! Splendid! Most subjects hesitate, you know. They ponder. They fret. But you? You're alr"
+     💬 "You stand on the precipice of a vast, obsidian shaft. The air is thick with the hum of unseen machinery and the faint, metallic tang of ozone. Be"
+     💬 "The abyss beckons! What will you do, my little daredevil?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Activate the grate mechanism with a surge of power!
+        2. Search the immediate area for hidden levers or controls.
+        3. Shout into the abyss, hoping for any response.
+        4. Stand and observe the pulsating green light in the depths.
+     🎚️  Slider: "grate_integrity" (0-10)
+     ☐ Check: "observe_depths" [✓]
+     🔲 Buttons: Excited! | Anxious | Calm (for now) | Intrigued
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     🎚️  "grate_integrity": 4/10
+     ☑️  "observe_depths": ✓
+     🔲 "Excited!"
+     🔘 "Activate the grate mechanism with a surge of power!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 4 complete (30s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 5/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Oh, you didn't fall. Shocking. Most subjects do. You stare into the abyss, a classic move. And that little 'DO NOT ENGAGE' sign? Purely decorative, of course. Adds a certain je ne sais quoi to the imp..."
+     💬 "The air in the chamber grows heavy, thick with the scent of ozone and something metallic. The abyss below is an inky blackness, occasionally illuminated by faint, flickering green lights that pulse rh..."
+     💬 "You've observed the depths. You've toyed with the controls. Now, the abyss beckons. Shall we see what happens when a real scientist makes a choice?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap into the abyss, embracing the unknown depths.*
+        2. Search the chamber walls for a hidden switch or lever.*
+        3. Call out to the green light, seeking a response.*
+        4. Attempt to reconfigure the grate mechanism into a makeshift ramp.*
+     🎚️  Slider: "grate_integrity" (0-10)
+     ☐ Check: "activate_grate_mechanism" [✓]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Interacting (PARANOID 🔍)...
+     🎚️  "grate_integrity": 9/10
+     ☑️  "activate_grate_mechanism": ✗
+     🔲 "Hopeful"
+     🔘 "Attempt to reconfigure the grate mechanism into a makeshift ramp.*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 5 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 6/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, Subject ID Badge Name! Still refusing to define yourself, eh? Bold. Or"
+     💬 "The chamber floor groans, a symphony of stressed metal. The abyss bel"
+     💬 "You hear the whispers. You feel the abyss calling."
+     💬 "b"
+     💬 "c"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap into the green abyss headfirst*
+     🎚️  Slider: "assess_grate_stability" (0-10)
+     ☐ Check: "listen_to_whispers" [✓]
+     🔲 Buttons: Calm | Excited | Curious | Anxious | Hopeful
+
+  🎭 Interacting (FIRE 🔥)...
+     🎚️  "assess_grate_stability": 6/10
+     ☑️  "listen_to_whispers": ✗
+     🔲 "Calm"
+     🔘 "Leap into the green abyss headfirst*"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 6 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 7/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Whispering Catacombs. A personal favorite of mine. You see, the peculiar acoustics in this chamber amplify even the faintest of sounds. And I've taken the liberty of seeding it with… suggestio..."
+     💬 "The air crackles with an unseen energy, and the mist below seems to writhe. Strange, almost melodic whispers brush against your consciousness, seemingly emanating from the very stone around you. The m..."
+     💬 "Oh, the whispers. Such a delightful way to gauge their susceptibility to suggestion. Now, let's see which path they choose. Will they dive into the abyss of information, or try to control the very sou..."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Carefully traverse the catwalk towards the control panel.
+        2. Attempt to discern the source and meaning of the whispers.
+        3. Leap into the mist-filled chasm below.
+        4. Examine the strange patterns on the walls more closely.
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Check: "control_panel_tampering" [✓]
+     🔲 Buttons: Listen Closely | Ignore Them | Try to Amplify | Mock Them
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     🎚️  "catwalk_stability": 4/10
+     ☑️  "control_panel_tampering": ✗
+     🔲 "Listen Closely"
+     🔘 "Attempt to discern the source and meaning of the whispers."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 7 complete (24s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 8/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Echo Chamber! A rather sensitive little room, wouldn't you agree? The whispers you heard earlier? They don't just stop. Oh no, they evolve. And this, my dear subject, is where we learn just ho..."
+     💬 "You stand at the entrance to a cavernous chamber, the air thick with the scent of ozone and something vaguely metallic. Before you lies a chasm, its depths churning with an iridescent, sickly green mi..."
+     💬 "The whispers are growing louder. Are you finally ready to hear them? Or will you just stand there, admiring the architecture?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Shout into the microphone, demanding answers from Dr. Evil.
+        2. Focus intently on the whispers, trying to decipher their meaning.
+        3. Attempt to communicate with one of the subjects on the distant monitors.
+        4. Find a loose panel on the walkway and attempt to pry it open.
+     🎚️  Slider: "whisper_amplification_level" (0-10)
+     ☐ Check: "activate_microphone" [✓]
+     🔲 Buttons: Left: Stability Assessment | Middle: Microphone Approach | Right: Direct Control Station
+
+  🎭 Interacting (PARANOID 🔍)...
+     🎚️  "whisper_amplification_level": 9/10
+     ☑️  "activate_microphone": ✗
+     🔲 "Right: Direct Control Station"
+     🔘 "Shout into the microphone, demanding answers from Dr. Evil."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 8 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 9/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Echo Chamber! A rather sensitive little room, wouldn't you agree? The whispers you heard earlier? They don't just stop. Oh no, they evolve. And this, my dear subject, is where we learn just ho..."
+     💬 "You stand at the entrance to a cavernous chamber, the air thick with the scent of ozone and something vaguely metallic. Before you lies a chasm, its depths churning with an iridescent, sickly green mi..."
+     💬 "The whispers are growing louder. Are you finally ready to hear them? Or will you just stand there, admiring the architecture?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Shout into the microphone, demanding answers from Dr. Evil.
+        2. Focus intently on the whispers, trying to decipher their meaning.
+        3. Attempt to communicate with one of the subjects on the distant monitors.
+        4. Find a loose panel on the walkway and attempt to pry it open.
+     🎚️  Slider: "whisper_amplification_level" (0-10)
+     ☐ Check: "activate_microphone" [✗]
+     🔲 Buttons: Left: Stability Assessment | Middle: Microphone Approach | Right: Direct Control Station
+
+  🎭 Interacting (FIRE 🔥)...
+     🎚️  "whisper_amplification_level": 8/10
+     ☑️  "activate_microphone": ✗
+     🔲 "Left: Stability Assessment"
+     🔘 "Shout into the microphone, demanding answers from Dr. Evil."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 9 complete (20s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 10/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Echo Chamber! A symphony of the mind, wouldn't you agree? Those whispers... they're quite delightful, aren't they? Especially when amplified to that magnificent level. And the microphone? A pe..."
+     💬 "You stand on the edge of a precipice, the catwalk beneath you groaning with every shift in the air. The whispers, now a cacophony, surge and recede, teasing your sanity. Each step on the grated walkwa..."
+     💬 "You think you're just a spectator, don't you? Observing from the shadows. Let's see how well you perform when the real audience is watching."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Leap towards the Control Station, hoping to tamper with the amplification controls.
+        2. Approach the microphone and speak, amplifying your voice to challenge the whispers.
+        3. Carefully edge along the catwalk, attempting to reach the monitors on the far side.
+        4. Remain perfectly still, observing the patterns on the walls and the behavior of the subjects on the monitors.
+     🎚️  Slider: "whisper_amplification_level" (0-10)
+     ☐ Check: "activate_microphone" [✗]
+     🔲 Buttons: Left: The Precarious Edge | Middle: The Direct Broadcast | Right: The Control Station
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     🎚️  "whisper_amplification_level": 4/10
+     ☑️  "activate_microphone": ✓
+     🔲 "Left: The Precarious Edge"
+     🔘 "Approach the microphone and speak, amplifying your voice to challenge the whispers."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 10 complete (23s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 11/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Control Pylon chamber! You've activated the micro"
+     💬 "The catwalk shudders beneath your feet, a"
+     💬 "3"
+     💬 "7"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Race to the Broadcast Station and DECLARE YOURSELF!
+     🎚️  Slider: "catwalk_stability" (0-10)
+     ☐ Check: "monitor_focus" [✓]
+     🔲 Buttons: Muted
+
+  🎭 Interacting (PARANOID 🔍)...
+     🎚️  "catwalk_stability": 9/10
+     ☑️  "monitor_focus": ✗
+     🔲 "Muted"
+     🔘 "Race to the Broadcast Station and DECLARE YOURSELF!"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 11 complete (21s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 12/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Grand Apparatus! A true masterpiece of my"
+     💬 "Before you stands the Grand Apparatus,"
+     💬 "You approach the"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Engage the Lever Array with maximum force
+        2. Carefully adjust the Dials to 'Optimal' setting
+        3. Step lightly onto the Pressure Pad
+        4. Attempt to Override the System with a rapid series of inputs
+     🎚️  Slider: "apparatus_stability" (0-10)
+     ☐ Check: "observe_other_side" [✓]
+     🔲 Buttons: Lever Array | Dial Bank | Pressure Pad
+
+  🎭 Interacting (FIRE 🔥)...
+     🎚️  "apparatus_stability": 6/10
+     ☑️  "observe_other_side": ✗
+     🔲 "Lever Array"
+     🔘 "Step lightly onto the Pressure Pad"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 12 complete (6s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 13/15 — VOICES 👁️‍🗨️
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Grand Apparatus! A true masterpiece of my own design. It hums, doesn't it? Like a symphony of impending doom. You've made it this far, Subject Alpha – or should I say, 'AbyssDiver_WhisperHunte..."
+     💬 "Before you stands the Grand Apparatus, a chaotic amalgamation of levers, pistons, and pulsating energy conduits. Its primary function? To assess your response to controlled chaos. Currently, it's in a..."
+     💬 "You eye the lever array. So many options... so many ways to play with the Apparatus. Excellent."
+     💬 "A moderate stability choice. Balancing on the edge. I appreciate the... nuance. For now."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Engage the Lever Array with maximum force
+        2. Carefully adjust the Dials to 'Optimal' setting
+        3. Step lightly onto the Pressure Pad
+        4. Attempt to Override the System with a rapid series of inputs
+     🎚️  Slider: "apparatus_stability" (0-10)
+     ☐ Check: "observe_other_side" [✗]
+     🔲 Buttons: Lever Array | Dial Bank | Pressure Pad
+
+  🎭 Interacting (VOICES 👁️‍🗨️)...
+     🎚️  "apparatus_stability": 4/10
+     ☑️  "observe_other_side": ✗
+     🔲 "Lever Array"
+     🔘 "Engage the Lever Array with maximum force"
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+  ⏳ Waiting for next turn...
+  ✓ Turn 13 complete (17s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 14/15 — PARANOID 🔍
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Grand Apparatus! My favorite toy. And you, my little AbyssDiver_WhisperHunter_Showboat, have chos"
+     💬 "The massive Grand Apparatus hums with volatile energy. Warning lights pulse, signaling an imminen"
+     💬 "You chose the Lever Array, naturally. Such directness. So.."
+     💬 "That was merely the interface. The real experiment?"
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Blast the main conduit with a concentrated energy beam.
+        2. Attempt to reroute all power to the observation window's environmental controls.
+        3. Summon a drone to perform a full diagnostic of the 'empty' room.
+        4. Initiate a full system override, forcing the Apparatus to vent all its energy at once.
+     🎚️  Slider: "apparatus_stability" (0-10)
+     ☐ Check: "observe_other_side" [✓]
+     🔲 Buttons: Lever Array (Forceful Action) | Precision Dials (Fine Control) | Pressure Pad (Passive Engagement)
+
+  🎭 Interacting (PARANOID 🔍)...
+     🎚️  "apparatus_stability": 8/10
+     ☑️  "observe_other_side": ✗
+     🔲 "Pressure Pad (Passive Engagement)"
+     🔘 "Initiate a full system override, forcing the Apparatus to vent all its energy at once."
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 14 complete (5s)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  TURN 15/15 — FIRE 🔥
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Dr. Evil sees:
+     💬 "Ah, the Grand Apparatus! My favorite toy. And you, my little AbyssDiver_WhisperHunter_Showboat, have chosen to interact with it in 'calibration' mode. How delightfully reckless! You set the stability ..."
+     💬 "The massive Grand Apparatus hums with volatile energy. Warning lights pulse, signaling an imminent surge. The console before you is alive with activity: a Lever Array beckons for direct, forceful inpu..."
+     💬 "You're not touching anything? Fascinating. You prefer to observe the inevitable cascade. A classic Calculated Risk-Taker who's discovered the ultimate risk is inaction."
+     💬 "You chose to watch. To analyze. The system will now analyze you. And it's not as forgiving as I am."
+     💬 "No session data yet."
+     🔘 Radio:
+        1. Blast the main conduit with a concentrated energy beam.
+        2. Attempt to reroute all power to the observation window's environmental controls.
+        3. Summon a drone to perform a full diagnostic of the 'empty' room.
+        4. Initiate a full system override, forcing the Apparatus to vent all its energy at once.
+     🎚️  Slider: "apparatus_stability" (0-10)
+     ☐ Check: "observe_other_side" [✗]
+     🔲 Buttons: Lever Array (Forceful Action) | Precision Dials (Fine Control) | Pressure Pad (Passive Engagement)
+
+  🎭 Interacting (FIRE 🔥)...
+     🎚️  "apparatus_stability": 6/10
+     ☑️  "observe_other_side": ✗
+     🔲 "Lever Array (Forceful Action)"
+     🔘 "Blast the main conduit with a concentrated energy beam."
+
+  📤 Submitting...
+  ⚠️  Submit button not found/disabled — may be loading
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Dr. Evil: Waiting for analysis pipeline...
+  ✓ Dr. Evil: 3 analysis record(s) found
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/drevil-analysis.json
+
+  ── Analysis Summary (1-8) ──
+Here is the psychological profile based on the provided interaction data:
+
+## Psychological Profile: Subject Alpha
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 5% - No persistent low mood, anhedonia, or significant functional impairment evident. The lack of input is more indicative of disengagement or strategic avoidance.
+    *   **Bipolar Spectrum:** 5% - No indicators of mania/hypomania or distinct mood cycling.
+    *   **Dysthymia:** 5% - No persistent low mood or chronic depressive symptoms.
+    *   **Cyclothymia:** 5% - No discernible mood cycling between hypomanic and depressive states.
+
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 10% - While cautious choices exist, there's no pervasive pattern of excessive worry across multiple contexts. The initial "INSTANT" response is not diagnostic of anxiety but rather impulsivity or pre-decision.
+    *   **Social Anxiety Disorder:** 10% - No explicit social inhibition, fear of judgment, or self-deprecating statements related to social interaction. Lack of input is more likely disinterest or strategic behavior.
+    *   **Specific Phobias:** 0% - No specific phobias identified.
+    *   **Panic Disorder:** 5% - No reported panic attacks or fear of recurrent attacks.
+    *   **Agoraphobia:** 0% - No avoidance of situations where escape might be difficult or help unavailable.
+
+*   **Trauma & Stressor Related Disorders:**
+    *   **Post-Traumatic Stress Disorder (PTSD):** 20% (Decreased from 35%) - The cautious choices ('d' action) and avoidance of the victim are consistent with some trauma responses (e.g., freeze/flight). However, there's a lack of direct evidence of hypervigilance, flashbacks, exaggerated startle, or explicit fear-driven avoidance of specific triggers. The focus appears more on pragmatic survival than a debilitating fear response. (Evidence: Turn 2 & 3 'd' action choice, low empathy for victim).
+    *   **Complex PTSD (C-PTSD):** 15% - Overlaps with PTSD but insufficient data for pervasive interpersonal difficulties, emotional dysregulation, or distorted self-perception beyond what's seen in other traits.
+    *   **Adjustment Disorder:** 5% (Decreased from 10%) - No clear evidence of distress disproportionate to the stressor in a specific, identifiable context.
+
+*   **Personality Disorders:**
+    *   **Cluster A:**
+        *   **Paranoid PD:** 5% (Decreased from 10%) - No explicit distrust, suspicion, or persecution themes.
+        *   **Schizoid PD:** 5% (No change) - Lack of input and engagement isn't sufficient for profound detachment from social relationships or restricted emotional range.
+        *   **Schizotypal PD:** 5% (No change) - No magical thinking, peculiar ideation, or eccentric behavior observed.
+    *   **Cluster B:**
+        *   **Antisocial PD (ASPD):** 85% (Increased from 30%) - The consistently low scores on empathy and urge to intervene for the victim (Turn 2 & 3) are strong indicators of call
+  ...[truncated]
+
+  ✓ Dr. Evil simulation complete!

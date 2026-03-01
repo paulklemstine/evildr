@@ -1,0 +1,21 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  SKINWALKER — 10 TURNS                                           ║
+║  Character: DID (Dissociative Identity Disorder) + Latex fetish  ║
+║  Switching alters mid-conversation, amnesia gaps. Fascinated by t║
+╚══════════════════════════════════════════════════════════════════╝
+
+  Navigating to https://geems.web.app/#play/skinwalker
+file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:57
+            this.#timeoutError = new TimeoutError(opts.message);
+                                 ^
+
+TimeoutError: Navigation timeout of 30000 ms exceeded
+    at new Deferred (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:57:34)
+    at Deferred.create (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/util/Deferred.js:18:16)
+    at new LifecycleWatcher (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/LifecycleWatcher.js:70:46)
+    at CdpFrame.goto (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/cdp/Frame.js:145:29)
+    at CdpFrame.<anonymous> (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/util/decorators.js:101:27)
+    at CdpPage.goto (file:///home/raver1975/superpaul/evildr/node_modules/puppeteer-core/lib/esm/puppeteer/api/Page.js:576:43)
+    at simulate (file:///home/raver1975/superpaul/evildr/simulate-single.mjs:650:14)
+
+Node.js v22.22.0
