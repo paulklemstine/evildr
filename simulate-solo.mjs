@@ -624,16 +624,18 @@ async function readUI(page) {
     document.querySelectorAll('.geems-image-container').forEach(el => {
       const img = el.querySelector('img')
       const src = img?.src || img?.dataset?.src || ''
-      result.images.push(src.substring(0, 200))
+      result.images.push(src.substring(0, 500))
     })
-    document.querySelectorAll('.geems-text').forEach(el => {
+    // Only capture texts from the game container, NOT from modals
+    const gameContainer = document.querySelector('#game-container') || document
+    gameContainer.querySelectorAll('.geems-text').forEach(el => {
       const text = el.textContent?.trim()
-      if (text) result.texts.push(text.substring(0, 500))
+      if (text) result.texts.push(text.substring(0, 2000))
     })
     document.querySelectorAll('.geems-radio-option').forEach(r => {
       const label = r.textContent?.trim() || ''
       const input = r.querySelector('input[type="radio"]')
-      if (label && input) result.radios.push({ label: label.substring(0, 150), value: input.value })
+      if (label && input) result.radios.push({ label: label.substring(0, 300), value: input.value })
     })
     document.querySelectorAll('input[type="range"]').forEach(s => {
       if (s.offsetParent !== null) {

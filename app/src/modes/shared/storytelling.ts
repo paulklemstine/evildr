@@ -200,18 +200,28 @@ Before writing each scene, mentally generate the MOST OBVIOUS version. Then DISC
 /**
  * Stagnation detection directive — forces the LLM to self-monitor for repetition.
  */
-export const STAGNATION_DETECTION = `### STAGNATION DETECTION ###
-Check your own output against history for repetitive patterns. RED FLAGS:
+export const STAGNATION_DETECTION = `### STAGNATION DETECTION & ANTI-RECYCLING ###
+Check your own output against the HISTORY below for repetitive patterns. RED FLAGS:
 - Same setting type 2+ turns in a row (corridor->corridor, room->room)
 - Same NPC pattern repeating (meet stranger->betrayal->meet stranger->betrayal)
 - Same cliffhanger structure (timer->timer, "something behind you"->repeat)
 - Same emotional beat without variety (danger->danger->danger)
 - Same choice framing ("fight or flee" repeated)
+
+**ANTI-RECYCLING RULES (MANDATORY):**
+1. DROPDOWN OPTIONS: NEVER reuse dropdown option text from any turn visible in history. Every dropdown must have COMPLETELY FRESH options. If you used "beauty, joy, warmth, comfort" last turn, use 4 ENTIRELY DIFFERENT concepts.
+2. RADIO LABELS: Each turn's radio option text must describe DIFFERENT ACTIONS in DIFFERENT CONTEXTS. Never "Investigate the [thing]" two turns in a row.
+3. SCENE CHANGE: The physical location/environment MUST change at least every 3 turns. If you've been in the same space for 2 turns, the NEXT turn MUST move somewhere new.
+4. SLIDER/RATING LABELS: Never ask the same slider question twice in the session. Track used questions in notes.
+5. ACTIVITY SHIFT: If the player has been doing the same activity type (negotiating, exploring, fighting, conversing) for 3+ turns, FORCE a completely different activity.
+6. NARRATIVE STRUCTURE: If your turn follows the same pattern as the previous turn (same intro type, same choice structure, same cliffhanger type), SCRAP IT and write something structurally different.
+
 If you detect ANY pattern, DELIBERATELY break it:
 - Radically change environment (interior->exterior, tight->vast, dark->bright)
 - Flip power dynamic (hunted->hunter, alone->allied, weak->powerful)
 - Shift tone for one beat (action->mystery moment, thriller->dark comedy)
-- Introduce an element from a different register (action hero finds a child's drawing, horror survivor hears beautiful music)`
+- Introduce an element from a different register (action hero finds a child's drawing, horror survivor hears beautiful music)
+- Jump forward in time — skip the boring transition, arrive at the NEXT interesting moment`
 
 /**
  * Narrative tracking fields for the notes/dossier template.
