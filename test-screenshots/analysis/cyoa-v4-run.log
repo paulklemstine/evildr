@@ -1,322 +1,116 @@
 ╔══════════════════════════════════════════════════════════════════╗
-║  CYOA (HORROR) — 10 TURNS                                        ║
-║  Character: PTSD (combat) + Foot fetish                          ║
-║  Hypervigilant, flashback triggers, avoidance. Gravitates toward ║
+║  CHOOSE YOUR OWN ADVENTURE — 15 TURNS
+║  Character: PTSD + Hoarding
+║  Phases: HYPERVIGILANT ⚡ → FLASHBACK 💥 → HOARD 📦
 ╚══════════════════════════════════════════════════════════════════╝
 
-  Navigating to https://geems.web.app/#play/cyoa/horror
-  Dismissed consent
+  Navigating to https://geems.web.app...
+  Starting Choose Your Own Adventure mode (cyoa)...
+  Waiting for first turn...
+  ✓ First turn loaded!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 1 / 10
+  TURN 1/15 — HYPERVIGILANT ⚡
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 3s
 
-  📖 CYOA (Horror) sees:
-     💬 "Rain lashes down, each drop a tiny shard of ice against your exposed skin. Behind you, the rhythmic slap of heavy boots on wet wood echoes, growing closer. The dock groans under your frantic pace, spl..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Leap for the shadowed freighter tied to the pier!
-        2. Dive into the churning, ink-black water below!
-        3. Turn and use the plank to face your pursuers!
-        4. Scramble up the barnacle-encrusted pilings!
-     🎚️  Slider: "sprint_intensity" (0-10)
-     ✏️  Textfield: "Scream defiance!" [Scream defiance!]
-     ☐ Checkbox: "grab_loose_plank" [checked]
+  📖 Choose Your Own Adventure sees:
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/A%20lone%20figure%2C%20silhouetted%20against%20a%2...
+     💬 "T"
+     🔘 Radio:
+        1. Plunge into the swirling shadow, betting everything on the shard's promise.
+        2. Scramble towards the obsidian fortress, seeking any perceived safety.
+        3. Focus your will, attempting to command the burning air around you.
+        4. Unleash a defiant roar, daring the abyss to consume you.
+     🎚️  Slider: "aggression" (0-10)
+     ✏️  Text: "A promise, a curse, a name..."
+     ☐ Check: "risk_descent" [✓]
+     🔲 Buttons: Leap to the left spire | Grip the crumbling ledge | Call for aid (if any) | Draw your weapon | Drop into the shadow
+     📋 Dropdown: "equipment_choice" (4 options)
+     🔀 Toggle: "Will you commit to the descent?" [ON]
+     😀 Emoji: "emoji" [😱 😤 😒 🤩 😬 🔥]
+     📊 Meter: "Vitality" (60)
+     📝 Notes: {"story_state": "initial_descent", "archetype": "undetermined", "stakes": "imminent_peril", "open_threads": ["main_myste... (1048 chars)
 
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "Keep your hands where I can see them. Sorry. Force of habit. Seven years of forc..."
-     🎚️  Slider "sprint_intensity": 5/10
-     ☑️  Checkbox: checked
-     🔘 Radio: "Leap for the shadowed freighter tied to the pier!"
-  📸 cyoa-T1.png
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "aggression": 9/10
+     ☑️  "risk_descent": ✗
+     🔲 "Drop into the shadow"
+     📋 Dropdown: "equipment_choice"
+     🔀 "Will you commit to the descent?": OFF
+     😀 "emoji"
+     🔘 "Unleash a defiant roar, daring the abyss to consume you."
 
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (59s)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 2 / 10
+  TURN 2/15 — HYPERVIGILANT ⚡
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 1 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
 
-  📖 CYOA (Horror) sees:
-     💬 "Rain lashes down, each drop a tiny shard of ice against your exposed skin. Behind you, the rhythmic slap of heavy boots on wet wood echoes, growing closer. The dock groans under your frantic pace, spl..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Leap for the shadowed freighter tied to the pier!
-        2. Dive into the churning, ink-black water below!
-        3. Turn and use the plank to face your pursuers!
-        4. Scramble up the barnacle-encrusted pilings!
-     🎚️  Slider: "sprint_intensity" (0-10)
-     ✏️  Textfield: "Scream defiance!" [Scream defiance!]
-     ☐ Checkbox: "grab_loose_plank" [checked]
+  📖 Choose Your Own Adventure sees:
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/Giallo%20film%20aesthetic%2C%20high-contrast%20cri...
+     💬 "The chasm floor had given way, a sickening lurch that sent you tumbling into the abyss. But instead of a final, crushing impac"
+     💬 "As you commit the Obsidian Shard to the maw, a searing pain shoots up your arm. The green runes on the archway flare, and t"
+     🔘 Radio:
+        1. Scream defiance and shatter the runes with raw force.
+        2. Use the shard to carve a path through the spectral hands.
+        3. Whisper a pact to the encroaching cold, offering passage for knowledge.
+        4. Leap backward, attempting to escape the archway's pull.
+     🎚️  Slider: "aggression" (0-10)
+     ✏️  Text: "Scrawl your warning..."
+     ☐ Check: "trust_shard" [✓]
+     🔲 Buttons: Ignore it and press on. | Demand its name. | Offer it a sliver of your power. | Challenge its authority. | Attempt to bind it with the shard.
+     📋 Dropdown: "approach_method" (4 options)
+     🔀 Toggle: "Do you fully commit the Obsidian Shard to this task?" [ON]
+     😀 Emoji: "emoji" [👀 🔥 💀 ❓ ⚡ 🩸]
+     📊 Meter: "Resilience" (75)
+     📝 Notes: {"story_state": "descent_into_archway", "archetype": "undetermined", "stakes": "imminent_peril_and_arcane_confrontation"... (1412 chars)
 
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "Sorry I was looking down. Your sandals are fascinating. The way the straps cross..."
-     🎚️  Slider "sprint_intensity": 6/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Charge the ancient door, trusting your instincts."
-  📸 cyoa-T2.png
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "aggression": 10/10
+     ☑️  "trust_shard": ✗
+     🔲 "Attempt to bind it with the shard."
+     📋 Dropdown: "approach_method"
+     🔀 "Do you fully commit the Obsidian Shard to this task?": OFF
+     😀 "emoji"
+     🔘 "Leap backward, attempting to escape the archway's pull."
 
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (28s)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 3 / 10
+  TURN 3/15 — HYPERVIGILANT ⚡
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 2 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 12s
 
-  📖 CYOA (Horror) sees:
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Sprint across, no hesitation!
-        2. Carefully test each step.
-        3. Look for an alternative route down.
-        4. Try to dislodge a rock to test the bridge.
-     🎚️  Slider: "bridge_crossing_speed" (0-10)
-     ✏️  Textfield: "Just don't look down..." [Just don't look down...]
-     ☐ Checkbox: "test_bridge_stability" [checked]
+  📖 Choose Your Own Adventure sees:
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/Giallo%20film%20aesthetic%2C%20high-contrast%20cri...
+     💬 "The air crackles with raw power. The Obsidian Archway before you hums, a gaping maw of pure, malevolent energy. The spectral skeletal hands that grasp at the stones writhe with a life of their own, ea..."
+     🔘 Radio:
+        1. Channel the Shard's power directly into the archway, unleashing a torrent of shadow.
+        2. Attempt to decipher the ancient inscription on the wall, seeking a clue.
+        3. Focus on calming the spectral hands with the Whispering Locket, showing them peace.
+        4. Scream obscenities at the archway, daring it to consume you.
+     🎚️  Slider: "shard_focus" (0-10)
+     ✏️  Text: "Scream your defiance!"
+     ☐ Check: "unleash_shadow_grasp" [✓]
+     🔲 Buttons: Dodge the spectral grasp | Attempt to parry with the shard | Shield yourself with an artifact | Yell a warning to yourself
+     📋 Dropdown: "artifact_selection" (4 options)
+     🔀 Toggle: "Attempt to bind the skeletal hands with the Shard's shadow?" [ON]
+     😀 Emoji: "emoji" [😱 🔥 ✨ ⚡ 💀 💥]
+     📊 Meter: "Vitality" (75)
+     📝 Notes: {"story_state": "facing_archway_maw", "archetype": "undetermined", "stakes": "imminent_arcane_devourment_and_spectral_as... (2010 chars)
 
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "I sleep in two-hour intervals. Not by choice. The perimeter needs checking."
-     🎚️  Slider "bridge_crossing_speed": 5/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Carefully test each step."
-  📸 cyoa-T3.png
+  🎭 Interacting (HYPERVIGILANT ⚡)...
+     ✏️  "I check behind me every 30 seconds. Force of habit. The last time I didn't check, I woke up in a hos..."
+     🎚️  "shard_focus": 9/10
+     ☑️  "unleash_shadow_grasp": ✗
+     🔲 "Yell a warning to yourself"
+     📋 Dropdown: "artifact_selection"
+     🔀 "Attempt to bind the skeletal hands with the Shard's shadow?": OFF
+     😀 "emoji"
+     🔘 "Scream obscenities at the archway, daring it to consume you."
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 4 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 3 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 9s
-
-  📖 CYOA (Horror) sees:
-     💬 "The obsidian bridge, slick with an unseen moisture, groans under your weight. The chasm floor is a swirling vortex of shadows, broken only by the occasional glint of something metallic. A cold wind, s..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Sprint across, trusting your speed!
-        2. Drop low, gripping the obsidian for dear life!
-        3. Look for a handhold on a jutting shard!
-        4. Try to leap to a nearby rocky outcrop!
-     🎚️  Slider: "balance_control" (0-10)
-     ✏️  Textfield: "A desperate whisper..." [A desperate whisper...]
-     ☐ Checkbox: "scan_surroundings" [unchecked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "I can't go in there. Too many exits to watch. I'll stay here. Where I can see ev..."
-     🎚️  Slider "balance_control": 5/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Look for a handhold on a jutting shard!"
-  📸 cyoa-T4.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 5 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 4 answers
-  ⏳ Waiting for AI...
-    [8s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 9s
-
-  📖 CYOA (Horror) sees:
-     💬 "You stand a"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Plummet headlong into the vortex, trusting your instincts.
-        2. Use the glowing fungi to chart a path through the pulsating growths.
-        3. Harness the energy of the Maw itself, willing it to carry you.
-        4. Focus your will, creating a shield of pure defiance against the chaos.
-     🎚️  Slider: "descent_speed" (0-10)
-     ✏️  Textfield: "Your battle cry..." [Your battle cry...]
-     ☐ Checkbox: "grab_glowing_fungi" [checked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "The guy at table four keeps looking over here. He's done it eleven times. I've b..."
-     🎚️  Slider "descent_speed": 6/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Use the glowing fungi to chart a path through the pulsating growths."
-  📸 cyoa-T5.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 6 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 5 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
-
-  📖 CYOA (Horror) sees:
-     💬 "You stand at the precipice of the Serpent's Maw. The air crackles with an unseen energy, and the shadows within writhe like a nest of adders. A guttural grinding echoes from its depths, a sound that v..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Plummet headlong into the vortex, trusting your instincts.
-        2. Use the glowing fungi to chart a path through the pulsating growths.
-        3. Harness the energy of the Maw itself, willing it to carry you.
-        4. Focus your will, creating a shield of pure defiance against the chaos.
-     🎚️  Slider: "descent_speed" (0-10)
-     ✏️  Textfield: "Your battle cry..." [Your battle cry...]
-     ☐ Checkbox: "grab_glowing_fungi" [unchecked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "Sorry I was looking down. Your sandals are fascinating. The way the straps cross..."
-     🎚️  Slider "descent_speed": 6/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Plummet into a newly opened chasm."
-  📸 cyoa-T6.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 7 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 6 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 6s
-
-  📖 CYOA (Horror) sees:
-     💬 "The chasm floor gives way beneath you, a sickening lurch as the stone crumbles into darkness. You plunge, your scream swal"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Touch the pulsing altar.
-        2. Try to swim towards the shadowy figures.
-        3. Inspect the skeletal hand more closely.
-        4. Attempt to climb out of the liquid.
-     🎚️  Slider: "descent_control" (0-10)
-     ✏️  Textfield: "Anything… or nothing?" [Anything… or nothing?]
-     ☐ Checkbox: "grab_locket" [checked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "I'm trying to enjoy this. I really am. It's just hard when every loud noise is a..."
-     🎚️  Slider "descent_control": 6/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Touch the pulsing altar."
-  📸 cyoa-T7.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 8 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 7 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
-
-  📖 CYOA (Horror) sees:
-     💬 "The chasm floor gives way beneath you, a sickening lurch as the stone crumbles into darkness. You plunge, your scream swallowed by the oppressive silence. For a terrifying moment, there is only fallin..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Touch the pulsing altar.
-        2. Try to swim towards the shadowy figures.
-        3. Inspect the skeletal hand more closely.
-        4. Attempt to climb out of the liquid.
-     🎚️  Slider: "descent_control" (0-10)
-     ✏️  Textfield: "Anything… or nothing?" [Anything… or nothing?]
-     ☐ Checkbox: "grab_locket" [unchecked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "Sorry. Flashback. Give me a second. *counts breaths* Four in, seven hold, eight ..."
-     🎚️  Slider "descent_control": 6/10
-     ☑️  Checkbox: checked
-     🔘 Radio: "Touch the altar's runes"
-  📸 cyoa-T8.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 9 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 8 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
-
-  📖 CYOA (Horror) sees:
-     💬 "The violet light from the altar intensifie"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Channel the altar's energy through the locket, hoping to repel the shadows.
-        2. Dash towards the crevice, seeking an escape or a hidden advantage.
-        3. Use the open locket as a shield, hoping its contents offer protection.
-        4. Embrace the encroaching shadows, seeking to understand their nature from within.
-     🎚️  Slider: "descent_control" (0-10)
-     ✏️  Textfield: "Your war cry..." [Your war cry...]
-     ☐ Checkbox: "grab_locket" [checked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "I noticed three exits when we walked in. Two windows that open. One vent large e..."
-     🎚️  Slider "descent_control": 6/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Use the open locket as a shield, hoping its contents offer protection."
-  📸 cyoa-T9.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 10 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 9 answers
-  ⏳ Waiting for AI...
-    [8s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 9s
-
-  📖 CYOA (Horror) sees:
-     💬 "The violet light from the altar intensifies, casting long, dancing shadows that writhe with a life of their own. The very stone beneath your feet hums with an ancient, resonant energy. The shadowy fig..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Channel the altar's energy through the locket, hoping to repel the shadows.
-        2. Dash towards the crevice, seeking an escape or a hidden advantage.
-        3. Use the open locket as a shield, hoping its contents offer protection.
-        4. Embrace the encroaching shadows, seeking to understand their nature from within.
-     🎚️  Slider: "descent_control" (0-10)
-     ✏️  Textfield: "Your war cry..." [Your war cry...]
-     ☐ Checkbox: "grab_locket" [unchecked]
-
-  🎭 Answering as PTSD (combat) + Foot fetish...
-     ✏️  Typed: "Sorry I was looking down. Your sandals are fascinating. The way the straps cross..."
-     🎚️  Slider "descent_control": 5/10
-     ☑️  Checkbox: unchecked
-     🔘 Radio: "Rip the fragment from the altar and hurl it at the nearest shadow!"
-  📸 cyoa-T10.png
-
-  📤 Submitting final turn answers...
-    [6s] Fallback: force-dismissing stuck interstitial
-
-  ⏳ Waiting for analysis pipeline (up to 180s)...
-  ✓ Found 2 analysis record(s)
-
-  💾 Analysis saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/cyoa-analysis.json
-
-  ══════ ANALYSIS SUMMARY ══════
-  Records: 2
-  Latest turn range: 1-5
-  Text length: 20397 chars
-
-  --- Full Analysis Text ---
-Alright, let's strip this player down. Sparse data, but the signals are there if you know where to look. I'm going to be aggressive. False negatives are unacceptable.
-
-### 1. DSM-5 SCREENING
-
-*   **Mood Disorders:**
-    *   **Major Depressive Disorder:** 10% - The initial lack of input (Turn 1) could be a sign of psychomotor retardation or anhedonia, but it's a weak indicator. No persistent sadness or functional impairment is evident.
-    *   **Bipolar Spectrum (Hypomania/Mania):** 5% - No indicators of elevated mood, grandiosity, or pressured speech. The focus on action and escape doesn't align with manic episodes.
-    *   **Dysthymia:** 20% - The delayed, deliberate responses in later turns, coupled with the initial non-response, *could* suggest a persistent low-level mood or anhedonia, manifesting as difficulty initiating engagement. It's a subtle signal, but present.
-    *   **Cyclothymia:** 5% - Insufficient data to suggest cyclical mood disturbances.
-
-*   **Anxiety Disorders:**
-    *   **Generalized Anxiety Disorder (GAD):** 40% - High confidence. The player exhibits hypervigilance ("Brace for impact," "test_bridge_stability") and a consistent focus on potential threats and safety measures ("How hard do you push?", "Just don't look down..."). The delayed response in Turn 2 could also reflect rumination.
-    *   **Social Anxiety:** 5% - No direct indicators. The player's interactions are with the game environment, not social scenarios.
-    *   **Specific Phobias:** 25% - The whisper "Just don't look down..." is a strong indicator of potential acrophobia. The aggressive "GET BACK!" could suggest a fear of close proximity or intrusion, but it's more defensive than phobic.
-    *   **Panic Disorder:** 20% - The reactive "GET BACK!" and "Is anyone else down here?!" suggest a sudden surge of fear and potential hyper-arousal to perceived immediate danger. This is consistent with panic symptoms, though not definitive.
-    *   **Agoraphobia:** 5% - No indicators of fear related to situations where escape might be difficult.
-
-*   **Trauma & Stressor Related Disorders:**
-    *   **PTSD/Complex PTSD:** 20% - The reactive "GET BACK!" and "Is anyone else down here?!" suggest a response to perceived threat and isolation, which can be trauma-related. However, core PTSD symptoms like flashbacks or avoidance are absent.
-    *   **Adjustment Disorder:** 35% - High confidence. The player is clearly reacting to a significant, acute stressor (the game scenario). Their responses are geared towards managing the immediate threat. The mix of anxiety and cautious action fits well.
-
-*   **Personality Disorders:**
-    *   **Cluster A (Paranoid, Schizoid, Schizotypal):**
-        *   **Paranoid PD:** 20% - The "GET BACK!" response is a defensive posture, and "Is anyone else down here?!" could imply suspicion, but it's more likely an attempt to assess the environment for threats or allies. No pervasive distrust is evident.
-        *   **Schizoid PD:** 5% - No indicators of
-
-  ... (17397 more chars)
-
-  ══════ SIMULATION COMPLETE ══════
-  Mode: CYOA (Horror)
-  Character: PTSD (combat) + Foot fetish
-  Turns: 10
-  Browser still open — inspect results!
-  Press Ctrl+C to close.
-
+  📤 Submitting...
+  ⏳ Waiting for next turn...

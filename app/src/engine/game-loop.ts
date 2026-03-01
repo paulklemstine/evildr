@@ -117,6 +117,30 @@ interface MutationEntry {
 
 const MAX_HISTORY_SIZE = 20
 
+/**
+ * Maximum notes size in characters before compression.
+ * Notes beyond this threshold are trimmed to keep the LLM's
+ * output budget available for rich UI elements and narrative.
+ */
+const MAX_NOTES_CHARS = 5000
+
+/**
+ * Compress notes that exceed MAX_NOTES_CHARS by keeping the most
+ * recent and structurally important sections. Preserves the header
+ * line, last 3 sections, and truncates verbose middle content.
+ */
+function compressNotes(notes: string): string {
+  if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
+
+  // Strategy: keep first 500 chars (header/ID), keep last 3500 chars (most recent state)
+  // Middle section gets a "[...compressed...]" marker
+  const headerSize = 800
+  const tailSize = MAX_NOTES_CHARS - headerSize - 50
+  const header = notes.substring(0, headerSize)
+  const tail = notes.substring(notes.length - tailSize)
+  return header + '\n[...earlier observations compressed — focus on RECENT state below...]\n' + tail
+}
+
 // ---------------------------------------------------------------------------
 // Helpers
 // ---------------------------------------------------------------------------
@@ -701,10 +725,12 @@ export class GameLoop {
     if (isFirstTurn) {
       prompt = promptBuilder.buildFirstTurnPrompt()
     } else {
+      // Compress notes when they get too large to preserve output token budget
+      const compressedNotes = compressNotes(this.state.currentNotes)
       prompt = promptBuilder.buildTurnPrompt(
         playerActionsJson,
         this.state.historyQueue,
-        this.state.currentNotes,
+        compressedNotes,
         liveAnalysis,
         this.state.turnNumber + 1,
         15,

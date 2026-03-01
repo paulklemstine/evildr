@@ -1,342 +1,122 @@
 ╔══════════════════════════════════════════════════════════════════╗
-║  THE ORACLE — 10 TURNS                                           ║
-║  Character: Narcissistic PD + Exhibitionism                      ║
-║  Grandiosity, entitlement, contempt. Wants to be seen, public exp║
+║  THE ORACLE — 15 TURNS
+║  Character: Histrionic Personality Disorder + Macrophilia
+║  Phases: DRAMATIC 🎭 → ATTENTION 🌟 → SIZE 🗻
 ╚══════════════════════════════════════════════════════════════════╝
 
-  Navigating to https://geems.web.app/#play/oracle
-  Dismissed consent
+  Navigating to https://geems.web.app...
+  Starting The Oracle mode (oracle)...
+  Waiting for first turn...
+  ✓ First turn loaded!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 1 / 10
+  TURN 1/15 — DRAMATIC 🎭
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 3s
 
   📖 The Oracle sees:
-     💬 "Ah. There you are. The Oracle has been waiting. Not for someone — for you. The threads shifted three days ago. Something changed. And here you are. Sit. Let us begin."
-     💬 "The air itself hums with ancient power. Shimmering light coalesces and dissipates, casting fleeting images across surfaces that seem to reflect realities not present. Luminescent motes dance in unseen..."
-     💬 "The Oracle sees already. More than you expected. More than you're comfortable with. But the prophecy has begun, and it will not stop until it's finished."
-     💬 "No session data yet."
-     🔘 Radio options:
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/An%20ancient%2C%20vast%20mystical%20sanctum%20fill...
+     💬 "Ah. There you are. The Oracle ha"
+     💬 "The sanctum is a"
+     💬 "The"
+     🔘 Radio:
         1. Show me what I need to know
         2. Show me what I've been hiding from
         3. Show me who I'm connected to
         4. Show me what surprises even the Oracle
-     🎚️  Slider: "inner_sight" (1-10)
-     ✏️  Textfield: "The Oracle listens..." [The Oracle listens...]
+     🎚️  Slider: "intensity" (1-10)
+     ✏️  Text: "The Oracle listens..."
      ⭐ Rating: "rating" (max 0)
+     🎨 Color: "color" [none]
+     😀 Emoji: "emoji" [😊 😢 😡 😱 🤔 ❤️]
+     📊 Meter: "Prophecy Clarity" (12)
+     📝 Notes: ## The Oracle's Reading
+**Seeker:** The Unnamed Seeker
+**Turn:** 1
+**Reading Phase:** opening
+**Prophecy Clarity:** 12
 
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "There's something electric about being watched. The more eyes, the more alive I ..."
-     🎚️  Slider "inner_sight": 5/10
-     ⭐ Rating: 1/0
-     🔘 Radio: "Show me what I've been hiding from"
-  📸 oracle-T1.png
+... (3809 chars)
 
+  🎭 Interacting (DRAMATIC 🎭)...
+     ✏️  "This is the most IMPORTANT moment of my ENTIRE life! Everything depends on this! My heart is literal..."
+     🎚️  "intensity": 9/10
+     ⭐ "rating": 0/0
+     🎨 "color"
+     😀 "emoji"
+     🔘 "Show me what I need to know"
+
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 1 complete (52s)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 2 / 10
+  TURN 2/15 — DRAMATIC 🎭
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 1 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 3s
 
   📖 The Oracle sees:
-     💬 "The seeker arrives, and the currents of fate shimmer. You say you feel alive when watched. Interesting. Most feel diminished. You, however, bask"
-     💬 "The threads of your prophecy are beginning to coalesce. The Oracle sees a weight you carry, not of burden, but of potential. It is a song un"
-     💬 "The tapestry weaves itself, thread by thread. Your choices are the needles, your spirit the loom. The Oracle sees the"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of the Ascendant Flame (Courage)
-        2. The Path of the Silent Archive (Wisdom)
-        3. The Path of the Empathic Bloom (Love)
-        4. The Path of the Shifting Sands (Chaos)
-     🎚️  Slider: "energy_flow" (0-10)
-     🔲 Buttons: Trust | Doubt | Embrace | Resist | Surrender
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/A%20vast%2C%20dimly%20lit%20library%20where%20scro...
+     💬 "You chose sage green. The Oracle"
+     💬 "The air hums with the echo of yo"
+     💬 "The threads"
+     🔘 Radio:
+        1. Seek the deeper resonance of the shift.
+        2. Explore what might be hidden by this revelation.
+        3. Consider who else might be a 'key'.
+        4. Embrace the mystery of the 'lock'.
+     🎚️  Slider: "intensity_of_shift" (0-10)
+     ✏️  Text: "The Oracle waits to see..."
+     🎨 Color: "color" [none]
+     😀 Emoji: "emoji" [😊 😢 😡 😱 🤔 ❤️]
+     📊 Meter: "Prophecy Clarity" (25)
+     📝 Notes: ## The Oracle's Reading
+**Seeker:** The Unnamed Seeker
+**Turn:** 2
+**Reading Phase:** deepening
+**Prophecy Clarity:** 25... (4681 chars)
 
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     🎚️  Slider "energy_flow": 4/10
-     🔲 Button: "Resist"
-     🔘 Radio: "The Path of the Silent Archive (Wisdom)"
-  📸 oracle-T2.png
+  🎭 Interacting (DRAMATIC 🎭)...
+     ✏️  "This is the most IMPORTANT moment of my ENTIRE life! Everything depends on this! My heart is literal..."
+     🎚️  "intensity_of_shift": 10/10
+     🎨 "color"
+     😀 "emoji"
+     🔘 "Seek the deeper resonance of the shift."
 
+  📤 Submitting...
+  ⏳ Waiting for next turn...
+  ✓ Turn 2 complete (31s)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 3 / 10
+  TURN 3/15 — DRAMATIC 🎭
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 2 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 16s
 
   📖 The Oracle sees:
-     💬 "Ah, you chose indigo. The deep, unfathomable blue. The Oracle chuckles softly. You are drawn to the currents of fate, to the co"
-     💬 "The threads of your present are tangled with a choice made exactly three days ago. Not a grand declaration, but a quiet turnin"
-     💬 "The prophecy unravels like silk from a celestial loom. Each choice you make adds a thread, a color,"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of the Ascendant Flame (Courage)
-        2. The Path of the Deep Current (Wisdom)
-        3. The Path of the Radiant Heart (Love)
-        4. The Path of the Shifting Sands (Chaos)
-     🎚️  Slider: "energy_flow_v2" (0-10)
-     ✏️  Textfield: "The Oracle awaits your echo..." [The Oracle awaits your echo...]
-     ☐ Checkbox: "accept_personal_truth" [checked]
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "The world is my stage. This little game is just a smaller stage. I'll perform an..."
-     🎚️  Slider "energy_flow_v2": 5/10
-     ☑️  Checkbox: checked
-     🔘 Radio: "The Path of the Ascendant Flame (Courage)"
-  📸 oracle-T3.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 4 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 3 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
-
-  📖 The Oracle sees:
-     💬 "Ah, you chose indigo. The deep, unfathomable blue. The Oracle chuckles softly. You are drawn to the currents of fate, to the cosmic hum that underlies existence. You feel the weight of what is and wha..."
-     💬 "The threads of your present are tangled with a choice made exactly three days ago. Not a grand declaration, but a quiet turning within. A seed planted in stillness, now beginning to sprout in the shad..."
-     💬 "The prophecy unravels like silk from a celestial loom. Each choice you make adds a thread, a color, a texture. What you whisper back through time, what you feel in your core, what element anchors you ..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of the Ascendant Flame (Courage)
-        2. The Path of the Deep Current (Wisdom)
-        3. The Path of the Radiant Heart (Love)
-        4. The Path of the Shifting Sands (Chaos)
-     🎚️  Slider: "energy_flow_v2" (0-10)
-     ✏️  Textfield: "The Oracle awaits your echo..." [The Oracle awaits your echo...]
-     ☐ Checkbox: "accept_personal_truth" [checked]
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "Most people bore me within thirty seconds. You've lasted... *checks watch* ...fo..."
-     🎚️  Slider "energy_flow_v2": 5/10
-     ☑️  Checkbox: checked
-     🔘 Radio: "The Path of the Shifting Sands (Chaos)"
-  📸 oracle-T4.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 5 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 4 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 6s
-
-  📖 The Oracle sees:
-     💬 "Ah, the performer. You choose the stage, even when the stage is unseen. You weave your words like a dancer, each carefully placed. The Oracle sees the performance, and smiles. The prophecy notes the s..."
-     💬 "You speak of stages, of performance. But the truest stage is the one within. Three days ago, a shift occurred. A subtle tremor in the fabric of your being. And you were not alone. Someone else stood o..."
-     💬 "The threads tighten. The Oracle sees more with each choice you make. And what it sees next... it is already woven."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of the Unseen Blade
-        2. The Path of the Whispered Scroll
-        3. The Path of the Unspoken Vow
-        4. The Path of the Shifting Sands
-     🎚️  Slider: "echo_intensity" (0-10)
-     ☐ Checkbox: "accept_shared_moment" [checked]
+     🖼️  Image: https://drevil-proxy.drevil.workers.dev/api/image/Art%20Nouveau%20mystical%20archive.%20Towering%20s...
+     💬 "You stand in an archive that dwarfs time. The air hums with forgotten knowledge. The Oracle's voice, a silken whisper like rustling parchment, speaks directly into your mind."
+     💬 "You arrived seeking clarity, a 'key' to the shift you felt three days ago. And you chose pale gold for your resonance. A color of validation, of being seen. The Oracle sees you. But a lingering sadnes..."
+     💬 "The prophecy reveals a lock. Not of metal, but of understanding. A truth you've held just out of reach. You believe yourself to be a key, but the prophecy whispers... you are the tumbler."
+     💬 "The Oracle watches, amused. Your choices are threads woven into the tapestry. The tumbler. Not the key. An interesting distinction."
+     🔘 Radio:
+        1. Seek the Ignition within the archives (bold)
+        2. Unravel the Echoes of the shift (clever)
+        3. Trace the Connections the shift created (compassionate)
+        4. Embrace the Void left by the shift (chaotic)
+     ✏️  Text: "A shape... a color... a feeling..."
+     ☐ Check: "accept_tumbler_truth" [✓]
      ⭐ Rating: "rating" (max 0)
+     📋 Dropdown: "elemental_affinity" (4 options)
+     🔀 Toggle: "You are the tumbler." [ON]
+     📊 Meter: "Prophecy Clarity" (33)
+     📝 Notes: ## The Oracle's Reading
+**Seeker:** The Unnamed Seeker
+**Turn:** 3
+**Reading Phase:** deepening
+**Prophecy Clarity:** 33... (5687 chars)
 
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     🎚️  Slider "echo_intensity": 5/10
-     ☑️  Checkbox: checked
-     ⭐ Rating: 1/0
-     🔘 Radio: "The Path of the Whispered Scroll"
-  📸 oracle-T5.png
+  🎭 Interacting (DRAMATIC 🎭)...
+     ✏️  "I feel EVERYTHING so deeply! More deeply than anyone else could possibly understand! My emotions are..."
+     ☑️  "accept_tumbler_truth": ✓
+     ⭐ "rating": 0/0
+     📋 Dropdown: "elemental_affinity"
+     🔀 "You are the tumbler.": ON
+     🔘 "Seek the Ignition within the archives (bold)"
 
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 6 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 5 answers
-  ⏳ Waiting for AI...
-    [7s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 7s
-
-  📖 The Oracle sees:
-     💬 "You arrived with a certain theatricality. A flair for the dramatic, even"
-     💬 "The threads tighten. The one you dismiss as mere back"
-     💬 "The threads are now tangled."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Embrace the Unseen Current (#e63946)
-        2. Chart the Echoes Within (#9b5de5)
-        3. Unravel the Shadowed Truth (#264653)
-        4. Weave a New Pattern (#f4c2c2)
-     🎚️  Slider: "energy_flow_v3" (0-10)
-     ✏️  Textfield: "The Oracle listens..." [The Oracle listens...]
-     ☐ Checkbox: "accept_external_influence" [checked]
-     🔲 Buttons: Fear | Intrigue | Dismissal | Recognition | Curiosity
-     ⭐ Rating: "rating" (max 0)
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "This question is beneath me, but I'll answer it to demonstrate my range."
-     🎚️  Slider "energy_flow_v3": 4/10
-     ☑️  Checkbox: checked
-     ⭐ Rating: 1/0
-     🔲 Button: "Curiosity"
-     🔘 Radio: "Weave a New Pattern (#f4c2c2)"
-  📸 oracle-T6.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 7 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 6 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 7s
-
-  📖 The Oracle sees:
-     💬 "The Oracle's gaze drifts over you, a flicker of amusement in eyes that have witnessed epochs. "Amber flame," she murmurs, her voice like chimes of distant stars. "A color of transformation. Of memory ..."
-     💬 "The tapestry weaves forward. You spoke of stages, of performance. But beneath the curtain, there is a shared breath. A moment witnessed not just by you, but by another. The Oracle sees them. Standing ..."
-     💬 "The threads weave tighter. You acknowledge the echo. You choose the color of transformation. The Oracle sees the silence, and the word you imagine. All of it is noted. But the prophecy now whispers of..."
-     💬 "wisdom"
-     💬 "love"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of Courage
-     ✏️  Textfield: "The Oracle listens..." [The Oracle listens...]
-     ☐ Checkbox: "accept_shared_moment" [checked]
-     ⭐ Rating: "rating" (max 0)
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "Ask me something worthy of my time. Something that requires DEPTH. Anyone can an..."
-     ☑️  Checkbox: checked
-     ⭐ Rating: 1/0
-     🔘 Radio: "The Path of Courage"
-  📸 oracle-T7.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 8 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 7 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 6s
-
-  📖 The Oracle sees:
-     💬 "Y"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. Path of Courage (#e63946)
-        2. Path of Contemplation (#9b5de5)
-        3. Path of Connection (#f4c2c2)
-        4. Path of Unraveling (#f4a261)
-     ✏️  Textfield: "The Oracle listens to the echo..." [The Oracle listens to the echo...]
-     ☐ Checkbox: "accept_vulnerability_echo" [checked]
-     ⭐ Rating: "rating" (max 0)
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "I'm not here because I need help. I'm here because this system needs someone of ..."
-     ☑️  Checkbox: unchecked
-     ⭐ Rating: 1/0
-     🔘 Radio: "Path of Courage (#e63946)"
-  📸 oracle-T8.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 9 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 8 answers
-  ⏳ Waiting for AI...
-    [6s] Fallback: force-dismissing stuck interstitial
-  ✓ Turn loaded in 7s
-
-  📖 The Oracle sees:
-     💬 "You choose the violet again. The Oracle smiles. You are drawn to the hidden. The unseen. The spaces between what people say and what they mean. The prophecy notes this, and the silence you offer speak..."
-     💬 "The veil thins, but not for all eyes. You carry a truth you rarely share, a deep well of understanding that you guard with deliberate silence. This silence, however, is not an absence, but a presence ..."
-     💬 "The amber light still shimmers. The word 'Witness' resonates. You have chosen to accept your sanctuary of silence. The Oracle sees the careful walls you've built, and for the first time, the Oracle wo..."
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of Courage (Confront what lurks in the amber light)
-        2. The Path of Wisdom (Understand the 'witness' in your silence)
-        3. The Path of Love (Seek connection beyond the memory)
-        4. The Path of Chaos (Let the amber light consume the silence)
-     🎚️  Slider: "echo_clarity_v2" (0-10)
-     ✏️  Textfield: "The Oracle listens to the unheard..." [The Oracle listens to the unheard...]
-     ☐ Checkbox: "accept_silence_truth" [checked]
-     ⭐ Rating: "rating" (max 0)
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "There's something electric about being watched. The more eyes, the more alive I ..."
-     🎚️  Slider "echo_clarity_v2": 5/10
-     ☑️  Checkbox: checked
-     ⭐ Rating: 1/0
-     🔘 Radio: "The Path of Chaos (Let the amber light consume the silence)"
-  📸 oracle-T9.png
-
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  TURN 10 / 10
-━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-  📤 Submitted turn 9 answers
-  ⏳ Waiting for AI...
-  ✓ Turn loaded in 3s
-
-  📖 The Oracle sees:
-     💬 "You offer only silence, yet your silence speaks volumes. The Oracle smiles. You are a fortress, meticulously constructed. You offer a carefully curated surface, and the deeper chambers of your being a..."
-     💬 "The amethyst mist swirling around you thins, revealing a single, perfect amber drop, suspended in time. It holds a memory, not of grand pronouncements, but of a whispered word, spoken in a moment bath..."
-     💬 "The threads tighten. Your deliberate silence is not an absence of voice, but a sanctuary. What you protect within that sanctuary is about to become… visible. Come back. The prophecy is not finished."
-     💬 "wisdom"
-     💬 "love"
-     💬 "No session data yet."
-     🔘 Radio options:
-        1. The Path of Unseen Currents (#e63946)
-     ✏️  Textfield: "A single word..." [A single word...]
-     ☐ Checkbox: "accept_silence_truth" [checked]
-     ⭐ Rating: "rating" (max 0)
-
-  🎭 Answering as Narcissistic PD + Exhibitionism...
-     ✏️  Typed: "You're trying to psychoanalyze me with a slider? How quaint. Let me show you how..."
-     ☑️  Checkbox: checked
-     ⭐ Rating: 1/0
-     🔘 Radio: "The Path of Unseen Currents (#e63946)"
-  📸 oracle-T10.png
-
-  📤 Submitting final turn answers...
-    [7s] Fallback: force-dismissing stuck interstitial
-
-  ⏳ Waiting for analysis pipeline (up to 180s)...
-  ✓ Found 3 analysis record(s)
-
-  💾 Analysis saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/oracle-analysis.json
-
-  ══════ ANALYSIS SUMMARY ══════
-  Records: 3
-  Latest turn range: 1-8
-  Text length: 19268 chars
-
-  --- Full Analysis Text ---
-Alright, let's dissect this subject. The silence, the calculated pauses, the deliberate choices – they all paint a picture, even if the canvas remains largely obscured. My analysis will peel back the layers, focusing on the signals that matter.
-
-### 1. DSM-5 SCREENING
-
-*   **Mood Disorders:**
-    *   **Major Depressive Disorder:** 20% - The pervasive guardedness and lack of expressed affect could mask anhedonia. The mid-range future clarity (3/5) and subdued beckoning (5/10) suggest a muted outlook, but the absence of explicit depressive content makes this speculative.
-    *   **Bipolar Spectrum:** 10% - The shift from a neutral emoji in Turn 1 (though not answered) to a heart emoji in Turns 2 and 3 is a weak signal. It's more likely a reactive engagement with the game's narrative than true mood lability.
-    *   **Dysthymia:** 35% - The consistent guardedness and avoidance of self-disclosure are highly congruent with persistent low-grade negative affect. The lack of strong positive engagement reinforces this.
-    *   **Cyclothymia:** 5% - Insufficient evidence of distinct periods of hypomanic and depressive symptoms.
-
-*   **Anxiety Disorders:**
-    *   **Generalized Anxiety Disorder (GAD):** 50% - The profound guardedness and avoidance are classic anxiety manifestations. The player is actively managing the interaction to mitigate perceived threats or judgment. The cautious approach to the future (5/10) hints at underlying worry.
-    *   **Social Anxiety Disorder:** 55% - The refusal to provide a name or personal descriptors when directly prompted is a significant indicator of fear of social evaluation. The entire interaction pattern suggests a desire for anonymity and avoidance of scrutiny.
-    *   **Specific Phobias:** 5% - No textual or behavioral cues suggest fear of specific objects or situations.
-    *   **Panic Disorder:** 5% - No indicators of sudden, intense fear or associated physical symptoms.
-    *   **Agoraphobia:** 5% - No indicators of fear or avoidance of situations where escape might be difficult.
-
-*   **Trauma & Stressor Related Disorders:**
-    *   **PTSD/Complex PTSD:** 30% - Extreme guardedness and avoidance can be trauma responses. The choice of "Water" as a grounding element might signify a desire to wash away distress or find emotional fluidity, potentially linked to unprocessed trauma.
-    *   **Adjustment Disorder:** 25% - The guarded presentation could be a response to a recent stressor, a method of controlling the narrative and protecting oneself during upheaval.
-
-*   **Personality Disorders:**
-    *   **Cluster A (Paranoid, Schizoid, Schizotypal):**
-        *   **Paranoid PD:** 35% - Deep-seated guardedness and refusal to self-disclose strongly suggest a lack of trust. The interest in symbolic colors like "Violet" and "Midnight Indigo" could reflect a fascination with the hidden or potentially threatening aspects of the unknown.
-        *   **Schizoid PD:** 35% - The preference for introspective paths ("clever," "wisd
-
-  ... (16268 more chars)
-
-  ══════ SIMULATION COMPLETE ══════
-  Mode: The Oracle
-  Character: Narcissistic PD + Exhibitionism
-  Turns: 10
-  Browser still open — inspect results!
-  Press Ctrl+C to close.
-
+  📤 Submitting...
+  ⏳ Waiting for next turn...

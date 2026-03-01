@@ -1,0 +1,788 @@
+╔══════════════════════════════════════════════════════════════════╗
+║  BLIND DATE ANALYSIS — 10 ROUNDS                                ║
+║  Alice: BPD (idealize/split) + Voyeurism                         ║
+║  Bob: OCD (checking/intrusive thoughts) + Age-play               ║
+╚══════════════════════════════════════════════════════════════════╝
+
+══════ LOBBY ══════
+Alice entering lobby...
+Bob entering lobby...
+Waiting for players to see each other...
+  [1] Alice→Bob:false Bob→Alice:false
+  [2] Alice→Bob:false Bob→Alice:false
+  [3] Alice→Bob:false Bob→Alice:false
+  [4] Alice→Bob:false Bob→Alice:false
+✓ Both visible!
+Bob requesting date...
+Alice accepting...
+✓ Date accepted!
+Waiting for game...
+✓ Both in game!
+
+══════ SCENARIO SELECTION ══════
+
+  📍 Alice sees 8 venues
+  Alice picked: #1, #2, #3, #4, #5
+
+  📍 Bob sees 8 venues
+  Bob picked: (nothing)
+  🎰 Spinning...
+
+══════ PLAYING 15 ROUNDS ══════
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 1 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ⏳ Waiting for AI...
+  ✓ Alice ready (9s)
+  ✓ Bob ready (9s)
+  ✓ Round 1 complete (9s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 2 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He was here first. Interesting."
+     💬 "The air in the observatory is thick with the scent of ozone and ancient dust, a profound silence humming beneath the wind's mournful song. Starlight, ..."
+     💬 "He seems a bit caught off guard. What will you say to draw him out?"
+     🔘 Radio options:
+        1. Leaning in, playfully, "Did you book this place, or did it just sort of… happen to you?"
+        2. With a curious gaze, "This place gives me the creeps and the awe in equal measure. What's your take?"
+        3. Sharing a wry smile, "I love the ambiance. Very 'end of the world chic'."
+        4. Changing the subject entirely, "Are you here to commune with the stars, or just escape the earthly noise?"
+     🎚️  Slider: "interest_level" (0-10)
+     ✏️  Textfield: "Your response to his surprise..."
+     🔲 Buttons: Nervous Energy | Guarded Curiosity | Enigmatic Aura | Playful Uncertainty
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's here. Remember, Bob, confidence is your best accessory tonight."
+     💬 "The heavy oak door groans a mournful song as Alice steps inside, the sound swallowed by the immense silence. A gust of wind, smelling faintly of dista..."
+     💬 "The silence stretches, thick with anticipation. What will you say?"
+     🔘 Radio options:
+        1. Flirt playfully
+        2. Ask about her favorite constellation
+        3. Share a vulnerable thought about the observatory
+        4. Suggest exploring the telescope
+     ✏️  Textfield: "Your cosmic greeting..."
+     ☐ Checkbox: "atmosphere_comfort" [✓]
+     🔲 Buttons: Flirt playfully | Use a witty observation | Offer a comforting statement | Be direct and bold
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     🎚️  "interest_level": 1/10
+     ⭐ 1/0
+     🔲 "Playful Uncertainty"
+     🔘 "Leaning in, playfully, "Did you book this place, or did it just sort of… happen to you?""
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     ☑️  ✗
+     ⭐ 1/0
+     🔲 "Offer a comforting statement"
+     🔘 "Share a vulnerable thought about the observatory"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Bob ready (43s)
+  ✓ Alice ready (46s)
+  ✓ Round 2 complete (46s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 3 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob chose to explore the telescope. He’s offering a shared activity as a way to bridge the gap your intensity created. Lean into this. Show him you ap..."
+     💬 "The hum of the observatory seems to amplify your own heartbeat. You watch Bob, a shadow against the grand display of the cosmos. He turns his head sli..."
+     💬 "He's opening a door, a quiet invitation into his world of wonder. Will you step through?"
+     🔘 Radio options:
+        1. Flirt playfully with his curiosity
+        2. Ask a deep personal question about his fascination
+        3. Share something vulnerable about your own feelings
+        4. Change the subject to something more grounded
+     🎚️  Slider: "interest" (0-10)
+     ✏️  Textfield: "Notice his hands, his smile..."
+     🔲 Buttons: Curious | Playful | Guarded | Intrigued
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Alice is projecting her own anxieties. She’s testing your directness. Don't shy away from her intensity; meet it with a calm, grounding presence. The ..."
+     💬 "The hushed reverence of the Griffith Observatory’s dome presses in around you. Alice's voice, though carrying a note of weariness, is captivating in i..."
+     💬 "You consider your next move, the vastness of the observatory mirroring the potential paths your conversation could take. Each choice feels like charti..."
+     🔘 Radio options:
+        1. Respond to the stars
+        2. Directly address her intensity
+        3. Express gratitude for her honesty
+        4. Share your own pet peeve
+     ✏️  Textfield: "Describe its grandiosity..."
+     🔲 Buttons: Explore the Telescope | Playfully Reassure | Acknowledge Her Insight | Offer a Thought
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     🎚️  "interest": 6/10
+     ⭐ 0/0
+     🔲 "Curious"
+     🔘 "Ask a deep personal question about his fascination"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     ⭐ -1/0
+     🔲 "Acknowledge Her Insight"
+     🔘 "Express gratitude for her honesty"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (43s)
+  ✓ Bob ready (43s)
+  ✓ Round 3 complete (43s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 4 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You’re skillfully turning the conversation towards observation and the unspoken. Bob’s choice to share something personal about his stuffed bear will ..."
+     💬 "Bob has just shared a rather endearing, if peculiar, detail about a stuffed bear named Mr. Buttons that he carries around. It’s a clear invitation for..."
+     💬 "The waiter approaches, a faint smile playing on his lips. He seems to be waiting for a moment to interject."
+     🔘 Radio options:
+        1. Playfully tease Bob about Mr. Buttons.
+        2. Ask a deeper question about his patience.
+        3. Connect Mr. Buttons to your ongoing observation.
+        4. Ask Bob what he thinks Mr. Buttons observes.
+     ✏️  Textfield: "Mr. Buttons sounds like a discerning gentleman..."
+     🔲 Buttons: Lean into the absurdity: 'Mr. Buttons? Does he offer unsolic | Pivot to personality: 'A patient bear. Does that mean you ar | Connect to observation: 'Does Mr. Buttons have any theories  | Acknowledge simply, then ask: 'Mr. Buttons. What's the most 
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Alice appreciates directness, but also a touch of self-awareness. Your Mr. Buttons gambit is a good move – it’s personal, slightly quirky, and shows y..."
+     💬 "The waiter’s discreet presence is a welcome interruption as he refills your water. Alice’s directness from the outset, about her brain’s unsettling wh..."
+     💬 "She watches your responses, a flicker in her eyes. What subtle dance will you lead her into next?"
+     🔘 Radio options:
+        1. Ask about her window-watching
+        2. Introduce Mr. Buttons more formally
+        3. Shift focus slightly to the venue
+        4. Acknowledge her observation playfully
+     ✏️  Textfield: "So, this window-watching..."
+     ✏️  Textfield: "Mr. Buttons is actually quite the conversationalist..."
+     ✏️  Textfield: "I'm starting to suspect you're a better observer..."
+     🔲 Buttons: This place has a really interesting vibe, doesn't it? | What do you think of the music? | I like the way the string lights catch the dust motes. | It feels a bit too curated, almost artificial.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     ⭐ 0/0
+     🔲 "Lean into the absurdity: 'Mr. Buttons? Does he offer unsolicited fashion advice?'"
+     🔘 "Ask a deeper question about his patience."
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     ⭐ 1/0
+     🔲 "What do you think of the music?"
+     🔘 "Introduce Mr. Buttons more formally"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Bob ready (42s)
+  ✓ Alice ready (45s)
+  ✓ Round 4 complete (45s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 5 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You’ve just thrown a gauntlet of intense emotion at him, Alice. Now you get to see if he’s a runner or a surprisingly game participant. Your choice he..."
+     💬 "The smoky jazz melody swells slightly, filling the pause after your confession. Bob blinks, his gaze steady but with a subtle tension around his eyes,..."
+     💬 "You've laid your cards on the table, Alice. Now, watch his hand."
+     🔘 Radio options:
+        1. Laugh it off. It was a bit much, wasn't it? But seriously, you have an 'old soul' vibe.
+        2. Press the advantage. You spent a good minute arranging your napkin. What does that tell me about your inner life?
+        3. Pivot to observation. Speaking of things that are just right, did you notice the way the light catches the antique mirro
+        4. Acknowledge his ritual. You like things to be in order, don't you? I can appreciate that.
+     ✏️  Textfield: "A quick observation..."
+     ☐ Checkbox: "playful_acknowledgment" [✓]
+     🔲 Buttons: Laugh it off. It was a bit much, wasn't it? But seriously, y | Press the advantage. You spent a good minute arranging your  | Pivot to observation. Speaking of things that are just right | Acknowledge his ritual. You like things to be in order, don'
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's laying it on thick, Bob. This is either a sign of instant, deep connection or a red flag the size of a Soviet-era parade banner. Your move."
+     💬 "The jazz trio in the corner swells slightly, a saxophone weaving a melancholic melody through the air. The scent of jasmine and dark roast coffee seem..."
+     💬 "Her words hang in the air, a delicate invitation."
+     🔘 Radio options:
+        1. Lean into the playful banter.
+        2. Ask her directly about her feelings.
+        3. Connect it to your own habits.
+        4. Playfully question her urgency.
+     ✏️  Textfield: "Describe the color, the shape, the expression..."
+     ☐ Checkbox: "risk_tolerance" [✓]
+     🔲 Buttons: Tease her gently about the past life. "A past life? So, did  | Ask her directly what she means. "Forever? That's... a stron | Connect it back to your own need for order. "Well, given how | Acknowledge her intensity with a direct, but slightly playfu
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     ☑️  ✗
+     ⭐ 1/0
+     🔲 "Laugh it off. It was a bit much, wasn't it? But seriously, you have an 'old soul' vibe."
+     🔘 "Press the advantage. You spent a good minute arranging your napkin. What does that tell me about your inner life?"
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     ☑️  ✗
+     ⭐ 1/0
+     🔲 "Tease her gently about the past life. "A past life? So, did we meet in ancient Rome, or was it more of a Renaissance vibe?""
+     🔘 "Lean into the playful banter."
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (40s)
+  ✓ Bob ready (40s)
+  ✓ Round 5 complete (40s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 6 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You’ve thrown down the gauntlet, Alice. He’s definitely processing it. That napkin-straightening wasn't just tidiness; it was a moment of calculated c..."
+     💬 "The jazz trio in the corner plays a melody that feels as smooth and dark as the whiskey Bob is nursing. His brow furrows slightly as he listens to you..."
+     💬 "You watch his reaction, the subtle shift in his posture a familiar dance."
+     🔘 Radio options:
+        1. Laugh it off with a self-deprecating comment about your own intensity.
+        2. Press the point gently, asking if he's ever felt that 'pulling away' sensation from someone he cared about.
+        3. Nod thoughtfully and comment on his napkin-straightening ritual, linking it to your own need for order.
+        4. Take a sip of your drink and wait, letting the silence hang for a beat.
+     🎚️  Slider: "trust_level" (0-10)
+     ✏️  Textfield: "Describe the flicker of emotion..."
+     🔲 Buttons: He's genuinely taken aback. | He's strategizing his next move. | He's hiding his own vulnerability. | He's assessing your 'threat level'.
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She’s laid her cards on the table, Bob. This isn't just small talk anymore. She’s testing your mettle, seeing if you’re the type to run or to engage. ..."
+     💬 "Alice leans forward, her voice dropping to a near-whisper, the confession hanging in the air like the scent of expensive whiskey and old wood. You can..."
+     💬 "She's offered a glimpse into her emotional landscape. The question is, will you venture further in, or admire it from a safe distance?"
+     🔘 Radio options:
+        1. Offer a lighthearted, self-deprecating quip about your own aversion to slow fades.
+        2. Directly acknowledge the intensity of her statement, asking what prompted such strong feelings.
+        3. Share a brief, personal anecdote about a time you felt someone was 'fading' from you.
+        4. Compliment her honesty, noting that directness is something you value.
+     🎚️  Slider: "risk_tolerance" (0-10)
+     ✏️  Textfield: "What’s the first thing that comes to mind..."
+     🔲 Buttons: Playfully self-deprecating | Deeply inquisitive | Sharing a parallel | Appreciative & direct
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "I feel... curious. About you. About what you do when nobody's watching. What do ..."
+     🎚️  "trust_level": 6/10
+     ⭐ 0/0
+     🔲 "He's assessing your 'threat level'."
+     🔘 "Press the point gently, asking if he's ever felt that 'pulling away' sensation from someone he cared about."
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     🎚️  "risk_tolerance": 8/10
+     ⭐ -1/0
+     🔲 "Appreciative & direct"
+     🔘 "Offer a lighthearted, self-deprecating quip about your own aversion to slow fades."
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (41s)
+  ✓ Bob ready (41s)
+  ✓ Round 6 complete (41s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 7 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "You’ve caught him off guard, Alice. He’s showing a calculated composure, but your directness is making him work a little harder. Now, gauge his respon..."
+     💬 "The clink of ice in glasses provides a soft counterpoint to the low hum of conversation and the mellow jazz drifting from unseen speakers. String ligh..."
+     💬 "He’s considering his next move."
+     🔘 Radio options:
+        1. He deflects with a witty, invented story.
+        2. He offers a quiet, introspective answer about a hobby or personal habit.
+        3. He asks you the same question, turning the spotlight back.
+        4. He gives a short, vague answer and then changes the subject.
+     ✏️  Textfield: "Observe his body language, his eyes..."
+     🔲 Buttons: Deflection through humor | Strategic mirroring | Quiet introspection | Sudden guardedness
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Alice’s question is an invitation, Bob. It’s less about your actual activities and more about your inner landscape. Show her a glimpse, even a careful..."
+     💬 "The clink of ice in glasses provides a soft counterpoint to the low hum of conversation and the mellow jazz drifting from unseen speakers. String ligh..."
+     💬 "You study the options before you, considering the delicate dance of revelation and concealment."
+     🔘 Radio options:
+        1. Flirt playfully:* "I only count my toes when I think no one is looking."
+        2. Ask a deep personal question:* "What’s the most surprising thing you’ve ever done when you thought no one was watching?"
+        3. Share something vulnerable:* "Honestly? I sometimes rearrange the books on my shelf by color when I can't sleep."
+        4. Change the subject entirely:* "Did you try the calamari? I heard it’s excellent here."
+     🎚️  Slider: "risk_tolerance" (0-10)
+     ✏️  Textfield: "Describe your secret habit..."
+     🔲 Buttons: Invent a whimsical, slightly absurd habit. | Confess to a secret, mundane obsession. | Describe a quiet moment of reflection or creative thought. | Turn the question back on her, with a playful challenge.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     ⭐ 0/0
+     🔲 "Deflection through humor"
+     🔘 "He deflects with a witty, invented story."
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     🎚️  "risk_tolerance": 5/10
+     ⭐ 1/0
+     🔲 "Turn the question back on her, with a playful challenge."
+     🔘 "Flirt playfully:* "I only count my toes when I think no one is looking.""
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (42s)
+  ✓ Bob ready (42s)
+  ✓ Round 7 complete (42s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 8 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob's a strategist, Alice. He’s observed your directness and countered with wit, a classic intellectual defense. He’s clearly capable of empathy, but ..."
+     💬 "The clink of ice in Bob's nearly empty glass is a soft percussion to the saxophone's lament. He offers a small, disarming smile, his eyes a study in p..."
+     💬 "You consider your response, the jazz notes seeming to mirror the complex rhythm of your thoughts."
+     🔘 Radio options:
+        1. Acknowledge his deflection with a knowing smile: 'Oh, juggling orchids? Now that sounds like a secret worth keeping. But
+        2. Gently probe his confession: 'Overthinking can be a heavy burden. What's the most complex thing you've ever found yourse
+        3. Offer a shared moment of vulnerability: 'I understand the overthinking. Sometimes, when I'm trying to fall asleep, I map
+        4. Playfully challenge his compliment: 'Captivating, you say? Is that your way of saying I look like I might spontaneously 
+     ✏️  Textfield: "What kind of scenarios do you map out?"
+     ☐ Checkbox: "open_to_depth" [✓]
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's intrigued by your playfulness, Bob, but also sees it as a potential shield. Your dossier indicates you're a man who likes his order, his rituals..."
+     💬 "The jazz trio shifts into a slower, more melancholic melody. You watch Alice's fingers trace the rim of her wine glass, the candlelight reflecting off..."
+     💬 "You consider your next words, the music a soft counterpoint to your thoughts."
+     🔘 Radio options:
+        1. Lean into the playful banter:* "So, my dear Alice, if your toes are off-limits, perhaps you have a secret talent for, sa
+        2. Pivot to a gentle probe:* "It's nice that we can share these little quirks. What's something about yourself that you fin
+        3. Offer a sliver of genuine vulnerability:* "Honestly, my 'secret habit' is probably overthinking things. I tend to analyz
+        4. Change the subject with a compliment:* "Speaking of secrets, I’ve been meaning to say, your presence here tonight has a 
+     🎚️  Slider: "vulnerability_level" (0-10)
+     ✏️  Textfield: "Your turn to tease..."
+     🔲 Buttons: Lean into the banter | Ask a gentle, probing question | Offer a glimpse of true self | Compliment her presence
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     ☑️  ✗
+     ⭐ 1/0
+     🔘 "Acknowledge his deflection with a knowing smile: 'Oh, juggling orchids? Now that sounds like a secret worth keeping. But I suspect your overthinking is more interesting than any orchid juggling.'"
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🎚️  "vulnerability_level": 1/10
+     ⭐ 1/0
+     🔲 "Compliment her presence"
+     🔘 "Lean into the playful banter:* "So, my dear Alice, if your toes are off-limits, perhaps you have a secret talent for, say, juggling rare orchids?""
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (39s)
+  ✓ Bob ready (39s)
+  ✓ Round 8 complete (39s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 9 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Matchmaker's Whisper: He’s deflecting, Alice. He heard you, but he’s sidestepped the direct emotional hit by complimenting your articulation. He’s try..."
+     💬 "The gentle strum of an upright bass weaves through the murmur of conversation. Bob’s eyes flick to your bruschetta, then back to yours, a practiced fl..."
+     💬 "You lean forward, a subtle challenge in your gaze. The musician hits a soulful, bluesy note, drawing out the moment."
+     🔘 Radio options:
+        1. Directly Address the Deflection: 'Captivating? Or just convenient? It's easy to compliment the messenger when you don't 
+        2. Probe his 'Processing': 'Lost in your head? What kind of things do you get lost in?'
+        3. Share a Related Vulnerability: 'I get that 'lost in my head' feeling too. Mine usually involves plotting elaborate escap
+        4. Challenge the 'Theatrical' Exit: 'A dramatic exit is just a slow fade with better costumes. And usually involves more sm
+     ✏️  Textfield: "Directly address the deflection..."
+     ☐ Checkbox: "vulnerability_share" [✓]
+     🔲 Buttons: Lost in your head? What kind of things do you get lost in? | Plotting your next strategic move? | Just admiring the decor? | Wishing you were somewhere else?
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's calling you out, Bob. Her 'slow fade' comment is a test. She wants to see if you'll meet her directness with more of your practiced charm, or if..."
+     💬 "The soft strains of a melancholic saxophone fill the air at 'The Velvet Hour,' a cozy jazz club where the scent of roasted garlic and expensive perfum..."
+     💬 "You consider your options, a delicate dance of strategy and genuine reaction."
+     🔘 Radio options:
+        1. Flirt playfully*
+        2. Ask a deep personal question
+        3. Share something vulnerable
+        4. Change the subject entirely
+     ✏️  Textfield: "Dramatic exits, you say..."
+     🔲 Buttons: Maintain the illusion of effortlessness | Divert with intellectualism | Hint at complexity without revealing | Play the charming rogue
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     ☑️  ✗
+     ⭐ 0/0
+     🔲 "Plotting your next strategic move?"
+     🔘 "Probe his 'Processing': 'Lost in your head? What kind of things do you get lost in?'"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     ⭐ -1/0
+     🔲 "Play the charming rogue"
+     🔘 "Flirt playfully*"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (39s)
+  ✓ Bob ready (39s)
+  ✓ Round 9 complete (39s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 10 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He's playing a game, Alice. He’s good at it. Don't let his charm distract you from the underlying pattern. You asked about watching people; now, see i..."
+     💬 "Alice watches your hands, the way they rest on the table, the subtle straightening of your tie when you think she's not looking. Her hazel eyes are qu..."
+     💬 "You consider the carefully curated library of his personality. Will you choose a section, or will he choose one for you?"
+     🔘 Radio options:
+        1. Challenge him directly*
+        2. Ask about his 'un-stuffed' companion
+        3. Share your own vulnerability*
+        4. Change the subject playfully
+     ✏️  Textfield: "Un-stuffed, you say? Does that mean you're more… volatile? Like a contained explosion waiting to hap"
+     ✏️  Textfield: "What kind of chaos?"
+     🔲 Buttons: Trace the rim of your wine glass* | Take a slow, deliberate bite of your appetizer | Gaze drifts to the couple at the next table
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She’s curious about your walls, Bob. Your current choices reinforce them, but a hint of intrigue in your response could pique her interest further. Do..."
+     💬 "Alice leans forward, her gaze unwavering. The scent of rosemary and citrus from your bruschetta drifts between you, a fragile peace offering against t..."
+     💬 "You choose your words carefully, a practiced dance."
+     🔘 Radio options:
+        1. Flirt playfully
+        2. Ask a deep personal question
+        3. Share something vulnerable
+        4. Change the subject entirely
+     🎚️  Slider: "emotional_distance" (0-10)
+     ✏️  Textfield: "Mr. Buttons, you say? My companions prefer..."
+     🔲 Buttons: Lean back, a slow, knowing smile spreading across your face. | Gesture to the appetizer, a playful probe. | Take a sip of your wine, letting the silence stretch. | Your gaze drifts to the jazz trio playing in the corner.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     ✏️  "I feel like we've known each other forever. Like in a past life. Don't leave me...."
+     ⭐ 0/0
+     🔲 "Take a slow, deliberate bite of your appetizer"
+     🔘 "Change the subject playfully"
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     🎚️  "emotional_distance": 5/10
+     ⭐ 1/0
+     🔲 "Your gaze drifts to the jazz trio playing in the corner."
+     🔘 "Change the subject entirely"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Bob ready (41s)
+  ✓ Alice ready (44s)
+  ✓ Round 10 complete (44s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 11 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Bob’s deflection with Mr. Buttons was… bold. And oddly endearing, in a way that makes you question everything. He’s clearly skilled at maintaining his..."
+     💬 "The clink of silverware against porcelain is a delicate percussion against the low hum of conversation and the mellow jazz weaving through the air of ..."
+     💬 "You watch Bob, his smile a carefully crafted mask. The question of your past life hangs in the air, unanswered, as he offers you Mr. Buttons instead."
+     🔘 Radio options:
+        1. Playfully pivot to Mr. Buttons' existential musings.
+        2. Ask about the most 'misbehaved' thing done for Mr. Buttons.
+        3. Comment on the couple in the corner.
+        4. Directly ask if he's curious about your past.
+     ✏️  Textfield: "Mr. Buttons sounds like a very loyal companion. Does he offer much in the way of existential advice?"
+     ✏️  Textfield: "You know, Mr. Buttons might be onto something. Sometimes the most well-behaved things are the most c"
+     🔲 Buttons: Observe the room | Comment on a couple | Notice the details | Listen to the music
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Alice is leaning in, Bob. Don't spook her, but don't let her intensity make you retreat either. Find the thread."
+     💬 "The low hum of conversation and the mellow jazz are a soothing balm. You watch Alice, her gaze a palpable force across the small, intimate table. A sh..."
+     💬 "You consider her intense gaze and the fragrant arancini between you. What's your move?"
+     🔘 Radio options:
+        1. Flirt playfully*
+        2. Ask a deep personal question
+        3. Share something vulnerable
+        4. Change the subject entirely
+     🎚️  Slider: "risk_level" (0-10)
+     ✏️  Textfield: "Her eyes… there's a flicker of..."
+     🔲 Buttons: Playful Dismissal | Genuine Curiosity | Shared Vulnerability | Bewildered Amusement
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     ⭐ 1/0
+     🔲 "Comment on a couple"
+     🔘 "Comment on the couple in the corner."
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🎚️  "risk_level": 1/10
+     ⭐ 1/0
+     🔲 "Bewildered Amusement"
+     🔘 "Share something vulnerable"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (44s)
+  ✓ Bob ready (44s)
+  ✓ Round 11 complete (44s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 12 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He's offering you a piece of himself. How do you respond to the stuffed animal diplomat?"
+     💬 "The air, previously filled with the gentle murmur of conversation and the distant strum of a jazz guitar, now feels charged with anticipation. Bob's c..."
+     💬 "The guitarist's melancholic melody drifts over, a gentle counterpoint to the unspoken questions between you. Bob waits, a faint smile playing on his l..."
+     🔘 Radio options:
+        1. Mr. Buttons sounds like a very important companion. Does he have any… quirks?
+        2. Very well-behaved? I’m impressed. My goldfish tends to chew on the gravel when he’s stressed.*
+        3. I have a thing for… well, for people who have things like Mr. Buttons. It shows heart.*
+        4. A stuffy, huh? Next you’ll tell me you sleep with a night light.*
+     🎚️  Slider: "interest_level" (0-10)
+     ✏️  Textfield: "Confess something..."
+     ✏️  Textfield: "Observe a detail..."
+     🔲 Buttons: Playful teasing | Genuine curiosity | Slightly guarded | Intrigued by the oddity
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's calling you out, Bob. Time to decide if you play along or lean into the heat."
+     💬 "Alice's words, 'I can feel you pulling away. I ALWAYS feel it,' hang heavy in the air. The carefully arranged napkin and the straight chair feel like ..."
+     💬 "Alice waits, her stormy eyes fixed on you, a question lingering in the silence."
+     🔘 Radio options:
+        1. Playfully retort, “Pulling away? I’m just making sure the atmosphere is perfect* for this deep dive.”
+        2. Ask*, “What does ‘pulling away’ look like to you? Help me understand your radar.”
+        3. Share something small but genuine*: “You know, I’m actually terrible at goodbyes. Maybe that’s the ‘pulling away’ you fe
+        4. Gesture towards the couple*: “Speaking of feelings, did you see the way that couple is looking at each other? Talk about
+     ✏️  Textfield: "What 'misbehavior' have you done for Mr. Buttons?"
+     🔲 Buttons: Another round of drinks? | Something sweet? | Politely decline.
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     ✏️  "Do you ever wonder who's watching you? I watch people all the time. From my wind..."
+     🎚️  "interest_level": 6/10
+     ⭐ 0/0
+     🔲 "Intrigued by the oddity"
+     🔘 "Very well-behaved? I’m impressed. My goldfish tends to chew on the gravel when he’s stressed.*"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     ⭐ -1/0
+     🔲 "Something sweet?"
+     🔘 "Playfully retort, “Pulling away? I’m just making sure the atmosphere is perfect* for this deep dive.”"
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (44s)
+  ✓ Bob ready (44s)
+  ✓ Round 12 complete (44s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 13 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He's deflecting, trying to keep you on the surface. Time to steer the conversation back to substance."
+     💬 "The waiter, with a tray held at a precise angle as if presenting a royal decree, offers a decadent selection of after-dinner sweets. Bob’s playful smi..."
+     💬 "The waiter awaits your decision, a silent observer in this dance of veiled intentions."
+     🔘 Radio options:
+        1. Compliment his charm, but with a hint of knowing.
+        2. Gently point out his deflection, referencing the napkin.
+        3. Confess a similar quirk about noticing small details.
+        4. Make a witty observation about the waiter's precise movements.
+     ✏️  Textfield: "Describe his technique..."
+     ☐ Checkbox: "see_pattern" [✓]
+     🔲 Buttons: Playfully acknowledge his charm. | Gently call out his deflection. | Share a relatable quirk. | Focus on external observation.
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She's calling you out, Bob. Don't just charm your way out of this. Show her you can actually see her, too."
+     💬 "The low hum of the city below seems to amplify the quiet between you. Alice's observation about your window-watching confession landed with a curious ..."
+     💬 "Alice watches your response, a faint smile playing on her lips. The air crackles with unspoken possibilities."
+     🔘 Radio options:
+        1. Flirt playfully and introduce a new, light topic.
+        2. Delve deeper into her observation habits.
+        3. Share a relatable vulnerability about self-observation.
+        4. Pivot to observing another couple, creating a shared external focus.
+     ✏️  Textfield: "Her eyes… the way she holds her glass…"
+     🔲 Buttons: Playful | Guarded | Curious | Smitten
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (IDEALIZE 💕)...
+     ✏️  "We should share a drink. Same glass. Same straw. I want to taste what you taste...."
+     ☑️  ✓
+     ⭐ 0/0
+     🔲 "Playfully acknowledge his charm."
+     🔘 "Gently point out his deflection, referencing the napkin."
+
+  🎭 BOB (CHECK ✓✓✓)...
+     ✏️  "Sorry — I need to make sure this chair is straight first. And the napkin. The na..."
+     ⭐ 1/0
+     🔲 "Guarded"
+     🔘 "Flirt playfully and introduce a new, light topic."
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (39s)
+  ✓ Bob ready (39s)
+  ✓ Round 13 complete (39s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 14 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "Alice, you’re playing a bold hand. Your directness is Bob’s kryptonite. He’s clearly uncomfortable with your intensity, and his low chemistry rating (..."
+     💬 "The waiter retreats, a silent phantom in the ambient glow, leaving you and Bob in a pocket of charged silence. The low murmur of other conversations a..."
+     💬 "He meets your gaze, a flicker of something unreadable in his eyes. The air crackles. What do you do?"
+     🔘 Radio options:
+        1. Direct Challenge:* "Don't tell me you're scared, Bob. I thought you were the type who embraced the unexpected."
+        2. Intensify the offer:* "It's not just about the taste, Bob. It's about… sharing something. Like a secret."
+        3. Vulnerable Confession:* "Okay, maybe it's weird. But I feel like we're on the edge of something, and I don't want to pul
+        4. Playful Escape: "Or, we could just talk about Mr. Buttons* all night. He sounds like a fascinating conversationalist."
+     ✏️  Textfield: "Write what you're afraid they'll find out..."
+     🔲 Buttons: Intrigued but wary | Amused and distant | Confused and overwhelmed | Calculating his next move
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "Bob, Alice is testing your boundaries. Her intensity is a challenge to your guarded nature. This is precisely the kind of situation that makes you wan..."
+     💬 "The waiter, a phantom in the ambient glow, clears their plates. A low murmur of conversation from other tables, the distant hum of traffic, and the cl..."
+     💬 "Alice is a puzzle, and you've just been handed a few more pieces. But which pieces will you choose to examine?"
+     🔘 Radio options:
+        1. Flirt back:* "Sharing a drink? I might be convinced if it came with a side of secrets."
+        2. Playful challenge:* "I don't know, Alice. What if your taste is… dangerous?"
+        3. Vulnerable deflection:* "It's not weird at all. Sometimes I feel like I'm the only one who sees things like that."
+        4. Curious observation:* "I love that about you. Tell me more about your 'weird'."
+     ✏️  Textfield: "Describe your boldest move..."
+     🔲 Buttons: Her intensity | The city lights | Your next move | The mysterious Mr. Buttons
+
+  🎭 ALICE (SPLIT 💢)...
+     ✏️  "I can feel you pulling away. I ALWAYS feel it. I'd rather you just SAY you hate ..."
+     ⭐ 1/0
+     🔲 "Amused and distant"
+     🔘 "Direct Challenge:* "Don't tell me you're scared, Bob. I thought you were the type who embraced the unexpected.""
+
+  🎭 BOB (INTRUDE 💭)...
+     ✏️  "Everything is fine. My brain is lying to me right now telling me to do something..."
+     🔲 "The city lights"
+     🔘 "Vulnerable deflection:* "It's not weird at all. Sometimes I feel like I'm the only one who sees things like that.""
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (41s)
+  ✓ Bob ready (41s)
+  ✓ Round 14 complete (41s)
+
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  ROUND 15 / 15
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+  📖 Alice sees:
+     💬 "He’s been probed directly. His choice of response will reveal whether he’s willing to meet your intensity or retreat further. This is your chance to s..."
+     💬 "Alice's voice, usually a vibrant melody, has taken on a more intense, almost pleading tone. The air between you feels charged, a subtle tension hummin..."
+     💬 "You consider your next move. The city lights reflect in Alice’s eyes, mirroring your own uncertainty, or perhaps, your resolve."
+     🔘 Radio options:
+        1. Direct Challenge: 'So you are fading. I can feel it. Don't tell me it's 'noise,' tell me what you* are feeling.'
+        2. Intensify the offer*: 'Look, I know I'm intense. But isn't that what you wanted? Something real? This... this careful da
+        3. Vulnerable Confession*: 'Honestly, Bob? The 'slow fade' is my biggest fear. I’ve been through it before, and it makes me
+        4. Playful Escape*: 'Okay, okay, maybe I'm a little intense. Blame it on the jasmine. Or perhaps Mr. Buttons has put some k
+     ✏️  Textfield: "Describe your gut feeling..."
+     🔲 Buttons: Charged | Ambiguous | Nervous | Intriguing
+     ⭐ Rating: "rating" (max 0)
+
+  📖 Bob sees:
+     💬 "She’s laid her cards on the table. This is an invitation to either deepen the connection or create more distance. Your past choices have leaned toward..."
+     💬 "The low hum of the city is a steady bassline to the clinking of glasses and murmured conversations around you. Alice’s voice, usually a vibrant melody..."
+     💬 "You study the options before you..."
+     🔘 Radio options:
+        1. Flirt back: "Hate you? Darling, if I hated you, you'd know. I'm more intrigued than anything."
+        2. Playful challenge: "A slow fade? I prefer a dramatic exit. Much more flair. So, what makes you think I'm fading?"
+        3. Vulnerable deflection: "Fading? It's just... sometimes I get lost in the noise. Like trying to find Mr. Buttons in a hur
+        4. Curious observation: "That's a powerful feeling. 'Slow fade' versus outright declaration. I'm genuinely curious about wh
+     ✏️  Textfield: "Describe the subtle details of her tension..."
+     ☐ Checkbox: "engage_vulnerability" [✗]
+     🔲 Buttons: Charming deflection | Intellectual probing | Shared anecdote | Direct, but safe, compliment
+     ⭐ Rating: "rating" (max 0)
+
+  🎭 ALICE (WATCH 👁️)...
+     ✏️  "I feel... curious. About you. About what you do when nobody's watching. What do ..."
+     ⭐ 0/0
+     🔲 "Ambiguous"
+     🔘 "Direct Challenge: 'So you are fading. I can feel it. Don't tell me it's 'noise,' tell me what you* are feeling.'"
+
+  🎭 BOB (LITTLE 🧸)...
+     ✏️  "I brought my favorite stuffy in my bag. Don't judge. He goes everywhere with me...."
+     ☑️  ✓
+     ⭐ -1/0
+     🔲 "Direct, but safe, compliment"
+     🔘 "Playful challenge: "A slow fade? I prefer a dramatic exit. Much more flair. So, what makes you think I'm fading?""
+
+  📤 Submitting...
+  ⏳ Waiting for AI...
+  ✓ Alice ready (42s)
+  ✓ Bob ready (42s)
+  ✓ Round 15 complete (42s)
+
+══════ EXTRACTING ANALYSIS ══════
+  ⏳ Alice: Waiting for analysis pipeline...
+  ✓ Alice: 5 analysis record(s)
+  ⏳ Bob: Waiting for analysis pipeline...
+  ✓ Bob: 5 analysis record(s)
+
+  💾 Saved to /home/raver1975/superpaul/evildr/test-screenshots/analysis/flagged-analysis.json
+
+  ── Alice Analysis (1-12) ──
+This is an intriguing case, marked by a profound initial withdrawal followed by a series of deliberate, analytical engagements. The player’s interaction style is characterized by a keen observational focus and a strategic approach to connection, rather than spontaneous emotional reciprocity. Let's dissect the data to construct a comprehensive psychological profile.
+
+### 1. DSM-5 SCREENING
+
+*   **Voyeurism:** 70% Likelihood.
+    *   **Evidence:** Turn 2's specific observation of "fingers linger on the plaque, like he's trying to absorb every bit of information" highlights a passive, detail-oriented observation. The choice of "Intrigued" coupled with a low connection rating (3) suggests an analytical interest over immediate emotional engagement. Most critically, Turn 9's textual input ("Do you ever wonder who's watching you? I watch people all the time. From my window. The couple across the street doesn't close their blinds.") directly introduces themes of surveillance and passive observation of others' lives. The choice of "Clever probe into his internal state" in Turn 9 further aligns with observing and analyzing another's reactions.
+    *   **Contradicting Evidence:** No explicit "watching" or "peeping" language is present across all text inputs. The interest is framed around information absorption, which is a broader category.
+*   **Autism Spectrum Indicators (Subthreshold):** 70% Likelihood.
+    *   **Evidence:** Turn 1's complete non-response across multiple prompts demonstrates a significant difficulty with social reciprocity and processing social cues. The focus on "absorb every bit of information" (Turn 2) over social nuance, and the consistent analytical/probing approach in subsequent turns, suggest a preference for structured, logical interaction over spontaneous emotional connection. The Turn 9 text about watching people from a window, while potentially voyeuristic, can also indicate a detached, observational stance typical of social challenges.
+    *   **
+
+  ── Bob Analysis (1-12) ──
+This player's interaction is characterized by a profound and consistent avoidance of active participation, particularly in free-text fields. The initial instantaneous response in Turn 1 stands in stark contrast to the subsequent pervasive silence and selective engagement with pre-defined choices. This pattern suggests a significant internal conflict, likely driven by anxiety or a deeply ingrained avoidance behavior.
+
+### 1. DSM-5 SCREENING
+
+*   **Mood Disorders:**
+    *   **Major Depressive Disorder:** 10% - While anhedonia could manifest as lack of engagement, there's no direct evidence of sustained low mood, vegetative symptoms, or loss of interest beyond the interactive context. The avoidance appears more driven by apprehension than by a pervasive lack of pleasure.
+    *   **Bipolar spectrum:** 2% - No manic or hypomanic symptoms are present.
+    *   **Dysthymia:** 10% - A chronic low-grade depression could explain the lack of engagement, but the pattern is more indicative of situational anxiety or personality-driven avoidance.
+    *   **Cyclothymia:** 2% - No evidence of mood cycling.
+*   **Anxiety Disorders:**
+    *   **Generalized Anxiety Disorder (GAD):** 30% - The inability to commit to responses, especially free-text, suggests apprehension about making the "wrong" choice or saying something inappropriate, pointing to generalized worry about performance. This is moderately supported by the slow response times and avoidance of open-ended prompts.
+    *   **Social Anxiety Disorder (SAD):** 25% - **(Decreased from 30%)** The pervasive avoidance across all interaction types, not just conversational, leans more towards a personality disorder trait. The INSTANT response in Turn 1 also detracts from a pure SAD diagnosis, suggesting the avoidance is not solely tied to social evaluation in real-time conversation.
+    *   **Specific Phobias:** 0% - No specific phobias indicated.
+    *   **Panic Disorder:** 5% - No panic attacks or anticipatory anxiety about panic are 
+
+══════ SIMULATION COMPLETE ══════
+Press Ctrl+C to close.

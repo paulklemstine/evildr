@@ -152,6 +152,17 @@ export interface MultiplayerGameLoopConfig {
 const MAX_HISTORY_SIZE = 15
 const PARTNER_ACTION_TIMEOUT_MS = 180000  // 3 minutes to wait for partner
 const ORCHESTRATOR_TIMEOUT_MS = 180000    // 3 minutes for orchestrator from host
+const MAX_NOTES_CHARS = 5000
+
+/** Compress notes that exceed MAX_NOTES_CHARS to preserve LLM output budget. */
+function compressNotes(notes: string): string {
+  if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
+  const headerSize = 800
+  const tailSize = MAX_NOTES_CHARS - headerSize - 50
+  const header = notes.substring(0, headerSize)
+  const tail = notes.substring(notes.length - tailSize)
+  return header + '\n[...earlier observations compressed — focus on RECENT state below...]\n' + tail
+}
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -1148,7 +1159,7 @@ export class MultiplayerGameLoop {
               this.myActionsThisTurn || '{}',
               this.partnerActionsThisTurn || '{}',
               this.state.historyQueue,
-              this.state.myNotes,
+              compressNotes(this.state.myNotes),
               '', // Player 1 doesn't have Player 2's notes
             )
 

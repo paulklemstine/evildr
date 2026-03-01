@@ -1,0 +1,107 @@
+{
+  "totalModes": 9,
+  "completed": 9,
+  "failed": 0,
+  "timestamp": "2026-03-01T07:22:32.257Z",
+  "results": [
+    {
+      "mode": "drevil",
+      "modeName": "Dr. Evil",
+      "character": {
+        "illness": "Paranoid Schizophrenia",
+        "quirk": "Pyromania"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "geems",
+      "modeName": "GEEMS",
+      "character": {
+        "illness": "Dissociative Identity Disorder",
+        "quirk": "Exhibitionism"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "cyoa",
+      "modeName": "Choose Your Own Adventure",
+      "character": {
+        "illness": "PTSD",
+        "quirk": "Hoarding"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "oracle",
+      "modeName": "The Oracle",
+      "character": {
+        "illness": "Histrionic Personality Disorder",
+        "quirk": "Macrophilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "skinwalker",
+      "modeName": "Skinwalker",
+      "character": {
+        "illness": "Capgras Delusion",
+        "quirk": "Somnophilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "fever-dream",
+      "modeName": "Fever Dream",
+      "character": {
+        "illness": "Depersonalization/Derealization Disorder",
+        "quirk": "Autassassinophilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "devil",
+      "modeName": "Deal With the Devil",
+      "character": {
+        "illness": "Antisocial Personality Disorder",
+        "quirk": "Formicophilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "oracle2",
+      "modeName": "The Oracle",
+      "character": {
+        "illness": "Erotomania",
+        "quirk": "Trichophilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    },
+    {
+      "mode": "drevil2",
+      "modeName": "Dr. Evil",
+      "character": {
+        "illness": "Obsessive-Compulsive Disorder",
+        "quirk": "Vorarephilia"
+      },
+      "turnsPlayed": 15,
+      "analysisCount": 5,
+      "error": null
+    }
+  ]
+}

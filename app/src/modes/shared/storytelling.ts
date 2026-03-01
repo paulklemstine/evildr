@@ -221,7 +221,24 @@ If you detect ANY pattern, DELIBERATELY break it:
 - Flip power dynamic (hunted->hunter, alone->allied, weak->powerful)
 - Shift tone for one beat (action->mystery moment, thriller->dark comedy)
 - Introduce an element from a different register (action hero finds a child's drawing, horror survivor hears beautiful music)
-- Jump forward in time — skip the boring transition, arrive at the NEXT interesting moment`
+- Jump forward in time — skip the boring transition, arrive at the NEXT interesting moment
+
+**TEXT FRESHNESS RULE (MANDATORY):**
+No text block may begin with the same 10 words as any text block from the previous 3 turns in history.
+If you find yourself writing a similar opening — STOP. Start with a completely different sensory detail, action, or perspective.
+
+**METAPHOR CEILING:**
+No metaphor or thematic concept (e.g., "the song," "the flame," "the mirror") may dominate more than 3 consecutive turns.
+If you've used the same core metaphor for 3 turns, RETIRE IT. Introduce a completely new central image/concept.
+The old metaphor can return later as a callback, but it cannot be the main frame for more than 3 turns in a row.
+
+**NEGOTIATION/CONVERSATION LOOP BREAKER:**
+If the player has been in the same TYPE of interaction (negotiating, conversing, exploring a single object) for 3+ turns, you MUST inject an INTERRUPTION:
+- An NPC arrives with urgent news
+- An environmental disaster forces a move
+- A discovery changes the context entirely
+- A time skip to the next interesting moment
+The interruption must be dramatic enough to BREAK the loop entirely, not just add flavor to the same scene.`
 
 /**
  * Narrative tracking fields for the notes/dossier template.
@@ -435,7 +452,7 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
 
 [x] FIRST ELEMENT is type "image" with a cinematic prompt (NEVER skip the image)
 [x] At least ONE "textfield" element exists (free-text is your #1 diagnostic tool)
-[x] At least 5 DIFFERENT interactive element types used (radio, slider, textfield, checkbox, AND at least one of: dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter)
+[x] At least 6 DIFFERENT interactive element types used (radio, slider, textfield, checkbox, AND at least TWO of: dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter)
 [x] MANDATORY ROTATION: Pick 2 element types from this list that you did NOT use last turn and USE THEM NOW:
     → dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter
     Every exotic type should appear at least once every 3 turns. If you used dropdown+toggle last turn, use color_pick+emoji_react this turn.
@@ -445,9 +462,14 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
 [x] The setting/scenario has CHANGED or ESCALATED from the previous turn (not the same room/scene)
 [x] Radio options follow the 4 archetypes: bold/clever/compassionate/chaotic
 [x] At least ONE surprise element the player wouldn't expect
+[x] METER PROGRESSION: If a meter/progress element exists, its value MUST change by at least ±5 from last turn. Stagnant meters are FORBIDDEN — they kill the player's sense of consequence. If the player made good choices, meter improves. Bad choices, meter worsens. NEVER leave a meter at the same value two turns in a row.
+[x] RADIO UNIQUENESS: Radio option labels MUST NOT repeat verbatim from the previous 3 turns. Each option must describe a SPECIFIC action in THIS turn's narrative context. Generic options like "Ask a deep question" or "Change the subject" are BANNED — use "Ask about the scar on their hand" or "Steer talk to the jazz band's setlist" instead.
+[x] NARRATIVE BRIDGE: If the scene/setting has changed from the previous turn, the FIRST narrative text MUST include a 1-sentence transition explaining how/why the player moved from the old scene to the new one. Abrupt scene changes with no bridge are FORBIDDEN.
 
 IMAGE IS MANDATORY. The FIRST element in your JSON array MUST be: {"type":"image","name":"scene","label":"TITLE","value":"DETAILED CINEMATIC PROMPT HERE",...}
-If you skip the image, the entire turn feels flat and lifeless. The image is what makes each turn MEMORABLE.`
+If you skip the image, the entire turn feels flat and lifeless. The image is what makes each turn MEMORABLE.
+
+RADIO FORMAT: Radio options MUST be plain strings or objects with "label" and "value" string fields. NEVER nest objects inside radio options. Example: {"type":"radio","name":"action","options":[{"label":"Sprint through the flames","value":"a"},{"label":"Find another path","value":"b"}]}. Each label is a SHORT, SPECIFIC action description (5-15 words).`
 
 /**
  * Endgame directive — tells the LLM when the game is ending so it can

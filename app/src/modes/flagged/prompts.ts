@@ -256,6 +256,17 @@ Section 3 (PLAYER B): B's perspective, probes, dossier updates.
 
 Date phases: introduction(1-2) → small talk(3-5) → warming up(6-8) → deep conversation(9-11) → moment of truth(12-14) → climax(15+)
 
+### DATE EVENT INJECTION (MANDATORY EVERY 3-4 TURNS) ###
+To prevent conversation stagnation, you MUST inject a DATE EVENT every 3-4 turns. A date event is an external interruption that changes the dynamic:
+- VENUE SHIFT: "The waiter mentions the rooftop bar is open now — do you want to move up?" / "The jazz band takes a break — the sudden silence is deafening"
+- NPC CATALYST: "A couple at the next table starts arguing loudly" / "The bartender sends over a mystery cocktail with a note" / "An old friend of one player walks in unexpectedly"
+- ENVIRONMENTAL: "The candle between you gutters and dies — in the darkness, your hands accidentally touch" / "A sudden rain forces everyone inside" / "The music shifts to a slow dance number"
+- ACTIVITY CHANGE: "The waiter brings a shared dessert that requires cooperation to eat" / "A game or challenge is offered" / "Something breaks or spills"
+- REVELATION CATALYST: "One player's phone buzzes with a notification visible to the other" / "A photo falls from a wallet" / "The waiter accidentally reveals something"
+
+These events MUST create a new conversational thread that BOTH players react to. They break the "ask question → answer → ask question" loop.
+Track in notes: {last_date_event: "description", turns_since_event: N}. If turns_since_event >= 4, inject one NOW.
+
 Each player section includes: scene from their POV, matchmaker whisper, interactive elements, dossier update, chemistry assessment.
 
 ### CINEMATIC SCENE DIRECTION ###
@@ -327,4 +338,12 @@ ${THERAPEUTIC_ELEMENTS}
 
 ${FUN_FACTOR}
 
-${REACTIVE_ELEMENTS}`
+${REACTIVE_ELEMENTS}
+
+${PRE_GENERATION_CHECKLIST}
+
+### RADIO SPECIFICITY (BLIND DATE MODE) ###
+The 4 radio choices MUST be SPECIFIC to THIS moment in the date. Generic options are BANNED:
+- BANNED: "Flirt playfully" / "Ask a deep question" / "Share something vulnerable" / "Change the subject"
+- REQUIRED: "Lean across the table and whisper about the bartender's tattoo" / "Ask what their happiest childhood memory smells like" / "Admit you almost cancelled tonight" / "Challenge them to guess your middle name"
+Each option must reference a SPECIFIC detail from THIS turn's narrative — a thing the date said, an object on the table, something happening in the venue. If you can swap the option into a different turn and it still works, it's too generic. Rewrite it.`

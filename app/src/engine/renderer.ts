@@ -581,6 +581,17 @@ function parseRadioOptions(
               currentLabel = currentLabel.substring(1)
               isDefault = true
             }
+          } else if (typeof opt === 'object' && opt !== null) {
+            // Object without 'value' key — try common alternate keys
+            const obj = opt as Record<string, unknown>
+            const text = obj.text ?? obj.label ?? obj.name ?? obj.title ?? obj.option ?? ''
+            currentLabel = String(text)
+            currentValue = String(obj.id ?? text)
+            if (currentLabel.startsWith('*')) {
+              defaultValue = currentValue
+              currentLabel = currentLabel.substring(1)
+              isDefault = true
+            }
           } else {
             currentValue = String(opt)
             currentLabel = currentValue
@@ -601,7 +612,11 @@ function parseRadioOptions(
           if (opt.label.length === 1 && /^[a-d]$/i.test(opt.label) && opt.value === opt.label) {
             return false
           }
-          return true
+          // Filter out broken serialization artifacts
+          if (opt.label.includes('[object Object]') || opt.label === '[object Object]') {
+            return false
+          }
+          return opt.label.length > 0
         })
 
       // Fallback: if element.value is a simple string matching an option, use it as default
