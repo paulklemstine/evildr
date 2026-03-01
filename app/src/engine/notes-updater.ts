@@ -21,25 +21,46 @@ const MAX_NOTES_CHARS = 5000
 /**
  * Compress notes that exceed MAX_NOTES_CHARS by keeping the most
  * recent and structurally important sections. Preserves the header,
- * anchor facts (verbatim player quotes), and the most recent state.
+ * anchor facts, priority callbacks, arc tracking, and any sections
+ * marked with PRESERVE THROUGH COMPRESSION.
  */
 export function compressNotes(notes: string): string {
   if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
 
-  // Extract anchor facts (verbatim player quotes) — these survive compression
-  const anchorMatch = notes.match(/### (?:ANCHOR FACTS|Player's Exact Words|Priority Callbacks)[^\n]*\n([\s\S]*?)(?=\n###|\n\*\*[A-Z]|\Z)/i)
-  const anchorSection = anchorMatch?.[0]?.trim() ?? ''
-  const anchorSize = anchorSection.length
+  // Extract all preserved sections — anchor facts, priority callbacks, arc tracking,
+  // and any section marked "PRESERVE THROUGH COMPRESSION"
+  const preservePatterns = [
+    /### (?:ANCHOR FACTS|Player's Exact Words)[^\n]*\n[\s\S]*?(?=\n###|\n\*\*[A-Z]|$)/i,
+    /### (?:Priority Callbacks)[^\n]*\n[\s\S]*?(?=\n###|\n\*\*[A-Z]|$)/i,
+    /### (?:ARC TRACKING)[^\n]*\n[\s\S]*?(?=\n###|\n\*\*[A-Z]|$)/i,
+    /### (?:PRESERVE THROUGH COMPRESSION)[^\n]*\n[\s\S]*?(?=\n###|\n\*\*[A-Z]|$)/gi,
+  ]
+
+  const preserved: string[] = []
+  for (const pat of preservePatterns) {
+    const matches = notes.match(pat)
+    if (matches) {
+      for (const m of Array.isArray(matches) ? matches : [matches]) {
+        const trimmed = m.trim()
+        if (trimmed.length > 0 && trimmed.length <= 800) {
+          preserved.push(trimmed)
+        }
+      }
+    }
+  }
+
+  const preservedBlock = preserved.join('\n\n')
+  const preservedSize = preservedBlock.length
 
   const headerSize = 800
-  const reservedForAnchors = Math.min(anchorSize + 20, 1200) // cap anchor preservation
-  const tailSize = MAX_NOTES_CHARS - headerSize - reservedForAnchors - 80
+  const reservedForPreserved = Math.min(preservedSize + 40, 1600)
+  const tailSize = MAX_NOTES_CHARS - headerSize - reservedForPreserved - 80
   const header = notes.substring(0, headerSize)
-  const tail = notes.substring(notes.length - tailSize)
+  const tail = notes.substring(notes.length - Math.max(tailSize, 500))
 
   let compressed = header + '\n[...earlier observations compressed — focus on RECENT state below...]\n'
-  if (anchorSection && anchorSize <= 1200) {
-    compressed += anchorSection + '\n'
+  if (preservedBlock) {
+    compressed += preservedBlock + '\n'
   }
   compressed += tail
   return compressed
@@ -116,8 +137,9 @@ Update the ${config.modePersonaLabel} per the format above. Focus on:
 - Narrative tracking (planted seeds, cliffhangers, active threads)
 - Strategic plans for the next turn
 - **Priority Callbacks:** If the player made a significant disclosure, emotional statement, or surprising choice in their textfield or actions, add it to a "### Priority Callbacks" section with the exact quote and turn number. These MUST be acknowledged next turn.
-- **Behavioral Loop Alert:** If the player has repeated the same avoidance pattern, choice archetype, or engagement level for 3+ consecutive turns, note the pattern and suggest a counter-strategy for the next turn.
+- **Behavioral Loop Alert:** If the player has repeated the same avoidance pattern, choice archetype, or engagement level for 3+ consecutive turns, note the pattern and suggest a counter-strategy for the next turn. If 4+ consecutive turns with the same archetype OR 0 selections of any archetype over 8+ turns, set **MANDATORY_LOOP_BREAK: true** — next turn MUST force the neglected archetype as the only strategic path.
 - **Anchor Facts:** Preserve any verbatim player textfield quotes that are diagnostically significant in a "### Anchor Facts" section. These exact words must survive compression — NEVER summarize them.
+- **Peak Counter:** Track the current turn intensity (peak/valley/rise) and maintain "Consecutive Peaks: N" (count of peak/rise turns since last valley). Reset to 0 after each valley turn.
 - Max ${MAX_NOTES_CHARS} characters.
 
 Output ONLY the updated notes as plain text. No JSON. No code fences. No commentary.`

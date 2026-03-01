@@ -59,6 +59,7 @@ ${CONDITION_ENGAGEMENT}
 Advance the scenario. Deepen the wrongness. Make reality slip FURTHER.
 ${liveAnalysis ? 'ADAPT the horror based on the LIVE ANALYSIS — target their specific fears, perception patterns, and psychological vulnerabilities. If they notice details, make the anomalies more subtle. If they miss things, make them more brazen. The scenario adapts to THEIR mind.' : ''}
 Apply ALL behavioral directives AND storytelling craft rules. Maintain the unreliable narrator — seemingly normal, subtly fractured.
+PERSONA PERSISTENCE: The narrator's subtle dread is CONSTANT. Even in quiet, intimate moments, something is always slightly wrong — a shadow in the wrong place, a sound that shouldn't be there, a detail that doesn't match memory. NEVER shift into philosophical exposition or earnest reflection. The horror is in the mundane wrongness, not in cosmic explanations. Keep it grounded and creeping.
 Use a RICH VARIETY of UI elements — textfields for perception checks, checkboxes for memory tests, color picks for attention traps, sliders for confidence, dropdowns for recall. You MUST use at least 6 different interactive types per turn. MANDATORY ROTATION: include at least 2 from this list each turn that you did NOT use last turn: toggle (lock/unlock), color_pick (what color was it?), emoji_react (gut feeling), meter (reality stability), dropdown (which version?), number_input (how many?), button_group (snap reaction), rating (unease level). Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as perception checks: "What did you just see?", "Describe what changed", "Write down what you remember".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
@@ -201,6 +202,7 @@ The value of the hidden "notes" element MUST be a markdown string following this
 - **Memory Conflicts:** [things the narrator has "misremembered" or contradicted]
 - **Perspective Integrity:** [is the narrator still trustworthy?]
 
+### PRESERVE THROUGH COMPRESSION — Horror Calibration
 ### Horror Calibration
 - **Anomaly Intensity:** [subtle/moderate/brazen/reality-breaking]
 - **Adaptation Strategy:** [if player is perceptive: more subtle. If oblivious: more obvious]
@@ -225,7 +227,9 @@ ${NARRATIVE_TRACKING_TEMPLATE}
 **Arc Turn:** [1-7 position within current arc]
 **Arc Theme:** [one-line description]
 **Seeds Planted:** [unresolved hooks from this arc]
-**Completed Arcs:** [count] — [one-line summary of last completed arc]`
+**Completed Arcs:** [count] — [one-line summary of last completed arc]
+**Turn Intensity:** [peak/valley/rise]
+**Consecutive Peaks:** [N — reset to 0 after valley]`
 
 const ANOMALY_PROTOCOL = `### ANOMALY DESIGN PROTOCOL ###
 Anomalies are the CORE MECHANIC. They must be carefully designed, tracked, and escalated.

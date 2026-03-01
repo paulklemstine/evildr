@@ -172,9 +172,11 @@ Gender: [from input] | Style: [flirty/reserved/intellectual/playful/intense] | A
 ### Psych Traits (0-10, cite evidence)
 Openness | Confidence | Empathy | Authenticity | Humor | Vulnerability | Dominance | Impulsivity | Emotional Intelligence
 
+### PRESERVE THROUGH COMPRESSION — Condition Tracking
 ### Observations
 - Conversation pattern, body language, reaction to vulnerability
 - Red/green flag history with specific moments
+- Condition trajectory: [detected conditions and confidence levels]
 - Matchmaker's private strategic notes for next turn
 - Planted seeds and callbacks
 
@@ -194,7 +196,9 @@ Openness | Confidence | Empathy | Authenticity | Humor | Vulnerability | Dominan
 **Arc Turn:** [1-7 position within current arc]
 **Arc Theme:** [one-line description]
 **Seeds Planted:** [unresolved hooks from this arc]
-**Completed Arcs:** [count] — [one-line summary of last completed arc]`
+**Completed Arcs:** [count] — [one-line summary of last completed arc]
+**Turn Intensity:** [peak/valley/rise]
+**Consecutive Peaks:** [N — reset to 0 after valley]`
 
 // ---------------------------------------------------------------------------
 // Scenario generator prompt

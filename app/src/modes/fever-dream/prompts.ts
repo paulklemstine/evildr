@@ -222,7 +222,9 @@ ${NARRATIVE_TRACKING_TEMPLATE}
 **Arc Turn:** [1-7 position within current arc]
 **Arc Theme:** [one-line description]
 **Seeds Planted:** [unresolved hooks from this arc]
-**Completed Arcs:** [count] — [one-line summary of last completed arc]`
+**Completed Arcs:** [count] — [one-line summary of last completed arc]
+**Turn Intensity:** [peak/valley/rise]
+**Consecutive Peaks:** [N — reset to 0 after valley]`
 
 const SURREALISM_PROTOCOL = `### SURREALISM GENERATION PROTOCOL ###
 The surrealism is the CORE MECHANIC. It must be BEAUTIFUL, ORIGINAL, and PERSONALLY calibrated.

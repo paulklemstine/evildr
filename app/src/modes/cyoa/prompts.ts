@@ -58,7 +58,9 @@ const NOTES_TEMPLATE = `### ADVENTURE STATE TEMPLATE ###
 **Arc Turn:** [1-7 position within current arc]
 **Arc Theme:** [one-line description]
 **Seeds Planted:** [unresolved hooks from this arc]
-**Completed Arcs:** [count] — [one-line summary of last completed arc]`
+**Completed Arcs:** [count] — [one-line summary of last completed arc]
+**Turn Intensity:** [peak/valley/rise]
+**Consecutive Peaks:** [N — reset to 0 after valley]`
 
 export function createCYOAPromptBuilder(genre: string): PromptBuilder {
   const system = buildSystem(genre)
