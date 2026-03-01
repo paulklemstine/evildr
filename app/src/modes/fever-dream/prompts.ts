@@ -59,8 +59,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the dream. Push the surrealism FURTHER. Make this turn BEAUTIFUL, WEIRD, and UNFORGETTABLE.
 ${liveAnalysis ? 'ADAPT the dream based on the LIVE ANALYSIS — feed their specific aesthetic preferences, emotional temperature, and absurdity tolerance. The dream becomes THEIR dream — a mirror of their unconscious.' : ''}
@@ -70,6 +68,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as SURREAL NON-SEQUITURS mapped to the archetypes.
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

@@ -60,8 +60,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the experiment. DOPAMINE MAX. Make this turn THRILLING and DANGEROUS.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — design experiments, traps, and scenarios that target their specific psychological profile. Profile through ACTION not questions.' : ''}
@@ -73,6 +71,7 @@ The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compass
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 Include a hidden "subjectId" element with the subject's evolving mocking nickname.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

@@ -20,17 +20,29 @@ const MAX_NOTES_CHARS = 5000
 
 /**
  * Compress notes that exceed MAX_NOTES_CHARS by keeping the most
- * recent and structurally important sections. Preserves the header
- * and the most recent state.
+ * recent and structurally important sections. Preserves the header,
+ * anchor facts (verbatim player quotes), and the most recent state.
  */
 export function compressNotes(notes: string): string {
   if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
 
+  // Extract anchor facts (verbatim player quotes) — these survive compression
+  const anchorMatch = notes.match(/### (?:ANCHOR FACTS|Player's Exact Words|Priority Callbacks)[^\n]*\n([\s\S]*?)(?=\n###|\n\*\*[A-Z]|\Z)/i)
+  const anchorSection = anchorMatch?.[0]?.trim() ?? ''
+  const anchorSize = anchorSection.length
+
   const headerSize = 800
-  const tailSize = MAX_NOTES_CHARS - headerSize - 50
+  const reservedForAnchors = Math.min(anchorSize + 20, 1200) // cap anchor preservation
+  const tailSize = MAX_NOTES_CHARS - headerSize - reservedForAnchors - 80
   const header = notes.substring(0, headerSize)
   const tail = notes.substring(notes.length - tailSize)
-  return header + '\n[...earlier observations compressed — focus on RECENT state below...]\n' + tail
+
+  let compressed = header + '\n[...earlier observations compressed — focus on RECENT state below...]\n'
+  if (anchorSection && anchorSize <= 1200) {
+    compressed += anchorSection + '\n'
+  }
+  compressed += tail
+  return compressed
 }
 
 // ---------------------------------------------------------------------------
@@ -104,6 +116,9 @@ Update the ${config.modePersonaLabel} per the format above. Focus on:
 - Updated scores and metrics
 - Narrative tracking (planted seeds, cliffhangers, active threads)
 - Strategic plans for the next turn
+- **Priority Callbacks:** If the player made a significant disclosure, emotional statement, or surprising choice in their textfield or actions, add it to a "### Priority Callbacks" section with the exact quote and turn number. These MUST be acknowledged next turn.
+- **Behavioral Loop Alert:** If the player has repeated the same avoidance pattern, choice archetype, or engagement level for 3+ consecutive turns, note the pattern and suggest a counter-strategy for the next turn.
+- **Anchor Facts:** Preserve any verbatim player textfield quotes that are diagnostically significant in a "### Anchor Facts" section. These exact words must survive compression — NEVER summarize them.
 - Max ${MAX_NOTES_CHARS} characters.
 
 Output ONLY the updated notes as plain text. No JSON. No code fences. No commentary.`

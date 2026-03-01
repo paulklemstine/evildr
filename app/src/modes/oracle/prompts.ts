@@ -58,8 +58,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the reading. Deepen the prophecy. Make this turn feel EERILY PERSONAL.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — make the prophecy target their specific psychological profile, fears, desires, and behavioral patterns. The more data you have, the more uncannily accurate the prophecy becomes.' : ''}
@@ -69,6 +67,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as MYSTICAL PATHS rather than action archetypes.
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

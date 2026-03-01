@@ -57,8 +57,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the bargain. Make the next offer IRRESISTIBLE yet COSTLY. The Devil always wins — or does he?
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — offer deals that target their specific desires, fears, and values. The Devil knows what they want before THEY do.' : ''}
@@ -69,6 +67,7 @@ The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compass
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 Include a hidden "subjectId" element with the mortal's evolving title.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

@@ -650,7 +650,7 @@ export class GameLoop {
       try {
         const updated = await Promise.race([
           this.pendingNotesPromise,
-          new Promise<string>((_, rej) => setTimeout(() => rej('timeout'), 5000)),
+          new Promise<string>((_, rej) => setTimeout(() => rej('timeout'), 10000)),
         ])
         this.state.currentNotes = updated
       } catch { /* use existing notes on timeout/failure */ }

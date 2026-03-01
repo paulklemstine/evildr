@@ -58,8 +58,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the scenario. Deepen the wrongness. Make reality slip FURTHER.
 ${liveAnalysis ? 'ADAPT the horror based on the LIVE ANALYSIS — target their specific fears, perception patterns, and psychological vulnerabilities. If they notice details, make the anomalies more subtle. If they miss things, make them more brazen. The scenario adapts to THEIR mind.' : ''}
@@ -69,6 +67,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

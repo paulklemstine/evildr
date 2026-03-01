@@ -75,8 +75,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### TASK ###
 Advance the adventure. DOPAMINE MAX. Make this turn THRILLING.
 ${liveAnalysis ? 'ADAPT this turn based on the LIVE ANALYSIS — create scenarios, dangers, and temptations that target their specific psychological profile. Profile through ACTION not questions.' : ''}
@@ -86,6 +84,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt

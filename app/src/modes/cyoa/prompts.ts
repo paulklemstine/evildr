@@ -122,8 +122,6 @@ ${liveAnalysis}
 ` : ''}
 ${CONDITION_ENGAGEMENT}
 
-${endgameBlock}
-
 ### INSTRUCTIONS ###
 1. Maintain story coherence from notes + history.
 2. ADVANCE THE ACTION. This turn must be MORE exciting than the last. DOPAMINE MAX.
@@ -140,7 +138,7 @@ ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create d
 ${REACTIVE_ELEMENTS}
 
 ${PRE_GENERATION_CHECKLIST}
-
+${endgameBlock}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }
