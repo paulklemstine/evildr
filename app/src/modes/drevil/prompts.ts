@@ -208,7 +208,18 @@ The value of the hidden "notes" element MUST be a markdown string following this
 ### Dr. Evil's Private Notes
 [Your unfiltered observations, amusement, strategic plans for next experiment, and predictions]
 
-${NARRATIVE_TRACKING_TEMPLATE}`
+${NARRATIVE_TRACKING_TEMPLATE}
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 const SUBJECT_ID_PROTOCOL = `### SUBJECT ID PROTOCOL ###
 The subjectId is a MOCKING NICKNAME that EVOLVES based on the subject's ACTIONS (not self-description).

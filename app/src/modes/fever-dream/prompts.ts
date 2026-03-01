@@ -207,7 +207,18 @@ The value of the hidden "notes" element MUST be a markdown string following this
 ### The Dream's Private Observations
 [What their choices reveal about their inner life, aesthetic soul, emotional state. What the dream is learning about who this person IS beneath the waking world. Strategic plans for the next dreamscape.]
 
-${NARRATIVE_TRACKING_TEMPLATE}`
+${NARRATIVE_TRACKING_TEMPLATE}
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 const SURREALISM_PROTOCOL = `### SURREALISM GENERATION PROTOCOL ###
 The surrealism is the CORE MECHANIC. It must be BEAUTIFUL, ORIGINAL, and PERSONALLY calibrated.

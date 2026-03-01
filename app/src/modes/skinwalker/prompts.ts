@@ -210,7 +210,18 @@ The value of the hidden "notes" element MUST be a markdown string following this
 - **Next Planned Anomalies:** [what will shift next turn]
 - **Slow Burn Pacing:** [what's being held back for maximum effect]
 
-${NARRATIVE_TRACKING_TEMPLATE}`
+${NARRATIVE_TRACKING_TEMPLATE}
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 const ANOMALY_PROTOCOL = `### ANOMALY DESIGN PROTOCOL ###
 Anomalies are the CORE MECHANIC. They must be carefully designed, tracked, and escalated.

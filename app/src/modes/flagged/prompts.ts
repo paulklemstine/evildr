@@ -176,7 +176,18 @@ Openness | Confidence | Empathy | Authenticity | Humor | Vulnerability | Dominan
 - Conversation pattern, body language, reaction to vulnerability
 - Red/green flag history with specific moments
 - Matchmaker's private strategic notes for next turn
-- Planted seeds and callbacks`
+- Planted seeds and callbacks
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 // ---------------------------------------------------------------------------
 // Scenario generator prompt

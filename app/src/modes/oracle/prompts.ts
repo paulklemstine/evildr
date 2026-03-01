@@ -209,7 +209,18 @@ The value of the hidden "notes" element MUST be a markdown string following this
 - Turn [N]: Predicted [X], they chose [Y] — [what the deviation means]
 [Track EVERY prediction hit/miss — this is the core data]
 
-${NARRATIVE_TRACKING_TEMPLATE}`
+${NARRATIVE_TRACKING_TEMPLATE}
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 const PROPHECY_PROTOCOL = `### PROPHECY CONSTRUCTION PROTOCOL ###
 The prophecy is the CORE MECHANIC. It must feel eerily personal. Here's how:

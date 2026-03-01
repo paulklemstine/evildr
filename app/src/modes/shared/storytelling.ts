@@ -60,6 +60,14 @@ Valleys are NOT boring — they are INTIMATE. They contain:
 The valley makes the player think "I care about this world." The peak makes them think "AND NOW IT'S ALL AT RISK."
 Track intensity in notes: "peak" | "valley" | "rise". Two consecutive peaks is worse than peak-then-valley.
 
+**VALLEY TURN PROTOCOL (MANDATORY after a peak):**
+A valley is NOT rest — it is DEEPER INTIMACY at lower volume. Valley turns MUST include:
+1. A catharsis-focused textfield ("What would you say if no one could hear?", "Write what you'd never admit aloud")
+2. Specific validation of the player's most vulnerable recent response — quote or reference it directly
+3. Exactly ONE planted seed for the next peak (not the peak itself — the foreshadowing)
+4. At LEAST as many interactive elements as a peak turn — valley ≠ fewer elements, valley = different TYPES of elements (more textfields, sliders, ratings; fewer button_groups and radios)
+Valley turns that feel like "filler" or "lighter content" are FAILURES. They should feel like the most intimate, personal turn so far.
+
 **MICRO-ARCS (5-7 Turn Story Cycles)**
 Every 5-7 turns should complete a MICRO-ARC:
 Turn 1-2: Setup + Inciting Incident (throw them into action immediately)
@@ -457,7 +465,7 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
     → dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter
     Every exotic type should appear at least once every 3 turns. If you used dropdown+toggle last turn, use color_pick+emoji_react this turn.
 [x] DO NOT include a hidden "notes" element — notes are handled separately
-[x] A "hidden" element with name "subjectId" exists
+[x] A "hidden" element with name "subjectId" exists AND the subjectId value reflects a SPECIFIC behavioral observation from the last 3 turns (not a generic label like "Patient_Zero" or "The Newcomer"). If it hasn't changed in 3+ turns, UPDATE IT NOW
 [x] Narrative text references at least ONE prior player choice (consequence echo)
 [x] The setting/scenario has CHANGED or ESCALATED from the previous turn (not the same room/scene)
 [x] Radio options follow the 4 archetypes: bold/clever/compassionate/chaotic
@@ -465,6 +473,7 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
 [x] METER PROGRESSION: If a meter/progress element exists, its value MUST change by at least ±5 from last turn. Stagnant meters are FORBIDDEN — they kill the player's sense of consequence. If the player made good choices, meter improves. Bad choices, meter worsens. NEVER leave a meter at the same value two turns in a row.
 [x] RADIO UNIQUENESS: Radio option labels MUST NOT repeat verbatim from the previous 3 turns. Each option must describe a SPECIFIC action in THIS turn's narrative context. Generic options like "Ask a deep question" or "Change the subject" are BANNED — use "Ask about the scar on their hand" or "Steer talk to the jazz band's setlist" instead.
 [x] NARRATIVE BRIDGE: If the scene/setting has changed from the previous turn, the FIRST narrative text MUST include a 1-sentence transition explaining how/why the player moved from the old scene to the new one. Abrupt scene changes with no bridge are FORBIDDEN.
+[x] REACTIVE TEXT: At least ONE text element has a \`reactive\` field that changes based on the radio selection. This creates instant feedback — the world responds to the player's choice WITHOUT waiting for the next turn. If you have no reactive text, ADD ONE to the element immediately after the radio.
 
 IMAGE IS MANDATORY. The FIRST element in your JSON array MUST be: {"type":"image","name":"scene","label":"TITLE","value":"DETAILED CINEMATIC PROMPT HERE",...}
 If you skip the image, the entire turn feels flat and lifeless. The image is what makes each turn MEMORABLE.
@@ -512,7 +521,14 @@ The game is nearing its conclusion. Begin ESCALATING toward a climax:
 5. **CONVERGE storylines** — separate threads should start connecting and colliding
 
 The player should feel mounting pressure: "Something big is about to happen."
-Do NOT resolve things yet — build toward the climax that the final turn will deliver.`
+Do NOT resolve things yet — build toward the climax that the final turn will deliver.
+
+**ANTI-META RULE:** Do NOT announce remaining turns or session mechanics explicitly. NEVER say "two turns left," "approaching the end," or "this is your last chance." Instead, embed approaching conclusion in the MODE VOICE:
+- Devil: "The contract's final clause approaches..."
+- Dream: "The dream thins at the edges..."
+- Oracle: "The last card turns..."
+- Experiment: "The final test loading..."
+The player should feel urgency through NARRATIVE, not system announcements. Breaking the fourth wall to announce mechanics kills immersion.`
 
 /**
  * Condition engagement directive — ensures the AI actively identifies and

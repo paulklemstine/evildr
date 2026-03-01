@@ -208,7 +208,18 @@ The value of the hidden "notes" element MUST be a markdown string following this
 ### The Devil's Private Notes
 [Unfiltered observations, strategic plans for next offer, predictions about what will break them]
 
-${NARRATIVE_TRACKING_TEMPLATE}`
+${NARRATIVE_TRACKING_TEMPLATE}
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 const MORTAL_TITLE_PROTOCOL = `### MORTAL TITLE PROTOCOL ###
 The mortal's title EVOLVES based on their DEAL-MAKING BEHAVIOR (not self-description).

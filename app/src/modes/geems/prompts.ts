@@ -22,7 +22,18 @@ const NOTES_TEMPLATE = `### SESSION STATE TEMPLATE ###
 - **Choice Pattern:** {bold: N, clever: N, compassionate: N, chaotic: N}
 - **Active NPCs:** [name: status]
 - **Variety:** {last_setting, last_scenario, last_lead_sense}
-- **Consequence Queue:** [pending consequences from past choices]`
+- **Consequence Queue:** [pending consequences from past choices]
+
+### Anchor Facts (NEVER compress or summarize — copy verbatim every update)
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+- [Turn N]: "[exact player textfield quote]" — [why it matters]
+(Max 10 entries. Drop oldest if exceeding 10. These exact words MUST survive every notes update unchanged.)
+
+### Priority Callbacks (must acknowledge NEXT turn)
+- [what the player said/did that demands a response]
+
+### Behavioral Loop Alert
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
 
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
