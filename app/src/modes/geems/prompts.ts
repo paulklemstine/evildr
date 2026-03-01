@@ -6,8 +6,29 @@
 import type { PromptBuilder } from '../mode-registry.ts'
 import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
+const NOTES_TEMPLATE = `### SESSION STATE TEMPLATE ###
+## Session State
+**Turn:** [N] | **Phase:** [early/mid/climax/endgame] | **Intensity:** [0-10]
+**Story State:** [current scenario summary]
+**Archetype:** [bold/clever/compassionate/chaotic/undetermined]
+**Stakes:** [what's at risk]
+**Open Threads:** [active plot threads]
+**Psychology:** [what choices REVEAL about the player]
+
+### Narrative Tracking
+- **Planted Seeds:** [list of setups awaiting payoff]
+- **Last Cliffhanger Type:** [threat/mystery/dilemma/reveal/twist]
+- **Turn Intensity:** [rising/peak/valley/sustain]
+- **Choice Pattern:** {bold: N, clever: N, compassionate: N, chaotic: N}
+- **Active NPCs:** [name: status]
+- **Variety:** {last_setting, last_scenario, last_lead_sense}
+- **Consequence Queue:** [pending consequences from past choices]`
+
 export function createGEEMSPromptBuilder(intense: boolean): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return 'Session State' },
+
     buildFirstTurnPrompt(): string {
       let prompt = GEEMS_FIRSTRUN
       if (intense) prompt += '\n\n' + INTENSE_MODE_ADDENDUM
@@ -63,7 +84,7 @@ Apply ALL behavioral directives AND storytelling craft rules.
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as adventure prompts: "What do you shout?", "Describe what you see", "Leave a message for whoever finds this".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated session state — story_state, archetype, stakes, open_threads, turn_count, intensity, what their choices REVEAL about their psychology, AND all NARRATIVE TRACKING fields (planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
@@ -316,13 +337,7 @@ Element order:
    {"type":"text","name":"commentary","value":"Oh, this is going to be GOOD. I can already tell.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"action","variants":{"a":"*That* one? BOLD. Most people hesitate. Not you. This is going to be INCREDIBLE.","b":"Smart. Calculated. *Boring* — until it works. And it MIGHT just work.","c":"Oh, you NOTICED them? Interesting. Very few subjects have that instinct. The compassion reflex is strong with you.","d":"CHAOS! I love it. No plan, no logic, just pure instinct. The universe rewards the reckless sometimes."}}}
 6. radio — EXACTLY 4 choices (color: #e63946). All action. All exciting. All moving FORWARD.
    "The explosion reveals three exits — and something you weren't supposed to see. What do you do?"
-7. hidden "notes" — initialize using this structure:
-   {story_state, player_name, archetype: "undetermined", stakes: "rising",
-    open_threads: ["main_mystery", "stranger_identity"], turn_count: 1,
-    planted_seeds: [], last_cliffhanger_type: "threat", turn_intensity: "peak",
-    choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-    active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
-    consequence_queue: []}
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -374,8 +389,7 @@ ${UI_REF}
    Use the "reactive" field so text swaps instantly when they pick a radio option. The default "value" shows before they choose.
 6. radio — EXACTLY 4 choices (ALWAYS last visible). All action. All exciting. End on a CLIFFHANGER then offer 4 thrilling responses.
    NEVER offer "stop" or "rest" or "reflect." Every option is a LEAP FORWARD.
-7. hidden "notes" — update ALL fields: story_state, archetype, stakes, open_threads, intensity, what their choices REVEAL about their psychology.
-   ALSO update NARRATIVE TRACKING: planted_seeds (plant new / pay off old), last_cliffhanger_type, turn_intensity (peak/valley/rise — follow the rhythm), choice_pattern (which archetype they chose), active_npcs, variety check, consequence_queue
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE — ACTION MOVIE EDITION ###
 Frame EVERY choice as an exciting action:

@@ -33,6 +33,10 @@ export interface PromptBuilder {
     turnNumber?: number,
     maxTurns?: number,
   ): string
+  /** Return the notes template for this mode (used by the dedicated notes LLM call). */
+  getNotesTemplate?(): string
+  /** Return the persona label for notes (e.g. "The Devil's Ledger", "Patient Dossier"). */
+  getNotesPersonaLabel?(): string
 }
 
 export interface GameMode extends GameModeConfig {

@@ -12,6 +12,9 @@ import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_D
 
 export function createOraclePromptBuilder(): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return "The Oracle's Reading" },
+
     buildFirstTurnPrompt(): string {
       return ORACLE_FIRSTRUN
     },
@@ -64,7 +67,7 @@ Apply ALL behavioral directives AND storytelling craft rules. Maintain the Oracl
 Use a RICH VARIETY of UI elements — color picks, sliders, emoji reactions, textfields, ratings, toggles, button groups, dropdowns, number inputs. Surprise with variety. Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as mystical prompts: "What do you see in the flames?", "Describe your vision", "What name echoes?".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as MYSTICAL PATHS rather than action archetypes.
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated reading state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
@@ -433,17 +436,7 @@ Element order:
    - "Show me who I'm connected to" (compassionate/love)
    - "Show me what surprises even the Oracle" (chaotic/wild card)
 7. meter: "prophecy_clarity" — label: "Prophecy Clarity", value: "12", min: "0", max: "100", color: #d4a017
-8. hidden "notes" — initialize using the FULL NOTES TEMPLATE:
-   {seeker_name: "pending", reading_phase: "opening", prophecy_clarity: 12,
-    prophecy_threads: [{name: "core_thread", state: "gathering", fragment: "atmospheric opening"}],
-    behavioral_profile: {color_preference: "pending", decision_speed: "pending", resistance_pattern: "pending"},
-    psychological_model: {core_need: "undetermined", primary_fear: "undetermined", attachment_style: "undetermined"},
-    prediction_accuracy: [],
-    planted_seeds: [{seed: "the Oracle has been waiting specifically for them", planted_turn: 1, status: "active"}, {seed: "something changed three days ago", planted_turn: 1, status: "active"}],
-    last_cliffhanger_type: "mystery", turn_intensity: "rise",
-    choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-    active_npcs: [], variety: {last_setting: "sanctum", last_scenario: "opening ritual", last_lead_sense: "sight"},
-    consequence_queue: []}
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -505,7 +498,7 @@ ${PROPHECY_PROTOCOL}
    End with a PROPHECY CLIFFHANGER then offer 4 mystical responses.
    NEVER offer "stop" or "leave." The reading is not finished. It cannot be finished. Not yet.
 7. meter: "prophecy_clarity" — updated value reflecting data accumulated. Rises 8-15% per turn.
-8. hidden "notes" — updated reading (FULL TEMPLATE — all fields: prophecy threads, behavioral profile, psychological model, prediction accuracy, AND all NARRATIVE TRACKING fields: planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue)
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE — MYSTICAL PATHS ###
 Frame EVERY choice as part of the reading ritual:

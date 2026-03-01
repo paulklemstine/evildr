@@ -31,6 +31,10 @@ export interface FlaggedPromptBuilder {
   ): string
   /** Build the per-player UI generation prompt from one section of orchestrator output. */
   buildPlayerUIPrompt(orchestratorInstructions: string): string
+  /** Return the notes template for this mode (used by the dedicated notes LLM call). */
+  getNotesTemplate(): string
+  /** Return the persona label for notes. */
+  getNotesPersonaLabel(): string
 }
 
 /** The delimiter the orchestrator uses to split its output into sections. */
@@ -51,6 +55,9 @@ export function createFlaggedPromptBuilder(nameA = 'Player A', nameB = 'Player B
   }
 
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return "Matchmaker's Dossier" },
+
     buildScenarioGeneratorPrompt(): string {
       return SCENARIO_GENERATOR
     },
@@ -116,10 +123,7 @@ ${orchestratorInstructions}
 ### TASK ###
 Generate a JSON UI array for this player. The array MUST contain these elements IN ORDER:
 1. Visible elements: ONE main image, text(s), interactive elements, radio choices
-2. MANDATORY hidden element — your response is INVALID without it:
-   {"type":"hidden","name":"notes","label":"","value":"<FULL DOSSIER using template>","color":"#000","voice":"system"}
-
-CRITICAL: The notes hidden element is NOT optional. It MUST be the LAST element in the array.
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
@@ -154,9 +158,8 @@ const COLOR_PROTOCOL = `### COLOR PALETTE ###
 #f9a8d4 warmth/attraction | #f4c2c2 vulnerability | #e11d48 passion/tension | #fb7185 playful | #e9c46a sparks/gold | #9b5de5 mystery | #60a5fa distance/guarded | #2a9d8f confidence | #f4a261 comfort | #e63946 red flag | #22c55e green flag | #d3d3d3 neutral | #000 hidden only
 Match colors to what the player is FEELING. Never repeat the same palette two turns in a row.`
 
-const HIDDEN_ELEMENTS_SPEC = `### REQUIRED HIDDEN ELEMENTS ###
-1. **notes** — Dating dossier (see template below). This is the AI's persistent memory across turns.
-   {"type":"hidden","name":"notes","label":"","value":"[dossier]","color":"#000","voice":"system"}`
+const HIDDEN_ELEMENTS_SPEC = `### HIDDEN ELEMENTS ###
+DO NOT include a hidden "notes" element. Notes are handled separately by a dedicated system.`
 
 const NOTES_TEMPLATE = `### DOSSIER TEMPLATE (hidden "notes" element) ###
 ## Matchmaker's Dossier
@@ -322,8 +325,7 @@ ${NOTES_TEMPLATE}
 5. text WITH REACTIVE VARIANTS — Matchmaker closing tease that changes based on the radio choice below (voice:"god", name:"divine_wisdom", color:#e9c46a).
    Use the "reactive" field so text swaps instantly when they pick a radio option.
 6. radio — EXACTLY 4 choices (last visible). BOLD(#e11d48) / GENUINE(#22c55e) / PLAYFUL(#fb7185) / GUARDED(#60a5fa).
-7. hidden name="notes" — FULL dossier using template above. This is the AI's persistent memory.
-Item 7 is a MANDATORY type:"hidden" element. Never omit it.
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### DIRECTIVES ###
 - Profile through behavior, not questions. Every interactive element is a disguised psychological probe.

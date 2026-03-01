@@ -25,10 +25,30 @@ export const CYOA_GENRES: CYOAGenre[] = [
   'Romantic',
 ]
 
+const NOTES_TEMPLATE = `### ADVENTURE STATE TEMPLATE ###
+## Adventure State
+**Turn:** [N] | **Phase:** [early/mid/climax/endgame] | **Intensity:** [0-10]
+**Story State:** [current scenario summary]
+**Archetype:** [bold/clever/compassionate/chaotic/undetermined]
+**Stakes:** [what's at risk]
+**Open Threads:** [active plot threads]
+
+### Narrative Tracking
+- **Planted Seeds:** [list of setups awaiting payoff]
+- **Last Cliffhanger Type:** [threat/mystery/dilemma/reveal/twist]
+- **Turn Intensity:** [rising/peak/valley/sustain]
+- **Choice Pattern:** {bold: N, clever: N, compassionate: N, chaotic: N}
+- **Active NPCs:** [name: status]
+- **Variety:** {last_setting, last_scenario, last_lead_sense}
+- **Consequence Queue:** [pending consequences from past choices]`
+
 export function createCYOAPromptBuilder(genre: string): PromptBuilder {
   const system = buildSystem(genre)
 
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return 'Adventure State' },
+
     buildFirstTurnPrompt(): string {
       return `${system}
 
@@ -59,12 +79,7 @@ Create an IRRESISTIBLE opening scene for a ${genre} adventure that's already HAP
 - Use cinematic language: short punchy sentences for action, flowing imagery for atmosphere.
 - End with EXACTLY 4 radio choices — ALL EXCITING. Every option is a leap into danger.
 - One choice should be colored #e63946 (red) — the boldest, most dangerous option.
-- Populate notes: {story_state, archetype: "undetermined", stakes: "high",
-  open_threads: ["main_mystery"], turn_count: 1, intensity: "high",
-  planted_seeds: [], last_cliffhanger_type: "threat", turn_intensity: "peak",
-  choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-  active_npcs: [], variety: {last_setting: "", last_scenario: "", last_lead_sense: ""},
-  consequence_queue: []}
+- DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
@@ -161,8 +176,8 @@ RULES:
 2. Use a RICH MIX of element types every turn — but ALL framed as IN-STORY ACTIONS. Sliders are game mechanics, checkboxes are action decisions, textfields are in-character dialogue. NEVER "how do you feel?" — ALWAYS "what do you DO?". You MUST use at least 6 different interactive types per turn — include button_group (split-second reactions), toggle (binary tactical decisions), color_pick (choose factions/potions/paths), emoji_react (gut reactions), meter (health/stamina), dropdown (equipment selection). These are your ADVENTURE MECHANICS — rotate them every turn!
 3. MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as in-story actions: "What do you shout?", "Write a message on the wall", "What do you whisper to your ally?".
 4. The LAST visible element MUST be "radio" with EXACTLY 4 choices — all exciting.
-5. CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with full state (story_state, archetype, stakes, open_threads, turn_count, planted_seeds, choice_pattern, consequence_queue). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
-5. EVERY TURN MUST END ON A CLIFFHANGER.
+5. DO NOT include a hidden "notes" element in your response. Notes are handled separately.
+6. EVERY TURN MUST END ON A CLIFFHANGER.
 
 ### UI ELEMENT TYPES ###
 image: {"type":"image","name":"scene","label":"SHORT TITLE","value":"image generation prompt","color":"#d3d3d3","voice":"narrator"}

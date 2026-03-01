@@ -456,7 +456,7 @@ Before writing your JSON array, mentally confirm ALL of these. If ANY is missing
 [x] MANDATORY ROTATION: Pick 2 element types from this list that you did NOT use last turn and USE THEM NOW:
     → dropdown, toggle, button_group, rating, emoji_react, color_pick, number_input, meter
     Every exotic type should appear at least once every 3 turns. If you used dropdown+toggle last turn, use color_pick+emoji_react this turn.
-[x] LAST ELEMENT is type "hidden" with name "notes" containing your FULL updated dossier
+[x] DO NOT include a hidden "notes" element — notes are handled separately
 [x] A "hidden" element with name "subjectId" exists
 [x] Narrative text references at least ONE prior player choice (consequence echo)
 [x] The setting/scenario has CHANGED or ESCALATED from the previous turn (not the same room/scene)

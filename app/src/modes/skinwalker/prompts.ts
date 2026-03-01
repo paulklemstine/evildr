@@ -12,6 +12,9 @@ import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_D
 
 export function createSkinwalkerPromptBuilder(): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return 'Anomaly Map' },
+
     buildFirstTurnPrompt(): string {
       return SKINWALKER_FIRSTRUN
     },
@@ -64,7 +67,7 @@ Apply ALL behavioral directives AND storytelling craft rules. Maintain the unrel
 Use a RICH VARIETY of UI elements — textfields for perception checks, checkboxes for memory tests, color picks for attention traps, sliders for confidence, dropdowns for recall. You MUST use at least 6 different interactive types per turn. MANDATORY ROTATION: include at least 2 from this list each turn that you did NOT use last turn: toggle (lock/unlock), color_pick (what color was it?), emoji_react (gut feeling), meter (reality stability), dropdown (which version?), number_input (how many?), button_group (snap reaction), rating (unease level). Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as perception checks: "What did you just see?", "Describe what changed", "Write down what you remember".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as RESPONSES TO THE WRONGNESS.
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the FULL anomaly map and reality state using the NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL STATE HERE","color":"#000","voice":"system"}
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
@@ -442,19 +445,7 @@ Element order:
    - Option C: interpersonal/caring action
    - Option D: spontaneous/unexpected action
 7. meter: "reality_stability" — label: "Reality Stability", value: "92", min: "0", max: "100", color: #7a9e7e
-8. hidden "notes" — initialize using the FULL NOTES TEMPLATE:
-   {scenario: "[chosen mundane scenario]", phase: "normal", reality_stability: 92, turn: 1,
-    anomaly_map: [{id: 1, anomaly: "[the ONE subtle anomaly]", introduced_turn: 1, type: "[type]", noticed: false, response: "n/a"}],
-    established_facts: {character_names: {...}, spatial_layout: {...}, timeline: {...}, descriptions: {...}, objects: {...}},
-    player_perception: {score: 5, detection_rate: "0/1", attention_pattern: "unknown", response_style: "unknown", confidence: "unknown"},
-    narrator_state: {reliability: "full", contradictions: [], perspective_integrity: "intact"},
-    horror_calibration: {anomaly_intensity: "subtle", adaptation: "baseline", next_anomalies: ["[planned]"], slow_burn: ["[held back]"]},
-    planted_seeds: [{seed: "the one initial anomaly", planted_turn: 1, status: "active"}],
-    last_cliffhanger_type: "mystery", turn_intensity: "valley",
-    choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-    active_npcs: [{name: "[name]", speech_pattern: "[pattern]", visible_goal: "[goal]", hidden_goal: "none yet", player_relationship: "friendly"}],
-    variety: {last_setting: "[setting]", last_scenario: "introduction", last_lead_sense: "sight"},
-    consequence_queue: []}
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -523,7 +514,7 @@ ${ANOMALY_PROTOCOL}
    End with a DREAD CLIFFHANGER. Something is wrong. The choices are how they RESPOND to the wrongness.
    NEVER offer "ignore it completely" as a RADIO option — only as a checkbox/toggle side element.
 7. meter: "reality_stability" — updated. Drops 3-8% per turn based on anomaly accumulation and player awareness.
-8. hidden "notes" — updated anomaly map (FULL TEMPLATE — anomaly map, established facts, perception profile, narrator state, horror calibration, AND all NARRATIVE TRACKING fields)
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE — DREAD RESPONSES ###
 Frame choices as responses to growing unease:

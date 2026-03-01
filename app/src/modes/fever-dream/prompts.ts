@@ -13,6 +13,9 @@ import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_D
 
 export function createFeverDreamPromptBuilder(): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return 'Dream Journal' },
+
     buildFirstTurnPrompt(): string {
       return FEVERDREAM_FIRSTRUN
     },
@@ -65,7 +68,7 @@ Apply ALL behavioral directives AND storytelling craft rules (adapted for dream 
 Use a RICH VARIETY of UI elements — sliders for abstract concepts, color picks that affect imagery, emoji reactions, textfields for dream journaling, button groups for impossible actions. Surprise with variety. Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as dream prompts: "What does the dream whisper?", "Describe the taste of the color", "Write what the mirror shows".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as SURREAL NON-SEQUITURS mapped to the archetypes.
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with the dream state using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DREAM STATE HERE","color":"#000","voice":"system"}
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
@@ -447,18 +450,7 @@ Element order:
    - "Follow the path that cries" (compassionate — emotional)
    - "Follow the path that doesn't exist yet" (chaotic — reality-breaking)
 7. meter: "dream_stability" — label: "Dream Stability", value: "55", min: "0", max: "100", color: #00f5d4
-8. hidden "notes" — initialize using the FULL NOTES TEMPLATE:
-   {dreamer_name: "pending", dream_phase: "descent", dream_stability: 55,
-    absurdity_profile: {flavor: "undetermined", aesthetic_temp: "undetermined", chaos_tolerance: "undetermined", emotional_gravity: "undetermined"},
-    color_preferences: [],
-    dream_threads: [{thread: "the silver ocean", state: "introduced", connection: "opening dreamscape"}],
-    emotional_undercurrent: {surface_mood: "serene", underlying_emotion: "pending", recurring_motifs: [], avoidance_patterns: []},
-    stability_mechanics: {factors: ["beauty", "novelty"], wake_risks: ["none yet"], adjustment: "calibrating"},
-    planted_seeds: [{seed: "the dream has been waiting specifically for them", planted_turn: 1, status: "active"}, {seed: "gravity is optional", planted_turn: 1, status: "active"}],
-    last_cliffhanger_type: "mystery", turn_intensity: "rise",
-    choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-    active_npcs: [], variety: {last_setting: "silver ocean", last_scenario: "opening", last_lead_sense: "sight"},
-    consequence_queue: []}
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -524,7 +516,7 @@ ${SURREALISM_PROTOCOL}
    End with a DREAM-SHIFT CLIFFHANGER then offer 4 impossible responses.
    NEVER offer "wake up" as a radio option — that's only possible if stability hits 0 or 100.
 7. meter: "dream_stability" — updated. Rises or falls based on choices (see stability mechanics).
-8. hidden "notes" — updated dream journal (FULL TEMPLATE — absurdity profile, color preferences, dream threads, emotional undercurrent, stability mechanics, AND all NARRATIVE TRACKING fields)
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE — DREAM PATHS ###
 Frame EVERY choice as a dream action:

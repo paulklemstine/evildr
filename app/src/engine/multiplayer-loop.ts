@@ -18,6 +18,7 @@
 
 import type { UIElement } from './renderer.ts'
 import { renderUI, collectInputState, collectQuestionContext } from './renderer.ts'
+import { compressNotes, updateNotes, summarizeUI } from './notes-updater.ts'
 import { applyTypewriter } from './typewriter.ts'
 import { cascadeReveal, pulseInteractive } from './anticipation.ts'
 import { attachCelebrations } from './celebration.ts'
@@ -152,17 +153,7 @@ export interface MultiplayerGameLoopConfig {
 const MAX_HISTORY_SIZE = 15
 const PARTNER_ACTION_TIMEOUT_MS = 180000  // 3 minutes to wait for partner
 const ORCHESTRATOR_TIMEOUT_MS = 180000    // 3 minutes for orchestrator from host
-const MAX_NOTES_CHARS = 5000
-
-/** Compress notes that exceed MAX_NOTES_CHARS to preserve LLM output budget. */
-function compressNotes(notes: string): string {
-  if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
-  const headerSize = 800
-  const tailSize = MAX_NOTES_CHARS - headerSize - 50
-  const header = notes.substring(0, headerSize)
-  const tail = notes.substring(notes.length - tailSize)
-  return header + '\n[...earlier observations compressed — focus on RECENT state below...]\n' + tail
-}
+// compressNotes imported from notes-updater.ts
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -569,6 +560,8 @@ export class MultiplayerGameLoop {
   private cleanupCelebrations: (() => void) | null = null
   private inputTracker: InputTracker
   private turnInProgress = false
+  /** Pending async notes update from the previous turn. */
+  private pendingNotesPromise: Promise<string> | null = null
 
   // Scenario selection state
   private scenarios: string[] = []
@@ -1146,6 +1139,18 @@ export class MultiplayerGameLoop {
     // onLoading(true) was already called from submitMyActions() — no need to call again
     this.turnInProgress = true
 
+    // Await pending notes from the previous turn (with timeout)
+    if (this.pendingNotesPromise) {
+      try {
+        const updated = await Promise.race([
+          this.pendingNotesPromise,
+          new Promise<string>((_, rej) => setTimeout(() => rej('timeout'), 5000)),
+        ])
+        this.state.myNotes = updated
+      } catch { /* use existing notes on timeout/failure */ }
+      this.pendingNotesPromise = null
+    }
+
     try {
       let mySection: string
 
@@ -1252,6 +1257,32 @@ export class MultiplayerGameLoop {
 
       // Render the UI
       this.renderTurn(uiJsonArray)
+
+      // Fire async notes update (fire-and-forget, resolves in background)
+      const notesTemplate = promptBuilder.getNotesTemplate?.() ?? ''
+      if (notesTemplate) {
+        const { onStateChange } = this.config
+        this.pendingNotesPromise = updateNotes(
+          {
+            llmClient,
+            notesTemplate,
+            modeName: 'flagged',
+            modePersonaLabel: promptBuilder.getNotesPersonaLabel?.() ?? 'Notes',
+          },
+          {
+            previousNotes: compressNotes(this.state.myNotes),
+            playerActions: this.myActionsThisTurn || '{}',
+            uiSummary: summarizeUI(uiJsonArray),
+            turnNumber: this.state.turnNumber,
+            maxTurns: 15,
+          },
+        ).then(notes => {
+          this.state.myNotes = notes
+          saveState(this.storageKey(), this.state)
+          onStateChange(this.getState())
+          return notes
+        })
+      }
 
     } catch (err) {
       const msg = err instanceof Error ? err.message : String(err)

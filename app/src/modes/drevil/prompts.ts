@@ -11,6 +11,9 @@ import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_D
 
 export function createDrEvilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return 'Patient Dossier' },
+
     buildFirstTurnPrompt(): string {
       let prompt = DREVIL_FIRSTRUN
       if (explicit) prompt += '\n\n' + EXPLICIT_MODE_ADDENDUM
@@ -67,13 +70,7 @@ Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns
 MANDATORY: Include at least ONE textfield element EVERY turn. Textfields are your PRIMARY diagnostic instrument — free-text responses reveal psychology that multiple-choice cannot. Frame them as experiment actions: "What do you shout?", "Describe what you see", "Write a warning to the next subject", "What does the voice say?". NEVER skip textfields.
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
 
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE:
-You MUST include a hidden "notes" element with your updated patient dossier using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING).
-The notes element is your PERSISTENT MEMORY. Without it, you lose ALL context between turns — no dossier, no behavioral tracking, no experiment log, no seed tracking.
-If you omit the notes element, the entire turn is WASTED because the next turn starts from zero.
-The notes MUST contain: updated deviant axes scores, experiment log, behavioral analysis, narrative tracking (planted seeds, cliffhanger type, intensity, choice pattern, active NPCs, variety check, consequence queue, reward track, active threads).
-Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL DOSSIER HERE","color":"#000","voice":"system"}
-
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 Include a hidden "subjectId" element with the subject's evolving mocking nickname.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
@@ -393,13 +390,8 @@ Element order:
    {"type":"text","name":"door_reaction","value":"Ohhh, this is going to be FUN. I can already tell.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"door","variants":{"Red (humming loudly)":"RED! Bold. Reckless. The last subject who picked red — well. *Let's just say the screaming stopped eventually.* Ohhh, this is going to be FUN.","Blue (slightly open)":"Blue. The slightly-open one. You think that makes it SAFE? Oh, you sweet summer subject. The open ones are ALWAYS the worst.","Gold (warm light)":"GOLD! Like a moth to a flame. Classic dopamine response. You want the SHINY thing. Noted. Filed. *Exploited later.*","Black (silence)":"Black. The silent one. Nobody picks Black. NOBODY. What are you hiding, Subject? What do you KNOW?"}}}
 6. radio — EXACTLY 4 choices (color: #e63946). The FIRST REAL TEST. All exciting.
    "A buzzer sounds. The five doors start to CLOSE — one by one. You have seconds."
-7. hidden "notes" — initialize dossier using the FULL NOTES TEMPLATE: {subject_id: "LabRat_New", experiment_phase: "intake", archetype: "Undetermined", fight_flight_ratio: "unknown", deviant_axes: all 0, open_threads: ["what's behind the glass", "the 47 rooms", "the other subjects"], turn_count: 1, experiment_log: [],
-   planted_seeds: [{seed: "something moving behind the glass wall", planted_turn: 1, status: "active"}, {seed: "the 47 rooms", planted_turn: 1, status: "active"}],
-   last_cliffhanger_type: "threat", turn_intensity: "peak",
-   choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-   active_npcs: [], variety: {last_setting: "lab corridor", last_scenario: "intake", last_lead_sense: "sight"},
-   consequence_queue: []}
-8. hidden "subjectId" — value: "LabRat_New"
+7. hidden "subjectId" — value: "LabRat_New"
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -460,8 +452,8 @@ ${ARCHETYPE_PROTOCOL}
 6. radio — EXACTLY 4 choices (ALWAYS last visible). All responses to a CLIFFHANGER.
    Follow ASYMMETRIC CHOICE DESIGN: bold (#e63946), clever (#9b5de5), compassionate (#f4c2c2), chaotic (#f4a261).
    NEVER offer "stop" or "rest." Every option is a LEAP into the next experiment.
-7. hidden "notes" — updated dossier (FULL TEMPLATE — all axes scored from ACTIONS, experiment log, AND all NARRATIVE TRACKING fields: planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue)
-8. hidden "subjectId" — evolving mocking nickname based on BEHAVIOR
+7. hidden "subjectId" — evolving mocking nickname based on BEHAVIOR
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE (Dr. Evil's Experiment Design) ###
 Frame EVERY choice as an in-experiment action:

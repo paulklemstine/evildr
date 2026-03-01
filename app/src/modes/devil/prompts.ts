@@ -8,6 +8,9 @@ import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_D
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
+    getNotesTemplate(): string { return NOTES_TEMPLATE },
+    getNotesPersonaLabel(): string { return "The Devil's Ledger" },
+
     buildFirstTurnPrompt(): string {
       let prompt = DEVIL_FIRSTRUN
       if (explicit) prompt += '\n\n' + EXPLICIT_MODE_ADDENDUM
@@ -63,7 +66,7 @@ Apply ALL behavioral directives AND storytelling craft rules. Maintain the Devil
 Use a RICH VARIETY of UI elements — sliders, checkboxes, textfields, dropdowns, star ratings, toggles, button groups, emoji reactions, color pickers, number inputs, meters. Surprise with variety. Never use the same set of element types two turns in a row.
 MANDATORY: Include at least ONE textfield element EVERY turn — free-text is your PRIMARY diagnostic channel. Frame as deal elements: "What would you trade?", "Describe your deepest desire", "Write your counter-offer".
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compassionate/chaotic archetypes.
-CRITICAL — NOTES ELEMENT IS NON-NEGOTIABLE: You MUST include a hidden "notes" element with updated Devil's Ledger using the FULL NOTES TEMPLATE (including NARRATIVE TRACKING). Without notes, you lose ALL context between turns. Format: {"type":"hidden","name":"notes","label":"","value":"YOUR FULL LEDGER HERE","color":"#000","voice":"system"}
+DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 Include a hidden "subjectId" element with the mortal's evolving title.
 ${PRE_GENERATION_CHECKLIST}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
@@ -390,13 +393,8 @@ Element order:
    {"type":"text","name":"desire_reading","value":"Ah. I can already see it — that little flicker behind your eyes. You want this.","voice":"god","color":"#e9c46a","reactive":{"depends_on":"desire","variants":{"Power":"*Power.* Of course. The most honest of desires — and the most dangerous. Everyone wants power. The question is what you'd DO with it... and what you'd sacrifice to keep it.","Love":"*Love.* Oh, how DELICIOUS. The one thing money can't buy, strength can't take, and time can't guarantee. You've come to the RIGHT place. I deal in love all the time. The price, though...","Knowledge":"*Knowledge.* The forbidden fruit that started it all. You want to KNOW things. Dangerous things. Things that change you once you've seen them. I can show you EVERYTHING.","Revenge":"*Revenge.* Now THAT'S refreshing. No pretense, no noble cause — just beautiful, honest hatred. Tell me who hurt you. I'll make sure they remember.","Something else":"Something else. How INTERESTING. You can't even name what you want. Or won't. Either way — that tells me more than you realize."}}}
 6. radio — EXACTLY 4 choices (color: #b91c1c). The FIRST REAL TEST. All tempting.
    "The Devil slides a small object across the desk — something that gleams in the firelight."
-7. hidden "notes" — initialize ledger using the FULL NOTES TEMPLATE: {mortal_title: "The Newcomer", bargain_phase: "introduction", archetype: "Undetermined", soul_integrity: 100, corruption_ratio: "0/0", value_hierarchy: all 5, deal_log: [], open_threads: ["the portraits on the wall", "the blank book", "the free gift"], turn_count: 1,
-   planted_seeds: [{seed: "the portraits of previous clients", planted_turn: 1, status: "active"}, {seed: "the blank book on the desk", planted_turn: 1, status: "active"}, {seed: "the free gift — what is it?", planted_turn: 1, status: "active"}],
-   last_cliffhanger_type: "mystery", turn_intensity: "rise",
-   choice_pattern: {bold: 0, clever: 0, compassionate: 0, chaotic: 0},
-   active_npcs: [], variety: {last_setting: "devil's study", last_scenario: "introduction", last_lead_sense: "sight"},
-   consequence_queue: []}
-8. hidden "subjectId" — value: "The Newcomer"
+7. hidden "subjectId" — value: "The Newcomer"
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ${COLOR_PROTOCOL}
 
@@ -458,8 +456,8 @@ ${ARCHETYPE_PROTOCOL}
 7. radio — EXACTLY 4 choices (ALWAYS last visible). All responses to a CLIFFHANGER.
    Follow ASYMMETRIC CHOICE DESIGN: bold (#b91c1c), clever (#9b5de5), compassionate (#f4c2c2), chaotic (#f4a261).
    NEVER offer "leave" or "refuse everything." Every option engages with the Devil on different terms.
-8. hidden "notes" — updated ledger (FULL TEMPLATE — all axes scored from DEALS, deal log, AND all NARRATIVE TRACKING fields: planted_seeds, last_cliffhanger_type, turn_intensity, choice_pattern, active_npcs, variety, consequence_queue)
-9. hidden "subjectId" — evolving mortal title based on DEAL-MAKING BEHAVIOR
+8. hidden "subjectId" — evolving mortal title based on DEAL-MAKING BEHAVIOR
+DO NOT include a hidden "notes" element. Notes are handled separately.
 
 ### CHOICE ARCHITECTURE (The Devil's Offer Design) ###
 Frame EVERY choice as a deal-related action:

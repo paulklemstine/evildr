@@ -5,6 +5,7 @@
 import type { UIElement, RenderResult } from './renderer.ts'
 import { renderUI, collectInputState, collectQuestionContext, attachReactiveListeners } from './renderer.ts'
 import { saveGameState, loadGameState as loadSavedState } from './auto-save.ts'
+import { compressNotes, updateNotes, summarizeUI } from './notes-updater.ts'
 import { InputTracker } from '../profiling/input-tracker'
 import { saveTurn, saveSession, updateSession, getAnalysesBySession, getTurnsBySession } from '../profiling/db'
 import { maybeRunAnalysis } from '../profiling/analysis-pipeline'
@@ -58,6 +59,10 @@ export interface PromptBuilder {
     turnNumber?: number,
     maxTurns?: number,
   ): string
+  /** Return the notes template for this mode (used by the dedicated notes LLM call). */
+  getNotesTemplate?(): string
+  /** Return the persona label for notes (e.g. "The Devil's Ledger", "Patient Dossier"). */
+  getNotesPersonaLabel?(): string
 }
 
 /** A single entry in the rolling history queue. */
@@ -117,29 +122,7 @@ interface MutationEntry {
 
 const MAX_HISTORY_SIZE = 20
 
-/**
- * Maximum notes size in characters before compression.
- * Notes beyond this threshold are trimmed to keep the LLM's
- * output budget available for rich UI elements and narrative.
- */
-const MAX_NOTES_CHARS = 5000
-
-/**
- * Compress notes that exceed MAX_NOTES_CHARS by keeping the most
- * recent and structurally important sections. Preserves the header
- * line, last 3 sections, and truncates verbose middle content.
- */
-function compressNotes(notes: string): string {
-  if (!notes || notes.length <= MAX_NOTES_CHARS) return notes
-
-  // Strategy: keep first 500 chars (header/ID), keep last 3500 chars (most recent state)
-  // Middle section gets a "[...compressed...]" marker
-  const headerSize = 800
-  const tailSize = MAX_NOTES_CHARS - headerSize - 50
-  const header = notes.substring(0, headerSize)
-  const tail = notes.substring(notes.length - tailSize)
-  return header + '\n[...earlier observations compressed — focus on RECENT state below...]\n' + tail
-}
+// compressNotes imported from notes-updater.ts
 
 // ---------------------------------------------------------------------------
 // Helpers
@@ -234,58 +217,10 @@ function fixUnquotedJsonValues(text: string): string {
  *  - Mixed content: markdown/text before or after the JSON
  *  - Unquoted string values from LLM errors
  */
-/**
- * Pre-extract the notes hidden field value directly from the raw LLM response
- * string, bypassing JSON parsing entirely. This is a safety net: if JSON
- * parsing drops the notes element (due to unescaped quotes, nested braces,
- * etc.), we can still recover the notes value.
- */
-function rescueNotesFromRaw(raw: string): string | null {
-  // Match: "name":"notes" ... "value":"<CONTENT>"
-  // The notes element is typically the last element, so search from the end.
-  const nameIdx = raw.lastIndexOf('"name"')
-  if (nameIdx === -1) return null
-
-  // Find a notes name near a value field
-  const notesPatterns = [
-    /"name"\s*:\s*"notes"[\s\S]{0,200}?"value"\s*:\s*"/g,
-    /"type"\s*:\s*"hidden"[\s\S]{0,200}?"name"\s*:\s*"notes"[\s\S]{0,200}?"value"\s*:\s*"/g,
-  ]
-
-  for (const pattern of notesPatterns) {
-    let match: RegExpExecArray | null
-    let lastMatch: RegExpExecArray | null = null
-    while ((match = pattern.exec(raw)) !== null) {
-      lastMatch = match
-    }
-    if (!lastMatch) continue
-
-    const valueStart = lastMatch.index + lastMatch[0].length
-    // Walk forward to find the end of the value string, tracking escaped quotes
-    let i = valueStart
-    while (i < raw.length) {
-      if (raw[i] === '\\') { i += 2; continue }
-      if (raw[i] === '"') break
-      i++
-    }
-    if (i > valueStart) {
-      const value = raw.substring(valueStart, i)
-      // Unescape JSON string escapes
-      try {
-        return JSON.parse(`"${value}"`)
-      } catch {
-        return value.replace(/\\n/g, '\n').replace(/\\"/g, '"').replace(/\\\\/g, '\\')
-      }
-    }
-  }
-  return null
-}
+// rescueNotesFromRaw removed — notes are now handled by a dedicated LLM call
 
 function parseLLMResponse(raw: string): UIElement[] {
   let text = raw.trim()
-
-  // Pre-extract notes from raw text as a safety net (before any parsing that might drop them)
-  const rescuedNotes = rescueNotesFromRaw(text)
 
   // Strip optional markdown code fences
   const fenceMatch = text.match(/```(?:json)?\s*([\s\S]*?)\s*```/)
@@ -366,17 +301,6 @@ function parseLLMResponse(raw: string): UIElement[] {
     throw new Error(
       `LLM response is not valid JSON. Snippet: ${text.substring(0, 200)}...`,
     )
-  }
-
-  // Ensure rescued notes are present in the result if parsing dropped them
-  if (rescuedNotes) {
-    const hasNotes = result.some(
-      (el) => el.type === 'hidden' && (el.name === 'notes' || (el.name || '').includes('notes'))
-    )
-    if (!hasNotes) {
-      console.warn('parseLLMResponse: notes element was dropped during parsing — rescued from raw response')
-      result.push({ type: 'hidden', name: 'notes', value: rescuedNotes } as UIElement)
-    }
   }
 
   return result
@@ -546,6 +470,8 @@ export class GameLoop {
   private capturedImages: Record<string, string> = {}
   /** Reentrancy guard — prevents concurrent submitTurn() calls. */
   private turnInProgress = false
+  /** Pending async notes update from the previous turn. */
+  private pendingNotesPromise: Promise<string> | null = null
 
   constructor(config: GameLoopConfig) {
     this.config = config
@@ -719,6 +645,18 @@ export class GameLoop {
       } catch { /* IndexedDB may not be available */ }
     }
 
+    // 3b. Await pending notes from the previous turn (with timeout)
+    if (this.pendingNotesPromise) {
+      try {
+        const updated = await Promise.race([
+          this.pendingNotesPromise,
+          new Promise<string>((_, rej) => setTimeout(() => rej('timeout'), 5000)),
+        ])
+        this.state.currentNotes = updated
+      } catch { /* use existing notes on timeout/failure */ }
+      this.pendingNotesPromise = null
+    }
+
     // 4. Build prompt
     const isFirstTurn = this.state.historyQueue.length === 0 && this.state.currentUiJson === null
     let prompt: string
@@ -838,10 +776,35 @@ export class GameLoop {
         maybeRunAnalysis(userId, sessionId, this.state.turnNumber)
       }
 
-      // 14. Auto-save
+      // 14. Fire async notes update (fire-and-forget, resolves in background)
+      const notesTemplate = promptBuilder.getNotesTemplate?.() ?? ''
+      if (notesTemplate) {
+        this.pendingNotesPromise = updateNotes(
+          {
+            llmClient,
+            notesTemplate,
+            modeName: this.state.mode,
+            modePersonaLabel: promptBuilder.getNotesPersonaLabel?.() ?? 'Notes',
+          },
+          {
+            previousNotes: compressNotes(this.state.currentNotes),
+            playerActions: playerActionsJson,
+            uiSummary: summarizeUI(uiJsonArray),
+            turnNumber: this.state.turnNumber,
+            maxTurns: 15,
+          },
+        ).then(notes => {
+          this.state.currentNotes = notes
+          saveGameState(this.storageKey(), this.state)
+          onStateChange(this.getState())
+          return notes
+        })
+      }
+
+      // 15. Auto-save
       saveGameState(this.storageKey(), this.state)
 
-      // 15. Notify
+      // 16. Notify
       onStateChange(this.getState())
     } catch (postRenderErr) {
       console.error('Post-render error (UI still interactive):', postRenderErr)
