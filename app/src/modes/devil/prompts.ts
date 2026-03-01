@@ -4,7 +4,7 @@
 // what they value, what they trade away, and what they refuse to give up.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ARC_CYCLING_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
   return {
@@ -23,23 +23,20 @@ export function createDevilPromptBuilder(explicit: boolean): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
       turnNumber?: number,
-      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
-      const mt = maxTurns ?? 15
       const tn = turnNumber ?? history.length + 1
-      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
 
       let prompt = DEVIL_MAIN
       if (explicit) prompt += '\n\n' + EXPLICIT_MODE_ADDENDUM
 
       prompt += `
 
-### TURN ${tn} of ${mt} ###
+### TURN ${tn} ###
 
 ### NOTES (the Devil's Ledger — persistent memory) ###
 ${notes || '(no ledger yet — first encounter)'}
@@ -67,7 +64,7 @@ The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — bold/clever/compass
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 Include a hidden "subjectId" element with the mortal's evolving title.
 ${PRE_GENERATION_CHECKLIST}
-${endgameBlock}
+${ARC_CYCLING_DIRECTIVE}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -219,7 +216,14 @@ ${NARRATIVE_TRACKING_TEMPLATE}
 - [what the player said/did that demands a response]
 
 ### Behavioral Loop Alert
-- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]
+
+### ARC TRACKING ###
+**Current Arc:** [number]
+**Arc Turn:** [1-7 position within current arc]
+**Arc Theme:** [one-line description]
+**Seeds Planted:** [unresolved hooks from this arc]
+**Completed Arcs:** [count] — [one-line summary of last completed arc]`
 
 const MORTAL_TITLE_PROTOCOL = `### MORTAL TITLE PROTOCOL ###
 The mortal's title EVOLVES based on their DEAL-MAKING BEHAVIOR (not self-description).

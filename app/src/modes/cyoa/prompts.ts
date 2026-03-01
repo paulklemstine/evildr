@@ -4,7 +4,7 @@
 // in exciting situations reveals more than any questionnaire ever could.
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ARC_CYCLING_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export type CYOAGenre =
   | 'Horror'
@@ -51,7 +51,14 @@ const NOTES_TEMPLATE = `### ADVENTURE STATE TEMPLATE ###
 - [what the player said/did that demands a response]
 
 ### Behavioral Loop Alert
-- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]
+
+### ARC TRACKING ###
+**Current Arc:** [number]
+**Arc Turn:** [1-7 position within current arc]
+**Arc Theme:** [one-line description]
+**Seeds Planted:** [unresolved hooks from this arc]
+**Completed Arcs:** [count] — [one-line summary of last completed arc]`
 
 export function createCYOAPromptBuilder(genre: string): PromptBuilder {
   const system = buildSystem(genre)
@@ -102,20 +109,17 @@ Return ONLY a valid JSON array. No markdown fences, no commentary.`
       notes: string,
       liveAnalysis?: string,
       turnNumber?: number,
-      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
-      const mt = maxTurns ?? 15
       const tn = turnNumber ?? history.length + 1
-      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
 
       return `${system}
 
-### TURN ${tn} of ${mt} ###
+### TURN ${tn} ###
 
 ### NOTES (your persistent memory — update every turn) ###
 ${notes || '(none yet)'}
@@ -149,7 +153,7 @@ ${liveAnalysis ? '3. ADAPT the adventure based on the LIVE ANALYSIS — create d
 ${REACTIVE_ELEMENTS}
 
 ${PRE_GENERATION_CHECKLIST}
-${endgameBlock}
+${ARC_CYCLING_DIRECTIVE}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
     },
   }

@@ -1274,7 +1274,6 @@ export class MultiplayerGameLoop {
             playerActions: this.myActionsThisTurn || '{}',
             uiSummary: summarizeUI(uiJsonArray),
             turnNumber: this.state.turnNumber,
-            maxTurns: 15,
           },
         ).then(notes => {
           this.state.myNotes = notes

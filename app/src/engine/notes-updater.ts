@@ -86,7 +86,6 @@ export interface NotesUpdateInput {
   playerActions: string
   uiSummary: string
   turnNumber: number
-  maxTurns: number
 }
 
 /**
@@ -102,7 +101,7 @@ ${config.notesTemplate}
 ### PREVIOUS NOTES ###
 ${input.previousNotes || '(first turn — initialize from scratch)'}
 
-### TURN ${input.turnNumber} of ${input.maxTurns} ###
+### TURN ${input.turnNumber} ###
 
 ### PLAYER ACTIONS ###
 ${input.playerActions}

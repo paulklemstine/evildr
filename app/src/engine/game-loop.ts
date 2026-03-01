@@ -57,7 +57,6 @@ export interface PromptBuilder {
     notes: string,
     liveAnalysis?: string,
     turnNumber?: number,
-    maxTurns?: number,
   ): string
   /** Return the notes template for this mode (used by the dedicated notes LLM call). */
   getNotesTemplate?(): string
@@ -671,7 +670,6 @@ export class GameLoop {
         compressedNotes,
         liveAnalysis,
         this.state.turnNumber + 1,
-        15,
       )
     }
 
@@ -791,7 +789,6 @@ export class GameLoop {
             playerActions: playerActionsJson,
             uiSummary: summarizeUI(uiJsonArray),
             turnNumber: this.state.turnNumber,
-            maxTurns: 15,
           },
         ).then(notes => {
           this.state.currentNotes = notes

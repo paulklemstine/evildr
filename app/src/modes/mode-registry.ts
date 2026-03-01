@@ -31,7 +31,6 @@ export interface PromptBuilder {
     notes: string,
     liveAnalysis?: string,
     turnNumber?: number,
-    maxTurns?: number,
   ): string
   /** Return the notes template for this mode (used by the dedicated notes LLM call). */
   getNotesTemplate?(): string

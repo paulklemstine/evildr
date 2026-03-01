@@ -8,7 +8,7 @@
 // that feels impossibly personal. The hook is: HOW does it know?
 
 import type { PromptBuilder } from '../mode-registry.ts'
-import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ENDGAME_DIRECTIVE, NEAR_ENDGAME_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
+import { STORYTELLING_CRAFT, CINEMATIC_IMAGE_CRAFT, BANNED_PHRASES, STAGNATION_DETECTION, NARRATIVE_TRACKING_TEMPLATE, INPUT_JUSTIFICATION, REACTIVE_ELEMENTS, DIAGNOSTIC_PROBES, THERAPEUTIC_ELEMENTS, FUN_FACTOR, PRE_GENERATION_CHECKLIST, ARC_CYCLING_DIRECTIVE, CONDITION_ENGAGEMENT } from '../shared/storytelling.ts'
 
 export function createOraclePromptBuilder(): PromptBuilder {
   return {
@@ -25,22 +25,19 @@ export function createOraclePromptBuilder(): PromptBuilder {
       notes: string,
       liveAnalysis?: string,
       turnNumber?: number,
-      maxTurns?: number,
     ): string {
       const recentHistory = history.slice(-6)
       const historyBlock = recentHistory
         .map((h, i) => `--- Turn ${history.length - recentHistory.length + i + 1} ---\nActions: ${h.actions}`)
         .join('\n\n')
 
-      const mt = maxTurns ?? 15
       const tn = turnNumber ?? history.length + 1
-      const endgameBlock = tn >= mt ? ENDGAME_DIRECTIVE : tn >= mt - 2 ? NEAR_ENDGAME_DIRECTIVE : ''
 
       let prompt = ORACLE_MAIN
 
       prompt += `
 
-### TURN ${tn} of ${mt} ###
+### TURN ${tn} ###
 
 ### NOTES (your persistent memory — the true reading) ###
 ${notes || '(no reading yet — first consultation)'}
@@ -67,7 +64,7 @@ MANDATORY: Include at least ONE textfield element EVERY turn — free-text is yo
 The 4 radio choices MUST follow ASYMMETRIC CHOICE DESIGN — but framed as MYSTICAL PATHS rather than action archetypes.
 DO NOT include a hidden "notes" element in your response. Notes are handled separately.
 ${PRE_GENERATION_CHECKLIST}
-${endgameBlock}
+${ARC_CYCLING_DIRECTIVE}
 Return ONLY a valid JSON array. No markdown fences, no commentary.`
 
       return prompt
@@ -220,7 +217,14 @@ ${NARRATIVE_TRACKING_TEMPLATE}
 - [what the player said/did that demands a response]
 
 ### Behavioral Loop Alert
-- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]
+
+### ARC TRACKING ###
+**Current Arc:** [number]
+**Arc Turn:** [1-7 position within current arc]
+**Arc Theme:** [one-line description]
+**Seeds Planted:** [unresolved hooks from this arc]
+**Completed Arcs:** [count] — [one-line summary of last completed arc]`
 
 const PROPHECY_PROTOCOL = `### PROPHECY CONSTRUCTION PROTOCOL ###
 The prophecy is the CORE MECHANIC. It must feel eerily personal. Here's how:

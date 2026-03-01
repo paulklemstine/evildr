@@ -69,13 +69,8 @@ A valley is NOT rest — it is DEEPER INTIMACY at lower volume. Valley turns MUS
 Valley turns that feel like "filler" or "lighter content" are FAILURES. They should feel like the most intimate, personal turn so far.
 
 **MICRO-ARCS (5-7 Turn Story Cycles)**
-Every 5-7 turns should complete a MICRO-ARC:
-Turn 1-2: Setup + Inciting Incident (throw them into action immediately)
-Turn 3-4: Rising complications (stakes escalate, allies appear, loyalties tested)
-Turn 5-6: Crisis + Climax (maximum tension, the choice that MATTERS)
-Turn 7: Resolution that IMMEDIATELY seeds the NEXT micro-arc
+Every 5-7 turns completes a story arc. See ARC CYCLING DIRECTIVE for full structure.
 The resolution of one arc IS the inciting incident of the next.
-"You defeated the warlord — THEREFORE you inherit his enemies."
 NEVER let the player feel the story is 'done.' Every ending is a beginning.
 
 **VARIABLE REWARD SCHEDULE (The Slot Machine)**
@@ -485,50 +480,35 @@ COLOR_PICK FRAMING RULE: Color picks and emoji reactions MUST use ACTION-PROXY f
 RADIO FORMAT: Radio options MUST be plain strings or objects with "label" and "value" string fields. NEVER nest objects inside radio options. Example: {"type":"radio","name":"action","options":[{"label":"Sprint through the flames","value":"a"},{"label":"Find another path","value":"b"}]}. Each label is a SHORT, SPECIFIC action description (5-15 words).`
 
 /**
- * Endgame directive — tells the LLM when the game is ending so it can
- * deliver satisfying resolution instead of just stopping mid-story.
- * Injected dynamically by buildTurnPrompt when turnNumber >= threshold.
+ * Arc cycling directive — structures the game as perpetual micro-arcs
+ * instead of a fixed-length session. Every ending is a beginning.
  */
-export const ENDGAME_DIRECTIVE = `### ENDGAME — THIS IS THE FINAL TURN ###
-This is the LAST turn of the game. You MUST deliver a SATISFYING CONCLUSION:
+export const ARC_CYCLING_DIRECTIVE = `### PERPETUAL STORY ARC CYCLING ###
+This game has NO fixed ending — it runs as long as the player wants to play.
+Your story is structured as a series of MICRO-ARCS, each 5-7 turns long:
 
-1. **RESOLVE all active narrative threads** — pay off every planted seed, answer every open question
-2. **CLIMAX the story** — the highest stakes moment, the biggest reveal, the most dramatic beat
-3. **REFLECT the player's journey** — reference their first choice, their pattern, their growth or corruption
-4. **DELIVER a personalized verdict** — based on everything you've observed about them across all turns
-5. **END WITH IMPACT** — the final text should be a mic-drop moment they'll remember. Not a whimper.
-6. **NO CLIFFHANGER** — this is resolution, not setup. Close the loop.
-7. **Include a final assessment in the notes** — your complete psychological profile of this player
+**ARC STRUCTURE (5-7 turns each):**
+- Turns 1-2: Setup + Inciting Incident — throw them into action immediately
+- Turns 3-4: Rising complications — stakes escalate, loyalties tested
+- Turns 5-6: Crisis + Climax — maximum tension, the choice that MATTERS
+- Turn 7: Resolution that IMMEDIATELY seeds the NEXT arc
 
-The player should feel: "That was a COMPLETE experience. My choices MATTERED. The ending was ABOUT ME."
-Do NOT generate radio choices that imply continuation. Instead, offer reflective choices:
-- "How do you feel about how this ended?"
-- "What would you have done differently?"
-- "Rate your experience"
-The tone shifts from gameplay to REFLECTION — the game is watching them watch themselves.`
+**ARC TRANSITION RULES:**
+1. The resolution of one arc IS the inciting incident of the next
+2. "You defeated the warlord — THEREFORE you inherit his enemies"
+3. Each new arc should ESCALATE: new setting, higher stakes, deeper psychology
+4. Carry forward character relationships, reputation, and consequences
+5. NEVER let the player feel the story is 'done' — every ending is a beginning
+6. The player's psychological profile should DEEPEN across arcs, not reset
 
-/**
- * Near-endgame directive — injected 2-3 turns before the final turn
- * to signal escalation toward climax.
- */
-export const NEAR_ENDGAME_DIRECTIVE = `### APPROACHING ENDGAME — 2-3 TURNS REMAINING ###
-The game is nearing its conclusion. Begin ESCALATING toward a climax:
+**ARC TRACKING (in notes):**
+Track: {current_arc: N, arc_turn: M, arc_theme: "...", seeds_planted: [...]}
+When arc_turn reaches 6-7 and the climax resolves, increment current_arc and reset arc_turn.
 
-1. **ACCELERATE all narrative threads** — bring planted seeds to crisis point
-2. **RAISE STAKES dramatically** — the next 2-3 turns should feel like the final act of a movie
-3. **SET UP the final revelation** — plant the pieces that will pay off in the last turn
-4. **INCREASE INTENSITY** — every choice should feel weighted, every consequence magnified
-5. **CONVERGE storylines** — separate threads should start connecting and colliding
-
-The player should feel mounting pressure: "Something big is about to happen."
-Do NOT resolve things yet — build toward the climax that the final turn will deliver.
-
-**ANTI-META RULE:** Do NOT announce remaining turns or session mechanics explicitly. NEVER say "two turns left," "approaching the end," or "this is your last chance." Instead, embed approaching conclusion in the MODE VOICE:
-- Devil: "The contract's final clause approaches..."
-- Dream: "The dream thins at the edges..."
-- Oracle: "The last card turns..."
-- Experiment: "The final test loading..."
-The player should feel urgency through NARRATIVE, not system announcements. Breaking the fourth wall to announce mechanics kills immersion.`
+**VARIETY ACROSS ARCS:**
+Each new arc should shift at least 2 of: setting, tone, NPC cast, primary mechanic, dominant element types.
+If the last arc was combat-heavy, the next should be intrigue-heavy.
+If the last arc was dark, the next should begin with a lighter false calm before escalating.`
 
 /**
  * Condition engagement directive — ensures the AI actively identifies and

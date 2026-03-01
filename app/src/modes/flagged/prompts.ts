@@ -187,7 +187,14 @@ Openness | Confidence | Empathy | Authenticity | Humor | Vulnerability | Dominan
 - [what the player said/did that demands a response]
 
 ### Behavioral Loop Alert
-- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]`
+- Pattern: [description] | Turns: [N-M] | Counter-strategy: [what to try next]
+
+### ARC TRACKING ###
+**Current Arc:** [number]
+**Arc Turn:** [1-7 position within current arc]
+**Arc Theme:** [one-line description]
+**Seeds Planted:** [unresolved hooks from this arc]
+**Completed Arcs:** [count] — [one-line summary of last completed arc]`
 
 // ---------------------------------------------------------------------------
 // Scenario generator prompt
